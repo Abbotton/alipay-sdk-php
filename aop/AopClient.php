@@ -4,9 +4,6 @@ namespace Alipay;
 
 require_once 'AopEncrypt.php';
 
-
-namespace Alipay\Request;
-
 class AopClient
 {
     //应用ID
@@ -834,9 +831,8 @@ class AopClient
         return $slice;
     }
 
-    function parserResponseSubCode($request, $responseContent, $respObject, $format)
+    public function parserResponseSubCode($request, $responseContent, $respObject, $format)
     {
-
         if ("json" == $format) {
             $apiName = $request->getApiMethodName();
             $rootNodeName = str_replace(".", "_", $apiName) . $this->RESPONSE_SUFFIX;

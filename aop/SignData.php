@@ -8,8 +8,6 @@
 
 namespace Alipay;
 
-namespace Alipay\Request;
-
 class SignData
 {
 
