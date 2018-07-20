@@ -11,6 +11,23 @@
 - [ ] 增加单元测试。
 - [ ] 其它优化。
 
+## 如何使用
+
+截至目前，本仓库 **暂未改动** 任何官方 SDK 内的 `类名` / `函数名` / `方法名` / `参数名` / `参数顺序`，使用只需调整命名空间即可。
+
+- Composer 安装。
+
+    ```bash
+    composer require wi1dcard/alipay-sdk dev-master
+    ```
+
+- 命名空间对应如下。
+
+    - 全局：`Alipay\`
+    - 请求：`Alipay\Request`
+
+API、实例以及其它资源，请参见[官方文档](https://docs.open.alipay.com/54/cyz7do/)。
+
 ## 感谢
 
 - [支付宝官方 SDK](https://docs.open.alipay.com/54/103419/)
