@@ -6,7 +6,8 @@
         "php": ">=5.4"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.0"
+        "squizlabs/php_codesniffer": "^3.0",
+        "phpunit/phpunit": "^7.2"
     },
     "authors": [
         {
@@ -19,8 +20,14 @@
             "Alipay\\": "aop/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Alipay\\Test\\": "tests"
+        }
+    },
     "scripts": {
         "check-cs": "vendor/bin/phpcs aop -p --colors --standard='PSR1,PSR2,PSR12'",
-        "fix-cs": "vendor/bin/phpcbf aop -p --colors --standard='PSR1,PSR2,PSR12,Zend,PEAR'"
+        "fix-cs": "vendor/bin/phpcbf aop -p --colors --standard='PSR1,PSR2,PSR12,Zend,PEAR'",
+        "phpunit": "vendor/bin/phpunit"
     }
 }
