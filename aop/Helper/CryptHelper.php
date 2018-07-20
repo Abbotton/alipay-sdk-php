@@ -22,7 +22,7 @@ class CryptHelper
         //AES, 128 模式加密数据 CBC
         $screct_key = base64_decode($screct_key);
         $str = trim($str);
-        $str = addPKCS7Padding($str);
+        $str = static::addPKCS7Padding($str);
         $iv = mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC), 1);
         $encrypt_str = mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $screct_key, $str, MCRYPT_MODE_CBC);
         return base64_encode($encrypt_str);
@@ -43,7 +43,7 @@ class CryptHelper
         $encrypt_str = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $screct_key, $str, MCRYPT_MODE_CBC);
         $encrypt_str = trim($encrypt_str);
 
-        $encrypt_str = stripPKSC7Padding($encrypt_str);
+        $encrypt_str = static::stripPKSC7Padding($encrypt_str);
         return $encrypt_str;
     }
 
