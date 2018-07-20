@@ -1,6 +1,6 @@
 {
     "name": "wi1dcard/alipay-sdk",
-    "description": "支付宝非官方 PHP SDK（基于官方 3.3.0 版",
+    "description": "支付宝非官方 PHP SDK（基于官方 3.3.0 版）",
     "type": "library",
     "require": {
         "php": ">=5.4"
