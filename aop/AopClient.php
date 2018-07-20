@@ -122,7 +122,7 @@ class AopClient
     protected function sign($data, $signType = "RSA")
     {
         if ($this->checkEmpty($this->rsaPrivateKeyFilePath)) {
-            $priKey=$this->rsaPrivateKey;
+            $priKey = $this->rsaPrivateKey;
             $res = "-----BEGIN RSA PRIVATE KEY-----\n" .
                 wordwrap($priKey, 64, "\n", true) .
                 "\n-----END RSA PRIVATE KEY-----";
@@ -159,7 +159,7 @@ class AopClient
     {
 
         if (!$keyfromfile) {
-            $priKey=$privatekey;
+            $priKey = $privatekey;
             $res = "-----BEGIN RSA PRIVATE KEY-----\n" .
                 wordwrap($priKey, 64, "\n", true) .
                 "\n-----END RSA PRIVATE KEY-----";
@@ -252,7 +252,7 @@ class AopClient
     protected function logCommunicationError($apiName, $requestUrl, $errorCode, $responseTxt)
     {
         $localIp = isset($_SERVER["SERVER_ADDR"]) ? $_SERVER["SERVER_ADDR"] : "CLI";
-        $logger = new LtLogger;
+        $logger = new LtLogger();
         $logger->conf["log_file"] = rtrim(AOP_SDK_WORK_DIR, '\\/') . '/' . "logs/aop_comm_err_" . $this->appId . "_" . date("Y-m-d") . ".log";
         $logger->conf["separator"] = "^_^";
         $logData = array(
@@ -325,12 +325,12 @@ class AopClient
             throw new Exception("文件编码：[" . $this->fileCharset . "] 与表单提交编码：[" . $this->postCharset . "]两者不一致!");
         }
 
-        $iv=null;
+        $iv = null;
 
         if (!$this->checkEmpty($request->getApiVersion())) {
-            $iv=$request->getApiVersion();
+            $iv = $request->getApiVersion();
         } else {
-            $iv=$this->apiVersion;
+            $iv = $this->apiVersion;
         }
 
         //组装系统参数
@@ -351,7 +351,7 @@ class AopClient
         //获取业务参数
         $apiParams = $request->getApiParas();
 
-        if (method_exists($request, "getNeedEncrypt") &&$request->getNeedEncrypt()) {
+        if (method_exists($request, "getNeedEncrypt") && $request->getNeedEncrypt()) {
             $sysParams["encrypt_type"] = $this->encryptType;
 
             if ($this->checkEmpty($apiParams['biz_content'])) {
@@ -382,9 +382,9 @@ class AopClient
 
         if ("GET" == strtoupper($httpmethod)) {
             //value做urlencode
-            $preString=$this->getSignContentUrlencode($totalParams);
+            $preString = $this->getSignContentUrlencode($totalParams);
             //拼接GET请求串
-            $requestUrl = $this->gatewayUrl."?".$preString;
+            $requestUrl = $this->gatewayUrl . "?" . $preString;
             
             return $requestUrl;
         } else {
@@ -403,20 +403,20 @@ class AopClient
     protected function buildRequestForm($para_temp)
     {
         
-        $sHtml = "<form id='alipaysubmit' name='alipaysubmit' action='".$this->gatewayUrl."?charset=".trim($this->postCharset)."' method='POST'>";
+        $sHtml = "<form id='alipaysubmit' name='alipaysubmit' action='" . $this->gatewayUrl . "?charset=" . trim($this->postCharset) . "' method='POST'>";
         while (list ($key, $val) = each($para_temp)) {
             if (false === $this->checkEmpty($val)) {
                 //$val = $this->characet($val, $this->postCharset);
                 $val = str_replace("'", "&apos;", $val);
                 //$val = str_replace("\"","&quot;",$val);
-                $sHtml.= "<input type='hidden' name='".$key."' value='".$val."'/>";
+                $sHtml .= "<input type='hidden' name='" . $key . "' value='" . $val . "'/>";
             }
         }
 
         //submit按钮控件请不要含有name属性
-        $sHtml = $sHtml."<input type='submit' value='ok' style='display:none;''></form>";
+        $sHtml = $sHtml . "<input type='submit' value='ok' style='display:none;''></form>";
         
-        $sHtml = $sHtml."<script>document.forms['alipaysubmit'].submit();</script>";
+        $sHtml = $sHtml . "<script>document.forms['alipaysubmit'].submit();</script>";
         
         return $sHtml;
     }
@@ -462,7 +462,7 @@ class AopClient
         //获取业务参数
         $apiParams = $request->getApiParas();
 
-        if (method_exists($request, "getNeedEncrypt") &&$request->getNeedEncrypt()) {
+        if (method_exists($request, "getNeedEncrypt") && $request->getNeedEncrypt()) {
             $sysParams["encrypt_type"] = $this->encryptType;
 
             if ($this->checkEmpty($apiParams['biz_content'])) {
@@ -542,7 +542,7 @@ class AopClient
         $this->checkResponseSign($request, $signData, $resp, $respObject);
 
         // 解密
-        if (method_exists($request, "getNeedEncrypt") &&$request->getNeedEncrypt()) {
+        if (method_exists($request, "getNeedEncrypt") && $request->getNeedEncrypt()) {
             if ("json" == $this->format) {
                 $resp = $this->encryptJSONSignSource($request, $resp);
 
@@ -588,7 +588,7 @@ class AopClient
         if (!isset($paramsArray["method"])) {
             trigger_error("No api name passed");
         }
-        $inflector = new LtInflector;
+        $inflector = new LtInflector();
         $inflector->conf["separator"] = ".";
         $requestClassName = ucfirst($inflector->camelize(substr($paramsArray["method"], 7))) . "Request";
         if (!class_exists($requestClassName)) {
@@ -597,7 +597,7 @@ class AopClient
 
         $session = isset($paramsArray["session"]) ? $paramsArray["session"] : null;
 
-        $req = new $requestClassName;
+        $req = new $requestClassName();
         foreach ($paramsArray as $paraKey => $paraValue) {
             $inflector->conf["separator"] = "_";
             $setterMethodName = $inflector->camelize($paraKey);
@@ -653,7 +653,7 @@ class AopClient
     {
 
         if ($this->checkEmpty($this->alipayPublicKey)) {
-            $pubKey= $this->alipayrsaPublicKey;
+            $pubKey = $this->alipayrsaPublicKey;
             $res = "-----BEGIN PUBLIC KEY-----\n" .
                 wordwrap($pubKey, 64, "\n", true) .
                 "\n-----END PUBLIC KEY-----";
@@ -670,9 +670,9 @@ class AopClient
 
         $result = false;
         if ("RSA2" == $signType) {
-            $result = (openssl_verify($data, base64_decode($sign), $res, OPENSSL_ALGO_SHA256)===1);
+            $result = (openssl_verify($data, base64_decode($sign), $res, OPENSSL_ALGO_SHA256) === 1);
         } else {
-            $result = (openssl_verify($data, base64_decode($sign), $res)===1);
+            $result = (openssl_verify($data, base64_decode($sign), $res) === 1);
         }
 
         if (!$this->checkEmpty($this->alipayPublicKey)) {
@@ -742,7 +742,7 @@ class AopClient
     {
         if ($this->checkEmpty($this->alipayPublicKey)) {
             //读取字符串
-            $pubKey= $this->alipayrsaPublicKey;
+            $pubKey = $this->alipayrsaPublicKey;
             $res = "-----BEGIN PUBLIC KEY-----\n" .
                 wordwrap($pubKey, 64, "\n", true) .
                 "\n-----END PUBLIC KEY-----";
@@ -777,7 +777,7 @@ class AopClient
         
         if ($this->checkEmpty($this->rsaPrivateKeyFilePath)) {
             //读字符串
-            $priKey=$this->rsaPrivateKey;
+            $priKey = $this->rsaPrivateKey;
             $res = "-----BEGIN RSA PRIVATE KEY-----\n" .
                 wordwrap($priKey, 64, "\n", true) .
                 "\n-----END RSA PRIVATE KEY-----";
@@ -1081,12 +1081,12 @@ class AopClient
         $signDataEndIndex = $signIndex - 1;
 
         if ($signDataEndIndex < 0) {
-            $signDataEndIndex = strlen($responseContent)-1 ;
+            $signDataEndIndex = strlen($responseContent) - 1 ;
         }
 
         $indexLen = $signDataEndIndex - $signDataStartIndex;
 
-        $encContent = substr($responseContent, $signDataStartIndex+1, $indexLen-2);
+        $encContent = substr($responseContent, $signDataStartIndex + 1, $indexLen - 2);
 
 
         $encryptParseItem = new EncryptParseItem();
@@ -1140,11 +1140,11 @@ class AopClient
 
         $signDataStartIndex = $nodeIndex + strlen($nodeName) + 1;
 
-        $xmlStartNode="<".$this->ENCRYPT_XML_NODE_NAME.">";
-        $xmlEndNode="</".$this->ENCRYPT_XML_NODE_NAME.">";
+        $xmlStartNode = "<" . $this->ENCRYPT_XML_NODE_NAME . ">";
+        $xmlEndNode = "</" . $this->ENCRYPT_XML_NODE_NAME . ">";
 
-        $indexOfXmlNode=strpos($responseContent, $xmlEndNode);
-        if ($indexOfXmlNode<0) {
+        $indexOfXmlNode = strpos($responseContent, $xmlEndNode);
+        if ($indexOfXmlNode < 0) {
             $item = new EncryptParseItem();
             $item->encryptContent = null;
             $item->startIndex = 0;
@@ -1152,14 +1152,14 @@ class AopClient
             return $item;
         }
 
-        $startIndex=$signDataStartIndex+strlen($xmlStartNode);
-        $bizContentLen=$indexOfXmlNode-$startIndex;
-        $bizContent=substr($responseContent, $startIndex, $bizContentLen);
+        $startIndex = $signDataStartIndex + strlen($xmlStartNode);
+        $bizContentLen = $indexOfXmlNode - $startIndex;
+        $bizContent = substr($responseContent, $startIndex, $bizContentLen);
 
         $encryptParseItem = new EncryptParseItem();
         $encryptParseItem->encryptContent = $bizContent;
         $encryptParseItem->startIndex = $signDataStartIndex;
-        $encryptParseItem->endIndex = $indexOfXmlNode+strlen($xmlEndNode);
+        $encryptParseItem->endIndex = $indexOfXmlNode + strlen($xmlEndNode);
 
         return $encryptParseItem;
     }

@@ -68,7 +68,7 @@ function stripPKSC7Padding($source)
     $source = trim($source);
     $char = substr($source, -1);
     $num = ord($char);
-    if ($num==62) {
+    if ($num == 62) {
         return $source;
     }
     $source = substr($source, 0, -$num);

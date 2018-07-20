@@ -66,13 +66,13 @@ class TestImage
             //exit();
 
             //返回 文件流
-            header("Content-type: ". $fileType); //类型
+            header("Content-type: " . $fileType); //类型
 
 
             header("Accept-Ranges: bytes");//告诉客户端浏览器返回的文件大小是按照字节进行计算的
-            header("Accept-Length: ". $request -> getContentLength());//文件大小
-            header("Content-Length: ". $request -> getContentLength());//文件大小
-            header('Content-Disposition: attachment; filename="'. time() .'.'. $type .'"'); //文件名
+            header("Accept-Length: " . $request -> getContentLength());//文件大小
+            header("Content-Length: " . $request -> getContentLength());//文件大小
+            header('Content-Disposition: attachment; filename="' . time() . '.' . $type . '"'); //文件名
             echo $request -> getBody() ;
             exit() ;
         }

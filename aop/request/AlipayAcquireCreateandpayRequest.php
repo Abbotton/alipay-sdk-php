@@ -174,10 +174,10 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     private $terminalType;
     private $terminalInfo;
     private $prodCode;
-    private $apiVersion="1.0";
+    private $apiVersion = "1.0";
     private $notifyUrl;
     private $returnUrl;
-    private $needEncrypt=false;
+    private $needEncrypt = false;
 
     
     public function setAlipayCaRequest($alipayCaRequest)
@@ -473,7 +473,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
 
     public function setNotifyUrl($notifyUrl)
     {
-        $this->notifyUrl=$notifyUrl;
+        $this->notifyUrl = $notifyUrl;
     }
 
     public function getNotifyUrl()
@@ -483,7 +483,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
 
     public function setReturnUrl($returnUrl)
     {
-        $this->returnUrl=$returnUrl;
+        $this->returnUrl = $returnUrl;
     }
 
     public function getReturnUrl()
@@ -528,7 +528,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
 
     public function setApiVersion($apiVersion)
     {
-        $this->apiVersion=$apiVersion;
+        $this->apiVersion = $apiVersion;
     }
 
     public function getApiVersion()
@@ -539,7 +539,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setNeedEncrypt($needEncrypt)
     {
 
-        $this->needEncrypt=$needEncrypt;
+        $this->needEncrypt = $needEncrypt;
     }
 
     public function getNeedEncrypt()

@@ -9,8 +9,8 @@
 class SignData
 {
 
-    public $signSourceData=null;
+    public $signSourceData = null;
 
 
-    public $sign=null;
+    public $sign = null;
 }

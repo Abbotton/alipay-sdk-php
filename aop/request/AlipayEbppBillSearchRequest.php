@@ -48,10 +48,10 @@ class AlipayEbppBillSearchRequest
     private $terminalType;
     private $terminalInfo;
     private $prodCode;
-    private $apiVersion="1.0";
+    private $apiVersion = "1.0";
     private $notifyUrl;
     private $returnUrl;
-    private $needEncrypt=false;
+    private $needEncrypt = false;
 
     
     public function setBillKey($billKey)
@@ -138,7 +138,7 @@ class AlipayEbppBillSearchRequest
 
     public function setNotifyUrl($notifyUrl)
     {
-        $this->notifyUrl=$notifyUrl;
+        $this->notifyUrl = $notifyUrl;
     }
 
     public function getNotifyUrl()
@@ -148,7 +148,7 @@ class AlipayEbppBillSearchRequest
 
     public function setReturnUrl($returnUrl)
     {
-        $this->returnUrl=$returnUrl;
+        $this->returnUrl = $returnUrl;
     }
 
     public function getReturnUrl()
@@ -193,7 +193,7 @@ class AlipayEbppBillSearchRequest
 
     public function setApiVersion($apiVersion)
     {
-        $this->apiVersion=$apiVersion;
+        $this->apiVersion = $apiVersion;
     }
 
     public function getApiVersion()
@@ -204,7 +204,7 @@ class AlipayEbppBillSearchRequest
     public function setNeedEncrypt($needEncrypt)
     {
 
-        $this->needEncrypt=$needEncrypt;
+        $this->needEncrypt = $needEncrypt;
     }
 
     public function getNeedEncrypt()

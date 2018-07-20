@@ -128,10 +128,10 @@ HEALTH：健康险
     private $terminalType;
     private $terminalInfo;
     private $prodCode;
-    private $apiVersion="1.0";
+    private $apiVersion = "1.0";
     private $notifyUrl;
     private $returnUrl;
-    private $needEncrypt=false;
+    private $needEncrypt = false;
 
     
     public function setAgentChannel($agentChannel)
@@ -339,7 +339,7 @@ HEALTH：健康险
 
     public function setNotifyUrl($notifyUrl)
     {
-        $this->notifyUrl=$notifyUrl;
+        $this->notifyUrl = $notifyUrl;
     }
 
     public function getNotifyUrl()
@@ -349,7 +349,7 @@ HEALTH：健康险
 
     public function setReturnUrl($returnUrl)
     {
-        $this->returnUrl=$returnUrl;
+        $this->returnUrl = $returnUrl;
     }
 
     public function getReturnUrl()
@@ -394,7 +394,7 @@ HEALTH：健康险
 
     public function setApiVersion($apiVersion)
     {
-        $this->apiVersion=$apiVersion;
+        $this->apiVersion = $apiVersion;
     }
 
     public function getApiVersion()
@@ -405,7 +405,7 @@ HEALTH：健康险
     public function setNeedEncrypt($needEncrypt)
     {
 
-        $this->needEncrypt=$needEncrypt;
+        $this->needEncrypt = $needEncrypt;
     }
 
     public function getNeedEncrypt()

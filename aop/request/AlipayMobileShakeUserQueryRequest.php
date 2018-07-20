@@ -25,10 +25,10 @@ bar_code：条码
     private $terminalType;
     private $terminalInfo;
     private $prodCode;
-    private $apiVersion="1.0";
+    private $apiVersion = "1.0";
     private $notifyUrl;
     private $returnUrl;
-    private $needEncrypt=false;
+    private $needEncrypt = false;
 
     
     public function setDynamicId($dynamicId)
@@ -60,7 +60,7 @@ bar_code：条码
 
     public function setNotifyUrl($notifyUrl)
     {
-        $this->notifyUrl=$notifyUrl;
+        $this->notifyUrl = $notifyUrl;
     }
 
     public function getNotifyUrl()
@@ -70,7 +70,7 @@ bar_code：条码
 
     public function setReturnUrl($returnUrl)
     {
-        $this->returnUrl=$returnUrl;
+        $this->returnUrl = $returnUrl;
     }
 
     public function getReturnUrl()
@@ -115,7 +115,7 @@ bar_code：条码
 
     public function setApiVersion($apiVersion)
     {
-        $this->apiVersion=$apiVersion;
+        $this->apiVersion = $apiVersion;
     }
 
     public function getApiVersion()
@@ -126,7 +126,7 @@ bar_code：条码
     public function setNeedEncrypt($needEncrypt)
     {
 
-        $this->needEncrypt=$needEncrypt;
+        $this->needEncrypt = $needEncrypt;
     }
 
     public function getNeedEncrypt()

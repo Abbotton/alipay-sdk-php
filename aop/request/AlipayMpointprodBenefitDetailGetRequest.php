@@ -21,10 +21,10 @@ benefitStatus: 状态只支持(VALID:生效、WAIT:待生效、INVALID:失效), 
     private $terminalType;
     private $terminalInfo;
     private $prodCode;
-    private $apiVersion="1.0";
+    private $apiVersion = "1.0";
     private $notifyUrl;
     private $returnUrl;
-    private $needEncrypt=false;
+    private $needEncrypt = false;
 
     
     public function setBizContent($bizContent)
@@ -45,7 +45,7 @@ benefitStatus: 状态只支持(VALID:生效、WAIT:待生效、INVALID:失效), 
 
     public function setNotifyUrl($notifyUrl)
     {
-        $this->notifyUrl=$notifyUrl;
+        $this->notifyUrl = $notifyUrl;
     }
 
     public function getNotifyUrl()
@@ -55,7 +55,7 @@ benefitStatus: 状态只支持(VALID:生效、WAIT:待生效、INVALID:失效), 
 
     public function setReturnUrl($returnUrl)
     {
-        $this->returnUrl=$returnUrl;
+        $this->returnUrl = $returnUrl;
     }
 
     public function getReturnUrl()
@@ -100,7 +100,7 @@ benefitStatus: 状态只支持(VALID:生效、WAIT:待生效、INVALID:失效), 
 
     public function setApiVersion($apiVersion)
     {
-        $this->apiVersion=$apiVersion;
+        $this->apiVersion = $apiVersion;
     }
 
     public function getApiVersion()
@@ -111,7 +111,7 @@ benefitStatus: 状态只支持(VALID:生效、WAIT:待生效、INVALID:失效), 
     public function setNeedEncrypt($needEncrypt)
     {
 
-        $this->needEncrypt=$needEncrypt;
+        $this->needEncrypt = $needEncrypt;
     }
 
     public function getNeedEncrypt()

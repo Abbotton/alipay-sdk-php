@@ -65,7 +65,7 @@ class AlipayMobilePublicMultiMediaClient
             "sign_type"     => $this -> sign_type,
             "version"       => $this -> apiVersion,
             "timestamp"     => date('Y-m-d H:i:s')  ,//yyyy-MM-dd HH:mm:ss
-            "biz_content"   => '{"mediaId":"'. $this -> media_id  .'"}',
+            "biz_content"   => '{"mediaId":"' . $this -> media_id  . '"}',
             "charset"       => $this -> charset
         );
 
@@ -158,7 +158,7 @@ class AlipayMobilePublicMultiMediaClient
             //echo '一行？';
         }
         $privateKey = "-----BEGIN RSA PRIVATE KEY-----\n" . implode("\n", $p_key) ;
-        $privateKey = $privateKey ."\n-----END RSA PRIVATE KEY-----";
+        $privateKey = $privateKey . "\n-----END RSA PRIVATE KEY-----";
 
 //      echo "\n\n私钥:\n";
 //      echo( $privateKey );
@@ -171,7 +171,7 @@ class AlipayMobilePublicMultiMediaClient
         // 签名
         $signature = '';
 
-        if ("RSA2"==$this->sign_type) {
+        if ("RSA2" == $this->sign_type) {
             openssl_sign($data, $signature, $private_id, OPENSSL_ALGO_SHA256);
         } else {
             openssl_sign($data, $signature, $private_id, OPENSSL_ALGO_SHA1);
@@ -186,7 +186,7 @@ class AlipayMobilePublicMultiMediaClient
 
         //$signature = 'XjUN6YM1Mc9HXebKMv7GTLy7gmyhktyOgKk2/Jf+cz4DtP6udkzTdpkjW2j/Z4ZSD7xD6CNYI1Spz4yS93HPT0a5X9LgFWYY8SaADqe+ArXg+FBSiTwUz49SE//Xd9+LEiIRsSFkbpkuiGoO6mqJmB7vXjlD5lx6qCM3nb41wb8=';
 
-        $out = $data .'&'. $this -> SIGN .'='. $signature;
+        $out = $data . '&' . $this -> SIGN . '=' . $signature;
 
 //      echo "\n\n 加密后:\n";
 //      echo( $out );
@@ -210,7 +210,7 @@ class AlipayMobilePublicMultiMediaClient
         //重新组装参数
         $params = array();
         foreach ($query as $key => $value) {
-            $params[] = $key .'='. $value ;
+            $params[] = $key . '=' . $value ;
         }
         $data = implode('&', $params);
 
