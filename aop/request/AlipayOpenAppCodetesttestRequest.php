@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenAppCodetesttestRequest
+class AlipayOpenAppCodetesttestRequest implements \Alipay\RequestInterface
 {
 
     /**

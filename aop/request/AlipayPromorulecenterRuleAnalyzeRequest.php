@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayPromorulecenterRuleAnalyzeRequest
+class AlipayPromorulecenterRuleAnalyzeRequest implements \Alipay\RequestInterface
 {
 
     /**

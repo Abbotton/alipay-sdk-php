@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayDataDataserviceShoppingmallrecVoucherQueryRequest
+class AlipayDataDataserviceShoppingmallrecVoucherQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

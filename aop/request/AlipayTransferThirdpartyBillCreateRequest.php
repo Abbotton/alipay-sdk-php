@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayTransferThirdpartyBillCreateRequest
+class AlipayTransferThirdpartyBillCreateRequest implements \Alipay\RequestInterface
 {
 
     /**

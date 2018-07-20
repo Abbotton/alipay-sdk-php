@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class ZhimaMerchantOrderRentModifyRequest
+class ZhimaMerchantOrderRentModifyRequest implements \Alipay\RequestInterface
 {
 
     /**

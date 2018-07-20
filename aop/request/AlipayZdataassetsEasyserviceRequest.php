@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayZdataassetsEasyserviceRequest
+class AlipayZdataassetsEasyserviceRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobileShakeUserQueryRequest
+class AlipayMobileShakeUserQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

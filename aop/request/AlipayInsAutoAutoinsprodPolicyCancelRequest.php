@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayInsAutoAutoinsprodPolicyCancelRequest
+class AlipayInsAutoAutoinsprodPolicyCancelRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayCommerceAirXfgDsgModifyRequest
+class AlipayCommerceAirXfgDsgModifyRequest implements \Alipay\RequestInterface
 {
 
     /**

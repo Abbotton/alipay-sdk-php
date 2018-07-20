@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiQualityTestCloudacptBatchQueryRequest
+class KoubeiQualityTestCloudacptBatchQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMicropayOrderGetRequest
+class AlipayMicropayOrderGetRequest implements \Alipay\RequestInterface
 {
 
     /**

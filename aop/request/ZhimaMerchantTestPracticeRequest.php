@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class ZhimaMerchantTestPracticeRequest
+class ZhimaMerchantTestPracticeRequest implements \Alipay\RequestInterface
 {
 
     /**

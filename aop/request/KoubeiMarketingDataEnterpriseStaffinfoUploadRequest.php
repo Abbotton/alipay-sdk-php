@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiMarketingDataEnterpriseStaffinfoUploadRequest
+class KoubeiMarketingDataEnterpriseStaffinfoUploadRequest implements \Alipay\RequestInterface
 {
 
     /**

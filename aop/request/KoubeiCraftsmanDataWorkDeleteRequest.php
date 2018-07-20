@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiCraftsmanDataWorkDeleteRequest
+class KoubeiCraftsmanDataWorkDeleteRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayPlatformOpenidGetRequest
+class AlipayPlatformOpenidGetRequest implements \Alipay\RequestInterface
 {
 
     /**

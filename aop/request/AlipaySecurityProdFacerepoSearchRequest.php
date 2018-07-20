@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipaySecurityProdFacerepoSearchRequest
+class AlipaySecurityProdFacerepoSearchRequest implements \Alipay\RequestInterface
 {
 
     /**

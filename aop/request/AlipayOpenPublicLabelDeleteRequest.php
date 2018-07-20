@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicLabelDeleteRequest
+class AlipayOpenPublicLabelDeleteRequest implements \Alipay\RequestInterface
 {
 
     /**

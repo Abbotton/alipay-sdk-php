@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenAppSmsgDataSyncRequest
+class AlipayOpenAppSmsgDataSyncRequest implements \Alipay\RequestInterface
 {
 
     /**

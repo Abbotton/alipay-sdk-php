@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class ZhimaCreditAntifraudVerifyRequest
+class ZhimaCreditAntifraudVerifyRequest implements \Alipay\RequestInterface
 {
 
     /**

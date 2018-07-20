@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenMiniBaseinfoQueryRequest
+class AlipayOpenMiniBaseinfoQueryRequest implements \Alipay\RequestInterface
 {
 
     private $apiParas = array();

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiMarketingDataDishdiagnosetypeBatchqueryRequest
+class KoubeiMarketingDataDishdiagnosetypeBatchqueryRequest implements \Alipay\RequestInterface
 {
 
     private $apiParas = array();

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AntMerchantExpandPersonalApplyRequest
+class AntMerchantExpandPersonalApplyRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenAgentOrderQueryRequest
+class AlipayOpenAgentOrderQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMarketingUserulePidQueryRequest
+class AlipayMarketingUserulePidQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

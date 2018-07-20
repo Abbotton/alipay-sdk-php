@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOfflineMarketingVoucherModifyRequest
+class AlipayOfflineMarketingVoucherModifyRequest implements \Alipay\RequestInterface
 {
 
     /**

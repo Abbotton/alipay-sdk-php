@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMarketingCardTemplateBatchqueryRequest
+class AlipayMarketingCardTemplateBatchqueryRequest implements \Alipay\RequestInterface
 {
 
     /**

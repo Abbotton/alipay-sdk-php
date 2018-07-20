@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayDataDataexchangeSfasdfRequest
+class AlipayDataDataexchangeSfasdfRequest implements \Alipay\RequestInterface
 {
 
     /**

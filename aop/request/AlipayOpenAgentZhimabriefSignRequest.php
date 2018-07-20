@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenAgentZhimabriefSignRequest
+class AlipayOpenAgentZhimabriefSignRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMdataTagGetRequest
+class AlipayMdataTagGetRequest implements \Alipay\RequestInterface
 {
 
     /**

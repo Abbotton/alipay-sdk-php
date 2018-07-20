@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class SsdataDataserviceRiskAlixiaohaoQueryRequest
+class SsdataDataserviceRiskAlixiaohaoQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

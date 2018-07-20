@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoMycarParkingParkinglotinfoUpdateRequest
+class AlipayEcoMycarParkingParkinglotinfoUpdateRequest implements \Alipay\RequestInterface
 {
 
     /**

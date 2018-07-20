@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayDaoweiOrderCancelRequest
+class AlipayDaoweiOrderCancelRequest implements \Alipay\RequestInterface
 {
 
     /**

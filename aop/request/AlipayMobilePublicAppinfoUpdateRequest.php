@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobilePublicAppinfoUpdateRequest
+class AlipayMobilePublicAppinfoUpdateRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class ZhimaMerchantBorrowEntityUploadRequest
+class ZhimaMerchantBorrowEntityUploadRequest implements \Alipay\RequestInterface
 {
 
     /**

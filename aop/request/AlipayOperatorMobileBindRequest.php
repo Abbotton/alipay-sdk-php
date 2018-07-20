@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOperatorMobileBindRequest
+class AlipayOperatorMobileBindRequest implements \Alipay\RequestInterface
 {
 
     /**

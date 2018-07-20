@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayInsAutoAutoinsprodUserCertifyRequest
+class AlipayInsAutoAutoinsprodUserCertifyRequest implements \Alipay\RequestInterface
 {
 
     /**

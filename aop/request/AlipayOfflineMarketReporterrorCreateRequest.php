@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOfflineMarketReporterrorCreateRequest
+class AlipayOfflineMarketReporterrorCreateRequest implements \Alipay\RequestInterface
 {
 
     /**

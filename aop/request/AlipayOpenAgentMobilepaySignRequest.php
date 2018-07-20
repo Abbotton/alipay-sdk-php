@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenAgentMobilepaySignRequest
+class AlipayOpenAgentMobilepaySignRequest implements \Alipay\RequestInterface
 {
 
     /**

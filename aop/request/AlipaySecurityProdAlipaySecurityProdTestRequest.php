@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipaySecurityProdAlipaySecurityProdTestRequest
+class AlipaySecurityProdAlipaySecurityProdTestRequest implements \Alipay\RequestInterface
 {
 
     /**

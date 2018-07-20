@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayFundCouponOrderRefundRequest
+class AlipayFundCouponOrderRefundRequest implements \Alipay\RequestInterface
 {
 
     /**

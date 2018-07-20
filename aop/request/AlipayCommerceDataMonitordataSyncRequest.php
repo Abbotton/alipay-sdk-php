@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayCommerceDataMonitordataSyncRequest
+class AlipayCommerceDataMonitordataSyncRequest implements \Alipay\RequestInterface
 {
 
     /**

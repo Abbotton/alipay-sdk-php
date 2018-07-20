@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayDataDataserviceSdfsdfRequest
+class AlipayDataDataserviceSdfsdfRequest implements \Alipay\RequestInterface
 {
 
     private $apiParas = array();

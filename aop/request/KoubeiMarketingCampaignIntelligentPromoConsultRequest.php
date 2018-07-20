@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiMarketingCampaignIntelligentPromoConsultRequest
+class KoubeiMarketingCampaignIntelligentPromoConsultRequest implements \Alipay\RequestInterface
 {
 
     /**

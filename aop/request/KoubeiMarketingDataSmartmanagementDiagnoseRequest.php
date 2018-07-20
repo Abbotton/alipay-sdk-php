@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiMarketingDataSmartmanagementDiagnoseRequest
+class KoubeiMarketingDataSmartmanagementDiagnoseRequest implements \Alipay\RequestInterface
 {
 
     private $apiParas = array();

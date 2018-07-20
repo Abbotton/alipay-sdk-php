@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicQrcodeCreateRequest
+class AlipayOpenPublicQrcodeCreateRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenMiniExperienceQueryRequest
+class AlipayOpenMiniExperienceQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

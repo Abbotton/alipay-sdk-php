@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenAppXwbtestabcQueryRequest
+class AlipayOpenAppXwbtestabcQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

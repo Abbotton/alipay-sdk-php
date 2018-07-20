@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class ZhimaCreditEpInfoGetRequest
+class ZhimaCreditEpInfoGetRequest implements \Alipay\RequestInterface
 {
 
     /**

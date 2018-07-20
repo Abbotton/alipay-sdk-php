@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOfflineProviderMonitorLogSyncRequest
+class AlipayOfflineProviderMonitorLogSyncRequest implements \Alipay\RequestInterface
 {
 
     /**

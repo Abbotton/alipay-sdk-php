@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOfflineProviderEquipmentAuthRemoveRequest
+class AlipayOfflineProviderEquipmentAuthRemoveRequest implements \Alipay\RequestInterface
 {
 
     /**

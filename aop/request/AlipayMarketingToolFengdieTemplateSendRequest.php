@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMarketingToolFengdieTemplateSendRequest
+class AlipayMarketingToolFengdieTemplateSendRequest implements \Alipay\RequestInterface
 {
 
     /**

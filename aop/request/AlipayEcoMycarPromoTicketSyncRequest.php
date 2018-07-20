@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoMycarPromoTicketSyncRequest
+class AlipayEcoMycarPromoTicketSyncRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayCommerceTransportOfflinepayRecordVerifyRequest
+class AlipayCommerceTransportOfflinepayRecordVerifyRequest implements \Alipay\RequestInterface
 {
 
     /**

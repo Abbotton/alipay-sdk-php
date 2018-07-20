@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class ZolozIdentificationUserWebQueryRequest
+class ZolozIdentificationUserWebQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

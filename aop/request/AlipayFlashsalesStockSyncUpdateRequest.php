@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayFlashsalesStockSyncUpdateRequest
+class AlipayFlashsalesStockSyncUpdateRequest implements \Alipay\RequestInterface
 {
 
     /**

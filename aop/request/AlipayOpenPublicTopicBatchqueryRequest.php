@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicTopicBatchqueryRequest
+class AlipayOpenPublicTopicBatchqueryRequest implements \Alipay\RequestInterface
 {
 
     private $apiParas = array();

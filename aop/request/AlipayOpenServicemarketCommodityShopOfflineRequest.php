@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenServicemarketCommodityShopOfflineRequest
+class AlipayOpenServicemarketCommodityShopOfflineRequest implements \Alipay\RequestInterface
 {
 
     /**

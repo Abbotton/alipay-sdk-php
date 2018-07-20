@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicMenuDataBatchqueryRequest
+class AlipayOpenPublicMenuDataBatchqueryRequest implements \Alipay\RequestInterface
 {
 
     /**

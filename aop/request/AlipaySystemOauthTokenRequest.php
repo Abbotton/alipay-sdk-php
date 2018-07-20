@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipaySystemOauthTokenRequest
+class AlipaySystemOauthTokenRequest implements \Alipay\RequestInterface
 {
 
     /**

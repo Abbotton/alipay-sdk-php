@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayUserAuthZhimaorgIdentityApplyRequest
+class AlipayUserAuthZhimaorgIdentityApplyRequest implements \Alipay\RequestInterface
 {
 
     /**

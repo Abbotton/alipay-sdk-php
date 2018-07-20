@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMpointprodBenefitDetailGetRequest
+class AlipayMpointprodBenefitDetailGetRequest implements \Alipay\RequestInterface
 {
 
     /**

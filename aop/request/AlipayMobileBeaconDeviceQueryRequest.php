@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobileBeaconDeviceQueryRequest
+class AlipayMobileBeaconDeviceQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobileBksigntokenVerifyRequest
+class AlipayMobileBksigntokenVerifyRequest implements \Alipay\RequestInterface
 {
 
     /**

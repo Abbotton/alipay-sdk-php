@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEbppInvoiceMerchantlistEnterApplyRequest
+class AlipayEbppInvoiceMerchantlistEnterApplyRequest implements \Alipay\RequestInterface
 {
 
     /**

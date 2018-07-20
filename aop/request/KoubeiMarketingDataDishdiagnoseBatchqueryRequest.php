@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiMarketingDataDishdiagnoseBatchqueryRequest
+class KoubeiMarketingDataDishdiagnoseBatchqueryRequest implements \Alipay\RequestInterface
 {
 
     /**

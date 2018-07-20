@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicLifeLabelModifyRequest
+class AlipayOpenPublicLifeLabelModifyRequest implements \Alipay\RequestInterface
 {
 
     /**

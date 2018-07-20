@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayDataDataserviceCodeRecoRequest
+class AlipayDataDataserviceCodeRecoRequest implements \Alipay\RequestInterface
 {
 
     /**

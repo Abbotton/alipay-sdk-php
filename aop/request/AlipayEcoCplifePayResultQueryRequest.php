@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoCplifePayResultQueryRequest
+class AlipayEcoCplifePayResultQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

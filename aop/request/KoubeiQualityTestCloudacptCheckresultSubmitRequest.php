@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiQualityTestCloudacptCheckresultSubmitRequest
+class KoubeiQualityTestCloudacptCheckresultSubmitRequest implements \Alipay\RequestInterface
 {
 
     /**

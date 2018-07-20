@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEbppMerchantConfigGetRequest
+class AlipayEbppMerchantConfigGetRequest implements \Alipay\RequestInterface
 {
 
     private $apiParas = array();

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobilePublicShortlinkCreateRequest
+class AlipayMobilePublicShortlinkCreateRequest implements \Alipay\RequestInterface
 {
 
     /**

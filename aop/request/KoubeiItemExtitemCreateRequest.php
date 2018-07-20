@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiItemExtitemCreateRequest
+class KoubeiItemExtitemCreateRequest implements \Alipay\RequestInterface
 {
 
     /**

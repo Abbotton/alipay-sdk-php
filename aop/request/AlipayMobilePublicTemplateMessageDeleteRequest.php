@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobilePublicTemplateMessageDeleteRequest
+class AlipayMobilePublicTemplateMessageDeleteRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoEduKtBillingQueryRequest
+class AlipayEcoEduKtBillingQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

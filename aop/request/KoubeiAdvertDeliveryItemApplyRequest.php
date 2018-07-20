@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiAdvertDeliveryItemApplyRequest
+class KoubeiAdvertDeliveryItemApplyRequest implements \Alipay\RequestInterface
 {
 
     /**

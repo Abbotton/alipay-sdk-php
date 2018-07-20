@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayCommerceTransportOfflinepayUserblacklistQueryRequest
+class AlipayCommerceTransportOfflinepayUserblacklistQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

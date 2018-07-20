@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMarketingCardTemplateCreateRequest
+class AlipayMarketingCardTemplateCreateRequest implements \Alipay\RequestInterface
 {
 
     /**

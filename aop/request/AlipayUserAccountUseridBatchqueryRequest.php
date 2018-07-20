@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayUserAccountUseridBatchqueryRequest
+class AlipayUserAccountUseridBatchqueryRequest implements \Alipay\RequestInterface
 {
 
     /**

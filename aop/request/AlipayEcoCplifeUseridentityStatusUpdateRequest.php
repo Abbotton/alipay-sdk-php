@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoCplifeUseridentityStatusUpdateRequest
+class AlipayEcoCplifeUseridentityStatusUpdateRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayExscUserFirstsignGetRequest
+class AlipayExscUserFirstsignGetRequest implements \Alipay\RequestInterface
 {
 
     /**

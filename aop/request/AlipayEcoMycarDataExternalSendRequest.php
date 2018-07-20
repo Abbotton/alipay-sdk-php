@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoMycarDataExternalSendRequest
+class AlipayEcoMycarDataExternalSendRequest implements \Alipay\RequestInterface
 {
 
     /**

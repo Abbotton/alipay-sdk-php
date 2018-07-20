@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOfflineMarketShopPublicUnbindRequest
+class AlipayOfflineMarketShopPublicUnbindRequest implements \Alipay\RequestInterface
 {
 
     /**

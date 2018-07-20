@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiCateringTablelistQueryRequest
+class KoubeiCateringTablelistQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

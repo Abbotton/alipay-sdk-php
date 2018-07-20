@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMarketingCampaignDiscountStatusUpdateRequest
+class AlipayMarketingCampaignDiscountStatusUpdateRequest implements \Alipay\RequestInterface
 {
 
     /**

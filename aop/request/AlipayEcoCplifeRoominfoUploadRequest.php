@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoCplifeRoominfoUploadRequest
+class AlipayEcoCplifeRoominfoUploadRequest implements \Alipay\RequestInterface
 {
 
     /**

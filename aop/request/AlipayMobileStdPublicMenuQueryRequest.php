@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobileStdPublicMenuQueryRequest
+class AlipayMobileStdPublicMenuQueryRequest implements \Alipay\RequestInterface
 {
 
     private $apiParas = array();

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayZdataserviceUnidataQueryRequest
+class AlipayZdataserviceUnidataQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

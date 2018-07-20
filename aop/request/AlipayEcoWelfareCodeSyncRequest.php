@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoWelfareCodeSyncRequest
+class AlipayEcoWelfareCodeSyncRequest implements \Alipay\RequestInterface
 {
 
     /**

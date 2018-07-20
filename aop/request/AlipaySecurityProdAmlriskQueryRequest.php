@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipaySecurityProdAmlriskQueryRequest
+class AlipaySecurityProdAmlriskQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoMycarTradeRefundRequest
+class AlipayEcoMycarTradeRefundRequest implements \Alipay\RequestInterface
 {
 
     /**

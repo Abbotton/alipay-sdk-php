@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicLifeDebarkApplyRequest
+class AlipayOpenPublicLifeDebarkApplyRequest implements \Alipay\RequestInterface
 {
 
     private $apiParas = array();

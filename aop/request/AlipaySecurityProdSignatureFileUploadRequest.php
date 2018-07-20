@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipaySecurityProdSignatureFileUploadRequest
+class AlipaySecurityProdSignatureFileUploadRequest implements \Alipay\RequestInterface
 {
 
     /**

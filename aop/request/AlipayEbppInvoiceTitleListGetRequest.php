@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEbppInvoiceTitleListGetRequest
+class AlipayEbppInvoiceTitleListGetRequest implements \Alipay\RequestInterface
 {
 
     /**

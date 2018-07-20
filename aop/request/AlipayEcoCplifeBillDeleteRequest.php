@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoCplifeBillDeleteRequest
+class AlipayEcoCplifeBillDeleteRequest implements \Alipay\RequestInterface
 {
 
     /**

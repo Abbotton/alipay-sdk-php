@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiMarketingDataCustomreportDeleteRequest
+class KoubeiMarketingDataCustomreportDeleteRequest implements \Alipay\RequestInterface
 {
 
     /**

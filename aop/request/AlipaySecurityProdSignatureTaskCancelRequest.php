@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipaySecurityProdSignatureTaskCancelRequest
+class AlipaySecurityProdSignatureTaskCancelRequest implements \Alipay\RequestInterface
 {
 
     /**

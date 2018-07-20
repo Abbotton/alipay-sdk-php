@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayCommerceCityfacilitatorCityQueryRequest
+class AlipayCommerceCityfacilitatorCityQueryRequest implements \Alipay\RequestInterface
 {
 
     private $apiParas = array();

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicTemplateMessageIndustryModifyRequest
+class AlipayOpenPublicTemplateMessageIndustryModifyRequest implements \Alipay\RequestInterface
 {
 
     /**

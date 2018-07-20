@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenAppLingjiuyisiCreateRequest
+class AlipayOpenAppLingjiuyisiCreateRequest implements \Alipay\RequestInterface
 {
 
     private $apiParas = array();

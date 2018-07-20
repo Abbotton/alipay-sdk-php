@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiCateringCrowdgroupConditionQueryRequest
+class KoubeiCateringCrowdgroupConditionQueryRequest implements \Alipay\RequestInterface
 {
 
     /**

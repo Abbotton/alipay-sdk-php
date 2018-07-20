@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicContactFollowBatchqueryRequest
+class AlipayOpenPublicContactFollowBatchqueryRequest implements \Alipay\RequestInterface
 {
 
     private $apiParas = array();

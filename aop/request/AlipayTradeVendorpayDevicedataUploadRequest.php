@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayTradeVendorpayDevicedataUploadRequest
+class AlipayTradeVendorpayDevicedataUploadRequest implements \Alipay\RequestInterface
 {
 
     /**
