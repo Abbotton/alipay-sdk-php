@@ -9,7 +9,7 @@
 - [x] 移除官方代码内 [`lotusphp`](https://github.com/qinjx/lotusphp) 依赖。
 - [x] 整理代码风格使其符合 `PSR-1`、`PSR-2`。
 - [ ] 增加单元测试。
-- [ ] 兼容 PHP 7.2，替换 MCrypt 为 OpenSSL。
+- [ ] 兼容 PHP 7.2，<del>替换 MCrypt 为 OpenSSL</del>。
 - [ ] 其它优化。
 
 ## 如何使用
