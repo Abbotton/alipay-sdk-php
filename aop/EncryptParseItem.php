@@ -1,19 +1,19 @@
 <?php
 /**
- *  TODO 补充说明 
+ *  TODO 补充说明
  *
  * User: jiehua
  * Date: 16/3/30
  * Time: 下午8:55
  */
 
-class EncryptParseItem {
+class EncryptParseItem
+{
 
 
-	public $startIndex;
+    public $startIndex;
 
-	public $endIndex;
+    public $endIndex;
 
-	public $encryptContent;
-
-} 
+    public $encryptContent;
+}

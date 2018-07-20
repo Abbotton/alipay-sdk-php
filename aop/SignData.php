@@ -6,11 +6,11 @@
  * Time: 下午6:21
  */
 
-class SignData {
+class SignData
+{
 
     public $signSourceData=null;
 
 
     public $sign=null;
-
-} 
+}
