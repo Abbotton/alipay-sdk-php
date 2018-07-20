@@ -34,7 +34,7 @@ class CryptHelper
      * @param  string $str
      * @return string
      */
-    protected static function decrypt($str, $screct_key)
+    public static function decrypt($str, $screct_key)
     {
         //AES, 128 模式加密数据 CBC
         $str = base64_decode($str);
