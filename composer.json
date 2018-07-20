@@ -17,7 +17,7 @@
     "autoload": {
         "psr-4": {
             "Alipay\\": "aop/",
-            "Alipay\\Request": "aop/request/"
+            "Alipay\\Request\\": "aop/request/"
         }
     },
     "scripts": {
