@@ -19,5 +19,9 @@
             "Alipay\\": "aop/",
             "Alipay\\Request": "aop/request/"
         }
+    },
+    "scripts": {
+        "check-cs": "vendor/bin/phpcs aop -p --colors --standard='PSR1,PSR2,PSR12'",
+        "fix-cs": "vendor/bin/phpcbf aop -p --colors --standard='PSR1,PSR2,PSR12,Zend,PEAR'"
     }
 }
