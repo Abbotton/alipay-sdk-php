@@ -44,19 +44,8 @@ class AopClient
 
     private $SIGN_NODE_NAME = "sign";
 
-    //加密XML节点名称
-    private $ENCRYPT_XML_NODE_NAME = "response_encrypted";
-
-    private $needEncrypt = false;
-
     //签名类型
     public $signType = "RSA";
-
-    //加密密钥和类型
-
-    public $encryptKey;
-
-    public $encryptType = "AES";
 
     protected $alipaySdkVersion = "alipay-sdk-php-20180705";
 
@@ -346,23 +335,7 @@ class AopClient
         $apiParams = $request->getApiParas();
 
         if (method_exists($request, "getNeedEncrypt") && $request->getNeedEncrypt()) {
-            $sysParams["encrypt_type"] = $this->encryptType;
-
-            if ($this->checkEmpty($apiParams['biz_content'])) {
-                throw new AlipayException(" api request Fail! The reason : encrypt request is not supperted!");
-            }
-
-            if ($this->checkEmpty($this->encryptKey) || $this->checkEmpty($this->encryptType)) {
-                throw new AlipayException(" encryptType and encryptKey must not null! ");
-            }
-
-            if ("AES" != $this->encryptType) {
-                throw new AlipayException("加密类型只支持AES");
-            }
-
-            // 执行加密
-            $enCryptContent = CryptHelper::encrypt($apiParams['biz_content'], $this->encryptKey);
-            $apiParams['biz_content'] = $enCryptContent;
+            throw new AlipayException('AES Encrypt / Decrypr has been deprecated!');
         }
 
         //print_r($apiParams);
@@ -451,23 +424,7 @@ class AopClient
         $apiParams = $request->getApiParas();
 
         if (method_exists($request, "getNeedEncrypt") && $request->getNeedEncrypt()) {
-            $sysParams["encrypt_type"] = $this->encryptType;
-
-            if ($this->checkEmpty($apiParams['biz_content'])) {
-                throw new AlipayException(" api request Fail! The reason : encrypt request is not supperted!");
-            }
-
-            if ($this->checkEmpty($this->encryptKey) || $this->checkEmpty($this->encryptType)) {
-                throw new AlipayException(" encryptType and encryptKey must not null! ");
-            }
-
-            if ("AES" != $this->encryptType) {
-                throw new AlipayException("加密类型只支持AES");
-            }
-
-            // 执行加密
-            $enCryptContent = CryptHelper::encrypt($apiParams['biz_content'], $this->encryptKey);
-            $apiParams['biz_content'] = $enCryptContent;
+            throw new AlipayException('AES Encrypt / Decrypr has been deprecated!');
         }
 
         //签名
@@ -524,20 +481,7 @@ class AopClient
 
         // 解密
         if (method_exists($request, "getNeedEncrypt") && $request->getNeedEncrypt()) {
-            if ("json" == $this->format) {
-                $resp = $this->encryptJSONSignSource($request, $resp);
-
-                // 将返回结果转换本地文件编码
-                $r = iconv($this->postCharset, $this->fileCharset . "//IGNORE", $resp);
-                $respObject = json_decode($r);
-            } else {
-                $resp = $this->encryptXMLSignSource($request, $resp);
-
-                $r = iconv($this->postCharset, $this->fileCharset . "//IGNORE", $resp);
-                $disableLibxmlEntityLoader = libxml_disable_entity_loader(true);
-                $respObject = @simplexml_load_string($r);
-                libxml_disable_entity_loader($disableLibxmlEntityLoader);
-            }
+            throw new AlipayException('AES Encrypt / Decrypr has been deprecated!');
         }
 
         return $respObject;
@@ -1051,66 +995,6 @@ class AopClient
         $encryptParseItem->encryptContent = $encContent;
         $encryptParseItem->startIndex = $signDataStartIndex;
         $encryptParseItem->endIndex = $signDataEndIndex;
-
-        return $encryptParseItem;
-    }
-
-    // 获取加密内容
-
-    private function encryptXMLSignSource($request, $responseContent)
-    {
-        $parsetItem = $this->parserEncryptXMLSignSource($request, $responseContent);
-
-        $bodyIndexContent = substr($responseContent, 0, $parsetItem->startIndex);
-        $bodyEndContent = substr($responseContent, $parsetItem->endIndex, strlen($responseContent) + 1 - $parsetItem->endIndex);
-        $bizContent = CryptHelper::decrypt($parsetItem->encryptContent, $this->encryptKey);
-
-        return $bodyIndexContent . $bizContent . $bodyEndContent;
-    }
-
-    private function parserEncryptXMLSignSource($request, $responseContent)
-    {
-        $apiName = $request->getApiMethodName();
-        $rootNodeName = str_replace(".", "_", $apiName) . $this->RESPONSE_SUFFIX;
-
-        $rootIndex = strpos($responseContent, $rootNodeName);
-        $errorIndex = strpos($responseContent, $this->ERROR_RESPONSE);
-        //      $this->echoDebug("<br/>rootNodeName:" . $rootNodeName);
-        //      $this->echoDebug("<br/> responseContent:<xmp>" . $responseContent . "</xmp>");
-
-        if ($rootIndex > 0) {
-            return $this->parserEncryptXMLItem($responseContent, $rootNodeName, $rootIndex);
-        } elseif ($errorIndex > 0) {
-            return $this->parserEncryptXMLItem($responseContent, $this->ERROR_RESPONSE, $errorIndex);
-        } else {
-            return null;
-        }
-    }
-
-    private function parserEncryptXMLItem($responseContent, $nodeName, $nodeIndex)
-    {
-        $signDataStartIndex = $nodeIndex + strlen($nodeName) + 1;
-
-        $xmlStartNode = "<" . $this->ENCRYPT_XML_NODE_NAME . ">";
-        $xmlEndNode = "</" . $this->ENCRYPT_XML_NODE_NAME . ">";
-
-        $indexOfXmlNode = strpos($responseContent, $xmlEndNode);
-        if ($indexOfXmlNode < 0) {
-            $item = new EncryptParseItem();
-            $item->encryptContent = null;
-            $item->startIndex = 0;
-            $item->endIndex = 0;
-            return $item;
-        }
-
-        $startIndex = $signDataStartIndex + strlen($xmlStartNode);
-        $bizContentLen = $indexOfXmlNode - $startIndex;
-        $bizContent = substr($responseContent, $startIndex, $bizContentLen);
-
-        $encryptParseItem = new EncryptParseItem();
-        $encryptParseItem->encryptContent = $bizContent;
-        $encryptParseItem->startIndex = $signDataStartIndex;
-        $encryptParseItem->endIndex = $indexOfXmlNode + strlen($xmlEndNode);
 
         return $encryptParseItem;
     }
