@@ -6,7 +6,7 @@
 
 - [x] 集成 Composer。
 - [ ] 降低 PHP 依赖至 5.4。
-- [ ] 移除官方代码内 [`lotusphp`](https://github.com/qinjx/lotusphp) 依赖。
+- [x] 移除官方代码内 [`lotusphp`](https://github.com/qinjx/lotusphp) 依赖。
 - [ ] 整理代码风格使其符合 `PSR-1`、`PSR-2`。
 - ...
 
