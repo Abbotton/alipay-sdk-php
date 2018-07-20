@@ -5,6 +5,9 @@
     "require": {
         "php": ">=5.4"
     },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.0"
+    },
     "authors": [
         {
             "name": "wi1dcard",
