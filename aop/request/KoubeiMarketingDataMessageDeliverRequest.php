@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-09-09 17:44:32
  */
+
+namespace Alipay\Request;
+
 class KoubeiMarketingDataMessageDeliverRequest
 {
 

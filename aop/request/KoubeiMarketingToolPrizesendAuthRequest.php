@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-10-09 11:45:06
  */
+
+namespace Alipay\Request;
+
 class KoubeiMarketingToolPrizesendAuthRequest
 {
 

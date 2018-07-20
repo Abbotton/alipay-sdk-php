@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-18 11:16:19
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenMiniVersionDeleteRequest
 {
 

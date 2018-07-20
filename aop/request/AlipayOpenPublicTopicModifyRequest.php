@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-05 14:58:54
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenPublicTopicModifyRequest
 {
 

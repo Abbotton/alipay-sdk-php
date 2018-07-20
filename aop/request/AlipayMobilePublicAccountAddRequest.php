@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-04-14 15:25:33
  */
+
+namespace Alipay\Request;
+
 class AlipayMobilePublicAccountAddRequest
 {
 

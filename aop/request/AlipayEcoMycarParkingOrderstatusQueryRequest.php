@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-08-25 17:10:33
  */
+
+namespace Alipay\Request;
+
 class AlipayEcoMycarParkingOrderstatusQueryRequest
 {
 

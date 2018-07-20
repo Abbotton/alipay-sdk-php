@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-06-20 22:11:06
  */
+
+namespace Alipay\Request;
+
 class AlipayFundAuthOrderAppFreezeRequest
 {
 

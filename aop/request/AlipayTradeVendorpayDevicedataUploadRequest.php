@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-12-08 00:51:39
  */
+
+namespace Alipay\Request;
+
 class AlipayTradeVendorpayDevicedataUploadRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-10-30 10:56:24
  */
+
+namespace Alipay\Request;
+
 class ZhimaCreditAntifraudRiskListRequest
 {
 

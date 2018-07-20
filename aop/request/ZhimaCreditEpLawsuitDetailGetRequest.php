@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-10-13 14:43:31
  */
+
+namespace Alipay\Request;
+
 class ZhimaCreditEpLawsuitDetailGetRequest
 {
 

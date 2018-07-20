@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-09-04 17:13:07
  */
+
+namespace Alipay\Request;
+
 class AlipayCommerceTransportOfflinepayUserblacklistQueryRequest
 {
 

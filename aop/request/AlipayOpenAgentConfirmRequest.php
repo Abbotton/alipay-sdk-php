@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-06-15 11:24:58
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenAgentConfirmRequest
 {
 

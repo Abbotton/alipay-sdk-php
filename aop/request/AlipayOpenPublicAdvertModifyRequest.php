@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-04-09 10:55:00
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenPublicAdvertModifyRequest
 {
 

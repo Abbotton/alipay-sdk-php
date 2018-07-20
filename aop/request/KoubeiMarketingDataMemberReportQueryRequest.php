@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-04-23 14:16:19
  */
+
+namespace Alipay\Request;
+
 class KoubeiMarketingDataMemberReportQueryRequest
 {
 

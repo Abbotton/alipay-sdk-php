@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-08-04 15:15:46
  */
+
+namespace Alipay\Request;
+
 class KoubeiMarketingToolIsvMerchantQueryRequest
 {
 

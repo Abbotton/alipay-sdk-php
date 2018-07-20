@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-11-18 16:07:46
  */
+
+namespace Alipay\Request;
+
 class MybankFinanceYulibaoAccountQueryRequest
 {
 

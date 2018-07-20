@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-05-24 11:35:00
  */
+
+namespace Alipay\Request;
+
 class AlipayFundBatchDetailQueryRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-08-11 18:02:23
  */
+
+namespace Alipay\Request;
+
 class AlipayUserAccountSearchRequest
 {
 

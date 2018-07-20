@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-22 10:26:43
  */
+
+namespace Alipay\Request;
+
 class AlipayDataDataserviceCodeRecoRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-03-29 17:00:49
  */
+
+namespace Alipay\Request;
+
 class AlipayOfflineProviderEquipmentAuthQuerybypageRequest
 {
 

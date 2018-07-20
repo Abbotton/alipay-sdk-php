@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-09-27 11:41:38
  */
+
+namespace Alipay\Request;
+
 class SsdataDataserviceRiskAntifraudlistQueryRequest
 {
 

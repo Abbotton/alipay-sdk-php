@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-08-18 12:27:03
  */
+
+namespace Alipay\Request;
+
 class AlipayEcoEduKtSchoolinfoModifyRequest
 {
 

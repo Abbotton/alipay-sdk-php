@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-02-23 20:04:44
  */
+
+namespace Alipay\Request;
+
 class AlipayBossCsChannelQueryRequest
 {
 

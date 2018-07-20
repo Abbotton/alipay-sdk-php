@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-03-28 21:22:31
  */
+
+namespace Alipay\Request;
+
 class KoubeiMarketingDataActivityBillDownloadRequest
 {
 

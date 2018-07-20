@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-02-09 11:39:27
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenAuthIndustryPlatformCreateTokenRequest
 {
 

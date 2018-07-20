@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-08-28 17:30:50
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenPublicLifeMsgRecallRequest
 {
 

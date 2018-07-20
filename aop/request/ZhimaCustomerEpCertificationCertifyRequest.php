@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-11-23 19:13:17
  */
+
+namespace Alipay\Request;
+
 class ZhimaCustomerEpCertificationCertifyRequest
 {
 

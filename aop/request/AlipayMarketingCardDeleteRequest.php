@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-16 19:51:58
  */
+
+namespace Alipay\Request;
+
 class AlipayMarketingCardDeleteRequest
 {
 

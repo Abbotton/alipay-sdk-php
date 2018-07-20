@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-11 15:47:27
  */
+
+namespace Alipay\Request;
+
 class ZhimaMerchantCloseloopDataUploadRequest
 {
 

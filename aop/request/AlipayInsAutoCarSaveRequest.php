@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-05-18 15:27:46
  */
+
+namespace Alipay\Request;
+
 class AlipayInsAutoCarSaveRequest
 {
 

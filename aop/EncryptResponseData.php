@@ -7,6 +7,10 @@
  * Time: 下午8:51
  */
 
+namespace Alipay;
+
+namespace Alipay\Request;
+
 class EncryptResponseData
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-11-02 16:05:24
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenPublicUserFollowQueryRequest
 {
 

@@ -1,6 +1,11 @@
 <?php
 
+namespace Alipay;
+
 require_once 'AopEncrypt.php';
+
+
+namespace Alipay\Request;
 
 class AopClient
 {
@@ -572,9 +577,8 @@ class AopClient
      * @param  $targetCharset
      * @return string
      */
-    function characet($data, $targetCharset)
+    public function characet($data, $targetCharset)
     {
-        
         if (!empty($data)) {
             $fileType = $this->fileCharset;
             if (strcasecmp($fileType, $targetCharset) != 0) {
@@ -582,7 +586,6 @@ class AopClient
                 //              $data = iconv($fileType, $targetCharset.'//IGNORE', $data);
             }
         }
-
 
         return $data;
     }
@@ -654,9 +657,8 @@ class AopClient
         return $this->verify($this->getSignContent($params), $sign, $rsaPublicKeyFilePath, $signType);
     }
 
-    function verify($data, $sign, $rsaPublicKeyFilePath, $signType = 'RSA')
+    public function verify($data, $sign, $rsaPublicKeyFilePath, $signType = 'RSA')
     {
-
         if ($this->checkEmpty($this->alipayPublicKey)) {
             $pubKey = $this->alipayrsaPublicKey;
             $res = "-----BEGIN PUBLIC KEY-----\n" .
@@ -804,7 +806,7 @@ class AopClient
         return $strnull;
     }
 
-    function splitCN($cont, $n = 0, $subnum, $charset)
+    public function splitCN($cont, $n = 0, $subnum, $charset)
     {
         //$len = strlen($cont) / 3;
         $arrr = array();
@@ -818,7 +820,7 @@ class AopClient
         return $arrr;
     }
 
-    function subCNchar($str, $start = 0, $length, $charset = "gbk")
+    public function subCNchar($str, $start = 0, $length, $charset = "gbk")
     {
         if (strlen($str) <= $length) {
             return $str;
@@ -864,27 +866,23 @@ class AopClient
         }
     }
 
-    function parserJSONSignData($request, $responseContent, $responseJSON)
+    public function parserJSONSignData($request, $responseContent, $responseJSON)
     {
-
         $signData = new SignData();
 
         $signData->sign = $this->parserJSONSign($responseJSON);
         $signData->signSourceData = $this->parserJSONSignSource($request, $responseContent);
 
-
         return $signData;
     }
 
-    function parserJSONSignSource($request, $responseContent)
+    public function parserJSONSignSource($request, $responseContent)
     {
-
         $apiName = $request->getApiMethodName();
         $rootNodeName = str_replace(".", "_", $apiName) . $this->RESPONSE_SUFFIX;
 
         $rootIndex = strpos($responseContent, $rootNodeName);
         $errorIndex = strpos($responseContent, $this->ERROR_RESPONSE);
-
 
         if ($rootIndex > 0) {
             return $this->parserJSONSource($responseContent, $rootNodeName, $rootIndex);
@@ -895,7 +893,7 @@ class AopClient
         }
     }
 
-    function parserJSONSource($responseContent, $nodeName, $nodeIndex)
+    public function parserJSONSource($responseContent, $nodeName, $nodeIndex)
     {
         $signDataStartIndex = $nodeIndex + strlen($nodeName) + 2;
         $signIndex = strrpos($responseContent, "\"" . $this->SIGN_NODE_NAME . "\"");
@@ -909,38 +907,30 @@ class AopClient
         return substr($responseContent, $signDataStartIndex, $indexLen);
     }
 
-    function parserJSONSign($responseJSon)
+    public function parserJSONSign($responseJSon)
     {
-
         return $responseJSon->sign;
     }
 
-    function parserXMLSignData($request, $responseContent)
+    public function parserXMLSignData($request, $responseContent)
     {
-
-
         $signData = new SignData();
 
         $signData->sign = $this->parserXMLSign($responseContent);
         $signData->signSourceData = $this->parserXMLSignSource($request, $responseContent);
 
-
         return $signData;
     }
 
-    function parserXMLSignSource($request, $responseContent)
+    public function parserXMLSignSource($request, $responseContent)
     {
-
-
         $apiName = $request->getApiMethodName();
         $rootNodeName = str_replace(".", "_", $apiName) . $this->RESPONSE_SUFFIX;
-
 
         $rootIndex = strpos($responseContent, $rootNodeName);
         $errorIndex = strpos($responseContent, $this->ERROR_RESPONSE);
         //      $this->echoDebug("<br/>rootNodeName:" . $rootNodeName);
         //      $this->echoDebug("<br/> responseContent:<xmp>" . $responseContent . "</xmp>");
-
 
         if ($rootIndex > 0) {
             return $this->parserXMLSource($responseContent, $rootNodeName, $rootIndex);
@@ -951,7 +941,7 @@ class AopClient
         }
     }
 
-    function parserXMLSource($responseContent, $nodeName, $nodeIndex)
+    public function parserXMLSource($responseContent, $nodeName, $nodeIndex)
     {
         $signDataStartIndex = $nodeIndex + strlen($nodeName) + 1;
         $signIndex = strrpos($responseContent, "<" . $this->SIGN_NODE_NAME . ">");
@@ -963,18 +953,16 @@ class AopClient
             return null;
         }
 
-
         return substr($responseContent, $signDataStartIndex, $indexLen);
     }
 
-    function parserXMLSign($responseContent)
+    public function parserXMLSign($responseContent)
     {
         $signNodeName = "<" . $this->SIGN_NODE_NAME . ">";
         $signEndNodeName = "</" . $this->SIGN_NODE_NAME . ">";
 
         $indexOfSignNode = strpos($responseContent, $signNodeName);
         $indexOfSignEndNode = strpos($responseContent, $signEndNodeName);
-
 
         if ($indexOfSignNode < 0 || $indexOfSignEndNode < 0) {
             return null;
@@ -1171,9 +1159,8 @@ class AopClient
     }
 
 
-    function echoDebug($content)
+    public function echoDebug($content)
     {
-
         if ($this->debugInfo) {
             echo "<br/>" . $content;
         }

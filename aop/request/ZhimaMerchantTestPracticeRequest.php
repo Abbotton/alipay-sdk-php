@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-03-30 10:16:33
  */
+
+namespace Alipay\Request;
+
 class ZhimaMerchantTestPracticeRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-07-02 09:59:31
  */
+
+namespace Alipay\Request;
+
 class MybankCreditLoanapplyDataUploadRequest
 {
 

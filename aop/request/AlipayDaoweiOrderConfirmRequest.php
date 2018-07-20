@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-03-23 13:23:44
  */
+
+namespace Alipay\Request;
+
 class AlipayDaoweiOrderConfirmRequest
 {
 

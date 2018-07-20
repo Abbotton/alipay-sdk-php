@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-07-25 16:18:09
  */
+
+namespace Alipay\Request;
+
 class AlipayMarketingUserulePidQueryRequest
 {
 

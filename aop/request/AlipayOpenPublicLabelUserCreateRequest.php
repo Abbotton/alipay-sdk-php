@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-12-08 11:54:45
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenPublicLabelUserCreateRequest
 {
 

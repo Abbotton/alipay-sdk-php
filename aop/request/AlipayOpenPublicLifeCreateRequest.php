@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-12-18 14:57:49
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenPublicLifeCreateRequest
 {
 

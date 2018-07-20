@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-05-23 11:30:21
  */
+
+namespace Alipay\Request;
+
 class AntMerchantExpandImageUploadRequest
 {
 

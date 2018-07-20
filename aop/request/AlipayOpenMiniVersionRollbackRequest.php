@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-15 15:24:19
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenMiniVersionRollbackRequest
 {
 

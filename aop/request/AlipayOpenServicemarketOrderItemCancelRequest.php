@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-08-25 11:11:54
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenServicemarketOrderItemCancelRequest
 {
 

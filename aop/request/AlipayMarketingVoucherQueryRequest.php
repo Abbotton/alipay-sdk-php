@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-09-26 14:52:11
  */
+
+namespace Alipay\Request;
+
 class AlipayMarketingVoucherQueryRequest
 {
 

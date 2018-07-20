@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-02-05 17:51:11
  */
+
+namespace Alipay\Request;
+
 class AlipayMarketingCardTemplateBatchqueryRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-09 11:59:57
  */
+
+namespace Alipay\Request;
+
 class AlipayInsAutoAutoinsprodEnquriyApplyRequest
 {
 

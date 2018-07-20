@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2015-01-29 15:46:36
  */
+
+namespace Alipay\Request;
+
 class AlipayMpointprodBenefitDetailGetRequest
 {
 

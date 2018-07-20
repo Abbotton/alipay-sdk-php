@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-02-10 18:51:44
  */
+
+namespace Alipay\Request;
+
 class AlipayEcoCplifeRooominfoQueryRequest
 {
 

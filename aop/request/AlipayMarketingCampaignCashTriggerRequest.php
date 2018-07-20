@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-05-21 17:25:00
  */
+
+namespace Alipay\Request;
+
 class AlipayMarketingCampaignCashTriggerRequest
 {
 

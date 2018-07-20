@@ -7,10 +7,13 @@
  * @version $Id: AlipayMobilePublicMultiMediaClient.php, v 0.1 Aug 15, 2014 10:19:01 AM yikai.hu Exp $
  */
 
-//namespace alipay\api ;
+namespace Alipay;
 
 require "AlipayMobilePublicMultiMediaExecute.php";
 
+
+
+namespace Alipay\Request;
 
 class AlipayMobilePublicMultiMediaClient
 {
@@ -39,7 +42,7 @@ class AlipayMobilePublicMultiMediaClient
 
 
 
-    function __construct($serverUrl = '', $appId = '', $partner_private_key = '', $format = '', $charset = 'GBK')
+    public function __construct($serverUrl = '', $appId = '', $partner_private_key = '', $format = '', $charset = 'GBK')
     {
         $this -> serverUrl = $serverUrl;
         $this -> appId = $appId;

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-03-06 20:18:29
  */
+
+namespace Alipay\Request;
+
 class AlipayEcoMycarDataExternalQueryRequest
 {
 

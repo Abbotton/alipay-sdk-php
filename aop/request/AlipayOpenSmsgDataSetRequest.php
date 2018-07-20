@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-03-09 11:16:20
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenSmsgDataSetRequest
 {
 

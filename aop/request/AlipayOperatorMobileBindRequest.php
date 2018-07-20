@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-05-03 16:48:39
  */
+
+namespace Alipay\Request;
+
 class AlipayOperatorMobileBindRequest
 {
 

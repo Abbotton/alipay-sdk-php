@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-06-26 14:14:12
  */
+
+namespace Alipay\Request;
+
 class KoubeiCateringTablelistQueryRequest
 {
 

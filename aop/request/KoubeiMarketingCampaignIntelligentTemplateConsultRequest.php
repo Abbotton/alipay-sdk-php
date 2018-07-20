@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-29 11:02:45
  */
+
+namespace Alipay\Request;
+
 class KoubeiMarketingCampaignIntelligentTemplateConsultRequest
 {
 

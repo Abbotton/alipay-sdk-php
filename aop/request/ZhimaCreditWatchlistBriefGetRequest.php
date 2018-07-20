@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-11-23 14:20:59
  */
+
+namespace Alipay\Request;
+
 class ZhimaCreditWatchlistBriefGetRequest
 {
 

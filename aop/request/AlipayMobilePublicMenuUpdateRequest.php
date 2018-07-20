@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-31 17:39:27
  */
+
+namespace Alipay\Request;
+
 class AlipayMobilePublicMenuUpdateRequest
 {
 

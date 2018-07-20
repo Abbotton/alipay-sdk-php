@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-06-14 11:34:41
  */
+
+namespace Alipay\Request;
+
 class AlipayMobileCodeCreateRequest
 {
 

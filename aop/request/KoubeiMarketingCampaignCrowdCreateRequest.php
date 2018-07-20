@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-04-25 17:16:38
  */
+
+namespace Alipay\Request;
+
 class KoubeiMarketingCampaignCrowdCreateRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-04-07 18:08:15
  */
+
+namespace Alipay\Request;
+
 class AlipayMobileBksigntokenVerifyRequest
 {
 

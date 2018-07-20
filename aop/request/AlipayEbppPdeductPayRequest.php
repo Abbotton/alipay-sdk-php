@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-05-18 17:15:00
  */
+
+namespace Alipay\Request;
+
 class AlipayEbppPdeductPayRequest
 {
 

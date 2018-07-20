@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-08-02 14:26:17
  */
+
+namespace Alipay\Request;
+
 class AlipaySecurityProdFingerprintDeleteRequest
 {
 

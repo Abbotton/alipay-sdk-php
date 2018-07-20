@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-05-02 14:40:53
  */
+
+namespace Alipay\Request;
+
 class ZhimaDataBatchFeedbackRequest
 {
 

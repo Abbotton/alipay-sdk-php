@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-10-24 10:29:59
  */
+
+namespace Alipay\Request;
+
 class AlipayInsCooperationRegionQrcodeApplyRequest
 {
 

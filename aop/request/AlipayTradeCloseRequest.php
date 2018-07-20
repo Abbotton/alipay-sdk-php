@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-12-14 16:27:58
  */
+
+namespace Alipay\Request;
+
 class AlipayTradeCloseRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-08-11 15:48:05
  */
+
+namespace Alipay\Request;
+
 class AlipayUserAccountFreezeGetRequest
 {
 

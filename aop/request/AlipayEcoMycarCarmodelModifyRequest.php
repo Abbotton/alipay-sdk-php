@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-06-25 14:52:20
  */
+
+namespace Alipay\Request;
+
 class AlipayEcoMycarCarmodelModifyRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-03-23 14:22:15
  */
+
+namespace Alipay\Request;
+
 class AlipayMarketingCampaignDrawcampQueryRequest
 {
 

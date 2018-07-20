@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-12-08 19:38:04
  */
+
+namespace Alipay\Request;
+
 class AntMerchantExpandContractFacetofaceSignRequest
 {
 

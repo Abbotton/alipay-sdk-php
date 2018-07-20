@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-03-03 16:48:04
  */
+
+namespace Alipay\Request;
+
 class AlipayMarketingCampaignDiscountWhitelistQueryRequest
 {
 

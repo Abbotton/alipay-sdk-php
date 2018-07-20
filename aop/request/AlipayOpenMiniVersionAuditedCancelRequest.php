@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-15 13:29:48
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenMiniVersionAuditedCancelRequest
 {
 

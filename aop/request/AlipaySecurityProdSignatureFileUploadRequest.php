@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-12-20 15:24:53
  */
+
+namespace Alipay\Request;
+
 class AlipaySecurityProdSignatureFileUploadRequest
 {
 

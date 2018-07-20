@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-07-02 10:28:56
  */
+
+namespace Alipay\Request;
+
 class AlipayEbppInvoiceTitleListGetRequest
 {
 

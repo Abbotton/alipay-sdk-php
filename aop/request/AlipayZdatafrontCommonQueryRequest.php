@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-03-21 11:14:39
  */
+
+namespace Alipay\Request;
+
 class AlipayZdatafrontCommonQueryRequest
 {
 

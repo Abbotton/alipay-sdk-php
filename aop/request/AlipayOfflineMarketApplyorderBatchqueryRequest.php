@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-03-27 17:07:28
  */
+
+namespace Alipay\Request;
+
 class AlipayOfflineMarketApplyorderBatchqueryRequest
 {
 

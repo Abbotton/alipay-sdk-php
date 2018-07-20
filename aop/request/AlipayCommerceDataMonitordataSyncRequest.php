@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-04 10:37:50
  */
+
+namespace Alipay\Request;
+
 class AlipayCommerceDataMonitordataSyncRequest
 {
 

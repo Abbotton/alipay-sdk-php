@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-05-28 22:41:09
  */
+
+namespace Alipay\Request;
+
 class AlipayMsaasMediarecogVoiceMediaaudioUploadRequest
 {
 

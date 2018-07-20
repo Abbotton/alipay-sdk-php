@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-03-14 14:04:01
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenMiniTemplateUsageQueryRequest
 {
 

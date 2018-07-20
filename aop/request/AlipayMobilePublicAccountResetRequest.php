@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-12-19 20:52:24
  */
+
+namespace Alipay\Request;
+
 class AlipayMobilePublicAccountResetRequest
 {
 

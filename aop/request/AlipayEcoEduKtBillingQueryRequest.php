@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-11-06 11:47:53
  */
+
+namespace Alipay\Request;
+
 class AlipayEcoEduKtBillingQueryRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-05 15:05:24
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenPublicUserDataBatchqueryRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-10-13 16:55:38
  */
+
+namespace Alipay\Request;
+
 class AlipayMarketingCardActivateformQueryRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-03-04 14:55:20
  */
+
+namespace Alipay\Request;
+
 class AlipaySecurityInfoAnalysisRequest
 {
 

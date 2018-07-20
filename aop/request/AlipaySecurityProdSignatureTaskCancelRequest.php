@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-12-20 15:25:04
  */
+
+namespace Alipay\Request;
+
 class AlipaySecurityProdSignatureTaskCancelRequest
 {
 

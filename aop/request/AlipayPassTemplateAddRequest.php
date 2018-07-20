@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-09 22:27:56
  */
+
+namespace Alipay\Request;
+
 class AlipayPassTemplateAddRequest
 {
 

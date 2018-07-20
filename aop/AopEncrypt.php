@@ -13,6 +13,9 @@
  * @param  string $str
  * @return string
  */
+
+namespace Alipay;
+
 function encrypt($str, $screct_key)
 {
     //AES, 128 模式加密数据 CBC

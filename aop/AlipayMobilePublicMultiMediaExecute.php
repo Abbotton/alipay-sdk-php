@@ -7,9 +7,9 @@
  * @version $Id: AlipayMobilePublicMultiMediaExecute.php, v 0.1 Aug 15, 2014 10:19:01 AM yuanwai.wang Exp $
  */
 
-//namespace alipay\api ;
+namespace Alipay;
 
-
+namespace Alipay\Request;
 
 class AlipayMobilePublicMultiMediaExecute
 {
@@ -27,7 +27,7 @@ class AlipayMobilePublicMultiMediaExecute
     /*
      * @$header : 头部
      * */
-    function __construct($header, $body, $httpCode)
+    public function __construct($header, $body, $httpCode)
     {
         $this -> code = $httpCode;
         $this -> msg = '';

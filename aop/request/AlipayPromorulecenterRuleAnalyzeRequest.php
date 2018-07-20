@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-10-09 17:38:20
  */
+
+namespace Alipay\Request;
+
 class AlipayPromorulecenterRuleAnalyzeRequest
 {
 

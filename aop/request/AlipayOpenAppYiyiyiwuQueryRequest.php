@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-11-15 13:09:47
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenAppYiyiyiwuQueryRequest
 {
 

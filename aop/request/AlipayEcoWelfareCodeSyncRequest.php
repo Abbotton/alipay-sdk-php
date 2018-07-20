@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-11-02 19:53:47
  */
+
+namespace Alipay\Request;
+
 class AlipayEcoWelfareCodeSyncRequest
 {
 

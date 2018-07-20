@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-06-20 17:20:00
  */
+
+namespace Alipay\Request;
+
 class AlipayTradeRefundRequest
 {
 

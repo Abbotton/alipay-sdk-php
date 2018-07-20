@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-03-03 16:47:56
  */
+
+namespace Alipay\Request;
+
 class AlipayMarketingCampaignDiscountStatusUpdateRequest
 {
 

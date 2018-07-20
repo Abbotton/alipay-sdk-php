@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-07-29 20:00:29
  */
+
+namespace Alipay\Request;
+
 class AlipayMobilePublicLabelAddRequest
 {
 

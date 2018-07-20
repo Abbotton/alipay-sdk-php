@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-04-26 15:11:21
  */
+
+namespace Alipay\Request;
+
 class AlipayZdataassetsEasyserviceRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-09-26 13:19:43
  */
+
+namespace Alipay\Request;
+
 class AntMerchantExpandPersonalApplyRequest
 {
 

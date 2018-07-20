@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2015-12-18 21:35:58
  */
+
+namespace Alipay\Request;
+
 class AlipayCommerceCityfacilitatorDepositCancelRequest
 {
 

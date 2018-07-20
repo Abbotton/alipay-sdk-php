@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-05-17 14:50:00
  */
+
+namespace Alipay\Request;
+
 class AlipayMarketingToolFengdieMemberCreateRequest
 {
 

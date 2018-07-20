@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-05-18 11:27:33
  */
+
+namespace Alipay\Request;
+
 class AlipayZdatafrontDatatransferedSendRequest
 {
 

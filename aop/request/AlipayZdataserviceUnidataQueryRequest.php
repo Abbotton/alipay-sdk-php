@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-04-26 16:20:03
  */
+
+namespace Alipay\Request;
+
 class AlipayZdataserviceUnidataQueryRequest
 {
 

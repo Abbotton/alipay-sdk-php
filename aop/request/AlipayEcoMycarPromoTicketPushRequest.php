@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-09-15 16:29:58
  */
+
+namespace Alipay\Request;
+
 class AlipayEcoMycarPromoTicketPushRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-04-14 18:53:05
  */
+
+namespace Alipay\Request;
+
 class AlipayAssetPointOrderCreateRequest
 {
 

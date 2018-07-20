@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-07-28 23:35:07
  */
+
+namespace Alipay\Request;
+
 class AntMerchantExpandMapplyorderQueryRequest
 {
 

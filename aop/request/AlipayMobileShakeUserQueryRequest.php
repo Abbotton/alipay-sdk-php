@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-03 16:35:37
  */
+
+namespace Alipay\Request;
+
 class AlipayMobileShakeUserQueryRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-15 14:16:24
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenMiniVersionOfflineRequest
 {
 

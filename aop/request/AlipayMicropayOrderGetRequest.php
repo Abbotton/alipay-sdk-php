@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-06-06 17:49:51
  */
+
+namespace Alipay\Request;
+
 class AlipayMicropayOrderGetRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-07-04 10:40:37
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenPublicShortlinkCreateRequest
 {
 

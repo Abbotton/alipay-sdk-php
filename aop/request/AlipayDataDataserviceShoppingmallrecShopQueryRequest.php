@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-08-15 19:53:06
  */
+
+namespace Alipay\Request;
+
 class AlipayDataDataserviceShoppingmallrecShopQueryRequest
 {
 

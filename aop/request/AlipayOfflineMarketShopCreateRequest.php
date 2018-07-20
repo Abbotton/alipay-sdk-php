@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-07-19 16:55:33
  */
+
+namespace Alipay\Request;
+
 class AlipayOfflineMarketShopCreateRequest
 {
 

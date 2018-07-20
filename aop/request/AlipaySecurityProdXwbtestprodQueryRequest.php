@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-04-18 11:43:35
  */
+
+namespace Alipay\Request;
+
 class AlipaySecurityProdXwbtestprodQueryRequest
 {
 

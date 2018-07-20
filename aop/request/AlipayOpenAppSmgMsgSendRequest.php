@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-03-14 14:19:47
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenAppSmgMsgSendRequest
 {
 

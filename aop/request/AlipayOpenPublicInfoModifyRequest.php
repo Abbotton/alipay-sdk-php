@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-12 16:54:39
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenPublicInfoModifyRequest
 {
 

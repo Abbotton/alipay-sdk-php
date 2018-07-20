@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-04-14 11:46:40
  */
+
+namespace Alipay\Request;
+
 class AlipayMemberCouponQuerylistRequest
 {
 

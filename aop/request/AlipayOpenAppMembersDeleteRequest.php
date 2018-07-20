@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-15 13:56:08
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenAppMembersDeleteRequest
 {
 

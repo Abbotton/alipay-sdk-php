@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-04-14 11:43:02
  */
+
+namespace Alipay\Request;
+
 class AlipayDataBillDownloadurlGetRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-01-04 10:16:04
  */
+
+namespace Alipay\Request;
+
 class AlipayTrustUserRiskidentifyGetRequest
 {
 

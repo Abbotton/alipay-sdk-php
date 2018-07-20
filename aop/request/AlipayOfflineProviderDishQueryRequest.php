@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-07-03 14:41:31
  */
+
+namespace Alipay\Request;
+
 class AlipayOfflineProviderDishQueryRequest
 {
 

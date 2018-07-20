@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-06-04 19:40:00
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenMiniVersionAuditApplyRequest
 {
 

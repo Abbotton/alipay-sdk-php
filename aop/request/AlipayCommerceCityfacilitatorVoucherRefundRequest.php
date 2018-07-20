@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-08-03 16:10:56
  */
+
+namespace Alipay\Request;
+
 class AlipayCommerceCityfacilitatorVoucherRefundRequest
 {
 

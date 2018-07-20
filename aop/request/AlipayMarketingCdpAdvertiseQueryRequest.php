@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-12-15 11:50:40
  */
+
+namespace Alipay\Request;
+
 class AlipayMarketingCdpAdvertiseQueryRequest
 {
 

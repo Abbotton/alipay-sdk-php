@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-02-02 15:48:33
  */
+
+namespace Alipay\Request;
+
 class AlipaySecurityProdAmlriskQueryRequest
 {
 

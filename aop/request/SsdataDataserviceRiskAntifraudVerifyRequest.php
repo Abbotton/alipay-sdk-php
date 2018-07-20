@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-09-27 11:42:12
  */
+
+namespace Alipay\Request;
+
 class SsdataDataserviceRiskAntifraudVerifyRequest
 {
 

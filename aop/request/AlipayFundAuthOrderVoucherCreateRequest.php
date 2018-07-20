@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-06-20 22:10:58
  */
+
+namespace Alipay\Request;
+
 class AlipayFundAuthOrderVoucherCreateRequest
 {
 

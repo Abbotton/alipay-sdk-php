@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-18 15:28:48
  */
+
+namespace Alipay\Request;
+
 class AlipayCommerceAirXfgDsgModifyRequest
 {
 

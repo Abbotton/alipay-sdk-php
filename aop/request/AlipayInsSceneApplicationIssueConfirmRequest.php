@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-04-03 11:29:12
  */
+
+namespace Alipay\Request;
+
 class AlipayInsSceneApplicationIssueConfirmRequest
 {
 

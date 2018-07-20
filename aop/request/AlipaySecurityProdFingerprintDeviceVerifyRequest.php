@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-05-08 11:20:00
  */
+
+namespace Alipay\Request;
+
 class AlipaySecurityProdFingerprintDeviceVerifyRequest
 {
 

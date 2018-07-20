@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-06-06 11:40:51
  */
+
+namespace Alipay\Request;
+
 class KoubeiItemCategoryChildrenBatchqueryRequest
 {
 

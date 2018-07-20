@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-24 23:38:46
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenServicemarketOrderQueryRequest
 {
 

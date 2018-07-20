@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-06-17 15:05:08
  */
+
+namespace Alipay\Request;
+
 class AlipaySecurityRiskHideDeviceidQueryRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2014-08-22 15:32:32
  */
+
+namespace Alipay\Request;
+
 class AlipayFlashsalesStockSyncUpdateRequest
 {
 

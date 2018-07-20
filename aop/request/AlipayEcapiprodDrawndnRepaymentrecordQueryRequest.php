@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-03-29 11:34:40
  */
+
+namespace Alipay\Request;
+
 class AlipayEcapiprodDrawndnRepaymentrecordQueryRequest
 {
 

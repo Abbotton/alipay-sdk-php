@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-11-07 10:29:27
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenPublicAdvertDeleteRequest
 {
 

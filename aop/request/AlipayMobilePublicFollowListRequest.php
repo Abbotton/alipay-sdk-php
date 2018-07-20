@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-31 17:29:51
  */
+
+namespace Alipay\Request;
+
 class AlipayMobilePublicFollowListRequest
 {
 

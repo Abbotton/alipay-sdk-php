@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-12-04 17:55:09
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenAppXwbtestabcQueryRequest
 {
 

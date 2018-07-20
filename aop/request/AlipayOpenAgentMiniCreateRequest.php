@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-31 17:53:02
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenAgentMiniCreateRequest
 {
 

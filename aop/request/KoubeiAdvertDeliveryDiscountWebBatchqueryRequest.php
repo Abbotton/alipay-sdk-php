@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-06-11 10:06:11
  */
+
+namespace Alipay\Request;
+
 class KoubeiAdvertDeliveryDiscountWebBatchqueryRequest
 {
 

@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-05-15 15:52:25
  */
+
+namespace Alipay\Request;
+
 class AlipayUserAddressQueryRequest
 {
 

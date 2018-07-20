@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-06-09 20:14:19
  */
+
+namespace Alipay\Request;
+
 class AlipayEcoCplifeBillBatchUploadRequest
 {
 

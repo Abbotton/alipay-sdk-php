@@ -6,6 +6,10 @@
  * Time: 下午6:21
  */
 
+namespace Alipay;
+
+namespace Alipay\Request;
+
 class SignData
 {
 

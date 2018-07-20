@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-15 15:25:38
  */
+
+namespace Alipay\Request;
+
 class AlipayOpenMiniSafedomainCreateRequest
 {
 

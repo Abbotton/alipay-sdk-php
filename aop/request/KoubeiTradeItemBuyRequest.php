@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-09-11 16:39:57
  */
+
+namespace Alipay\Request;
+
 class KoubeiTradeItemBuyRequest
 {
 

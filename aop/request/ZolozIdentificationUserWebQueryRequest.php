@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-03-05 11:34:47
  */
+
+namespace Alipay\Request;
+
 class ZolozIdentificationUserWebQueryRequest
 {
 

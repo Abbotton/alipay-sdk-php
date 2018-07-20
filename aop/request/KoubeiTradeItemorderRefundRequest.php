@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-02-08 13:54:45
  */
+
+namespace Alipay\Request;
+
 class KoubeiTradeItemorderRefundRequest
 {
 

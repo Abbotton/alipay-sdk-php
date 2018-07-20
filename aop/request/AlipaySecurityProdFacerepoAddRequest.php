@@ -5,6 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-06-30 08:29:39
  */
+
+namespace Alipay\Request;
+
 class AlipaySecurityProdFacerepoAddRequest
 {
 
