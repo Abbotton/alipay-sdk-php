@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.marketing.tool.fengdie.activity.query request
  *
  * @author auto create
- * @since 1.0, 2017-03-20 10:29:11
+ * @since  1.0, 2017-03-20 10:29:11
  */
 class AlipayMarketingToolFengdieActivityQueryRequest
 {

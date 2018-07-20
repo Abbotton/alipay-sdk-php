@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.pass.verify.query request
  *
  * @author auto create
- * @since 1.0, 2014-06-12 17:16:02
+ * @since  1.0, 2014-06-12 17:16:02
  */
 class AlipayPassVerifyQueryRequest
 {

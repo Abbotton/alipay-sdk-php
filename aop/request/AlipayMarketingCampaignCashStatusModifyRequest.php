@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.marketing.campaign.cash.status.modify request
  *
  * @author auto create
- * @since 1.0, 2017-07-14 11:53:01
+ * @since  1.0, 2017-07-14 11:53:01
  */
 class AlipayMarketingCampaignCashStatusModifyRequest
 {

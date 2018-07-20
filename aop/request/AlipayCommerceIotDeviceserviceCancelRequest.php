@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.commerce.iot.deviceservice.cancel request
  *
  * @author auto create
- * @since 1.0, 2017-11-24 15:20:44
+ * @since  1.0, 2017-11-24 15:20:44
  */
 class AlipayCommerceIotDeviceserviceCancelRequest
 {

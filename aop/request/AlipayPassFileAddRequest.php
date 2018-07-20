@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.pass.file.add request
  *
  * @author auto create
- * @since 1.0, 2017-12-07 20:13:48
+ * @since  1.0, 2017-12-07 20:13:48
  */
 class AlipayPassFileAddRequest
 {

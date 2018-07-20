@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.offline.marketing.voucher.status.query request
  *
  * @author auto create
- * @since 1.0, 2018-01-12 10:57:57
+ * @since  1.0, 2018-01-12 10:57:57
  */
 class AlipayOfflineMarketingVoucherStatusQueryRequest
 {

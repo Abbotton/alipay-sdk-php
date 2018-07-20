@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.security.prod.facerepo.search request
  *
  * @author auto create
- * @since 1.0, 2016-06-30 08:29:21
+ * @since  1.0, 2016-06-30 08:29:21
  */
 class AlipaySecurityProdFacerepoSearchRequest
 {

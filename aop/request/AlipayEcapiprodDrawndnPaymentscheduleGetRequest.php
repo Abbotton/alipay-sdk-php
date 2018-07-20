@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.ecapiprod.drawndn.paymentschedule.get request
  *
  * @author auto create
- * @since 1.0, 2016-03-29 11:34:20
+ * @since  1.0, 2016-03-29 11:34:20
  */
 class AlipayEcapiprodDrawndnPaymentscheduleGetRequest
 {

@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.pass.tpl.add request
  *
  * @author auto create
- * @since 1.0, 2016-07-01 15:35:14
+ * @since  1.0, 2016-07-01 15:35:14
  */
 class AlipayPassTplAddRequest
 {

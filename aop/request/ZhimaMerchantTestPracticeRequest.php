@@ -3,7 +3,7 @@
  * ALIPAY API: zhima.merchant.test.practice request
  *
  * @author auto create
- * @since 1.0, 2016-03-30 10:16:33
+ * @since  1.0, 2016-03-30 10:16:33
  */
 class ZhimaMerchantTestPracticeRequest
 {

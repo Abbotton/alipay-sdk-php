@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.mdata.tag.get request
  *
  * @author auto create
- * @since 1.0, 2015-03-11 14:09:56
+ * @since  1.0, 2015-03-11 14:09:56
  */
 class AlipayMdataTagGetRequest
 {

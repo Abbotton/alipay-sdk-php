@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.security.prod.amlrisk.query request
  *
  * @author auto create
- * @since 1.0, 2016-02-02 15:48:33
+ * @since  1.0, 2016-02-02 15:48:33
  */
 class AlipaySecurityProdAmlriskQueryRequest
 {

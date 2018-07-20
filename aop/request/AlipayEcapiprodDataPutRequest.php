@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.ecapiprod.data.put request
  *
  * @author auto create
- * @since 1.0, 2015-04-02 16:45:23
+ * @since  1.0, 2015-04-02 16:45:23
  */
 class AlipayEcapiprodDataPutRequest
 {

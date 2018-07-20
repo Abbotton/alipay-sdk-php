@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.mobile.beacon.device.query request
  *
  * @author auto create
- * @since 1.0, 2017-02-28 11:12:47
+ * @since  1.0, 2017-02-28 11:12:47
  */
 class AlipayMobileBeaconDeviceQueryRequest
 {

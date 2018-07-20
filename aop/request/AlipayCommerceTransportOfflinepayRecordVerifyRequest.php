@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.commerce.transport.offlinepay.record.verify request
  *
  * @author auto create
- * @since 1.0, 2017-09-04 17:14:03
+ * @since  1.0, 2017-09-04 17:14:03
  */
 class AlipayCommerceTransportOfflinepayRecordVerifyRequest
 {

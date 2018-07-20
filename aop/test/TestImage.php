@@ -6,14 +6,14 @@
 
 
 
-include('../AlipayMobilePublicMultiMediaClient.php');
+require '../AlipayMobilePublicMultiMediaClient.php';
 
 
 header("Content-type: text/html; charset=gbk");
 
 /**
  *
- * @author wangYuanWai
+ * @author  wangYuanWai
  * @version $Id: Test.hp, v 0.1 Aug 6, 2014 4:20:17 PM yikai.hu Exp $
  */
 class TestImage
@@ -48,7 +48,7 @@ class TestImage
         );
         $response = null;
         $outputStream = null;
-        $request = $alipayClient -> getContents() ;
+        $request = $alipayClient -> getContents();
 
         //200
         //echo( '状态码：'. $request -> getCode() .', ');
@@ -73,8 +73,8 @@ class TestImage
             header("Accept-Length: " . $request -> getContentLength());//文件大小
             header("Content-Length: " . $request -> getContentLength());//文件大小
             header('Content-Disposition: attachment; filename="' . time() . '.' . $type . '"'); //文件名
-            echo $request -> getBody() ;
-            exit() ;
+            echo $request -> getBody();
+            exit();
         }
 
         //echo( '内容： , '. $request -> getContentLength()  );

@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.offline.market.shop.public.bind request
  *
  * @author auto create
- * @since 1.0, 2016-07-29 19:57:30
+ * @since  1.0, 2016-07-29 19:57:30
  */
 class AlipayOfflineMarketShopPublicBindRequest
 {

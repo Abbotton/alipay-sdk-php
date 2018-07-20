@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.security.prod.signature.task.query request
  *
  * @author auto create
- * @since 1.0, 2017-12-20 15:24:43
+ * @since  1.0, 2017-12-20 15:24:43
  */
 class AlipaySecurityProdSignatureTaskQueryRequest
 {

@@ -3,7 +3,7 @@
  * ALIPAY API: koubei.marketing.data.smartactivity.forecast request
  *
  * @author auto create
- * @since 1.0, 2018-04-25 17:34:33
+ * @since  1.0, 2018-04-25 17:34:33
  */
 class KoubeiMarketingDataSmartactivityForecastRequest
 {

@@ -3,7 +3,7 @@
  * ALIPAY API: koubei.advert.delivery.item.apply request
  *
  * @author auto create
- * @since 1.0, 2018-03-02 10:02:06
+ * @since  1.0, 2018-03-02 10:02:06
  */
 class KoubeiAdvertDeliveryItemApplyRequest
 {

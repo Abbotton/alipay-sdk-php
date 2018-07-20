@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.user.account.userid.batchquery request
  *
  * @author auto create
- * @since 1.0, 2016-06-06 21:37:53
+ * @since  1.0, 2016-06-06 21:37:53
  */
 class AlipayUserAccountUseridBatchqueryRequest
 {

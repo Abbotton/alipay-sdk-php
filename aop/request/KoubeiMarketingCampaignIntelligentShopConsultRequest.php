@@ -3,7 +3,7 @@
  * ALIPAY API: koubei.marketing.campaign.intelligent.shop.consult request
  *
  * @author auto create
- * @since 1.0, 2018-01-29 11:03:57
+ * @since  1.0, 2018-01-29 11:03:57
  */
 class KoubeiMarketingCampaignIntelligentShopConsultRequest
 {

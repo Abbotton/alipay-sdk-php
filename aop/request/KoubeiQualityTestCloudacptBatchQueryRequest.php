@@ -3,7 +3,7 @@
  * ALIPAY API: koubei.quality.test.cloudacpt.batch.query request
  *
  * @author auto create
- * @since 1.0, 2016-06-15 15:06:46
+ * @since  1.0, 2016-06-15 15:06:46
  */
 class KoubeiQualityTestCloudacptBatchQueryRequest
 {

@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.boss.cs.channel.query request
  *
  * @author auto create
- * @since 1.0, 2016-02-23 20:04:44
+ * @since  1.0, 2016-02-23 20:04:44
  */
 class AlipayBossCsChannelQueryRequest
 {

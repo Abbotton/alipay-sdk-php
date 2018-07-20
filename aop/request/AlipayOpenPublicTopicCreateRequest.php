@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.open.public.topic.create request
  *
  * @author auto create
- * @since 1.0, 2018-01-05 17:38:29
+ * @since  1.0, 2018-01-05 17:38:29
  */
 class AlipayOpenPublicTopicCreateRequest
 {

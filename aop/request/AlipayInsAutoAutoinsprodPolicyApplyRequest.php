@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.ins.auto.autoinsprod.policy.apply request
  *
  * @author auto create
- * @since 1.0, 2018-01-09 11:49:42
+ * @since  1.0, 2018-01-09 11:49:42
  */
 class AlipayInsAutoAutoinsprodPolicyApplyRequest
 {

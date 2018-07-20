@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.eco.mycar.carlib.info.push request
  *
  * @author auto create
- * @since 1.0, 2017-09-15 16:30:04
+ * @since  1.0, 2017-09-15 16:30:04
  */
 class AlipayEcoMycarCarlibInfoPushRequest
 {

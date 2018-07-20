@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.open.mini.baseinfo.query request
  *
  * @author auto create
- * @since 1.0, 2018-01-15 14:11:36
+ * @since  1.0, 2018-01-15 14:11:36
  */
 class AlipayOpenMiniBaseinfoQueryRequest
 {

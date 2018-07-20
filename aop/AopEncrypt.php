@@ -9,7 +9,8 @@
 
 /**
  * 加密方法
- * @param string $str
+ *
+ * @param  string $str
  * @return string
  */
 function encrypt($str, $screct_key)
@@ -25,7 +26,8 @@ function encrypt($str, $screct_key)
 
 /**
  * 解密方法
- * @param string $str
+ *
+ * @param  string $str
  * @return string
  */
 function decrypt($str, $screct_key)
@@ -43,7 +45,8 @@ function decrypt($str, $screct_key)
 
 /**
  * 填充算法
- * @param string $source
+ *
+ * @param  string $source
  * @return string
  */
 function addPKCS7Padding($source)
@@ -60,7 +63,8 @@ function addPKCS7Padding($source)
 }
 /**
  * 移去填充算法
- * @param string $source
+ *
+ * @param  string $source
  * @return string
  */
 function stripPKSC7Padding($source)

@@ -3,7 +3,7 @@
  * ALIPAY API: koubei.marketing.data.intelligent.effect.query request
  *
  * @author auto create
- * @since 1.0, 2017-11-17 06:02:50
+ * @since  1.0, 2017-11-17 06:02:50
  */
 class KoubeiMarketingDataIntelligentEffectQueryRequest
 {

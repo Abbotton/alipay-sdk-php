@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.daowei.order.confirm request
  *
  * @author auto create
- * @since 1.0, 2018-03-23 13:23:44
+ * @since  1.0, 2018-03-23 13:23:44
  */
 class AlipayDaoweiOrderConfirmRequest
 {

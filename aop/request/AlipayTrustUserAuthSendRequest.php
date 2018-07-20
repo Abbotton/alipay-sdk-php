@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.trust.user.auth.send request
  *
  * @author auto create
- * @since 1.0, 2015-05-15 09:36:22
+ * @since  1.0, 2015-05-15 09:36:22
  */
 class AlipayTrustUserAuthSendRequest
 {

@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.ins.auto.car.save request
  *
  * @author auto create
- * @since 1.0, 2016-05-18 15:27:46
+ * @since  1.0, 2016-05-18 15:27:46
  */
 class AlipayInsAutoCarSaveRequest
 {

@@ -3,7 +3,7 @@
  * ALIPAY API: koubei.item.extitem.existed.query request
  *
  * @author auto create
- * @since 1.0, 2016-07-06 10:48:15
+ * @since  1.0, 2016-07-06 10:48:15
  */
 class KoubeiItemExtitemExistedQueryRequest
 {

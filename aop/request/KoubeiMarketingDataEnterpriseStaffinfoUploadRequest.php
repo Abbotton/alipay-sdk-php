@@ -3,7 +3,7 @@
  * ALIPAY API: koubei.marketing.data.enterprise.staffinfo.upload request
  *
  * @author auto create
- * @since 1.0, 2017-07-25 15:32:34
+ * @since  1.0, 2017-07-25 15:32:34
  */
 class KoubeiMarketingDataEnterpriseStaffinfoUploadRequest
 {

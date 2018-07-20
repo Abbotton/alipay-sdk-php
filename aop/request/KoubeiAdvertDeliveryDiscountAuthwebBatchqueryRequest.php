@@ -3,7 +3,7 @@
  * ALIPAY API: koubei.advert.delivery.discount.authweb.batchquery request
  *
  * @author auto create
- * @since 1.0, 2018-01-30 11:51:23
+ * @since  1.0, 2018-01-30 11:51:23
  */
 class KoubeiAdvertDeliveryDiscountAuthwebBatchqueryRequest
 {

@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.open.smsg.data.set request
  *
  * @author auto create
- * @since 1.0, 2018-03-09 11:16:20
+ * @since  1.0, 2018-03-09 11:16:20
  */
 class AlipayOpenSmsgDataSetRequest
 {

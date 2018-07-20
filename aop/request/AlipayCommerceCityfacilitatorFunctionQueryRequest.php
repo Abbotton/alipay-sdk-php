@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.commerce.cityfacilitator.function.query request
  *
  * @author auto create
- * @since 1.0, 2015-12-15 11:19:03
+ * @since  1.0, 2015-12-15 11:19:03
  */
 class AlipayCommerceCityfacilitatorFunctionQueryRequest
 {

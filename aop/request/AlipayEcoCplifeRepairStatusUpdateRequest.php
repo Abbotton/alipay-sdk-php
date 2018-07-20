@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.eco.cplife.repair.status.update request
  *
  * @author auto create
- * @since 1.0, 2018-06-09 20:19:57
+ * @since  1.0, 2018-06-09 20:19:57
  */
 class AlipayEcoCplifeRepairStatusUpdateRequest
 {

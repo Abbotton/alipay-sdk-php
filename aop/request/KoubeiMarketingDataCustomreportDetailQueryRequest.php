@@ -3,7 +3,7 @@
  * ALIPAY API: koubei.marketing.data.customreport.detail.query request
  *
  * @author auto create
- * @since 1.0, 2018-04-25 17:35:28
+ * @since  1.0, 2018-04-25 17:35:28
  */
 class KoubeiMarketingDataCustomreportDetailQueryRequest
 {

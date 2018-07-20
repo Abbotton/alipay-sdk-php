@@ -3,7 +3,7 @@
  * ALIPAY API: koubei.marketing.campaign.user.asset.query request
  *
  * @author auto create
- * @since 1.0, 2018-03-21 15:19:49
+ * @since  1.0, 2018-03-21 15:19:49
  */
 class KoubeiMarketingCampaignUserAssetQueryRequest
 {

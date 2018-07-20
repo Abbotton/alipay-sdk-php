@@ -2,13 +2,14 @@
 
 /**
  * 多媒体文件客户端
- * @author yikai.hu
+ *
+ * @author  yikai.hu
  * @version $Id: AlipayMobilePublicMultiMediaClient.php, v 0.1 Aug 15, 2014 10:19:01 AM yikai.hu Exp $
  */
 
 //namespace alipay\api ;
 
-include("AlipayMobilePublicMultiMediaExecute.php");
+require "AlipayMobilePublicMultiMediaExecute.php";
 
 
 class AlipayMobilePublicMultiMediaClient
@@ -49,7 +50,8 @@ class AlipayMobilePublicMultiMediaClient
 
     /**
      * getContents 获取网址内容
-     * @param $request
+     *
+     * @param  $request
      * @return text | bin
      */
     public function getContents()
@@ -119,7 +121,7 @@ class AlipayMobilePublicMultiMediaClient
 
     /**
      *
-     * @param $request
+     * @param  $request
      * @return text | bin
      */
     public function execute($header = '', $body = '', $httpCode = '')
@@ -157,12 +159,12 @@ class AlipayMobilePublicMultiMediaClient
         } else {
             //echo '一行？';
         }
-        $privateKey = "-----BEGIN RSA PRIVATE KEY-----\n" . implode("\n", $p_key) ;
+        $privateKey = "-----BEGIN RSA PRIVATE KEY-----\n" . implode("\n", $p_key);
         $privateKey = $privateKey . "\n-----END RSA PRIVATE KEY-----";
 
-//      echo "\n\n私钥:\n";
-//      echo( $privateKey );
-//      echo "\n\n\n";
+        //      echo "\n\n私钥:\n";
+        //      echo( $privateKey );
+        //      echo "\n\n\n";
 
         //私钥
         $private_id = openssl_pkey_get_private($privateKey, $passphrase);
@@ -188,9 +190,9 @@ class AlipayMobilePublicMultiMediaClient
 
         $out = $data . '&' . $this -> SIGN . '=' . $signature;
 
-//      echo "\n\n 加密后:\n";
-//      echo( $out );
-//      echo "\n\n\n";
+        //      echo "\n\n 加密后:\n";
+        //      echo( $out );
+        //      echo "\n\n\n";
 
         return $out ;
     }
@@ -204,7 +206,7 @@ class AlipayMobilePublicMultiMediaClient
             return null;
         }
 
-//将要 参数 排序
+        //将要 参数 排序
         ksort($query);
 
         //重新组装参数

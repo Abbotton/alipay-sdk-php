@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.open.app.smsg.data.sync request
  *
  * @author auto create
- * @since 1.0, 2018-03-08 20:17:17
+ * @since  1.0, 2018-03-08 20:17:17
  */
 class AlipayOpenAppSmsgDataSyncRequest
 {

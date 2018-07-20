@@ -148,10 +148,11 @@ class AopClient
 
     /**
      * RSA单独签名方法，未做字符串处理,字符串处理见getSignContent()
-     * @param $data 待签名字符串
-     * @param $privatekey 商户私钥，根据keyfromfile来判断是读取字符串还是读取文件，false:填写私钥字符串去回车和空格 true:填写私钥文件路径
-     * @param $signType 签名方式，RSA:SHA1     RSA2:SHA256
-     * @param $keyfromfile 私钥获取方式，读取字符串还是读文件
+     *
+     * @param  $data 待签名字符串
+     * @param  $privatekey 商户私钥，根据keyfromfile来判断是读取字符串还是读取文件，false:填写私钥字符串去回车和空格 true:填写私钥文件路径
+     * @param  $signType 签名方式，RSA:SHA1     RSA2:SHA256
+     * @param  $keyfromfile 私钥获取方式，读取字符串还是读文件
      * @return string
      * @author mengyu.wh
      */
@@ -271,7 +272,8 @@ class AopClient
 
     /**
      * 生成用于调用收银台SDK的字符串
-     * @param $request SDK接口的请求参数对象
+     *
+     * @param  $request SDK接口的请求参数对象
      * @return string
      * @author guofa.tgf
      */
@@ -397,7 +399,8 @@ class AopClient
 
     /**
      * 建立请求，以表单HTML形式构造（默认）
-     * @param $para_temp 请求参数数组
+     *
+     * @param  $para_temp 请求参数数组
      * @return 提交表单HTML文本
      */
     protected function buildRequestForm($para_temp)
@@ -564,8 +567,9 @@ class AopClient
 
     /**
      * 转换字符集编码
-     * @param $data
-     * @param $targetCharset
+     *
+     * @param  $data
+     * @param  $targetCharset
      * @return string
      */
     function characet($data, $targetCharset)
@@ -630,7 +634,8 @@ class AopClient
         return false;
     }
 
-    /** rsaCheckV1 & rsaCheckV2
+    /**
+     * rsaCheckV1 & rsaCheckV2
      *  验证签名
      *  在使用本方法前，必须初始化AopClient且传入公钥参数。
      *  公钥是否是读取字符串还是读取文件，是根据初始化传入的值判断的。
@@ -683,7 +688,7 @@ class AopClient
         return $result;
     }
 
-/**
+    /**
      *  在使用本方法前，必须初始化AopClient且传入公私钥参数。
      *  公钥是否是读取字符串还是读取文件，是根据初始化传入的值判断的。
      **/
@@ -989,10 +994,11 @@ class AopClient
 
     /**
      * 验签
-     * @param $request
-     * @param $signData
-     * @param $resp
-     * @param $respObject
+     *
+     * @param  $request
+     * @param  $signData
+     * @param  $resp
+     * @param  $respObject
      * @throws Exception
      */
     public function checkResponseSign($request, $signData, $resp, $respObject)

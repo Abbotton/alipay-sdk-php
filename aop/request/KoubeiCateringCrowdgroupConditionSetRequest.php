@@ -3,7 +3,7 @@
  * ALIPAY API: koubei.catering.crowdgroup.condition.set request
  *
  * @author auto create
- * @since 1.0, 2018-06-22 14:29:19
+ * @since  1.0, 2018-06-22 14:29:19
  */
 class KoubeiCateringCrowdgroupConditionSetRequest
 {

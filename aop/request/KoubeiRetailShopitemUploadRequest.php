@@ -3,7 +3,7 @@
  * ALIPAY API: koubei.retail.shopitem.upload request
  *
  * @author auto create
- * @since 1.0, 2017-04-14 18:10:01
+ * @since  1.0, 2017-04-14 18:10:01
  */
 class KoubeiRetailShopitemUploadRequest
 {

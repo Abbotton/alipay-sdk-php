@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.security.info.analysis request
  *
  * @author auto create
- * @since 1.0, 2016-03-04 14:55:20
+ * @since  1.0, 2016-03-04 14:55:20
  */
 class AlipaySecurityInfoAnalysisRequest
 {

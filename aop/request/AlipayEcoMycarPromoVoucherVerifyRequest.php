@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.eco.mycar.promo.voucher.verify request
  *
  * @author auto create
- * @since 1.0, 2017-09-15 16:29:31
+ * @since  1.0, 2017-09-15 16:29:31
  */
 class AlipayEcoMycarPromoVoucherVerifyRequest
 {

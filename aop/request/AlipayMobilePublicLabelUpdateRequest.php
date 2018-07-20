@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.mobile.public.label.update request
  *
  * @author auto create
- * @since 1.0, 2016-07-29 19:58:24
+ * @since  1.0, 2016-07-29 19:58:24
  */
 class AlipayMobilePublicLabelUpdateRequest
 {

@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.open.app.smg.msg.send request
  *
  * @author auto create
- * @since 1.0, 2018-03-14 14:19:47
+ * @since  1.0, 2018-03-14 14:19:47
  */
 class AlipayOpenAppSmgMsgSendRequest
 {

@@ -3,7 +3,7 @@
  * ALIPAY API: alipay.offline.market.shop.create request
  *
  * @author auto create
- * @since 1.0, 2017-07-19 16:55:33
+ * @since  1.0, 2017-07-19 16:55:33
  */
 class AlipayOfflineMarketShopCreateRequest
 {
