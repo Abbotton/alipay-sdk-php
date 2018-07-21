@@ -3,3 +3,4 @@
 /version.txt
 /vendor/
 /composer.lock
+*.pem
