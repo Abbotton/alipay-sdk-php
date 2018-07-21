@@ -581,24 +581,19 @@ class AopClient
                 throw new AlipayException(" check sign Fail! The reason : signData is Empty");
             }
 
-            // 获取结果sub_code
-            $responseSubCode = $this->parserResponseSubCode($request, $resp, $respObject, $this->format);
+            $checkResult = $this->verify($signData->signSourceData, $signData->sign, $this->alipayPublicKey, $this->signType);
 
-            if (!$this->checkEmpty($responseSubCode) || ($this->checkEmpty($responseSubCode) && !$this->checkEmpty($signData->sign))) {
-                $checkResult = $this->verify($signData->signSourceData, $signData->sign, $this->alipayPublicKey, $this->signType);
+            if (!$checkResult) {
+                if (strpos($signData->signSourceData, "\\/") > 0) {
+                    $signData->signSourceData = str_replace("\\/", "/", $signData->signSourceData);
 
-                if (!$checkResult) {
-                    if (strpos($signData->signSourceData, "\\/") > 0) {
-                        $signData->signSourceData = str_replace("\\/", "/", $signData->signSourceData);
+                    $checkResult = $this->verify($signData->signSourceData, $signData->sign, $this->alipayPublicKey, $this->signType);
 
-                        $checkResult = $this->verify($signData->signSourceData, $signData->sign, $this->alipayPublicKey, $this->signType);
-
-                        if (!$checkResult) {
-                            throw new AlipayException("check sign Fail! [sign=" . $signData->sign . ", signSourceData=" . $signData->signSourceData . "]");
-                        }
-                    } else {
+                    if (!$checkResult) {
                         throw new AlipayException("check sign Fail! [sign=" . $signData->sign . ", signSourceData=" . $signData->signSourceData . "]");
                     }
+                } else {
+                    throw new AlipayException("check sign Fail! [sign=" . $signData->sign . ", signSourceData=" . $signData->signSourceData . "]");
                 }
             }
         }
