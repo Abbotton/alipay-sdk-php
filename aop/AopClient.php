@@ -147,7 +147,6 @@ class AopClient
      */
     public function alonersaSign($data, $privatekey, $signType = "RSA", $keyfromfile = false)
     {
-
         if (!$keyfromfile) {
             $priKey = $privatekey;
             $res = "-----BEGIN RSA PRIVATE KEY-----\n" .
@@ -459,15 +458,8 @@ class AopClient
                 $respWellFormed = true;
                 $signData = $this->parserJSONSignData($request, $resp, $respObject);
             }
-        } elseif ("xml" == $this->format) {
-            $disableLibxmlEntityLoader = libxml_disable_entity_loader(true);
-            $respObject = @simplexml_load_string($resp);
-            if (false !== $respObject) {
-                $respWellFormed = true;
-
-                $signData = $this->parserXMLSignData($request, $resp);
-            }
-            libxml_disable_entity_loader($disableLibxmlEntityLoader);
+        } else {
+            throw new AlipayException('Unsupported format: ' . $format);
         }
 
         //返回的HTTP文本不是标准JSON或者XML，记下错误日志
@@ -776,9 +768,8 @@ class AopClient
             } else {
                 return null;
             }
-        } elseif ("xml" == $format) {
-            // xml格式sub_code在同一层级
-            return $respObject->sub_code;
+        } else {
+            throw new AlipayException('Unsupported format: ' . $format);
         }
     }
 
@@ -826,74 +817,6 @@ class AopClient
     public function parserJSONSign($responseJSon)
     {
         return $responseJSon->sign;
-    }
-
-    public function parserXMLSignData($request, $responseContent)
-    {
-        $signData = new SignData();
-
-        $signData->sign = $this->parserXMLSign($responseContent);
-        $signData->signSourceData = $this->parserXMLSignSource($request, $responseContent);
-
-        return $signData;
-    }
-
-    public function parserXMLSignSource($request, $responseContent)
-    {
-        $apiName = $request->getApiMethodName();
-        $rootNodeName = str_replace(".", "_", $apiName) . static::RESPONSE_SUFFIX;
-
-        $rootIndex = strpos($responseContent, $rootNodeName);
-        $errorIndex = strpos($responseContent, static::ERROR_RESPONSE);
-        //      $this->echoDebug("<br/>rootNodeName:" . $rootNodeName);
-        //      $this->echoDebug("<br/> responseContent:<xmp>" . $responseContent . "</xmp>");
-
-        if ($rootIndex > 0) {
-            return $this->parserXMLSource($responseContent, $rootNodeName, $rootIndex);
-        } elseif ($errorIndex > 0) {
-            return $this->parserXMLSource($responseContent, static::ERROR_RESPONSE, $errorIndex);
-        } else {
-            return null;
-        }
-    }
-
-    public function parserXMLSource($responseContent, $nodeName, $nodeIndex)
-    {
-        $signDataStartIndex = $nodeIndex + strlen($nodeName) + 1;
-        $signIndex = strrpos($responseContent, "<" . static::SIGN_NODE_NAME . ">");
-        // 签名前-逗号
-        $signDataEndIndex = $signIndex - 1;
-        $indexLen = $signDataEndIndex - $signDataStartIndex + 1;
-
-        if ($indexLen < 0) {
-            return null;
-        }
-
-        return substr($responseContent, $signDataStartIndex, $indexLen);
-    }
-
-    public function parserXMLSign($responseContent)
-    {
-        $signNodeName = "<" . static::SIGN_NODE_NAME . ">";
-        $signEndNodeName = "</" . static::SIGN_NODE_NAME . ">";
-
-        $indexOfSignNode = strpos($responseContent, $signNodeName);
-        $indexOfSignEndNode = strpos($responseContent, $signEndNodeName);
-
-        if ($indexOfSignNode < 0 || $indexOfSignEndNode < 0) {
-            return null;
-        }
-
-        $nodeIndex = ($indexOfSignNode + strlen($signNodeName));
-
-        $indexLen = $indexOfSignEndNode - $nodeIndex;
-
-        if ($indexLen < 0) {
-            return null;
-        }
-
-        // 签名
-        return substr($responseContent, $nodeIndex, $indexLen);
     }
 
     /**
