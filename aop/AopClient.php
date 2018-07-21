@@ -113,7 +113,7 @@ class AopClient
         if ($this->checkEmpty($this->rsaPrivateKeyFilePath)) {
             $priKey = $this->rsaPrivateKey;
             $res = "-----BEGIN RSA PRIVATE KEY-----\n" .
-            wordwrap($priKey, 64, "\n", true) .
+                wordwrap($priKey, 64, "\n", true) .
                 "\n-----END RSA PRIVATE KEY-----";
         } else {
             $priKey = file_get_contents($this->rsaPrivateKeyFilePath);
@@ -134,43 +134,7 @@ class AopClient
         $sign = base64_encode($sign);
         return $sign;
     }
-
-    /**
-     * RSA单独签名方法，未做字符串处理,字符串处理见getSignContent()
-     *
-     * @param  $data 待签名字符串
-     * @param  $privatekey 商户私钥，根据keyfromfile来判断是读取字符串还是读取文件，false:填写私钥字符串去回车和空格 true:填写私钥文件路径
-     * @param  $signType 签名方式，RSA:SHA1     RSA2:SHA256
-     * @param  $keyfromfile 私钥获取方式，读取字符串还是读文件
-     * @return string
-     * @author mengyu.wh
-     */
-    public function alonersaSign($data, $privatekey, $signType = "RSA", $keyfromfile = false)
-    {
-        if (!$keyfromfile) {
-            $priKey = $privatekey;
-            $res = "-----BEGIN RSA PRIVATE KEY-----\n" .
-            wordwrap($priKey, 64, "\n", true) .
-                "\n-----END RSA PRIVATE KEY-----";
-        } else {
-            $priKey = file_get_contents($privatekey);
-            $res = openssl_get_privatekey($priKey);
-        }
-
-        ($res) or die('您使用的私钥格式错误，请检查RSA私钥配置');
-
-        if ("RSA2" == $signType) {
-            openssl_sign($data, $sign, $res, OPENSSL_ALGO_SHA256);
-        } else {
-            openssl_sign($data, $sign, $res);
-        }
-
-        if ($keyfromfile) {
-            openssl_free_key($res);
-        }
-        $sign = base64_encode($sign);
-        return $sign;
-    }
+    
 
     protected function curl($url, $postFields = null)
     {
