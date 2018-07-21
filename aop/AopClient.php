@@ -496,19 +496,16 @@ class AopClient
             $rootNodeName = str_replace(".", "_", $apiName) . static::RESPONSE_SUFFIX;
             $errorNodeName = AlipayResponseException::ERROR_NODE;
 
-            $rootIndex = strpos($responseContent, $rootNodeName);
-            $errorIndex = strpos($responseContent, $errorNodeName);
-
-            if ($rootIndex > 0) {
-                // 内部节点对象
+            if(isset($respObject->$rootNodeName)) {
                 $rInnerObject = $respObject->$rootNodeName;
-            } elseif ($errorIndex > 0) {
+            }
+            else if(isset($respObject->$errorNodeName)) {
                 $rInnerObject = $respObject->$errorNodeName;
-            } else {
+            }
+            else {
                 return null;
             }
-
-            // 存在属性则返回对应值
+            
             if (isset($rInnerObject->sub_code)) {
                 return $rInnerObject->sub_code;
             } else {
