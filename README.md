@@ -31,7 +31,7 @@
     - 异常：`Alipay\Exception`
     - 辅助函数：`Alipay\Helper`
 
-API、实例以及其它资源，请参见[官方文档](https://docs.open.alipay.com/54/cyz7do/)。
+API、实例以及其它资源，请参见[官方文档](#其它资料)。
 
 ## 注意
 
