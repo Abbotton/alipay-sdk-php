@@ -234,11 +234,13 @@ class AopClient
         return http_build_query($params);
     }
 
-    /*
-    页面提交执行方法
-    @param：跳转类接口的request; $httpmethod 提交方式。两个值可选：post、get
-    @return：构建好的、签名后的最终跳转URL（GET）或String形式的form（POST）
-    auther:笙默
+    /**
+     * 页面提交执行方法
+     *
+     * @param $request 跳转类接口的request
+     * @param string $httpmethod 提交方式。两个值可选：post、get
+     * @return string 构建好的、签名后的最终跳转URL（GET）或String形式的form（POST）
+     * @author 笙默
      */
     public function pageExecute($request, $httpmethod = "POST")
     {
