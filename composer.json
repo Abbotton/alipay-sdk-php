@@ -22,7 +22,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Alipay\\Test\\": "tests"
+            "Alipay\\Test\\": "tests",
+            "Alipay\\Example\\": "examples"
         }
     },
     "scripts": {
