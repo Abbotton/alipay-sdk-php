@@ -232,26 +232,6 @@ class AopClient
         return (float) sprintf('%.0f', (floatval($s1) + floatval($s2)) * 1000);
     }
 
-    protected function logCommunicationError($apiName, $requestUrl, $errorCode, $responseTxt)
-    {
-        $localIp = isset($_SERVER["SERVER_ADDR"]) ? $_SERVER["SERVER_ADDR"] : "CLI";
-        $logger = new LtLogger();
-        $logger->conf["log_file"] = rtrim(AOP_SDK_WORK_DIR, '\\/') . '/' . "logs/aop_comm_err_" . $this->appId . "_" . date("Y-m-d") . ".log";
-        $logger->conf["separator"] = "^_^";
-        $logData = array(
-            date("Y-m-d H:i:s"),
-            $apiName,
-            $this->appId,
-            $localIp,
-            PHP_OS,
-            static::SDK_VERSION,
-            $requestUrl,
-            $errorCode,
-            str_replace("\n", "", $responseTxt),
-        );
-        $logger->log($logData);
-    }
-
     /**
      * 生成用于调用收银台SDK的字符串
      *
@@ -437,15 +417,7 @@ class AopClient
         $requestUrl = substr($requestUrl, 0, -1);
 
         //发起HTTP请求
-        try {
-            $resp = $this->curl($requestUrl, $apiParams);
-        } catch (Exception $e) {
-            $this->logCommunicationError($sysParams["method"], $requestUrl, "HTTP_ERROR_" . $e->getCode(), $e->getMessage());
-            return false;
-        }
-
-        //解析AOP返回结果
-        $respWellFormed = false;
+        $resp = $this->curl($requestUrl, $apiParams);
 
         // 将返回结果转换本地文件编码
         $r = iconv($this->postCharset, $this->fileCharset . "//IGNORE", $resp);
@@ -460,12 +432,6 @@ class AopClient
             }
         } else {
             throw new AlipayException('Unsupported format: ' . $format);
-        }
-
-        //返回的HTTP文本不是标准JSON或者XML，记下错误日志
-        if (false === $respWellFormed) {
-            $this->logCommunicationError($sysParams["method"], $requestUrl, "HTTP_RESPONSE_NOT_WELL_FORMED", $resp);
-            return false;
         }
 
         // 验签
