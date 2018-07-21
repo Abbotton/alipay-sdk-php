@@ -429,33 +429,6 @@ class AopClient
         return $data;
     }
 
-    public function exec($paramsArray)
-    {
-        if (!isset($paramsArray["method"])) {
-            trigger_error("No api name passed");
-        }
-        $inflector = new LtInflector();
-        $inflector->conf["separator"] = ".";
-        $requestClassName = ucfirst($inflector->camelize(substr($paramsArray["method"], 7))) . "Request";
-        if (!class_exists($requestClassName)) {
-            trigger_error("No such api: " . $paramsArray["method"]);
-        }
-
-        $session = isset($paramsArray["session"]) ? $paramsArray["session"] : null;
-
-        $req = new $requestClassName();
-        foreach ($paramsArray as $paraKey => $paraValue) {
-            $inflector->conf["separator"] = "_";
-            $setterMethodName = $inflector->camelize($paraKey);
-            $inflector->conf["separator"] = ".";
-            $setterMethodName = "set" . $inflector->camelize($setterMethodName);
-            if (method_exists($req, $setterMethodName)) {
-                $req->$setterMethodName($paraValue);
-            }
-        }
-        return $this->execute($req, $session);
-    }
-
     /**
      * 校验$value是否非空
      *  if not set ,return true;
