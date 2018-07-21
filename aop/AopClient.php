@@ -41,7 +41,7 @@ class AopClient
     public $fileCharset = "UTF-8";
 
     //使用文件读取文件格式，请只传递该值
-    public $alipayPublicKey = null;
+    public $alipayPublicKey;
 
     //使用读取字符串格式，请只传递该值
     public $alipayrsaPublicKey;
