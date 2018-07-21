@@ -430,24 +430,15 @@ class AopClient
     }
 
     /**
-     * 校验$value是否非空
-     *  if not set ,return true;
-     *    if is null , return true;
-     **/
+     * 校验 $value 是否非空
+     *
+     * @param string|null $value
+     * @return bool
+     */
     protected function checkEmpty($value)
     {
-        if (!isset($value)) {
-            return true;
+        return $value === null || trim($value) === '';
         }
-        if ($value === null) {
-            return true;
-        }
-        if (trim($value) === "") {
-            return true;
-        }
-
-        return false;
-    }
 
     /**
      * rsaCheckV1 & rsaCheckV2
