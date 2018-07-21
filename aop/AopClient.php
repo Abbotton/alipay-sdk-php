@@ -4,14 +4,13 @@ namespace Alipay;
 
 use Alipay\Exception\AlipayException;
 use Alipay\Helper\CryptHelper;
+use Alipay\Exception\AlipayResponseException;
 
 class AopClient
 {
     const SDK_VERSION = "alipay-sdk-php-20180705";
 
     const RESPONSE_SUFFIX = "_response";
-
-    const ERROR_RESPONSE = "error_response";
 
     const SIGN_NODE_NAME = "sign";
 
@@ -495,7 +494,7 @@ class AopClient
         if ("json" == $format) {
             $apiName = $request->getApiMethodName();
             $rootNodeName = str_replace(".", "_", $apiName) . static::RESPONSE_SUFFIX;
-            $errorNodeName = static::ERROR_RESPONSE;
+            $errorNodeName = AlipayResponseException::ERROR_NODE;
 
             $rootIndex = strpos($responseContent, $rootNodeName);
             $errorIndex = strpos($responseContent, $errorNodeName);
@@ -536,12 +535,12 @@ class AopClient
         $rootNodeName = str_replace(".", "_", $apiName) . static::RESPONSE_SUFFIX;
 
         $rootIndex = strpos($responseContent, $rootNodeName);
-        $errorIndex = strpos($responseContent, static::ERROR_RESPONSE);
+        $errorIndex = strpos($responseContent, AlipayResponseException::ERROR_NODE);
 
         if ($rootIndex > 0) {
             return $this->parserJSONSource($responseContent, $rootNodeName, $rootIndex);
         } elseif ($errorIndex > 0) {
-            return $this->parserJSONSource($responseContent, static::ERROR_RESPONSE, $errorIndex);
+            return $this->parserJSONSource($responseContent, AlipayResponseException::ERROR_NODE, $errorIndex);
         } else {
             return null;
         }
@@ -566,7 +565,7 @@ class AopClient
         if(isset($responseJSon->sign)) {
             return $responseJSon->sign;
         }
-        throw new AlipayException('Response sign not found');
+        throw new AlipayResponseException($responseJSon, 'Response sign not found');
     }
 
     /**
@@ -636,12 +635,12 @@ class AopClient
         $rootNodeName = str_replace(".", "_", $apiName) . static::RESPONSE_SUFFIX;
 
         $rootIndex = strpos($responseContent, $rootNodeName);
-        $errorIndex = strpos($responseContent, static::ERROR_RESPONSE);
+        $errorIndex = strpos($responseContent, AlipayResponseException::ERROR_NODE);
 
         if ($rootIndex > 0) {
             return $this->parserEncryptJSONItem($responseContent, $rootNodeName, $rootIndex);
         } elseif ($errorIndex > 0) {
-            return $this->parserEncryptJSONItem($responseContent, static::ERROR_RESPONSE, $errorIndex);
+            return $this->parserEncryptJSONItem($responseContent, AlipayResponseException::ERROR_NODE, $errorIndex);
         } else {
             return null;
         }
