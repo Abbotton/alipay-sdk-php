@@ -5,8 +5,6 @@ namespace Alipay;
 use Alipay\Exception\AlipayException;
 use Alipay\Helper\CryptHelper;
 
-require_once 'AopEncrypt.php';
-
 class AopClient
 {
     const SDK_VERSION = "alipay-sdk-php-20180705";
