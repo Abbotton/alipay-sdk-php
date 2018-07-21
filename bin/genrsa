@@ -1,0 +1,5 @@
+#!/bin/bash
+
+CWD=$(pwd)
+openssl genrsa -out $CWD/app_private_key.pem 2048
+openssl rsa -in $CWD/app_private_key.pem -pubout -out $CWD/app_public_key.pem
