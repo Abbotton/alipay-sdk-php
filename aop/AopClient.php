@@ -379,11 +379,6 @@ class AopClient
         return $this->sign($this->getSignContent($params), $signType);
     }
 
-    public function rsaSign($params, $signType = "RSA")
-    {
-        return $this->sign($this->getSignContent($params), $signType);
-    }
-
     public function getSignContent($params)
     {
         ksort($params);
