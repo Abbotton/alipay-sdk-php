@@ -384,12 +384,12 @@ class AopClient
         $resp = $this->curl($requestUrl, $apiParams);
 
         // 将返回结果转换本地文件编码
-        $r = iconv($this->postCharset, $this->fileCharset . "//IGNORE", $resp);
+        // $r = iconv($this->postCharset, $this->fileCharset . "//IGNORE", $resp);
 
         $signData = null;
 
         if ("json" == $this->format) {
-            $respObject = json_decode($r);
+            $respObject = json_decode($resp);
             if (null !== $respObject) {
                 $respWellFormed = true;
                 $signData = $this->parserJSONSignData($request, $resp, $respObject);
