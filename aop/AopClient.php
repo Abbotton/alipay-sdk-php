@@ -47,93 +47,6 @@ class AopClient
     //签名类型
     public $signType = "RSA";
 
-    public function generateSign($params, $signType = "RSA")
-    {
-        return $this->sign($this->getSignContent($params), $signType);
-    }
-
-    public function rsaSign($params, $signType = "RSA")
-    {
-        return $this->sign($this->getSignContent($params), $signType);
-    }
-
-    public function getSignContent($params)
-    {
-        ksort($params);
-
-        $stringToBeSigned = "";
-        $i = 0;
-        foreach ($params as $k => $v) {
-            if (false === $this->checkEmpty($v) && "@" != substr($v, 0, 1)) {
-                // 转换成目标字符集
-                $v = $this->characet($v, $this->postCharset);
-
-                if ($i == 0) {
-                    $stringToBeSigned .= "$k" . "=" . "$v";
-                } else {
-                    $stringToBeSigned .= "&" . "$k" . "=" . "$v";
-                }
-                $i++;
-            }
-        }
-
-        unset($k, $v);
-        return $stringToBeSigned;
-    }
-
-    //此方法对value做urlencode
-    public function getSignContentUrlencode($params)
-    {
-        ksort($params);
-
-        $stringToBeSigned = "";
-        $i = 0;
-        foreach ($params as $k => $v) {
-            if (false === $this->checkEmpty($v) && "@" != substr($v, 0, 1)) {
-                // 转换成目标字符集
-                $v = $this->characet($v, $this->postCharset);
-
-                if ($i == 0) {
-                    $stringToBeSigned .= "$k" . "=" . urlencode($v);
-                } else {
-                    $stringToBeSigned .= "&" . "$k" . "=" . urlencode($v);
-                }
-                $i++;
-            }
-        }
-
-        unset($k, $v);
-        return $stringToBeSigned;
-    }
-
-    protected function sign($data, $signType = "RSA")
-    {
-        if ($this->checkEmpty($this->rsaPrivateKeyFilePath)) {
-            $priKey = $this->rsaPrivateKey;
-            $res = "-----BEGIN RSA PRIVATE KEY-----\n" .
-                wordwrap($priKey, 64, "\n", true) .
-                "\n-----END RSA PRIVATE KEY-----";
-        } else {
-            $priKey = file_get_contents($this->rsaPrivateKeyFilePath);
-            $res = openssl_get_privatekey($priKey);
-        }
-
-        ($res) or die('您使用的私钥格式错误，请检查RSA私钥配置');
-
-        if ("RSA2" == $signType) {
-            openssl_sign($data, $sign, $res, OPENSSL_ALGO_SHA256);
-        } else {
-            openssl_sign($data, $sign, $res);
-        }
-
-        if (!$this->checkEmpty($this->rsaPrivateKeyFilePath)) {
-            openssl_free_key($res);
-        }
-        $sign = base64_encode($sign);
-        return $sign;
-    }
-    
-
     protected function curl($url, $postFields = null)
     {
         $ch = curl_init();
@@ -422,7 +335,7 @@ class AopClient
             $fileType = $this->fileCharset;
             if (strcasecmp($fileType, $targetCharset) != 0) {
                 $data = mb_convert_encoding($data, $targetCharset, $fileType);
-                //              $data = iconv($fileType, $targetCharset.'//IGNORE', $data);
+                // $data = iconv($fileType, $targetCharset.'//IGNORE', $data);
             }
         }
 
@@ -438,7 +351,7 @@ class AopClient
     protected function checkEmpty($value)
     {
         return $value === null || trim($value) === '';
-        }
+    }
 
     /**
      * rsaCheckV1 & rsaCheckV2
@@ -453,6 +366,7 @@ class AopClient
         $params['sign'] = null;
         return $this->verify($this->getSignContent($params), $sign, $rsaPublicKeyFilePath, $signType);
     }
+
     public function rsaCheckV2($params, $rsaPublicKeyFilePath, $signType = 'RSA')
     {
         $sign = $params['sign'];
@@ -460,24 +374,111 @@ class AopClient
         return $this->verify($this->getSignContent($params), $sign, $rsaPublicKeyFilePath, $signType);
     }
 
+    public function generateSign($params, $signType = "RSA")
+    {
+        return $this->sign($this->getSignContent($params), $signType);
+    }
+
+    public function rsaSign($params, $signType = "RSA")
+    {
+        return $this->sign($this->getSignContent($params), $signType);
+    }
+
+    public function getSignContent($params)
+    {
+        ksort($params);
+
+        $stringToBeSigned = "";
+        $i = 0;
+        foreach ($params as $k => $v) {
+            if (false === $this->checkEmpty($v) && "@" != substr($v, 0, 1)) {
+                // 转换成目标字符集
+                $v = $this->characet($v, $this->postCharset);
+
+                if ($i == 0) {
+                    $stringToBeSigned .= "$k" . "=" . "$v";
+                } else {
+                    $stringToBeSigned .= "&" . "$k" . "=" . "$v";
+                }
+                $i++;
+            }
+        }
+
+        unset($k, $v);
+        return $stringToBeSigned;
+    }
+
+    //此方法对value做urlencode
+    public function getSignContentUrlencode($params)
+    {
+        ksort($params);
+
+        $stringToBeSigned = "";
+        $i = 0;
+        foreach ($params as $k => $v) {
+            if (false === $this->checkEmpty($v) && "@" != substr($v, 0, 1)) {
+                // 转换成目标字符集
+                $v = $this->characet($v, $this->postCharset);
+
+                if ($i == 0) {
+                    $stringToBeSigned .= "$k" . "=" . urlencode($v);
+                } else {
+                    $stringToBeSigned .= "&" . "$k" . "=" . urlencode($v);
+                }
+                $i++;
+            }
+        }
+
+        unset($k, $v);
+        return $stringToBeSigned;
+    }
+
+    protected function sign($data, $signType = "RSA")
+    {
+        if ($this->checkEmpty($this->rsaPrivateKeyFilePath)) {
+            $priKey = $this->rsaPrivateKey;
+            $res = "-----BEGIN RSA PRIVATE KEY-----\n" .
+                wordwrap($priKey, 64, "\n", true) .
+                "\n-----END RSA PRIVATE KEY-----";
+        } else {
+            $priKey = file_get_contents($this->rsaPrivateKeyFilePath);
+            $res = openssl_get_privatekey($priKey);
+            if ($res === false) {
+                throw new AlipayException('您使用的私钥格式错误，请检查RSA私钥配置');
+            }
+        }
+
+        if ("RSA2" == $signType) {
+            openssl_sign($data, $sign, $res, OPENSSL_ALGO_SHA256);
+        } else {
+            openssl_sign($data, $sign, $res);
+        }
+
+        if (!$this->checkEmpty($this->rsaPrivateKeyFilePath)) {
+            openssl_free_key($res);
+        }
+        $sign = base64_encode($sign);
+        return $sign;
+    }
+
     public function verify($data, $sign, $rsaPublicKeyFilePath, $signType = 'RSA')
     {
         if ($this->checkEmpty($this->alipayPublicKey)) {
             $pubKey = $this->alipayrsaPublicKey;
             $res = "-----BEGIN PUBLIC KEY-----\n" .
-            wordwrap($pubKey, 64, "\n", true) .
+                wordwrap($pubKey, 64, "\n", true) .
                 "\n-----END PUBLIC KEY-----";
         } else {
             //读取公钥文件
             $pubKey = file_get_contents($rsaPublicKeyFilePath);
             //转换为openssl格式密钥
             $res = openssl_get_publickey($pubKey);
+            if ($res === false) {
+                throw new AlipayException('支付宝RSA公钥错误。请检查公钥文件格式是否正确');
+            }
         }
 
-        ($res) or die('支付宝RSA公钥错误。请检查公钥文件格式是否正确');
-
         //调用openssl内置方法验签，返回bool值
-
         $result = false;
         if ("RSA2" == $signType) {
             $result = (openssl_verify($data, base64_decode($sign), $res, OPENSSL_ALGO_SHA256) === 1);
@@ -492,7 +493,7 @@ class AopClient
 
         return $result;
     }
-    
+
 
     public function parserResponseSubCode($request, $responseContent, $respObject, $format)
     {
@@ -568,8 +569,8 @@ class AopClient
     public function parserJSONSign($responseJSon)
     {
         if(isset($responseJSon->sign)) {
-        return $responseJSon->sign;
-    }
+            return $responseJSon->sign;
+        }
         throw new AlipayException('Response sign not found');
     }
 
@@ -584,7 +585,6 @@ class AopClient
      */
     public function checkResponseSign($request, $signData, $resp, $respObject)
     {
-
         if (!$this->checkEmpty($this->alipayPublicKey) || !$this->checkEmpty($this->alipayrsaPublicKey)) {
             if ($signData == null || $this->checkEmpty($signData->sign) || $this->checkEmpty($signData->signSourceData)) {
                 throw new AlipayException(" check sign Fail! The reason : signData is Empty");
