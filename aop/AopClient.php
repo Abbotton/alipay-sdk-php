@@ -567,7 +567,10 @@ class AopClient
 
     public function parserJSONSign($responseJSon)
     {
+        if(isset($responseJSon->sign)) {
         return $responseJSon->sign;
+    }
+        throw new AlipayException('Response sign not found');
     }
 
     /**
