@@ -6,12 +6,12 @@
 
 - [x] 集成 Composer。
 - [x] 降低 PHP 依赖至 5.4。
-- [x] 移除官方代码内 [`lotusphp`](https://github.com/qinjx/lotusphp) 依赖。
+- [x] 移除官方 SDK 内 [`lotusphp`](https://github.com/qinjx/lotusphp) 依赖。
 - [x] 整理代码风格使其符合 `PSR-1`、`PSR-2`。
 - [ ] 增加单元测试。
 - [ ] 兼容 PHP 7.2，<del>替换 MCrypt 为 OpenSSL</del>。
-- [ ] 移除官方 API 文档内弃用的特性。
-- [ ] 移除内部封装的调试、日志等特性，以便于集成第三方框架和扩展包。
+- [ ] 移除官方 API 文档内 `已弃用` 特性。
+- [ ] 移除难以拓展的调试、日志等特性，以便于集成第三方框架和扩展包。
 - [ ] 其它优化，持续进行中……
 
 ## 如何使用
