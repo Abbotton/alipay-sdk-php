@@ -9,6 +9,8 @@ require_once 'AopEncrypt.php';
 
 class AopClient
 {
+    const SDK_VERSION = "alipay-sdk-php-20180705";
+
     //应用ID
     public $appId;
 
@@ -20,13 +22,17 @@ class AopClient
 
     //网关
     public $gatewayUrl = "https://openapi.alipay.com/gateway.do";
+
     //返回数据格式
     public $format = "json";
+
     //api版本
     public $apiVersion = "1.0";
 
     // 表单提交字符集编码
     public $postCharset = "UTF-8";
+
+    private $fileCharset = "UTF-8";
 
     //使用文件读取文件格式，请只传递该值
     public $alipayPublicKey = null;
@@ -34,20 +40,14 @@ class AopClient
     //使用读取字符串格式，请只传递该值
     public $alipayrsaPublicKey;
 
-    public $debugInfo = false;
+    const RESPONSE_SUFFIX = "_response";
 
-    private $fileCharset = "UTF-8";
+    const ERROR_RESPONSE = "error_response";
 
-    private $RESPONSE_SUFFIX = "_response";
-
-    private $ERROR_RESPONSE = "error_response";
-
-    private $SIGN_NODE_NAME = "sign";
+    const SIGN_NODE_NAME = "sign";
 
     //签名类型
     public $signType = "RSA";
-
-    protected $alipaySdkVersion = "alipay-sdk-php-20180705";
 
     public function generateSign($params, $signType = "RSA")
     {
@@ -245,7 +245,7 @@ class AopClient
             $this->appId,
             $localIp,
             PHP_OS,
-            $this->alipaySdkVersion,
+            static::SDK_VERSION,
             $requestUrl,
             $errorCode,
             str_replace("\n", "", $responseTxt),
@@ -269,7 +269,7 @@ class AopClient
         $params['format'] = $this->format;
         $params['sign_type'] = $this->signType;
         $params['timestamp'] = date("Y-m-d H:i:s");
-        $params['alipay_sdk'] = $this->alipaySdkVersion;
+        $params['alipay_sdk'] = static::SDK_VERSION;
         $params['charset'] = $this->postCharset;
 
         $version = $request->getApiVersion();
@@ -323,7 +323,7 @@ class AopClient
         $sysParams["sign_type"] = $this->signType;
         $sysParams["method"] = $request->getApiMethodName();
         $sysParams["timestamp"] = date("Y-m-d H:i:s");
-        $sysParams["alipay_sdk"] = $this->alipaySdkVersion;
+        $sysParams["alipay_sdk"] = static::SDK_VERSION;
         $sysParams["terminal_type"] = $request->getTerminalType();
         $sysParams["terminal_info"] = $request->getTerminalInfo();
         $sysParams["prod_code"] = $request->getProdCode();
@@ -412,7 +412,7 @@ class AopClient
         $sysParams["method"] = $request->getApiMethodName();
         $sysParams["timestamp"] = date("Y-m-d H:i:s");
         $sysParams["auth_token"] = $authToken;
-        $sysParams["alipay_sdk"] = $this->alipaySdkVersion;
+        $sysParams["alipay_sdk"] = static::SDK_VERSION;
         $sysParams["terminal_type"] = $request->getTerminalType();
         $sysParams["terminal_info"] = $request->getTerminalInfo();
         $sysParams["prod_code"] = $request->getProdCode();
@@ -755,8 +755,8 @@ class AopClient
     {
         if ("json" == $format) {
             $apiName = $request->getApiMethodName();
-            $rootNodeName = str_replace(".", "_", $apiName) . $this->RESPONSE_SUFFIX;
-            $errorNodeName = $this->ERROR_RESPONSE;
+            $rootNodeName = str_replace(".", "_", $apiName) . static::RESPONSE_SUFFIX;
+            $errorNodeName = static::ERROR_RESPONSE;
 
             $rootIndex = strpos($responseContent, $rootNodeName);
             $errorIndex = strpos($responseContent, $errorNodeName);
@@ -795,15 +795,15 @@ class AopClient
     public function parserJSONSignSource($request, $responseContent)
     {
         $apiName = $request->getApiMethodName();
-        $rootNodeName = str_replace(".", "_", $apiName) . $this->RESPONSE_SUFFIX;
+        $rootNodeName = str_replace(".", "_", $apiName) . static::RESPONSE_SUFFIX;
 
         $rootIndex = strpos($responseContent, $rootNodeName);
-        $errorIndex = strpos($responseContent, $this->ERROR_RESPONSE);
+        $errorIndex = strpos($responseContent, static::ERROR_RESPONSE);
 
         if ($rootIndex > 0) {
             return $this->parserJSONSource($responseContent, $rootNodeName, $rootIndex);
         } elseif ($errorIndex > 0) {
-            return $this->parserJSONSource($responseContent, $this->ERROR_RESPONSE, $errorIndex);
+            return $this->parserJSONSource($responseContent, static::ERROR_RESPONSE, $errorIndex);
         } else {
             return null;
         }
@@ -812,7 +812,7 @@ class AopClient
     public function parserJSONSource($responseContent, $nodeName, $nodeIndex)
     {
         $signDataStartIndex = $nodeIndex + strlen($nodeName) + 2;
-        $signIndex = strrpos($responseContent, "\"" . $this->SIGN_NODE_NAME . "\"");
+        $signIndex = strrpos($responseContent, "\"" . static::SIGN_NODE_NAME . "\"");
         // 签名前-逗号
         $signDataEndIndex = $signIndex - 1;
         $indexLen = $signDataEndIndex - $signDataStartIndex;
@@ -841,17 +841,17 @@ class AopClient
     public function parserXMLSignSource($request, $responseContent)
     {
         $apiName = $request->getApiMethodName();
-        $rootNodeName = str_replace(".", "_", $apiName) . $this->RESPONSE_SUFFIX;
+        $rootNodeName = str_replace(".", "_", $apiName) . static::RESPONSE_SUFFIX;
 
         $rootIndex = strpos($responseContent, $rootNodeName);
-        $errorIndex = strpos($responseContent, $this->ERROR_RESPONSE);
+        $errorIndex = strpos($responseContent, static::ERROR_RESPONSE);
         //      $this->echoDebug("<br/>rootNodeName:" . $rootNodeName);
         //      $this->echoDebug("<br/> responseContent:<xmp>" . $responseContent . "</xmp>");
 
         if ($rootIndex > 0) {
             return $this->parserXMLSource($responseContent, $rootNodeName, $rootIndex);
         } elseif ($errorIndex > 0) {
-            return $this->parserXMLSource($responseContent, $this->ERROR_RESPONSE, $errorIndex);
+            return $this->parserXMLSource($responseContent, static::ERROR_RESPONSE, $errorIndex);
         } else {
             return null;
         }
@@ -860,7 +860,7 @@ class AopClient
     public function parserXMLSource($responseContent, $nodeName, $nodeIndex)
     {
         $signDataStartIndex = $nodeIndex + strlen($nodeName) + 1;
-        $signIndex = strrpos($responseContent, "<" . $this->SIGN_NODE_NAME . ">");
+        $signIndex = strrpos($responseContent, "<" . static::SIGN_NODE_NAME . ">");
         // 签名前-逗号
         $signDataEndIndex = $signIndex - 1;
         $indexLen = $signDataEndIndex - $signDataStartIndex + 1;
@@ -874,8 +874,8 @@ class AopClient
 
     public function parserXMLSign($responseContent)
     {
-        $signNodeName = "<" . $this->SIGN_NODE_NAME . ">";
-        $signEndNodeName = "</" . $this->SIGN_NODE_NAME . ">";
+        $signNodeName = "<" . static::SIGN_NODE_NAME . ">";
+        $signEndNodeName = "</" . static::SIGN_NODE_NAME . ">";
 
         $indexOfSignNode = strpos($responseContent, $signNodeName);
         $indexOfSignEndNode = strpos($responseContent, $signEndNodeName);
@@ -961,15 +961,15 @@ class AopClient
     private function parserEncryptJSONSignSource($request, $responseContent)
     {
         $apiName = $request->getApiMethodName();
-        $rootNodeName = str_replace(".", "_", $apiName) . $this->RESPONSE_SUFFIX;
+        $rootNodeName = str_replace(".", "_", $apiName) . static::RESPONSE_SUFFIX;
 
         $rootIndex = strpos($responseContent, $rootNodeName);
-        $errorIndex = strpos($responseContent, $this->ERROR_RESPONSE);
+        $errorIndex = strpos($responseContent, static::ERROR_RESPONSE);
 
         if ($rootIndex > 0) {
             return $this->parserEncryptJSONItem($responseContent, $rootNodeName, $rootIndex);
         } elseif ($errorIndex > 0) {
-            return $this->parserEncryptJSONItem($responseContent, $this->ERROR_RESPONSE, $errorIndex);
+            return $this->parserEncryptJSONItem($responseContent, static::ERROR_RESPONSE, $errorIndex);
         } else {
             return null;
         }
@@ -978,7 +978,7 @@ class AopClient
     private function parserEncryptJSONItem($responseContent, $nodeName, $nodeIndex)
     {
         $signDataStartIndex = $nodeIndex + strlen($nodeName) + 2;
-        $signIndex = strpos($responseContent, "\"" . $this->SIGN_NODE_NAME . "\"");
+        $signIndex = strpos($responseContent, "\"" . static::SIGN_NODE_NAME . "\"");
         // 签名前-逗号
         $signDataEndIndex = $signIndex - 1;
 
@@ -997,12 +997,5 @@ class AopClient
         $encryptParseItem->endIndex = $signDataEndIndex;
 
         return $encryptParseItem;
-    }
-
-    public function echoDebug($content)
-    {
-        if ($this->debugInfo) {
-            echo "<br/>" . $content;
-        }
     }
 }
