@@ -149,8 +149,8 @@ class AopClient
     /**
      * 页面提交执行方法
      *
-     * @param $request 跳转类接口的request
-     * @param string $httpmethod 提交方式。两个值可选：post、get
+     * @param  $request 跳转类接口的request
+     * @param  string                            $httpmethod 提交方式。两个值可选：post、get
      * @return string 构建好的、签名后的最终跳转URL（GET）或String形式的form（POST）
      * @author 笙默
      */
@@ -344,7 +344,7 @@ class AopClient
     /**
      * 校验 $value 是否非空
      *
-     * @param string|null $value
+     * @param  string|null $value
      * @return bool
      */
     protected function checkEmpty($value)
@@ -496,13 +496,11 @@ class AopClient
             $rootNodeName = str_replace(".", "_", $apiName) . static::RESPONSE_SUFFIX;
             $errorNodeName = AlipayResponseException::ERROR_NODE;
 
-            if(isset($respObject->$rootNodeName)) {
+            if (isset($respObject->$rootNodeName)) {
                 $rInnerObject = $respObject->$rootNodeName;
-            }
-            else if(isset($respObject->$errorNodeName)) {
+            } elseif (isset($respObject->$errorNodeName)) {
                 $rInnerObject = $respObject->$errorNodeName;
-            }
-            else {
+            } else {
                 return null;
             }
             
@@ -559,7 +557,7 @@ class AopClient
 
     public function parserJSONSign($responseJson)
     {
-        if(isset($responseJson->sign)) {
+        if (isset($responseJson->sign)) {
             return $responseJson->sign;
         }
         throw new AlipayResponseException($responseJson, 'Response sign not found');

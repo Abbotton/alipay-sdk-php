@@ -9,7 +9,7 @@ class AlipayResponseException extends AlipayException
     public function __construct($response, $externalMessage = '')
     {
         $errorResponse = $response->{static::ERROR_NODE};
-        if(is_object($errorResponse)) {
+        if (is_object($errorResponse)) {
             $msg = $externalMessage == '' ? '' : $externalMessage . ': ';
             $msg .= isset($errorResponse->msg) ? $errorResponse->msg : '';
             $msg .= isset($errorResponse->sub_msg) ? " ($errorResponse->sub_msg)" : '';
