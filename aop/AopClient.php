@@ -11,6 +11,12 @@ class AopClient
 {
     const SDK_VERSION = "alipay-sdk-php-20180705";
 
+    const RESPONSE_SUFFIX = "_response";
+
+    const ERROR_RESPONSE = "error_response";
+
+    const SIGN_NODE_NAME = "sign";
+
     //应用ID
     public $appId;
 
@@ -21,30 +27,24 @@ class AopClient
     public $rsaPrivateKey;
 
     //网关
-    public $gatewayUrl = "https://openapi.alipay.com/gateway.do";
+    protected $gatewayUrl = "https://openapi.alipay.com/gateway.do";
 
     //返回数据格式
-    public $format = "json";
+    protected $format = "json";
 
     //api版本
-    public $apiVersion = "1.0";
+    protected $apiVersion = "1.0";
 
     // 表单提交字符集编码
     public $postCharset = "UTF-8";
 
-    private $fileCharset = "UTF-8";
+    public $fileCharset = "UTF-8";
 
     //使用文件读取文件格式，请只传递该值
     public $alipayPublicKey = null;
 
     //使用读取字符串格式，请只传递该值
     public $alipayrsaPublicKey;
-
-    const RESPONSE_SUFFIX = "_response";
-
-    const ERROR_RESPONSE = "error_response";
-
-    const SIGN_NODE_NAME = "sign";
 
     //签名类型
     public $signType = "RSA";
