@@ -519,11 +519,11 @@ class AopClient
         }
     }
 
-    public function parserJSONSignData($request, $responseContent, $responseJSON)
+    public function parserJSONSignData($request, $responseContent, $responseJson)
     {
         $signData = new SignData();
 
-        $signData->sign = $this->parserJSONSign($responseJSON);
+        $signData->sign = $this->parserJSONSign($responseJson);
         $signData->signSourceData = $this->parserJSONSignSource($request, $responseContent);
 
         return $signData;
@@ -560,12 +560,12 @@ class AopClient
         return substr($responseContent, $signDataStartIndex, $indexLen);
     }
 
-    public function parserJSONSign($responseJSon)
+    public function parserJSONSign($responseJson)
     {
-        if(isset($responseJSon->sign)) {
-            return $responseJSon->sign;
+        if(isset($responseJson->sign)) {
+            return $responseJson->sign;
         }
-        throw new AlipayResponseException($responseJSon, 'Response sign not found');
+        throw new AlipayResponseException($responseJson, 'Response sign not found');
     }
 
     /**
