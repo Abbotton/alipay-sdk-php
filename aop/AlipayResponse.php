@@ -8,6 +8,11 @@ use Alipay\Exception\AlipayResponseException;
 class AlipayResponse
 {
     /**
+     * 响应签名节点名
+     */
+    const SIGN_NODE = "sign";
+
+    /**
      * 原始响应数据
      *
      * @var string
@@ -31,7 +36,7 @@ class AlipayResponse
     {
         $instance = new static();
         $instance->raw = $raw;
-        if (($instance->data = json_decode($raw)) === null) {
+        if (($instance->data = json_decode($raw, true)) === null) {
             throw new AlipayResponseException(null, json_last_error_msg());
         }
         // $instance->data = new \ArrayObject($instance->data, \ArrayObject::ARRAY_AS_PROPS);
@@ -44,11 +49,11 @@ class AlipayResponse
 
     public function getRawData()
     {
-        $nodeName = current(array_keys((array)$this->data));
+        $nodeName = current(array_keys($this->data));
         $nodeIndex = strpos($this->raw, $nodeName);
 
         $signDataStartIndex = $nodeIndex + strlen($nodeName) + 2;
-        $signIndex = strrpos($this->raw, "\"" . AlipaySign::SIGN_NODE . "\"");
+        $signIndex = strrpos($this->raw, "\"" . static::SIGN_NODE . "\"");
         
         $signDataEndIndex = $signIndex - 1;
         $indexLen = $signDataEndIndex - $signDataStartIndex;
@@ -60,9 +65,14 @@ class AlipayResponse
 
     public function getSign()
     {
-        if (isset($this->data->sign)) {
-            return $this->data->sign;
+        if (isset($this->data[static::SIGN_NODE])) {
+            return $this->data[static::SIGN_NODE];
         }
         throw new AlipayResponseException($this->data, 'Response sign not found');
+    }
+
+    public function getData($assoc = false)
+    {
+        return $this->data;
     }
 }
