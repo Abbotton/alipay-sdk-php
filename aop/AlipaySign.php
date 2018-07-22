@@ -136,6 +136,27 @@ class AlipaySign
     }
 
     /**
+     * 异步通知验签（验证 Sign 值）
+     *
+     * @param array $params
+     * @return void
+     * @see self::verify
+     * @see https://docs.open.alipay.com/200/106120#s1
+     */
+    public function verifyByAsyncCallback($params)
+    {
+        $sign = $params['sign'];
+        $signType = $params['sign_type'];
+        unset($params['sign'], $params['sign_type']);
+
+        $data = $this->convertSignData($params);
+
+        $copy = clone $this;
+        $copy->type = $signType;
+        $copy->verify($sign, $data);
+    }
+
+    /**
      * 使用密钥字符串或路径加载密钥
      *
      * @param  string  $keyOrFilePath
