@@ -15,11 +15,6 @@ class AopClient
     const SDK_VERSION = "alipay-sdk-php-20180705";
 
     /**
-     * 响应数据节点名后缀
-     */
-    const RESPONSE_SUFFIX = "_response";
-
-    /**
      * 应用 ID
      *
      * @var string
