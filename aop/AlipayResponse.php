@@ -67,7 +67,7 @@ class AlipayResponse
 
         $signDataStartIndex = $nodeIndex + strlen($nodeName) + 2;
         $signIndex = strrpos($this->raw, '"' . static::SIGN_NODE . '"');
-        
+
         $signDataEndIndex = $signIndex - 1;
         $indexLen = $signDataEndIndex - $signDataStartIndex;
         if ($indexLen < 0) {
@@ -95,9 +95,17 @@ class AlipayResponse
      * @param boolean $assoc
      * @return mixed
      */
-    public function getData($assoc = false)
+    public function getData($assoc = true)
     {
-        return $this->data;
+        if($this->isSuccess() === false)
+        {
+            
+        }
+        $result = array_pop(array_reverse($this->data));
+        if ($assoc == false) {
+            $result = (object) ($result);
+        }
+        return $result;
     }
 
     /**
@@ -108,5 +116,32 @@ class AlipayResponse
     public function getRaw()
     {
         return $this->raw;
+    }
+
+    /**
+     * 根据是否存在错误字段，判断响应是否成功
+     *
+     * @return boolean
+     */
+    public function isSuccess()
+    {
+        return ! isset($this->data[static::ERROR_NODE]);
+    }
+
+    /**
+     * 获取响应内的错误
+     *
+     * @return mixed|null
+     */
+    public function getError($assoc = true)
+    {
+        if($this->isSuccess()) {
+            return null;
+        }
+        $result = $this->data[static::ERROR_NODE];
+        if ($assoc == false) {
+            $result = (object) ($result);
+        }
+        return $result;
     }
 }
