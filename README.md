@@ -56,7 +56,7 @@
 5. 发送请求。
 
     ```php
-    $result = $aop->execute($request);
+    $result = $aop->execute($request)->getData(); // 所有错误都会被转换为异常，请注意使用 try...catch... 语句段捕捉
     ```
 
 6. 查看实例，请移步 `examples` 目录。
