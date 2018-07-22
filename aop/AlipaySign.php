@@ -8,7 +8,7 @@
 
 namespace Alipay;
 
-use Alipay\Exception\AlipaySignValidationException;
+use Alipay\Exception\AlipayInvalidSignException;
 use Alipay\Exception\AlipayBase64Exception;
 use Alipay\Exception\AlipayOpenSslException;
 
@@ -106,7 +106,7 @@ class AlipaySign
      * @param string $data
      * @return void
      * @throws AlipayBase64Exception
-     * @throws AlipaySignValidationException
+     * @throws AlipayInvalidSignException
      * @throws AlipayOpenSslException
      * @see https://docs.open.alipay.com/200/106120
      */
@@ -122,7 +122,7 @@ class AlipaySign
             case 1:
             break;
             case 0:
-            throw new AlipaySignValidationException($sign, $data);
+            throw new AlipayInvalidSignException($sign, $data);
             case -1:
             throw new AlipayOpenSslException(openssl_error_string());
         }
