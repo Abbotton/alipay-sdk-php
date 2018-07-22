@@ -4,8 +4,6 @@ namespace Alipay\Exception;
 
 class AlipayResponseException extends AlipayException
 {
-    const ERROR_NODE = 'error_response';
-
     public function __construct($response, $externalMessage = '')
     {
         if (is_string($response)) {
@@ -14,8 +12,8 @@ class AlipayResponseException extends AlipayException
             $response = (object) $response;
         }
 
-        if (!is_object($response) || !isset($response->{static::ERROR_NODE})) {
-            $errorResponse = $response->{static::ERROR_NODE};
+        if (!is_object($response) || !isset($response->{AlipayResponse::ERROR_NODE})) {
+            $errorResponse = $response->{AlipayResponse::ERROR_NODE};
         } else {
             $errorResponse = $response;
         }
