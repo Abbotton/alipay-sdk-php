@@ -33,7 +33,7 @@ class AopClient
     protected $apiVersion = "1.0";
 
     // 表单提交字符集编码
-    public $postCharset = "UTF-8";
+    protected $postCharset = "UTF-8";
 
     //使用文件读取文件格式，请只传递该值
     public $alipayPublicKey;
