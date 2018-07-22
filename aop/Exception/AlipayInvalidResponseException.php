@@ -2,7 +2,7 @@
 
 namespace Alipay\Exception;
 
-class AlipayResponseException extends AlipayException
+class AlipayInvalidResponseException extends AlipayException
 {
     public function __construct($response, $externalMessage = '')
     {

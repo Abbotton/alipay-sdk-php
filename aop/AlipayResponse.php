@@ -2,7 +2,7 @@
 
 namespace Alipay;
 
-use Alipay\Exception\AlipayResponseException;
+use Alipay\Exception\AlipayInvalidResponseException;
 
 class AlipayResponse
 {
@@ -40,12 +40,12 @@ class AlipayResponse
     public static function parse($raw, $format = 'JSON')
     {
         if ($format !== 'JSON') {
-            throw new AlipayResponseException($raw, "Unsupported response `{$format}` format");
+            throw new AlipayInvalidResponseException($raw, "Unsupported response `{$format}` format");
         }
         $instance = new static();
         $instance->raw = $raw;
         if (($instance->data = json_decode($raw, true)) === null) {
-            throw new AlipayResponseException(null, json_last_error_msg());
+            throw new AlipayInvalidResponseException(null, json_last_error_msg());
         }
         return $instance;
     }
@@ -71,7 +71,7 @@ class AlipayResponse
         $signDataEndIndex = $signIndex - 1;
         $indexLen = $signDataEndIndex - $signDataStartIndex;
         if ($indexLen < 0) {
-            throw new AlipayResponseException($this->raw, 'Invalid response data');
+            throw new AlipayInvalidResponseException($this->raw, 'Invalid response data');
         }
         return substr($this->raw, $signDataStartIndex, $indexLen);
     }
@@ -86,7 +86,7 @@ class AlipayResponse
         if (isset($this->data[static::SIGN_NODE])) {
             return $this->data[static::SIGN_NODE];
         }
-        throw new AlipayResponseException($this->data, 'Response sign not found');
+        throw new AlipayInvalidResponseException($this->data, 'Response sign not found');
     }
 
     /**
