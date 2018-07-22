@@ -35,8 +35,6 @@ class AopClient
     // 表单提交字符集编码
     public $postCharset = "UTF-8";
 
-    public $fileCharset = "UTF-8";
-
     //使用文件读取文件格式，请只传递该值
     public $alipayPublicKey;
 
@@ -113,8 +111,6 @@ class AopClient
      */
     public function sdkExecute($request)
     {
-        $this->setupCharsets($request);
-
         $params['app_id'] = $this->appId;
         $params['method'] = $request->getApiMethodName();
         $params['format'] = $this->format;
@@ -150,13 +146,6 @@ class AopClient
      */
     public function pageExecute($request, $httpmethod = "POST")
     {
-        $this->setupCharsets($request);
-
-        if (strcasecmp($this->fileCharset, $this->postCharset)) {
-            // writeLog("本地文件字符集编码与表单提交编码不一致，请务必设置成一样，属性名分别为postCharset!");
-            throw new AlipayException("文件编码：[" . $this->fileCharset . "] 与表单提交编码：[" . $this->postCharset . "]两者不一致!");
-        }
-
         $iv = null;
 
         if (!$this->checkEmpty($request->getApiVersion())) {
@@ -237,14 +226,6 @@ class AopClient
 
     public function execute($request, $authToken = null, $appInfoAuthtoken = null)
     {
-        $this->setupCharsets($request);
-
-        //  如果两者编码不一致，会出现签名验签或者乱码
-        if (strcasecmp($this->fileCharset, $this->postCharset)) {
-            // writeLog("本地文件字符集编码与表单提交编码不一致，请务必设置成一样，属性名分别为postCharset!");
-            throw new AlipayException("文件编码：[" . $this->fileCharset . "] 与表单提交编码：[" . $this->postCharset . "]两者不一致!");
-        }
-
         $iv = null;
 
         if (!$this->checkEmpty($request->getApiVersion())) {
@@ -559,14 +540,5 @@ class AopClient
                 }
             }
         }
-    }
-
-    private function setupCharsets($request)
-    {
-        if ($this->checkEmpty($this->postCharset)) {
-            $this->postCharset = 'UTF-8';
-        }
-        $str = preg_match('/[\x80-\xff]/', $this->appId) ? $this->appId : print_r($request, true);
-        $this->fileCharset = mb_detect_encoding($str, "UTF-8, GBK") == 'UTF-8' ? 'UTF-8' : 'GBK';
     }
 }
