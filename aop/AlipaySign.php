@@ -134,7 +134,7 @@ class AlipaySign
         $stringToBeSigned = "";
         $i = 0;
         foreach ($params as $k => $v) {
-            if (false === AopClient::isEmpty($v) && "@" != substr($v, 0, 1)) {
+            if (false === AlipayHelper::isEmpty($v) && "@" != substr($v, 0, 1)) {
                 if ($i == 0) {
                     $stringToBeSigned .= "$k" . "=" . "$v";
                 } else {

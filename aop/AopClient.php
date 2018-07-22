@@ -181,7 +181,7 @@ class AopClient
     {
         $sHtml = "<form id='alipaysubmit' name='alipaysubmit' action='" . $this->gatewayUrl . "?charset=" . $this->charset . "' method='POST'>";
         while (list($key, $val) = each($para_temp)) {
-            if (false === static::isEmpty($val)) {
+            if (false === AlipayHelper::isEmpty($val)) {
                 $val = str_replace("'", "&apos;", $val);
                 $sHtml .= "<input type='hidden' name='" . $key . "' value='" . $val . "'/>";
             }
@@ -242,17 +242,6 @@ class AopClient
         $this->signHelper->verify($sign, $signData);
 
         return $respObject;
-    }
-
-    /**
-     * 校验 $value 是否非空
-     *
-     * @param  string|null $value
-     * @return bool
-     */
-    public static function isEmpty($value)
-    {
-        return $value === null || trim($value) === '';
     }
 
     protected function parserJSONSignSource($request, $responseContent)
