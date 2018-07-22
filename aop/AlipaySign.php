@@ -132,19 +132,12 @@ class AlipaySign
     {
         ksort($params);
         $stringToBeSigned = "";
-        $i = 0;
         foreach ($params as $k => $v) {
-            if (false === AlipayHelper::isEmpty($v) && "@" != substr($v, 0, 1)) {
-                if ($i == 0) {
-                    $stringToBeSigned .= "$k" . "=" . "$v";
-                } else {
-                    $stringToBeSigned .= "&" . "$k" . "=" . "$v";
-                }
-                $i++;
+            if (false === AlipayHelper::isEmpty($v) && "@" !== substr($v, 0, 1)) {
+                $stringToBeSigned .= "&{$k}={$v}";
             }
         }
-
-        unset($k, $v);
+        $stringToBeSigned = substr($stringToBeSigned, 1);
         return $stringToBeSigned;
     }
 
