@@ -101,7 +101,7 @@ class AlipayResponse
         {
             
         }
-        $result = array_pop(array_reverse($this->data));
+        $result = reset($this->data);
         if ($assoc == false) {
             $result = (object) ($result);
         }
