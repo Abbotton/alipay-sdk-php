@@ -5,6 +5,7 @@ namespace Alipay;
 use Alipay\Exception\AlipayException;
 use Alipay\Helper\CryptHelper;
 use Alipay\Exception\AlipayResponseException;
+use Alipay\Exception\AlipayInvalidKeyException;
 
 class AopClient
 {
@@ -15,13 +16,16 @@ class AopClient
     const SIGN_NODE_NAME = "sign";
 
     //应用ID
-    public $appId;
+    protected $appId;
+
+    //签名类型
+    protected $signType = "RSA";
 
     //私钥文件路径
-    public $rsaPrivateKeyFilePath;
+    protected $appPrivateKey;
 
-    //私钥值
-    public $rsaPrivateKey;
+    //使用文件读取文件格式，请只传递该值
+    protected $alipayPublicKey;
 
     //网关
     protected $gatewayUrl = "https://openapi.alipay.com/gateway.do";
@@ -35,14 +39,43 @@ class AopClient
     // 表单提交字符集编码
     protected $postCharset = "UTF-8";
 
-    //使用文件读取文件格式，请只传递该值
-    public $alipayPublicKey;
+    protected function getKey($keyOrFilePath, $isPrivate = true)
+    {
+        if (file_exists($keyOrFilePath) && is_file($keyOrFilePath)) {
+            $key = file_get_contents($keyOrFilePath);
+        } else {
+            $key = $keyOrFilePath;
+        }
+        if ($isPrivate) {
+            $keyResource = openssl_pkey_get_private($key);
+        } else {
+            $keyResource = openssl_pkey_get_public($key);
+        }
+        if ($keyResource === false) {
+            throw new AlipayInvalidKeyException('Invalid key: ' . $keyOrFilePath);
+        }
+        return $keyResource;
+    }
 
-    //使用读取字符串格式，请只传递该值
-    public $alipayrsaPublicKey;
+    public static function create($appId, $signType, $appPrivateKey, $alipayPublicKey)
+    {
+        $instance = new self();
+        $instance->appId = $appId;
+        $instance->signType = $signType;
+        $instance->appPrivateKey = $instance->getKey($appPrivateKey, true);
+        $instance->alipayPublicKey = $instance->getKey($alipayPublicKey, false);
+        return $instance;
+    }
 
-    //签名类型
-    public $signType = "RSA";
+    protected function __construct()
+    {
+    }
+
+    public function __destruct()
+    {
+        @openssl_free_key($this->appPrivateKey);
+        @openssl_free_key($this->alipayPublicKey);
+    }
 
     protected function curl($url, $postFields = null)
     {
@@ -140,7 +173,7 @@ class AopClient
      * 页面提交执行方法
      *
      * @param  $request 跳转类接口的request
-     * @param  string                            $httpmethod 提交方式。两个值可选：post、get
+     * @param  string $httpmethod 提交方式。两个值可选：post、get
      * @return string 构建好的、签名后的最终跳转URL（GET）或String形式的form（POST）
      * @author 笙默
      */
@@ -176,21 +209,17 @@ class AopClient
             throw new AlipayException('AES Encrypt / Decrypr has been deprecated!');
         }
 
-        //print_r($apiParams);
         $totalParams = array_merge($apiParams, $sysParams);
 
-        //待签名字符串
-        $preSignStr = $this->getSignContent($totalParams);
+        ksort($totalParams);
 
         //签名
         $totalParams["sign"] = $this->generateSign($totalParams, $this->signType);
 
         if ("GET" == strtoupper($httpmethod)) {
-            //value做urlencode
-            $preString = $this->getSignContentUrlencode($totalParams);
             //拼接GET请求串
+            $preString = http_build_query($totalParams);
             $requestUrl = $this->gatewayUrl . "?" . $preString;
-
             return $requestUrl;
         } else {
             //拼接表单字符串
@@ -303,27 +332,6 @@ class AopClient
         return $value === null || trim($value) === '';
     }
 
-    /**
-     * rsaCheckV1 & rsaCheckV2
-     *  验证签名
-     *  在使用本方法前，必须初始化AopClient且传入公钥参数。
-     *  公钥是否是读取字符串还是读取文件，是根据初始化传入的值判断的。
-     **/
-    public function rsaCheckV1($params, $rsaPublicKeyFilePath, $signType = 'RSA')
-    {
-        $sign = $params['sign'];
-        $params['sign_type'] = null;
-        $params['sign'] = null;
-        return $this->verify($this->getSignContent($params), $sign, $rsaPublicKeyFilePath, $signType);
-    }
-
-    public function rsaCheckV2($params, $rsaPublicKeyFilePath, $signType = 'RSA')
-    {
-        $sign = $params['sign'];
-        $params['sign'] = null;
-        return $this->verify($this->getSignContent($params), $sign, $rsaPublicKeyFilePath, $signType);
-    }
-
     public function generateSign($params, $signType = "RSA")
     {
         return $this->sign($this->getSignContent($params), $signType);
@@ -331,8 +339,6 @@ class AopClient
 
     public function getSignContent($params)
     {
-        ksort($params);
-
         $stringToBeSigned = "";
         $i = 0;
         foreach ($params as $k => $v) {
@@ -350,87 +356,24 @@ class AopClient
         return $stringToBeSigned;
     }
 
-    //此方法对value做urlencode
-    public function getSignContentUrlencode($params)
+    protected function sign($data, $signType = 'RSA')
     {
-        ksort($params);
-
-        $stringToBeSigned = "";
-        $i = 0;
-        foreach ($params as $k => $v) {
-            if (false === $this->checkEmpty($v) && "@" != substr($v, 0, 1)) {
-                if ($i == 0) {
-                    $stringToBeSigned .= "$k" . "=" . urlencode($v);
-                } else {
-                    $stringToBeSigned .= "&" . "$k" . "=" . urlencode($v);
-                }
-                $i++;
-            }
-        }
-
-        unset($k, $v);
-        return $stringToBeSigned;
-    }
-
-    protected function sign($data, $signType = "RSA")
-    {
-        if ($this->checkEmpty($this->rsaPrivateKeyFilePath)) {
-            $priKey = $this->rsaPrivateKey;
-            $res = "-----BEGIN RSA PRIVATE KEY-----\n" .
-                wordwrap($priKey, 64, "\n", true) .
-                "\n-----END RSA PRIVATE KEY-----";
-        } else {
-            $priKey = file_get_contents($this->rsaPrivateKeyFilePath);
-            $res = openssl_get_privatekey($priKey);
-            if ($res === false) {
-                throw new AlipayException('您使用的私钥格式错误，请检查RSA私钥配置');
-            }
-        }
-
         if ("RSA2" == $signType) {
-            openssl_sign($data, $sign, $res, OPENSSL_ALGO_SHA256);
+            openssl_sign($data, $sign, $this->appPrivateKey, OPENSSL_ALGO_SHA256);
         } else {
-            openssl_sign($data, $sign, $res);
-        }
-
-        if (!$this->checkEmpty($this->rsaPrivateKeyFilePath)) {
-            openssl_free_key($res);
+            openssl_sign($data, $sign, $this->appPrivateKey);
         }
         $sign = base64_encode($sign);
         return $sign;
     }
 
-    public function verify($data, $sign, $rsaPublicKeyFilePath, $signType = 'RSA')
+    public function verify($data, $sign, $signType = 'RSA')
     {
-        if ($this->checkEmpty($this->alipayPublicKey)) {
-            $pubKey = $this->alipayrsaPublicKey;
-            $res = "-----BEGIN PUBLIC KEY-----\n" .
-                wordwrap($pubKey, 64, "\n", true) .
-                "\n-----END PUBLIC KEY-----";
-        } else {
-            //读取公钥文件
-            $pubKey = file_get_contents($rsaPublicKeyFilePath);
-            //转换为openssl格式密钥
-            $res = openssl_get_publickey($pubKey);
-            if ($res === false) {
-                throw new AlipayException('支付宝RSA公钥错误。请检查公钥文件格式是否正确');
-            }
-        }
-
-        //调用openssl内置方法验签，返回bool值
-        $result = false;
         if ("RSA2" == $signType) {
-            $result = (openssl_verify($data, base64_decode($sign), $res, OPENSSL_ALGO_SHA256) === 1);
+            return 1 === openssl_verify($data, base64_decode($sign), $this->alipayPublicKey, OPENSSL_ALGO_SHA256);
         } else {
-            $result = (openssl_verify($data, base64_decode($sign), $res) === 1);
+            return 1 === openssl_verify($data, base64_decode($sign), $this->alipayPublicKey);
         }
-
-        if (!$this->checkEmpty($this->alipayPublicKey)) {
-            //释放资源
-            openssl_free_key($res);
-        }
-
-        return $result;
     }
 
 
@@ -519,25 +462,23 @@ class AopClient
      */
     public function checkResponseSign($request, $signData, $resp, $respObject)
     {
-        if (!$this->checkEmpty($this->alipayPublicKey) || !$this->checkEmpty($this->alipayrsaPublicKey)) {
-            if ($signData == null || $this->checkEmpty($signData->sign) || $this->checkEmpty($signData->signSourceData)) {
-                throw new AlipayException(" check sign Fail! The reason : signData is Empty");
-            }
+        if ($signData == null || $this->checkEmpty($signData->sign) || $this->checkEmpty($signData->signSourceData)) {
+            throw new AlipayException(" check sign Fail! The reason : signData is Empty");
+        }
 
-            $checkResult = $this->verify($signData->signSourceData, $signData->sign, $this->alipayPublicKey, $this->signType);
+        $checkResult = $this->verify($signData->signSourceData, $signData->sign, $this->signType);
 
-            if (!$checkResult) {
-                if (strpos($signData->signSourceData, "\\/") > 0) {
-                    $signData->signSourceData = str_replace("\\/", "/", $signData->signSourceData);
+        if (!$checkResult) {
+            if (strpos($signData->signSourceData, "\\/") > 0) {
+                $signData->signSourceData = str_replace("\\/", "/", $signData->signSourceData);
 
-                    $checkResult = $this->verify($signData->signSourceData, $signData->sign, $this->alipayPublicKey, $this->signType);
+                $checkResult = $this->verify($signData->signSourceData, $signData->sign, $this->signType);
 
-                    if (!$checkResult) {
-                        throw new AlipayException("check sign Fail! [sign=" . $signData->sign . ", signSourceData=" . $signData->signSourceData . "]");
-                    }
-                } else {
+                if (!$checkResult) {
                     throw new AlipayException("check sign Fail! [sign=" . $signData->sign . ", signSourceData=" . $signData->signSourceData . "]");
                 }
+            } else {
+                throw new AlipayException("check sign Fail! [sign=" . $signData->sign . ", signSourceData=" . $signData->signSourceData . "]");
             }
         }
     }
