@@ -42,7 +42,6 @@ class AlipayResponse
         if (($instance->data = json_decode($raw, true)) === null) {
             throw new AlipayResponseException(null, json_last_error_msg());
         }
-        // $instance->data = new \ArrayObject($instance->data, \ArrayObject::ARRAY_AS_PROPS);
         return $instance;
     }
 
