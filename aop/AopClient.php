@@ -2,10 +2,10 @@
 
 namespace Alipay;
 
+use Alipay\Exception\AlipayCurlException;
 use Alipay\Exception\AlipayException;
 use Alipay\Exception\AlipayHttpException;
 use Alipay\Request\AbstractAlipayRequest;
-use Alipay\Exception\AlipayCurlException;
 
 class AopClient
 {
@@ -57,8 +57,8 @@ class AopClient
     /**
      * 创建 AopClient 实例
      *
-     * @param  string $appId
-     * @param  AlipaySign $signHelper
+     * @param string     $appId
+     * @param AlipaySign $signHelper
      */
     public function __construct($appId, $signHelper)
     {
@@ -69,8 +69,8 @@ class AopClient
     /**
      * 使用 CURL 提交请求
      *
-     * @param string $url
-     * @param array $postFields
+     * @param  string $url
+     * @param  array  $postFields
      * @return void
      */
     protected function curl($url, $postFields)
@@ -137,8 +137,8 @@ class AopClient
     /**
      * 页面提交执行方法
      *
-     * @param  AbstractAlipayRequest $request 跳转类接口的request
-     * @param  string $httpmethod 提交方式。两个值可选：post、get
+     * @param  AbstractAlipayRequest $request    跳转类接口的request
+     * @param  string                $httpmethod 提交方式。两个值可选：post、get
      * @return string 构建好的、签名后的最终跳转URL（GET）或String形式的form（POST）
      * @author 笙默
      */
@@ -180,7 +180,7 @@ class AopClient
     /**
      * 建立请求，以表单HTML形式构造（默认）
      *
-     * @param array $params 请求参数数组
+     * @param  array $params 请求参数数组
      * @return string 提交表单HTML文本
      */
     protected function buildRequestForm($params)
@@ -201,9 +201,9 @@ class AopClient
     /**
      * 执行请求
      *
-     * @param AbstractAlipayRequest $request
-     * @param string $authToken
-     * @param string $appInfoAuthtoken
+     * @param  AbstractAlipayRequest $request
+     * @param  string                $authToken
+     * @param  string                $appInfoAuthtoken
      * @return void
      */
     public function execute(AbstractAlipayRequest $request, $authToken = '', $appInfoAuthtoken = '')

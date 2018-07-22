@@ -4,7 +4,6 @@ namespace Alipay;
 
 use Alipay\Exception\AlipayResponseException;
 
-
 class AlipayResponse
 {
     /**
@@ -29,7 +28,7 @@ class AlipayResponse
     /**
      * 解析原始响应数据
      *
-     * @param string $raw
+     * @param  string $raw
      * @return static
      */
     public static function parse($raw)
