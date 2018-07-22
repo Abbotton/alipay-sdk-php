@@ -9,7 +9,9 @@ class AlipayResponseException extends AlipayException
     public function __construct($response, $externalMessage = '')
     {
         if (is_string($response)) {
-            $response = json_decode($response);
+            $response = json_decode($response, true);
+        } elseif (is_array($response)) {
+            $response = (object) $response;
         }
         if (!is_object($response) || !isset($response->{static::ERROR_NODE})) {
             $message = $externalMessage;
