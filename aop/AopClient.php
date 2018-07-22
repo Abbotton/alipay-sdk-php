@@ -330,14 +330,6 @@ class AopClient
      */
     public function characet($data, $targetCharset)
     {
-        if (!empty($data)) {
-            $fileType = $this->fileCharset;
-            if (strcasecmp($fileType, $targetCharset) != 0) {
-                $data = mb_convert_encoding($data, $targetCharset, $fileType);
-                // $data = iconv($fileType, $targetCharset.'//IGNORE', $data);
-            }
-        }
-
         return $data;
     }
 
