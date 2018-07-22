@@ -6,7 +6,7 @@ use Alipay\AlipayResponse;
 
 class AlipayInvalidResponseException extends AlipayException
 {
-    public $response;
+    protected $response;
 
     public function __construct($response, $externalMessage = '')
     {
@@ -38,5 +38,10 @@ class AlipayInvalidResponseException extends AlipayException
         }
         
         parent::__construct($message, $code);
+    }
+
+    public function getResponse()
+    {
+        return $this->response;
     }
 }
