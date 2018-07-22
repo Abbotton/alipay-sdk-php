@@ -187,14 +187,5 @@ OPENID：用户支付宝账户在某商户下的唯一ID
         return $this->apiVersion;
     }
 
-    public function setNeedEncrypt($needEncrypt)
-    {
 
-        $this->needEncrypt = $needEncrypt;
-    }
-
-    public function getNeedEncrypt()
-    {
-        return $this->needEncrypt;
-    }
 }

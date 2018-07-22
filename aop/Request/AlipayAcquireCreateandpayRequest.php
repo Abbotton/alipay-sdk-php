@@ -539,14 +539,5 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
         return $this->apiVersion;
     }
 
-    public function setNeedEncrypt($needEncrypt)
-    {
 
-        $this->needEncrypt = $needEncrypt;
-    }
-
-    public function getNeedEncrypt()
-    {
-        return $this->needEncrypt;
-    }
 }

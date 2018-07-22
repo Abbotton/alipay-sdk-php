@@ -108,14 +108,5 @@ class AlipayMobilePublicMessageSingleSendRequest extends AbstractAlipayRequest
         return $this->apiVersion;
     }
 
-    public function setNeedEncrypt($needEncrypt)
-    {
 
-        $this->needEncrypt = $needEncrypt;
-    }
-
-    public function getNeedEncrypt()
-    {
-        return $this->needEncrypt;
-    }
 }

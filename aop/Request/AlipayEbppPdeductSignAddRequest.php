@@ -405,14 +405,5 @@ HEALTH：健康险
         return $this->apiVersion;
     }
 
-    public function setNeedEncrypt($needEncrypt)
-    {
 
-        $this->needEncrypt = $needEncrypt;
-    }
-
-    public function getNeedEncrypt()
-    {
-        return $this->needEncrypt;
-    }
 }

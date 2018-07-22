@@ -326,14 +326,5 @@ deadline（int）：文章的失效时间，单位秒
         return $this->apiVersion;
     }
 
-    public function setNeedEncrypt($needEncrypt)
-    {
 
-        $this->needEncrypt = $needEncrypt;
-    }
-
-    public function getNeedEncrypt()
-    {
-        return $this->needEncrypt;
-    }
 }
