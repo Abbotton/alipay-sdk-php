@@ -223,10 +223,6 @@ class AopClient
         //获取业务参数
         $apiParams = $request->getApiParas();
 
-        if (method_exists($request, "getNeedEncrypt") && $request->getNeedEncrypt()) {
-            throw new AlipayException('AES Encrypt / Decrypr has been deprecated!');
-        }
-
         $totalParams = array_merge($apiParams, $sysParams);
 
         ksort($totalParams);
@@ -290,11 +286,6 @@ class AopClient
         //获取业务参数
         $apiParams = $request->getApiParas();
 
-        if (method_exists($request, "getNeedEncrypt") && $request->getNeedEncrypt()) {
-            throw new AlipayException('AES Encrypt / Decrypr has been deprecated!');
-        }
-
-
         $totalParams = array_merge($apiParams, $sysParams);
         ksort($totalParams);
         //签名
@@ -320,11 +311,6 @@ class AopClient
 
         // 验签
         $this->checkResponseSign($request, $signData, $resp, $respObject);
-
-        // 解密
-        if (method_exists($request, "getNeedEncrypt") && $request->getNeedEncrypt()) {
-            throw new AlipayException('AES Encrypt / Decrypr has been deprecated!');
-        }
 
         return $respObject;
     }
