@@ -38,21 +38,21 @@ class AopClient
      *
      * @var string
      */
-    protected $gatewayUrl = "https://openapi.alipay.com/gateway.do";
+    protected $gatewayUrl = 'https://openapi.alipay.com/gateway.do';
 
     /**
      * 响应数据格式，官方目前只支持 JSON
      *
      * @var string
      */
-    protected $format = "json";
+    protected $format = 'JSON';
 
     /**
      * 数据提交编码
      *
      * @var string
      */
-    protected $charset = "UTF-8";
+    protected $charset = 'UTF-8';
 
     /**
      * 创建 AopClient 实例
