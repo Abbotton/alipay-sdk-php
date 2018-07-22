@@ -4,6 +4,11 @@ namespace Alipay\Request;
 
 abstract class AbstractAlipayRequest
 {
+    public static function className()
+    {
+        return __CLASS__;
+    }
+
     public abstract function getApiMethodName();
 
     public function getApiVersion()
