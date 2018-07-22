@@ -10,8 +10,8 @@
 - [x] 整理代码风格使其符合 `PSR-1`、`PSR-2`。
 - [ ] 增加单元测试。
 - [ ] 兼容 PHP 7.2，<del>替换 MCrypt 为 OpenSSL</del>。
-- [ ] 移除官方 API 文档内 `已弃用` 特性。
-- [ ] 移除难以拓展的调试、日志等特性，以便于集成第三方框架和扩展包。
+- [x] 移除官方 API 文档内 `已弃用` 特性。
+- [x] 移除难以拓展的调试、日志等特性，以便于集成第三方框架和扩展包。
 - [ ] 其它优化，持续进行中……
 
 ## 如何使用
@@ -43,10 +43,17 @@
 
 可执行文件全部位于 `bin` 目录下，点此查看[详细说明](bin/README.md)。
 
-## 其它资料
+## 其它资源
 
-- [支付宝小程序文档](https://docs.alipay.com/mini/introduce)
 - [支付宝开放平台 API 文档](https://docs.open.alipay.com/api/)
+- [支付宝小程序文档](https://docs.alipay.com/mini/introduce)
+- [支付宝小程序开发者社区](https://openclub.alipay.com/index.php?c=thread&a=subforum&fid=66)
+- [支付宝小程序内利用 wxParse](https://openclub.alipay.com/read.php?tid=3830&fid=66)
+- 三款微信小程序转支付宝小程序开源工具（未测试）
+    - <https://github.com/foxitdog/wx2ali>
+    - <https://github.com/aOrz/wxmp2antmp>
+    - <https://github.com/douzi8/wxToAlipay>
+
 
 ## 感谢
 
