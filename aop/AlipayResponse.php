@@ -16,14 +16,14 @@ class AlipayResponse
      *
      * @var string
      */
-    public $raw;
+    protected $raw;
 
     /**
      * 已解析的响应
      *
      * @var mixed
      */
-    public $data;
+    protected $data;
 
     /**
      * 解析原始响应数据
@@ -94,5 +94,15 @@ class AlipayResponse
     public function getData($assoc = false)
     {
         return $this->data;
+    }
+
+    /**
+     * 获取原始响应
+     *
+     * @return string
+     */
+    public function getRaw()
+    {
+        return $this->raw;
     }
 }
