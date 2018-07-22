@@ -4,8 +4,6 @@ namespace Alipay;
 
 use Alipay\Exception\AlipayException;
 use Alipay\Exception\AlipayHttpException;
-use Alipay\Exception\AlipayResponseException;
-use Alipay\Exception\AlipaySignValidationError;
 use Alipay\Request\AbstractAlipayRequest;
 
 class AopClient
