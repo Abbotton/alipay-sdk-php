@@ -204,7 +204,7 @@ class AopClient
      * @param  AbstractAlipayRequest $request
      * @param  string                $authToken
      * @param  string                $appInfoAuthtoken
-     * @return void
+     * @return AlipayResponse
      */
     public function execute(AbstractAlipayRequest $request, $authToken = '', $appInfoAuthtoken = '')
     {
