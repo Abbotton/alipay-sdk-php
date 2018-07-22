@@ -44,12 +44,12 @@ class AlipaySign
      * @param  string $signType
      * @param  string $appPrivateKey
      * @param  string $alipayPublicKey
-     * @return self
+     * @return static
      * @throws \InvalidArgumentException
      */
     public static function create($appPrivateKey, $alipayPublicKey, $signType = 'RSA2')
     {
-        $instance = new self();
+        $instance = new static();
         $typeAlgoMap = $instance->typeAlgoMap();
         if(!isset($typeAlgoMap[$signType])) {
             throw new \InvalidArgumentException('Unknown sign type: ' . $signType);
