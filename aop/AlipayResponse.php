@@ -12,14 +12,14 @@ class AlipayResponse
     const SIGN_NODE = "sign";
 
     /**
-     * 原始响应数据
+     * 原始响应
      *
      * @var string
      */
     public $raw;
 
     /**
-     * 已解析的响应数据
+     * 已解析的响应
      *
      * @var mixed
      */
@@ -29,6 +29,7 @@ class AlipayResponse
      * 解析原始响应数据
      *
      * @param  string $raw
+     * @param  string $format
      * @return static
      */
     public static function parse($raw, $format = 'JSON')
@@ -49,13 +50,19 @@ class AlipayResponse
     {
     }
 
-    public function getRawData()
+    /**
+     * 获取原始响应的被签名数据，用于验证签名
+     *
+     * @return string
+     * @see AlipaySign::verify()
+     */
+    public function stripData()
     {
         $nodeName = current(array_keys($this->data));
         $nodeIndex = strpos($this->raw, $nodeName);
 
         $signDataStartIndex = $nodeIndex + strlen($nodeName) + 2;
-        $signIndex = strrpos($this->raw, "\"" . static::SIGN_NODE . "\"");
+        $signIndex = strrpos($this->raw, '"' . static::SIGN_NODE . '"');
         
         $signDataEndIndex = $signIndex - 1;
         $indexLen = $signDataEndIndex - $signDataStartIndex;
@@ -65,6 +72,11 @@ class AlipayResponse
         return substr($this->raw, $signDataStartIndex, $indexLen);
     }
 
+    /**
+     * 获取响应内的签名
+     *
+     * @return string
+     */
     public function getSign()
     {
         if (isset($this->data[static::SIGN_NODE])) {
@@ -73,6 +85,12 @@ class AlipayResponse
         throw new AlipayResponseException($this->data, 'Response sign not found');
     }
 
+    /**
+     * 获取响应内的数据
+     *
+     * @param boolean $assoc
+     * @return mixed
+     */
     public function getData($assoc = false)
     {
         return $this->data;

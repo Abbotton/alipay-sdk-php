@@ -240,7 +240,7 @@ class AopClient
         $alipayResp = AlipayResponse::parse($resp, $this->format);
 
         $sign = $alipayResp->getSign();
-        $signData = $alipayResp->getRawData();
+        $signData = $alipayResp->stripData();
 
         // 验签
         $this->signHelper->verify($sign, $signData);
