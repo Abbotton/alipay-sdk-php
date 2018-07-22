@@ -34,9 +34,19 @@
     );
     ```
 
-3. 创建 `Request`
+3. 创建 `AlipayRequest` 实例。
 
-4. API、实例以及其它资源，请参见[官方文档](#其它资料)。
+    ```php
+    $request = \Alipay\AlipayRequestFactory::createByApi('API Name');
+    ```
+
+4. 发送请求。
+
+    ```php
+    $result = $aop->execute($request);
+    ```
+
+5. 查看实例，请移步 `examples` 目录。
 
 ## 注意
 
