@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class MybankFinanceYulibaoCapitalPurchaseRequest implements \Alipay\RequestInterface
+class MybankFinanceYulibaoCapitalPurchaseRequest extends AbstractAlipayRequest
 {
 
     /**

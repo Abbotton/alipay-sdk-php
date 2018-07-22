@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobilePublicMessageSingleSendRequest implements \Alipay\RequestInterface
+class AlipayMobilePublicMessageSingleSendRequest extends AbstractAlipayRequest
 {
 
     /**

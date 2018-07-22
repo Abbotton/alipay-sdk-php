@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMarketingVoucherTemplateDeleteRequest implements \Alipay\RequestInterface
+class AlipayMarketingVoucherTemplateDeleteRequest extends AbstractAlipayRequest
 {
 
     /**

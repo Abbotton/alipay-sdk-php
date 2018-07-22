@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayBossProdArrangementOfflineQueryRequest implements \Alipay\RequestInterface
+class AlipayBossProdArrangementOfflineQueryRequest extends AbstractAlipayRequest
 {
 
     /**

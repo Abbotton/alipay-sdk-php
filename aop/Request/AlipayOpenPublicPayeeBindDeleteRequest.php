@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicPayeeBindDeleteRequest implements \Alipay\RequestInterface
+class AlipayOpenPublicPayeeBindDeleteRequest extends AbstractAlipayRequest
 {
 
     /**

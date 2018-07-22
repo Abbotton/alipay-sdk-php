@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenMiniSafedomainCreateRequest implements \Alipay\RequestInterface
+class AlipayOpenMiniSafedomainCreateRequest extends AbstractAlipayRequest
 {
 
     /**

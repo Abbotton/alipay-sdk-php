@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoCplifeNoticePublishRequest implements \Alipay\RequestInterface
+class AlipayEcoCplifeNoticePublishRequest extends AbstractAlipayRequest
 {
 
     /**

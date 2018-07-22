@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicLifeLabelBatchqueryRequest implements \Alipay\RequestInterface
+class AlipayOpenPublicLifeLabelBatchqueryRequest extends AbstractAlipayRequest
 {
 
     private $apiParas = array();

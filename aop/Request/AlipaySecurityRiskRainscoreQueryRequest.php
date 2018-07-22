@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipaySecurityRiskRainscoreQueryRequest implements \Alipay\RequestInterface
+class AlipaySecurityRiskRainscoreQueryRequest extends AbstractAlipayRequest
 {
 
     /**

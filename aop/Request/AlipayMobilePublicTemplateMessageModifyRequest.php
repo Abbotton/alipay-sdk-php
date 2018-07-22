@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobilePublicTemplateMessageModifyRequest implements \Alipay\RequestInterface
+class AlipayMobilePublicTemplateMessageModifyRequest extends AbstractAlipayRequest
 {
 
     /**

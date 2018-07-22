@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicAdvertBatchqueryRequest implements \Alipay\RequestInterface
+class AlipayOpenPublicAdvertBatchqueryRequest extends AbstractAlipayRequest
 {
 
     private $apiParas = array();

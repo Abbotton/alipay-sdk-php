@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayBossFncXwbtestRetModifyRequest implements \Alipay\RequestInterface
+class AlipayBossFncXwbtestRetModifyRequest extends AbstractAlipayRequest
 {
 
     private $apiParas = array();

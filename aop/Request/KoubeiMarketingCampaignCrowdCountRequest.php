@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiMarketingCampaignCrowdCountRequest implements \Alipay\RequestInterface
+class KoubeiMarketingCampaignCrowdCountRequest extends AbstractAlipayRequest
 {
 
     /**

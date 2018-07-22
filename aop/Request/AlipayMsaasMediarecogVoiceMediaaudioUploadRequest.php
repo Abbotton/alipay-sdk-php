@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMsaasMediarecogVoiceMediaaudioUploadRequest implements \Alipay\RequestInterface
+class AlipayMsaasMediarecogVoiceMediaaudioUploadRequest extends AbstractAlipayRequest
 {
 
     /**

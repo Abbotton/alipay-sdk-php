@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMarketingCardConsumeSyncRequest implements \Alipay\RequestInterface
+class AlipayMarketingCardConsumeSyncRequest extends AbstractAlipayRequest
 {
 
     /**

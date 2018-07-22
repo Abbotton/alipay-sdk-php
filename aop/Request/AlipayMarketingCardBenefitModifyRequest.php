@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMarketingCardBenefitModifyRequest implements \Alipay\RequestInterface
+class AlipayMarketingCardBenefitModifyRequest extends AbstractAlipayRequest
 {
 
     /**

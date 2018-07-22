@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayTrustUserScoreGetRequest implements \Alipay\RequestInterface
+class AlipayTrustUserScoreGetRequest extends AbstractAlipayRequest
 {
 
     private $apiParas = array();

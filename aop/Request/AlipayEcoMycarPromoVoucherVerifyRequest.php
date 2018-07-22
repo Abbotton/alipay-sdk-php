@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoMycarPromoVoucherVerifyRequest implements \Alipay\RequestInterface
+class AlipayEcoMycarPromoVoucherVerifyRequest extends AbstractAlipayRequest
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicXwbtestabcdBatchqueryRequest implements \Alipay\RequestInterface
+class AlipayOpenPublicXwbtestabcdBatchqueryRequest extends AbstractAlipayRequest
 {
 
     /**

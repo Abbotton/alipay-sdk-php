@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenSmsgDataSetRequest implements \Alipay\RequestInterface
+class AlipayOpenSmsgDataSetRequest extends AbstractAlipayRequest
 {
 
     /**

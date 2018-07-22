@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenMiniVersionRollbackRequest implements \Alipay\RequestInterface
+class AlipayOpenMiniVersionRollbackRequest extends AbstractAlipayRequest
 {
 
     /**

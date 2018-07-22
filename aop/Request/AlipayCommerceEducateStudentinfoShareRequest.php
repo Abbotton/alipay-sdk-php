@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayCommerceEducateStudentinfoShareRequest implements \Alipay\RequestInterface
+class AlipayCommerceEducateStudentinfoShareRequest extends AbstractAlipayRequest
 {
 
     private $apiParas = array();

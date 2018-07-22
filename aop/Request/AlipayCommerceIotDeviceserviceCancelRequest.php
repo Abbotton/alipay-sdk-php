@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayCommerceIotDeviceserviceCancelRequest implements \Alipay\RequestInterface
+class AlipayCommerceIotDeviceserviceCancelRequest extends AbstractAlipayRequest
 {
 
     /**

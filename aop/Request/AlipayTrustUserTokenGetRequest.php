@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayTrustUserTokenGetRequest implements \Alipay\RequestInterface
+class AlipayTrustUserTokenGetRequest extends AbstractAlipayRequest
 {
 
     /**

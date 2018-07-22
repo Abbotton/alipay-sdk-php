@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoCplifeRoominfoDeleteRequest implements \Alipay\RequestInterface
+class AlipayEcoCplifeRoominfoDeleteRequest extends AbstractAlipayRequest
 {
 
     /**

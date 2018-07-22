@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayInsAutoAutoinsprodCommonConsultRequest implements \Alipay\RequestInterface
+class AlipayInsAutoAutoinsprodCommonConsultRequest extends AbstractAlipayRequest
 {
 
     /**

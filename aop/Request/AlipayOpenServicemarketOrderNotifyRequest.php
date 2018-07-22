@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenServicemarketOrderNotifyRequest implements \Alipay\RequestInterface
+class AlipayOpenServicemarketOrderNotifyRequest extends AbstractAlipayRequest
 {
 
     private $apiParas = array();

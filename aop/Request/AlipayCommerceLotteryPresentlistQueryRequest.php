@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayCommerceLotteryPresentlistQueryRequest implements \Alipay\RequestInterface
+class AlipayCommerceLotteryPresentlistQueryRequest extends AbstractAlipayRequest
 {
 
     /**

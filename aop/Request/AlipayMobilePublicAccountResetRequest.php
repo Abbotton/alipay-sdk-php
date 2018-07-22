@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobilePublicAccountResetRequest implements \Alipay\RequestInterface
+class AlipayMobilePublicAccountResetRequest extends AbstractAlipayRequest
 {
 
     /**

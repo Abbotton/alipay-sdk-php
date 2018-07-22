@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayFundBatchDetailQueryRequest implements \Alipay\RequestInterface
+class AlipayFundBatchDetailQueryRequest extends AbstractAlipayRequest
 {
 
     /**

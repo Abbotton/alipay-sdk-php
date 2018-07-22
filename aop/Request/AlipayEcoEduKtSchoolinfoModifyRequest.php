@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoEduKtSchoolinfoModifyRequest implements \Alipay\RequestInterface
+class AlipayEcoEduKtSchoolinfoModifyRequest extends AbstractAlipayRequest
 {
 
     /**

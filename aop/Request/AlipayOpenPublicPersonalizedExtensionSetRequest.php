@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicPersonalizedExtensionSetRequest implements \Alipay\RequestInterface
+class AlipayOpenPublicPersonalizedExtensionSetRequest extends AbstractAlipayRequest
 {
 
     /**

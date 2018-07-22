@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMsaasPromotionCpainfoCreateRequest implements \Alipay\RequestInterface
+class AlipayMsaasPromotionCpainfoCreateRequest extends AbstractAlipayRequest
 {
 
     /**

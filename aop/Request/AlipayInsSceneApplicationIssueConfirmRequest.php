@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayInsSceneApplicationIssueConfirmRequest implements \Alipay\RequestInterface
+class AlipayInsSceneApplicationIssueConfirmRequest extends AbstractAlipayRequest
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiItemExtitemBrandQueryRequest implements \Alipay\RequestInterface
+class KoubeiItemExtitemBrandQueryRequest extends AbstractAlipayRequest
 {
 
     private $apiParas = array();

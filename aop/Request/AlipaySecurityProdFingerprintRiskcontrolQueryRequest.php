@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipaySecurityProdFingerprintRiskcontrolQueryRequest implements \Alipay\RequestInterface
+class AlipaySecurityProdFingerprintRiskcontrolQueryRequest extends AbstractAlipayRequest
 {
 
     /**

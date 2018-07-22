@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobileBeaconDeviceDeleteRequest implements \Alipay\RequestInterface
+class AlipayMobileBeaconDeviceDeleteRequest extends AbstractAlipayRequest
 {
 
     /**

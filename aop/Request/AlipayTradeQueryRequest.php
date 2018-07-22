@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayTradeQueryRequest implements \Alipay\RequestInterface
+class AlipayTradeQueryRequest extends AbstractAlipayRequest
 {
 
     /**

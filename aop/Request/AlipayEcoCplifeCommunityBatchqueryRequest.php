@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoCplifeCommunityBatchqueryRequest implements \Alipay\RequestInterface
+class AlipayEcoCplifeCommunityBatchqueryRequest extends AbstractAlipayRequest
 {
 
     /**

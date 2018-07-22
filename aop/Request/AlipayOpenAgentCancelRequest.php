@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenAgentCancelRequest implements \Alipay\RequestInterface
+class AlipayOpenAgentCancelRequest extends AbstractAlipayRequest
 {
 
     /**

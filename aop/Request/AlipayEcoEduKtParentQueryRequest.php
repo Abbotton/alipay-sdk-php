@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoEduKtParentQueryRequest implements \Alipay\RequestInterface
+class AlipayEcoEduKtParentQueryRequest extends AbstractAlipayRequest
 {
 
     /**

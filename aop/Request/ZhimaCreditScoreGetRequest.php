@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class ZhimaCreditScoreGetRequest implements \Alipay\RequestInterface
+class ZhimaCreditScoreGetRequest extends AbstractAlipayRequest
 {
 
     /**

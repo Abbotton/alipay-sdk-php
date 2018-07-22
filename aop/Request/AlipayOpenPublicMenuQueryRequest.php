@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicMenuQueryRequest implements \Alipay\RequestInterface
+class AlipayOpenPublicMenuQueryRequest extends AbstractAlipayRequest
 {
 
     private $apiParas = array();

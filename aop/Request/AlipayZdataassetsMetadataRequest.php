@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayZdataassetsMetadataRequest implements \Alipay\RequestInterface
+class AlipayZdataassetsMetadataRequest extends AbstractAlipayRequest
 {
 
     /**

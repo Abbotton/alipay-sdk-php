@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobilePublicContactFollowListRequest implements \Alipay\RequestInterface
+class AlipayMobilePublicContactFollowListRequest extends AbstractAlipayRequest
 {
 
     private $apiParas = array();

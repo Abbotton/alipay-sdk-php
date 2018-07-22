@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicPersonalizedExtensionBatchqueryRequest implements \Alipay\RequestInterface
+class AlipayOpenPublicPersonalizedExtensionBatchqueryRequest extends AbstractAlipayRequest
 {
 
     private $apiParas = array();

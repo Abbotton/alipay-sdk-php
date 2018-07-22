@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class MybankFinanceYulibaoTransHistoryQueryRequest implements \Alipay\RequestInterface
+class MybankFinanceYulibaoTransHistoryQueryRequest extends AbstractAlipayRequest
 {
 
     /**

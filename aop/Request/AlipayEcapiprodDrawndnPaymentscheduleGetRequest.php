@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcapiprodDrawndnPaymentscheduleGetRequest implements \Alipay\RequestInterface
+class AlipayEcapiprodDrawndnPaymentscheduleGetRequest extends AbstractAlipayRequest
 {
 
     /**

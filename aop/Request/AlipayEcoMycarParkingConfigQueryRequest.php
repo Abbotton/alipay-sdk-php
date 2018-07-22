@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoMycarParkingConfigQueryRequest implements \Alipay\RequestInterface
+class AlipayEcoMycarParkingConfigQueryRequest extends AbstractAlipayRequest
 {
 
     /**

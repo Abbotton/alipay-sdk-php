@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayInsSceneCouponReceiveRequest implements \Alipay\RequestInterface
+class AlipayInsSceneCouponReceiveRequest extends AbstractAlipayRequest
 {
 
     /**

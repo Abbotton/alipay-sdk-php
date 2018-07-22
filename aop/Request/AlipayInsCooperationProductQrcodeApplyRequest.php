@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayInsCooperationProductQrcodeApplyRequest implements \Alipay\RequestInterface
+class AlipayInsCooperationProductQrcodeApplyRequest extends AbstractAlipayRequest
 {
 
     /**

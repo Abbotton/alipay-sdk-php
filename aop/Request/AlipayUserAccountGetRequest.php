@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayUserAccountGetRequest implements \Alipay\RequestInterface
+class AlipayUserAccountGetRequest extends AbstractAlipayRequest
 {
 
     private $apiParas = array();

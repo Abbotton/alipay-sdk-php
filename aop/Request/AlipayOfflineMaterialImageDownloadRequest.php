@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOfflineMaterialImageDownloadRequest implements \Alipay\RequestInterface
+class AlipayOfflineMaterialImageDownloadRequest extends AbstractAlipayRequest
 {
 
     /**

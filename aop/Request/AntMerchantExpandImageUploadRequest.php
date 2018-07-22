@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AntMerchantExpandImageUploadRequest implements \Alipay\RequestInterface
+class AntMerchantExpandImageUploadRequest extends AbstractAlipayRequest
 {
 
     /**

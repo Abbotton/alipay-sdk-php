@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMarketingCampaignDrawcampWhitelistCreateRequest implements \Alipay\RequestInterface
+class AlipayMarketingCampaignDrawcampWhitelistCreateRequest extends AbstractAlipayRequest
 {
 
     /**

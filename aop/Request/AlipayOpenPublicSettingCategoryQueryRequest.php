@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicSettingCategoryQueryRequest implements \Alipay\RequestInterface
+class AlipayOpenPublicSettingCategoryQueryRequest extends AbstractAlipayRequest
 {
 
     private $apiParas = array();

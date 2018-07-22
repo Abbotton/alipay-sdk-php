@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenAppNotifyVerifyRequest implements \Alipay\RequestInterface
+class AlipayOpenAppNotifyVerifyRequest extends AbstractAlipayRequest
 {
 
     /**

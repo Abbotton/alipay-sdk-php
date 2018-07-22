@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayPcreditLoanApplyCreateRequest implements \Alipay\RequestInterface
+class AlipayPcreditLoanApplyCreateRequest extends AbstractAlipayRequest
 {
 
     /**

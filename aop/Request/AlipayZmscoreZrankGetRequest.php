@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayZmscoreZrankGetRequest implements \Alipay\RequestInterface
+class AlipayZmscoreZrankGetRequest extends AbstractAlipayRequest
 {
 
     /**

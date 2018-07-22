@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicGisQueryRequest implements \Alipay\RequestInterface
+class AlipayOpenPublicGisQueryRequest extends AbstractAlipayRequest
 {
 
     /**

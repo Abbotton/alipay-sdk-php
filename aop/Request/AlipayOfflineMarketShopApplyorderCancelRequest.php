@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOfflineMarketShopApplyorderCancelRequest implements \Alipay\RequestInterface
+class AlipayOfflineMarketShopApplyorderCancelRequest extends AbstractAlipayRequest
 {
 
     /**

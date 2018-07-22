@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEbppInvoiceApplyResultSyncRequest implements \Alipay\RequestInterface
+class AlipayEbppInvoiceApplyResultSyncRequest extends AbstractAlipayRequest
 {
 
     /**

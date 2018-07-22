@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayCommerceLotteryTypelistQueryRequest implements \Alipay\RequestInterface
+class AlipayCommerceLotteryTypelistQueryRequest extends AbstractAlipayRequest
 {
 
     private $apiParas = array();

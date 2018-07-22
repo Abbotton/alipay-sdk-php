@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMarketingToolFengdieTemplateBatchqueryRequest implements \Alipay\RequestInterface
+class AlipayMarketingToolFengdieTemplateBatchqueryRequest extends AbstractAlipayRequest
 {
 
     /**

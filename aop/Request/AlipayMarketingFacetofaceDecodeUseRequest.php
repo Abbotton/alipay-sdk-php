@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMarketingFacetofaceDecodeUseRequest implements \Alipay\RequestInterface
+class AlipayMarketingFacetofaceDecodeUseRequest extends AbstractAlipayRequest
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class MonitorHeartbeatSynRequest implements \Alipay\RequestInterface
+class MonitorHeartbeatSynRequest extends AbstractAlipayRequest
 {
 
     /**

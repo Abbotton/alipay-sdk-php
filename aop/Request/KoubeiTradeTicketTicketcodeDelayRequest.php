@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiTradeTicketTicketcodeDelayRequest implements \Alipay\RequestInterface
+class KoubeiTradeTicketTicketcodeDelayRequest extends AbstractAlipayRequest
 {
 
     /**

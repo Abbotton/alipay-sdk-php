@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayZdatafrontDatatransferedFileuploadRequest implements \Alipay\RequestInterface
+class AlipayZdatafrontDatatransferedFileuploadRequest extends AbstractAlipayRequest
 {
 
     /**

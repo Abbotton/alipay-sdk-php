@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayPassCodeVerifyRequest implements \Alipay\RequestInterface
+class AlipayPassCodeVerifyRequest extends AbstractAlipayRequest
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcardEduPublicBindRequest implements \Alipay\RequestInterface
+class AlipayEcardEduPublicBindRequest extends AbstractAlipayRequest
 {
 
     /**

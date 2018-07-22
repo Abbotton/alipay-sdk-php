@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenPublicMessageContentModifyRequest implements \Alipay\RequestInterface
+class AlipayOpenPublicMessageContentModifyRequest extends AbstractAlipayRequest
 {
 
     /**

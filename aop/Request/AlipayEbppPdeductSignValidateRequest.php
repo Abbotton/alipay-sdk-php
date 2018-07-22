@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEbppPdeductSignValidateRequest implements \Alipay\RequestInterface
+class AlipayEbppPdeductSignValidateRequest extends AbstractAlipayRequest
 {
 
     /**

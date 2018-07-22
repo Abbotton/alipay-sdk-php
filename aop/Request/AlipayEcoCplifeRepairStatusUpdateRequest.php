@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoCplifeRepairStatusUpdateRequest implements \Alipay\RequestInterface
+class AlipayEcoCplifeRepairStatusUpdateRequest extends AbstractAlipayRequest
 {
 
     /**

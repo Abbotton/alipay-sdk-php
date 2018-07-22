@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayBossCsChannelQueryRequest implements \Alipay\RequestInterface
+class AlipayBossCsChannelQueryRequest extends AbstractAlipayRequest
 {
 
     /**

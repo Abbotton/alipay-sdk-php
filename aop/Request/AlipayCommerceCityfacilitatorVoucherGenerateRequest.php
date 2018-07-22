@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayCommerceCityfacilitatorVoucherGenerateRequest implements \Alipay\RequestInterface
+class AlipayCommerceCityfacilitatorVoucherGenerateRequest extends AbstractAlipayRequest
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMicropayOrderFreezeRequest implements \Alipay\RequestInterface
+class AlipayMicropayOrderFreezeRequest extends AbstractAlipayRequest
 {
 
     /**

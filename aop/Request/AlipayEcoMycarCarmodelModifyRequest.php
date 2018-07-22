@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcoMycarCarmodelModifyRequest implements \Alipay\RequestInterface
+class AlipayEcoMycarCarmodelModifyRequest extends AbstractAlipayRequest
 {
 
     /**

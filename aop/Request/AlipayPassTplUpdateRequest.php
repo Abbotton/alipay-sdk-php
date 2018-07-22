@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayPassTplUpdateRequest implements \Alipay\RequestInterface
+class AlipayPassTplUpdateRequest extends AbstractAlipayRequest
 {
 
     /**

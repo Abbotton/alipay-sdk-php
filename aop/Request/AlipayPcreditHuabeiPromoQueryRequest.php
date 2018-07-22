@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayPcreditHuabeiPromoQueryRequest implements \Alipay\RequestInterface
+class AlipayPcreditHuabeiPromoQueryRequest extends AbstractAlipayRequest
 {
 
     /**

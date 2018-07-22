@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayTrustUserReportGetRequest implements \Alipay\RequestInterface
+class AlipayTrustUserReportGetRequest extends AbstractAlipayRequest
 {
 
     /**

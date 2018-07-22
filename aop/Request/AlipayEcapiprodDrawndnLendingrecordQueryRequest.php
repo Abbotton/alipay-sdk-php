@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcapiprodDrawndnLendingrecordQueryRequest implements \Alipay\RequestInterface
+class AlipayEcapiprodDrawndnLendingrecordQueryRequest extends AbstractAlipayRequest
 {
 
     /**

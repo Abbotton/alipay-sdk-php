@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEcapiprodDataPutRequest implements \Alipay\RequestInterface
+class AlipayEcapiprodDataPutRequest extends AbstractAlipayRequest
 {
 
     /**

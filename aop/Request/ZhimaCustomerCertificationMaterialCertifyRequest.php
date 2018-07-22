@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class ZhimaCustomerCertificationMaterialCertifyRequest implements \Alipay\RequestInterface
+class ZhimaCustomerCertificationMaterialCertifyRequest extends AbstractAlipayRequest
 {
 
     /**

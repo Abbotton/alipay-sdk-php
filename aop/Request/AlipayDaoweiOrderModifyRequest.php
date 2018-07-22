@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayDaoweiOrderModifyRequest implements \Alipay\RequestInterface
+class AlipayDaoweiOrderModifyRequest extends AbstractAlipayRequest
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayFundAuthOrderFreezeRequest implements \Alipay\RequestInterface
+class AlipayFundAuthOrderFreezeRequest extends AbstractAlipayRequest
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipaySecurityRiskCustomerriskSendRequest implements \Alipay\RequestInterface
+class AlipaySecurityRiskCustomerriskSendRequest extends AbstractAlipayRequest
 {
 
     /**

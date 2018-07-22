@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobileStdPublicFollowListRequest implements \Alipay\RequestInterface
+class AlipayMobileStdPublicFollowListRequest extends AbstractAlipayRequest
 {
 
     /**

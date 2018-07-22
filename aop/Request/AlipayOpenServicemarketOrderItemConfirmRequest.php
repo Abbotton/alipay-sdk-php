@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenServicemarketOrderItemConfirmRequest implements \Alipay\RequestInterface
+class AlipayOpenServicemarketOrderItemConfirmRequest extends AbstractAlipayRequest
 {
 
     /**

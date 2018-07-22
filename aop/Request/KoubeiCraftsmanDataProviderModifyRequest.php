@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiCraftsmanDataProviderModifyRequest implements \Alipay\RequestInterface
+class KoubeiCraftsmanDataProviderModifyRequest extends AbstractAlipayRequest
 {
 
     /**

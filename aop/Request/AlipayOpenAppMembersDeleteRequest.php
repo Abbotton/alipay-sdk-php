@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenAppMembersDeleteRequest implements \Alipay\RequestInterface
+class AlipayOpenAppMembersDeleteRequest extends AbstractAlipayRequest
 {
 
     /**

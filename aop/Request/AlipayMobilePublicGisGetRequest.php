@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMobilePublicGisGetRequest implements \Alipay\RequestInterface
+class AlipayMobilePublicGisGetRequest extends AbstractAlipayRequest
 {
 
     /**

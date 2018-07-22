@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOfflineProviderDishQueryRequest implements \Alipay\RequestInterface
+class AlipayOfflineProviderDishQueryRequest extends AbstractAlipayRequest
 {
 
     /**

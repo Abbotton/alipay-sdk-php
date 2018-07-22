@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayTrustUserRiskidentifyGetRequest implements \Alipay\RequestInterface
+class AlipayTrustUserRiskidentifyGetRequest extends AbstractAlipayRequest
 {
 
     /**

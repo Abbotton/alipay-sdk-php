@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenAgentFacetofaceSignRequest implements \Alipay\RequestInterface
+class AlipayOpenAgentFacetofaceSignRequest extends AbstractAlipayRequest
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class ZhimaOpenAppKeyanLqlCreateRequest implements \Alipay\RequestInterface
+class ZhimaOpenAppKeyanLqlCreateRequest extends AbstractAlipayRequest
 {
 
     /**

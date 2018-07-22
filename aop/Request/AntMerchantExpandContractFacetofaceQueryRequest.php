@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AntMerchantExpandContractFacetofaceQueryRequest implements \Alipay\RequestInterface
+class AntMerchantExpandContractFacetofaceQueryRequest extends AbstractAlipayRequest
 {
 
     /**

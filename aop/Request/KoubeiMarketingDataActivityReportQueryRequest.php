@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class KoubeiMarketingDataActivityReportQueryRequest implements \Alipay\RequestInterface
+class KoubeiMarketingDataActivityReportQueryRequest extends AbstractAlipayRequest
 {
 
     /**

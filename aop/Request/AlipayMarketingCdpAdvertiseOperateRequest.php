@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMarketingCdpAdvertiseOperateRequest implements \Alipay\RequestInterface
+class AlipayMarketingCdpAdvertiseOperateRequest extends AbstractAlipayRequest
 {
 
     /**

@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayEbppPdeductBillPayStatusRequest implements \Alipay\RequestInterface
+class AlipayEbppPdeductBillPayStatusRequest extends AbstractAlipayRequest
 {
 
     /**

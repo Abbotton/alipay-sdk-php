@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class ZhimaDataFeedbackurlQueryRequest implements \Alipay\RequestInterface
+class ZhimaDataFeedbackurlQueryRequest extends AbstractAlipayRequest
 {
 
     /**

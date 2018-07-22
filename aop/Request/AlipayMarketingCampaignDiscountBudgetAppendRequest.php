@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayMarketingCampaignDiscountBudgetAppendRequest implements \Alipay\RequestInterface
+class AlipayMarketingCampaignDiscountBudgetAppendRequest extends AbstractAlipayRequest
 {
 
     /**

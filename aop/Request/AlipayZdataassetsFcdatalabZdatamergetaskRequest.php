@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayZdataassetsFcdatalabZdatamergetaskRequest implements \Alipay\RequestInterface
+class AlipayZdataassetsFcdatalabZdatamergetaskRequest extends AbstractAlipayRequest
 {
 
     /**

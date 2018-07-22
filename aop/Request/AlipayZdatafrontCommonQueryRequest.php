@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayZdatafrontCommonQueryRequest implements \Alipay\RequestInterface
+class AlipayZdatafrontCommonQueryRequest extends AbstractAlipayRequest
 {
 
     /**

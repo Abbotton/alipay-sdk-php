@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayCommerceCityfacilitatorDepositConfirmRequest implements \Alipay\RequestInterface
+class AlipayCommerceCityfacilitatorDepositConfirmRequest extends AbstractAlipayRequest
 {
 
     /**

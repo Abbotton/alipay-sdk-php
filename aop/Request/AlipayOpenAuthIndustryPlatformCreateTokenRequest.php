@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipayOpenAuthIndustryPlatformCreateTokenRequest implements \Alipay\RequestInterface
+class AlipayOpenAuthIndustryPlatformCreateTokenRequest extends AbstractAlipayRequest
 {
 
     /**

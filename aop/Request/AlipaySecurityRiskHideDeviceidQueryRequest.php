@@ -8,7 +8,7 @@
 
 namespace Alipay\Request;
 
-class AlipaySecurityRiskHideDeviceidQueryRequest implements \Alipay\RequestInterface
+class AlipaySecurityRiskHideDeviceidQueryRequest extends AbstractAlipayRequest
 {
 
     /**
