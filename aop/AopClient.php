@@ -61,10 +61,8 @@ class AopClient
         if (is_array($postFields) && 0 < count($postFields)) {
             foreach ($postFields as $k => $v) {
                 if ("@" != substr($v, 0, 1)) { //判断是不是文件上传
-                    $postBodyString .= "$k=" . urlencode($this->characet($v, $this->postCharset)) . "&";
-                    $encodeArray[$k] = $this->characet($v, $this->postCharset);
-                } else //文件上传用multipart/form-data，否则用www-form-urlencoded
-                {
+                    $postBodyString .= "$k=" . urlencode($v) . "&";
+                } else { //文件上传用multipart/form-data，否则用www-form-urlencoded
                     $postMultipart = true;
                     $encodeArray[$k] = new \CURLFile(substr($v, 1));
                 }
@@ -138,10 +136,6 @@ class AopClient
         ksort($params);
 
         $params['sign'] = $this->generateSign($params, $this->signType);
-
-        foreach ($params as &$value) {
-            $value = $this->characet($value, $params['charset']);
-        }
 
         return http_build_query($params);
     }
@@ -286,11 +280,7 @@ class AopClient
         $sysParams["sign"] = $this->generateSign(array_merge($apiParams, $sysParams), $this->signType);
 
         //系统参数放入GET请求串
-        $requestUrl = $this->gatewayUrl . "?";
-        foreach ($sysParams as $sysParamKey => $sysParamValue) {
-            $requestUrl .= "$sysParamKey=" . urlencode($this->characet($sysParamValue, $this->postCharset)) . "&";
-        }
-        $requestUrl = substr($requestUrl, 0, -1);
+        $requestUrl = $this->gatewayUrl . '?' . http_build_query($sysParams);
 
         //发起HTTP请求
         $resp = $this->curl($requestUrl, $apiParams);
@@ -319,18 +309,6 @@ class AopClient
         }
 
         return $respObject;
-    }
-
-    /**
-     * 转换字符集编码
-     *
-     * @param  $data
-     * @param  $targetCharset
-     * @return string
-     */
-    public function characet($data, $targetCharset)
-    {
-        return $data;
     }
 
     /**
@@ -378,9 +356,6 @@ class AopClient
         $i = 0;
         foreach ($params as $k => $v) {
             if (false === $this->checkEmpty($v) && "@" != substr($v, 0, 1)) {
-                // 转换成目标字符集
-                $v = $this->characet($v, $this->postCharset);
-
                 if ($i == 0) {
                     $stringToBeSigned .= "$k" . "=" . "$v";
                 } else {
@@ -403,9 +378,6 @@ class AopClient
         $i = 0;
         foreach ($params as $k => $v) {
             if (false === $this->checkEmpty($v) && "@" != substr($v, 0, 1)) {
-                // 转换成目标字符集
-                $v = $this->characet($v, $this->postCharset);
-
                 if ($i == 0) {
                     $stringToBeSigned .= "$k" . "=" . urlencode($v);
                 } else {
