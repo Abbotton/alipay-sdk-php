@@ -9,36 +9,80 @@ use Alipay\Exception\AlipayInvalidKeyException;
 
 class AopClient
 {
+    /**
+     * SDK 版本
+     */
     const SDK_VERSION = "alipay-sdk-php-20180705";
 
+    /**
+     * 响应数据节点名后缀
+     */
     const RESPONSE_SUFFIX = "_response";
 
+    /**
+     * 响应签名节点名
+     */
     const SIGN_NODE_NAME = "sign";
 
-    //应用ID
+    /**
+     * 应用 ID
+     *
+     * @var string
+     */
     protected $appId;
 
-    //签名类型
+    /**
+     * 签名类型
+     *
+     * @var string RSA 或 RSA2
+     */
     protected $signType = "RSA";
 
-    //私钥文件路径
+    /**
+     * 商户私钥（又称：小程序私钥，App私钥等）
+     * 支持文件路径或私钥字符串，用于生成签名
+     *
+     * @var string
+     */
     protected $appPrivateKey;
 
-    //使用文件读取文件格式，请只传递该值
+    /**
+     * 支付宝公钥
+     * 支持文件路径或公钥字符串，用于验证签名
+     *
+     * @var string
+     */
     protected $alipayPublicKey;
 
-    //网关
+    /**
+     * API 接口地址
+     *
+     * @var string
+     */
     protected $gatewayUrl = "https://openapi.alipay.com/gateway.do";
 
-    //返回数据格式
+    /**
+     * 响应数据格式，官方目前只支持 JSON
+     *
+     * @var string
+     */
     protected $format = "json";
 
-    //api版本
-    protected $apiVersion = "1.0";
+    /**
+     * 数据提交编码
+     *
+     * @var string
+     */
+    protected $charset = "UTF-8";
 
-    // 表单提交字符集编码
-    protected $postCharset = "UTF-8";
-
+    /**
+     * 使用密钥字符串或路径加载密钥
+     *
+     * @param string $keyOrFilePath
+     * @param boolean $isPrivate
+     * @return resource
+     * @throws AlipayInvalidKeyException
+     */
     protected function getKey($keyOrFilePath, $isPrivate = true)
     {
         if (file_exists($keyOrFilePath) && is_file($keyOrFilePath)) {
@@ -57,6 +101,15 @@ class AopClient
         return $keyResource;
     }
 
+    /**
+     * 创建 AopClient 实例
+     *
+     * @param string $appId
+     * @param string $signType
+     * @param string $appPrivateKey
+     * @param string $alipayPublicKey
+     * @return self
+     */
     public static function create($appId, $signType, $appPrivateKey, $alipayPublicKey)
     {
         $instance = new self();
@@ -108,9 +161,9 @@ class AopClient
         }
 
         if ($postMultipart) {
-            $headers = array('content-type: multipart/form-data;charset=' . $this->postCharset . ';boundary=' . $this->getMillisecond());
+            $headers = array('content-type: multipart/form-data;charset=' . $this->charset . ';boundary=' . $this->getMillisecond());
         } else {
-            $headers = array('content-type: application/x-www-form-urlencoded;charset=' . $this->postCharset);
+            $headers = array('content-type: application/x-www-form-urlencoded;charset=' . $this->charset);
         }
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
@@ -150,10 +203,8 @@ class AopClient
         $params['sign_type'] = $this->signType;
         $params['timestamp'] = date("Y-m-d H:i:s");
         $params['alipay_sdk'] = static::SDK_VERSION;
-        $params['charset'] = $this->postCharset;
-
-        $version = $request->getApiVersion();
-        $params['version'] = $this->checkEmpty($version) ? $this->apiVersion : $version;
+        $params['charset'] = $this->charset;
+        $params['version'] = $request->getApiVersion();
 
         if ($notify_url = $request->getNotifyUrl()) {
             $params['notify_url'] = $notify_url;
@@ -179,17 +230,9 @@ class AopClient
      */
     public function pageExecute($request, $httpmethod = "POST")
     {
-        $iv = null;
-
-        if (!$this->checkEmpty($request->getApiVersion())) {
-            $iv = $request->getApiVersion();
-        } else {
-            $iv = $this->apiVersion;
-        }
-
         //组装系统参数
         $sysParams["app_id"] = $this->appId;
-        $sysParams["version"] = $iv;
+        $sysParams["version"] = $request->getApiVersion();
         $sysParams["format"] = $this->format;
         $sysParams["sign_type"] = $this->signType;
         $sysParams["method"] = $request->getApiMethodName();
@@ -200,7 +243,7 @@ class AopClient
         $sysParams["prod_code"] = $request->getProdCode();
         $sysParams["notify_url"] = $request->getNotifyUrl();
         $sysParams["return_url"] = $request->getReturnUrl();
-        $sysParams["charset"] = $this->postCharset;
+        $sysParams["charset"] = $this->charset;
 
         //获取业务参数
         $apiParams = $request->getApiParas();
@@ -235,12 +278,10 @@ class AopClient
      */
     protected function buildRequestForm($para_temp)
     {
-        $sHtml = "<form id='alipaysubmit' name='alipaysubmit' action='" . $this->gatewayUrl . "?charset=" . trim($this->postCharset) . "' method='POST'>";
+        $sHtml = "<form id='alipaysubmit' name='alipaysubmit' action='" . $this->gatewayUrl . "?charset=" . $this->charset . "' method='POST'>";
         while (list($key, $val) = each($para_temp)) {
             if (false === $this->checkEmpty($val)) {
-                //$val = $this->characet($val, $this->postCharset);
                 $val = str_replace("'", "&apos;", $val);
-                //$val = str_replace("\"","&quot;",$val);
                 $sHtml .= "<input type='hidden' name='" . $key . "' value='" . $val . "'/>";
             }
         }
@@ -255,17 +296,9 @@ class AopClient
 
     public function execute($request, $authToken = null, $appInfoAuthtoken = null)
     {
-        $iv = null;
-
-        if (!$this->checkEmpty($request->getApiVersion())) {
-            $iv = $request->getApiVersion();
-        } else {
-            $iv = $this->apiVersion;
-        }
-
         //组装系统参数
         $sysParams["app_id"] = $this->appId;
-        $sysParams["version"] = $iv;
+        $sysParams["version"] = $request->getApiVersion();
         $sysParams["format"] = $this->format;
         $sysParams["sign_type"] = $this->signType;
         $sysParams["method"] = $request->getApiMethodName();
@@ -276,7 +309,7 @@ class AopClient
         $sysParams["terminal_info"] = $request->getTerminalInfo();
         $sysParams["prod_code"] = $request->getProdCode();
         $sysParams["notify_url"] = $request->getNotifyUrl();
-        $sysParams["charset"] = $this->postCharset;
+        $sysParams["charset"] = $this->charset;
         $sysParams["app_auth_token"] = $appInfoAuthtoken;
 
         //获取业务参数
@@ -294,9 +327,6 @@ class AopClient
 
         //发起HTTP请求
         $resp = $this->curl($requestUrl, $apiParams);
-
-        // 将返回结果转换本地文件编码
-        // $r = iconv($this->postCharset, $this->fileCharset . "//IGNORE", $resp);
 
         $signData = null;
 
@@ -332,12 +362,12 @@ class AopClient
         return $value === null || trim($value) === '';
     }
 
-    public function generateSign($params, $signType = "RSA")
+    protected function generateSign($params, $signType = "RSA")
     {
         return $this->sign($this->getSignContent($params), $signType);
     }
 
-    public function getSignContent($params)
+    protected function getSignContent($params)
     {
         $stringToBeSigned = "";
         $i = 0;
@@ -367,7 +397,7 @@ class AopClient
         return $sign;
     }
 
-    public function verify($data, $sign, $signType = 'RSA')
+    protected function verify($data, $sign, $signType = 'RSA')
     {
         if ("RSA2" == $signType) {
             return 1 === openssl_verify($data, base64_decode($sign), $this->alipayPublicKey, OPENSSL_ALGO_SHA256);
@@ -376,8 +406,7 @@ class AopClient
         }
     }
 
-
-    public function parserResponseSubCode($request, $responseContent, $respObject, $format)
+    protected function parserResponseSubCode($request, $responseContent, $respObject, $format)
     {
         if ("json" == $format) {
             $apiName = $request->getApiMethodName();
@@ -402,7 +431,7 @@ class AopClient
         }
     }
 
-    public function parserJSONSignData($request, $responseContent, $responseJson)
+    protected function parserJSONSignData($request, $responseContent, $responseJson)
     {
         $signData = new SignData();
 
@@ -412,7 +441,7 @@ class AopClient
         return $signData;
     }
 
-    public function parserJSONSignSource($request, $responseContent)
+    protected function parserJSONSignSource($request, $responseContent)
     {
         $apiName = $request->getApiMethodName();
         $rootNodeName = str_replace(".", "_", $apiName) . static::RESPONSE_SUFFIX;
@@ -429,7 +458,7 @@ class AopClient
         }
     }
 
-    public function parserJSONSource($responseContent, $nodeName, $nodeIndex)
+    protected function parserJSONSource($responseContent, $nodeName, $nodeIndex)
     {
         $signDataStartIndex = $nodeIndex + strlen($nodeName) + 2;
         $signIndex = strrpos($responseContent, "\"" . static::SIGN_NODE_NAME . "\"");
@@ -443,7 +472,7 @@ class AopClient
         return substr($responseContent, $signDataStartIndex, $indexLen);
     }
 
-    public function parserJSONSign($responseJson)
+    protected function parserJSONSign($responseJson)
     {
         if (isset($responseJson->sign)) {
             return $responseJson->sign;
@@ -460,7 +489,7 @@ class AopClient
      * @param  $respObject
      * @throws Exception
      */
-    public function checkResponseSign($request, $signData, $resp, $respObject)
+    protected function checkResponseSign($request, $signData, $resp, $respObject)
     {
         if ($signData == null || $this->checkEmpty($signData->sign) || $this->checkEmpty($signData->signSourceData)) {
             throw new AlipayException(" check sign Fail! The reason : signData is Empty");
