@@ -14,7 +14,7 @@ class AlipayInvalidResponseException extends AlipayException
             $response = (object) $response;
         }
 
-        if (!is_object($response) || !isset($response->{AlipayResponse::ERROR_NODE})) {
+        if (is_object($response) && isset($response->{AlipayResponse::ERROR_NODE})) {
             $errorResponse = $response->{AlipayResponse::ERROR_NODE};
         } else {
             $errorResponse = $response;
