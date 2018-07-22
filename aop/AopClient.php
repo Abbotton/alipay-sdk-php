@@ -237,11 +237,7 @@ class AopClient
         //发起HTTP请求
         $resp = $this->curl($requestUrl, $apiParams);
 
-        if ("json" !== $this->format) {
-            throw new AlipayException('Unsupported format: ' . $format);
-        }
-
-        $alipayResp = AlipayResponse::parse($resp);
+        $alipayResp = AlipayResponse::parse($resp, $this->format);
 
         $sign = $alipayResp->getSign();
         $signData = $alipayResp->getRawData();
