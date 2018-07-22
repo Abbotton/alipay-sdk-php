@@ -128,7 +128,13 @@ class AlipaySign
         return $keyResource;
     }
 
-    public function convertSignData($params)
+    /**
+     * 将数组转换为待签名数据
+     *
+     * @param array $params
+     * @return void
+     */
+    protected function convertSignData($params)
     {
         ksort($params);
         $stringToBeSigned = "";
