@@ -27,7 +27,7 @@ benefitStatus: 状态只支持(VALID:生效、WAIT:待生效、INVALID:失效), 
     private $apiVersion = "1.0";
     private $notifyUrl;
     private $returnUrl;
-    private $needEncrypt = false;
+    
 
     
     public function setBizContent($bizContent)

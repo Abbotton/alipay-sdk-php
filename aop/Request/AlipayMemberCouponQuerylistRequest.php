@@ -59,7 +59,7 @@ OPENID：用户支付宝账户在某商户下的唯一ID
     private $apiVersion = "1.0";
     private $notifyUrl;
     private $returnUrl;
-    private $needEncrypt = false;
+    
 
     
     public function setMerchantInfo($merchantInfo)

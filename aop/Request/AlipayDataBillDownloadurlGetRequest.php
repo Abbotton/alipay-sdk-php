@@ -28,7 +28,7 @@ class AlipayDataBillDownloadurlGetRequest extends AbstractAlipayRequest
     private $apiVersion = "1.0";
     private $notifyUrl;
     private $returnUrl;
-    private $needEncrypt = false;
+    
 
     
     public function setBillDate($billDate)

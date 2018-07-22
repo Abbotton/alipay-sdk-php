@@ -99,7 +99,7 @@ deadline（int）：文章的失效时间，单位秒
     private $apiVersion = "1.0";
     private $notifyUrl;
     private $returnUrl;
-    private $needEncrypt = false;
+    
 
     
     public function setCategory($category)

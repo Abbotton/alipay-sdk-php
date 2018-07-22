@@ -120,7 +120,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     private $apiVersion = "1.0";
     private $notifyUrl;
     private $returnUrl;
-    private $needEncrypt = false;
+    
 
     
     public function setBody($body)
