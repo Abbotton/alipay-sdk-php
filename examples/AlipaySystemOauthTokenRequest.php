@@ -2,10 +2,9 @@
 
 namespace Alipay\Example;
 
-use Alipay\AopClient;
 use Alipay\AlipayRequestFactory;
 use Alipay\AlipaySign;
-
+use Alipay\AopClient;
 
 require '../vendor/autoload.php';
 
@@ -22,7 +21,11 @@ $request = AlipayRequestFactory::createByApi('alipay.system.oauth.token');
 $request->setGrantType('authorization_code');
 $request->setCode($_GET['authcode']);
 
+try {
+    $result = $aop->execute($request)->getData();
+} catch (\Exception $ex) {
+    print_r($ex);
+    exit;
+}
 
-$result = $aop->execute($request);
-
-var_dump($result->getData());
+print_r($result);
