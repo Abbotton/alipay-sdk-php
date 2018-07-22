@@ -34,7 +34,7 @@ class AlipayResponse
      */
     public static function parse($raw, $format = 'JSON')
     {
-        if ($this->format !== 'JSON') {
+        if ($format !== 'JSON') {
             throw new AlipayResponseException($raw, "Unsupported response `{$format}` format");
         }
         $instance = new static();
