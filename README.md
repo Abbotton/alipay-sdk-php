@@ -15,7 +15,13 @@
 - [x] 移除编码转换特性，统一使用 `UTF-8`。
 - [ ] 其它优化，持续进行中……
 
+## 快速开始
+
+待补充。
+
 ## 如何使用
+
+除非你已经通读支付宝开放平台入门文档，否则请先阅读 [快速开始](#快速开始) 部分。
 
 1. Composer 安装。
 
@@ -23,30 +29,37 @@
     composer require wi1dcard/alipay-sdk dev-master
     ```
 
-2. 创建 `AopClient` 实例。
+2. 创建 `AlipaySign` 实例。
 
     ```php
-    $aop = \Alipay\AopClient::create(
-        'App Id',
-        'Sign Type',
+    $signHelper = \Alipay\AlipaySign::create(
         'App Private Key',
-        'Alipay Public Key'
+        'Alipay Public Key',
+        'Sign Type'
     );
     ```
 
-3. 创建 `AlipayRequest` 实例。
+    此签名对象通常情况下需要贯穿整条业务，除非你需要在同一套代码内处理多个商户号/小程序，否则只需要在初始化阶段创建一次即可。
+
+3. 创建 `AopClient` 实例。
+
+    ```php
+    $aop = new AopClient('App ID', $signHelper);
+    ```
+
+4. 创建 `AlipayRequest` 实例。
 
     ```php
     $request = \Alipay\AlipayRequestFactory::createByApi('API Name');
     ```
 
-4. 发送请求。
+5. 发送请求。
 
     ```php
     $result = $aop->execute($request);
     ```
 
-5. 查看实例，请移步 `examples` 目录。
+6. 查看实例，请移步 `examples` 目录。
 
 ## 注意
 
