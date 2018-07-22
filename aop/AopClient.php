@@ -67,6 +67,13 @@ class AopClient
         $this->signHelper = $signHelper;
     }
 
+    /**
+     * 使用 CURL 提交请求
+     *
+     * @param string $url
+     * @param array $postFields
+     * @return void
+     */
     protected function curl($url, $postFields)
     {
         $ch = curl_init();
@@ -174,28 +181,33 @@ class AopClient
     /**
      * 建立请求，以表单HTML形式构造（默认）
      *
-     * @param  $para_temp 请求参数数组
+     * @param array $params 请求参数数组
      * @return string 提交表单HTML文本
      */
-    protected function buildRequestForm($para_temp)
+    protected function buildRequestForm($params)
     {
         $sHtml = "<form id='alipaysubmit' name='alipaysubmit' action='" . $this->gatewayUrl . "?charset=" . $this->charset . "' method='POST'>";
-        while (list($key, $val) = each($para_temp)) {
+        while (list($key, $val) = each($params)) {
             if (false === AlipayHelper::isEmpty($val)) {
                 $val = str_replace("'", "&apos;", $val);
                 $sHtml .= "<input type='hidden' name='" . $key . "' value='" . $val . "'/>";
             }
         }
-
         //submit按钮控件请不要含有name属性
         $sHtml = $sHtml . "<input type='submit' value='ok' style='display:none;''></form>";
-
         $sHtml = $sHtml . "<script>document.forms['alipaysubmit'].submit();</script>";
-
         return $sHtml;
     }
 
-    public function execute(AbstractAlipayRequest $request, $authToken = null, $appInfoAuthtoken = null)
+    /**
+     * 执行请求
+     *
+     * @param AbstractAlipayRequest $request
+     * @param string $authToken
+     * @param string $appInfoAuthtoken
+     * @return void
+     */
+    public function execute(AbstractAlipayRequest $request, $authToken = '', $appInfoAuthtoken = '')
     {
         //组装系统参数
         $sysParams["app_id"] = $this->appId;
@@ -230,55 +242,14 @@ class AopClient
             throw new AlipayException('Unsupported format: ' . $format);
         }
 
-        $respObject = json_decode($resp);
-        if (null === $respObject) {
-            throw new AlipayException(json_last_error_msg());
-        }
+        $alipayResp = AlipayResponse::parse($resp);
 
-        $sign = $this->parserJSONSign($respObject);
-        $signData = $this->parserJSONSignSource($request, $resp);
+        $sign = $alipayResp->getSign();
+        $signData = $alipayResp->getRawData();
 
         // 验签
         $this->signHelper->verify($sign, $signData);
 
-        return $respObject;
-    }
-
-    protected function parserJSONSignSource($request, $responseContent)
-    {
-        $apiName = $request->getApiMethodName();
-        $rootNodeName = str_replace(".", "_", $apiName) . static::RESPONSE_SUFFIX;
-
-        $rootIndex = strpos($responseContent, $rootNodeName);
-        $errorIndex = strpos($responseContent, AlipayResponseException::ERROR_NODE);
-
-        if ($rootIndex > 0) {
-            return $this->parserJSONSource($responseContent, $rootNodeName, $rootIndex);
-        } elseif ($errorIndex > 0) {
-            return $this->parserJSONSource($responseContent, AlipayResponseException::ERROR_NODE, $errorIndex);
-        } else {
-            throw new AlipayResponseException($responseContent, 'Response data not found');
-        }
-    }
-
-    protected function parserJSONSource($responseContent, $nodeName, $nodeIndex)
-    {
-        $signDataStartIndex = $nodeIndex + strlen($nodeName) + 2;
-        $signIndex = strrpos($responseContent, "\"" . AlipaySign::SIGN_NODE . "\"");
-        // 签名前-逗号
-        $signDataEndIndex = $signIndex - 1;
-        $indexLen = $signDataEndIndex - $signDataStartIndex;
-        if ($indexLen < 0) {
-            throw new AlipayResponseException($responseContent, 'Invalid response data');
-        }
-        return substr($responseContent, $signDataStartIndex, $indexLen);
-    }
-
-    protected function parserJSONSign($responseJson)
-    {
-        if (isset($responseJson->sign)) {
-            return $responseJson->sign;
-        }
-        throw new AlipayResponseException($responseJson, 'Response sign not found');
+        return $alipayResp;
     }
 }
