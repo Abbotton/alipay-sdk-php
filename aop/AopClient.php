@@ -60,7 +60,7 @@ class AopClient
      * @param string     $appId
      * @param AlipaySign $signHelper
      */
-    public function __construct($appId, $signHelper)
+    public function __construct($appId, AlipaySign $signHelper)
     {
         $this->appId = $appId;
         $this->signHelper = $signHelper;
@@ -137,12 +137,12 @@ class AopClient
     /**
      * 页面提交执行方法
      *
-     * @param  AbstractAlipayRequest $request    跳转类接口的request
-     * @param  string                $httpmethod 提交方式。两个值可选：post、get
+     * @param  AbstractAlipayRequest $request 跳转类接口的request
+     * @param  string                $httpMethod  提交方式。两个值可选：post、get
      * @return string 构建好的、签名后的最终跳转URL（GET）或String形式的form（POST）
      * @author 笙默
      */
-    public function pageExecute(AbstractAlipayRequest $request, $httpmethod = "POST")
+    public function pageExecute(AbstractAlipayRequest $request, $httpMethod = "POST")
     {
         //组装系统参数
         $sysParams["app_id"] = $this->appId;
@@ -166,7 +166,7 @@ class AopClient
         $totalParams = array_merge($apiParams, $sysParams);
         $totalParams["sign"] = $this->signHelper->generateByParams($totalParams);
 
-        if ("GET" == strtoupper($httpmethod)) {
+        if ("GET" == strtoupper($httpMethod)) {
             //拼接GET请求串
             $preString = http_build_query($totalParams);
             $requestUrl = $this->gatewayUrl . "?" . $preString;
