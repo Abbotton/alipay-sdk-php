@@ -72,7 +72,7 @@ class AlipayResponse
         $signDataEndIndex = $signIndex - 1;
         $indexLen = $signDataEndIndex - $signDataStartIndex;
         if ($indexLen < 0) {
-            throw new AlipayInvalidResponseException($this->raw, 'Invalid response data');
+            throw new AlipayInvalidResponseException($this->raw, 'Response data not found');
         }
         return substr($this->raw, $signDataStartIndex, $indexLen);
     }
