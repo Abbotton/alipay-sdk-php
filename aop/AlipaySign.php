@@ -74,7 +74,7 @@ class AlipaySign
      * 签名（计算 Sign 值）
      *
      * @param string $data
-     * @return void
+     * @return string
      * @throws AlipayOpenSslException
      * @throws AlipayBase64Exception
      * @see https://docs.open.alipay.com/291/106118
@@ -93,6 +93,13 @@ class AlipaySign
         return $encodedSign;
     }
 
+    /**
+     * 将参数数组签名（计算 Sign 值）
+     *
+     * @param array $params
+     * @return string
+     * @see self::generate
+     */
     public function generateByParams($params)
     {
         $data = $this->convertSignData($params);
@@ -173,6 +180,11 @@ class AlipaySign
         return $stringToBeSigned;
     }
 
+    /**
+     * `签名类型 => 签名算法` 映射表
+     *
+     * @return int[]
+     */
     protected function typeAlgoMap()
     {
         return [
@@ -181,11 +193,21 @@ class AlipaySign
         ];
     }
 
+    /**
+     * 获取签名类型
+     *
+     * @return string
+     */
     public function getSignType()
     {
         return $this->type;
     }
 
+    /**
+     * 获取签名算法
+     *
+     * @return int
+     */
     public function getSignAlgo()
     {
         return $this->typeAlgoMap()[$this->type];
