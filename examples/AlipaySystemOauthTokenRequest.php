@@ -25,4 +25,4 @@ $request->setCode($_GET['authcode']);
 
 $result = $aop->execute($request);
 
-var_dump($result);
+var_dump($result->getData());

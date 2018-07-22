@@ -3,6 +3,7 @@
 namespace Alipay;
 
 use Alipay\Exception\AlipayInvalidResponseException;
+use Alipay\Exception\AlipayResponseException;
 
 class AlipayResponse
 {
@@ -97,9 +98,8 @@ class AlipayResponse
      */
     public function getData($assoc = true)
     {
-        if($this->isSuccess() === false)
-        {
-            
+        if($this->isSuccess() === false) {
+            throw new AlipayResponseException($this->data);
         }
         $result = reset($this->data);
         if ($assoc == false) {

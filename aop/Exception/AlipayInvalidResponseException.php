@@ -6,8 +6,12 @@ use Alipay\AlipayResponse;
 
 class AlipayInvalidResponseException extends AlipayException
 {
+    public $response;
+
     public function __construct($response, $externalMessage = '')
     {
+        $this->response = $response;
+        
         if (is_string($response)) {
             $response = json_decode($response);
         } elseif (is_array($response)) {
@@ -21,6 +25,9 @@ class AlipayInvalidResponseException extends AlipayException
         }
 
         $message = $externalMessage == '' ? '' : $externalMessage . ': ';
+        if(is_array($errorResponse)) {
+            $errorResponse = (object) $errorResponse;
+        }
         if (is_object($errorResponse)) {
             $message .= isset($errorResponse->msg) ? $errorResponse->msg : '';
             $message .= isset($errorResponse->sub_msg) ? " ($errorResponse->sub_msg)" : '';
