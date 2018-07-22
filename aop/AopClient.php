@@ -5,6 +5,7 @@ namespace Alipay;
 use Alipay\Exception\AlipayException;
 use Alipay\Exception\AlipayHttpException;
 use Alipay\Request\AbstractAlipayRequest;
+use Alipay\Exception\AlipayCurlException;
 
 class AopClient
 {
