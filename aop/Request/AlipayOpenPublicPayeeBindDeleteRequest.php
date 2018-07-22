@@ -106,6 +106,4 @@ class AlipayOpenPublicPayeeBindDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayOpenMiniVersionGrayOnlineRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

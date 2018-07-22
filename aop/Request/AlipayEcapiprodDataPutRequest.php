@@ -234,6 +234,4 @@ class AlipayEcapiprodDataPutRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

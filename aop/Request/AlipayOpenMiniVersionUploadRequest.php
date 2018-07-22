@@ -106,6 +106,4 @@ class AlipayOpenMiniVersionUploadRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class ZhimaCreditEpLawsuitDetailGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

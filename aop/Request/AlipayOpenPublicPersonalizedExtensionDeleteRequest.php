@@ -106,6 +106,4 @@ class AlipayOpenPublicPersonalizedExtensionDeleteRequest extends AbstractAlipayR
     {
         return $this->apiVersion;
     }
-
-
 }

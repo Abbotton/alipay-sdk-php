@@ -106,6 +106,4 @@ class KoubeiCateringCommodityOrderBuyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

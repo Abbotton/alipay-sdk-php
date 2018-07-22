@@ -106,6 +106,4 @@ class AlipaySecurityProdFacerepoSearchRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

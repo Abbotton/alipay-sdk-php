@@ -106,6 +106,4 @@ class AlipayMobileStdPublicMessageCustomSendRequest extends AbstractAlipayReques
     {
         return $this->apiVersion;
     }
-
-
 }

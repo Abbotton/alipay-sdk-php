@@ -106,6 +106,4 @@ class AlipayCommerceTransportOfflinepayUserblacklistQueryRequest extends Abstrac
     {
         return $this->apiVersion;
     }
-
-
 }

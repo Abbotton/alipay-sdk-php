@@ -106,6 +106,4 @@ class AlipaySecurityProdFingerprintDeviceVerifyRequest extends AbstractAlipayReq
     {
         return $this->apiVersion;
     }
-
-
 }

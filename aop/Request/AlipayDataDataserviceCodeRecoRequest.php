@@ -106,6 +106,4 @@ class AlipayDataDataserviceCodeRecoRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

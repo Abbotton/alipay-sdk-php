@@ -106,6 +106,4 @@ class AlipayFundCouponOrderAppPayRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

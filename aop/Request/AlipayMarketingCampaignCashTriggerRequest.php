@@ -106,6 +106,4 @@ class AlipayMarketingCampaignCashTriggerRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

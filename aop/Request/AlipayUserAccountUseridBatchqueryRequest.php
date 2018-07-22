@@ -106,6 +106,4 @@ class AlipayUserAccountUseridBatchqueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

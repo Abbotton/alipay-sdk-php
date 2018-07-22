@@ -106,6 +106,4 @@ class AlipayFundBatchTransferRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayEcoCplifeRoominfoDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

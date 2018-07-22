@@ -106,6 +106,4 @@ class AlipayOpenPublicXwbtestabcdBatchqueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

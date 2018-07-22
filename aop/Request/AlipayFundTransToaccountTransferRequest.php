@@ -106,6 +106,4 @@ class AlipayFundTransToaccountTransferRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class KoubeiTradeTicketTicketcodeDelayRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

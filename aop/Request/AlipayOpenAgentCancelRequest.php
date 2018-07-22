@@ -106,6 +106,4 @@ class AlipayOpenAgentCancelRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

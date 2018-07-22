@@ -170,6 +170,4 @@ class AlipayEcapiprodCreditGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

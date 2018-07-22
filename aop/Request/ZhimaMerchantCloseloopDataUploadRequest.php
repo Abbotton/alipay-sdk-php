@@ -222,6 +222,4 @@ CAR_RENTING：租车行业解决方案
     {
         return $this->apiVersion;
     }
-
-
 }

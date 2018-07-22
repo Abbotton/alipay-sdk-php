@@ -90,6 +90,4 @@ class AlipayBossFncXwbtestRetModifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

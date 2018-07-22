@@ -106,6 +106,4 @@ class AlipayMarketingCampaignDiscountOperateRequest extends AbstractAlipayReques
     {
         return $this->apiVersion;
     }
-
-
 }

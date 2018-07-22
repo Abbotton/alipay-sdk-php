@@ -106,6 +106,4 @@ class AlipayDataDataserviceShoppingmallrecVoucherQueryRequest extends AbstractAl
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayOfflineMarketReporterrorCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

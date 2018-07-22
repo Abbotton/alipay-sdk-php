@@ -106,6 +106,4 @@ class AlipayOpenServicemarketCommodityShopOfflineRequest extends AbstractAlipayR
     {
         return $this->apiVersion;
     }
-
-
 }

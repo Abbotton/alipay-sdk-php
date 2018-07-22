@@ -106,6 +106,4 @@ class AlipayOpenPublicAccountDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

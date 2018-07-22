@@ -106,6 +106,4 @@ class AlipayEcoEduKtParentQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

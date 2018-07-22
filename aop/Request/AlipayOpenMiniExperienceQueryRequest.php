@@ -106,6 +106,4 @@ class AlipayOpenMiniExperienceQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

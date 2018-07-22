@@ -106,6 +106,4 @@ class AlipayOpenAppSmgMsgSendRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

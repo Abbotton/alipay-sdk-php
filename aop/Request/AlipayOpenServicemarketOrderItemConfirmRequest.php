@@ -106,6 +106,4 @@ class AlipayOpenServicemarketOrderItemConfirmRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

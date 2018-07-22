@@ -106,6 +106,4 @@ class AlipayMarketingToolFengdieSitesDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

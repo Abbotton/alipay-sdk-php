@@ -106,6 +106,4 @@ class AlipayPassTemplateUpdateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

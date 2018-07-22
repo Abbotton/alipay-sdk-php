@@ -106,6 +106,4 @@ class AlipayOfflineProviderDishQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

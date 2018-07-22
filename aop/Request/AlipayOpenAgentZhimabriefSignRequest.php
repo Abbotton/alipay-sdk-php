@@ -414,6 +414,4 @@ class AlipayOpenAgentZhimabriefSignRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

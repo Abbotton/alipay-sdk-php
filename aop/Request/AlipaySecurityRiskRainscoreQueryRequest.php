@@ -106,6 +106,4 @@ class AlipaySecurityRiskRainscoreQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

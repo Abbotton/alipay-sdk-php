@@ -106,6 +106,4 @@ class AlipayOpenPublicLabelUserQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

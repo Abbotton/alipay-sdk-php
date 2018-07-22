@@ -202,6 +202,4 @@ class AlipayEcapiprodDrawndnLendingrecordQueryRequest extends AbstractAlipayRequ
     {
         return $this->apiVersion;
     }
-
-
 }

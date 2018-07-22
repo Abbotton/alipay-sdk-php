@@ -9,23 +9,22 @@ abstract class AbstractAlipayRequest
         return __CLASS__;
     }
 
-    public abstract function getApiMethodName();
+    abstract public function getApiMethodName();
 
     public function getApiVersion()
     {
         return '1.0';
     }
 
-    public abstract function getNotifyUrl();
+    abstract public function getNotifyUrl();
 
-    public abstract function getApiParas();
+    abstract public function getApiParas();
 
-    public abstract function getTerminalType();
+    abstract public function getTerminalType();
 
-    public abstract function getTerminalInfo();
+    abstract public function getTerminalInfo();
 
-    public abstract function getProdCode();
+    abstract public function getProdCode();
     
-    public abstract function getReturnUrl();
-    
+    abstract public function getReturnUrl();
 }

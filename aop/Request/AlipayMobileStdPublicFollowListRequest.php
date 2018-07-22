@@ -106,6 +106,4 @@ class AlipayMobileStdPublicFollowListRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayMarketingCardConsumeSyncRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

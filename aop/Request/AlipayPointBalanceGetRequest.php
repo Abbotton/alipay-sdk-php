@@ -90,6 +90,4 @@ class AlipayPointBalanceGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

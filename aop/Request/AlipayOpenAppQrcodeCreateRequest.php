@@ -106,6 +106,4 @@ class AlipayOpenAppQrcodeCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

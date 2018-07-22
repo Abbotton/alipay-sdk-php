@@ -314,6 +314,4 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

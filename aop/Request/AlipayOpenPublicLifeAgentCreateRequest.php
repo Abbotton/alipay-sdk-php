@@ -363,6 +363,4 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayMarketingCampaignCertCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

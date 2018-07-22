@@ -106,6 +106,4 @@ class KoubeiMarketingCampaignIntelligentPromoQueryRequest extends AbstractAlipay
     {
         return $this->apiVersion;
     }
-
-
 }

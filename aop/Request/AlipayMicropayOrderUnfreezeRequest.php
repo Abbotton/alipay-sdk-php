@@ -122,6 +122,4 @@ class AlipayMicropayOrderUnfreezeRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayEbppInvoiceInfoSendRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

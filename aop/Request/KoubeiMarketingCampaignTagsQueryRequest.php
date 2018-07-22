@@ -90,6 +90,4 @@ class KoubeiMarketingCampaignTagsQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

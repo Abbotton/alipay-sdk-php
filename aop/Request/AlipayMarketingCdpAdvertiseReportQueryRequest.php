@@ -106,6 +106,4 @@ class AlipayMarketingCdpAdvertiseReportQueryRequest extends AbstractAlipayReques
     {
         return $this->apiVersion;
     }
-
-
 }

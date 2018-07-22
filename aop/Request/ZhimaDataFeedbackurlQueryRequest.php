@@ -106,6 +106,4 @@ class ZhimaDataFeedbackurlQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

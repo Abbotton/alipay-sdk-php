@@ -106,6 +106,4 @@ class AlipayCommerceCityfacilitatorDepositQueryRequest extends AbstractAlipayReq
     {
         return $this->apiVersion;
     }
-
-
 }

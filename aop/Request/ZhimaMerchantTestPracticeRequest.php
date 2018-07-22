@@ -106,6 +106,4 @@ class ZhimaMerchantTestPracticeRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

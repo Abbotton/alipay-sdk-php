@@ -106,6 +106,4 @@ class AlipayMarketingCashlessvoucherTemplateCreateRequest extends AbstractAlipay
     {
         return $this->apiVersion;
     }
-
-
 }

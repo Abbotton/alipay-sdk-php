@@ -106,6 +106,4 @@ class KoubeiAdvertDeliveryDiscountAuthwebBatchqueryRequest extends AbstractAlipa
     {
         return $this->apiVersion;
     }
-
-
 }

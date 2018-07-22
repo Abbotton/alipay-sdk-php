@@ -106,6 +106,4 @@ class AlipayTradeVendorpayDevicedataUploadRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

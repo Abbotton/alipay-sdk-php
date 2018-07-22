@@ -106,6 +106,4 @@ class ZhimaMerchantDataUploadInitializeRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

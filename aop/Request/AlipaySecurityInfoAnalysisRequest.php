@@ -458,6 +458,4 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

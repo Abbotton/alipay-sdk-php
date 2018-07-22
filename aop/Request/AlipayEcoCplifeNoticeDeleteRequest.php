@@ -106,6 +106,4 @@ class AlipayEcoCplifeNoticeDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

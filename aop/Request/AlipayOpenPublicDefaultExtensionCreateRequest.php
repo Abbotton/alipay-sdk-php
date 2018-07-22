@@ -106,6 +106,4 @@ class AlipayOpenPublicDefaultExtensionCreateRequest extends AbstractAlipayReques
     {
         return $this->apiVersion;
     }
-
-
 }

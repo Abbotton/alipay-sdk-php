@@ -106,6 +106,4 @@ class AlipayOpenPublicPartnerSubscribeSyncRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

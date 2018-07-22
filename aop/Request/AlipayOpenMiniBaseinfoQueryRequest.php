@@ -90,6 +90,4 @@ class AlipayOpenMiniBaseinfoQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

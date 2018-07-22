@@ -170,6 +170,4 @@ class AlipayEbppPdeductSignCancelRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

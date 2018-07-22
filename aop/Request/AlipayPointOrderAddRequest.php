@@ -186,6 +186,4 @@ class AlipayPointOrderAddRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

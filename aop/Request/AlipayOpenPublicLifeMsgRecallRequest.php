@@ -106,6 +106,4 @@ class AlipayOpenPublicLifeMsgRecallRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

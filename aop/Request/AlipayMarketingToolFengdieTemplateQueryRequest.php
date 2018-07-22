@@ -106,6 +106,4 @@ class AlipayMarketingToolFengdieTemplateQueryRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

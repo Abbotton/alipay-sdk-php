@@ -106,6 +106,4 @@ class AlipayInsSceneApplicationIssueConfirmRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

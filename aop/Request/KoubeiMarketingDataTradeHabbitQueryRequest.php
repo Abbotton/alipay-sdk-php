@@ -106,6 +106,4 @@ class KoubeiMarketingDataTradeHabbitQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

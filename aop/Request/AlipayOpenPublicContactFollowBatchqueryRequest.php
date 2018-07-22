@@ -90,6 +90,4 @@ class AlipayOpenPublicContactFollowBatchqueryRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class KoubeiMarketingDataEnterpriseStaffinfoUploadRequest extends AbstractAlipay
     {
         return $this->apiVersion;
     }
-
-
 }

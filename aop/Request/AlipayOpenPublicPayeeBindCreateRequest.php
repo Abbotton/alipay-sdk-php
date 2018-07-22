@@ -106,6 +106,4 @@ class AlipayOpenPublicPayeeBindCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

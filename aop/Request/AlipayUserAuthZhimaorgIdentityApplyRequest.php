@@ -106,6 +106,4 @@ class AlipayUserAuthZhimaorgIdentityApplyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

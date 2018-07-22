@@ -188,6 +188,4 @@ class AlipayZdatafrontCommonQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

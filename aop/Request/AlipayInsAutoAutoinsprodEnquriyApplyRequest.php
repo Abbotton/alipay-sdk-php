@@ -106,6 +106,4 @@ class AlipayInsAutoAutoinsprodEnquriyApplyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

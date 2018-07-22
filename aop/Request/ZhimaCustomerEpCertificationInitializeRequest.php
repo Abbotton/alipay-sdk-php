@@ -106,6 +106,4 @@ class ZhimaCustomerEpCertificationInitializeRequest extends AbstractAlipayReques
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayInsSceneCouponReceiveRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayMarketingCardBenefitModifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

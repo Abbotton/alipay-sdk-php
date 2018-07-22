@@ -106,6 +106,4 @@ class AlipayAccountExrateAllclientrateQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayOfflineMarketShopApplyorderCancelRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -90,6 +90,4 @@ class AlipayAssetPointBudgetQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

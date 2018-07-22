@@ -106,6 +106,4 @@ class AlipayInsAutoAutoinsprodPolicyCancelRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

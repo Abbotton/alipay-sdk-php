@@ -122,6 +122,4 @@ class AlipaySecurityProdSignatureFileUploadRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

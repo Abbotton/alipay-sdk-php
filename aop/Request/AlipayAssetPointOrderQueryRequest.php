@@ -106,6 +106,4 @@ class AlipayAssetPointOrderQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

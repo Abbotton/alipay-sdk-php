@@ -106,6 +106,4 @@ class KoubeiMarketingCampaignIntelligentPromoCreateRequest extends AbstractAlipa
     {
         return $this->apiVersion;
     }
-
-
 }

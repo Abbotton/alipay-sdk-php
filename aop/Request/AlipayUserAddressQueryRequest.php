@@ -106,6 +106,4 @@ class AlipayUserAddressQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

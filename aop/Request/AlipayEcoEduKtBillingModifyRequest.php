@@ -106,6 +106,4 @@ class AlipayEcoEduKtBillingModifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

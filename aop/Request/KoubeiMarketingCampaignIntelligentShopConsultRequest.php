@@ -106,6 +106,4 @@ class KoubeiMarketingCampaignIntelligentShopConsultRequest extends AbstractAlipa
     {
         return $this->apiVersion;
     }
-
-
 }

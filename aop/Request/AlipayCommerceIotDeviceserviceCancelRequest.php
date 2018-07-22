@@ -106,6 +106,4 @@ class AlipayCommerceIotDeviceserviceCancelRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

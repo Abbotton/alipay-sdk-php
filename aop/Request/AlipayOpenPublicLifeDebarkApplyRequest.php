@@ -90,6 +90,4 @@ class AlipayOpenPublicLifeDebarkApplyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayBossProdArrangementOfflineQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

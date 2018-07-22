@@ -106,6 +106,4 @@ class AlipayEcoCplifeBillBatchUploadRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

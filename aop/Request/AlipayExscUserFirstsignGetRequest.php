@@ -106,6 +106,4 @@ class AlipayExscUserFirstsignGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class KoubeiMarketingToolPointsUpdateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

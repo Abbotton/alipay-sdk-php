@@ -106,6 +106,4 @@ class AlipayTradeOrderSettleRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

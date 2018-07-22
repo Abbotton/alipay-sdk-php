@@ -106,6 +106,4 @@ class AlipayEcoCplifeNoticePublishRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

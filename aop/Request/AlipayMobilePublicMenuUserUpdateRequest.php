@@ -106,6 +106,4 @@ class AlipayMobilePublicMenuUserUpdateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

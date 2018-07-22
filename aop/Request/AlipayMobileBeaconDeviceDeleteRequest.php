@@ -106,6 +106,4 @@ class AlipayMobileBeaconDeviceDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

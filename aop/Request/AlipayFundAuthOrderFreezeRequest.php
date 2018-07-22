@@ -106,6 +106,4 @@ class AlipayFundAuthOrderFreezeRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

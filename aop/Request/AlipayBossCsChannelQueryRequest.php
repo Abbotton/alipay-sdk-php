@@ -106,6 +106,4 @@ class AlipayBossCsChannelQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

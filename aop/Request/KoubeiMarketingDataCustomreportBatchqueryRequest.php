@@ -106,6 +106,4 @@ class KoubeiMarketingDataCustomreportBatchqueryRequest extends AbstractAlipayReq
     {
         return $this->apiVersion;
     }
-
-
 }

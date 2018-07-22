@@ -106,6 +106,4 @@ class SsdataDataserviceRiskAlixiaohaoQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

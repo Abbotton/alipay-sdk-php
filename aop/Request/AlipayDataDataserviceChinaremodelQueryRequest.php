@@ -106,6 +106,4 @@ class AlipayDataDataserviceChinaremodelQueryRequest extends AbstractAlipayReques
     {
         return $this->apiVersion;
     }
-
-
 }

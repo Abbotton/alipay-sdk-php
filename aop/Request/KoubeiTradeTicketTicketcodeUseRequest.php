@@ -106,6 +106,4 @@ class KoubeiTradeTicketTicketcodeUseRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

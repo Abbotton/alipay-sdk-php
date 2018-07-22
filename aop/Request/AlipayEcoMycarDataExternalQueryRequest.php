@@ -106,6 +106,4 @@ class AlipayEcoMycarDataExternalQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

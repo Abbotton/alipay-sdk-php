@@ -106,6 +106,4 @@ class AlipayZdataassetsFcdatalabZdatamergetaskRequest extends AbstractAlipayRequ
     {
         return $this->apiVersion;
     }
-
-
 }

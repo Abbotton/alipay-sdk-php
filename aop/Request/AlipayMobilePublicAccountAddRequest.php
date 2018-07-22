@@ -186,6 +186,4 @@ class AlipayMobilePublicAccountAddRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class KoubeiMarketingDataActivityBillDownloadRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AntMerchantExpandContractFacetofaceQueryRequest extends AbstractAlipayRequ
     {
         return $this->apiVersion;
     }
-
-
 }

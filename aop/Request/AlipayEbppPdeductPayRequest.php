@@ -285,6 +285,4 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

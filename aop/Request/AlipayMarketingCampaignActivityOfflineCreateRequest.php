@@ -106,6 +106,4 @@ class AlipayMarketingCampaignActivityOfflineCreateRequest extends AbstractAlipay
     {
         return $this->apiVersion;
     }
-
-
 }

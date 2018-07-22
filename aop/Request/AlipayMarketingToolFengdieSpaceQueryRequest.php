@@ -106,6 +106,4 @@ class AlipayMarketingToolFengdieSpaceQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

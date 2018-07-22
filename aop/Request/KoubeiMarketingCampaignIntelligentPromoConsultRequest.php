@@ -106,6 +106,4 @@ class KoubeiMarketingCampaignIntelligentPromoConsultRequest extends AbstractAlip
     {
         return $this->apiVersion;
     }
-
-
 }

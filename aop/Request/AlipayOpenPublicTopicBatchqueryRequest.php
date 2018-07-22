@@ -90,6 +90,4 @@ class AlipayOpenPublicTopicBatchqueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

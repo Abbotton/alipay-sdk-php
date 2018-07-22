@@ -90,6 +90,4 @@ class AlipayUserUserinfoShareRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

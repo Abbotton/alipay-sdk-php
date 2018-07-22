@@ -106,6 +106,4 @@ class AlipayOpenPublicShortlinkCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

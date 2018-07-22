@@ -106,6 +106,4 @@ class AlipayOpenPublicAdvertModifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

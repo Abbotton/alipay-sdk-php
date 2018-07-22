@@ -106,6 +106,4 @@ class AlipayPlatformOpenidGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

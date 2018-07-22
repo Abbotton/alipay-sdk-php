@@ -90,6 +90,4 @@ class AlipayCommerceTransportOfflinepayKeyQueryRequest extends AbstractAlipayReq
     {
         return $this->apiVersion;
     }
-
-
 }

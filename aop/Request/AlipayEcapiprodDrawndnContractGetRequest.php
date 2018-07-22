@@ -170,6 +170,4 @@ class AlipayEcapiprodDrawndnContractGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

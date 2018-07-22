@@ -106,6 +106,4 @@ class AlipayMarketingVoucherTemplatelistQueryRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

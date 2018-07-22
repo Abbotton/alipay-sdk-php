@@ -106,6 +106,4 @@ class AlipayPcreditLoanApplyCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

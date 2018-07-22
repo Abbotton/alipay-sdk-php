@@ -106,6 +106,4 @@ class AlipayOpenMiniVersionRollbackRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

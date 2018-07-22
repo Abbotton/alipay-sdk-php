@@ -106,6 +106,4 @@ class AlipayFundAuthOperationCancelRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

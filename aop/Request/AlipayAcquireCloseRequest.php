@@ -140,6 +140,4 @@ class AlipayAcquireCloseRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class KoubeiItemCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -170,6 +170,4 @@ class AlipayMobileRecommendGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayEbppInvoiceTitleListGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

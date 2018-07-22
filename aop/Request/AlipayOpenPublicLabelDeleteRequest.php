@@ -106,6 +106,4 @@ class AlipayOpenPublicLabelDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

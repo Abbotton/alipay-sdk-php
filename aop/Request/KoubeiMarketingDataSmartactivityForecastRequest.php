@@ -106,6 +106,4 @@ class KoubeiMarketingDataSmartactivityForecastRequest extends AbstractAlipayRequ
     {
         return $this->apiVersion;
     }
-
-
 }

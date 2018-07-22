@@ -106,6 +106,4 @@ class AlipayEcoCplifeUseridentityStatusUpdateRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

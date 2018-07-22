@@ -90,6 +90,4 @@ class AlipayOpenPublicMultimediaDownloadProxyRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

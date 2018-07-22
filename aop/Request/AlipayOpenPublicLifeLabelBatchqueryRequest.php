@@ -90,6 +90,4 @@ class AlipayOpenPublicLifeLabelBatchqueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

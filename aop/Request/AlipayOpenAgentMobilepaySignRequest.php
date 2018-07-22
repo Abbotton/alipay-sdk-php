@@ -254,6 +254,4 @@ class AlipayOpenAgentMobilepaySignRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

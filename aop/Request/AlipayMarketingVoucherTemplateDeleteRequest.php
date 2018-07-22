@@ -106,6 +106,4 @@ class AlipayMarketingVoucherTemplateDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

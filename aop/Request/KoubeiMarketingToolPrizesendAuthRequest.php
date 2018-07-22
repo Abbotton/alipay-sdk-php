@@ -106,6 +106,4 @@ class KoubeiMarketingToolPrizesendAuthRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

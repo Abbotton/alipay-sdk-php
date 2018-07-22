@@ -122,6 +122,4 @@ class AlipayMobilePublicTemplateMessageModifyRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

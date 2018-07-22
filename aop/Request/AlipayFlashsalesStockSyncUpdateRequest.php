@@ -138,6 +138,4 @@ class AlipayFlashsalesStockSyncUpdateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

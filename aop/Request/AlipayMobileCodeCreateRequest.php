@@ -235,6 +235,4 @@ class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

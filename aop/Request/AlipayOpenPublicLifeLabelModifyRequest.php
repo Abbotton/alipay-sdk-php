@@ -106,6 +106,4 @@ class AlipayOpenPublicLifeLabelModifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -122,6 +122,4 @@ class AlipayMdataTagGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

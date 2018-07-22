@@ -106,6 +106,4 @@ class KoubeiMarketingCampaignCrowdDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

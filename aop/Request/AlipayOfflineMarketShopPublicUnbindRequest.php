@@ -122,6 +122,4 @@ class AlipayOfflineMarketShopPublicUnbindRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

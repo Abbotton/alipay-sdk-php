@@ -106,6 +106,4 @@ class AlipaySecurityProdSignatureTaskQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

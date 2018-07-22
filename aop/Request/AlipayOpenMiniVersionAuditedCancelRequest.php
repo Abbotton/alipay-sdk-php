@@ -106,6 +106,4 @@ class AlipayOpenMiniVersionAuditedCancelRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

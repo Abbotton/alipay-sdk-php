@@ -106,6 +106,4 @@ class AlipayPassVerifyQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

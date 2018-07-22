@@ -106,6 +106,4 @@ class AlipaySecurityRiskHideDeviceidQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

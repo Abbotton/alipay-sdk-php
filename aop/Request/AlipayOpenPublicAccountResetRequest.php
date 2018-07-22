@@ -106,6 +106,4 @@ class AlipayOpenPublicAccountResetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

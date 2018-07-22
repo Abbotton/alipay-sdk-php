@@ -106,6 +106,4 @@ class AlipayPcreditHuabeiPromoQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AntMerchantExpandPersonalApplyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

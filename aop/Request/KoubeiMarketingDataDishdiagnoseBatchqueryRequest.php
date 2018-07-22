@@ -106,6 +106,4 @@ class KoubeiMarketingDataDishdiagnoseBatchqueryRequest extends AbstractAlipayReq
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayCommerceDataMonitordataSyncRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

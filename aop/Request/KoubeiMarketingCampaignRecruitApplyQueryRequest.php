@@ -106,6 +106,4 @@ class KoubeiMarketingCampaignRecruitApplyQueryRequest extends AbstractAlipayRequ
     {
         return $this->apiVersion;
     }
-
-
 }

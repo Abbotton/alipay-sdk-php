@@ -106,6 +106,4 @@ class AlipayInsCooperationProductOfflineBatchqueryRequest extends AbstractAlipay
     {
         return $this->apiVersion;
     }
-
-
 }

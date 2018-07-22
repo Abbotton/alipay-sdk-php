@@ -106,6 +106,4 @@ class AlipayUserContractGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -158,6 +158,4 @@ class AlipayPassCodeAddRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayMobilePublicLabelUserDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

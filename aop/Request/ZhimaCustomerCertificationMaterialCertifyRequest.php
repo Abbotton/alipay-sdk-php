@@ -106,6 +106,4 @@ class ZhimaCustomerCertificationMaterialCertifyRequest extends AbstractAlipayReq
     {
         return $this->apiVersion;
     }
-
-
 }

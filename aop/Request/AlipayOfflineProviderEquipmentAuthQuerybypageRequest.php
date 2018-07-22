@@ -106,6 +106,4 @@ class AlipayOfflineProviderEquipmentAuthQuerybypageRequest extends AbstractAlipa
     {
         return $this->apiVersion;
     }
-
-
 }

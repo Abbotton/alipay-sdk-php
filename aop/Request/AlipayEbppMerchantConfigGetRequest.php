@@ -90,6 +90,4 @@ class AlipayEbppMerchantConfigGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

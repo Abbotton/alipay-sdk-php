@@ -106,6 +106,4 @@ class AlipayOfflineMaterialImageDownloadRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

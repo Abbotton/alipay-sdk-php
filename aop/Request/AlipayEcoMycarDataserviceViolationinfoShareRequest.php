@@ -106,6 +106,4 @@ class AlipayEcoMycarDataserviceViolationinfoShareRequest extends AbstractAlipayR
     {
         return $this->apiVersion;
     }
-
-
 }

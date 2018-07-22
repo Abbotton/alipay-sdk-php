@@ -186,6 +186,4 @@ class AlipayEcardEduPublicBindRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class MybankCreditLoanapplyDataUploadRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

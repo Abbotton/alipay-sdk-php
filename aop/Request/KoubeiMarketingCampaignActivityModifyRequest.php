@@ -106,6 +106,4 @@ class KoubeiMarketingCampaignActivityModifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

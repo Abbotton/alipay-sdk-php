@@ -90,6 +90,4 @@ class KoubeiMemberRetailerQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayOpenAppMembersCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayOpenAuthTokenAppRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayMarketingCampaignDiscountBudgetCreateRequest extends AbstractAlipayR
     {
         return $this->apiVersion;
     }
-
-
 }

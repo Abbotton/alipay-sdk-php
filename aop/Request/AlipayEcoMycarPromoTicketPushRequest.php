@@ -106,6 +106,4 @@ class AlipayEcoMycarPromoTicketPushRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

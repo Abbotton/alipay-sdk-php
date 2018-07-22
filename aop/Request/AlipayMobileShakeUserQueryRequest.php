@@ -125,6 +125,4 @@ bar_code：条码
     {
         return $this->apiVersion;
     }
-
-
 }

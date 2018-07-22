@@ -106,6 +106,4 @@ class AlipaySecurityProdXwbtestprodQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

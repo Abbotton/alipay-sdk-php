@@ -90,6 +90,4 @@ class AlipayOpenPublicAdvertBatchqueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

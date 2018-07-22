@@ -106,6 +106,4 @@ class AlipayMarketingToolFengdieSitesCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

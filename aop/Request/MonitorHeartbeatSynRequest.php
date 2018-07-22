@@ -106,6 +106,4 @@ class MonitorHeartbeatSynRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

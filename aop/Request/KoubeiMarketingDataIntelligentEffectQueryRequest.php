@@ -106,6 +106,4 @@ class KoubeiMarketingDataIntelligentEffectQueryRequest extends AbstractAlipayReq
     {
         return $this->apiVersion;
     }
-
-
 }

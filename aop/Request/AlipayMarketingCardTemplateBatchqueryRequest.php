@@ -106,6 +106,4 @@ class AlipayMarketingCardTemplateBatchqueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -90,6 +90,4 @@ class AlipayTrustUserScoreGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

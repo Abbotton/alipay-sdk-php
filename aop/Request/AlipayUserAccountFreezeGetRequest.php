@@ -106,6 +106,4 @@ class AlipayUserAccountFreezeGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

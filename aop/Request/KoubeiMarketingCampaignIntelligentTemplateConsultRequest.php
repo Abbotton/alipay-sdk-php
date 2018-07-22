@@ -106,6 +106,4 @@ class KoubeiMarketingCampaignIntelligentTemplateConsultRequest extends AbstractA
     {
         return $this->apiVersion;
     }
-
-
 }

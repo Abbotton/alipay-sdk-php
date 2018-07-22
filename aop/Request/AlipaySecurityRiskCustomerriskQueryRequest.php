@@ -106,6 +106,4 @@ class AlipaySecurityRiskCustomerriskQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

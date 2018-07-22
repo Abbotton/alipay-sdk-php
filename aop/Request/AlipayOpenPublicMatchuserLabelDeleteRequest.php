@@ -106,6 +106,4 @@ class AlipayOpenPublicMatchuserLabelDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

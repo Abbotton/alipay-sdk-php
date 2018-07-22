@@ -106,6 +106,4 @@ class AlipayOfflineMarketingVoucherOfflineRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

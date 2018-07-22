@@ -106,6 +106,4 @@ class AlipayCommerceAirXfgDsgModifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

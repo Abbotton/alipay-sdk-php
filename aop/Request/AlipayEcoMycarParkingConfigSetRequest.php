@@ -106,6 +106,4 @@ class AlipayEcoMycarParkingConfigSetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

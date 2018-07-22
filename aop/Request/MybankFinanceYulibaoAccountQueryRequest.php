@@ -106,6 +106,4 @@ class MybankFinanceYulibaoAccountQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

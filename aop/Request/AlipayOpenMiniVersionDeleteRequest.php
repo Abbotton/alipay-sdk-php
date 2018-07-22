@@ -106,6 +106,4 @@ class AlipayOpenMiniVersionDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -90,6 +90,4 @@ class KoubeiMemberBrandownerNameQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

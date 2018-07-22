@@ -106,6 +106,4 @@ class AlipayOpenPublicSinglearticleDataBatchqueryRequest extends AbstractAlipayR
     {
         return $this->apiVersion;
     }
-
-
 }

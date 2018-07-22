@@ -106,6 +106,4 @@ class AlipayCommerceCityfacilitatorVoucherGenerateRequest extends AbstractAlipay
     {
         return $this->apiVersion;
     }
-
-
 }

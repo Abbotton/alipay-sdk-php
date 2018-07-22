@@ -106,6 +106,4 @@ class KoubeiMarketingDataIntelligentIndicatorQueryRequest extends AbstractAlipay
     {
         return $this->apiVersion;
     }
-
-
 }

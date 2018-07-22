@@ -106,6 +106,4 @@ class SsdataDataserviceRiskRainscoreQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

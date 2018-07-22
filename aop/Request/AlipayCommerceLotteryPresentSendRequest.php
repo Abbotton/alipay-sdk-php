@@ -106,6 +106,4 @@ class AlipayCommerceLotteryPresentSendRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

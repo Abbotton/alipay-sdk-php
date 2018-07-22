@@ -106,6 +106,4 @@ class AlipayOfflineMarketApplyorderBatchqueryRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

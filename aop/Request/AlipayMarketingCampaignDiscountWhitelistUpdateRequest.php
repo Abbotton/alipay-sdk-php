@@ -106,6 +106,4 @@ class AlipayMarketingCampaignDiscountWhitelistUpdateRequest extends AbstractAlip
     {
         return $this->apiVersion;
     }
-
-
 }

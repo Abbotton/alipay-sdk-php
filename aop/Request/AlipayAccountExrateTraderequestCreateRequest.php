@@ -106,6 +106,4 @@ class AlipayAccountExrateTraderequestCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

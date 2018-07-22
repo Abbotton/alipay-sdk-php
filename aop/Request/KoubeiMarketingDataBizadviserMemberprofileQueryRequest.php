@@ -106,6 +106,4 @@ class KoubeiMarketingDataBizadviserMemberprofileQueryRequest extends AbstractAli
     {
         return $this->apiVersion;
     }
-
-
 }

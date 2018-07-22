@@ -106,6 +106,4 @@ class AlipayTrustUserAuthSendRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

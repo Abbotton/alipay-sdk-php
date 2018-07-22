@@ -106,6 +106,4 @@ class AlipayOpenSmsgDataSetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

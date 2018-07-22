@@ -106,6 +106,4 @@ class AlipayOfflineMarketShopDiscountQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

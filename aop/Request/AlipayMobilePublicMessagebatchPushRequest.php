@@ -106,6 +106,4 @@ class AlipayMobilePublicMessagebatchPushRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

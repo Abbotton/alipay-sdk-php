@@ -106,6 +106,4 @@ class MybankFinanceYulibaoTransHistoryQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

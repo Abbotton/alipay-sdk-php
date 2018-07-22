@@ -106,6 +106,4 @@ class AlipayOpenAppYufanlingsanyaowuYufalingsanyaowuQueryRequest extends Abstrac
     {
         return $this->apiVersion;
     }
-
-
 }

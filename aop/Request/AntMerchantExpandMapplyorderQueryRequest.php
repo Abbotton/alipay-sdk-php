@@ -106,6 +106,4 @@ class AntMerchantExpandMapplyorderQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

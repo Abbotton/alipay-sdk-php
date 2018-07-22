@@ -106,6 +106,4 @@ class AlipayDataDataserviceShoppingmallrecShopQueryRequest extends AbstractAlipa
     {
         return $this->apiVersion;
     }
-
-
 }

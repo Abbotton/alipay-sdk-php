@@ -90,6 +90,4 @@ class AlipayOpenPublicSettingCategoryQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

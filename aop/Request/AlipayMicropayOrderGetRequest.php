@@ -106,6 +106,4 @@ class AlipayMicropayOrderGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayOpenPublicThirdCustomerServiceRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

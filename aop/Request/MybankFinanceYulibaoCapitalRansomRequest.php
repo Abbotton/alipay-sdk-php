@@ -106,6 +106,4 @@ class MybankFinanceYulibaoCapitalRansomRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

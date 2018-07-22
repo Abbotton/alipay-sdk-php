@@ -106,6 +106,4 @@ class AlipayInsAutoAutoinsprodUserCertifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

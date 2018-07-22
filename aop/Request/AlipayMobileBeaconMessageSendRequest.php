@@ -106,6 +106,4 @@ class AlipayMobileBeaconMessageSendRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

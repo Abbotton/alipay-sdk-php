@@ -110,6 +110,4 @@ benefitStatus: 状态只支持(VALID:生效、WAIT:待生效、INVALID:失效), 
     {
         return $this->apiVersion;
     }
-
-
 }

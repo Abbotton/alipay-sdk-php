@@ -106,6 +106,4 @@ class AlipayZdataassetsEasyserviceRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

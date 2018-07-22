@@ -106,6 +106,4 @@ class AlipayOfflineMarketShopBatchqueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

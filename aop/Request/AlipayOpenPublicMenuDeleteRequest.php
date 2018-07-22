@@ -106,6 +106,4 @@ class AlipayOpenPublicMenuDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

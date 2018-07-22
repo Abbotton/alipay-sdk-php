@@ -106,6 +106,4 @@ class AlipayEcoMycarTradeRefundRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

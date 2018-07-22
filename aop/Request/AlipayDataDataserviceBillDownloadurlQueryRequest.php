@@ -106,6 +106,4 @@ class AlipayDataDataserviceBillDownloadurlQueryRequest extends AbstractAlipayReq
     {
         return $this->apiVersion;
     }
-
-
 }

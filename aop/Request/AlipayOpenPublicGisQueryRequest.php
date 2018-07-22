@@ -106,6 +106,4 @@ class AlipayOpenPublicGisQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

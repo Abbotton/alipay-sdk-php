@@ -90,6 +90,4 @@ class AlipayMobilePublicContactFollowListRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

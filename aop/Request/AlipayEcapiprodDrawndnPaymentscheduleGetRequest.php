@@ -170,6 +170,4 @@ class AlipayEcapiprodDrawndnPaymentscheduleGetRequest extends AbstractAlipayRequ
     {
         return $this->apiVersion;
     }
-
-
 }

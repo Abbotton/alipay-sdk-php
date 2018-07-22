@@ -218,6 +218,4 @@ class AlipayOpenMiniBaseinfoModifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

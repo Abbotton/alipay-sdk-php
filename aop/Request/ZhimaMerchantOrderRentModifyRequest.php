@@ -106,6 +106,4 @@ class ZhimaMerchantOrderRentModifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

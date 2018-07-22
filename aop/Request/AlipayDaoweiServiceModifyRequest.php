@@ -106,6 +106,4 @@ class AlipayDaoweiServiceModifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

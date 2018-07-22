@@ -106,6 +106,4 @@ class AlipayOfflineProviderShopactionRecordRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

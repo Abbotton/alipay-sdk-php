@@ -106,6 +106,4 @@ class KoubeiMemberDataIsvCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

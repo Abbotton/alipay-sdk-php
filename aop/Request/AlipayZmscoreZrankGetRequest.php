@@ -106,6 +106,4 @@ class AlipayZmscoreZrankGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

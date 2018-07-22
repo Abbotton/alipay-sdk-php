@@ -254,6 +254,4 @@ class AlipayOpenAgentFacetofaceSignRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

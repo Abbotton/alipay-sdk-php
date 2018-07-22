@@ -106,6 +106,4 @@ class AlipayMobilePublicGisGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

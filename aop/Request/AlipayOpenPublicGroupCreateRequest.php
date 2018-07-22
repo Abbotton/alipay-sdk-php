@@ -106,6 +106,4 @@ class AlipayOpenPublicGroupCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

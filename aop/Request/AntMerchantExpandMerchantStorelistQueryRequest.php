@@ -106,6 +106,4 @@ class AntMerchantExpandMerchantStorelistQueryRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

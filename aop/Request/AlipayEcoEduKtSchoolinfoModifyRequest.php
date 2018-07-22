@@ -106,6 +106,4 @@ class AlipayEcoEduKtSchoolinfoModifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayEcoMycarViolationInfoPushRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

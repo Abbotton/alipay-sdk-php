@@ -106,6 +106,4 @@ class AlipayMicropayOrderFreezepayurlGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

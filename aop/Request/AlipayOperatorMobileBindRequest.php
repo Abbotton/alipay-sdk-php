@@ -190,6 +190,4 @@ class AlipayOperatorMobileBindRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

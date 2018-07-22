@@ -106,6 +106,4 @@ class ZolozIdentificationUserWebInitializeRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

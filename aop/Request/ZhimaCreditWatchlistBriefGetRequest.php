@@ -106,6 +106,4 @@ class ZhimaCreditWatchlistBriefGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayOpenPublicAdvertDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayInsCooperationRegionQrcodeApplyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

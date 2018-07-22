@@ -404,6 +404,4 @@ HEALTH：健康险
     {
         return $this->apiVersion;
     }
-
-
 }

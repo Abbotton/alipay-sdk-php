@@ -106,6 +106,4 @@ class AlipayOfflineProviderMonitorLogSyncRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

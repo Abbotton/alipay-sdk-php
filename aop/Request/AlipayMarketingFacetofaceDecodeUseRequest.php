@@ -106,6 +106,4 @@ class AlipayMarketingFacetofaceDecodeUseRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -138,6 +138,4 @@ class AlipaySystemOauthTokenRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

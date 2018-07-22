@@ -106,6 +106,4 @@ class AlipayOpenMiniSafedomainDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

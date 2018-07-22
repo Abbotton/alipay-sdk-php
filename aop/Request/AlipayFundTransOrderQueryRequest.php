@@ -106,6 +106,4 @@ class AlipayFundTransOrderQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

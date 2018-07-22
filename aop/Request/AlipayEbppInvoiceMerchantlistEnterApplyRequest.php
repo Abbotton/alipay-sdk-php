@@ -106,6 +106,4 @@ class AlipayEbppInvoiceMerchantlistEnterApplyRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

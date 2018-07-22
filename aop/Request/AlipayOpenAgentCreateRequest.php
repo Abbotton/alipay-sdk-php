@@ -106,6 +106,4 @@ class AlipayOpenAgentCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

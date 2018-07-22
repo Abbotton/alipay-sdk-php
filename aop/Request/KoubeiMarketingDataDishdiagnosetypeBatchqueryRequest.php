@@ -90,6 +90,4 @@ class KoubeiMarketingDataDishdiagnosetypeBatchqueryRequest extends AbstractAlipa
     {
         return $this->apiVersion;
     }
-
-
 }

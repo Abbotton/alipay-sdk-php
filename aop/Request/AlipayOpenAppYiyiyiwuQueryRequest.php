@@ -106,6 +106,4 @@ class AlipayOpenAppYiyiyiwuQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

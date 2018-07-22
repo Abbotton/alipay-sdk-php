@@ -106,6 +106,4 @@ class AlipayMarketingCampaignCashDetailQueryRequest extends AbstractAlipayReques
     {
         return $this->apiVersion;
     }
-
-
 }

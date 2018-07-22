@@ -90,6 +90,4 @@ class KoubeiItemExtitemBrandQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

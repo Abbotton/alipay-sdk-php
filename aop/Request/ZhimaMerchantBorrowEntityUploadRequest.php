@@ -106,6 +106,4 @@ class ZhimaMerchantBorrowEntityUploadRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

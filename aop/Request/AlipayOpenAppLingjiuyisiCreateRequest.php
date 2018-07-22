@@ -90,6 +90,4 @@ class AlipayOpenAppLingjiuyisiCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

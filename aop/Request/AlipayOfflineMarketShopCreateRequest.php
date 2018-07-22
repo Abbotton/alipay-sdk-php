@@ -106,6 +106,4 @@ class AlipayOfflineMarketShopCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

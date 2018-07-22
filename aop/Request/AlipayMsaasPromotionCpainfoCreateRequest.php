@@ -106,6 +106,4 @@ class AlipayMsaasPromotionCpainfoCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

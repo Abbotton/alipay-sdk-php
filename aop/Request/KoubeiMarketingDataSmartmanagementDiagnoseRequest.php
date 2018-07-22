@@ -90,6 +90,4 @@ class KoubeiMarketingDataSmartmanagementDiagnoseRequest extends AbstractAlipayRe
     {
         return $this->apiVersion;
     }
-
-
 }

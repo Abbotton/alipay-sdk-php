@@ -106,6 +106,4 @@ class AlipayEcoCplifeRepairStatusUpdateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

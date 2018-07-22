@@ -106,6 +106,4 @@ class AlipayMarketingCampaignDrawcampStatusUpdateRequest extends AbstractAlipayR
     {
         return $this->apiVersion;
     }
-
-
 }

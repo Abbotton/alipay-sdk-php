@@ -106,6 +106,4 @@ class AlipayDataDataserviceUserlevelZrankGetRequest extends AbstractAlipayReques
     {
         return $this->apiVersion;
     }
-
-
 }

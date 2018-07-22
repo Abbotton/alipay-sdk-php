@@ -106,6 +106,4 @@ class AlipayZdataassetsMetadataRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

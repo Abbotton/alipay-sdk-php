@@ -106,6 +106,4 @@ class AlipayEcoMycarMaintainOrderstatusUpdateRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

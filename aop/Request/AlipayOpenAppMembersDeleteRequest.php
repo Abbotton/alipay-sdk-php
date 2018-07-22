@@ -106,6 +106,4 @@ class AlipayOpenAppMembersDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

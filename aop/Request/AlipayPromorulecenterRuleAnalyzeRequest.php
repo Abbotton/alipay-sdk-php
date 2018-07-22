@@ -138,6 +138,4 @@ class AlipayPromorulecenterRuleAnalyzeRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

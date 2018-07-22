@@ -106,6 +106,4 @@ class ZhimaCreditEpScoreGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

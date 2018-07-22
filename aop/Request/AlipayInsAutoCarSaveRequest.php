@@ -106,6 +106,4 @@ class AlipayInsAutoCarSaveRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

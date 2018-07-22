@@ -106,6 +106,4 @@ class AlipayEcoMycarPromoVoucherVerifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

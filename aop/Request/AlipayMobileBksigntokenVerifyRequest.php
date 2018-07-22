@@ -138,6 +138,4 @@ class AlipayMobileBksigntokenVerifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

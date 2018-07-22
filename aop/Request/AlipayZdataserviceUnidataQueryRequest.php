@@ -122,6 +122,4 @@ class AlipayZdataserviceUnidataQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

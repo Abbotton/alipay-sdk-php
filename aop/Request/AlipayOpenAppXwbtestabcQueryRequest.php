@@ -106,6 +106,4 @@ class AlipayOpenAppXwbtestabcQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -90,6 +90,4 @@ class AlipayOpenServicemarketOrderNotifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

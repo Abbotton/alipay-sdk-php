@@ -106,6 +106,4 @@ class AlipayOfflineProviderEquipmentAuthRemoveRequest extends AbstractAlipayRequ
     {
         return $this->apiVersion;
     }
-
-
 }

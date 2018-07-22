@@ -138,6 +138,4 @@ class AlipayZdatafrontDatatransferedSendRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

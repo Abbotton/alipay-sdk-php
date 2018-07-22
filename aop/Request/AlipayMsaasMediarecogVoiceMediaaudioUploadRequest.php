@@ -106,6 +106,4 @@ class AlipayMsaasMediarecogVoiceMediaaudioUploadRequest extends AbstractAlipayRe
     {
         return $this->apiVersion;
     }
-
-
 }

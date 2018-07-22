@@ -106,6 +106,4 @@ class AlipayEcoCplifeRoominfoUploadRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

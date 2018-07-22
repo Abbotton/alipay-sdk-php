@@ -106,6 +106,4 @@ class AlipayMobilePublicLabelUserAddRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

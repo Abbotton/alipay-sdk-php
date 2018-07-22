@@ -106,6 +106,4 @@ class KoubeiMarketingDataIsvShopQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

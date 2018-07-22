@@ -106,6 +106,4 @@ class AlipaySecurityProdFingerprintApplyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

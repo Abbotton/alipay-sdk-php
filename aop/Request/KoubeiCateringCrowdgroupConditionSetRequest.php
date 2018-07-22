@@ -106,6 +106,4 @@ class KoubeiCateringCrowdgroupConditionSetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

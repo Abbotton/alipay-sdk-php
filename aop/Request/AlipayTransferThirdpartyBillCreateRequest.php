@@ -289,6 +289,4 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

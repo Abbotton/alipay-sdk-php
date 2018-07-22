@@ -90,6 +90,4 @@ class AlipayOpenAppLingjiuyiwuBatchqueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

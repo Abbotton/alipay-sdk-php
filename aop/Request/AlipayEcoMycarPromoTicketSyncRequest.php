@@ -106,6 +106,4 @@ class AlipayEcoMycarPromoTicketSyncRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

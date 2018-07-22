@@ -106,6 +106,4 @@ class KoubeiCateringTablecodeQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

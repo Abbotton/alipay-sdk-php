@@ -106,6 +106,4 @@ class SsdataDataserviceRiskAntifraudVerifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

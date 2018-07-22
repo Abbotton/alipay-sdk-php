@@ -106,6 +106,4 @@ class KoubeiRetailShopitemUploadRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayCommerceCityfacilitatorVoucherBatchqueryRequest extends AbstractAlip
     {
         return $this->apiVersion;
     }
-
-
 }

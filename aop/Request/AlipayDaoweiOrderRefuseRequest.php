@@ -106,6 +106,4 @@ class AlipayDaoweiOrderRefuseRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

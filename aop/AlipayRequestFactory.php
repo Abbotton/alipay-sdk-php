@@ -5,8 +5,6 @@ namespace Alipay;
 use Alipay\Exception\AlipayException;
 use Alipay\Request\AbstractAlipayRequest;
 
-
-
 class AlipayRequestFactory
 {
     /**
@@ -30,12 +28,11 @@ class AlipayRequestFactory
     public static function create($className)
     {
         $className = 'Alipay\Request' . '\\' . $className;
-        if(!class_exists($className)) {
+        if (!class_exists($className)) {
             throw new AlipayException("Request class `{$className}` doesn't exist");
         }
         $abstractClass = AbstractAlipayRequest::className();
-        if(!is_subclass_of($className, $abstractClass))
-        {
+        if (!is_subclass_of($className, $abstractClass)) {
             throw new AlipayException("Given class {$className} is not a subclass of {$abstractClass}");
         }
         return new $className();

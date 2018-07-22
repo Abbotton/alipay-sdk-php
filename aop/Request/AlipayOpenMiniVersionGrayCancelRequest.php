@@ -106,6 +106,4 @@ class AlipayOpenMiniVersionGrayCancelRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class KoubeiMarketingDataBizadviserMyddsreportQueryRequest extends AbstractAlipa
     {
         return $this->apiVersion;
     }
-
-
 }

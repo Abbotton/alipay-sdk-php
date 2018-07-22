@@ -106,6 +106,4 @@ class AlipayOpenPublicMessageContentModifyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

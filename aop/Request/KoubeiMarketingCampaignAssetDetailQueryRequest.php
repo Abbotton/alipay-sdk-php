@@ -106,6 +106,4 @@ class KoubeiMarketingCampaignAssetDetailQueryRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

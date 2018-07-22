@@ -90,6 +90,4 @@ class AlipayOpenPublicMenuQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

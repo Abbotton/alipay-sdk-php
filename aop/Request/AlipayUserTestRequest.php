@@ -106,6 +106,4 @@ class AlipayUserTestRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

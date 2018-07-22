@@ -106,6 +106,4 @@ class AlipayAccountExrateAdviceAcceptRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

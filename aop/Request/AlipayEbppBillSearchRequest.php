@@ -203,6 +203,4 @@ class AlipayEbppBillSearchRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

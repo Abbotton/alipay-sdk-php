@@ -106,6 +106,4 @@ class KoubeiMarketingCampaignIntelligentPromoBatchqueryRequest extends AbstractA
     {
         return $this->apiVersion;
     }
-
-
 }

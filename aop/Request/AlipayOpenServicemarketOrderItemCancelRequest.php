@@ -106,6 +106,4 @@ class AlipayOpenServicemarketOrderItemCancelRequest extends AbstractAlipayReques
     {
         return $this->apiVersion;
     }
-
-
 }

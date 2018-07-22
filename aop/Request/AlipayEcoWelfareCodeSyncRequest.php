@@ -106,6 +106,4 @@ class AlipayEcoWelfareCodeSyncRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

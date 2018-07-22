@@ -106,6 +106,4 @@ class KoubeiMarketingCampaignIntelligentPromoDeleteRequest extends AbstractAlipa
     {
         return $this->apiVersion;
     }
-
-
 }

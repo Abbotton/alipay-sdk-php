@@ -106,6 +106,4 @@ class AlipayMarketingUserulePidQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

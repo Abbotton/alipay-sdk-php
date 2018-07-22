@@ -106,6 +106,4 @@ class SsdataDataserviceRiskAntifraudlistQueryRequest extends AbstractAlipayReque
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class AlipayOpenMiniSafedomainCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class ZhimaAuthInfoAuthqueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

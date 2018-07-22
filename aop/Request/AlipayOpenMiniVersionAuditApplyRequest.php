@@ -522,6 +522,4 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

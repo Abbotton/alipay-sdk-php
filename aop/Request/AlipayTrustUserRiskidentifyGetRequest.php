@@ -106,6 +106,4 @@ class AlipayTrustUserRiskidentifyGetRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

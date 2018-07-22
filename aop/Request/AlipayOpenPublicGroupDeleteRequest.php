@@ -106,6 +106,4 @@ class AlipayOpenPublicGroupDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

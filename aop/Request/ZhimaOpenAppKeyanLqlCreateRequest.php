@@ -106,6 +106,4 @@ class ZhimaOpenAppKeyanLqlCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

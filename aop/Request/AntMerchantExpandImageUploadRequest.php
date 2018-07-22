@@ -122,6 +122,4 @@ class AntMerchantExpandImageUploadRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

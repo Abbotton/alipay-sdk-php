@@ -106,6 +106,4 @@ class AlipayInsAutoAutoinsprodQuoteQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

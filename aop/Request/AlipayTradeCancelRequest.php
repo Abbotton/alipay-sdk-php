@@ -106,6 +106,4 @@ class AlipayTradeCancelRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

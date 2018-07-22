@@ -106,6 +106,4 @@ class KoubeiAdvertDeliveryDiscountWebBatchqueryRequest extends AbstractAlipayReq
     {
         return $this->apiVersion;
     }
-
-
 }

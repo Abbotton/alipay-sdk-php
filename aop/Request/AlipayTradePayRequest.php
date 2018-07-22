@@ -107,6 +107,4 @@ class AlipayTradePayRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

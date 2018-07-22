@@ -106,6 +106,4 @@ class ZhimaCustomerContractInitializeRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

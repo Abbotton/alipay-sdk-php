@@ -106,6 +106,4 @@ class KoubeiMarketingDataCustomreportDetailQueryRequest extends AbstractAlipayRe
     {
         return $this->apiVersion;
     }
-
-
 }

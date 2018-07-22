@@ -106,6 +106,4 @@ class AlipayFundAuthOrderVoucherCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

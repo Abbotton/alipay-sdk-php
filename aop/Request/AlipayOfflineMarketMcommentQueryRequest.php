@@ -106,6 +106,4 @@ class AlipayOfflineMarketMcommentQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

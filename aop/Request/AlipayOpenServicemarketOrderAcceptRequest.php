@@ -106,6 +106,4 @@ class AlipayOpenServicemarketOrderAcceptRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

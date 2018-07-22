@@ -106,6 +106,4 @@ class KoubeiQualityTestCloudacptBatchQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

@@ -106,6 +106,4 @@ class KoubeiCraftsmanDataWorkDeleteRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

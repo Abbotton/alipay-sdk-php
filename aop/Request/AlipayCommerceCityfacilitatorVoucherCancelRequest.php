@@ -106,6 +106,4 @@ class AlipayCommerceCityfacilitatorVoucherCancelRequest extends AbstractAlipayRe
     {
         return $this->apiVersion;
     }
-
-
 }

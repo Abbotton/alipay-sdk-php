@@ -106,6 +106,4 @@ class AlipayEcoMycarCarlibInfoPushRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

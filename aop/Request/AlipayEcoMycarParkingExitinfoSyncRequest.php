@@ -106,6 +106,4 @@ class AlipayEcoMycarParkingExitinfoSyncRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

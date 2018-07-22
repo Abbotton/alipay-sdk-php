@@ -106,6 +106,4 @@ class KoubeiTradeItemorderBuyRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

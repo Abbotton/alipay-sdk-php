@@ -106,6 +106,4 @@ class AlipayDataDataexchangeSfasdfRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

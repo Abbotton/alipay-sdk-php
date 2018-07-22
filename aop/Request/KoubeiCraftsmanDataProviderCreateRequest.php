@@ -106,6 +106,4 @@ class KoubeiCraftsmanDataProviderCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

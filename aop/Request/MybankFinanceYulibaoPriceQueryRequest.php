@@ -106,6 +106,4 @@ class MybankFinanceYulibaoPriceQueryRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }

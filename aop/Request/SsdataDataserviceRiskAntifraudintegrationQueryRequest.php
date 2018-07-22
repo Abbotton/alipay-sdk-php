@@ -106,6 +106,4 @@ class SsdataDataserviceRiskAntifraudintegrationQueryRequest extends AbstractAlip
     {
         return $this->apiVersion;
     }
-
-
 }

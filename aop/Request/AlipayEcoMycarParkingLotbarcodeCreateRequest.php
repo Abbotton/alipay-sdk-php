@@ -106,6 +106,4 @@ class AlipayEcoMycarParkingLotbarcodeCreateRequest extends AbstractAlipayRequest
     {
         return $this->apiVersion;
     }
-
-
 }
