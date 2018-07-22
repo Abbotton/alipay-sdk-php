@@ -319,8 +319,11 @@ class AopClient
             throw new AlipayException('AES Encrypt / Decrypr has been deprecated!');
         }
 
+
+        $totalParams = array_merge($apiParams, $sysParams);
+        ksort($totalParams);
         //签名
-        $sysParams["sign"] = $this->generateSign(array_merge($apiParams, $sysParams), $this->signType);
+        $sysParams["sign"] = $this->generateSign($totalParams, $this->signType);
 
         //系统参数放入GET请求串
         $requestUrl = $this->gatewayUrl . '?' . http_build_query($sysParams);
