@@ -6,6 +6,7 @@ use Alipay\Exception\AlipayException;
 use Alipay\Helper\CryptHelper;
 use Alipay\Exception\AlipayResponseException;
 use Alipay\Exception\AlipayInvalidKeyException;
+use Alipay\Exception\AlipayHttpException;
 
 class AopClient
 {
@@ -130,7 +131,7 @@ class AopClient
         @openssl_free_key($this->alipayPublicKey);
     }
 
-    protected function curl($url, $postFields = null)
+    protected function curl($url, $postFields)
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -138,54 +139,28 @@ class AopClient
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
-        $postBodyString = "";
-        $encodeArray = array();
-        $postMultipart = false;
-
-        if (is_array($postFields) && 0 < count($postFields)) {
-            foreach ($postFields as $k => $v) {
-                if ("@" != substr($v, 0, 1)) { //判断是不是文件上传
-                    $postBodyString .= "$k=" . urlencode($v) . "&";
-                } else { //文件上传用multipart/form-data，否则用www-form-urlencoded
-                    $postMultipart = true;
-                    $encodeArray[$k] = new \CURLFile(substr($v, 1));
+        foreach ($postFields as $key => &$value) {
+            if (is_string($value) && strpos($value, '@') === 0 && is_file(substr($value, 1))) {
+                if (class_exists('CURLFile')) {
+                    $value = new \CURLFile(substr($value, 1));
                 }
             }
-            unset($k, $v);
-            curl_setopt($ch, CURLOPT_POST, true);
-            if ($postMultipart) {
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $encodeArray);
-            } else {
-                curl_setopt($ch, CURLOPT_POSTFIELDS, substr($postBodyString, 0, -1));
-            }
         }
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
 
-        if ($postMultipart) {
-            $headers = array('content-type: multipart/form-data;charset=' . $this->charset . ';boundary=' . $this->getMillisecond());
-        } else {
-            $headers = array('content-type: application/x-www-form-urlencoded;charset=' . $this->charset);
-        }
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-        $reponse = curl_exec($ch);
+        $response = curl_exec($ch);
 
         if (curl_errno($ch)) {
-            throw new AlipayException(curl_error($ch), 0);
+            throw new AlipayCurlException(curl_error($ch), curl_error($ch));
         } else {
             $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             if (200 !== $httpStatusCode) {
-                throw new AlipayException($reponse, $httpStatusCode);
+                throw new AlipayHttpException($response, $httpStatusCode);
             }
         }
 
         curl_close($ch);
-        return $reponse;
-    }
-
-    protected function getMillisecond()
-    {
-        list($s1, $s2) = explode(' ', microtime());
-        return (float) sprintf('%.0f', (floatval($s1) + floatval($s2)) * 1000);
+        return $response;
     }
 
     /**
