@@ -8,13 +8,13 @@
 
 namespace Alipay;
 
+use Alipay\Exception\AlipaySignValidationException;
+use Alipay\Exception\AlipayBase64Exception;
+use Alipay\Exception\AlipayOpenSslException;
+
+
 class AlipaySign
 {
-    /**
-     * 响应签名节点名
-     */
-    const SIGN_NODE = "sign";
-
     /**
      * 签名类型
      *
@@ -75,12 +75,22 @@ class AlipaySign
      *
      * @param string $data
      * @return void
+     * @throws AlipayOpenSslException
+     * @throws AlipayBase64Exception
      * @see https://docs.open.alipay.com/291/106118
      */
     public function generate($data)
     {
-        openssl_sign($data, $sign, $this->appPrivateKey, $this->getSignAlgo());
-        return base64_encode($sign);
+        $result = openssl_sign($data, $sign, $this->appPrivateKey, $this->getSignAlgo());
+        if($result === false) {
+            throw new AlipayOpenSslException(openssl_error_string());
+        }
+        $encodedSign = base64_encode($sign);
+        if($encodedSign === false)
+        {
+            throw new AlipayBase64Exception($sign, true);
+        }
+        return $encodedSign;
     }
 
     public function generateByParams($params)
@@ -92,14 +102,30 @@ class AlipaySign
     /**
      * 验签（验证 Sign 值）
      *
-     * @param [type] $sign
-     * @param [type] $data
+     * @param string $sign
+     * @param string $data
      * @return void
+     * @throws AlipayBase64Exception
+     * @throws AlipaySignValidationException
+     * @throws AlipayOpenSslException
      * @see https://docs.open.alipay.com/200/106120
      */
     public function verify($sign, $data)
     {
-        return 1 === openssl_verify($data, base64_decode($sign), $this->alipayPublicKey, $this->getSignAlgo());
+        $decodedSign = base64_decode($sign, true);
+        if($decodedSign === false) {
+            throw new AlipayBase64Exception($sign, false);
+        }
+        $result = openssl_verify($data, $decodedSign, $this->alipayPublicKey, $this->getSignAlgo());
+        switch($result)
+        {
+            case 1:
+            break;
+            case 0:
+            throw new AlipaySignValidationException($sign, $data);
+            case -1:
+            throw new AlipayOpenSslException(openssl_error_string());
+        }
     }
 
     /**
