@@ -2,7 +2,7 @@
 
 namespace Alipay\Exception;
 
-class AlipaySignValidationError extends AlipayException
+class AlipaySignValidationException extends AlipayException
 {
     public function __construct($exceptSign, $data)
     {
