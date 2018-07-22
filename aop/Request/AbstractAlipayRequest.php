@@ -16,7 +16,7 @@ abstract class AbstractAlipayRequest
         return '1.0';
     }
 
-    public abstract function AbstractAlipayRequest();
+    public abstract function getNotifyUrl();
 
     public abstract function getApiParas();
 
