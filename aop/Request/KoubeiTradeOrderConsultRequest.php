@@ -37,10 +37,7 @@ class KoubeiTradeOrderConsultRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.trade.order.consult";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

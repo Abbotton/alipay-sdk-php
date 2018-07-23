@@ -37,10 +37,7 @@ class SsdataDataserviceRiskAlixiaohaoQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "ssdata.dataservice.risk.alixiaohao.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

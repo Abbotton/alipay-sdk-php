@@ -37,10 +37,7 @@ class KoubeiMarketingCampaignIntelligentPromoQueryRequest extends AbstractAlipay
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.campaign.intelligent.promo.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

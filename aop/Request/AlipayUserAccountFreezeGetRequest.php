@@ -37,10 +37,7 @@ class AlipayUserAccountFreezeGetRequest extends AbstractAlipayRequest
         return $this->freezeType;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.user.account.freeze.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

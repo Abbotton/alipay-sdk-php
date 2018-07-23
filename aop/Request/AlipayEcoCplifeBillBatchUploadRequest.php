@@ -37,10 +37,7 @@ class AlipayEcoCplifeBillBatchUploadRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.cplife.bill.batch.upload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

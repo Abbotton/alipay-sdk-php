@@ -53,10 +53,7 @@ class AlipaySecurityProdSignatureFileUploadRequest extends AbstractAlipayRequest
         return $this->fileContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.security.prod.signature.file.upload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

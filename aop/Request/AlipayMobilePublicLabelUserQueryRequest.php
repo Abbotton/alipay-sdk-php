@@ -37,10 +37,7 @@ class AlipayMobilePublicLabelUserQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.label.user.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

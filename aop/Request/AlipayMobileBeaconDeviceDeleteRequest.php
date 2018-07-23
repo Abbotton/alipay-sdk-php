@@ -37,10 +37,7 @@ class AlipayMobileBeaconDeviceDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.beacon.device.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

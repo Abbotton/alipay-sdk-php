@@ -37,10 +37,7 @@ class KoubeiMarketingCampaignIntelligentPromoConsultRequest extends AbstractAlip
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.campaign.intelligent.promo.consult";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

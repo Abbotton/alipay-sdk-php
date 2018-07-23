@@ -37,10 +37,7 @@ class AlipayAppTokenGetRequest extends AbstractAlipayRequest
         return $this->secret;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.app.token.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -38,10 +38,7 @@ class AlipayUserFinanceinfoShareRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.user.financeinfo.share";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

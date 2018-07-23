@@ -37,10 +37,7 @@ class AlipayOpenPublicMenuModifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.menu.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

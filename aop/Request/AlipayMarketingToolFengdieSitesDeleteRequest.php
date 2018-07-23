@@ -37,10 +37,7 @@ class AlipayMarketingToolFengdieSitesDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.tool.fengdie.sites.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayMarketingFacetofaceDecodeUseRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.facetoface.decode.use";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

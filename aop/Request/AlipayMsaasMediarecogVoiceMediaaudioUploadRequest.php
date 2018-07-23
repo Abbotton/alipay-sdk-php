@@ -37,10 +37,7 @@ class AlipayMsaasMediarecogVoiceMediaaudioUploadRequest extends AbstractAlipayRe
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.msaas.mediarecog.voice.mediaaudio.upload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

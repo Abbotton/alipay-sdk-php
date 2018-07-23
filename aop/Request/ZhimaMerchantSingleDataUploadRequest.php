@@ -37,10 +37,7 @@ class ZhimaMerchantSingleDataUploadRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.merchant.single.data.upload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

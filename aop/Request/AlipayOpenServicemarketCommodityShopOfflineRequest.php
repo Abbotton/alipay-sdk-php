@@ -37,10 +37,7 @@ class AlipayOpenServicemarketCommodityShopOfflineRequest extends AbstractAlipayR
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.servicemarket.commodity.shop.offline";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayMarketingCardTemplateBatchqueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.card.template.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

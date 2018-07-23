@@ -37,10 +37,7 @@ class KoubeiQualityTestCloudacptBatchQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.quality.test.cloudacpt.batch.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

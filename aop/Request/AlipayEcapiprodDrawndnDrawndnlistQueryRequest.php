@@ -101,10 +101,7 @@ class AlipayEcapiprodDrawndnDrawndnlistQueryRequest extends AbstractAlipayReques
         return $this->orgCode;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ecapiprod.drawndn.drawndnlist.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

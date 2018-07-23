@@ -37,10 +37,7 @@ class AlipayEcoWelfareCodeSyncRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.welfare.code.sync";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

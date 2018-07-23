@@ -37,10 +37,7 @@ class AlipayZdataassetsMetadataRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.zdataassets.metadata";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

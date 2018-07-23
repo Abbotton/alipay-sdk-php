@@ -37,10 +37,7 @@ class AlipayEcoCplifeRepairStatusUpdateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.cplife.repair.status.update";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

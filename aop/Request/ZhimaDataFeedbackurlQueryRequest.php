@@ -37,10 +37,7 @@ class ZhimaDataFeedbackurlQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.data.feedbackurl.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

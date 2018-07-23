@@ -37,10 +37,7 @@ class AlipayInsAutoAutoinsprodPolicyApplyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ins.auto.autoinsprod.policy.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

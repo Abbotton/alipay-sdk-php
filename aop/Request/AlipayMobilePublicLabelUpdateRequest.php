@@ -37,10 +37,7 @@ class AlipayMobilePublicLabelUpdateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.label.update";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

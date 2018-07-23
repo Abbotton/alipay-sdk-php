@@ -37,10 +37,7 @@ class KoubeiMarketingDataEnterpriseStaffinfoUploadRequest extends AbstractAlipay
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.enterprise.staffinfo.upload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

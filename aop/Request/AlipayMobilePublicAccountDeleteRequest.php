@@ -37,10 +37,7 @@ class AlipayMobilePublicAccountDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.account.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

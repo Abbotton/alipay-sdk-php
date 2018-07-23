@@ -37,10 +37,7 @@ class KoubeiCateringTablecodeQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.catering.tablecode.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

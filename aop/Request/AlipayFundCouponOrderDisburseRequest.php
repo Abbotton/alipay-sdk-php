@@ -37,10 +37,7 @@ class AlipayFundCouponOrderDisburseRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.fund.coupon.order.disburse";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

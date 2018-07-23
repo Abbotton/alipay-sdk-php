@@ -53,10 +53,7 @@ class AlipayMicropayOrderUnfreezeRequest extends AbstractAlipayRequest
         return $this->memo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.micropay.order.unfreeze";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayExscUserFirstsignGetRequest extends AbstractAlipayRequest
         return $this->alipayId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.exsc.user.firstsign.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

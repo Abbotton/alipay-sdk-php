@@ -37,10 +37,7 @@ class ZhimaMerchantDataUploadInitializeRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.merchant.data.upload.initialize";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

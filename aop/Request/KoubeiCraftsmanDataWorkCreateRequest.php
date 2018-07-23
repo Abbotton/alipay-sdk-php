@@ -37,10 +37,7 @@ class KoubeiCraftsmanDataWorkCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.craftsman.data.work.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

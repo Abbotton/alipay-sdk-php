@@ -90,10 +90,7 @@ class AlipayAcquireCancelRequest extends AbstractAlipayRequest
         return $this->tradeNo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.acquire.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

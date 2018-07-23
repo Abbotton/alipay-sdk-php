@@ -117,10 +117,7 @@ OPENID：用户支付宝账户在某商户下的唯一ID
         return $this->userInfo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.member.coupon.querylist";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

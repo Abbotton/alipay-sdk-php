@@ -37,10 +37,7 @@ class AlipayTradeAppPayRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.trade.app.pay";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

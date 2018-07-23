@@ -37,10 +37,7 @@ class AlipayEcoMycarDataExternalQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.data.external.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

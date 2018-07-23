@@ -37,10 +37,7 @@ class AlipayMarketingCampaignDrawcampQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.campaign.drawcamp.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

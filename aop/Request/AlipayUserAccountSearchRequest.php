@@ -117,10 +117,7 @@ class AlipayUserAccountSearchRequest extends AbstractAlipayRequest
         return $this->type;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.user.account.search";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

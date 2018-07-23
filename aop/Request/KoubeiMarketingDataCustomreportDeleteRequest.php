@@ -37,10 +37,7 @@ class KoubeiMarketingDataCustomreportDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.customreport.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayOpenMiniTemplatemessageUsertemplateApplyRequest extends AbstractAlip
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.templatemessage.usertemplate.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

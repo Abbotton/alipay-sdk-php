@@ -53,10 +53,7 @@ class AlipayMobilePublicTemplateMessageModifyRequest extends AbstractAlipayReque
         return $this->tradeSetting;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.template.message.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

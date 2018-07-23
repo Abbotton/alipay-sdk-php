@@ -37,10 +37,7 @@ class KoubeiMarketingCampaignIntelligentTemplateConsultRequest extends AbstractA
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.campaign.intelligent.template.consult";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

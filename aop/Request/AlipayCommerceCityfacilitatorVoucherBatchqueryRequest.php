@@ -37,10 +37,7 @@ class AlipayCommerceCityfacilitatorVoucherBatchqueryRequest extends AbstractAlip
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.cityfacilitator.voucher.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

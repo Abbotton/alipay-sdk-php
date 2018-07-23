@@ -37,10 +37,7 @@ class SsdataDataserviceRiskRainscoreQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "ssdata.dataservice.risk.rainscore.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

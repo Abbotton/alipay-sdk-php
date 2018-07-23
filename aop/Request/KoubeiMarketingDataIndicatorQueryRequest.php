@@ -37,10 +37,7 @@ class KoubeiMarketingDataIndicatorQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.indicator.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

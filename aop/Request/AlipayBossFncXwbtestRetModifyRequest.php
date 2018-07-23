@@ -21,10 +21,7 @@ class AlipayBossFncXwbtestRetModifyRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.boss.fnc.xwbtest.ret.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

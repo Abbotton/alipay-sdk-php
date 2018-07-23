@@ -345,10 +345,7 @@ class AlipayOpenAgentZhimabriefSignRequest extends AbstractAlipayRequest
         return $this->wechatOfficialAccountName;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.agent.zhimabrief.sign";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -53,10 +53,7 @@ class AlipayMdataTagGetRequest extends AbstractAlipayRequest
         return $this->userId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mdata.tag.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayOfflineMarketShopCategoryQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.market.shop.category.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

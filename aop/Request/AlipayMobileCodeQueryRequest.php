@@ -37,10 +37,7 @@ class AlipayMobileCodeQueryRequest extends AbstractAlipayRequest
         return $this->qrToken;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.code.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

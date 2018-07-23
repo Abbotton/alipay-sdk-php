@@ -37,10 +37,7 @@ class AlipayOpenAppXwbtestabcQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.app.xwbtestabc.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

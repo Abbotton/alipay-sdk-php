@@ -37,10 +37,7 @@ class AlipayOfflineProviderEquipmentAuthQuerybypageRequest extends AbstractAlipa
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.provider.equipment.auth.querybypage";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class KoubeiItemExtitemExistedQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.item.extitem.existed.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

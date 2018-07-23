@@ -69,10 +69,7 @@ class AlipayZdatafrontDatatransferedSendRequest extends AbstractAlipayRequest
         return $this->typeId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.zdatafront.datatransfered.send";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

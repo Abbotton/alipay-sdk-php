@@ -21,10 +21,7 @@ class AlipayMobilePublicContactFollowListRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.contact.follow.list";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

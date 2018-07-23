@@ -21,10 +21,7 @@ class AlipayOpenAppLingjiuyiwuBatchqueryRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.app.lingjiuyiwu.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

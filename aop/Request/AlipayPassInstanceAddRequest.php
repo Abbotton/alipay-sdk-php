@@ -37,10 +37,7 @@ class AlipayPassInstanceAddRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.pass.instance.add";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

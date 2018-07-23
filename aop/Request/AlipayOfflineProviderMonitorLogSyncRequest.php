@@ -37,10 +37,7 @@ class AlipayOfflineProviderMonitorLogSyncRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.provider.monitor.log.sync";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

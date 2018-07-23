@@ -37,10 +37,7 @@ class AlipayMarketingVoucherSendRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.voucher.send";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

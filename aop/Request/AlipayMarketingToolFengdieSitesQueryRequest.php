@@ -37,10 +37,7 @@ class AlipayMarketingToolFengdieSitesQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.tool.fengdie.sites.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

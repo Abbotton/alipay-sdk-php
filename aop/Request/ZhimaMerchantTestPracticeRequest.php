@@ -37,10 +37,7 @@ class ZhimaMerchantTestPracticeRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.merchant.test.practice";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

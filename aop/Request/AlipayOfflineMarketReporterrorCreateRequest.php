@@ -37,10 +37,7 @@ class AlipayOfflineMarketReporterrorCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.market.reporterror.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

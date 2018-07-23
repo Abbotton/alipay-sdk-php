@@ -85,10 +85,7 @@ class AlipayPassSyncAddRequest extends AbstractAlipayRequest
         return $this->userId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.pass.sync.add";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

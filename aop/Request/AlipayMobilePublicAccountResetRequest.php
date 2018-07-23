@@ -117,10 +117,7 @@ class AlipayMobilePublicAccountResetRequest extends AbstractAlipayRequest
         return $this->realName;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.account.reset";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

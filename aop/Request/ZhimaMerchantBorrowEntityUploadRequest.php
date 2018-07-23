@@ -37,10 +37,7 @@ class ZhimaMerchantBorrowEntityUploadRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.merchant.borrow.entity.upload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

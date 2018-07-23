@@ -37,10 +37,7 @@ class AlipayEcoCplifeBasicserviceInitializeRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.cplife.basicservice.initialize";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

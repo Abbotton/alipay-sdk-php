@@ -37,10 +37,7 @@ class AlipayDataDataserviceChinaremodelQueryRequest extends AbstractAlipayReques
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.data.dataservice.chinaremodel.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

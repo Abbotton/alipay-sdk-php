@@ -21,10 +21,7 @@ class AlipayCommerceLotteryTypelistQueryRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.lottery.typelist.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class SsdataDataserviceRiskAntifraudVerifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "ssdata.dataservice.risk.antifraud.verify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

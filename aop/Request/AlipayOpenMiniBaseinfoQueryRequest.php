@@ -21,10 +21,7 @@ class AlipayOpenMiniBaseinfoQueryRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.baseinfo.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

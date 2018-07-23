@@ -101,10 +101,7 @@ class AlipayEbppPdeductSignCancelRequest extends AbstractAlipayRequest
         return $this->userId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ebpp.pdeduct.sign.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class KoubeiTradeTicketTicketcodeCancelRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.trade.ticket.ticketcode.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

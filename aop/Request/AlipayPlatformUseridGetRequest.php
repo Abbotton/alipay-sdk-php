@@ -37,10 +37,7 @@ class AlipayPlatformUseridGetRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.platform.userid.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

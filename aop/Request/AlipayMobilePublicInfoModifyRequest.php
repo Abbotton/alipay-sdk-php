@@ -149,10 +149,7 @@ class AlipayMobilePublicInfoModifyRequest extends AbstractAlipayRequest
         return $this->shopPic3;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.info.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

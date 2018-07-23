@@ -37,10 +37,7 @@ class AlipayMarketingCampaignDiscountOperateRequest extends AbstractAlipayReques
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.campaign.discount.operate";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayCommerceAirXfgDsgModifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.air.xfg.dsg.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -185,10 +185,7 @@ class AlipayOpenAgentMobilepaySignRequest extends AbstractAlipayRequest
         return $this->specialLicensePic;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.agent.mobilepay.sign";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

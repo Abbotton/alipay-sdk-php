@@ -37,10 +37,7 @@ class AlipayOpenAuthIndustryPlatformCreateTokenRequest extends AbstractAlipayReq
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.auth.industry.platform.create.token";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

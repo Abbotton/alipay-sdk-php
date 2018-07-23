@@ -37,10 +37,7 @@ class ZhimaCustomerContractInitializeRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.customer.contract.initialize";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

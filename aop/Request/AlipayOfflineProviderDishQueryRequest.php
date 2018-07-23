@@ -37,10 +37,7 @@ class AlipayOfflineProviderDishQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.provider.dish.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

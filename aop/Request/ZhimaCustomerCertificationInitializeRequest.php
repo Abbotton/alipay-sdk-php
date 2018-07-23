@@ -37,10 +37,7 @@ class ZhimaCustomerCertificationInitializeRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.customer.certification.initialize";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

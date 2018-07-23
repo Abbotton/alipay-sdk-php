@@ -37,10 +37,7 @@ class SsdataDataserviceRiskAntifraudintegrationQueryRequest extends AbstractAlip
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "ssdata.dataservice.risk.antifraudintegration.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

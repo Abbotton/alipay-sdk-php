@@ -37,10 +37,7 @@ class KoubeiItemCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.item.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

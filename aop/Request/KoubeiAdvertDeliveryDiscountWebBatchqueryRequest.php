@@ -37,10 +37,7 @@ class KoubeiAdvertDeliveryDiscountWebBatchqueryRequest extends AbstractAlipayReq
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.advert.delivery.discount.web.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

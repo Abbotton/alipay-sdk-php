@@ -37,10 +37,7 @@ class KoubeiMarketingDataBizadviserMyreportQueryRequest extends AbstractAlipayRe
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.bizadviser.myreport.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

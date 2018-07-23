@@ -37,10 +37,7 @@ class KoubeiAdvertDeliveryDiscountQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.advert.delivery.discount.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

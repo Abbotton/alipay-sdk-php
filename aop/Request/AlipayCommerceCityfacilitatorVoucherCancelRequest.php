@@ -37,10 +37,7 @@ class AlipayCommerceCityfacilitatorVoucherCancelRequest extends AbstractAlipayRe
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.cityfacilitator.voucher.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

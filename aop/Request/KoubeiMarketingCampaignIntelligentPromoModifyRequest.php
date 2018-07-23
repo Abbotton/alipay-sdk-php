@@ -37,10 +37,7 @@ class KoubeiMarketingCampaignIntelligentPromoModifyRequest extends AbstractAlipa
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.campaign.intelligent.promo.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

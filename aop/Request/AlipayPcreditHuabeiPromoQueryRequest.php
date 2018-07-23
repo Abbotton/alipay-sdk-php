@@ -37,10 +37,7 @@ class AlipayPcreditHuabeiPromoQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.pcredit.huabei.promo.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

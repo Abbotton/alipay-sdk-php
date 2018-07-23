@@ -37,10 +37,7 @@ class AlipayMarketingCampaignCashStatusModifyRequest extends AbstractAlipayReque
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.campaign.cash.status.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

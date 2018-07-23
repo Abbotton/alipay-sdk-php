@@ -37,10 +37,7 @@ class AlipayMobilePublicMenuUpdateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.menu.update";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

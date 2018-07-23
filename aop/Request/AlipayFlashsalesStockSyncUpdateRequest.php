@@ -69,10 +69,7 @@ class AlipayFlashsalesStockSyncUpdateRequest extends AbstractAlipayRequest
         return $this->stock;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.flashsales.stock.sync.update";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

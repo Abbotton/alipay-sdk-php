@@ -37,10 +37,7 @@ class AlipayEcoMycarCarmodelModifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.carmodel.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

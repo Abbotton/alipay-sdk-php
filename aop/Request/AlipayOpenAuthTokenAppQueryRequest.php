@@ -37,10 +37,7 @@ class AlipayOpenAuthTokenAppQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.auth.token.app.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

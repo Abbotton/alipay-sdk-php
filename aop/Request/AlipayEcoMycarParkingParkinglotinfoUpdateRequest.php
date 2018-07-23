@@ -37,10 +37,7 @@ class AlipayEcoMycarParkingParkinglotinfoUpdateRequest extends AbstractAlipayReq
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.parking.parkinglotinfo.update";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

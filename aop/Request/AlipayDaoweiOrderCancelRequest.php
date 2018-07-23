@@ -37,10 +37,7 @@ class AlipayDaoweiOrderCancelRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.daowei.order.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

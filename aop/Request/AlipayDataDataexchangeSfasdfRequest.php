@@ -37,10 +37,7 @@ class AlipayDataDataexchangeSfasdfRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.data.dataexchange.sfasdf";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

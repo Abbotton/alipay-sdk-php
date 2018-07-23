@@ -37,10 +37,7 @@ class AlipayDaoweiOrderTransferRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.daowei.order.transfer";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

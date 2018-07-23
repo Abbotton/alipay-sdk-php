@@ -37,10 +37,7 @@ class AlipayMarketingCampaignPrizeAmountQueryRequest extends AbstractAlipayReque
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.campaign.prize.amount.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

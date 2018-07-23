@@ -165,10 +165,7 @@ class AlipayUserTradeSearchRequest extends AbstractAlipayRequest
         return $this->startTime;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.user.trade.search";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

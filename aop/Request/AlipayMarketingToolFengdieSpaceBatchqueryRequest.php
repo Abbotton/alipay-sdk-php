@@ -37,10 +37,7 @@ class AlipayMarketingToolFengdieSpaceBatchqueryRequest extends AbstractAlipayReq
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.tool.fengdie.space.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

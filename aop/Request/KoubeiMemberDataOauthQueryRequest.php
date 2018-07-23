@@ -37,10 +37,7 @@ class KoubeiMemberDataOauthQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.member.data.oauth.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayAccountExrateRatequeryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.account.exrate.ratequery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

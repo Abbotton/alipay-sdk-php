@@ -37,10 +37,7 @@ class AlipayMarketingCardActivateurlApplyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.card.activateurl.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

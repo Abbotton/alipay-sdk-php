@@ -21,10 +21,7 @@ class KoubeiItemExtitemBrandQueryRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "koubei.item.extitem.brand.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

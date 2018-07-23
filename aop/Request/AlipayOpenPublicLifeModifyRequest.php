@@ -181,10 +181,7 @@ class AlipayOpenPublicLifeModifyRequest extends AbstractAlipayRequest
         return $this->userId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.life.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

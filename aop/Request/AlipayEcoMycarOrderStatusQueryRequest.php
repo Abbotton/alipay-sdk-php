@@ -37,10 +37,7 @@ class AlipayEcoMycarOrderStatusQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.order.status.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

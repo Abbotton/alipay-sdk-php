@@ -37,10 +37,7 @@ class AlipayMarketingCardConsumeSyncRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.card.consume.sync";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

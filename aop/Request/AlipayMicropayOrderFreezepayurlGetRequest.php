@@ -37,10 +37,7 @@ class AlipayMicropayOrderFreezepayurlGetRequest extends AbstractAlipayRequest
         return $this->alipayOrderNo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.micropay.order.freezepayurl.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayUserAccountUseridBatchqueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.user.account.userid.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

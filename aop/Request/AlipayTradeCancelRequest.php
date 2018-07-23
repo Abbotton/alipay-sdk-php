@@ -37,10 +37,7 @@ class AlipayTradeCancelRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.trade.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

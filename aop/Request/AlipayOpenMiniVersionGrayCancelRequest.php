@@ -37,10 +37,7 @@ class AlipayOpenMiniVersionGrayCancelRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.version.gray.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

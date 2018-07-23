@@ -37,10 +37,7 @@ class AlipayInsAutoAutoinsprodQuoteApplyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ins.auto.autoinsprod.quote.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

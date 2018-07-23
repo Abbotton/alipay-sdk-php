@@ -37,10 +37,7 @@ class KoubeiCraftsmanDataWorkBatchqueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.craftsman.data.work.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

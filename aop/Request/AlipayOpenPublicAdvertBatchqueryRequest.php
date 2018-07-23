@@ -21,10 +21,7 @@ class AlipayOpenPublicAdvertBatchqueryRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.advert.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

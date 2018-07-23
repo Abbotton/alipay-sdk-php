@@ -37,10 +37,7 @@ class ZhimaCreditScoreBriefGetRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.credit.score.brief.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

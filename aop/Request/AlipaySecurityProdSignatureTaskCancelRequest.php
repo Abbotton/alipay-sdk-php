@@ -37,10 +37,7 @@ class AlipaySecurityProdSignatureTaskCancelRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.security.prod.signature.task.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

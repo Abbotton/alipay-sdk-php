@@ -37,10 +37,7 @@ class AlipayInsAutoAutoinsprodUserCertifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ins.auto.autoinsprod.user.certify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

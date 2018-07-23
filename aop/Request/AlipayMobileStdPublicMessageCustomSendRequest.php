@@ -37,10 +37,7 @@ class AlipayMobileStdPublicMessageCustomSendRequest extends AbstractAlipayReques
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.std.public.message.custom.send";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

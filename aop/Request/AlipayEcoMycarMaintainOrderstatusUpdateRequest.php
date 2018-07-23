@@ -37,10 +37,7 @@ class AlipayEcoMycarMaintainOrderstatusUpdateRequest extends AbstractAlipayReque
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.maintain.orderstatus.update";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

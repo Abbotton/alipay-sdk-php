@@ -37,10 +37,7 @@ class AlipayEcoMycarParkingConfigQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.parking.config.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

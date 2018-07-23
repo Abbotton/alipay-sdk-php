@@ -37,10 +37,7 @@ class AlipayPlatformOpenidGetRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.platform.openid.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

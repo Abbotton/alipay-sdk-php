@@ -53,10 +53,7 @@ class AlipayOfflineMarketShopPublicBindRequest extends AbstractAlipayRequest
         return $this->shopIds;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.market.shop.public.bind";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

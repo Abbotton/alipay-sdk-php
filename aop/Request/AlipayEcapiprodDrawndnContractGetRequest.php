@@ -101,10 +101,7 @@ class AlipayEcapiprodDrawndnContractGetRequest extends AbstractAlipayRequest
         return $this->orgCode;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ecapiprod.drawndn.contract.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

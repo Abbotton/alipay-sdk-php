@@ -37,10 +37,7 @@ class AlipayCommerceTransportOfflinepayRecordVerifyRequest extends AbstractAlipa
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.transport.offlinepay.record.verify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

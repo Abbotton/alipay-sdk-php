@@ -21,10 +21,7 @@ class AlipayOpenAppLingjiuyisiCreateRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.app.lingjiuyisi.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

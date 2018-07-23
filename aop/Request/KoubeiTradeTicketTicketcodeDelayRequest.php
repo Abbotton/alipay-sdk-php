@@ -37,10 +37,7 @@ class KoubeiTradeTicketTicketcodeDelayRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.trade.ticket.ticketcode.delay";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

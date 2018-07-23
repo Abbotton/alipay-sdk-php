@@ -37,10 +37,7 @@ class AlipayMarketingCampaignDiscountWhitelistQueryRequest extends AbstractAlipa
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.campaign.discount.whitelist.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

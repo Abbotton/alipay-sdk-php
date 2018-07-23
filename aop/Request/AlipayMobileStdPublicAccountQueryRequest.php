@@ -37,10 +37,7 @@ class AlipayMobileStdPublicAccountQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.std.public.account.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

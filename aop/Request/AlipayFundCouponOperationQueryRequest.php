@@ -37,10 +37,7 @@ class AlipayFundCouponOperationQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.fund.coupon.operation.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

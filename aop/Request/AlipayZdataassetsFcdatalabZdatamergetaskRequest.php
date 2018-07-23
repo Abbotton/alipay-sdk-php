@@ -37,10 +37,7 @@ class AlipayZdataassetsFcdatalabZdatamergetaskRequest extends AbstractAlipayRequ
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.zdataassets.fcdatalab.zdatamergetask";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayOpenPublicLabelCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.label.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

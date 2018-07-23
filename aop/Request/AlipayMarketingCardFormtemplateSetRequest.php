@@ -37,10 +37,7 @@ class AlipayMarketingCardFormtemplateSetRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.card.formtemplate.set";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

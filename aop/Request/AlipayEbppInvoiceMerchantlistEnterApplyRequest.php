@@ -37,10 +37,7 @@ class AlipayEbppInvoiceMerchantlistEnterApplyRequest extends AbstractAlipayReque
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ebpp.invoice.merchantlist.enter.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

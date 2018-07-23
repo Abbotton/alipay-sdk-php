@@ -37,10 +37,7 @@ class MybankFinanceYulibaoTransHistoryQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "mybank.finance.yulibao.trans.history.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

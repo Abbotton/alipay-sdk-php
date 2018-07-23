@@ -37,10 +37,7 @@ class AlipayOfflineMarketMcommentQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.market.mcomment.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

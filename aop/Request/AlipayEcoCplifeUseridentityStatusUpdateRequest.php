@@ -37,10 +37,7 @@ class AlipayEcoCplifeUseridentityStatusUpdateRequest extends AbstractAlipayReque
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.cplife.useridentity.status.update";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayOpenServicemarketOrderAcceptRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.servicemarket.order.accept";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

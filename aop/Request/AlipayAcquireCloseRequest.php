@@ -71,10 +71,7 @@ class AlipayAcquireCloseRequest extends AbstractAlipayRequest
         return $this->tradeNo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.acquire.close";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

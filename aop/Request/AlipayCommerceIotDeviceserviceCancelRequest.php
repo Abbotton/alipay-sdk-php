@@ -37,10 +37,7 @@ class AlipayCommerceIotDeviceserviceCancelRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.iot.deviceservice.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

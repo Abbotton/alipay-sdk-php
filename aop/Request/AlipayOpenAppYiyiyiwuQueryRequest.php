@@ -37,10 +37,7 @@ class AlipayOpenAppYiyiyiwuQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.app.yiyiyiwu.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

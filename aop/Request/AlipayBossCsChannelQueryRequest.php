@@ -37,10 +37,7 @@ class AlipayBossCsChannelQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.boss.cs.channel.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

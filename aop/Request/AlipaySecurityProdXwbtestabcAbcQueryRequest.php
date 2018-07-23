@@ -37,10 +37,7 @@ class AlipaySecurityProdXwbtestabcAbcQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.security.prod.xwbtestabc.abc.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

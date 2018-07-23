@@ -37,10 +37,7 @@ class AlipayCommerceLotteryPresentlistQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.lottery.presentlist.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

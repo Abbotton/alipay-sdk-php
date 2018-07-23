@@ -21,10 +21,7 @@ class AlipayTrustUserScoreGetRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.trust.user.score.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

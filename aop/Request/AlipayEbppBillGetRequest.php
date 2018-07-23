@@ -53,10 +53,7 @@ class AlipayEbppBillGetRequest extends AbstractAlipayRequest
         return $this->orderType;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ebpp.bill.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

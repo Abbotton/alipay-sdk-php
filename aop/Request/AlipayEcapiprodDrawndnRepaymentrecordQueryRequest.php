@@ -133,10 +133,7 @@ class AlipayEcapiprodDrawndnRepaymentrecordQueryRequest extends AbstractAlipayRe
         return $this->start;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ecapiprod.drawndn.repaymentrecord.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

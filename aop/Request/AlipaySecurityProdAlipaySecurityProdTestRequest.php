@@ -37,10 +37,7 @@ class AlipaySecurityProdAlipaySecurityProdTestRequest extends AbstractAlipayRequ
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.security.prod.alipay.security.prod.test";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

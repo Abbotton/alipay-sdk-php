@@ -37,10 +37,7 @@ class AlipayMarketingCampaignCashCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.campaign.cash.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

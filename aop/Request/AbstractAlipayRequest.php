@@ -12,11 +12,12 @@ abstract class AbstractAlipayRequest
         return __CLASS__;
     }
 
-    public function getApiMethodName()
+    public function getApiMethodNameNew()
     {
-        $name = static::className();
+        $name = (new \ReflectionClass($this))->getShortName();
+        $name = preg_replace('/Request$/', '', $name);
         $name = preg_replace('/([A-Z])/s','.$1', $name);
-        $name = trim($name);
+        $name = trim($name, '.');
         $name = strtolower($name);
         return $name;
     }

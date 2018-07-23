@@ -53,10 +53,7 @@ class AlipayZdataserviceUnidataQueryRequest extends AbstractAlipayRequest
         return $this->uniqKey;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.zdataservice.unidata.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

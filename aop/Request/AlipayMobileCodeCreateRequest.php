@@ -166,10 +166,7 @@ class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
         return $this->userId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.code.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

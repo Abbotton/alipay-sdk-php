@@ -37,10 +37,7 @@ class AlipayInsAutoAutoinsprodEnquriyApplyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ins.auto.autoinsprod.enquriy.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

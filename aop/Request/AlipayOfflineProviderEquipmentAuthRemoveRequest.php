@@ -37,10 +37,7 @@ class AlipayOfflineProviderEquipmentAuthRemoveRequest extends AbstractAlipayRequ
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.provider.equipment.auth.remove";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

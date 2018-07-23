@@ -21,10 +21,7 @@ class AlipayOpenPublicSettingCategoryQueryRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.setting.category.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

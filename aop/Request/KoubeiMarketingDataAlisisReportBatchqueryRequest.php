@@ -37,10 +37,7 @@ class KoubeiMarketingDataAlisisReportBatchqueryRequest extends AbstractAlipayReq
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.alisis.report.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

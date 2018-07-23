@@ -37,10 +37,7 @@ class ZhimaOpenAppKeyanLqlCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.open.app.keyan.lql.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

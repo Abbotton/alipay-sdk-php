@@ -37,10 +37,7 @@ class AlipayMarketingCashlessvoucherTemplateModifyRequest extends AbstractAlipay
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.cashlessvoucher.template.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

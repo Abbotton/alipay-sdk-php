@@ -37,10 +37,7 @@ class AlipayCommerceCityfacilitatorDepositConfirmRequest extends AbstractAlipayR
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.cityfacilitator.deposit.confirm";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

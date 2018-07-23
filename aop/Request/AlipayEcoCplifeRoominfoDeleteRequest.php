@@ -37,10 +37,7 @@ class AlipayEcoCplifeRoominfoDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.cplife.roominfo.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

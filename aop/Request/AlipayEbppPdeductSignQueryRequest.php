@@ -37,10 +37,7 @@ class AlipayEbppPdeductSignQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ebpp.pdeduct.sign.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

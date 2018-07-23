@@ -37,10 +37,7 @@ class AlipayOpenAppMembersDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.app.members.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

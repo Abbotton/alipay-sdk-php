@@ -37,10 +37,7 @@ class AlipayCommerceCityfacilitatorDepositCancelRequest extends AbstractAlipayRe
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.cityfacilitator.deposit.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

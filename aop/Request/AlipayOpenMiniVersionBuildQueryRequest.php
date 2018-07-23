@@ -37,10 +37,7 @@ class AlipayOpenMiniVersionBuildQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.version.build.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

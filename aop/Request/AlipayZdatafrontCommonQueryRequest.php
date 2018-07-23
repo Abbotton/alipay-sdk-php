@@ -119,10 +119,7 @@ class AlipayZdatafrontCommonQueryRequest extends AbstractAlipayRequest
         return $this->visitDomain;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.zdatafront.common.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

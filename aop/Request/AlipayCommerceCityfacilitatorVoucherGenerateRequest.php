@@ -37,10 +37,7 @@ class AlipayCommerceCityfacilitatorVoucherGenerateRequest extends AbstractAlipay
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.cityfacilitator.voucher.generate";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

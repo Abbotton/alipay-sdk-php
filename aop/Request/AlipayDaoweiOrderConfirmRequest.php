@@ -37,10 +37,7 @@ class AlipayDaoweiOrderConfirmRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.daowei.order.confirm";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

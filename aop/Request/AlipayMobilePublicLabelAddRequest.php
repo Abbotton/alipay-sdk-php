@@ -37,10 +37,7 @@ class AlipayMobilePublicLabelAddRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.label.add";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

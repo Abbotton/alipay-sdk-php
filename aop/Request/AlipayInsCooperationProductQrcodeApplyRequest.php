@@ -37,10 +37,7 @@ class AlipayInsCooperationProductQrcodeApplyRequest extends AbstractAlipayReques
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ins.cooperation.product.qrcode.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

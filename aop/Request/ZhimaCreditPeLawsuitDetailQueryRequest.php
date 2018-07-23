@@ -37,10 +37,7 @@ class ZhimaCreditPeLawsuitDetailQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.credit.pe.lawsuit.detail.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

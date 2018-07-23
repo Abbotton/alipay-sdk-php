@@ -37,10 +37,7 @@ class AlipayMarketingCampaignDiscountBudgetCreateRequest extends AbstractAlipayR
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.campaign.discount.budget.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

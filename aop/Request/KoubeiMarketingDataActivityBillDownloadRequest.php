@@ -37,10 +37,7 @@ class KoubeiMarketingDataActivityBillDownloadRequest extends AbstractAlipayReque
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.activity.bill.download";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

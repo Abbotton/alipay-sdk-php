@@ -37,10 +37,7 @@ class KoubeiMemberDataIsvCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.member.data.isv.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

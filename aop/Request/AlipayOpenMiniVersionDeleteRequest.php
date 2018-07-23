@@ -37,10 +37,7 @@ class AlipayOpenMiniVersionDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.version.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

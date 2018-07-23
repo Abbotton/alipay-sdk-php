@@ -37,10 +37,7 @@ class AlipayTrustUserAuthSendRequest extends AbstractAlipayRequest
         return $this->aliTrustUserInfo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.trust.user.auth.send";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

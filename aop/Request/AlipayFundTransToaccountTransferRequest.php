@@ -37,10 +37,7 @@ class AlipayFundTransToaccountTransferRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.fund.trans.toaccount.transfer";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

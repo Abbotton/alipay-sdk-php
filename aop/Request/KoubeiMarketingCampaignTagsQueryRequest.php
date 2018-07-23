@@ -21,10 +21,7 @@ class KoubeiMarketingCampaignTagsQueryRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.campaign.tags.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

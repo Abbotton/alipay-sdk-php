@@ -37,10 +37,7 @@ class AlipayInsSceneCouponSendRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ins.scene.coupon.send";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

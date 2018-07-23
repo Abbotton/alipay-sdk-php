@@ -245,10 +245,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
         return $this->trafficRegulations;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ebpp.bill.add";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

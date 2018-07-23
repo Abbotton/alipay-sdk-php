@@ -37,10 +37,7 @@ class ZhimaCreditWatchlistBriefGetRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.credit.watchlist.brief.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

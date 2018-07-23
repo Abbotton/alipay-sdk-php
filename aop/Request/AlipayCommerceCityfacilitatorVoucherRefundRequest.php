@@ -37,10 +37,7 @@ class AlipayCommerceCityfacilitatorVoucherRefundRequest extends AbstractAlipayRe
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.cityfacilitator.voucher.refund";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

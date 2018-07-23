@@ -37,10 +37,7 @@ class ZhimaMerchantOrderRentCancelRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.merchant.order.rent.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

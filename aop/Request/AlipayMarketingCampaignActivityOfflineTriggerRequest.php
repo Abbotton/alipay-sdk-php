@@ -37,10 +37,7 @@ class AlipayMarketingCampaignActivityOfflineTriggerRequest extends AbstractAlipa
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.campaign.activity.offline.trigger";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -53,10 +53,7 @@ class AlipayMobilePublicTemplateMessageQueryRequest extends AbstractAlipayReques
         return $this->templateId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.template.message.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

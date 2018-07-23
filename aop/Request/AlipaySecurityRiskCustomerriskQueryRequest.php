@@ -37,10 +37,7 @@ class AlipaySecurityRiskCustomerriskQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.security.risk.customerrisk.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

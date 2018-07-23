@@ -37,10 +37,7 @@ class AlipayOfflineMarketShopApplyorderCancelRequest extends AbstractAlipayReque
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.market.shop.applyorder.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

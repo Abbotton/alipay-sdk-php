@@ -37,10 +37,7 @@ class KoubeiRetailShopitemUploadRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.retail.shopitem.upload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

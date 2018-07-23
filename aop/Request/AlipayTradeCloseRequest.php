@@ -37,10 +37,7 @@ class AlipayTradeCloseRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.trade.close";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

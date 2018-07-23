@@ -53,10 +53,7 @@ class AlipayDataBillDownloadurlGetRequest extends AbstractAlipayRequest
         return $this->billType;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.data.bill.downloadurl.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

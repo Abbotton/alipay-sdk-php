@@ -153,10 +153,7 @@ CAR_RENTING：租车行业解决方案
         return $this->sceneCode;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.merchant.closeloop.data.upload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

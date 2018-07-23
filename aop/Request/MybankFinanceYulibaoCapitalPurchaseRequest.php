@@ -37,10 +37,7 @@ class MybankFinanceYulibaoCapitalPurchaseRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "mybank.finance.yulibao.capital.purchase";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

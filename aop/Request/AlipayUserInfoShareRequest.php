@@ -21,10 +21,7 @@ class AlipayUserInfoShareRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.user.info.share";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

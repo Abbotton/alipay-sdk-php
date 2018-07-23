@@ -37,10 +37,7 @@ class AlipayMarketingCampaignCashListQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.campaign.cash.list.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

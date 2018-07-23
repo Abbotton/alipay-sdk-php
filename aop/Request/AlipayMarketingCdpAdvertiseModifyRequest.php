@@ -37,10 +37,7 @@ class AlipayMarketingCdpAdvertiseModifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.cdp.advertise.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

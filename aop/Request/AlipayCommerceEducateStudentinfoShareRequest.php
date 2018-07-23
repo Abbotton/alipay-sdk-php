@@ -21,10 +21,7 @@ class AlipayCommerceEducateStudentinfoShareRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.educate.studentinfo.share";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

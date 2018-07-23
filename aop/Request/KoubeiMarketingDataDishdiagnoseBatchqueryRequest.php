@@ -37,10 +37,7 @@ class KoubeiMarketingDataDishdiagnoseBatchqueryRequest extends AbstractAlipayReq
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.dishdiagnose.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

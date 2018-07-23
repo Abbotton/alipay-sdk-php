@@ -37,10 +37,7 @@ class AlipayEcoMycarPromoVoucherVerifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.promo.voucher.verify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

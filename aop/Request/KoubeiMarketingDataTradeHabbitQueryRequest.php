@@ -37,10 +37,7 @@ class KoubeiMarketingDataTradeHabbitQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.trade.habbit.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

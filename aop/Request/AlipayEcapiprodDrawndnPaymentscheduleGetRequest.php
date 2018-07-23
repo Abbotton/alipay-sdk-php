@@ -101,10 +101,7 @@ class AlipayEcapiprodDrawndnPaymentscheduleGetRequest extends AbstractAlipayRequ
         return $this->orgCode;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ecapiprod.drawndn.paymentschedule.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

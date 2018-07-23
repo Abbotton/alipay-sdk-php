@@ -37,10 +37,7 @@ class AlipayEcoCplifeRoominfoQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.cplife.roominfo.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

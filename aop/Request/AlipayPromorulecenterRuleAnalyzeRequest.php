@@ -69,10 +69,7 @@ class AlipayPromorulecenterRuleAnalyzeRequest extends AbstractAlipayRequest
         return $this->userId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.promorulecenter.rule.analyze";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

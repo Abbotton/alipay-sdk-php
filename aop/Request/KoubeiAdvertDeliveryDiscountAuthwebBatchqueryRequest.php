@@ -37,10 +37,7 @@ class KoubeiAdvertDeliveryDiscountAuthwebBatchqueryRequest extends AbstractAlipa
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.advert.delivery.discount.authweb.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

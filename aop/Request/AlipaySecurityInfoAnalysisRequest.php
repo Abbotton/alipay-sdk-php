@@ -389,10 +389,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
         return $this->userrIdentityNo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.security.info.analysis";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

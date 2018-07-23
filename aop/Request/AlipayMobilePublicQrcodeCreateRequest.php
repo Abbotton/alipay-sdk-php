@@ -37,10 +37,7 @@ class AlipayMobilePublicQrcodeCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.qrcode.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

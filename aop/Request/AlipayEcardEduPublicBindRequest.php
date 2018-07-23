@@ -117,10 +117,7 @@ class AlipayEcardEduPublicBindRequest extends AbstractAlipayRequest
         return $this->publicId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ecard.edu.public.bind";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

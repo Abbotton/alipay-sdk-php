@@ -37,10 +37,7 @@ class AlipayAssetPointOrderQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.asset.point.order.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

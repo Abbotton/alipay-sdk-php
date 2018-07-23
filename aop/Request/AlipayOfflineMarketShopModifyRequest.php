@@ -37,10 +37,7 @@ class AlipayOfflineMarketShopModifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.market.shop.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

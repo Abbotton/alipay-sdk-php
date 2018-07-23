@@ -37,10 +37,7 @@ class AlipayOpenAppSmsgDataSyncRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.app.smsg.data.sync";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

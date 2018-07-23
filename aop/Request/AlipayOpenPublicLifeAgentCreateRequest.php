@@ -294,10 +294,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
         return $this->specialLicensePic;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.life.agent.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

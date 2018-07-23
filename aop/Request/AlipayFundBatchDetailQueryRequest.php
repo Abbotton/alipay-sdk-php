@@ -37,10 +37,7 @@ class AlipayFundBatchDetailQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.fund.batch.detail.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

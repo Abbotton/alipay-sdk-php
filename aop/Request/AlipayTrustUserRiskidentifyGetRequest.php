@@ -37,10 +37,7 @@ class AlipayTrustUserRiskidentifyGetRequest extends AbstractAlipayRequest
         return $this->type;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.trust.user.riskidentify.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

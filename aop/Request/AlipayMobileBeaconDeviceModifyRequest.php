@@ -37,10 +37,7 @@ class AlipayMobileBeaconDeviceModifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.beacon.device.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

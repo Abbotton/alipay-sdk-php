@@ -54,10 +54,7 @@ class AlipayPassTplAddRequest extends AbstractAlipayRequest
         return $this->uniqueId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.pass.tpl.add";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

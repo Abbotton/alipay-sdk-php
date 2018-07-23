@@ -37,10 +37,7 @@ class AlipayFundAuthOrderFreezeRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.fund.auth.order.freeze";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

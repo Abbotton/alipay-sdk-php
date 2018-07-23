@@ -37,10 +37,7 @@ class KoubeiCateringCommodityOrderBuyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.catering.commodity.order.buy";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

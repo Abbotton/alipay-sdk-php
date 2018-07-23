@@ -37,10 +37,7 @@ class AlipayTradeVendorpayDevicedataUploadRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.trade.vendorpay.devicedata.upload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

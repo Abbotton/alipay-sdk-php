@@ -37,10 +37,7 @@ class AlipayOpenServicemarketCommodityShopOnlineRequest extends AbstractAlipayRe
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.servicemarket.commodity.shop.online";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

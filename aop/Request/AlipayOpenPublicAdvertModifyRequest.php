@@ -37,10 +37,7 @@ class AlipayOpenPublicAdvertModifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.advert.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

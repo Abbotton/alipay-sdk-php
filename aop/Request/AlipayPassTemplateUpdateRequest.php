@@ -37,10 +37,7 @@ class AlipayPassTemplateUpdateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.pass.template.update";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

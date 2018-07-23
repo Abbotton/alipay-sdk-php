@@ -149,10 +149,7 @@ class ZhimaDataBatchFeedbackRequest extends AbstractAlipayRequest
         return $this->records;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.data.batch.feedback";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

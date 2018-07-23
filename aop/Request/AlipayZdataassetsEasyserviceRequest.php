@@ -37,10 +37,7 @@ class AlipayZdataassetsEasyserviceRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.zdataassets.easyservice";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

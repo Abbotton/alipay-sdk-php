@@ -37,10 +37,7 @@ class AlipayDataDataserviceUserlevelZrankGetRequest extends AbstractAlipayReques
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.data.dataservice.userlevel.zrank.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

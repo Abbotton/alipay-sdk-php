@@ -21,10 +21,7 @@ class AlipayUserAccountGetRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.user.account.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

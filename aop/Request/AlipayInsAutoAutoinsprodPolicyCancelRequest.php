@@ -37,10 +37,7 @@ class AlipayInsAutoAutoinsprodPolicyCancelRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ins.auto.autoinsprod.policy.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

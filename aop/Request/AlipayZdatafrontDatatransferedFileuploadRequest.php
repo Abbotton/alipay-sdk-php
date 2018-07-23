@@ -149,10 +149,7 @@ class AlipayZdatafrontDatatransferedFileuploadRequest extends AbstractAlipayRequ
         return $this->typeId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.zdatafront.datatransfered.fileupload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

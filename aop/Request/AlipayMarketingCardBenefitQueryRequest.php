@@ -37,10 +37,7 @@ class AlipayMarketingCardBenefitQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.card.benefit.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

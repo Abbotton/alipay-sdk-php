@@ -37,10 +37,7 @@ class AlipayOpenPublicDefaultExtensionCreateRequest extends AbstractAlipayReques
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.default.extension.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

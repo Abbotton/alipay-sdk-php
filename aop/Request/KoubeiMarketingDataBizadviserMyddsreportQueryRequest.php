@@ -37,10 +37,7 @@ class KoubeiMarketingDataBizadviserMyddsreportQueryRequest extends AbstractAlipa
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.bizadviser.myddsreport.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

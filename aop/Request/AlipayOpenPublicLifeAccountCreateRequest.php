@@ -166,10 +166,7 @@ class AlipayOpenPublicLifeAccountCreateRequest extends AbstractAlipayRequest
         return $this->userId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.life.account.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

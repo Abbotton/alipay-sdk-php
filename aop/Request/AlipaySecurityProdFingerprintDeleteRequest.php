@@ -37,10 +37,7 @@ class AlipaySecurityProdFingerprintDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.security.prod.fingerprint.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

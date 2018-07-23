@@ -37,10 +37,7 @@ class AlipayDaoweiOrderRefundRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.daowei.order.refund";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

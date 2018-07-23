@@ -155,10 +155,7 @@ class AlipayAcquireRefundRequest extends AbstractAlipayRequest
         return $this->tradeNo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.acquire.refund";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayOpenMiniSafedomainCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.safedomain.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

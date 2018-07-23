@@ -37,10 +37,7 @@ class AlipayMarketingToolFengdieActivityCreateRequest extends AbstractAlipayRequ
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.tool.fengdie.activity.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

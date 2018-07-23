@@ -37,10 +37,7 @@ class AlipayMarketingCampaignCertCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.campaign.cert.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

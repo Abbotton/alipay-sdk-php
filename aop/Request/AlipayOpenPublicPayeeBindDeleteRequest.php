@@ -37,10 +37,7 @@ class AlipayOpenPublicPayeeBindDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.payee.bind.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

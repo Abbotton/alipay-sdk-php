@@ -101,10 +101,7 @@ class AlipayMobileRecommendGetRequest extends AbstractAlipayRequest
         return $this->userId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.recommend.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

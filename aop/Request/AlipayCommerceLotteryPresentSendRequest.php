@@ -37,10 +37,7 @@ class AlipayCommerceLotteryPresentSendRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.lottery.present.send";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

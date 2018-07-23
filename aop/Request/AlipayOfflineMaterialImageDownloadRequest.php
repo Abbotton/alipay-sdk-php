@@ -37,10 +37,7 @@ class AlipayOfflineMaterialImageDownloadRequest extends AbstractAlipayRequest
         return $this->imageIds;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.material.image.download";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

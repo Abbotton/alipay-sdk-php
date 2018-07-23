@@ -37,10 +37,7 @@ class AlipayEcoCplifeCommunityDetailsQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.cplife.community.details.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

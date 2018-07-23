@@ -37,10 +37,7 @@ class AlipayMarketingCardBenefitModifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.card.benefit.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

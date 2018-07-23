@@ -37,10 +37,7 @@ class AlipayOpenPublicTemplateMessageIndustryModifyRequest extends AbstractAlipa
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.template.message.industry.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class KoubeiMarketingCampaignActivityCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.campaign.activity.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

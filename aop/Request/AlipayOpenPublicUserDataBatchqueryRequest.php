@@ -37,10 +37,7 @@ class AlipayOpenPublicUserDataBatchqueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.user.data.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

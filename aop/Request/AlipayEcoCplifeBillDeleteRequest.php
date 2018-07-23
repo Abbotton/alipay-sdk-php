@@ -37,10 +37,7 @@ class AlipayEcoCplifeBillDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.cplife.bill.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

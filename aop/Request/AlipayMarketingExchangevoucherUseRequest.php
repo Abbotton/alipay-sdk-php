@@ -37,10 +37,7 @@ class AlipayMarketingExchangevoucherUseRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.exchangevoucher.use";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

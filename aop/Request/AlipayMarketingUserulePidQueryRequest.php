@@ -37,10 +37,7 @@ class AlipayMarketingUserulePidQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.userule.pid.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

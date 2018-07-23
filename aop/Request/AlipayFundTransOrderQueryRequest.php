@@ -37,10 +37,7 @@ class AlipayFundTransOrderQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.fund.trans.order.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

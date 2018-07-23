@@ -37,10 +37,7 @@ class AlipayOpenMiniVersionAuditedCancelRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.version.audited.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

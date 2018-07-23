@@ -37,10 +37,7 @@ class AlipayCommerceTransportOfflinepayUserblacklistQueryRequest extends Abstrac
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.transport.offlinepay.userblacklist.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

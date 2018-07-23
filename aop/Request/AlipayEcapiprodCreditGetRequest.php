@@ -101,10 +101,7 @@ class AlipayEcapiprodCreditGetRequest extends AbstractAlipayRequest
         return $this->orgCode;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ecapiprod.credit.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

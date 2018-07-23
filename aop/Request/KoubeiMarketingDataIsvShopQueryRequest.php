@@ -37,10 +37,7 @@ class KoubeiMarketingDataIsvShopQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.isv.shop.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

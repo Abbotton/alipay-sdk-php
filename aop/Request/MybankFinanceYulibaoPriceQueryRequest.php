@@ -37,10 +37,7 @@ class MybankFinanceYulibaoPriceQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "mybank.finance.yulibao.price.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

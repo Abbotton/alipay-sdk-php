@@ -37,10 +37,7 @@ class AlipayOpenAppCodetesttestRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.app.codetesttest";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

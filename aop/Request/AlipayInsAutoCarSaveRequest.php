@@ -37,10 +37,7 @@ class AlipayInsAutoCarSaveRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ins.auto.car.save";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

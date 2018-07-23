@@ -37,10 +37,7 @@ class AlipayEbppInvoiceTitleListGetRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ebpp.invoice.title.list.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayPcreditLoanApplyCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.pcredit.loan.apply.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

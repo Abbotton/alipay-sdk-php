@@ -37,10 +37,7 @@ class AlipayOpenPublicMatchuserLabelCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.matchuser.label.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

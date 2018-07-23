@@ -21,10 +21,7 @@ class AlipayCommerceTransportOfflinepayKeyQueryRequest extends AbstractAlipayReq
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.transport.offlinepay.key.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayEcoCplifeNoticePublishRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.cplife.notice.publish";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

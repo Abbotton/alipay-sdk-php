@@ -21,10 +21,7 @@ class AlipayOpenPublicLifeDebarkApplyRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.life.debark.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

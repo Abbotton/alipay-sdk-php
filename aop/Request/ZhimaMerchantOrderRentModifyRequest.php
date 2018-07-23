@@ -37,10 +37,7 @@ class ZhimaMerchantOrderRentModifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.merchant.order.rent.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

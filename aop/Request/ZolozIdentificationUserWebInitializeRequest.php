@@ -37,10 +37,7 @@ class ZolozIdentificationUserWebInitializeRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zoloz.identification.user.web.initialize";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

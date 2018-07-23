@@ -21,10 +21,7 @@ class AlipayOpenPublicContactFollowBatchqueryRequest extends AbstractAlipayReque
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.contact.follow.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

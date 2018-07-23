@@ -38,10 +38,7 @@ class AlipayTradePrecreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.trade.precreate";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

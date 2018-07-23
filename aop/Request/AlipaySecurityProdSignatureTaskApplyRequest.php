@@ -37,10 +37,7 @@ class AlipaySecurityProdSignatureTaskApplyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.security.prod.signature.task.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

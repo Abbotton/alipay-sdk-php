@@ -37,10 +37,7 @@ class AlipayOpenSmsgDataSetRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.smsg.data.set";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayMobilePublicGisGetRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.gis.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

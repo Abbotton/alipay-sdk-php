@@ -149,10 +149,7 @@ class AlipayOpenMiniBaseinfoModifyRequest extends AbstractAlipayRequest
         return $this->servicePhone;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.baseinfo.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

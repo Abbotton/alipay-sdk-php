@@ -37,10 +37,7 @@ class KoubeiMarketingDataBizadviserMemberprofileQueryRequest extends AbstractAli
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.bizadviser.memberprofile.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

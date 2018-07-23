@@ -37,10 +37,7 @@ class AlipayEcoMycarPromoTicketPushRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.promo.ticket.push";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

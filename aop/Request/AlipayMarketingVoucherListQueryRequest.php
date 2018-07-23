@@ -37,10 +37,7 @@ class AlipayMarketingVoucherListQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.voucher.list.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

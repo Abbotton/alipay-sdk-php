@@ -37,10 +37,7 @@ class AlipayMarketingVoucherStockCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.voucher.stock.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

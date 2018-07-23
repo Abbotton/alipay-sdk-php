@@ -37,10 +37,7 @@ class AlipayMarketingCampaignDrawcampWhitelistCreateRequest extends AbstractAlip
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.campaign.drawcamp.whitelist.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

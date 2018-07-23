@@ -453,10 +453,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
         return $this->versionDesc;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.version.audit.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

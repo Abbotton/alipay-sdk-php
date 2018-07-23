@@ -37,10 +37,7 @@ class KoubeiMarketingDataMessageDeliverRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.message.deliver";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

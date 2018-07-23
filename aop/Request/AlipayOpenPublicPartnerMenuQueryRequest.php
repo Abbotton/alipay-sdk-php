@@ -37,10 +37,7 @@ class AlipayOpenPublicPartnerMenuQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.partner.menu.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

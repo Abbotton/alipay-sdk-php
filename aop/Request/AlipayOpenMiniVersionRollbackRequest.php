@@ -37,10 +37,7 @@ class AlipayOpenMiniVersionRollbackRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.version.rollback";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

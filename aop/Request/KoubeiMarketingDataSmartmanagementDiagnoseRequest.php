@@ -21,10 +21,7 @@ class KoubeiMarketingDataSmartmanagementDiagnoseRequest extends AbstractAlipayRe
     
 
     
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.smartmanagement.diagnose";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

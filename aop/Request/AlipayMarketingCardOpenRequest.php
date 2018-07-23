@@ -37,10 +37,7 @@ class AlipayMarketingCardOpenRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.card.open";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

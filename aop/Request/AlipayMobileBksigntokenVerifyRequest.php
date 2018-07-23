@@ -69,10 +69,7 @@ class AlipayMobileBksigntokenVerifyRequest extends AbstractAlipayRequest
         return $this->token;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.bksigntoken.verify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

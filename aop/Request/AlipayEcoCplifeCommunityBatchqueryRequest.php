@@ -37,10 +37,7 @@ class AlipayEcoCplifeCommunityBatchqueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.cplife.community.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

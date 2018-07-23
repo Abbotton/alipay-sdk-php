@@ -37,10 +37,7 @@ class KoubeiCraftsmanDataWorkDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.craftsman.data.work.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

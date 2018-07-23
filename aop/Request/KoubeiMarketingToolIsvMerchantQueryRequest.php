@@ -37,10 +37,7 @@ class KoubeiMarketingToolIsvMerchantQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.tool.isv.merchant.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -335,10 +335,7 @@ HEALTH：健康险
         return $this->userId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ebpp.pdeduct.sign.add";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayOpenMiniExperienceCancelRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.experience.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayUserContractGetRequest extends AbstractAlipayRequest
         return $this->subscriberUserId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.user.contract.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

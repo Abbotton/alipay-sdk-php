@@ -37,10 +37,7 @@ class KoubeiItemExtitemBatchqueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.item.extitem.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

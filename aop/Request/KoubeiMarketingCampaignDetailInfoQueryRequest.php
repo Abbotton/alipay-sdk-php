@@ -37,10 +37,7 @@ class KoubeiMarketingCampaignDetailInfoQueryRequest extends AbstractAlipayReques
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.campaign.detail.info.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

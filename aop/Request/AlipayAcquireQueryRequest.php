@@ -55,10 +55,7 @@ class AlipayAcquireQueryRequest extends AbstractAlipayRequest
         return $this->tradeNo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.acquire.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

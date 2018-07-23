@@ -165,10 +165,7 @@ class AlipayEcapiprodDataPutRequest extends AbstractAlipayRequest
         return $this->orgCode;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ecapiprod.data.put";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

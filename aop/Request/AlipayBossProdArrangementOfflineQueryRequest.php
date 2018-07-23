@@ -37,10 +37,7 @@ class AlipayBossProdArrangementOfflineQueryRequest extends AbstractAlipayRequest
         return $this->productCode;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.boss.prod.arrangement.offline.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

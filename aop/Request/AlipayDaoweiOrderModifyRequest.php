@@ -37,10 +37,7 @@ class AlipayDaoweiOrderModifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.daowei.order.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -53,10 +53,7 @@ class AlipayTrustUserReportGetRequest extends AbstractAlipayRequest
         return $this->type;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.trust.user.report.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

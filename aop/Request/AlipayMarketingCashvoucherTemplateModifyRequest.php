@@ -37,10 +37,7 @@ class AlipayMarketingCashvoucherTemplateModifyRequest extends AbstractAlipayRequ
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.cashvoucher.template.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

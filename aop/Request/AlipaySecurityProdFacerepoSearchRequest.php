@@ -37,10 +37,7 @@ class AlipaySecurityProdFacerepoSearchRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.security.prod.facerepo.search";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

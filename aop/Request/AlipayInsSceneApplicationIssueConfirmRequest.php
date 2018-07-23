@@ -37,10 +37,7 @@ class AlipayInsSceneApplicationIssueConfirmRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ins.scene.application.issue.confirm";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

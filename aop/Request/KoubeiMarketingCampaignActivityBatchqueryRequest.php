@@ -37,10 +37,7 @@ class KoubeiMarketingCampaignActivityBatchqueryRequest extends AbstractAlipayReq
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.campaign.activity.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayMobilePublicShortlinkCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.shortlink.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

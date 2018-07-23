@@ -101,10 +101,7 @@ class AlipayMicropayOrderConfirmpayurlGetRequest extends AbstractAlipayRequest
         return $this->transferOutOrderNo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.micropay.order.confirmpayurl.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

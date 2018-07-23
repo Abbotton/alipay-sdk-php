@@ -185,10 +185,7 @@ class AlipayOpenAgentFacetofaceSignRequest extends AbstractAlipayRequest
         return $this->specialLicensePic;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.agent.facetoface.sign";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -69,10 +69,7 @@ class AlipayPointOrderGetRequest extends AbstractAlipayRequest
         return $this->userSymbolType;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.point.order.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

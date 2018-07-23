@@ -37,10 +37,7 @@ class KoubeiMarketingToolPrizesendAuthRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.tool.prizesend.auth";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

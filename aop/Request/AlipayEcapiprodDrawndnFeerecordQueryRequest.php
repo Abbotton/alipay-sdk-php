@@ -133,10 +133,7 @@ class AlipayEcapiprodDrawndnFeerecordQueryRequest extends AbstractAlipayRequest
         return $this->start;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ecapiprod.drawndn.feerecord.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

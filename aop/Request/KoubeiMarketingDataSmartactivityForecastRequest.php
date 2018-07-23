@@ -37,10 +37,7 @@ class KoubeiMarketingDataSmartactivityForecastRequest extends AbstractAlipayRequ
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.smartactivity.forecast";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

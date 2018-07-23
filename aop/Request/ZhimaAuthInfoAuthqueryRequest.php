@@ -37,10 +37,7 @@ class ZhimaAuthInfoAuthqueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.auth.info.authquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

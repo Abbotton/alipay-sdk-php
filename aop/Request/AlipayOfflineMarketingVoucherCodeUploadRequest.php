@@ -69,10 +69,7 @@ class AlipayOfflineMarketingVoucherCodeUploadRequest extends AbstractAlipayReque
         return $this->fileContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.marketing.voucher.code.upload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

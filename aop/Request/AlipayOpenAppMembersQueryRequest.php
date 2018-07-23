@@ -37,10 +37,7 @@ class AlipayOpenAppMembersQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.app.members.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

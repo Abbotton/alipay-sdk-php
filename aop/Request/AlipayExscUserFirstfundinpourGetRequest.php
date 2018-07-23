@@ -37,10 +37,7 @@ class AlipayExscUserFirstfundinpourGetRequest extends AbstractAlipayRequest
         return $this->alipayId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.exsc.user.firstfundinpour.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

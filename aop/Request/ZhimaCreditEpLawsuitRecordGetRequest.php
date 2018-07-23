@@ -37,10 +37,7 @@ class ZhimaCreditEpLawsuitRecordGetRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.credit.ep.lawsuit.record.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayMobileStdPublicFollowListRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.std.public.follow.list";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

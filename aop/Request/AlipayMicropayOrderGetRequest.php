@@ -37,10 +37,7 @@ class AlipayMicropayOrderGetRequest extends AbstractAlipayRequest
         return $this->alipayOrderNo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.micropay.order.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

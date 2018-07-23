@@ -37,10 +37,7 @@ class AlipayTradeCustomsDeclareRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.trade.customs.declare";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

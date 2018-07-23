@@ -121,10 +121,7 @@ class AlipayOperatorMobileBindRequest extends AbstractAlipayRequest
         return $this->sReturnUrl;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.operator.mobile.bind";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

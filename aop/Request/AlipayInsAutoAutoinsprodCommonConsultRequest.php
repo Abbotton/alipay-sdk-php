@@ -37,10 +37,7 @@ class AlipayInsAutoAutoinsprodCommonConsultRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ins.auto.autoinsprod.common.consult";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

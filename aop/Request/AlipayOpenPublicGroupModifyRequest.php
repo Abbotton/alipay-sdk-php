@@ -37,10 +37,7 @@ class AlipayOpenPublicGroupModifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.group.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

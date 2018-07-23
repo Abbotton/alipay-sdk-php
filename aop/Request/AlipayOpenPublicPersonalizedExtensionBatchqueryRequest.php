@@ -21,10 +21,7 @@ class AlipayOpenPublicPersonalizedExtensionBatchqueryRequest extends AbstractAli
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.personalized.extension.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

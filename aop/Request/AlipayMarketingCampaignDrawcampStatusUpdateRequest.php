@@ -37,10 +37,7 @@ class AlipayMarketingCampaignDrawcampStatusUpdateRequest extends AbstractAlipayR
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.campaign.drawcamp.status.update";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

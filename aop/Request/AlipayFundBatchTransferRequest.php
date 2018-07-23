@@ -37,10 +37,7 @@ class AlipayFundBatchTransferRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.fund.batch.transfer";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

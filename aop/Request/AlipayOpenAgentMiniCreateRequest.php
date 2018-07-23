@@ -168,10 +168,7 @@ class AlipayOpenAgentMiniCreateRequest extends AbstractAlipayRequest
         return $this->servicePhone;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.agent.mini.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

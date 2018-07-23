@@ -37,10 +37,7 @@ class KoubeiCateringCrowdgroupConditionQueryRequest extends AbstractAlipayReques
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.catering.crowdgroup.condition.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

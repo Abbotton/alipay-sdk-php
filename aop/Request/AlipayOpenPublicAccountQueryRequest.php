@@ -37,10 +37,7 @@ class AlipayOpenPublicAccountQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.account.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

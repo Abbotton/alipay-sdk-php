@@ -37,10 +37,7 @@ class AntMerchantExpandEnterpriseApplyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "ant.merchant.expand.enterprise.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

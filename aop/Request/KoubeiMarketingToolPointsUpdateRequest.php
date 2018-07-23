@@ -37,10 +37,7 @@ class KoubeiMarketingToolPointsUpdateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.tool.points.update";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -133,10 +133,7 @@ class AlipayPassSyncUpdateRequest extends AbstractAlipayRequest
         return $this->verifyType;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.pass.sync.update";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

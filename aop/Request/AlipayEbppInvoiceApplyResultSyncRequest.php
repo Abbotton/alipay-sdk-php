@@ -37,10 +37,7 @@ class AlipayEbppInvoiceApplyResultSyncRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ebpp.invoice.apply.result.sync";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayOpenAppYufanlingsanyaowuYufalingsanyaowuQueryRequest extends Abstrac
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.app.yufanlingsanyaowu.yufalingsanyaowu.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

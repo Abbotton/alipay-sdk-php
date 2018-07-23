@@ -37,10 +37,7 @@ class KoubeiMarketingCampaignIntelligentPromoBatchqueryRequest extends AbstractA
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.campaign.intelligent.promo.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

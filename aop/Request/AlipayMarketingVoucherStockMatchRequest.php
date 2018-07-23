@@ -37,10 +37,7 @@ class AlipayMarketingVoucherStockMatchRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.voucher.stock.match";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

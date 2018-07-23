@@ -37,10 +37,7 @@ class AlipayDataDataserviceShoppingmallrecVoucherQueryRequest extends AbstractAl
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.data.dataservice.shoppingmallrec.voucher.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayOpenPublicLifeLabelModifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.life.label.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

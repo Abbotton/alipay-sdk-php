@@ -37,10 +37,7 @@ class AlipaySecurityProdFingerprintApplyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.security.prod.fingerprint.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -21,10 +21,7 @@ class KoubeiMemberRetailerQueryRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "koubei.member.retailer.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

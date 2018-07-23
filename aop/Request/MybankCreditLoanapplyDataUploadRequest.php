@@ -37,10 +37,7 @@ class MybankCreditLoanapplyDataUploadRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "mybank.credit.loanapply.data.upload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

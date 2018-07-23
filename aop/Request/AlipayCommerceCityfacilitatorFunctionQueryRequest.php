@@ -37,10 +37,7 @@ class AlipayCommerceCityfacilitatorFunctionQueryRequest extends AbstractAlipayRe
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.cityfacilitator.function.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

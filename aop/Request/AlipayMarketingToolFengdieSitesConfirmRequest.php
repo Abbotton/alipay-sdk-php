@@ -37,10 +37,7 @@ class AlipayMarketingToolFengdieSitesConfirmRequest extends AbstractAlipayReques
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.tool.fengdie.sites.confirm";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

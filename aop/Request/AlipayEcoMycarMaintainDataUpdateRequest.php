@@ -37,10 +37,7 @@ class AlipayEcoMycarMaintainDataUpdateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.maintain.data.update";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

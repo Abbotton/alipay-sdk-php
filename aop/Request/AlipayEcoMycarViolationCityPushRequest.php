@@ -37,10 +37,7 @@ class AlipayEcoMycarViolationCityPushRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.violation.city.push";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

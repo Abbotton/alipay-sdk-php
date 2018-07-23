@@ -37,10 +37,7 @@ class AlipayDaoweiOrderRefuseRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.daowei.order.refuse";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class KoubeiMarketingCampaignIntelligentShopConsultRequest extends AbstractAlipa
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.campaign.intelligent.shop.consult";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

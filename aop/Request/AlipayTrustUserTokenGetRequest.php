@@ -37,10 +37,7 @@ class AlipayTrustUserTokenGetRequest extends AbstractAlipayRequest
         return $this->aliTrustUserInfo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.trust.user.token.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

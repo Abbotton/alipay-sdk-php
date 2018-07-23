@@ -37,10 +37,7 @@ class ZhimaCustomerCertificationQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.customer.certification.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

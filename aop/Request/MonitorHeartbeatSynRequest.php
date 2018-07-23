@@ -37,10 +37,7 @@ class MonitorHeartbeatSynRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "monitor.heartbeat.syn";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

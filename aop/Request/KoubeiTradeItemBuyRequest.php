@@ -37,10 +37,7 @@ class KoubeiTradeItemBuyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.trade.item.buy";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

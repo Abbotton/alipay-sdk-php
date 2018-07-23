@@ -37,10 +37,7 @@ class AlipayMobilePublicTemplateMessageDeleteRequest extends AbstractAlipayReque
         return $this->templateId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.template.message.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

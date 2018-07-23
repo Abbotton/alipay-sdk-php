@@ -37,10 +37,7 @@ class AlipayOpenPublicLabelUserDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.label.user.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

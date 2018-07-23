@@ -37,10 +37,7 @@ class AlipayFundAuthOrderVoucherCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.fund.auth.order.voucher.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

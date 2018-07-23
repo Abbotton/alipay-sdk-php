@@ -37,10 +37,7 @@ class AlipayZmscoreZrankGetRequest extends AbstractAlipayRequest
         return $this->userId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.zmscore.zrank.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

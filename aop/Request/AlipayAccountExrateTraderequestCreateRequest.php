@@ -37,10 +37,7 @@ class AlipayAccountExrateTraderequestCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.account.exrate.traderequest.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class ZhimaCreditAntifraudVerifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.credit.antifraud.verify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

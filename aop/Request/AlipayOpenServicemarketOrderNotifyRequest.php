@@ -21,10 +21,7 @@ class AlipayOpenServicemarketOrderNotifyRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.servicemarket.order.notify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

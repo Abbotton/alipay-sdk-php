@@ -53,10 +53,7 @@ class AntMerchantExpandImageUploadRequest extends AbstractAlipayRequest
         return $this->imageType;
     }
 
-    public function getApiMethodName()
-    {
-        return "ant.merchant.expand.image.upload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

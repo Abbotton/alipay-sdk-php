@@ -37,10 +37,7 @@ class AlipayOpenMiniExperienceQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.experience.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

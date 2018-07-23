@@ -37,10 +37,7 @@ class AlipayEcoMycarCarlibInfoPushRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.carlib.info.push";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

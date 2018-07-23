@@ -21,10 +21,7 @@ class AlipayOpenPublicTopicBatchqueryRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.topic.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

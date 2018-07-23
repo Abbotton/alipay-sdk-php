@@ -37,10 +37,7 @@ class AlipayCommerceCityfacilitatorVoucherConfirmRequest extends AbstractAlipayR
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.cityfacilitator.voucher.confirm";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

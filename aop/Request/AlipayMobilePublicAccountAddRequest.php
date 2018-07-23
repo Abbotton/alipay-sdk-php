@@ -117,10 +117,7 @@ class AlipayMobilePublicAccountAddRequest extends AbstractAlipayRequest
         return $this->realName;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.account.add";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayMarketingCampaignActivityOfflineCreateRequest extends AbstractAlipay
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.campaign.activity.offline.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

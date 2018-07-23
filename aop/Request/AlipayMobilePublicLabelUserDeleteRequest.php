@@ -37,10 +37,7 @@ class AlipayMobilePublicLabelUserDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.label.user.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

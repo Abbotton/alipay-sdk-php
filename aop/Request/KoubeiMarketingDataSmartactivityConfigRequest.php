@@ -37,10 +37,7 @@ class KoubeiMarketingDataSmartactivityConfigRequest extends AbstractAlipayReques
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.smartactivity.config";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

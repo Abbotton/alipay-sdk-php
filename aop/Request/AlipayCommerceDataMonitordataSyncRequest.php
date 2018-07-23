@@ -37,10 +37,7 @@ class AlipayCommerceDataMonitordataSyncRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.data.monitordata.sync";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayOfflineMarketingVoucherOfflineRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.marketing.voucher.offline";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayMarketingCardDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.card.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

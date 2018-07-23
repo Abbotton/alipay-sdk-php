@@ -37,10 +37,7 @@ class AlipayOpenMiniVersionUploadRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.version.upload";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

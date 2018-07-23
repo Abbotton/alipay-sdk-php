@@ -72,10 +72,7 @@ class AlipayPassFileAddRequest extends AbstractAlipayRequest
         return $this->recognitionType;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.pass.file.add";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayExscUserCurrentsignGetRequest extends AbstractAlipayRequest
         return $this->alipayId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.exsc.user.currentsign.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

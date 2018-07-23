@@ -37,10 +37,7 @@ class KoubeiMarketingDataRetailDmQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.retail.dm.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

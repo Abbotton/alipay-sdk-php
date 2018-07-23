@@ -37,10 +37,7 @@ class AlipayEcoMycarDataserviceViolationinfoShareRequest extends AbstractAlipayR
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.dataservice.violationinfo.share";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

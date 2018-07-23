@@ -37,10 +37,7 @@ class AlipayEcoMycarParkingCardbarcodeCreateRequest extends AbstractAlipayReques
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.parking.cardbarcode.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

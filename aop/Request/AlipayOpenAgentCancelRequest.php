@@ -37,10 +37,7 @@ class AlipayOpenAgentCancelRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.agent.cancel";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayOpenMiniTemplateUsageQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.template.usage.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

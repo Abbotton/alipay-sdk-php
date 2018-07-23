@@ -37,10 +37,7 @@ class AlipayOpenMiniVersionOnlineRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.mini.version.online";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

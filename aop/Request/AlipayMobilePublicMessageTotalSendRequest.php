@@ -37,10 +37,7 @@ class AlipayMobilePublicMessageTotalSendRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.message.total.send";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipaySecurityRiskHideDeviceidQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.security.risk.hide.deviceid.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

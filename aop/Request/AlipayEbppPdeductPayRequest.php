@@ -216,10 +216,7 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
         return $this->userId;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ebpp.pdeduct.pay";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

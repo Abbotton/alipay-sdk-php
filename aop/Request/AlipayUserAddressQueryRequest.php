@@ -37,10 +37,7 @@ class AlipayUserAddressQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.user.address.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

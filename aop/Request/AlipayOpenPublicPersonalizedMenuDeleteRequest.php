@@ -37,10 +37,7 @@ class AlipayOpenPublicPersonalizedMenuDeleteRequest extends AbstractAlipayReques
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.personalized.menu.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

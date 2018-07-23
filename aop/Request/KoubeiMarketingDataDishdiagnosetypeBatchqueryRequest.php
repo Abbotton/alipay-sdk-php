@@ -21,10 +21,7 @@ class KoubeiMarketingDataDishdiagnosetypeBatchqueryRequest extends AbstractAlipa
     
 
     
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.dishdiagnosetype.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

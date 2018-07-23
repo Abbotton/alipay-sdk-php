@@ -37,10 +37,7 @@ class AntMerchantExpandContractFacetofaceQueryRequest extends AbstractAlipayRequ
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "ant.merchant.expand.contract.facetoface.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

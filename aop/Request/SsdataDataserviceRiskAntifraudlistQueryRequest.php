@@ -37,10 +37,7 @@ class SsdataDataserviceRiskAntifraudlistQueryRequest extends AbstractAlipayReque
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "ssdata.dataservice.risk.antifraudlist.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

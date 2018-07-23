@@ -37,10 +37,7 @@ class AlipayOpenServicemarketOrderRejectRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.servicemarket.order.reject";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

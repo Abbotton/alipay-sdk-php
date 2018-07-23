@@ -56,10 +56,7 @@ bar_code：条码
         return $this->dynamicIdType;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.shake.user.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayOpenPublicPayeeBindCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.payee.bind.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

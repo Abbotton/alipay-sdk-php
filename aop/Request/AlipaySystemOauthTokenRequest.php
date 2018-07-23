@@ -69,10 +69,7 @@ class AlipaySystemOauthTokenRequest extends AbstractAlipayRequest
         return $this->refreshToken;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.system.oauth.token";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

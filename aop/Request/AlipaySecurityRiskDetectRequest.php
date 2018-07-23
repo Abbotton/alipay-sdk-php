@@ -917,10 +917,7 @@ class AlipaySecurityRiskDetectRequest extends AbstractAlipayRequest
         return $this->transportType;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.security.risk.detect";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

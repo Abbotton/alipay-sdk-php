@@ -37,10 +37,7 @@ class KoubeiMarketingCampaignIntelligentPromoDeleteRequest extends AbstractAlipa
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.campaign.intelligent.promo.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -220,10 +220,7 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
         return $this->title;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.transfer.thirdparty.bill.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

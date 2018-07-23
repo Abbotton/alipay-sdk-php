@@ -37,10 +37,7 @@ class AntMerchantExpandMapplyorderQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "ant.merchant.expand.mapplyorder.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

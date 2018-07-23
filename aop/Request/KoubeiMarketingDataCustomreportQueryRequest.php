@@ -37,10 +37,7 @@ class KoubeiMarketingDataCustomreportQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.data.customreport.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

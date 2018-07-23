@@ -37,10 +37,7 @@ class AntMerchantExpandContractFacetofaceSignRequest extends AbstractAlipayReque
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "ant.merchant.expand.contract.facetoface.sign";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

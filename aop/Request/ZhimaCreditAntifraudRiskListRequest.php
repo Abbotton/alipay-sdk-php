@@ -37,10 +37,7 @@ class ZhimaCreditAntifraudRiskListRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "zhima.credit.antifraud.risk.list";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

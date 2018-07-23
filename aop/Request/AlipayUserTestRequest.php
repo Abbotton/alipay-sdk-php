@@ -37,10 +37,7 @@ class AlipayUserTestRequest extends AbstractAlipayRequest
         return $this->userinfo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.user.test";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

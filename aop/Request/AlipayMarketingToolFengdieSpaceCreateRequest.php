@@ -37,10 +37,7 @@ class AlipayMarketingToolFengdieSpaceCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.marketing.tool.fengdie.space.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

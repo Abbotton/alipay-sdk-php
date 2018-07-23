@@ -37,10 +37,7 @@ class AlipayMsaasPromotionCpainfoCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.msaas.promotion.cpainfo.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

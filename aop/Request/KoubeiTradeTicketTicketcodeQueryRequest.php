@@ -37,10 +37,7 @@ class KoubeiTradeTicketTicketcodeQueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.trade.ticket.ticketcode.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

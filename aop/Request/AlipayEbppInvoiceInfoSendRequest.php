@@ -37,10 +37,7 @@ class AlipayEbppInvoiceInfoSendRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ebpp.invoice.info.send";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -21,10 +21,7 @@ class AlipayOpenPublicInfoQueryRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.info.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

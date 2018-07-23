@@ -37,10 +37,7 @@ class AlipayAccountExrateAdviceAcceptRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.account.exrate.advice.accept";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

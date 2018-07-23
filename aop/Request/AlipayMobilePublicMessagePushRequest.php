@@ -37,10 +37,7 @@ class AlipayMobilePublicMessagePushRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.message.push";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

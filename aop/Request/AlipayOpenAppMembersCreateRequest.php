@@ -37,10 +37,7 @@ class AlipayOpenAppMembersCreateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.app.members.create";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

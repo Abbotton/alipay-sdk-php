@@ -37,10 +37,7 @@ class AlipayEcoMycarTradeRefundRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.trade.refund";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

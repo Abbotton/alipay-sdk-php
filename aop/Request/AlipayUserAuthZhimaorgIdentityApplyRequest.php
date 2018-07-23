@@ -37,10 +37,7 @@ class AlipayUserAuthZhimaorgIdentityApplyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.user.auth.zhimaorg.identity.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

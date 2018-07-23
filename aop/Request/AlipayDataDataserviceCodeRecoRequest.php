@@ -37,10 +37,7 @@ class AlipayDataDataserviceCodeRecoRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.data.dataservice.code.reco";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

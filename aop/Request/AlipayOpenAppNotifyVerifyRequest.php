@@ -37,10 +37,7 @@ class AlipayOpenAppNotifyVerifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.app.notify.verify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

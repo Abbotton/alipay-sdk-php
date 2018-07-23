@@ -134,10 +134,7 @@ class AlipayEbppBillSearchRequest extends AbstractAlipayRequest
         return $this->subOrderType;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ebpp.bill.search";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

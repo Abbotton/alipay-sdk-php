@@ -37,10 +37,7 @@ class AlipayPassVerifyQueryRequest extends AbstractAlipayRequest
         return $this->verifyCode;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.pass.verify.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -21,10 +21,7 @@ class AlipayDataDataserviceSdfsdfRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.data.dataservice.sdfsdf";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

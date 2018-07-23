@@ -37,10 +37,7 @@ class AlipayCommerceCityfacilitatorDepositQueryRequest extends AbstractAlipayReq
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.commerce.cityfacilitator.deposit.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

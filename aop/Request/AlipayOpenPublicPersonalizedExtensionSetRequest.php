@@ -37,10 +37,7 @@ class AlipayOpenPublicPersonalizedExtensionSetRequest extends AbstractAlipayRequ
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.personalized.extension.set";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AlipayMobilePublicMessagebatchPushRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.mobile.public.messagebatch.push";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

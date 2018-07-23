@@ -37,10 +37,7 @@ class AlipayOfflineProviderShopactionRecordRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.provider.shopaction.record";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

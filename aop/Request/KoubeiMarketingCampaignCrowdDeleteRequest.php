@@ -37,10 +37,7 @@ class KoubeiMarketingCampaignCrowdDeleteRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.marketing.campaign.crowd.delete";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

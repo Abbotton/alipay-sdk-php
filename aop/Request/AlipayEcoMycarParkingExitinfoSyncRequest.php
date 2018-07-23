@@ -37,10 +37,7 @@ class AlipayEcoMycarParkingExitinfoSyncRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.mycar.parking.exitinfo.sync";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

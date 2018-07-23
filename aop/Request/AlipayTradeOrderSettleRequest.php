@@ -37,10 +37,7 @@ class AlipayTradeOrderSettleRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.trade.order.settle";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

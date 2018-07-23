@@ -256,10 +256,7 @@ deadline（int）：文章的失效时间，单位秒
         return $this->videoUrl;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.life.msg.send";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -21,10 +21,7 @@ class AlipayOpenPublicLifeAboardApplyRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.life.aboard.apply";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

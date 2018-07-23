@@ -37,10 +37,7 @@ class AlipayOpenPublicThirdCustomerServiceRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.third.customer.service";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

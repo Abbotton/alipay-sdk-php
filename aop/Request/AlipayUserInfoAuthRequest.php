@@ -37,10 +37,7 @@ class AlipayUserInfoAuthRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.user.info.auth";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

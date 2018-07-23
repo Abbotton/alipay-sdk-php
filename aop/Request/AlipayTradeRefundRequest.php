@@ -37,10 +37,7 @@ class AlipayTradeRefundRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.trade.refund";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

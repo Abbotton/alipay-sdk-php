@@ -37,10 +37,7 @@ class AlipayEcoEduKtStudentModifyRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.eco.edu.kt.student.modify";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -21,10 +21,7 @@ class AlipayOpenPublicMultimediaDownloadProxyRequest extends AbstractAlipayReque
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.multimedia.download.proxy";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

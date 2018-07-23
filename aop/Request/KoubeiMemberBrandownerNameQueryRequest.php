@@ -21,10 +21,7 @@ class KoubeiMemberBrandownerNameQueryRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "koubei.member.brandowner.name.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

@@ -37,10 +37,7 @@ class AntMerchantExpandMerchantStorelistQueryRequest extends AbstractAlipayReque
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "ant.merchant.expand.merchant.storelist.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

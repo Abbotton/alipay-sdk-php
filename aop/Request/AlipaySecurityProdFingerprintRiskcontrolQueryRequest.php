@@ -37,10 +37,7 @@ class AlipaySecurityProdFingerprintRiskcontrolQueryRequest extends AbstractAlipa
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.security.prod.fingerprint.riskcontrol.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

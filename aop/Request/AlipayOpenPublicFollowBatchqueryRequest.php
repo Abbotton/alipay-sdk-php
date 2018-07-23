@@ -37,10 +37,7 @@ class AlipayOpenPublicFollowBatchqueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.follow.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

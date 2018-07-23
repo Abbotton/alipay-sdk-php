@@ -37,10 +37,7 @@ class KoubeiItemStateRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "koubei.item.state";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

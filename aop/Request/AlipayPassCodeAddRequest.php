@@ -89,10 +89,7 @@ class AlipayPassCodeAddRequest extends AbstractAlipayRequest
         return $this->verifyType;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.pass.code.add";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

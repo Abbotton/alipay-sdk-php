@@ -21,10 +21,7 @@ class AlipayEbppMerchantConfigGetRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.ebpp.merchant.config.get";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

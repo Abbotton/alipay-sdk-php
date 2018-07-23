@@ -53,10 +53,7 @@ class AlipayEbppPdeductBillPayStatusRequest extends AbstractAlipayRequest
         return $this->outOrderNo;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.ebpp.pdeduct.bill.pay.status";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

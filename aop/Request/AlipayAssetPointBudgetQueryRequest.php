@@ -21,10 +21,7 @@ class AlipayAssetPointBudgetQueryRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.asset.point.budget.query";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

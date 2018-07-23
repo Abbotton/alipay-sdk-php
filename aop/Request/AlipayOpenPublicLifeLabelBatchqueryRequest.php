@@ -21,10 +21,7 @@ class AlipayOpenPublicLifeLabelBatchqueryRequest extends AbstractAlipayRequest
     
 
     
-    public function getApiMethodName()
-    {
-        return "alipay.open.public.life.label.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {

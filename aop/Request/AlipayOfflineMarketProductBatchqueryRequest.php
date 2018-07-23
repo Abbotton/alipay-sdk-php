@@ -37,10 +37,7 @@ class AlipayOfflineMarketProductBatchqueryRequest extends AbstractAlipayRequest
         return $this->bizContent;
     }
 
-    public function getApiMethodName()
-    {
-        return "alipay.offline.market.product.batchquery";
-    }
+    
 
     public function setNotifyUrl($notifyUrl)
     {
