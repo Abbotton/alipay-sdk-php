@@ -12,7 +12,7 @@ abstract class AbstractAlipayRequest
         return __CLASS__;
     }
 
-    public function getApiMethodNameNew()
+    public function getApiMethodName()
     {
         $name = (new \ReflectionClass($this))->getShortName();
         $name = preg_replace('/Request$/', '', $name);
