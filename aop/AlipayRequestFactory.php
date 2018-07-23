@@ -3,7 +3,7 @@
 namespace Alipay;
 
 use Alipay\Exception\AlipayException;
-use Alipay\Exception\AlipayInvalidConfigException;
+use Alipay\Exception\AlipayInvalidRequestException;
 use Alipay\Exception\AlipayInvalidPropertyException;
 use Alipay\Request\AbstractAlipayRequest;
 
@@ -34,11 +34,11 @@ class AlipayRequestFactory
         $className = 'Alipay\Request' . '\\' . $className;
         
         if (!class_exists($className)) {
-            throw new AlipayException("Request class `{$className}` doesn't exist");
+            throw new AlipayInvalidRequestException("Request class `{$className}` doesn't exist");
         }
         $abstractClass = AbstractAlipayRequest::className();
         if (!is_subclass_of($className, $abstractClass)) {
-            throw new AlipayException("Given class {$className} is not a subclass of {$abstractClass}");
+            throw new AlipayInvalidRequestException("Given class {$className} is not a subclass of {$abstractClass}");
         }
 
         $instance = new $className();
@@ -49,7 +49,7 @@ class AlipayRequestFactory
                 $instance->$property = $value;
             }
         } catch (AlipayInvalidPropertyException $ex) {
-            throw new AlipayInvalidConfigException($ex->getMessage() . ': ' . $key);
+            throw new AlipayInvalidRequestException($ex->getMessage() . ': ' . $key);
         }
 
         return $instance;
