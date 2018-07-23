@@ -5,30 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-12-08 11:50:28
  */
-
 namespace Alipay\Request;
 
 class AlipayOpenPublicLabelQueryRequest extends AbstractAlipayRequest
 {
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

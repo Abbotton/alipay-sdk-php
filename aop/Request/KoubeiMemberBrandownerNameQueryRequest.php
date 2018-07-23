@@ -5,30 +5,9 @@
  * @author auto create
  * @since  1.0, 2016-07-06 10:48:20
  */
-
 namespace Alipay\Request;
 
 class KoubeiMemberBrandownerNameQueryRequest extends AbstractAlipayRequest
 {
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

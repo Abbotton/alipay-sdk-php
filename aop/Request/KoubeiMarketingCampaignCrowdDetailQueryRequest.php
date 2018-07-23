@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2018-04-25 17:18:27
  */
-
 namespace Alipay\Request;
 
 class KoubeiMarketingCampaignCrowdDetailQueryRequest extends AbstractAlipayRequest
 {
-
     /**
      * 口碑商户人群组详情查询接口
      **/
     private $bizContent;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
         $this->apiParas["biz_content"] = $bizContent;
     }
-
     public function getBizContent()
     {
         return $this->bizContent;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

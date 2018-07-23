@@ -1,5 +1,4 @@
 <?php
-
 namespace Alipay\Request;
 
 use Alipay\Exception\AlipayException;
@@ -43,7 +42,6 @@ abstract class AbstractAlipayRequest
     {
         return $this->notifyUrl;
     }
-    
     public function setNotifyUrl($notifyUrl)
     {
         $this->notifyUrl = $notifyUrl;
@@ -131,7 +129,7 @@ abstract class AbstractAlipayRequest
         }
         return false;
     }
-
+    
     public function __unset($name)
     {
         $setter = 'set' . $name;

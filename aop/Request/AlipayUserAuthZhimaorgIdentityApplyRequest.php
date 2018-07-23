@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2017-12-06 15:17:02
  */
-
 namespace Alipay\Request;
 
 class AlipayUserAuthZhimaorgIdentityApplyRequest extends AbstractAlipayRequest
 {
-
     /**
      * 芝麻企业征信基于身份的协议授权
      **/
     private $bizContent;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
         $this->apiParas["biz_content"] = $bizContent;
     }
-
     public function getBizContent()
     {
         return $this->bizContent;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

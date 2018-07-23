@@ -5,30 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-09-04 17:13:35
  */
-
 namespace Alipay\Request;
 
 class AlipayCommerceTransportOfflinepayKeyQueryRequest extends AbstractAlipayRequest
 {
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

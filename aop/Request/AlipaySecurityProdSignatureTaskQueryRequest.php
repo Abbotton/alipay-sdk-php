@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2017-12-20 15:24:43
  */
-
 namespace Alipay\Request;
 
 class AlipaySecurityProdSignatureTaskQueryRequest extends AbstractAlipayRequest
 {
-
     /**
      * 支付宝可信电子签名结果查询
      **/
     private $bizContent;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
         $this->apiParas["biz_content"] = $bizContent;
     }
-
     public function getBizContent()
     {
         return $this->bizContent;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

@@ -5,30 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-04-25 17:34:54
  */
-
 namespace Alipay\Request;
 
 class KoubeiMarketingCampaignTagsQueryRequest extends AbstractAlipayRequest
 {
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

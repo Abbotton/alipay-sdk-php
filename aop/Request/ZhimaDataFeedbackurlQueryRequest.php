@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2017-02-16 15:46:19
  */
-
 namespace Alipay\Request;
 
 class ZhimaDataFeedbackurlQueryRequest extends AbstractAlipayRequest
 {
-
     /**
      * 获取数据反馈模板
      **/
     private $bizContent;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
         $this->apiParas["biz_content"] = $bizContent;
     }
-
     public function getBizContent()
     {
         return $this->bizContent;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

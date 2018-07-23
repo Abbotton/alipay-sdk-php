@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2017-06-23 09:40:27
  */
-
 namespace Alipay\Request;
 
 class AlipayMarketingCardBenefitDeleteRequest extends AbstractAlipayRequest
 {
-
     /**
      * 会员卡模板外部权益删除
      **/
     private $bizContent;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
         $this->apiParas["biz_content"] = $bizContent;
     }
-
     public function getBizContent()
     {
         return $this->bizContent;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

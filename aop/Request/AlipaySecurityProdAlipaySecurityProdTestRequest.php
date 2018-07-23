@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2016-03-03 17:43:31
  */
-
 namespace Alipay\Request;
 
 class AlipaySecurityProdAlipaySecurityProdTestRequest extends AbstractAlipayRequest
 {
-
     /**
      * 安全业务操作
      **/
     private $bizContent;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
         $this->apiParas["biz_content"] = $bizContent;
     }
-
     public function getBizContent()
     {
         return $this->bizContent;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

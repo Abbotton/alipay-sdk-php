@@ -5,12 +5,10 @@
  * @author auto create
  * @since  1.0, 2017-12-07 16:32:21
  */
-
 namespace Alipay\Request;
 
 class AlipayPassTplContentAddRequest extends AbstractAlipayRequest
 {
-
     /**
      * 支付宝用户识别信息：
 当 recognition_type=1时， recognition_info={“partner_id”:”2088102114633762”,“out_trade_no”:”1234567”}；
@@ -18,84 +16,53 @@ class AlipayPassTplContentAddRequest extends AbstractAlipayRequest
 当recognition_type=4时， recognition_info={“open_id”:”afbd8d9bb12fc02c5094d8ea89d1fae8“}
      **/
     private $recognitionInfo;
-    
     /**
      * Alipass添加对象识别类型【1--订单信息;3--支付宝用户绑定手机号；4--支付宝OpenId;】
      **/
     private $recognitionType;
-    
     /**
      * 支付宝pass模版ID
      **/
     private $tplId;
-    
     /**
      * 模版动态参数信息【支付宝pass模版参数键值对JSON字符串】
      **/
     private $tplParams;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setRecognitionInfo($recognitionInfo)
     {
         $this->recognitionInfo = $recognitionInfo;
         $this->apiParas["recognition_info"] = $recognitionInfo;
     }
-
     public function getRecognitionInfo()
     {
         return $this->recognitionInfo;
     }
-
     public function setRecognitionType($recognitionType)
     {
         $this->recognitionType = $recognitionType;
         $this->apiParas["recognition_type"] = $recognitionType;
     }
-
     public function getRecognitionType()
     {
         return $this->recognitionType;
     }
-
     public function setTplId($tplId)
     {
         $this->tplId = $tplId;
         $this->apiParas["tpl_id"] = $tplId;
     }
-
     public function getTplId()
     {
         return $this->tplId;
     }
-
     public function setTplParams($tplParams)
     {
         $this->tplParams = $tplParams;
         $this->apiParas["tpl_params"] = $tplParams;
     }
-
     public function getTplParams()
     {
         return $this->tplParams;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

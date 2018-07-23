@@ -5,30 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-10-10 19:25:38
  */
-
 namespace Alipay\Request;
 
 class KoubeiMarketingDataDishdiagnosetypeBatchqueryRequest extends AbstractAlipayRequest
 {
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

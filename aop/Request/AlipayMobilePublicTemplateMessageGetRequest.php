@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2017-08-02 17:37:08
  */
-
 namespace Alipay\Request;
 
 class AlipayMobilePublicTemplateMessageGetRequest extends AbstractAlipayRequest
 {
-
     /**
      * 消息母板id
      **/
     private $templateId;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setTemplateId($templateId)
     {
         $this->templateId = $templateId;
         $this->apiParas["template_id"] = $templateId;
     }
-
     public function getTemplateId()
     {
         return $this->templateId;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

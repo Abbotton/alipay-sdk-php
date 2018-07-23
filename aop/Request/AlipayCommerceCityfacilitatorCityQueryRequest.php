@@ -5,30 +5,9 @@
  * @author auto create
  * @since  1.0, 2015-12-15 11:19:13
  */
-
 namespace Alipay\Request;
 
 class AlipayCommerceCityfacilitatorCityQueryRequest extends AbstractAlipayRequest
 {
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

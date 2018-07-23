@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2016-01-04 10:16:04
  */
-
 namespace Alipay\Request;
 
 class AlipayTrustUserRiskidentifyGetRequest extends AbstractAlipayRequest
 {
-
     /**
      * 行业关注名单类型，具体类型见对接文档或样例代码
      **/
     private $type;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setType($type)
     {
         $this->type = $type;
         $this->apiParas["type"] = $type;
     }
-
     public function getType()
     {
         return $this->type;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2018-01-25 14:05:37
  */
-
 namespace Alipay\Request;
 
 class AlipayOpenMiniVersionBuildQueryRequest extends AbstractAlipayRequest
 {
-
     /**
      * 小程序构建状态查询
      **/
     private $bizContent;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
         $this->apiParas["biz_content"] = $bizContent;
     }
-
     public function getBizContent()
     {
         return $this->bizContent;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

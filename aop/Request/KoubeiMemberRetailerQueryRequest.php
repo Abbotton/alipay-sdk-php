@@ -5,30 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-01-12 10:59:05
  */
-
 namespace Alipay\Request;
 
 class KoubeiMemberRetailerQueryRequest extends AbstractAlipayRequest
 {
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

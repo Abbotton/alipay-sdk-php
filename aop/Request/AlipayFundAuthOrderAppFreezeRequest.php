@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2018-06-20 22:11:06
  */
-
 namespace Alipay\Request;
 
 class AlipayFundAuthOrderAppFreezeRequest extends AbstractAlipayRequest
 {
-
     /**
      * 线上资金授权冻结接口
      **/
     private $bizContent;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
         $this->apiParas["biz_content"] = $bizContent;
     }
-
     public function getBizContent()
     {
         return $this->bizContent;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

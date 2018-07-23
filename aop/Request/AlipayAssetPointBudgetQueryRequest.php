@@ -5,30 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-04-14 18:58:03
  */
-
 namespace Alipay\Request;
 
 class AlipayAssetPointBudgetQueryRequest extends AbstractAlipayRequest
 {
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

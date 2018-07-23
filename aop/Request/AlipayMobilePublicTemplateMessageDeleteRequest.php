@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2017-08-02 17:35:36
  */
-
 namespace Alipay\Request;
 
 class AlipayMobilePublicTemplateMessageDeleteRequest extends AbstractAlipayRequest
 {
-
     /**
      * 模板id
      **/
     private $templateId;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setTemplateId($templateId)
     {
         $this->templateId = $templateId;
         $this->apiParas["template_id"] = $templateId;
     }
-
     public function getTemplateId()
     {
         return $this->templateId;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

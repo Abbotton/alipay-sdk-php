@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2016-11-18 16:08:17
  */
-
 namespace Alipay\Request;
 
 class MybankFinanceYulibaoPriceQueryRequest extends AbstractAlipayRequest
 {
-
     /**
      * 查询余利宝行情信息（七日年化收益率、万份收益金额）
      **/
     private $bizContent;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
         $this->apiParas["biz_content"] = $bizContent;
     }
-
     public function getBizContent()
     {
         return $this->bizContent;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

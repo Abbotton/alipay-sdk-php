@@ -5,30 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-05-11 19:08:16
  */
-
 namespace Alipay\Request;
 
 class AlipayOpenPublicGroupBatchqueryRequest extends AbstractAlipayRequest
 {
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

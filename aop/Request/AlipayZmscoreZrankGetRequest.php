@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2018-01-22 10:27:38
  */
-
 namespace Alipay\Request;
 
 class AlipayZmscoreZrankGetRequest extends AbstractAlipayRequest
 {
-
     /**
      * 用户ID
      **/
     private $userId;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setUserId($userId)
     {
         $this->userId = $userId;
         $this->apiParas["user_id"] = $userId;
     }
-
     public function getUserId()
     {
         return $this->userId;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

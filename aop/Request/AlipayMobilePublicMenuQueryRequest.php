@@ -5,30 +5,9 @@
  * @author auto create
  * @since  1.0, 2015-11-27 11:29:48
  */
-
 namespace Alipay\Request;
 
 class AlipayMobilePublicMenuQueryRequest extends AbstractAlipayRequest
 {
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

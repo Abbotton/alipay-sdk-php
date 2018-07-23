@@ -5,30 +5,9 @@
  * @author auto create
  * @since  1.0, 2018-03-30 15:10:00
  */
-
 namespace Alipay\Request;
 
 class AlipayCommerceLotteryTypelistQueryRequest extends AbstractAlipayRequest
 {
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

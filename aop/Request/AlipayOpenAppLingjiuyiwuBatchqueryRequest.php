@@ -5,30 +5,9 @@
  * @author auto create
  * @since  1.0, 2017-09-15 01:02:23
  */
-
 namespace Alipay\Request;
 
 class AlipayOpenAppLingjiuyiwuBatchqueryRequest extends AbstractAlipayRequest
 {
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2017-10-02 18:21:11
  */
-
 namespace Alipay\Request;
 
 class KoubeiMarketingDataBizadviserMyddsreportQueryRequest extends AbstractAlipayRequest
 {
-
     /**
      * mydds 数据服务处理器
      **/
     private $bizContent;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
         $this->apiParas["biz_content"] = $bizContent;
     }
-
     public function getBizContent()
     {
         return $this->bizContent;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }

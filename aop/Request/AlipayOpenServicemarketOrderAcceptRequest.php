@@ -5,46 +5,22 @@
  * @author auto create
  * @since  1.0, 2016-12-08 11:47:51
  */
-
 namespace Alipay\Request;
 
 class AlipayOpenServicemarketOrderAcceptRequest extends AbstractAlipayRequest
 {
-
     /**
      * 服务商接单操作
      **/
     private $bizContent;
-
     private $apiParas = array();
-    
-    
-    
-    
-    
-    
-    
-
-    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
         $this->apiParas["biz_content"] = $bizContent;
     }
-
     public function getBizContent()
     {
         return $this->bizContent;
     }
-
-    
-
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->notifyUrl = $notifyUrl;
-    }
-
-
-
-
 }
