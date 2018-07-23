@@ -16,7 +16,7 @@ abstract class AbstractAlipayRequest
     {
         $name = (new \ReflectionClass($this))->getShortName();
         $name = preg_replace('/Request$/', '', $name);
-        $name = preg_replace('/([A-Z])/s','.$1', $name);
+        $name = preg_replace('/([A-Z])/s', '.$1', $name);
         $name = trim($name, '.');
         $name = strtolower($name);
         return $name;
@@ -41,7 +41,7 @@ abstract class AbstractAlipayRequest
 
     public function __construct($config = [])
     {
-        foreach($config as $key => $value) {
+        foreach ($config as $key => $value) {
             $this->$key = $value;
         }
     }

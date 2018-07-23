@@ -12,7 +12,6 @@ use Alipay\Exception\AlipayInvalidSignException;
 use Alipay\Exception\AlipayBase64Exception;
 use Alipay\Exception\AlipayOpenSslException;
 
-
 class AlipaySign
 {
     /**
@@ -55,7 +54,7 @@ class AlipaySign
     {
         $instance = new static();
         $typeAlgoMap = $instance->typeAlgoMap();
-        if(!isset($typeAlgoMap[$signType])) {
+        if (!isset($typeAlgoMap[$signType])) {
             throw new \InvalidArgumentException('Unknown sign type: ' . $signType);
         }
         $instance->type = $signType;
@@ -115,12 +114,11 @@ class AlipaySign
     public function generate($data)
     {
         $result = openssl_sign($data, $sign, $this->appPrivateKeyResource, $this->getSignAlgo());
-        if($result === false) {
+        if ($result === false) {
             throw new AlipayOpenSslException(openssl_error_string());
         }
         $encodedSign = base64_encode($sign);
-        if($encodedSign === false)
-        {
+        if ($encodedSign === false) {
             throw new AlipayBase64Exception($sign, true);
         }
         return $encodedSign;
@@ -153,18 +151,17 @@ class AlipaySign
     public function verify($sign, $data)
     {
         $decodedSign = base64_decode($sign, true);
-        if($decodedSign === false) {
+        if ($decodedSign === false) {
             throw new AlipayBase64Exception($sign, false);
         }
         $result = openssl_verify($data, $decodedSign, $this->alipayPublicKeyResource, $this->getSignAlgo());
-        switch($result)
-        {
+        switch ($result) {
             case 1:
-            break;
+                break;
             case 0:
-            throw new AlipayInvalidSignException($sign, $data);
+                throw new AlipayInvalidSignException($sign, $data);
             case -1:
-            throw new AlipayOpenSslException(openssl_error_string());
+                throw new AlipayOpenSslException(openssl_error_string());
         }
     }
 

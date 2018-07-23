@@ -59,7 +59,7 @@ class AlipayResponse
      * 获取原始响应的被签名数据，用于验证签名
      *
      * @return string
-     * @see AlipaySign::verify()
+     * @see    AlipaySign::verify()
      */
     public function stripData()
     {
@@ -93,12 +93,12 @@ class AlipayResponse
     /**
      * 获取响应内的数据
      *
-     * @param boolean $assoc
+     * @param  boolean $assoc
      * @return mixed
      */
     public function getData($assoc = true)
     {
-        if($this->isSuccess() === false) {
+        if ($this->isSuccess() === false) {
             throw new AlipayResponseException($this->data);
         }
         $result = reset($this->data);
@@ -135,7 +135,7 @@ class AlipayResponse
      */
     public function getError($assoc = true)
     {
-        if($this->isSuccess()) {
+        if ($this->isSuccess()) {
             return null;
         }
         $result = $this->data[static::ERROR_NODE];

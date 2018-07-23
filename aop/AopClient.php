@@ -132,8 +132,8 @@ class AopClient
     /**
      * 页面提交执行方法
      *
-     * @param  AbstractAlipayRequest $request 跳转类接口的request
-     * @param  string                $httpMethod  提交方式。两个值可选：post、get
+     * @param  AbstractAlipayRequest $request    跳转类接口的request
+     * @param  string                $httpMethod 提交方式。两个值可选：post、get
      * @return string 构建好的、签名后的最终跳转URL（GET）或String形式的form（POST）
      * @author 笙默
      */

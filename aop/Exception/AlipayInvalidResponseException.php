@@ -25,7 +25,7 @@ class AlipayInvalidResponseException extends AlipayException
         }
 
         $message = $externalMessage == '' ? '' : $externalMessage . ': ';
-        if(is_array($errorResponse)) {
+        if (is_array($errorResponse)) {
             $errorResponse = (object) $errorResponse;
         }
         if (is_object($errorResponse)) {
