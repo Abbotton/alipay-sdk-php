@@ -13,11 +13,11 @@ class AlipayOpenPublicLabelUserDeleteRequest extends AbstractAlipayRequest
      * 公众号标签管理-删除用户标签
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -13,11 +13,11 @@ class AlipayMarketingToolFengdieMemberCreateRequest extends AbstractAlipayReques
      * 创建云凤蝶空间成员
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

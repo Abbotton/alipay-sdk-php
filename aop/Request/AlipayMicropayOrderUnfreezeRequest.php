@@ -17,11 +17,11 @@ class AlipayMicropayOrderUnfreezeRequest extends AbstractAlipayRequest
      * 冻结备注
      **/
     private $memo;
-    private $apiParas = array();
+    
     public function setAlipayOrderNo($alipayOrderNo)
     {
         $this->alipayOrderNo = $alipayOrderNo;
-        $this->apiParas["alipay_order_no"] = $alipayOrderNo;
+        $this->apiParams["alipay_order_no"] = $alipayOrderNo;
     }
     public function getAlipayOrderNo()
     {
@@ -30,7 +30,7 @@ class AlipayMicropayOrderUnfreezeRequest extends AbstractAlipayRequest
     public function setMemo($memo)
     {
         $this->memo = $memo;
-        $this->apiParas["memo"] = $memo;
+        $this->apiParams["memo"] = $memo;
     }
     public function getMemo()
     {

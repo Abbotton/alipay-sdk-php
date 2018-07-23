@@ -13,11 +13,11 @@ class AlipayCommerceCityfacilitatorVoucherBatchqueryRequest extends AbstractAlip
      * 地铁购票订单批量查询
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

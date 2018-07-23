@@ -13,11 +13,11 @@ class AlipayEcoMycarParkingLotbarcodeCreateRequest extends AbstractAlipayRequest
      * 物料二维码
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -13,11 +13,11 @@ class AlipayCommerceLotteryPresentSendRequest extends AbstractAlipayRequest
      * 商家给用户赠送彩票，由亚博科技提供服务
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

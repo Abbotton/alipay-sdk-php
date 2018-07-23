@@ -13,11 +13,11 @@ class AlipayOpenPublicLabelCreateRequest extends AbstractAlipayRequest
      * 公众号标签管理-添加标签
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

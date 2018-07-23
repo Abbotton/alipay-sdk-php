@@ -13,11 +13,11 @@ class AlipayMarketingCampaignActivityOfflineTriggerRequest extends AbstractAlipa
      * 商户创建活动后，需营销核心平台，来发奖。
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

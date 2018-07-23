@@ -13,11 +13,11 @@ class AlipayMarketingCampaignDiscountOperateRequest extends AbstractAlipayReques
      * 支付宝营销优惠立减活动操作
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

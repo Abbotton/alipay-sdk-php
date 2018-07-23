@@ -13,11 +13,11 @@ class AlipayCommerceTransportOfflinepayUserblacklistQueryRequest extends Abstrac
      * 脱机交易黑名单列表
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

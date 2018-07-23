@@ -21,11 +21,11 @@ class AlipaySystemOauthTokenRequest extends AbstractAlipayRequest
      * 刷新令牌，上次换取访问令牌时得到。见出参的refresh_token字段
      **/
     private $refreshToken;
-    private $apiParas = array();
+    
     public function setCode($code)
     {
         $this->code = $code;
-        $this->apiParas["code"] = $code;
+        $this->apiParams["code"] = $code;
     }
     public function getCode()
     {
@@ -34,7 +34,7 @@ class AlipaySystemOauthTokenRequest extends AbstractAlipayRequest
     public function setGrantType($grantType)
     {
         $this->grantType = $grantType;
-        $this->apiParas["grant_type"] = $grantType;
+        $this->apiParams["grant_type"] = $grantType;
     }
     public function getGrantType()
     {
@@ -43,7 +43,7 @@ class AlipaySystemOauthTokenRequest extends AbstractAlipayRequest
     public function setRefreshToken($refreshToken)
     {
         $this->refreshToken = $refreshToken;
-        $this->apiParas["refresh_token"] = $refreshToken;
+        $this->apiParams["refresh_token"] = $refreshToken;
     }
     public function getRefreshToken()
     {

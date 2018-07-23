@@ -13,11 +13,11 @@ class ZhimaDataFeedbackurlQueryRequest extends AbstractAlipayRequest
      * 获取数据反馈模板
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -29,11 +29,11 @@ class AlipayMobileRecommendGetRequest extends AbstractAlipayRequest
      * 用户openid
      **/
     private $userId;
-    private $apiParas = array();
+    
     public function setExtInfo($extInfo)
     {
         $this->extInfo = $extInfo;
-        $this->apiParas["ext_info"] = $extInfo;
+        $this->apiParams["ext_info"] = $extInfo;
     }
     public function getExtInfo()
     {
@@ -42,7 +42,7 @@ class AlipayMobileRecommendGetRequest extends AbstractAlipayRequest
     public function setLimit($limit)
     {
         $this->limit = $limit;
-        $this->apiParas["limit"] = $limit;
+        $this->apiParams["limit"] = $limit;
     }
     public function getLimit()
     {
@@ -51,7 +51,7 @@ class AlipayMobileRecommendGetRequest extends AbstractAlipayRequest
     public function setSceneId($sceneId)
     {
         $this->sceneId = $sceneId;
-        $this->apiParas["scene_id"] = $sceneId;
+        $this->apiParams["scene_id"] = $sceneId;
     }
     public function getSceneId()
     {
@@ -60,7 +60,7 @@ class AlipayMobileRecommendGetRequest extends AbstractAlipayRequest
     public function setStartIdx($startIdx)
     {
         $this->startIdx = $startIdx;
-        $this->apiParas["start_idx"] = $startIdx;
+        $this->apiParams["start_idx"] = $startIdx;
     }
     public function getStartIdx()
     {
@@ -69,7 +69,7 @@ class AlipayMobileRecommendGetRequest extends AbstractAlipayRequest
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParas["user_id"] = $userId;
+        $this->apiParams["user_id"] = $userId;
     }
     public function getUserId()
     {

@@ -29,11 +29,11 @@ class AlipayEcapiprodCreditGetRequest extends AbstractAlipayRequest
      * 融资平台分配给小贷公司的机构编码
      **/
     private $orgCode;
-    private $apiParas = array();
+    
     public function setCreditNo($creditNo)
     {
         $this->creditNo = $creditNo;
-        $this->apiParas["credit_no"] = $creditNo;
+        $this->apiParams["credit_no"] = $creditNo;
     }
     public function getCreditNo()
     {
@@ -42,7 +42,7 @@ class AlipayEcapiprodCreditGetRequest extends AbstractAlipayRequest
     public function setEntityCode($entityCode)
     {
         $this->entityCode = $entityCode;
-        $this->apiParas["entity_code"] = $entityCode;
+        $this->apiParams["entity_code"] = $entityCode;
     }
     public function getEntityCode()
     {
@@ -51,7 +51,7 @@ class AlipayEcapiprodCreditGetRequest extends AbstractAlipayRequest
     public function setEntityName($entityName)
     {
         $this->entityName = $entityName;
-        $this->apiParas["entity_name"] = $entityName;
+        $this->apiParams["entity_name"] = $entityName;
     }
     public function getEntityName()
     {
@@ -60,7 +60,7 @@ class AlipayEcapiprodCreditGetRequest extends AbstractAlipayRequest
     public function setIsvCode($isvCode)
     {
         $this->isvCode = $isvCode;
-        $this->apiParas["isv_code"] = $isvCode;
+        $this->apiParams["isv_code"] = $isvCode;
     }
     public function getIsvCode()
     {
@@ -69,7 +69,7 @@ class AlipayEcapiprodCreditGetRequest extends AbstractAlipayRequest
     public function setOrgCode($orgCode)
     {
         $this->orgCode = $orgCode;
-        $this->apiParas["org_code"] = $orgCode;
+        $this->apiParams["org_code"] = $orgCode;
     }
     public function getOrgCode()
     {

@@ -13,11 +13,11 @@ class MybankCreditLoanapplyDataUploadRequest extends AbstractAlipayRequest
      * 外部合作机构数据推送
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

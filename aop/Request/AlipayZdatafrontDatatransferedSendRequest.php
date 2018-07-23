@@ -21,11 +21,11 @@ class AlipayZdatafrontDatatransferedSendRequest extends AbstractAlipayRequest
      * 合作伙伴标识字段，用来区分数据来源。建议使用公司域名或公司名。
      **/
     private $typeId;
-    private $apiParas = array();
+    
     public function setData($data)
     {
         $this->data = $data;
-        $this->apiParas["data"] = $data;
+        $this->apiParams["data"] = $data;
     }
     public function getData()
     {
@@ -34,7 +34,7 @@ class AlipayZdatafrontDatatransferedSendRequest extends AbstractAlipayRequest
     public function setIdentity($identity)
     {
         $this->identity = $identity;
-        $this->apiParas["identity"] = $identity;
+        $this->apiParams["identity"] = $identity;
     }
     public function getIdentity()
     {
@@ -43,7 +43,7 @@ class AlipayZdatafrontDatatransferedSendRequest extends AbstractAlipayRequest
     public function setTypeId($typeId)
     {
         $this->typeId = $typeId;
-        $this->apiParas["type_id"] = $typeId;
+        $this->apiParams["type_id"] = $typeId;
     }
     public function getTypeId()
     {

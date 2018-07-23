@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class AlipayOpenPublicPersonalizedExtensionBatchqueryRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

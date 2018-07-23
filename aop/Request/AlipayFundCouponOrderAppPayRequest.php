@@ -13,11 +13,11 @@ class AlipayFundCouponOrderAppPayRequest extends AbstractAlipayRequest
      * 受托无线端支付接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

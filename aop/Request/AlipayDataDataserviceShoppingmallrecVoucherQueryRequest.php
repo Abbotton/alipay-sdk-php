@@ -13,11 +13,11 @@ class AlipayDataDataserviceShoppingmallrecVoucherQueryRequest extends AbstractAl
      * 商场券推荐
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -53,11 +53,11 @@ class AlipayOpenAgentFacetofaceSignRequest extends AbstractAlipayRequest
 ">商家经营类目</a> 中的“需要的特殊资质证书”，最小50KB，图片格式必须为：png、bmp、gif、jpg、jpeg
      **/
     private $specialLicensePic;
-    private $apiParas = array();
+    
     public function setBatchNo($batchNo)
     {
         $this->batchNo = $batchNo;
-        $this->apiParas["batch_no"] = $batchNo;
+        $this->apiParams["batch_no"] = $batchNo;
     }
     public function getBatchNo()
     {
@@ -66,7 +66,7 @@ class AlipayOpenAgentFacetofaceSignRequest extends AbstractAlipayRequest
     public function setBusinessLicenseAuthPic($businessLicenseAuthPic)
     {
         $this->businessLicenseAuthPic = $businessLicenseAuthPic;
-        $this->apiParas["business_license_auth_pic"] = $businessLicenseAuthPic;
+        $this->apiParams["business_license_auth_pic"] = $businessLicenseAuthPic;
     }
     public function getBusinessLicenseAuthPic()
     {
@@ -75,7 +75,7 @@ class AlipayOpenAgentFacetofaceSignRequest extends AbstractAlipayRequest
     public function setBusinessLicenseNo($businessLicenseNo)
     {
         $this->businessLicenseNo = $businessLicenseNo;
-        $this->apiParas["business_license_no"] = $businessLicenseNo;
+        $this->apiParams["business_license_no"] = $businessLicenseNo;
     }
     public function getBusinessLicenseNo()
     {
@@ -84,7 +84,7 @@ class AlipayOpenAgentFacetofaceSignRequest extends AbstractAlipayRequest
     public function setBusinessLicensePic($businessLicensePic)
     {
         $this->businessLicensePic = $businessLicensePic;
-        $this->apiParas["business_license_pic"] = $businessLicensePic;
+        $this->apiParams["business_license_pic"] = $businessLicensePic;
     }
     public function getBusinessLicensePic()
     {
@@ -93,7 +93,7 @@ class AlipayOpenAgentFacetofaceSignRequest extends AbstractAlipayRequest
     public function setDateLimitation($dateLimitation)
     {
         $this->dateLimitation = $dateLimitation;
-        $this->apiParas["date_limitation"] = $dateLimitation;
+        $this->apiParams["date_limitation"] = $dateLimitation;
     }
     public function getDateLimitation()
     {
@@ -102,7 +102,7 @@ class AlipayOpenAgentFacetofaceSignRequest extends AbstractAlipayRequest
     public function setLongTerm($longTerm)
     {
         $this->longTerm = $longTerm;
-        $this->apiParas["long_term"] = $longTerm;
+        $this->apiParams["long_term"] = $longTerm;
     }
     public function getLongTerm()
     {
@@ -111,7 +111,7 @@ class AlipayOpenAgentFacetofaceSignRequest extends AbstractAlipayRequest
     public function setMccCode($mccCode)
     {
         $this->mccCode = $mccCode;
-        $this->apiParas["mcc_code"] = $mccCode;
+        $this->apiParams["mcc_code"] = $mccCode;
     }
     public function getMccCode()
     {
@@ -120,7 +120,7 @@ class AlipayOpenAgentFacetofaceSignRequest extends AbstractAlipayRequest
     public function setShopScenePic($shopScenePic)
     {
         $this->shopScenePic = $shopScenePic;
-        $this->apiParas["shop_scene_pic"] = $shopScenePic;
+        $this->apiParams["shop_scene_pic"] = $shopScenePic;
     }
     public function getShopScenePic()
     {
@@ -129,7 +129,7 @@ class AlipayOpenAgentFacetofaceSignRequest extends AbstractAlipayRequest
     public function setShopSignBoardPic($shopSignBoardPic)
     {
         $this->shopSignBoardPic = $shopSignBoardPic;
-        $this->apiParas["shop_sign_board_pic"] = $shopSignBoardPic;
+        $this->apiParams["shop_sign_board_pic"] = $shopSignBoardPic;
     }
     public function getShopSignBoardPic()
     {
@@ -138,7 +138,7 @@ class AlipayOpenAgentFacetofaceSignRequest extends AbstractAlipayRequest
     public function setSpecialLicensePic($specialLicensePic)
     {
         $this->specialLicensePic = $specialLicensePic;
-        $this->apiParas["special_license_pic"] = $specialLicensePic;
+        $this->apiParams["special_license_pic"] = $specialLicensePic;
     }
     public function getSpecialLicensePic()
     {

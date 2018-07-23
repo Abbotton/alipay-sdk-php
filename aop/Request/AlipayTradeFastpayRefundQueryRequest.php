@@ -13,11 +13,11 @@ class AlipayTradeFastpayRefundQueryRequest extends AbstractAlipayRequest
      * 商户可使用该接口查询自已通过alipay.trade.refund提交的退款请求是否执行成功。
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

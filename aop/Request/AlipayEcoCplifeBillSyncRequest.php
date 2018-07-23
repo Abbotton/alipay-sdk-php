@@ -13,11 +13,11 @@ class AlipayEcoCplifeBillSyncRequest extends AbstractAlipayRequest
      * 物业费账单数据同步
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

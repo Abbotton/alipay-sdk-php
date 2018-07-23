@@ -13,11 +13,11 @@ class AlipayPassInstanceUpdateRequest extends AbstractAlipayRequest
      * 支付宝pass更新卡券实例接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

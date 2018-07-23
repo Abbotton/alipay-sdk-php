@@ -13,11 +13,11 @@ class AlipayEcoCplifeResidentinfoUploadRequest extends AbstractAlipayRequest
      * 物业小区业主信息上传
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -13,11 +13,11 @@ class AlipayMarketingVoucherStockMatchRequest extends AbstractAlipayRequest
      * 外部商户券码券核查
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

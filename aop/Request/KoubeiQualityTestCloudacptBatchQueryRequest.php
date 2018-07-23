@@ -13,11 +13,11 @@ class KoubeiQualityTestCloudacptBatchQueryRequest extends AbstractAlipayRequest
      * 云验收单品列表查询
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

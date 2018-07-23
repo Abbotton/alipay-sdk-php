@@ -13,11 +13,11 @@ class AlipayOpenPublicLifeAgentcreateQueryRequest extends AbstractAlipayRequest
      * isv代创建生活号申请状态查询接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

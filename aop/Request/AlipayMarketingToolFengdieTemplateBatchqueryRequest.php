@@ -13,11 +13,11 @@ class AlipayMarketingToolFengdieTemplateBatchqueryRequest extends AbstractAlipay
      * 获取云凤蝶空间可用模板列表
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -45,11 +45,11 @@ CAR_RENTING：租车行业解决方案
 每个场景码对应的数据模板不一样，请使用zhima.merchant.data.upload.initialize接口获取场景码对应的数据模板。
      **/
     private $sceneCode;
-    private $apiParas = array();
+    
     public function setBizExtParams($bizExtParams)
     {
         $this->bizExtParams = $bizExtParams;
-        $this->apiParas["biz_ext_params"] = $bizExtParams;
+        $this->apiParams["biz_ext_params"] = $bizExtParams;
     }
     public function getBizExtParams()
     {
@@ -58,7 +58,7 @@ CAR_RENTING：租车行业解决方案
     public function setColumns($columns)
     {
         $this->columns = $columns;
-        $this->apiParas["columns"] = $columns;
+        $this->apiParams["columns"] = $columns;
     }
     public function getColumns()
     {
@@ -67,7 +67,7 @@ CAR_RENTING：租车行业解决方案
     public function setFile($file)
     {
         $this->file = $file;
-        $this->apiParas["file"] = $file;
+        $this->apiParams["file"] = $file;
     }
     public function getFile()
     {
@@ -76,7 +76,7 @@ CAR_RENTING：租车行业解决方案
     public function setFileCharset($fileCharset)
     {
         $this->fileCharset = $fileCharset;
-        $this->apiParas["file_charset"] = $fileCharset;
+        $this->apiParams["file_charset"] = $fileCharset;
     }
     public function getFileCharset()
     {
@@ -85,7 +85,7 @@ CAR_RENTING：租车行业解决方案
     public function setLinkedMerchantId($linkedMerchantId)
     {
         $this->linkedMerchantId = $linkedMerchantId;
-        $this->apiParas["linked_merchant_id"] = $linkedMerchantId;
+        $this->apiParams["linked_merchant_id"] = $linkedMerchantId;
     }
     public function getLinkedMerchantId()
     {
@@ -94,7 +94,7 @@ CAR_RENTING：租车行业解决方案
     public function setPrimaryKeyColumns($primaryKeyColumns)
     {
         $this->primaryKeyColumns = $primaryKeyColumns;
-        $this->apiParas["primary_key_columns"] = $primaryKeyColumns;
+        $this->apiParams["primary_key_columns"] = $primaryKeyColumns;
     }
     public function getPrimaryKeyColumns()
     {
@@ -103,7 +103,7 @@ CAR_RENTING：租车行业解决方案
     public function setRecords($records)
     {
         $this->records = $records;
-        $this->apiParas["records"] = $records;
+        $this->apiParams["records"] = $records;
     }
     public function getRecords()
     {
@@ -112,7 +112,7 @@ CAR_RENTING：租车行业解决方案
     public function setSceneCode($sceneCode)
     {
         $this->sceneCode = $sceneCode;
-        $this->apiParas["scene_code"] = $sceneCode;
+        $this->apiParams["scene_code"] = $sceneCode;
     }
     public function getSceneCode()
     {

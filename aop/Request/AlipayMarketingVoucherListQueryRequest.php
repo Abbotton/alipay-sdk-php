@@ -13,11 +13,11 @@ class AlipayMarketingVoucherListQueryRequest extends AbstractAlipayRequest
      * 查询券列表
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

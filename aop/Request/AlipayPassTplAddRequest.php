@@ -18,11 +18,11 @@ class AlipayPassTplAddRequest extends AbstractAlipayRequest
      * 模版外部唯一标识：商户用于控制模版的唯一性。
      **/
     private $uniqueId;
-    private $apiParas = array();
+    
     public function setTplContent($tplContent)
     {
         $this->tplContent = $tplContent;
-        $this->apiParas["tpl_content"] = $tplContent;
+        $this->apiParams["tpl_content"] = $tplContent;
     }
     public function getTplContent()
     {
@@ -31,7 +31,7 @@ class AlipayPassTplAddRequest extends AbstractAlipayRequest
     public function setUniqueId($uniqueId)
     {
         $this->uniqueId = $uniqueId;
-        $this->apiParas["unique_id"] = $uniqueId;
+        $this->apiParams["unique_id"] = $uniqueId;
     }
     public function getUniqueId()
     {

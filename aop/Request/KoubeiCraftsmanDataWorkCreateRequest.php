@@ -13,11 +13,11 @@ class KoubeiCraftsmanDataWorkCreateRequest extends AbstractAlipayRequest
      * 手艺人作品发布接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

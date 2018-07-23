@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class AlipayOpenServicemarketOrderNotifyRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

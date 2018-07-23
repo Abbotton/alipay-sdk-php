@@ -65,11 +65,11 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
      * 违章行为，sub_order_type=TRAFFIC时填写。
      **/
     private $trafficRegulations;
-    private $apiParas = array();
+    
     public function setBankBillNo($bankBillNo)
     {
         $this->bankBillNo = $bankBillNo;
-        $this->apiParas["bank_bill_no"] = $bankBillNo;
+        $this->apiParams["bank_bill_no"] = $bankBillNo;
     }
     public function getBankBillNo()
     {
@@ -78,7 +78,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     public function setBillDate($billDate)
     {
         $this->billDate = $billDate;
-        $this->apiParas["bill_date"] = $billDate;
+        $this->apiParams["bill_date"] = $billDate;
     }
     public function getBillDate()
     {
@@ -87,7 +87,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     public function setBillKey($billKey)
     {
         $this->billKey = $billKey;
-        $this->apiParas["bill_key"] = $billKey;
+        $this->apiParams["bill_key"] = $billKey;
     }
     public function getBillKey()
     {
@@ -96,7 +96,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     public function setChargeInst($chargeInst)
     {
         $this->chargeInst = $chargeInst;
-        $this->apiParas["charge_inst"] = $chargeInst;
+        $this->apiParams["charge_inst"] = $chargeInst;
     }
     public function getChargeInst()
     {
@@ -105,7 +105,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     public function setExtendField($extendField)
     {
         $this->extendField = $extendField;
-        $this->apiParas["extend_field"] = $extendField;
+        $this->apiParams["extend_field"] = $extendField;
     }
     public function getExtendField()
     {
@@ -114,7 +114,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     public function setMerchantOrderNo($merchantOrderNo)
     {
         $this->merchantOrderNo = $merchantOrderNo;
-        $this->apiParas["merchant_order_no"] = $merchantOrderNo;
+        $this->apiParams["merchant_order_no"] = $merchantOrderNo;
     }
     public function getMerchantOrderNo()
     {
@@ -123,7 +123,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     public function setMobile($mobile)
     {
         $this->mobile = $mobile;
-        $this->apiParas["mobile"] = $mobile;
+        $this->apiParams["mobile"] = $mobile;
     }
     public function getMobile()
     {
@@ -132,7 +132,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     public function setOrderType($orderType)
     {
         $this->orderType = $orderType;
-        $this->apiParas["order_type"] = $orderType;
+        $this->apiParams["order_type"] = $orderType;
     }
     public function getOrderType()
     {
@@ -141,7 +141,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     public function setOwnerName($ownerName)
     {
         $this->ownerName = $ownerName;
-        $this->apiParas["owner_name"] = $ownerName;
+        $this->apiParams["owner_name"] = $ownerName;
     }
     public function getOwnerName()
     {
@@ -150,7 +150,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     public function setPayAmount($payAmount)
     {
         $this->payAmount = $payAmount;
-        $this->apiParas["pay_amount"] = $payAmount;
+        $this->apiParams["pay_amount"] = $payAmount;
     }
     public function getPayAmount()
     {
@@ -159,7 +159,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     public function setServiceAmount($serviceAmount)
     {
         $this->serviceAmount = $serviceAmount;
-        $this->apiParas["service_amount"] = $serviceAmount;
+        $this->apiParams["service_amount"] = $serviceAmount;
     }
     public function getServiceAmount()
     {
@@ -168,7 +168,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     public function setSubOrderType($subOrderType)
     {
         $this->subOrderType = $subOrderType;
-        $this->apiParas["sub_order_type"] = $subOrderType;
+        $this->apiParams["sub_order_type"] = $subOrderType;
     }
     public function getSubOrderType()
     {
@@ -177,7 +177,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     public function setTrafficLocation($trafficLocation)
     {
         $this->trafficLocation = $trafficLocation;
-        $this->apiParas["traffic_location"] = $trafficLocation;
+        $this->apiParams["traffic_location"] = $trafficLocation;
     }
     public function getTrafficLocation()
     {
@@ -186,7 +186,7 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
     public function setTrafficRegulations($trafficRegulations)
     {
         $this->trafficRegulations = $trafficRegulations;
-        $this->apiParas["traffic_regulations"] = $trafficRegulations;
+        $this->apiParams["traffic_regulations"] = $trafficRegulations;
     }
     public function getTrafficRegulations()
     {

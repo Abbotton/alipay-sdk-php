@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class AlipayMobilePublicMenuQueryRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

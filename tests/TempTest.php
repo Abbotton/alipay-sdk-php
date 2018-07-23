@@ -757,9 +757,8 @@ class TempTest extends TestCase
         foreach($list as $k => $v)
         {
             $ins = new $k();
-            $ins->terminalInfo = 10;
-            $get = $ins->terminalInfo;
-            $this->assertEquals($get, 10);
+            $params = $ins->apiParams;
+            $this->assertTrue(is_array($params));
         }
     }
 }

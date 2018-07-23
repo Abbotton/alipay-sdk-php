@@ -13,11 +13,11 @@ class AlipayEcoMycarParkingParkinglotinfoUpdateRequest extends AbstractAlipayReq
      * 修改停车场信息
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

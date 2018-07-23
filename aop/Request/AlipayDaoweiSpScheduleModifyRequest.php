@@ -13,11 +13,11 @@ class AlipayDaoweiSpScheduleModifyRequest extends AbstractAlipayRequest
      * 更新服务者可用时间接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

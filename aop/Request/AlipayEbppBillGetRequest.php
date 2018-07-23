@@ -17,11 +17,11 @@ class AlipayEbppBillGetRequest extends AbstractAlipayRequest
      * 支付宝订单类型。公共事业缴纳JF,信用卡还款HK
      **/
     private $orderType;
-    private $apiParas = array();
+    
     public function setMerchantOrderNo($merchantOrderNo)
     {
         $this->merchantOrderNo = $merchantOrderNo;
-        $this->apiParas["merchant_order_no"] = $merchantOrderNo;
+        $this->apiParams["merchant_order_no"] = $merchantOrderNo;
     }
     public function getMerchantOrderNo()
     {
@@ -30,7 +30,7 @@ class AlipayEbppBillGetRequest extends AbstractAlipayRequest
     public function setOrderType($orderType)
     {
         $this->orderType = $orderType;
-        $this->apiParas["order_type"] = $orderType;
+        $this->apiParams["order_type"] = $orderType;
     }
     public function getOrderType()
     {

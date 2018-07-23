@@ -33,11 +33,11 @@ class AlipayMobilePublicAccountAddRequest extends AbstractAlipayRequest
      * 绑定账户的用户名
      **/
     private $realName;
-    private $apiParas = array();
+    
     public function setAgreementId($agreementId)
     {
         $this->agreementId = $agreementId;
-        $this->apiParas["agreement_id"] = $agreementId;
+        $this->apiParams["agreement_id"] = $agreementId;
     }
     public function getAgreementId()
     {
@@ -46,7 +46,7 @@ class AlipayMobilePublicAccountAddRequest extends AbstractAlipayRequest
     public function setBindAccountNo($bindAccountNo)
     {
         $this->bindAccountNo = $bindAccountNo;
-        $this->apiParas["bind_account_no"] = $bindAccountNo;
+        $this->apiParams["bind_account_no"] = $bindAccountNo;
     }
     public function getBindAccountNo()
     {
@@ -55,7 +55,7 @@ class AlipayMobilePublicAccountAddRequest extends AbstractAlipayRequest
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {
@@ -64,7 +64,7 @@ class AlipayMobilePublicAccountAddRequest extends AbstractAlipayRequest
     public function setDisplayName($displayName)
     {
         $this->displayName = $displayName;
-        $this->apiParas["display_name"] = $displayName;
+        $this->apiParams["display_name"] = $displayName;
     }
     public function getDisplayName()
     {
@@ -73,7 +73,7 @@ class AlipayMobilePublicAccountAddRequest extends AbstractAlipayRequest
     public function setFromUserId($fromUserId)
     {
         $this->fromUserId = $fromUserId;
-        $this->apiParas["from_user_id"] = $fromUserId;
+        $this->apiParams["from_user_id"] = $fromUserId;
     }
     public function getFromUserId()
     {
@@ -82,7 +82,7 @@ class AlipayMobilePublicAccountAddRequest extends AbstractAlipayRequest
     public function setRealName($realName)
     {
         $this->realName = $realName;
-        $this->apiParas["real_name"] = $realName;
+        $this->apiParams["real_name"] = $realName;
     }
     public function getRealName()
     {

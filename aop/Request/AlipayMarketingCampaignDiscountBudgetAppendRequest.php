@@ -13,11 +13,11 @@ class AlipayMarketingCampaignDiscountBudgetAppendRequest extends AbstractAlipayR
      * 营销立减活动预算追加
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

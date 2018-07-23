@@ -101,11 +101,11 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
      * 用户证件号码
      **/
     private $userrIdentityNo;
-    private $apiParas = array();
+    
     public function setEnvClientBaseBand($envClientBaseBand)
     {
         $this->envClientBaseBand = $envClientBaseBand;
-        $this->apiParas["env_client_base_band"] = $envClientBaseBand;
+        $this->apiParams["env_client_base_band"] = $envClientBaseBand;
     }
     public function getEnvClientBaseBand()
     {
@@ -114,7 +114,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setEnvClientBaseStation($envClientBaseStation)
     {
         $this->envClientBaseStation = $envClientBaseStation;
-        $this->apiParas["env_client_base_station"] = $envClientBaseStation;
+        $this->apiParams["env_client_base_station"] = $envClientBaseStation;
     }
     public function getEnvClientBaseStation()
     {
@@ -123,7 +123,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setEnvClientCoordinates($envClientCoordinates)
     {
         $this->envClientCoordinates = $envClientCoordinates;
-        $this->apiParas["env_client_coordinates"] = $envClientCoordinates;
+        $this->apiParams["env_client_coordinates"] = $envClientCoordinates;
     }
     public function getEnvClientCoordinates()
     {
@@ -132,7 +132,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setEnvClientImei($envClientImei)
     {
         $this->envClientImei = $envClientImei;
-        $this->apiParas["env_client_imei"] = $envClientImei;
+        $this->apiParams["env_client_imei"] = $envClientImei;
     }
     public function getEnvClientImei()
     {
@@ -141,7 +141,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setEnvClientImsi($envClientImsi)
     {
         $this->envClientImsi = $envClientImsi;
-        $this->apiParas["env_client_imsi"] = $envClientImsi;
+        $this->apiParams["env_client_imsi"] = $envClientImsi;
     }
     public function getEnvClientImsi()
     {
@@ -150,7 +150,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setEnvClientIosUdid($envClientIosUdid)
     {
         $this->envClientIosUdid = $envClientIosUdid;
-        $this->apiParas["env_client_ios_udid"] = $envClientIosUdid;
+        $this->apiParams["env_client_ios_udid"] = $envClientIosUdid;
     }
     public function getEnvClientIosUdid()
     {
@@ -159,7 +159,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setEnvClientIp($envClientIp)
     {
         $this->envClientIp = $envClientIp;
-        $this->apiParas["env_client_ip"] = $envClientIp;
+        $this->apiParams["env_client_ip"] = $envClientIp;
     }
     public function getEnvClientIp()
     {
@@ -168,7 +168,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setEnvClientMac($envClientMac)
     {
         $this->envClientMac = $envClientMac;
-        $this->apiParas["env_client_mac"] = $envClientMac;
+        $this->apiParams["env_client_mac"] = $envClientMac;
     }
     public function getEnvClientMac()
     {
@@ -177,7 +177,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setEnvClientScreen($envClientScreen)
     {
         $this->envClientScreen = $envClientScreen;
-        $this->apiParas["env_client_screen"] = $envClientScreen;
+        $this->apiParams["env_client_screen"] = $envClientScreen;
     }
     public function getEnvClientScreen()
     {
@@ -186,7 +186,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setEnvClientUuid($envClientUuid)
     {
         $this->envClientUuid = $envClientUuid;
-        $this->apiParas["env_client_uuid"] = $envClientUuid;
+        $this->apiParams["env_client_uuid"] = $envClientUuid;
     }
     public function getEnvClientUuid()
     {
@@ -195,7 +195,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setJsTokenId($jsTokenId)
     {
         $this->jsTokenId = $jsTokenId;
-        $this->apiParas["js_token_id"] = $jsTokenId;
+        $this->apiParams["js_token_id"] = $jsTokenId;
     }
     public function getJsTokenId()
     {
@@ -204,7 +204,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setPartnerId($partnerId)
     {
         $this->partnerId = $partnerId;
-        $this->apiParas["partner_id"] = $partnerId;
+        $this->apiParams["partner_id"] = $partnerId;
     }
     public function getPartnerId()
     {
@@ -213,7 +213,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setSceneCode($sceneCode)
     {
         $this->sceneCode = $sceneCode;
-        $this->apiParas["scene_code"] = $sceneCode;
+        $this->apiParams["scene_code"] = $sceneCode;
     }
     public function getSceneCode()
     {
@@ -222,7 +222,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setUserAccountNo($userAccountNo)
     {
         $this->userAccountNo = $userAccountNo;
-        $this->apiParas["user_account_no"] = $userAccountNo;
+        $this->apiParams["user_account_no"] = $userAccountNo;
     }
     public function getUserAccountNo()
     {
@@ -231,7 +231,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setUserBindBankcard($userBindBankcard)
     {
         $this->userBindBankcard = $userBindBankcard;
-        $this->apiParas["user_bind_bankcard"] = $userBindBankcard;
+        $this->apiParams["user_bind_bankcard"] = $userBindBankcard;
     }
     public function getUserBindBankcard()
     {
@@ -240,7 +240,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setUserBindBankcardType($userBindBankcardType)
     {
         $this->userBindBankcardType = $userBindBankcardType;
-        $this->apiParas["user_bind_bankcard_type"] = $userBindBankcardType;
+        $this->apiParams["user_bind_bankcard_type"] = $userBindBankcardType;
     }
     public function getUserBindBankcardType()
     {
@@ -249,7 +249,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setUserBindMobile($userBindMobile)
     {
         $this->userBindMobile = $userBindMobile;
-        $this->apiParas["user_bind_mobile"] = $userBindMobile;
+        $this->apiParams["user_bind_mobile"] = $userBindMobile;
     }
     public function getUserBindMobile()
     {
@@ -258,7 +258,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setUserIdentityType($userIdentityType)
     {
         $this->userIdentityType = $userIdentityType;
-        $this->apiParas["user_identity_type"] = $userIdentityType;
+        $this->apiParams["user_identity_type"] = $userIdentityType;
     }
     public function getUserIdentityType()
     {
@@ -267,7 +267,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setUserRealName($userRealName)
     {
         $this->userRealName = $userRealName;
-        $this->apiParas["user_real_name"] = $userRealName;
+        $this->apiParams["user_real_name"] = $userRealName;
     }
     public function getUserRealName()
     {
@@ -276,7 +276,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setUserRegDate($userRegDate)
     {
         $this->userRegDate = $userRegDate;
-        $this->apiParas["user_reg_date"] = $userRegDate;
+        $this->apiParams["user_reg_date"] = $userRegDate;
     }
     public function getUserRegDate()
     {
@@ -285,7 +285,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setUserRegEmail($userRegEmail)
     {
         $this->userRegEmail = $userRegEmail;
-        $this->apiParas["user_reg_email"] = $userRegEmail;
+        $this->apiParams["user_reg_email"] = $userRegEmail;
     }
     public function getUserRegEmail()
     {
@@ -294,7 +294,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setUserRegMobile($userRegMobile)
     {
         $this->userRegMobile = $userRegMobile;
-        $this->apiParas["user_reg_mobile"] = $userRegMobile;
+        $this->apiParams["user_reg_mobile"] = $userRegMobile;
     }
     public function getUserRegMobile()
     {
@@ -303,7 +303,7 @@ class AlipaySecurityInfoAnalysisRequest extends AbstractAlipayRequest
     public function setUserrIdentityNo($userrIdentityNo)
     {
         $this->userrIdentityNo = $userrIdentityNo;
-        $this->apiParas["userr_identity_no"] = $userrIdentityNo;
+        $this->apiParams["userr_identity_no"] = $userrIdentityNo;
     }
     public function getUserrIdentityNo()
     {

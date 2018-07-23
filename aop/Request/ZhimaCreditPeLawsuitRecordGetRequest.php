@@ -13,11 +13,11 @@ class ZhimaCreditPeLawsuitRecordGetRequest extends AbstractAlipayRequest
      * 个人涉诉记录查询
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

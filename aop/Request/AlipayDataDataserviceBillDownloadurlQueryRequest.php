@@ -13,11 +13,11 @@ class AlipayDataDataserviceBillDownloadurlQueryRequest extends AbstractAlipayReq
      * 无授权模式的查询对账单下载地址
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -38,11 +38,11 @@ class AlipayEbppBillSearchRequest extends AbstractAlipayRequest
      * 子业务类型
      **/
     private $subOrderType;
-    private $apiParas = array();
+    
     public function setBillKey($billKey)
     {
         $this->billKey = $billKey;
-        $this->apiParas["bill_key"] = $billKey;
+        $this->apiParams["bill_key"] = $billKey;
     }
     public function getBillKey()
     {
@@ -51,7 +51,7 @@ class AlipayEbppBillSearchRequest extends AbstractAlipayRequest
     public function setChargeInst($chargeInst)
     {
         $this->chargeInst = $chargeInst;
-        $this->apiParas["charge_inst"] = $chargeInst;
+        $this->apiParams["charge_inst"] = $chargeInst;
     }
     public function getChargeInst()
     {
@@ -60,7 +60,7 @@ class AlipayEbppBillSearchRequest extends AbstractAlipayRequest
     public function setChargeoffInst($chargeoffInst)
     {
         $this->chargeoffInst = $chargeoffInst;
-        $this->apiParas["chargeoff_inst"] = $chargeoffInst;
+        $this->apiParams["chargeoff_inst"] = $chargeoffInst;
     }
     public function getChargeoffInst()
     {
@@ -69,7 +69,7 @@ class AlipayEbppBillSearchRequest extends AbstractAlipayRequest
     public function setCompanyId($companyId)
     {
         $this->companyId = $companyId;
-        $this->apiParas["company_id"] = $companyId;
+        $this->apiParams["company_id"] = $companyId;
     }
     public function getCompanyId()
     {
@@ -78,7 +78,7 @@ class AlipayEbppBillSearchRequest extends AbstractAlipayRequest
     public function setExtend($extend)
     {
         $this->extend = $extend;
-        $this->apiParas["extend"] = $extend;
+        $this->apiParams["extend"] = $extend;
     }
     public function getExtend()
     {
@@ -87,7 +87,7 @@ class AlipayEbppBillSearchRequest extends AbstractAlipayRequest
     public function setOrderType($orderType)
     {
         $this->orderType = $orderType;
-        $this->apiParas["order_type"] = $orderType;
+        $this->apiParams["order_type"] = $orderType;
     }
     public function getOrderType()
     {
@@ -96,7 +96,7 @@ class AlipayEbppBillSearchRequest extends AbstractAlipayRequest
     public function setSubOrderType($subOrderType)
     {
         $this->subOrderType = $subOrderType;
-        $this->apiParas["sub_order_type"] = $subOrderType;
+        $this->apiParams["sub_order_type"] = $subOrderType;
     }
     public function getSubOrderType()
     {

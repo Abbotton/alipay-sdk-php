@@ -78,11 +78,11 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
      * 企业特殊资质图片，可参考 <a href="https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.INIZWb&articleId=105364&docType=1">商家经营类目</a> 中的 “需要的特殊资质证书”
      **/
     private $specialLicensePic;
-    private $apiParas = array();
+    
     public function setAccount($account)
     {
         $this->account = $account;
-        $this->apiParas["account"] = $account;
+        $this->apiParams["account"] = $account;
     }
     public function getAccount()
     {
@@ -91,7 +91,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setBackgroundPic($backgroundPic)
     {
         $this->backgroundPic = $backgroundPic;
-        $this->apiParas["background_pic"] = $backgroundPic;
+        $this->apiParams["background_pic"] = $backgroundPic;
     }
     public function getBackgroundPic()
     {
@@ -100,7 +100,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setBusinessLicenseAuthPic($businessLicenseAuthPic)
     {
         $this->businessLicenseAuthPic = $businessLicenseAuthPic;
-        $this->apiParas["business_license_auth_pic"] = $businessLicenseAuthPic;
+        $this->apiParams["business_license_auth_pic"] = $businessLicenseAuthPic;
     }
     public function getBusinessLicenseAuthPic()
     {
@@ -109,7 +109,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setBusinessLicenseNo($businessLicenseNo)
     {
         $this->businessLicenseNo = $businessLicenseNo;
-        $this->apiParas["business_license_no"] = $businessLicenseNo;
+        $this->apiParams["business_license_no"] = $businessLicenseNo;
     }
     public function getBusinessLicenseNo()
     {
@@ -118,7 +118,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setBusinessLicensePic($businessLicensePic)
     {
         $this->businessLicensePic = $businessLicensePic;
-        $this->apiParas["business_license_pic"] = $businessLicensePic;
+        $this->apiParams["business_license_pic"] = $businessLicensePic;
     }
     public function getBusinessLicensePic()
     {
@@ -127,7 +127,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setContactEmail($contactEmail)
     {
         $this->contactEmail = $contactEmail;
-        $this->apiParas["contact_email"] = $contactEmail;
+        $this->apiParams["contact_email"] = $contactEmail;
     }
     public function getContactEmail()
     {
@@ -136,7 +136,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setContactMobile($contactMobile)
     {
         $this->contactMobile = $contactMobile;
-        $this->apiParas["contact_mobile"] = $contactMobile;
+        $this->apiParams["contact_mobile"] = $contactMobile;
     }
     public function getContactMobile()
     {
@@ -145,7 +145,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setContactName($contactName)
     {
         $this->contactName = $contactName;
-        $this->apiParas["contact_name"] = $contactName;
+        $this->apiParams["contact_name"] = $contactName;
     }
     public function getContactName()
     {
@@ -154,7 +154,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setLogoPic($logoPic)
     {
         $this->logoPic = $logoPic;
-        $this->apiParas["logo_pic"] = $logoPic;
+        $this->apiParams["logo_pic"] = $logoPic;
     }
     public function getLogoPic()
     {
@@ -163,7 +163,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setMccCode($mccCode)
     {
         $this->mccCode = $mccCode;
-        $this->apiParas["mcc_code"] = $mccCode;
+        $this->apiParams["mcc_code"] = $mccCode;
     }
     public function getMccCode()
     {
@@ -172,7 +172,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setOutBizNo($outBizNo)
     {
         $this->outBizNo = $outBizNo;
-        $this->apiParas["out_biz_no"] = $outBizNo;
+        $this->apiParams["out_biz_no"] = $outBizNo;
     }
     public function getOutBizNo()
     {
@@ -181,7 +181,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setOwnIntellectualPic($ownIntellectualPic)
     {
         $this->ownIntellectualPic = $ownIntellectualPic;
-        $this->apiParas["own_intellectual_pic"] = $ownIntellectualPic;
+        $this->apiParams["own_intellectual_pic"] = $ownIntellectualPic;
     }
     public function getOwnIntellectualPic()
     {
@@ -190,7 +190,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setPublicDesc($publicDesc)
     {
         $this->publicDesc = $publicDesc;
-        $this->apiParas["public_desc"] = $publicDesc;
+        $this->apiParams["public_desc"] = $publicDesc;
     }
     public function getPublicDesc()
     {
@@ -199,7 +199,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setPublicName($publicName)
     {
         $this->publicName = $publicName;
-        $this->apiParas["public_name"] = $publicName;
+        $this->apiParams["public_name"] = $publicName;
     }
     public function getPublicName()
     {
@@ -208,7 +208,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setShopScenePic($shopScenePic)
     {
         $this->shopScenePic = $shopScenePic;
-        $this->apiParas["shop_scene_pic"] = $shopScenePic;
+        $this->apiParams["shop_scene_pic"] = $shopScenePic;
     }
     public function getShopScenePic()
     {
@@ -217,7 +217,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setShopSignBoardPic($shopSignBoardPic)
     {
         $this->shopSignBoardPic = $shopSignBoardPic;
-        $this->apiParas["shop_sign_board_pic"] = $shopSignBoardPic;
+        $this->apiParams["shop_sign_board_pic"] = $shopSignBoardPic;
     }
     public function getShopSignBoardPic()
     {
@@ -226,7 +226,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     public function setSpecialLicensePic($specialLicensePic)
     {
         $this->specialLicensePic = $specialLicensePic;
-        $this->apiParas["special_license_pic"] = $specialLicensePic;
+        $this->apiParams["special_license_pic"] = $specialLicensePic;
     }
     public function getSpecialLicensePic()
     {

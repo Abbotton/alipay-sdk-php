@@ -13,11 +13,11 @@ class AlipayOpenMiniExperienceCancelRequest extends AbstractAlipayRequest
      * 小程序取消体验版
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

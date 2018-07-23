@@ -13,11 +13,11 @@ class AntMerchantExpandContractFacetofaceQueryRequest extends AbstractAlipayRequ
      * 当面付申请查询接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

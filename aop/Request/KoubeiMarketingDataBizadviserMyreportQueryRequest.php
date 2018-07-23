@@ -13,11 +13,11 @@ class KoubeiMarketingDataBizadviserMyreportQueryRequest extends AbstractAlipayRe
      * 经营参谋数据报表处理器
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

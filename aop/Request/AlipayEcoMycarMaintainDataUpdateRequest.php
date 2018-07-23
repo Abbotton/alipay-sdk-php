@@ -13,11 +13,11 @@ class AlipayEcoMycarMaintainDataUpdateRequest extends AbstractAlipayRequest
      * 保养数据变更通知
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

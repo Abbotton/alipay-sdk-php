@@ -13,11 +13,11 @@ class AlipayOpenServicemarketOrderItemCompleteRequest extends AbstractAlipayRequ
      * 服务商完成订单内单个明细实施操作
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

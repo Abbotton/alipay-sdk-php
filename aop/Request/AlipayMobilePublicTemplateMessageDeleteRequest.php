@@ -13,11 +13,11 @@ class AlipayMobilePublicTemplateMessageDeleteRequest extends AbstractAlipayReque
      * 模板id
      **/
     private $templateId;
-    private $apiParas = array();
+    
     public function setTemplateId($templateId)
     {
         $this->templateId = $templateId;
-        $this->apiParas["template_id"] = $templateId;
+        $this->apiParams["template_id"] = $templateId;
     }
     public function getTemplateId()
     {

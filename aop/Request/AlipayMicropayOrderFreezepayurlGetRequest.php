@@ -13,11 +13,11 @@ class AlipayMicropayOrderFreezepayurlGetRequest extends AbstractAlipayRequest
      * 冻结订单号,创建冻结订单时支付宝返回的
      **/
     private $alipayOrderNo;
-    private $apiParas = array();
+    
     public function setAlipayOrderNo($alipayOrderNo)
     {
         $this->alipayOrderNo = $alipayOrderNo;
-        $this->apiParas["alipay_order_no"] = $alipayOrderNo;
+        $this->apiParams["alipay_order_no"] = $alipayOrderNo;
     }
     public function getAlipayOrderNo()
     {

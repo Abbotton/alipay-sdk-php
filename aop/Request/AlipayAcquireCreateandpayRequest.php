@@ -145,11 +145,11 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
      * 该笔订单的资金总额，取值范围[0.01,100000000]，精确到小数点后2位。
      **/
     private $totalFee;
-    private $apiParas = array();
+    
     public function setAlipayCaRequest($alipayCaRequest)
     {
         $this->alipayCaRequest = $alipayCaRequest;
-        $this->apiParas["alipay_ca_request"] = $alipayCaRequest;
+        $this->apiParams["alipay_ca_request"] = $alipayCaRequest;
     }
     public function getAlipayCaRequest()
     {
@@ -158,7 +158,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setBody($body)
     {
         $this->body = $body;
-        $this->apiParas["body"] = $body;
+        $this->apiParams["body"] = $body;
     }
     public function getBody()
     {
@@ -167,7 +167,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setBuyerEmail($buyerEmail)
     {
         $this->buyerEmail = $buyerEmail;
-        $this->apiParas["buyer_email"] = $buyerEmail;
+        $this->apiParams["buyer_email"] = $buyerEmail;
     }
     public function getBuyerEmail()
     {
@@ -176,7 +176,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setBuyerId($buyerId)
     {
         $this->buyerId = $buyerId;
-        $this->apiParas["buyer_id"] = $buyerId;
+        $this->apiParams["buyer_id"] = $buyerId;
     }
     public function getBuyerId()
     {
@@ -185,7 +185,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setChannelParameters($channelParameters)
     {
         $this->channelParameters = $channelParameters;
-        $this->apiParas["channel_parameters"] = $channelParameters;
+        $this->apiParams["channel_parameters"] = $channelParameters;
     }
     public function getChannelParameters()
     {
@@ -194,7 +194,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setCurrency($currency)
     {
         $this->currency = $currency;
-        $this->apiParas["currency"] = $currency;
+        $this->apiParams["currency"] = $currency;
     }
     public function getCurrency()
     {
@@ -203,7 +203,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setDynamicId($dynamicId)
     {
         $this->dynamicId = $dynamicId;
-        $this->apiParas["dynamic_id"] = $dynamicId;
+        $this->apiParams["dynamic_id"] = $dynamicId;
     }
     public function getDynamicId()
     {
@@ -212,7 +212,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setDynamicIdType($dynamicIdType)
     {
         $this->dynamicIdType = $dynamicIdType;
-        $this->apiParas["dynamic_id_type"] = $dynamicIdType;
+        $this->apiParams["dynamic_id_type"] = $dynamicIdType;
     }
     public function getDynamicIdType()
     {
@@ -221,7 +221,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setExtendParams($extendParams)
     {
         $this->extendParams = $extendParams;
-        $this->apiParas["extend_params"] = $extendParams;
+        $this->apiParams["extend_params"] = $extendParams;
     }
     public function getExtendParams()
     {
@@ -230,7 +230,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setFormatType($formatType)
     {
         $this->formatType = $formatType;
-        $this->apiParas["format_type"] = $formatType;
+        $this->apiParams["format_type"] = $formatType;
     }
     public function getFormatType()
     {
@@ -239,7 +239,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setGoodsDetail($goodsDetail)
     {
         $this->goodsDetail = $goodsDetail;
-        $this->apiParas["goods_detail"] = $goodsDetail;
+        $this->apiParams["goods_detail"] = $goodsDetail;
     }
     public function getGoodsDetail()
     {
@@ -248,7 +248,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setItBPay($itBPay)
     {
         $this->itBPay = $itBPay;
-        $this->apiParas["it_b_pay"] = $itBPay;
+        $this->apiParams["it_b_pay"] = $itBPay;
     }
     public function getItBPay()
     {
@@ -257,7 +257,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setMcardParameters($mcardParameters)
     {
         $this->mcardParameters = $mcardParameters;
-        $this->apiParas["mcard_parameters"] = $mcardParameters;
+        $this->apiParams["mcard_parameters"] = $mcardParameters;
     }
     public function getMcardParameters()
     {
@@ -266,7 +266,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setOperatorId($operatorId)
     {
         $this->operatorId = $operatorId;
-        $this->apiParas["operator_id"] = $operatorId;
+        $this->apiParams["operator_id"] = $operatorId;
     }
     public function getOperatorId()
     {
@@ -275,7 +275,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setOperatorType($operatorType)
     {
         $this->operatorType = $operatorType;
-        $this->apiParas["operator_type"] = $operatorType;
+        $this->apiParams["operator_type"] = $operatorType;
     }
     public function getOperatorType()
     {
@@ -284,7 +284,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setOutTradeNo($outTradeNo)
     {
         $this->outTradeNo = $outTradeNo;
-        $this->apiParas["out_trade_no"] = $outTradeNo;
+        $this->apiParams["out_trade_no"] = $outTradeNo;
     }
     public function getOutTradeNo()
     {
@@ -293,7 +293,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setPrice($price)
     {
         $this->price = $price;
-        $this->apiParas["price"] = $price;
+        $this->apiParams["price"] = $price;
     }
     public function getPrice()
     {
@@ -302,7 +302,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
-        $this->apiParas["quantity"] = $quantity;
+        $this->apiParams["quantity"] = $quantity;
     }
     public function getQuantity()
     {
@@ -311,7 +311,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setRefIds($refIds)
     {
         $this->refIds = $refIds;
-        $this->apiParas["ref_ids"] = $refIds;
+        $this->apiParams["ref_ids"] = $refIds;
     }
     public function getRefIds()
     {
@@ -320,7 +320,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setRoyaltyParameters($royaltyParameters)
     {
         $this->royaltyParameters = $royaltyParameters;
-        $this->apiParas["royalty_parameters"] = $royaltyParameters;
+        $this->apiParams["royalty_parameters"] = $royaltyParameters;
     }
     public function getRoyaltyParameters()
     {
@@ -329,7 +329,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setRoyaltyType($royaltyType)
     {
         $this->royaltyType = $royaltyType;
-        $this->apiParas["royalty_type"] = $royaltyType;
+        $this->apiParams["royalty_type"] = $royaltyType;
     }
     public function getRoyaltyType()
     {
@@ -338,7 +338,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setSellerEmail($sellerEmail)
     {
         $this->sellerEmail = $sellerEmail;
-        $this->apiParas["seller_email"] = $sellerEmail;
+        $this->apiParams["seller_email"] = $sellerEmail;
     }
     public function getSellerEmail()
     {
@@ -347,7 +347,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setSellerId($sellerId)
     {
         $this->sellerId = $sellerId;
-        $this->apiParas["seller_id"] = $sellerId;
+        $this->apiParams["seller_id"] = $sellerId;
     }
     public function getSellerId()
     {
@@ -356,7 +356,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setShowUrl($showUrl)
     {
         $this->showUrl = $showUrl;
-        $this->apiParas["show_url"] = $showUrl;
+        $this->apiParams["show_url"] = $showUrl;
     }
     public function getShowUrl()
     {
@@ -365,7 +365,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setSubject($subject)
     {
         $this->subject = $subject;
-        $this->apiParas["subject"] = $subject;
+        $this->apiParams["subject"] = $subject;
     }
     public function getSubject()
     {
@@ -374,7 +374,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     public function setTotalFee($totalFee)
     {
         $this->totalFee = $totalFee;
-        $this->apiParas["total_fee"] = $totalFee;
+        $this->apiParams["total_fee"] = $totalFee;
     }
     public function getTotalFee()
     {

@@ -13,11 +13,11 @@ class AlipayOpenPublicPersonalizedExtensionSetRequest extends AbstractAlipayRequ
      * 个性化扩展区上下线接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

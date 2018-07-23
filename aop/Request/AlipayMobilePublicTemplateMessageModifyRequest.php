@@ -17,11 +17,11 @@ class AlipayMobilePublicTemplateMessageModifyRequest extends AbstractAlipayReque
      * 行业设置
      **/
     private $tradeSetting;
-    private $apiParas = array();
+    
     public function setTemplateId($templateId)
     {
         $this->templateId = $templateId;
-        $this->apiParas["template_id"] = $templateId;
+        $this->apiParams["template_id"] = $templateId;
     }
     public function getTemplateId()
     {
@@ -30,7 +30,7 @@ class AlipayMobilePublicTemplateMessageModifyRequest extends AbstractAlipayReque
     public function setTradeSetting($tradeSetting)
     {
         $this->tradeSetting = $tradeSetting;
-        $this->apiParas["trade_setting"] = $tradeSetting;
+        $this->apiParams["trade_setting"] = $tradeSetting;
     }
     public function getTradeSetting()
     {

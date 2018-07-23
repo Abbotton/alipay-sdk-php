@@ -13,11 +13,11 @@ class AlipayOpenSmsgDataSetRequest extends AbstractAlipayRequest
      * to蚂蚁消息测试-数据重置
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

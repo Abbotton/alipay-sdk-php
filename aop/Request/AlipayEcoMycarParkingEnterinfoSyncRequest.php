@@ -13,11 +13,11 @@ class AlipayEcoMycarParkingEnterinfoSyncRequest extends AbstractAlipayRequest
      * 车辆驶入上送接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

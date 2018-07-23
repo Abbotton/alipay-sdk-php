@@ -13,11 +13,11 @@ class AlipayMobileStdPublicFollowListRequest extends AbstractAlipayRequest
      * 当nextUserId为空时,代表查询第一组,如果有值时以当前值为准查询下一组
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

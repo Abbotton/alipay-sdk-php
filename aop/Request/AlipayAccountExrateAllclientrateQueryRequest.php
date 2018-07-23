@@ -13,11 +13,11 @@ class AlipayAccountExrateAllclientrateQueryRequest extends AbstractAlipayRequest
      * 查询客户的所有币种对最新有效汇率
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

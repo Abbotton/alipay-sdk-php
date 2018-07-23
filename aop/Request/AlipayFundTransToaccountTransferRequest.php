@@ -13,11 +13,11 @@ class AlipayFundTransToaccountTransferRequest extends AbstractAlipayRequest
      * 单笔转账到支付宝账户接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

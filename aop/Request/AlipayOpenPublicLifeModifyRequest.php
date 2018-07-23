@@ -49,11 +49,11 @@ class AlipayOpenPublicLifeModifyRequest extends AbstractAlipayRequest
      * 用户ID
      **/
     private $userId;
-    private $apiParas = array();
+    
     public function setBackground($background)
     {
         $this->background = $background;
-        $this->apiParas["background"] = $background;
+        $this->apiParams["background"] = $background;
     }
     public function getBackground()
     {
@@ -62,7 +62,7 @@ class AlipayOpenPublicLifeModifyRequest extends AbstractAlipayRequest
     public function setContactEmail($contactEmail)
     {
         $this->contactEmail = $contactEmail;
-        $this->apiParas["contact_email"] = $contactEmail;
+        $this->apiParams["contact_email"] = $contactEmail;
     }
     public function getContactEmail()
     {
@@ -71,7 +71,7 @@ class AlipayOpenPublicLifeModifyRequest extends AbstractAlipayRequest
     public function setContactName($contactName)
     {
         $this->contactName = $contactName;
-        $this->apiParas["contact_name"] = $contactName;
+        $this->apiParams["contact_name"] = $contactName;
     }
     public function getContactName()
     {
@@ -80,7 +80,7 @@ class AlipayOpenPublicLifeModifyRequest extends AbstractAlipayRequest
     public function setContactTel($contactTel)
     {
         $this->contactTel = $contactTel;
-        $this->apiParas["contact_tel"] = $contactTel;
+        $this->apiParams["contact_tel"] = $contactTel;
     }
     public function getContactTel()
     {
@@ -89,7 +89,7 @@ class AlipayOpenPublicLifeModifyRequest extends AbstractAlipayRequest
     public function setCustomerTel($customerTel)
     {
         $this->customerTel = $customerTel;
-        $this->apiParas["customer_tel"] = $customerTel;
+        $this->apiParams["customer_tel"] = $customerTel;
     }
     public function getCustomerTel()
     {
@@ -98,7 +98,7 @@ class AlipayOpenPublicLifeModifyRequest extends AbstractAlipayRequest
     public function setDescription($description)
     {
         $this->description = $description;
-        $this->apiParas["description"] = $description;
+        $this->apiParams["description"] = $description;
     }
     public function getDescription()
     {
@@ -107,7 +107,7 @@ class AlipayOpenPublicLifeModifyRequest extends AbstractAlipayRequest
     public function setExtendData($extendData)
     {
         $this->extendData = $extendData;
-        $this->apiParas["extend_data"] = $extendData;
+        $this->apiParams["extend_data"] = $extendData;
     }
     public function getExtendData()
     {
@@ -116,7 +116,7 @@ class AlipayOpenPublicLifeModifyRequest extends AbstractAlipayRequest
     public function setLifeName($lifeName)
     {
         $this->lifeName = $lifeName;
-        $this->apiParas["life_name"] = $lifeName;
+        $this->apiParams["life_name"] = $lifeName;
     }
     public function getLifeName()
     {
@@ -125,7 +125,7 @@ class AlipayOpenPublicLifeModifyRequest extends AbstractAlipayRequest
     public function setLogo($logo)
     {
         $this->logo = $logo;
-        $this->apiParas["logo"] = $logo;
+        $this->apiParams["logo"] = $logo;
     }
     public function getLogo()
     {
@@ -134,7 +134,7 @@ class AlipayOpenPublicLifeModifyRequest extends AbstractAlipayRequest
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParas["user_id"] = $userId;
+        $this->apiParams["user_id"] = $userId;
     }
     public function getUserId()
     {

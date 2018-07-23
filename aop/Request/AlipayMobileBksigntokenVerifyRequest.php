@@ -21,11 +21,11 @@ class AlipayMobileBksigntokenVerifyRequest extends AbstractAlipayRequest
      * 查询token
      **/
     private $token;
-    private $apiParas = array();
+    
     public function setDeviceid($deviceid)
     {
         $this->deviceid = $deviceid;
-        $this->apiParas["deviceid"] = $deviceid;
+        $this->apiParams["deviceid"] = $deviceid;
     }
     public function getDeviceid()
     {
@@ -34,7 +34,7 @@ class AlipayMobileBksigntokenVerifyRequest extends AbstractAlipayRequest
     public function setSource($source)
     {
         $this->source = $source;
-        $this->apiParas["source"] = $source;
+        $this->apiParams["source"] = $source;
     }
     public function getSource()
     {
@@ -43,7 +43,7 @@ class AlipayMobileBksigntokenVerifyRequest extends AbstractAlipayRequest
     public function setToken($token)
     {
         $this->token = $token;
-        $this->apiParas["token"] = $token;
+        $this->apiParams["token"] = $token;
     }
     public function getToken()
     {

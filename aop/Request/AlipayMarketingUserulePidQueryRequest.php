@@ -13,11 +13,11 @@ class AlipayMarketingUserulePidQueryRequest extends AbstractAlipayRequest
      * 商户签约PID查询
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

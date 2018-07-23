@@ -13,11 +13,11 @@ class AlipayEbppInvoiceInfoSendRequest extends AbstractAlipayRequest
      * 发票信息回传接口（新版）
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

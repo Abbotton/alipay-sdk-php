@@ -35,11 +35,11 @@ class AlipayZdatafrontCommonQueryRequest extends AbstractAlipayRequest
      * 访问该服务的部门名称
      **/
     private $visitDomain;
-    private $apiParas = array();
+    
     public function setCacheInterval($cacheInterval)
     {
         $this->cacheInterval = $cacheInterval;
-        $this->apiParas["cache_interval"] = $cacheInterval;
+        $this->apiParams["cache_interval"] = $cacheInterval;
     }
     public function getCacheInterval()
     {
@@ -48,7 +48,7 @@ class AlipayZdatafrontCommonQueryRequest extends AbstractAlipayRequest
     public function setQueryConditions($queryConditions)
     {
         $this->queryConditions = $queryConditions;
-        $this->apiParas["query_conditions"] = $queryConditions;
+        $this->apiParams["query_conditions"] = $queryConditions;
     }
     public function getQueryConditions()
     {
@@ -57,7 +57,7 @@ class AlipayZdatafrontCommonQueryRequest extends AbstractAlipayRequest
     public function setServiceName($serviceName)
     {
         $this->serviceName = $serviceName;
-        $this->apiParas["service_name"] = $serviceName;
+        $this->apiParams["service_name"] = $serviceName;
     }
     public function getServiceName()
     {
@@ -66,7 +66,7 @@ class AlipayZdatafrontCommonQueryRequest extends AbstractAlipayRequest
     public function setVisitBiz($visitBiz)
     {
         $this->visitBiz = $visitBiz;
-        $this->apiParas["visit_biz"] = $visitBiz;
+        $this->apiParams["visit_biz"] = $visitBiz;
     }
     public function getVisitBiz()
     {
@@ -75,7 +75,7 @@ class AlipayZdatafrontCommonQueryRequest extends AbstractAlipayRequest
     public function setVisitBizLine($visitBizLine)
     {
         $this->visitBizLine = $visitBizLine;
-        $this->apiParas["visit_biz_line"] = $visitBizLine;
+        $this->apiParams["visit_biz_line"] = $visitBizLine;
     }
     public function getVisitBizLine()
     {
@@ -84,7 +84,7 @@ class AlipayZdatafrontCommonQueryRequest extends AbstractAlipayRequest
     public function setVisitDomain($visitDomain)
     {
         $this->visitDomain = $visitDomain;
-        $this->apiParas["visit_domain"] = $visitDomain;
+        $this->apiParams["visit_domain"] = $visitDomain;
     }
     public function getVisitDomain()
     {

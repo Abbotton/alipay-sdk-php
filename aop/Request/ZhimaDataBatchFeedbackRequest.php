@@ -41,11 +41,11 @@ class ZhimaDataBatchFeedbackRequest extends AbstractAlipayRequest
      * 文件数据记录条数
      **/
     private $records;
-    private $apiParas = array();
+    
     public function setBizExtParams($bizExtParams)
     {
         $this->bizExtParams = $bizExtParams;
-        $this->apiParas["biz_ext_params"] = $bizExtParams;
+        $this->apiParams["biz_ext_params"] = $bizExtParams;
     }
     public function getBizExtParams()
     {
@@ -54,7 +54,7 @@ class ZhimaDataBatchFeedbackRequest extends AbstractAlipayRequest
     public function setColumns($columns)
     {
         $this->columns = $columns;
-        $this->apiParas["columns"] = $columns;
+        $this->apiParams["columns"] = $columns;
     }
     public function getColumns()
     {
@@ -63,7 +63,7 @@ class ZhimaDataBatchFeedbackRequest extends AbstractAlipayRequest
     public function setFile($file)
     {
         $this->file = $file;
-        $this->apiParas["file"] = $file;
+        $this->apiParams["file"] = $file;
     }
     public function getFile()
     {
@@ -72,7 +72,7 @@ class ZhimaDataBatchFeedbackRequest extends AbstractAlipayRequest
     public function setFileCharset($fileCharset)
     {
         $this->fileCharset = $fileCharset;
-        $this->apiParas["file_charset"] = $fileCharset;
+        $this->apiParams["file_charset"] = $fileCharset;
     }
     public function getFileCharset()
     {
@@ -81,7 +81,7 @@ class ZhimaDataBatchFeedbackRequest extends AbstractAlipayRequest
     public function setFileDescription($fileDescription)
     {
         $this->fileDescription = $fileDescription;
-        $this->apiParas["file_description"] = $fileDescription;
+        $this->apiParams["file_description"] = $fileDescription;
     }
     public function getFileDescription()
     {
@@ -90,7 +90,7 @@ class ZhimaDataBatchFeedbackRequest extends AbstractAlipayRequest
     public function setFileType($fileType)
     {
         $this->fileType = $fileType;
-        $this->apiParas["file_type"] = $fileType;
+        $this->apiParams["file_type"] = $fileType;
     }
     public function getFileType()
     {
@@ -99,7 +99,7 @@ class ZhimaDataBatchFeedbackRequest extends AbstractAlipayRequest
     public function setPrimaryKeyColumns($primaryKeyColumns)
     {
         $this->primaryKeyColumns = $primaryKeyColumns;
-        $this->apiParas["primary_key_columns"] = $primaryKeyColumns;
+        $this->apiParams["primary_key_columns"] = $primaryKeyColumns;
     }
     public function getPrimaryKeyColumns()
     {
@@ -108,7 +108,7 @@ class ZhimaDataBatchFeedbackRequest extends AbstractAlipayRequest
     public function setRecords($records)
     {
         $this->records = $records;
-        $this->apiParas["records"] = $records;
+        $this->apiParams["records"] = $records;
     }
     public function getRecords()
     {

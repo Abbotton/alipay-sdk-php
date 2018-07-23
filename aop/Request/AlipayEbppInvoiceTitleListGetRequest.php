@@ -13,11 +13,11 @@ class AlipayEbppInvoiceTitleListGetRequest extends AbstractAlipayRequest
      * 蚂蚁电子发票平台用户发票抬头列表获取
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

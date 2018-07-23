@@ -29,11 +29,11 @@ class AlipayPassCodeVerifyRequest extends AbstractAlipayRequest
      * Alipass对应的核销码串
      **/
     private $verifyCode;
-    private $apiParas = array();
+    
     public function setExtInfo($extInfo)
     {
         $this->extInfo = $extInfo;
-        $this->apiParas["ext_info"] = $extInfo;
+        $this->apiParams["ext_info"] = $extInfo;
     }
     public function getExtInfo()
     {
@@ -42,7 +42,7 @@ class AlipayPassCodeVerifyRequest extends AbstractAlipayRequest
     public function setOperatorId($operatorId)
     {
         $this->operatorId = $operatorId;
-        $this->apiParas["operator_id"] = $operatorId;
+        $this->apiParams["operator_id"] = $operatorId;
     }
     public function getOperatorId()
     {
@@ -51,7 +51,7 @@ class AlipayPassCodeVerifyRequest extends AbstractAlipayRequest
     public function setOperatorType($operatorType)
     {
         $this->operatorType = $operatorType;
-        $this->apiParas["operator_type"] = $operatorType;
+        $this->apiParams["operator_type"] = $operatorType;
     }
     public function getOperatorType()
     {
@@ -60,7 +60,7 @@ class AlipayPassCodeVerifyRequest extends AbstractAlipayRequest
     public function setVerifyCode($verifyCode)
     {
         $this->verifyCode = $verifyCode;
-        $this->apiParas["verify_code"] = $verifyCode;
+        $this->apiParams["verify_code"] = $verifyCode;
     }
     public function getVerifyCode()
     {

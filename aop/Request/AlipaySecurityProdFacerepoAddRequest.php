@@ -13,11 +13,11 @@ class AlipaySecurityProdFacerepoAddRequest extends AbstractAlipayRequest
      * 人脸1:N服务入库接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -45,11 +45,11 @@ UID：用户支付宝账户的唯一ID
 OPENID：用户支付宝账户在某商户下的唯一ID
      **/
     private $userInfo;
-    private $apiParas = array();
+    
     public function setMerchantInfo($merchantInfo)
     {
         $this->merchantInfo = $merchantInfo;
-        $this->apiParas["merchant_info"] = $merchantInfo;
+        $this->apiParams["merchant_info"] = $merchantInfo;
     }
     public function getMerchantInfo()
     {
@@ -58,7 +58,7 @@ OPENID：用户支付宝账户在某商户下的唯一ID
     public function setPageNo($pageNo)
     {
         $this->pageNo = $pageNo;
-        $this->apiParas["page_no"] = $pageNo;
+        $this->apiParams["page_no"] = $pageNo;
     }
     public function getPageNo()
     {
@@ -67,7 +67,7 @@ OPENID：用户支付宝账户在某商户下的唯一ID
     public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
-        $this->apiParas["page_size"] = $pageSize;
+        $this->apiParams["page_size"] = $pageSize;
     }
     public function getPageSize()
     {
@@ -76,7 +76,7 @@ OPENID：用户支付宝账户在某商户下的唯一ID
     public function setStatus($status)
     {
         $this->status = $status;
-        $this->apiParas["status"] = $status;
+        $this->apiParams["status"] = $status;
     }
     public function getStatus()
     {
@@ -85,7 +85,7 @@ OPENID：用户支付宝账户在某商户下的唯一ID
     public function setUserInfo($userInfo)
     {
         $this->userInfo = $userInfo;
-        $this->apiParas["user_info"] = $userInfo;
+        $this->apiParams["user_info"] = $userInfo;
     }
     public function getUserInfo()
     {

@@ -13,11 +13,11 @@ class AlipayOpenPublicArticlesummaryDataBatchqueryRequest extends AbstractAlipay
      * 图文分析-按时间查询数据接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

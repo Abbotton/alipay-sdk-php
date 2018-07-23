@@ -17,11 +17,11 @@ class AlipayPassTplUpdateRequest extends AbstractAlipayRequest
      * 模版ID
      **/
     private $tplId;
-    private $apiParas = array();
+    
     public function setTplContent($tplContent)
     {
         $this->tplContent = $tplContent;
-        $this->apiParas["tpl_content"] = $tplContent;
+        $this->apiParams["tpl_content"] = $tplContent;
     }
     public function getTplContent()
     {
@@ -30,7 +30,7 @@ class AlipayPassTplUpdateRequest extends AbstractAlipayRequest
     public function setTplId($tplId)
     {
         $this->tplId = $tplId;
-        $this->apiParas["tpl_id"] = $tplId;
+        $this->apiParams["tpl_id"] = $tplId;
     }
     public function getTplId()
     {

@@ -13,11 +13,11 @@ class ZhimaCreditScoreBriefGetRequest extends AbstractAlipayRequest
      * 芝麻信用评分普惠版
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -13,11 +13,11 @@ class AlipayEcoMycarViolationCityPushRequest extends AbstractAlipayRequest
      * 推送新支持违章查询的城市
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

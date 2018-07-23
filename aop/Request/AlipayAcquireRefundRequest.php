@@ -47,11 +47,11 @@ class AlipayAcquireRefundRequest extends AbstractAlipayRequest
 如果同时传了out_trade_no和trade_no，则以trade_no为准
      **/
     private $tradeNo;
-    private $apiParas = array();
+    
     public function setOperatorId($operatorId)
     {
         $this->operatorId = $operatorId;
-        $this->apiParas["operator_id"] = $operatorId;
+        $this->apiParams["operator_id"] = $operatorId;
     }
     public function getOperatorId()
     {
@@ -60,7 +60,7 @@ class AlipayAcquireRefundRequest extends AbstractAlipayRequest
     public function setOperatorType($operatorType)
     {
         $this->operatorType = $operatorType;
-        $this->apiParas["operator_type"] = $operatorType;
+        $this->apiParams["operator_type"] = $operatorType;
     }
     public function getOperatorType()
     {
@@ -69,7 +69,7 @@ class AlipayAcquireRefundRequest extends AbstractAlipayRequest
     public function setOutRequestNo($outRequestNo)
     {
         $this->outRequestNo = $outRequestNo;
-        $this->apiParas["out_request_no"] = $outRequestNo;
+        $this->apiParams["out_request_no"] = $outRequestNo;
     }
     public function getOutRequestNo()
     {
@@ -78,7 +78,7 @@ class AlipayAcquireRefundRequest extends AbstractAlipayRequest
     public function setOutTradeNo($outTradeNo)
     {
         $this->outTradeNo = $outTradeNo;
-        $this->apiParas["out_trade_no"] = $outTradeNo;
+        $this->apiParams["out_trade_no"] = $outTradeNo;
     }
     public function getOutTradeNo()
     {
@@ -87,7 +87,7 @@ class AlipayAcquireRefundRequest extends AbstractAlipayRequest
     public function setRefIds($refIds)
     {
         $this->refIds = $refIds;
-        $this->apiParas["ref_ids"] = $refIds;
+        $this->apiParams["ref_ids"] = $refIds;
     }
     public function getRefIds()
     {
@@ -96,7 +96,7 @@ class AlipayAcquireRefundRequest extends AbstractAlipayRequest
     public function setRefundAmount($refundAmount)
     {
         $this->refundAmount = $refundAmount;
-        $this->apiParas["refund_amount"] = $refundAmount;
+        $this->apiParams["refund_amount"] = $refundAmount;
     }
     public function getRefundAmount()
     {
@@ -105,7 +105,7 @@ class AlipayAcquireRefundRequest extends AbstractAlipayRequest
     public function setRefundReason($refundReason)
     {
         $this->refundReason = $refundReason;
-        $this->apiParas["refund_reason"] = $refundReason;
+        $this->apiParams["refund_reason"] = $refundReason;
     }
     public function getRefundReason()
     {
@@ -114,7 +114,7 @@ class AlipayAcquireRefundRequest extends AbstractAlipayRequest
     public function setTradeNo($tradeNo)
     {
         $this->tradeNo = $tradeNo;
-        $this->apiParas["trade_no"] = $tradeNo;
+        $this->apiParams["trade_no"] = $tradeNo;
     }
     public function getTradeNo()
     {

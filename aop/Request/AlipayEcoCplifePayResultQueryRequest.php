@@ -13,11 +13,11 @@ class AlipayEcoCplifePayResultQueryRequest extends AbstractAlipayRequest
      * 查询单笔物业费交易关联账单详情
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

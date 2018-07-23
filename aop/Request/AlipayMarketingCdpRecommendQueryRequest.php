@@ -13,11 +13,11 @@ class AlipayMarketingCdpRecommendQueryRequest extends AbstractAlipayRequest
      * 外部应用根据用户当前地理位置查询附近商家信息
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

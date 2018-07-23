@@ -33,11 +33,11 @@ class AlipayEcardEduPublicBindRequest extends AbstractAlipayRequest
      * 公众账号id
      **/
     private $publicId;
-    private $apiParas = array();
+    
     public function setAgentCode($agentCode)
     {
         $this->agentCode = $agentCode;
-        $this->apiParas["agent_code"] = $agentCode;
+        $this->apiParams["agent_code"] = $agentCode;
     }
     public function getAgentCode()
     {
@@ -46,7 +46,7 @@ class AlipayEcardEduPublicBindRequest extends AbstractAlipayRequest
     public function setAgreementId($agreementId)
     {
         $this->agreementId = $agreementId;
-        $this->apiParas["agreement_id"] = $agreementId;
+        $this->apiParams["agreement_id"] = $agreementId;
     }
     public function getAgreementId()
     {
@@ -55,7 +55,7 @@ class AlipayEcardEduPublicBindRequest extends AbstractAlipayRequest
     public function setAlipayUserId($alipayUserId)
     {
         $this->alipayUserId = $alipayUserId;
-        $this->apiParas["alipay_user_id"] = $alipayUserId;
+        $this->apiParams["alipay_user_id"] = $alipayUserId;
     }
     public function getAlipayUserId()
     {
@@ -64,7 +64,7 @@ class AlipayEcardEduPublicBindRequest extends AbstractAlipayRequest
     public function setCardName($cardName)
     {
         $this->cardName = $cardName;
-        $this->apiParas["card_name"] = $cardName;
+        $this->apiParams["card_name"] = $cardName;
     }
     public function getCardName()
     {
@@ -73,7 +73,7 @@ class AlipayEcardEduPublicBindRequest extends AbstractAlipayRequest
     public function setCardNo($cardNo)
     {
         $this->cardNo = $cardNo;
-        $this->apiParas["card_no"] = $cardNo;
+        $this->apiParams["card_no"] = $cardNo;
     }
     public function getCardNo()
     {
@@ -82,7 +82,7 @@ class AlipayEcardEduPublicBindRequest extends AbstractAlipayRequest
     public function setPublicId($publicId)
     {
         $this->publicId = $publicId;
-        $this->apiParas["public_id"] = $publicId;
+        $this->apiParams["public_id"] = $publicId;
     }
     public function getPublicId()
     {

@@ -13,11 +13,11 @@ class KoubeiMarketingDataIntelligentIndicatorQueryRequest extends AbstractAlipay
      * 智能营销方案维度的数据查询
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

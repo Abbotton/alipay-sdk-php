@@ -13,11 +13,11 @@ class AlipayMsaasPromotionCpainfoCreateRequest extends AbstractAlipayRequest
      * 此api为了让第三方渠道端调用 ，记录他们的调用数据，然后根据数据比对进行计费功能
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -13,11 +13,11 @@ class KoubeiRetailShopitemModifyRequest extends AbstractAlipayRequest
      * isv 回传的门店商品信更新接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

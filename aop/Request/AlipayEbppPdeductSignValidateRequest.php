@@ -13,11 +13,11 @@ class AlipayEbppPdeductSignValidateRequest extends AbstractAlipayRequest
      * 缴费直连代扣签约前置校验
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -13,11 +13,11 @@ class AlipayPlatformOpenidGetRequest extends AbstractAlipayRequest
      * 业务内容，其中包括商户partner_id和用户ID列表user_ids两块
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

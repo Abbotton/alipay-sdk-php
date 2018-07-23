@@ -45,11 +45,11 @@ class AlipayUserTradeSearchRequest extends AbstractAlipayRequest
      * 开始时间，时间必须是今天范围之内。格式为yyyy-MM-dd HH:mm:ss，精确到秒(升级后的api 1.1版本)
      **/
     private $startTime;
-    private $apiParas = array();
+    
     public function setAlipayOrderNo($alipayOrderNo)
     {
         $this->alipayOrderNo = $alipayOrderNo;
-        $this->apiParas["alipay_order_no"] = $alipayOrderNo;
+        $this->apiParams["alipay_order_no"] = $alipayOrderNo;
     }
     public function getAlipayOrderNo()
     {
@@ -58,7 +58,7 @@ class AlipayUserTradeSearchRequest extends AbstractAlipayRequest
     public function setEndTime($endTime)
     {
         $this->endTime = $endTime;
-        $this->apiParas["end_time"] = $endTime;
+        $this->apiParams["end_time"] = $endTime;
     }
     public function getEndTime()
     {
@@ -67,7 +67,7 @@ class AlipayUserTradeSearchRequest extends AbstractAlipayRequest
     public function setMerchantOrderNo($merchantOrderNo)
     {
         $this->merchantOrderNo = $merchantOrderNo;
-        $this->apiParas["merchant_order_no"] = $merchantOrderNo;
+        $this->apiParams["merchant_order_no"] = $merchantOrderNo;
     }
     public function getMerchantOrderNo()
     {
@@ -76,7 +76,7 @@ class AlipayUserTradeSearchRequest extends AbstractAlipayRequest
     public function setOrderFrom($orderFrom)
     {
         $this->orderFrom = $orderFrom;
-        $this->apiParas["order_from"] = $orderFrom;
+        $this->apiParams["order_from"] = $orderFrom;
     }
     public function getOrderFrom()
     {
@@ -85,7 +85,7 @@ class AlipayUserTradeSearchRequest extends AbstractAlipayRequest
     public function setOrderStatus($orderStatus)
     {
         $this->orderStatus = $orderStatus;
-        $this->apiParas["order_status"] = $orderStatus;
+        $this->apiParams["order_status"] = $orderStatus;
     }
     public function getOrderStatus()
     {
@@ -94,7 +94,7 @@ class AlipayUserTradeSearchRequest extends AbstractAlipayRequest
     public function setOrderType($orderType)
     {
         $this->orderType = $orderType;
-        $this->apiParas["order_type"] = $orderType;
+        $this->apiParams["order_type"] = $orderType;
     }
     public function getOrderType()
     {
@@ -103,7 +103,7 @@ class AlipayUserTradeSearchRequest extends AbstractAlipayRequest
     public function setPageNo($pageNo)
     {
         $this->pageNo = $pageNo;
-        $this->apiParas["page_no"] = $pageNo;
+        $this->apiParams["page_no"] = $pageNo;
     }
     public function getPageNo()
     {
@@ -112,7 +112,7 @@ class AlipayUserTradeSearchRequest extends AbstractAlipayRequest
     public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
-        $this->apiParas["page_size"] = $pageSize;
+        $this->apiParams["page_size"] = $pageSize;
     }
     public function getPageSize()
     {
@@ -121,7 +121,7 @@ class AlipayUserTradeSearchRequest extends AbstractAlipayRequest
     public function setStartTime($startTime)
     {
         $this->startTime = $startTime;
-        $this->apiParas["start_time"] = $startTime;
+        $this->apiParams["start_time"] = $startTime;
     }
     public function getStartTime()
     {

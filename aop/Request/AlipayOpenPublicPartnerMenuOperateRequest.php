@@ -13,11 +13,11 @@ class AlipayOpenPublicPartnerMenuOperateRequest extends AbstractAlipayRequest
      * 为服务窗合作伙伴（如YunOS），提供操作服务窗菜单的功能
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

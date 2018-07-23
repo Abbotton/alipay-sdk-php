@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class AlipayCommerceTransportOfflinepayKeyQueryRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

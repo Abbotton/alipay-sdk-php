@@ -14,11 +14,11 @@ class AlipayUserFinanceinfoShareRequest extends AbstractAlipayRequest
 外部商户通过授权，调用该接口获取支付宝域会员资金类相关信息。
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

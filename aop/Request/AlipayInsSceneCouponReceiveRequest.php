@@ -13,11 +13,11 @@ class AlipayInsSceneCouponReceiveRequest extends AbstractAlipayRequest
      * 平台险赠险投保申请
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -17,11 +17,11 @@ class AlipayEbppPdeductBillPayStatusRequest extends AbstractAlipayRequest
      * 商户代扣业务流水
      **/
     private $outOrderNo;
-    private $apiParas = array();
+    
     public function setAgreementId($agreementId)
     {
         $this->agreementId = $agreementId;
-        $this->apiParas["agreement_id"] = $agreementId;
+        $this->apiParams["agreement_id"] = $agreementId;
     }
     public function getAgreementId()
     {
@@ -30,7 +30,7 @@ class AlipayEbppPdeductBillPayStatusRequest extends AbstractAlipayRequest
     public function setOutOrderNo($outOrderNo)
     {
         $this->outOrderNo = $outOrderNo;
-        $this->apiParas["out_order_no"] = $outOrderNo;
+        $this->apiParams["out_order_no"] = $outOrderNo;
     }
     public function getOutOrderNo()
     {

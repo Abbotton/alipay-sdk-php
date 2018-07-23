@@ -17,11 +17,11 @@ class AlipayZdataserviceUnidataQueryRequest extends AbstractAlipayRequest
      * 返回数据的类型，内部业务系统分配
      **/
     private $uniqKey;
-    private $apiParas = array();
+    
     public function setQueryCondition($queryCondition)
     {
         $this->queryCondition = $queryCondition;
-        $this->apiParas["query_condition"] = $queryCondition;
+        $this->apiParams["query_condition"] = $queryCondition;
     }
     public function getQueryCondition()
     {
@@ -30,7 +30,7 @@ class AlipayZdataserviceUnidataQueryRequest extends AbstractAlipayRequest
     public function setUniqKey($uniqKey)
     {
         $this->uniqKey = $uniqKey;
-        $this->apiParas["uniq_key"] = $uniqKey;
+        $this->apiParams["uniq_key"] = $uniqKey;
     }
     public function getUniqKey()
     {

@@ -13,11 +13,11 @@ class AlipayInsCooperationRegionQrcodeApplyRequest extends AbstractAlipayRequest
      * （快捷投保）生成专区二维码
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

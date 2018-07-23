@@ -13,11 +13,11 @@ class AlipayOpenMiniExperienceCreateRequest extends AbstractAlipayRequest
      * 小程序生成体验版
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

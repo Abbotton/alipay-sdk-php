@@ -33,11 +33,11 @@ class AlipayUserAccountSearchRequest extends AbstractAlipayRequest
      * 查询账务的类型
      **/
     private $type;
-    private $apiParas = array();
+    
     public function setEndTime($endTime)
     {
         $this->endTime = $endTime;
-        $this->apiParas["end_time"] = $endTime;
+        $this->apiParams["end_time"] = $endTime;
     }
     public function getEndTime()
     {
@@ -46,7 +46,7 @@ class AlipayUserAccountSearchRequest extends AbstractAlipayRequest
     public function setFields($fields)
     {
         $this->fields = $fields;
-        $this->apiParas["fields"] = $fields;
+        $this->apiParams["fields"] = $fields;
     }
     public function getFields()
     {
@@ -55,7 +55,7 @@ class AlipayUserAccountSearchRequest extends AbstractAlipayRequest
     public function setPageNo($pageNo)
     {
         $this->pageNo = $pageNo;
-        $this->apiParas["page_no"] = $pageNo;
+        $this->apiParams["page_no"] = $pageNo;
     }
     public function getPageNo()
     {
@@ -64,7 +64,7 @@ class AlipayUserAccountSearchRequest extends AbstractAlipayRequest
     public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
-        $this->apiParas["page_size"] = $pageSize;
+        $this->apiParams["page_size"] = $pageSize;
     }
     public function getPageSize()
     {
@@ -73,7 +73,7 @@ class AlipayUserAccountSearchRequest extends AbstractAlipayRequest
     public function setStartTime($startTime)
     {
         $this->startTime = $startTime;
-        $this->apiParas["start_time"] = $startTime;
+        $this->apiParams["start_time"] = $startTime;
     }
     public function getStartTime()
     {
@@ -82,7 +82,7 @@ class AlipayUserAccountSearchRequest extends AbstractAlipayRequest
     public function setType($type)
     {
         $this->type = $type;
-        $this->apiParas["type"] = $type;
+        $this->apiParams["type"] = $type;
     }
     public function getType()
     {

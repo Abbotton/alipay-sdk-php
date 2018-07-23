@@ -13,11 +13,11 @@ class AlipayCommerceCityfacilitatorVoucherRefundRequest extends AbstractAlipayRe
      * 地铁购票发码退款
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

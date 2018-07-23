@@ -13,11 +13,11 @@ class AlipayUserTestRequest extends AbstractAlipayRequest
      * 顶顶顶
      **/
     private $userinfo;
-    private $apiParas = array();
+    
     public function setUserinfo($userinfo)
     {
         $this->userinfo = $userinfo;
-        $this->apiParas["userinfo"] = $userinfo;
+        $this->apiParams["userinfo"] = $userinfo;
     }
     public function getUserinfo()
     {

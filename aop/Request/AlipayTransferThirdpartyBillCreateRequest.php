@@ -64,11 +64,11 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
      * 支付款项的标题
      **/
     private $title;
-    private $apiParas = array();
+    
     public function setAmount($amount)
     {
         $this->amount = $amount;
-        $this->apiParas["amount"] = $amount;
+        $this->apiParams["amount"] = $amount;
     }
     public function getAmount()
     {
@@ -77,7 +77,7 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     public function setCurrency($currency)
     {
         $this->currency = $currency;
-        $this->apiParas["currency"] = $currency;
+        $this->apiParams["currency"] = $currency;
     }
     public function getCurrency()
     {
@@ -86,7 +86,7 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     public function setExtParam($extParam)
     {
         $this->extParam = $extParam;
-        $this->apiParas["ext_param"] = $extParam;
+        $this->apiParams["ext_param"] = $extParam;
     }
     public function getExtParam()
     {
@@ -95,7 +95,7 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     public function setMemo($memo)
     {
         $this->memo = $memo;
-        $this->apiParas["memo"] = $memo;
+        $this->apiParams["memo"] = $memo;
     }
     public function getMemo()
     {
@@ -104,7 +104,7 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     public function setPartnerId($partnerId)
     {
         $this->partnerId = $partnerId;
-        $this->apiParas["partner_id"] = $partnerId;
+        $this->apiParams["partner_id"] = $partnerId;
     }
     public function getPartnerId()
     {
@@ -113,7 +113,7 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     public function setPayeeAccount($payeeAccount)
     {
         $this->payeeAccount = $payeeAccount;
-        $this->apiParas["payee_account"] = $payeeAccount;
+        $this->apiParams["payee_account"] = $payeeAccount;
     }
     public function getPayeeAccount()
     {
@@ -122,7 +122,7 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     public function setPayeeType($payeeType)
     {
         $this->payeeType = $payeeType;
-        $this->apiParas["payee_type"] = $payeeType;
+        $this->apiParams["payee_type"] = $payeeType;
     }
     public function getPayeeType()
     {
@@ -131,7 +131,7 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     public function setPayerAccount($payerAccount)
     {
         $this->payerAccount = $payerAccount;
-        $this->apiParas["payer_account"] = $payerAccount;
+        $this->apiParams["payer_account"] = $payerAccount;
     }
     public function getPayerAccount()
     {
@@ -140,7 +140,7 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     public function setPayerType($payerType)
     {
         $this->payerType = $payerType;
-        $this->apiParas["payer_type"] = $payerType;
+        $this->apiParams["payer_type"] = $payerType;
     }
     public function getPayerType()
     {
@@ -149,7 +149,7 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     public function setPaymentId($paymentId)
     {
         $this->paymentId = $paymentId;
-        $this->apiParas["payment_id"] = $paymentId;
+        $this->apiParams["payment_id"] = $paymentId;
     }
     public function getPaymentId()
     {
@@ -158,7 +158,7 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     public function setPaymentSource($paymentSource)
     {
         $this->paymentSource = $paymentSource;
-        $this->apiParas["payment_source"] = $paymentSource;
+        $this->apiParams["payment_source"] = $paymentSource;
     }
     public function getPaymentSource()
     {
@@ -167,7 +167,7 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     public function setTitle($title)
     {
         $this->title = $title;
-        $this->apiParas["title"] = $title;
+        $this->apiParams["title"] = $title;
     }
     public function getTitle()
     {

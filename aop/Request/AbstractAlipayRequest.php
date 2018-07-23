@@ -26,7 +26,12 @@ abstract class AbstractAlipayRequest
         return '1.0';
     }
 
-    abstract public function getApiParams();
+    protected $apiParams = array();
+
+    public function getApiParams()
+    {
+        return $this->apiParams;
+    }
 
     protected $notifyUrl;
 
@@ -129,7 +134,7 @@ abstract class AbstractAlipayRequest
         }
         return false;
     }
-    
+
     public function __unset($name)
     {
         $setter = 'set' . $name;

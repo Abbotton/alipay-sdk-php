@@ -13,11 +13,11 @@ class AlipayEcoCplifeUseridentityStatusUpdateRequest extends AbstractAlipayReque
      * 社区物业业主鉴权状态更新
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

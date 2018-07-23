@@ -13,11 +13,11 @@ class KoubeiItemCategoryChildrenBatchqueryRequest extends AbstractAlipayRequest
      * 批量查询标准后台类目
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

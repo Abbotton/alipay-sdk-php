@@ -25,11 +25,11 @@ class AlipayOfflineMaterialImageUploadRequest extends AbstractAlipayRequest
      * 图片/视频格式
      **/
     private $imageType;
-    private $apiParas = array();
+    
     public function setImageContent($imageContent)
     {
         $this->imageContent = $imageContent;
-        $this->apiParas["image_content"] = $imageContent;
+        $this->apiParams["image_content"] = $imageContent;
     }
     public function getImageContent()
     {
@@ -38,7 +38,7 @@ class AlipayOfflineMaterialImageUploadRequest extends AbstractAlipayRequest
     public function setImageName($imageName)
     {
         $this->imageName = $imageName;
-        $this->apiParas["image_name"] = $imageName;
+        $this->apiParams["image_name"] = $imageName;
     }
     public function getImageName()
     {
@@ -47,7 +47,7 @@ class AlipayOfflineMaterialImageUploadRequest extends AbstractAlipayRequest
     public function setImagePid($imagePid)
     {
         $this->imagePid = $imagePid;
-        $this->apiParas["image_pid"] = $imagePid;
+        $this->apiParams["image_pid"] = $imagePid;
     }
     public function getImagePid()
     {
@@ -56,7 +56,7 @@ class AlipayOfflineMaterialImageUploadRequest extends AbstractAlipayRequest
     public function setImageType($imageType)
     {
         $this->imageType = $imageType;
-        $this->apiParas["image_type"] = $imageType;
+        $this->apiParams["image_type"] = $imageType;
     }
     public function getImageType()
     {

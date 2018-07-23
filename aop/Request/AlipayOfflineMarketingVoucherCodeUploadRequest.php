@@ -21,11 +21,11 @@ class AlipayOfflineMarketingVoucherCodeUploadRequest extends AbstractAlipayReque
      * 文件二进制内容
      **/
     private $fileContent;
-    private $apiParas = array();
+    
     public function setExtendParams($extendParams)
     {
         $this->extendParams = $extendParams;
-        $this->apiParas["extend_params"] = $extendParams;
+        $this->apiParams["extend_params"] = $extendParams;
     }
     public function getExtendParams()
     {
@@ -34,7 +34,7 @@ class AlipayOfflineMarketingVoucherCodeUploadRequest extends AbstractAlipayReque
     public function setFileCharset($fileCharset)
     {
         $this->fileCharset = $fileCharset;
-        $this->apiParas["file_charset"] = $fileCharset;
+        $this->apiParams["file_charset"] = $fileCharset;
     }
     public function getFileCharset()
     {
@@ -43,7 +43,7 @@ class AlipayOfflineMarketingVoucherCodeUploadRequest extends AbstractAlipayReque
     public function setFileContent($fileContent)
     {
         $this->fileContent = $fileContent;
-        $this->apiParas["file_content"] = $fileContent;
+        $this->apiParams["file_content"] = $fileContent;
     }
     public function getFileContent()
     {

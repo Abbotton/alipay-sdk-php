@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class KoubeiMemberBrandownerNameQueryRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

@@ -13,11 +13,11 @@ class AlipayUserAccountUseridBatchqueryRequest extends AbstractAlipayRequest
      * 业务统一入参，目前会传入用户的手机号作为查询参数
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -13,11 +13,11 @@ class AlipaySecurityProdAmlriskQueryRequest extends AbstractAlipayRequest
      * 该API用于外部商户准入时的反洗钱风险分析。
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

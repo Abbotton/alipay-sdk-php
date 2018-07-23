@@ -13,11 +13,11 @@ class ZhimaCustomerCertificationMaterialCertifyRequest extends AbstractAlipayReq
      * 芝麻认证材料认证
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

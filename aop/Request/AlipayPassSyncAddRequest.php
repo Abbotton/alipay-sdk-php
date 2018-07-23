@@ -25,11 +25,11 @@ class AlipayPassSyncAddRequest extends AbstractAlipayRequest
      * 支付宝用户ID，即买家用户ID
      **/
     private $userId;
-    private $apiParas = array();
+    
     public function setFileContent($fileContent)
     {
         $this->fileContent = $fileContent;
-        $this->apiParas["file_content"] = $fileContent;
+        $this->apiParams["file_content"] = $fileContent;
     }
     public function getFileContent()
     {
@@ -38,7 +38,7 @@ class AlipayPassSyncAddRequest extends AbstractAlipayRequest
     public function setOutTradeNo($outTradeNo)
     {
         $this->outTradeNo = $outTradeNo;
-        $this->apiParas["out_trade_no"] = $outTradeNo;
+        $this->apiParams["out_trade_no"] = $outTradeNo;
     }
     public function getOutTradeNo()
     {
@@ -47,7 +47,7 @@ class AlipayPassSyncAddRequest extends AbstractAlipayRequest
     public function setPartnerId($partnerId)
     {
         $this->partnerId = $partnerId;
-        $this->apiParas["partner_id"] = $partnerId;
+        $this->apiParams["partner_id"] = $partnerId;
     }
     public function getPartnerId()
     {
@@ -56,7 +56,7 @@ class AlipayPassSyncAddRequest extends AbstractAlipayRequest
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParas["user_id"] = $userId;
+        $this->apiParams["user_id"] = $userId;
     }
     public function getUserId()
     {

@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class AlipayOpenPublicLifeLabelBatchqueryRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

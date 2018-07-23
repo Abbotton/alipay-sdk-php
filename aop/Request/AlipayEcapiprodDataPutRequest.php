@@ -45,11 +45,11 @@ class AlipayEcapiprodDataPutRequest extends AbstractAlipayRequest
      * 数据合作方
      **/
     private $orgCode;
-    private $apiParas = array();
+    
     public function setCategory($category)
     {
         $this->category = $category;
-        $this->apiParas["category"] = $category;
+        $this->apiParams["category"] = $category;
     }
     public function getCategory()
     {
@@ -58,7 +58,7 @@ class AlipayEcapiprodDataPutRequest extends AbstractAlipayRequest
     public function setCharSet($charSet)
     {
         $this->charSet = $charSet;
-        $this->apiParas["char_set"] = $charSet;
+        $this->apiParams["char_set"] = $charSet;
     }
     public function getCharSet()
     {
@@ -67,7 +67,7 @@ class AlipayEcapiprodDataPutRequest extends AbstractAlipayRequest
     public function setCollectingTaskId($collectingTaskId)
     {
         $this->collectingTaskId = $collectingTaskId;
-        $this->apiParas["collecting_task_id"] = $collectingTaskId;
+        $this->apiParams["collecting_task_id"] = $collectingTaskId;
     }
     public function getCollectingTaskId()
     {
@@ -76,7 +76,7 @@ class AlipayEcapiprodDataPutRequest extends AbstractAlipayRequest
     public function setEntityCode($entityCode)
     {
         $this->entityCode = $entityCode;
-        $this->apiParas["entity_code"] = $entityCode;
+        $this->apiParams["entity_code"] = $entityCode;
     }
     public function getEntityCode()
     {
@@ -85,7 +85,7 @@ class AlipayEcapiprodDataPutRequest extends AbstractAlipayRequest
     public function setEntityName($entityName)
     {
         $this->entityName = $entityName;
-        $this->apiParas["entity_name"] = $entityName;
+        $this->apiParams["entity_name"] = $entityName;
     }
     public function getEntityName()
     {
@@ -94,7 +94,7 @@ class AlipayEcapiprodDataPutRequest extends AbstractAlipayRequest
     public function setEntityType($entityType)
     {
         $this->entityType = $entityType;
-        $this->apiParas["entity_type"] = $entityType;
+        $this->apiParams["entity_type"] = $entityType;
     }
     public function getEntityType()
     {
@@ -103,7 +103,7 @@ class AlipayEcapiprodDataPutRequest extends AbstractAlipayRequest
     public function setIsvCode($isvCode)
     {
         $this->isvCode = $isvCode;
-        $this->apiParas["isv_code"] = $isvCode;
+        $this->apiParams["isv_code"] = $isvCode;
     }
     public function getIsvCode()
     {
@@ -112,7 +112,7 @@ class AlipayEcapiprodDataPutRequest extends AbstractAlipayRequest
     public function setJsonData($jsonData)
     {
         $this->jsonData = $jsonData;
-        $this->apiParas["json_data"] = $jsonData;
+        $this->apiParams["json_data"] = $jsonData;
     }
     public function getJsonData()
     {
@@ -121,7 +121,7 @@ class AlipayEcapiprodDataPutRequest extends AbstractAlipayRequest
     public function setOrgCode($orgCode)
     {
         $this->orgCode = $orgCode;
-        $this->apiParas["org_code"] = $orgCode;
+        $this->apiParams["org_code"] = $orgCode;
     }
     public function getOrgCode()
     {

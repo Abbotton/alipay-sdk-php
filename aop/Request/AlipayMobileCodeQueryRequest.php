@@ -13,11 +13,11 @@ class AlipayMobileCodeQueryRequest extends AbstractAlipayRequest
      * 二维码的码值或者包含业务信息的二维码
      **/
     private $qrToken;
-    private $apiParas = array();
+    
     public function setQrToken($qrToken)
     {
         $this->qrToken = $qrToken;
-        $this->apiParas["qr_token"] = $qrToken;
+        $this->apiParams["qr_token"] = $qrToken;
     }
     public function getQrToken()
     {

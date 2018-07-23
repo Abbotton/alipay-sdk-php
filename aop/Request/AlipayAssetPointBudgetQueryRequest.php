@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class AlipayAssetPointBudgetQueryRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

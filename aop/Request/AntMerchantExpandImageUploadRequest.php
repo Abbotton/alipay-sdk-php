@@ -17,11 +17,11 @@ class AntMerchantExpandImageUploadRequest extends AbstractAlipayRequest
      * 图片格式
      **/
     private $imageType;
-    private $apiParas = array();
+    
     public function setImageContent($imageContent)
     {
         $this->imageContent = $imageContent;
-        $this->apiParas["image_content"] = $imageContent;
+        $this->apiParams["image_content"] = $imageContent;
     }
     public function getImageContent()
     {
@@ -30,7 +30,7 @@ class AntMerchantExpandImageUploadRequest extends AbstractAlipayRequest
     public function setImageType($imageType)
     {
         $this->imageType = $imageType;
-        $this->apiParas["image_type"] = $imageType;
+        $this->apiParams["image_type"] = $imageType;
     }
     public function getImageType()
     {

@@ -13,11 +13,11 @@ class AlipayInsCooperationProductOfflineBatchqueryRequest extends AbstractAlipay
      * （快捷投保）查询该保险公司的线下产品列表
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

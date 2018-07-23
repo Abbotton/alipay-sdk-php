@@ -24,11 +24,11 @@ class AlipayPassFileAddRequest extends AbstractAlipayRequest
      * Alipass添加对象识别类型【1--订单信息；2--支付宝userId;3--支付宝绑定手机号】
      **/
     private $recognitionType;
-    private $apiParas = array();
+    
     public function setFileContent($fileContent)
     {
         $this->fileContent = $fileContent;
-        $this->apiParas["file_content"] = $fileContent;
+        $this->apiParams["file_content"] = $fileContent;
     }
     public function getFileContent()
     {
@@ -37,7 +37,7 @@ class AlipayPassFileAddRequest extends AbstractAlipayRequest
     public function setRecognitionInfo($recognitionInfo)
     {
         $this->recognitionInfo = $recognitionInfo;
-        $this->apiParas["recognition_info"] = $recognitionInfo;
+        $this->apiParams["recognition_info"] = $recognitionInfo;
     }
     public function getRecognitionInfo()
     {
@@ -46,7 +46,7 @@ class AlipayPassFileAddRequest extends AbstractAlipayRequest
     public function setRecognitionType($recognitionType)
     {
         $this->recognitionType = $recognitionType;
-        $this->apiParas["recognition_type"] = $recognitionType;
+        $this->apiParams["recognition_type"] = $recognitionType;
     }
     public function getRecognitionType()
     {

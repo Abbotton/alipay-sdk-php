@@ -13,11 +13,11 @@ class AlipayCommerceCityfacilitatorDepositCancelRequest extends AbstractAlipayRe
      * 合作渠道可通过该接口补登扣款取消请求，以帮助支付宝将用户的资金退给用户
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

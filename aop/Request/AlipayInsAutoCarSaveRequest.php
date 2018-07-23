@@ -13,11 +13,11 @@ class AlipayInsAutoCarSaveRequest extends AbstractAlipayRequest
      * 蚂蚁乐驾车主车辆保存服务
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

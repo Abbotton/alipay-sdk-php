@@ -13,11 +13,11 @@ class SsdataDataserviceRiskAntifraudlistQueryRequest extends AbstractAlipayReque
      * 蚁盾欺诈关注清单
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

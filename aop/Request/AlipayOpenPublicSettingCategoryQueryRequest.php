@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class AlipayOpenPublicSettingCategoryQueryRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

@@ -13,11 +13,11 @@ class AlipayOpenAuthTokenAppRequest extends AbstractAlipayRequest
      * 用应用授权码（app_auth_code）换取或者刷新应用授权令牌(app_auth_token)
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

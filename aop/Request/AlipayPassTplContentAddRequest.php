@@ -28,11 +28,11 @@ class AlipayPassTplContentAddRequest extends AbstractAlipayRequest
      * 模版动态参数信息【支付宝pass模版参数键值对JSON字符串】
      **/
     private $tplParams;
-    private $apiParas = array();
+    
     public function setRecognitionInfo($recognitionInfo)
     {
         $this->recognitionInfo = $recognitionInfo;
-        $this->apiParas["recognition_info"] = $recognitionInfo;
+        $this->apiParams["recognition_info"] = $recognitionInfo;
     }
     public function getRecognitionInfo()
     {
@@ -41,7 +41,7 @@ class AlipayPassTplContentAddRequest extends AbstractAlipayRequest
     public function setRecognitionType($recognitionType)
     {
         $this->recognitionType = $recognitionType;
-        $this->apiParas["recognition_type"] = $recognitionType;
+        $this->apiParams["recognition_type"] = $recognitionType;
     }
     public function getRecognitionType()
     {
@@ -50,7 +50,7 @@ class AlipayPassTplContentAddRequest extends AbstractAlipayRequest
     public function setTplId($tplId)
     {
         $this->tplId = $tplId;
-        $this->apiParas["tpl_id"] = $tplId;
+        $this->apiParams["tpl_id"] = $tplId;
     }
     public function getTplId()
     {
@@ -59,7 +59,7 @@ class AlipayPassTplContentAddRequest extends AbstractAlipayRequest
     public function setTplParams($tplParams)
     {
         $this->tplParams = $tplParams;
-        $this->apiParas["tpl_params"] = $tplParams;
+        $this->apiParams["tpl_params"] = $tplParams;
     }
     public function getTplParams()
     {

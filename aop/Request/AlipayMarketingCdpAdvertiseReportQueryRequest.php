@@ -13,11 +13,11 @@ class AlipayMarketingCdpAdvertiseReportQueryRequest extends AbstractAlipayReques
      * 广告效果分析接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

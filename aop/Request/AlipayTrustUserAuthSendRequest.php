@@ -13,11 +13,11 @@ class AlipayTrustUserAuthSendRequest extends AbstractAlipayRequest
      * 申请授权的用户信息
      **/
     private $aliTrustUserInfo;
-    private $apiParas = array();
+    
     public function setAliTrustUserInfo($aliTrustUserInfo)
     {
         $this->aliTrustUserInfo = $aliTrustUserInfo;
-        $this->apiParas["ali_trust_user_info"] = $aliTrustUserInfo;
+        $this->apiParams["ali_trust_user_info"] = $aliTrustUserInfo;
     }
     public function getAliTrustUserInfo()
     {

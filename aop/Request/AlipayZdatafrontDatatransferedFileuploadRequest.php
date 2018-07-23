@@ -41,11 +41,11 @@ class AlipayZdatafrontDatatransferedFileuploadRequest extends AbstractAlipayRequ
      * 外部公司的数据源标识信息，由联接网络分配
      **/
     private $typeId;
-    private $apiParas = array();
+    
     public function setColumns($columns)
     {
         $this->columns = $columns;
-        $this->apiParas["columns"] = $columns;
+        $this->apiParams["columns"] = $columns;
     }
     public function getColumns()
     {
@@ -54,7 +54,7 @@ class AlipayZdatafrontDatatransferedFileuploadRequest extends AbstractAlipayRequ
     public function setFile($file)
     {
         $this->file = $file;
-        $this->apiParas["file"] = $file;
+        $this->apiParams["file"] = $file;
     }
     public function getFile()
     {
@@ -63,7 +63,7 @@ class AlipayZdatafrontDatatransferedFileuploadRequest extends AbstractAlipayRequ
     public function setFileDescription($fileDescription)
     {
         $this->fileDescription = $fileDescription;
-        $this->apiParas["file_description"] = $fileDescription;
+        $this->apiParams["file_description"] = $fileDescription;
     }
     public function getFileDescription()
     {
@@ -72,7 +72,7 @@ class AlipayZdatafrontDatatransferedFileuploadRequest extends AbstractAlipayRequ
     public function setFileDigest($fileDigest)
     {
         $this->fileDigest = $fileDigest;
-        $this->apiParas["file_digest"] = $fileDigest;
+        $this->apiParams["file_digest"] = $fileDigest;
     }
     public function getFileDigest()
     {
@@ -81,7 +81,7 @@ class AlipayZdatafrontDatatransferedFileuploadRequest extends AbstractAlipayRequ
     public function setFileType($fileType)
     {
         $this->fileType = $fileType;
-        $this->apiParas["file_type"] = $fileType;
+        $this->apiParams["file_type"] = $fileType;
     }
     public function getFileType()
     {
@@ -90,7 +90,7 @@ class AlipayZdatafrontDatatransferedFileuploadRequest extends AbstractAlipayRequ
     public function setPrimaryKey($primaryKey)
     {
         $this->primaryKey = $primaryKey;
-        $this->apiParas["primary_key"] = $primaryKey;
+        $this->apiParams["primary_key"] = $primaryKey;
     }
     public function getPrimaryKey()
     {
@@ -99,7 +99,7 @@ class AlipayZdatafrontDatatransferedFileuploadRequest extends AbstractAlipayRequ
     public function setRecords($records)
     {
         $this->records = $records;
-        $this->apiParas["records"] = $records;
+        $this->apiParams["records"] = $records;
     }
     public function getRecords()
     {
@@ -108,7 +108,7 @@ class AlipayZdatafrontDatatransferedFileuploadRequest extends AbstractAlipayRequ
     public function setTypeId($typeId)
     {
         $this->typeId = $typeId;
-        $this->apiParas["type_id"] = $typeId;
+        $this->apiParams["type_id"] = $typeId;
     }
     public function getTypeId()
     {

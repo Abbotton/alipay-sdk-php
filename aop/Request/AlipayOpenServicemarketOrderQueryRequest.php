@@ -13,11 +13,11 @@ class AlipayOpenServicemarketOrderQueryRequest extends AbstractAlipayRequest
      * 用于服务商回查服务市场订单明细信息
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -21,11 +21,11 @@ class AlipayFlashsalesStockSyncUpdateRequest extends AbstractAlipayRequest
      * 库存数量
      **/
     private $stock;
-    private $apiParas = array();
+    
     public function setOutProductId($outProductId)
     {
         $this->outProductId = $outProductId;
-        $this->apiParas["out_product_id"] = $outProductId;
+        $this->apiParams["out_product_id"] = $outProductId;
     }
     public function getOutProductId()
     {
@@ -34,7 +34,7 @@ class AlipayFlashsalesStockSyncUpdateRequest extends AbstractAlipayRequest
     public function setPublicId($publicId)
     {
         $this->publicId = $publicId;
-        $this->apiParas["public_id"] = $publicId;
+        $this->apiParams["public_id"] = $publicId;
     }
     public function getPublicId()
     {
@@ -43,7 +43,7 @@ class AlipayFlashsalesStockSyncUpdateRequest extends AbstractAlipayRequest
     public function setStock($stock)
     {
         $this->stock = $stock;
-        $this->apiParas["stock"] = $stock;
+        $this->apiParams["stock"] = $stock;
     }
     public function getStock()
     {

@@ -13,11 +13,11 @@ class AlipayOfflineMarketItemModifyRequest extends AbstractAlipayRequest
      * 商户可以通过此接口对商品进行库存等信息的修改（库存修改值只能大于当前值）
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

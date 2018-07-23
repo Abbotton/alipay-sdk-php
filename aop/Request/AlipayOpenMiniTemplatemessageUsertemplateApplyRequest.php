@@ -13,11 +13,11 @@ class AlipayOpenMiniTemplatemessageUsertemplateApplyRequest extends AbstractAlip
      * 小程序模板消息申请
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

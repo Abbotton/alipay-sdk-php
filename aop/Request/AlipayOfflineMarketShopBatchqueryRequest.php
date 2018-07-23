@@ -13,11 +13,11 @@ class AlipayOfflineMarketShopBatchqueryRequest extends AbstractAlipayRequest
      * 系统商通过该接口可以查询所有门店的外部门店编号（系统商的门店编号）
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

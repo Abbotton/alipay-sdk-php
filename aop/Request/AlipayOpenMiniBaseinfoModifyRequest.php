@@ -41,11 +41,11 @@ class AlipayOpenMiniBaseinfoModifyRequest extends AbstractAlipayRequest
      * 小程序客服电话
      **/
     private $servicePhone;
-    private $apiParas = array();
+    
     public function setAppCategoryIds($appCategoryIds)
     {
         $this->appCategoryIds = $appCategoryIds;
-        $this->apiParas["app_category_ids"] = $appCategoryIds;
+        $this->apiParams["app_category_ids"] = $appCategoryIds;
     }
     public function getAppCategoryIds()
     {
@@ -54,7 +54,7 @@ class AlipayOpenMiniBaseinfoModifyRequest extends AbstractAlipayRequest
     public function setAppDesc($appDesc)
     {
         $this->appDesc = $appDesc;
-        $this->apiParas["app_desc"] = $appDesc;
+        $this->apiParams["app_desc"] = $appDesc;
     }
     public function getAppDesc()
     {
@@ -63,7 +63,7 @@ class AlipayOpenMiniBaseinfoModifyRequest extends AbstractAlipayRequest
     public function setAppEnglishName($appEnglishName)
     {
         $this->appEnglishName = $appEnglishName;
-        $this->apiParas["app_english_name"] = $appEnglishName;
+        $this->apiParams["app_english_name"] = $appEnglishName;
     }
     public function getAppEnglishName()
     {
@@ -72,7 +72,7 @@ class AlipayOpenMiniBaseinfoModifyRequest extends AbstractAlipayRequest
     public function setAppLogo($appLogo)
     {
         $this->appLogo = $appLogo;
-        $this->apiParas["app_logo"] = $appLogo;
+        $this->apiParams["app_logo"] = $appLogo;
     }
     public function getAppLogo()
     {
@@ -81,7 +81,7 @@ class AlipayOpenMiniBaseinfoModifyRequest extends AbstractAlipayRequest
     public function setAppName($appName)
     {
         $this->appName = $appName;
-        $this->apiParas["app_name"] = $appName;
+        $this->apiParams["app_name"] = $appName;
     }
     public function getAppName()
     {
@@ -90,7 +90,7 @@ class AlipayOpenMiniBaseinfoModifyRequest extends AbstractAlipayRequest
     public function setAppSlogan($appSlogan)
     {
         $this->appSlogan = $appSlogan;
-        $this->apiParas["app_slogan"] = $appSlogan;
+        $this->apiParams["app_slogan"] = $appSlogan;
     }
     public function getAppSlogan()
     {
@@ -99,7 +99,7 @@ class AlipayOpenMiniBaseinfoModifyRequest extends AbstractAlipayRequest
     public function setServiceEmail($serviceEmail)
     {
         $this->serviceEmail = $serviceEmail;
-        $this->apiParas["service_email"] = $serviceEmail;
+        $this->apiParams["service_email"] = $serviceEmail;
     }
     public function getServiceEmail()
     {
@@ -108,7 +108,7 @@ class AlipayOpenMiniBaseinfoModifyRequest extends AbstractAlipayRequest
     public function setServicePhone($servicePhone)
     {
         $this->servicePhone = $servicePhone;
-        $this->apiParas["service_phone"] = $servicePhone;
+        $this->apiParams["service_phone"] = $servicePhone;
     }
     public function getServicePhone()
     {

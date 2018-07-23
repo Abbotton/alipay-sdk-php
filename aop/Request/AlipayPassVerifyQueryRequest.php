@@ -13,11 +13,11 @@ class AlipayPassVerifyQueryRequest extends AbstractAlipayRequest
      * Alipass对应的核销码串
      **/
     private $verifyCode;
-    private $apiParas = array();
+    
     public function setVerifyCode($verifyCode)
     {
         $this->verifyCode = $verifyCode;
-        $this->apiParas["verify_code"] = $verifyCode;
+        $this->apiParams["verify_code"] = $verifyCode;
     }
     public function getVerifyCode()
     {

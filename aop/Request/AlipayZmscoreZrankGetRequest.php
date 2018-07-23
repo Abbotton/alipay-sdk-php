@@ -13,11 +13,11 @@ class AlipayZmscoreZrankGetRequest extends AbstractAlipayRequest
      * 用户ID
      **/
     private $userId;
-    private $apiParas = array();
+    
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParas["user_id"] = $userId;
+        $this->apiParams["user_id"] = $userId;
     }
     public function getUserId()
     {

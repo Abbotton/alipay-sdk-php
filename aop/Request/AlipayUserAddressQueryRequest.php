@@ -13,11 +13,11 @@ class AlipayUserAddressQueryRequest extends AbstractAlipayRequest
      * 根据addressId获取用户详细地址信息
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

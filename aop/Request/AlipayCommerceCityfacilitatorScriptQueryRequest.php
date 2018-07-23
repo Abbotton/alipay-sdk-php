@@ -13,11 +13,11 @@ class AlipayCommerceCityfacilitatorScriptQueryRequest extends AbstractAlipayRequ
      * 查询城市一卡通的判卡、读卡脚本
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

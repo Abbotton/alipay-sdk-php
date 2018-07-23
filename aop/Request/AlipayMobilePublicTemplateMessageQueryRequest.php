@@ -17,11 +17,11 @@ class AlipayMobilePublicTemplateMessageQueryRequest extends AbstractAlipayReques
      * 模板id
      **/
     private $templateId;
-    private $apiParas = array();
+    
     public function setTemplate($template)
     {
         $this->template = $template;
-        $this->apiParas["template"] = $template;
+        $this->apiParams["template"] = $template;
     }
     public function getTemplate()
     {
@@ -30,7 +30,7 @@ class AlipayMobilePublicTemplateMessageQueryRequest extends AbstractAlipayReques
     public function setTemplateId($templateId)
     {
         $this->templateId = $templateId;
-        $this->apiParas["template_id"] = $templateId;
+        $this->apiParams["template_id"] = $templateId;
     }
     public function getTemplateId()
     {

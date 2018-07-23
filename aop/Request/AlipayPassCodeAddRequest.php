@@ -29,11 +29,11 @@ class AlipayPassCodeAddRequest extends AbstractAlipayRequest
      * 该pass的核销方式,如果为空，则默认为["wave","qrcode"]
      **/
     private $verifyType;
-    private $apiParas = array();
+    
     public function setFileContent($fileContent)
     {
         $this->fileContent = $fileContent;
-        $this->apiParas["file_content"] = $fileContent;
+        $this->apiParams["file_content"] = $fileContent;
     }
     public function getFileContent()
     {
@@ -42,7 +42,7 @@ class AlipayPassCodeAddRequest extends AbstractAlipayRequest
     public function setRecognitionInfo($recognitionInfo)
     {
         $this->recognitionInfo = $recognitionInfo;
-        $this->apiParas["recognition_info"] = $recognitionInfo;
+        $this->apiParams["recognition_info"] = $recognitionInfo;
     }
     public function getRecognitionInfo()
     {
@@ -51,7 +51,7 @@ class AlipayPassCodeAddRequest extends AbstractAlipayRequest
     public function setRecognitionType($recognitionType)
     {
         $this->recognitionType = $recognitionType;
-        $this->apiParas["recognition_type"] = $recognitionType;
+        $this->apiParams["recognition_type"] = $recognitionType;
     }
     public function getRecognitionType()
     {
@@ -60,7 +60,7 @@ class AlipayPassCodeAddRequest extends AbstractAlipayRequest
     public function setVerifyType($verifyType)
     {
         $this->verifyType = $verifyType;
-        $this->apiParas["verify_type"] = $verifyType;
+        $this->apiParams["verify_type"] = $verifyType;
     }
     public function getVerifyType()
     {

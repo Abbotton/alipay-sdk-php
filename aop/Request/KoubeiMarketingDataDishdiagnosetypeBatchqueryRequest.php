@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class KoubeiMarketingDataDishdiagnosetypeBatchqueryRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

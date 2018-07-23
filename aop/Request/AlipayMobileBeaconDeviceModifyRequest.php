@@ -13,11 +13,11 @@ class AlipayMobileBeaconDeviceModifyRequest extends AbstractAlipayRequest
      * 设备信息，格式为JSON字符串
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

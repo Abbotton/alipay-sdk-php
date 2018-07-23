@@ -13,11 +13,11 @@ class KoubeiCateringTablecodeQueryRequest extends AbstractAlipayRequest
      * 扫一扫查询桌码信息
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -13,11 +13,11 @@ class AlipayMobileStdPublicAccountQueryRequest extends AbstractAlipayRequest
      * 业务信息：userId，这是个json字段
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

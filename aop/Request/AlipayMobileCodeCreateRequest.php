@@ -46,11 +46,11 @@ class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
      * 支付宝用户id
      **/
     private $userId;
-    private $apiParas = array();
+    
     public function setBizLinkedId($bizLinkedId)
     {
         $this->bizLinkedId = $bizLinkedId;
-        $this->apiParas["biz_linked_id"] = $bizLinkedId;
+        $this->apiParams["biz_linked_id"] = $bizLinkedId;
     }
     public function getBizLinkedId()
     {
@@ -59,7 +59,7 @@ class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
     public function setBizType($bizType)
     {
         $this->bizType = $bizType;
-        $this->apiParas["biz_type"] = $bizType;
+        $this->apiParams["biz_type"] = $bizType;
     }
     public function getBizType()
     {
@@ -68,7 +68,7 @@ class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
     public function setContextStr($contextStr)
     {
         $this->contextStr = $contextStr;
-        $this->apiParas["context_str"] = $contextStr;
+        $this->apiParams["context_str"] = $contextStr;
     }
     public function getContextStr()
     {
@@ -77,7 +77,7 @@ class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
     public function setIsDirect($isDirect)
     {
         $this->isDirect = $isDirect;
-        $this->apiParas["is_direct"] = $isDirect;
+        $this->apiParams["is_direct"] = $isDirect;
     }
     public function getIsDirect()
     {
@@ -86,7 +86,7 @@ class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
     public function setMemo($memo)
     {
         $this->memo = $memo;
-        $this->apiParas["memo"] = $memo;
+        $this->apiParams["memo"] = $memo;
     }
     public function getMemo()
     {
@@ -95,7 +95,7 @@ class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
     public function setSourceId($sourceId)
     {
         $this->sourceId = $sourceId;
-        $this->apiParas["source_id"] = $sourceId;
+        $this->apiParams["source_id"] = $sourceId;
     }
     public function getSourceId()
     {
@@ -104,7 +104,7 @@ class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
     public function setStartDate($startDate)
     {
         $this->startDate = $startDate;
-        $this->apiParas["start_date"] = $startDate;
+        $this->apiParams["start_date"] = $startDate;
     }
     public function getStartDate()
     {
@@ -113,7 +113,7 @@ class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
     public function setTimeout($timeout)
     {
         $this->timeout = $timeout;
-        $this->apiParas["timeout"] = $timeout;
+        $this->apiParams["timeout"] = $timeout;
     }
     public function getTimeout()
     {
@@ -122,7 +122,7 @@ class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParas["user_id"] = $userId;
+        $this->apiParams["user_id"] = $userId;
     }
     public function getUserId()
     {

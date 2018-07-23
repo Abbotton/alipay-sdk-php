@@ -17,11 +17,11 @@ class AlipayOfflineMarketShopPublicBindRequest extends AbstractAlipayRequest
      * 门店ID列表，一次最多绑定500个门店，is_all为T时表示绑定本商家下所有门店，即门店列表无需通过本参数shop_ids传入，由系统自动查询;is_all为F时该参数为必填
      **/
     private $shopIds;
-    private $apiParas = array();
+    
     public function setIsAll($isAll)
     {
         $this->isAll = $isAll;
-        $this->apiParas["is_all"] = $isAll;
+        $this->apiParams["is_all"] = $isAll;
     }
     public function getIsAll()
     {
@@ -30,7 +30,7 @@ class AlipayOfflineMarketShopPublicBindRequest extends AbstractAlipayRequest
     public function setShopIds($shopIds)
     {
         $this->shopIds = $shopIds;
-        $this->apiParas["shop_ids"] = $shopIds;
+        $this->apiParams["shop_ids"] = $shopIds;
     }
     public function getShopIds()
     {

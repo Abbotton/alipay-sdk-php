@@ -13,11 +13,11 @@ class AlipayCommerceLotteryPresentlistQueryRequest extends AbstractAlipayRequest
      * 查询调用者指定时间范围内的彩票赠送列表，由亚博科技提供服务
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

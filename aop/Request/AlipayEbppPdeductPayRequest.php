@@ -60,11 +60,11 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
      * 用户ID
      **/
     private $userId;
-    private $apiParas = array();
+    
     public function setAgentChannel($agentChannel)
     {
         $this->agentChannel = $agentChannel;
-        $this->apiParas["agent_channel"] = $agentChannel;
+        $this->apiParams["agent_channel"] = $agentChannel;
     }
     public function getAgentChannel()
     {
@@ -73,7 +73,7 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
     public function setAgentCode($agentCode)
     {
         $this->agentCode = $agentCode;
-        $this->apiParas["agent_code"] = $agentCode;
+        $this->apiParams["agent_code"] = $agentCode;
     }
     public function getAgentCode()
     {
@@ -82,7 +82,7 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
     public function setAgreementId($agreementId)
     {
         $this->agreementId = $agreementId;
-        $this->apiParas["agreement_id"] = $agreementId;
+        $this->apiParams["agreement_id"] = $agreementId;
     }
     public function getAgreementId()
     {
@@ -91,7 +91,7 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
     public function setBillDate($billDate)
     {
         $this->billDate = $billDate;
-        $this->apiParas["bill_date"] = $billDate;
+        $this->apiParams["bill_date"] = $billDate;
     }
     public function getBillDate()
     {
@@ -100,7 +100,7 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
     public function setBillKey($billKey)
     {
         $this->billKey = $billKey;
-        $this->apiParas["bill_key"] = $billKey;
+        $this->apiParams["bill_key"] = $billKey;
     }
     public function getBillKey()
     {
@@ -109,7 +109,7 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
     public function setExtendField($extendField)
     {
         $this->extendField = $extendField;
-        $this->apiParas["extend_field"] = $extendField;
+        $this->apiParams["extend_field"] = $extendField;
     }
     public function getExtendField()
     {
@@ -118,7 +118,7 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
     public function setFineAmount($fineAmount)
     {
         $this->fineAmount = $fineAmount;
-        $this->apiParas["fine_amount"] = $fineAmount;
+        $this->apiParams["fine_amount"] = $fineAmount;
     }
     public function getFineAmount()
     {
@@ -127,7 +127,7 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
     public function setMemo($memo)
     {
         $this->memo = $memo;
-        $this->apiParas["memo"] = $memo;
+        $this->apiParams["memo"] = $memo;
     }
     public function getMemo()
     {
@@ -136,7 +136,7 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
     public function setOutOrderNo($outOrderNo)
     {
         $this->outOrderNo = $outOrderNo;
-        $this->apiParas["out_order_no"] = $outOrderNo;
+        $this->apiParams["out_order_no"] = $outOrderNo;
     }
     public function getOutOrderNo()
     {
@@ -145,7 +145,7 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
     public function setPayAmount($payAmount)
     {
         $this->payAmount = $payAmount;
-        $this->apiParas["pay_amount"] = $payAmount;
+        $this->apiParams["pay_amount"] = $payAmount;
     }
     public function getPayAmount()
     {
@@ -154,7 +154,7 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
     public function setPid($pid)
     {
         $this->pid = $pid;
-        $this->apiParas["pid"] = $pid;
+        $this->apiParams["pid"] = $pid;
     }
     public function getPid()
     {
@@ -163,7 +163,7 @@ class AlipayEbppPdeductPayRequest extends AbstractAlipayRequest
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParas["user_id"] = $userId;
+        $this->apiParams["user_id"] = $userId;
     }
     public function getUserId()
     {

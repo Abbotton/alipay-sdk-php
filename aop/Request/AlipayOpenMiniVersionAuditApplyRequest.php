@@ -117,11 +117,11 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
      * 小程序版本描述
      **/
     private $versionDesc;
-    private $apiParas = array();
+    
     public function setAppCategoryIds($appCategoryIds)
     {
         $this->appCategoryIds = $appCategoryIds;
-        $this->apiParas["app_category_ids"] = $appCategoryIds;
+        $this->apiParams["app_category_ids"] = $appCategoryIds;
     }
     public function getAppCategoryIds()
     {
@@ -130,7 +130,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setAppDesc($appDesc)
     {
         $this->appDesc = $appDesc;
-        $this->apiParas["app_desc"] = $appDesc;
+        $this->apiParams["app_desc"] = $appDesc;
     }
     public function getAppDesc()
     {
@@ -139,7 +139,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setAppEnglishName($appEnglishName)
     {
         $this->appEnglishName = $appEnglishName;
-        $this->apiParas["app_english_name"] = $appEnglishName;
+        $this->apiParams["app_english_name"] = $appEnglishName;
     }
     public function getAppEnglishName()
     {
@@ -148,7 +148,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setAppLogo($appLogo)
     {
         $this->appLogo = $appLogo;
-        $this->apiParas["app_logo"] = $appLogo;
+        $this->apiParams["app_logo"] = $appLogo;
     }
     public function getAppLogo()
     {
@@ -157,7 +157,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setAppName($appName)
     {
         $this->appName = $appName;
-        $this->apiParas["app_name"] = $appName;
+        $this->apiParams["app_name"] = $appName;
     }
     public function getAppName()
     {
@@ -166,7 +166,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setAppSlogan($appSlogan)
     {
         $this->appSlogan = $appSlogan;
-        $this->apiParas["app_slogan"] = $appSlogan;
+        $this->apiParams["app_slogan"] = $appSlogan;
     }
     public function getAppSlogan()
     {
@@ -175,7 +175,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setAppVersion($appVersion)
     {
         $this->appVersion = $appVersion;
-        $this->apiParas["app_version"] = $appVersion;
+        $this->apiParams["app_version"] = $appVersion;
     }
     public function getAppVersion()
     {
@@ -184,7 +184,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setFifthLicensePic($fifthLicensePic)
     {
         $this->fifthLicensePic = $fifthLicensePic;
-        $this->apiParas["fifth_license_pic"] = $fifthLicensePic;
+        $this->apiParams["fifth_license_pic"] = $fifthLicensePic;
     }
     public function getFifthLicensePic()
     {
@@ -193,7 +193,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setFifthScreenShot($fifthScreenShot)
     {
         $this->fifthScreenShot = $fifthScreenShot;
-        $this->apiParas["fifth_screen_shot"] = $fifthScreenShot;
+        $this->apiParams["fifth_screen_shot"] = $fifthScreenShot;
     }
     public function getFifthScreenShot()
     {
@@ -202,7 +202,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setFirstLicensePic($firstLicensePic)
     {
         $this->firstLicensePic = $firstLicensePic;
-        $this->apiParas["first_license_pic"] = $firstLicensePic;
+        $this->apiParams["first_license_pic"] = $firstLicensePic;
     }
     public function getFirstLicensePic()
     {
@@ -211,7 +211,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setFirstScreenShot($firstScreenShot)
     {
         $this->firstScreenShot = $firstScreenShot;
-        $this->apiParas["first_screen_shot"] = $firstScreenShot;
+        $this->apiParams["first_screen_shot"] = $firstScreenShot;
     }
     public function getFirstScreenShot()
     {
@@ -220,7 +220,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setFourthLicensePic($fourthLicensePic)
     {
         $this->fourthLicensePic = $fourthLicensePic;
-        $this->apiParas["fourth_license_pic"] = $fourthLicensePic;
+        $this->apiParams["fourth_license_pic"] = $fourthLicensePic;
     }
     public function getFourthLicensePic()
     {
@@ -229,7 +229,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setFourthScreenShot($fourthScreenShot)
     {
         $this->fourthScreenShot = $fourthScreenShot;
-        $this->apiParas["fourth_screen_shot"] = $fourthScreenShot;
+        $this->apiParams["fourth_screen_shot"] = $fourthScreenShot;
     }
     public function getFourthScreenShot()
     {
@@ -238,7 +238,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setLicenseName($licenseName)
     {
         $this->licenseName = $licenseName;
-        $this->apiParas["license_name"] = $licenseName;
+        $this->apiParams["license_name"] = $licenseName;
     }
     public function getLicenseName()
     {
@@ -247,7 +247,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setLicenseNo($licenseNo)
     {
         $this->licenseNo = $licenseNo;
-        $this->apiParas["license_no"] = $licenseNo;
+        $this->apiParams["license_no"] = $licenseNo;
     }
     public function getLicenseNo()
     {
@@ -256,7 +256,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setLicenseValidDate($licenseValidDate)
     {
         $this->licenseValidDate = $licenseValidDate;
-        $this->apiParas["license_valid_date"] = $licenseValidDate;
+        $this->apiParams["license_valid_date"] = $licenseValidDate;
     }
     public function getLicenseValidDate()
     {
@@ -265,7 +265,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setMemo($memo)
     {
         $this->memo = $memo;
-        $this->apiParas["memo"] = $memo;
+        $this->apiParams["memo"] = $memo;
     }
     public function getMemo()
     {
@@ -274,7 +274,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setOutDoorPic($outDoorPic)
     {
         $this->outDoorPic = $outDoorPic;
-        $this->apiParas["out_door_pic"] = $outDoorPic;
+        $this->apiParams["out_door_pic"] = $outDoorPic;
     }
     public function getOutDoorPic()
     {
@@ -283,7 +283,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setRegionType($regionType)
     {
         $this->regionType = $regionType;
-        $this->apiParas["region_type"] = $regionType;
+        $this->apiParams["region_type"] = $regionType;
     }
     public function getRegionType()
     {
@@ -292,7 +292,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setSecondLicensePic($secondLicensePic)
     {
         $this->secondLicensePic = $secondLicensePic;
-        $this->apiParas["second_license_pic"] = $secondLicensePic;
+        $this->apiParams["second_license_pic"] = $secondLicensePic;
     }
     public function getSecondLicensePic()
     {
@@ -301,7 +301,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setSecondScreenShot($secondScreenShot)
     {
         $this->secondScreenShot = $secondScreenShot;
-        $this->apiParas["second_screen_shot"] = $secondScreenShot;
+        $this->apiParams["second_screen_shot"] = $secondScreenShot;
     }
     public function getSecondScreenShot()
     {
@@ -310,7 +310,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setServiceEmail($serviceEmail)
     {
         $this->serviceEmail = $serviceEmail;
-        $this->apiParas["service_email"] = $serviceEmail;
+        $this->apiParams["service_email"] = $serviceEmail;
     }
     public function getServiceEmail()
     {
@@ -319,7 +319,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setServicePhone($servicePhone)
     {
         $this->servicePhone = $servicePhone;
-        $this->apiParas["service_phone"] = $servicePhone;
+        $this->apiParams["service_phone"] = $servicePhone;
     }
     public function getServicePhone()
     {
@@ -328,7 +328,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setServiceRegionInfo($serviceRegionInfo)
     {
         $this->serviceRegionInfo = $serviceRegionInfo;
-        $this->apiParas["service_region_info"] = $serviceRegionInfo;
+        $this->apiParams["service_region_info"] = $serviceRegionInfo;
     }
     public function getServiceRegionInfo()
     {
@@ -337,7 +337,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setThirdLicensePic($thirdLicensePic)
     {
         $this->thirdLicensePic = $thirdLicensePic;
-        $this->apiParas["third_license_pic"] = $thirdLicensePic;
+        $this->apiParams["third_license_pic"] = $thirdLicensePic;
     }
     public function getThirdLicensePic()
     {
@@ -346,7 +346,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setThirdScreenShot($thirdScreenShot)
     {
         $this->thirdScreenShot = $thirdScreenShot;
-        $this->apiParas["third_screen_shot"] = $thirdScreenShot;
+        $this->apiParams["third_screen_shot"] = $thirdScreenShot;
     }
     public function getThirdScreenShot()
     {
@@ -355,7 +355,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
     public function setVersionDesc($versionDesc)
     {
         $this->versionDesc = $versionDesc;
-        $this->apiParas["version_desc"] = $versionDesc;
+        $this->apiParams["version_desc"] = $versionDesc;
     }
     public function getVersionDesc()
     {

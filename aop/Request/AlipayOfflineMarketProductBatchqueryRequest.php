@@ -13,11 +13,11 @@ class AlipayOfflineMarketProductBatchqueryRequest extends AbstractAlipayRequest
      * 通过该接口可以查询商户录入的所有商品编号
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

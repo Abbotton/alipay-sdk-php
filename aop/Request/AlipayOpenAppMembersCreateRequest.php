@@ -13,11 +13,11 @@ class AlipayOpenAppMembersCreateRequest extends AbstractAlipayRequest
      * 添加小程序开发者或体验者
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

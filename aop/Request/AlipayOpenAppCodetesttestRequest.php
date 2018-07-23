@@ -13,11 +13,11 @@ class AlipayOpenAppCodetesttestRequest extends AbstractAlipayRequest
      * 统一对外错误码测试测试
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

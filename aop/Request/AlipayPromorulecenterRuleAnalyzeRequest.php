@@ -21,11 +21,11 @@ class AlipayPromorulecenterRuleAnalyzeRequest extends AbstractAlipayRequest
      * 支付宝用户id
      **/
     private $userId;
-    private $apiParas = array();
+    
     public function setBizId($bizId)
     {
         $this->bizId = $bizId;
-        $this->apiParas["biz_id"] = $bizId;
+        $this->apiParams["biz_id"] = $bizId;
     }
     public function getBizId()
     {
@@ -34,7 +34,7 @@ class AlipayPromorulecenterRuleAnalyzeRequest extends AbstractAlipayRequest
     public function setRuleUuid($ruleUuid)
     {
         $this->ruleUuid = $ruleUuid;
-        $this->apiParas["rule_uuid"] = $ruleUuid;
+        $this->apiParams["rule_uuid"] = $ruleUuid;
     }
     public function getRuleUuid()
     {
@@ -43,7 +43,7 @@ class AlipayPromorulecenterRuleAnalyzeRequest extends AbstractAlipayRequest
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParas["user_id"] = $userId;
+        $this->apiParams["user_id"] = $userId;
     }
     public function getUserId()
     {

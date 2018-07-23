@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class AlipayOpenPublicLifeDebarkApplyRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

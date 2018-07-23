@@ -37,11 +37,11 @@ class AlipayEcapiprodDrawndnRepaymentrecordQueryRequest extends AbstractAlipayRe
      * 还款记录的起始时间（距离当前时间不能大于183天，只能在【0-183】之间）
      **/
     private $start;
-    private $apiParas = array();
+    
     public function setDrawndnNo($drawndnNo)
     {
         $this->drawndnNo = $drawndnNo;
-        $this->apiParas["drawndn_no"] = $drawndnNo;
+        $this->apiParams["drawndn_no"] = $drawndnNo;
     }
     public function getDrawndnNo()
     {
@@ -50,7 +50,7 @@ class AlipayEcapiprodDrawndnRepaymentrecordQueryRequest extends AbstractAlipayRe
     public function setEnd($end)
     {
         $this->end = $end;
-        $this->apiParas["end"] = $end;
+        $this->apiParams["end"] = $end;
     }
     public function getEnd()
     {
@@ -59,7 +59,7 @@ class AlipayEcapiprodDrawndnRepaymentrecordQueryRequest extends AbstractAlipayRe
     public function setEntityCode($entityCode)
     {
         $this->entityCode = $entityCode;
-        $this->apiParas["entity_code"] = $entityCode;
+        $this->apiParams["entity_code"] = $entityCode;
     }
     public function getEntityCode()
     {
@@ -68,7 +68,7 @@ class AlipayEcapiprodDrawndnRepaymentrecordQueryRequest extends AbstractAlipayRe
     public function setEntityName($entityName)
     {
         $this->entityName = $entityName;
-        $this->apiParas["entity_name"] = $entityName;
+        $this->apiParams["entity_name"] = $entityName;
     }
     public function getEntityName()
     {
@@ -77,7 +77,7 @@ class AlipayEcapiprodDrawndnRepaymentrecordQueryRequest extends AbstractAlipayRe
     public function setIsvCode($isvCode)
     {
         $this->isvCode = $isvCode;
-        $this->apiParas["isv_code"] = $isvCode;
+        $this->apiParams["isv_code"] = $isvCode;
     }
     public function getIsvCode()
     {
@@ -86,7 +86,7 @@ class AlipayEcapiprodDrawndnRepaymentrecordQueryRequest extends AbstractAlipayRe
     public function setOrgCode($orgCode)
     {
         $this->orgCode = $orgCode;
-        $this->apiParas["org_code"] = $orgCode;
+        $this->apiParams["org_code"] = $orgCode;
     }
     public function getOrgCode()
     {
@@ -95,7 +95,7 @@ class AlipayEcapiprodDrawndnRepaymentrecordQueryRequest extends AbstractAlipayRe
     public function setStart($start)
     {
         $this->start = $start;
-        $this->apiParas["start"] = $start;
+        $this->apiParams["start"] = $start;
     }
     public function getStart()
     {

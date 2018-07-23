@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class AlipayMobilePublicContactFollowListRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

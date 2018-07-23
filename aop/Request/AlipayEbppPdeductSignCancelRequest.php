@@ -29,11 +29,11 @@ class AlipayEbppPdeductSignCancelRequest extends AbstractAlipayRequest
      * 用户ID
      **/
     private $userId;
-    private $apiParas = array();
+    
     public function setAgentChannel($agentChannel)
     {
         $this->agentChannel = $agentChannel;
-        $this->apiParas["agent_channel"] = $agentChannel;
+        $this->apiParams["agent_channel"] = $agentChannel;
     }
     public function getAgentChannel()
     {
@@ -42,7 +42,7 @@ class AlipayEbppPdeductSignCancelRequest extends AbstractAlipayRequest
     public function setAgentCode($agentCode)
     {
         $this->agentCode = $agentCode;
-        $this->apiParas["agent_code"] = $agentCode;
+        $this->apiParams["agent_code"] = $agentCode;
     }
     public function getAgentCode()
     {
@@ -51,7 +51,7 @@ class AlipayEbppPdeductSignCancelRequest extends AbstractAlipayRequest
     public function setAgreementId($agreementId)
     {
         $this->agreementId = $agreementId;
-        $this->apiParas["agreement_id"] = $agreementId;
+        $this->apiParams["agreement_id"] = $agreementId;
     }
     public function getAgreementId()
     {
@@ -60,7 +60,7 @@ class AlipayEbppPdeductSignCancelRequest extends AbstractAlipayRequest
     public function setPayPasswordToken($payPasswordToken)
     {
         $this->payPasswordToken = $payPasswordToken;
-        $this->apiParas["pay_password_token"] = $payPasswordToken;
+        $this->apiParams["pay_password_token"] = $payPasswordToken;
     }
     public function getPayPasswordToken()
     {
@@ -69,7 +69,7 @@ class AlipayEbppPdeductSignCancelRequest extends AbstractAlipayRequest
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParas["user_id"] = $userId;
+        $this->apiParams["user_id"] = $userId;
     }
     public function getUserId()
     {

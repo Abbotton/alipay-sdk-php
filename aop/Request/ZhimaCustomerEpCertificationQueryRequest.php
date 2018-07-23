@@ -13,11 +13,11 @@ class ZhimaCustomerEpCertificationQueryRequest extends AbstractAlipayRequest
      * 企业认证查询服务
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -21,11 +21,11 @@ class AlipayPointOrderGetRequest extends AbstractAlipayRequest
      * 用户标识符类型，现在支持ALIPAY_USER_ID:表示支付宝用户ID,ALIPAY_LOGON_ID:表示支付宝登陆号
      **/
     private $userSymbolType;
-    private $apiParas = array();
+    
     public function setMerchantOrderNo($merchantOrderNo)
     {
         $this->merchantOrderNo = $merchantOrderNo;
-        $this->apiParas["merchant_order_no"] = $merchantOrderNo;
+        $this->apiParams["merchant_order_no"] = $merchantOrderNo;
     }
     public function getMerchantOrderNo()
     {
@@ -34,7 +34,7 @@ class AlipayPointOrderGetRequest extends AbstractAlipayRequest
     public function setUserSymbol($userSymbol)
     {
         $this->userSymbol = $userSymbol;
-        $this->apiParas["user_symbol"] = $userSymbol;
+        $this->apiParams["user_symbol"] = $userSymbol;
     }
     public function getUserSymbol()
     {
@@ -43,7 +43,7 @@ class AlipayPointOrderGetRequest extends AbstractAlipayRequest
     public function setUserSymbolType($userSymbolType)
     {
         $this->userSymbolType = $userSymbolType;
-        $this->apiParas["user_symbol_type"] = $userSymbolType;
+        $this->apiParams["user_symbol_type"] = $userSymbolType;
     }
     public function getUserSymbolType()
     {

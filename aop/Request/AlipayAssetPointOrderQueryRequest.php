@@ -13,11 +13,11 @@ class AlipayAssetPointOrderQueryRequest extends AbstractAlipayRequest
      * 商户在调用集分宝发放接口后可以通过此接口查询发放情况
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

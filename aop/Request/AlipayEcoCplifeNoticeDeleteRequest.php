@@ -13,11 +13,11 @@ class AlipayEcoCplifeNoticeDeleteRequest extends AbstractAlipayRequest
      * 删除物业社区通知通告
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

@@ -17,11 +17,11 @@ class AlipayMdataTagGetRequest extends AbstractAlipayRequest
      * 用户的支付宝Id
      **/
     private $userId;
-    private $apiParas = array();
+    
     public function setRequiredTags($requiredTags)
     {
         $this->requiredTags = $requiredTags;
-        $this->apiParas["required_tags"] = $requiredTags;
+        $this->apiParams["required_tags"] = $requiredTags;
     }
     public function getRequiredTags()
     {
@@ -30,7 +30,7 @@ class AlipayMdataTagGetRequest extends AbstractAlipayRequest
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParas["user_id"] = $userId;
+        $this->apiParams["user_id"] = $userId;
     }
     public function getUserId()
     {

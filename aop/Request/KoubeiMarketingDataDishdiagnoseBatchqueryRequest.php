@@ -13,11 +13,11 @@ class KoubeiMarketingDataDishdiagnoseBatchqueryRequest extends AbstractAlipayReq
      * 根据条件查询推荐菜
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

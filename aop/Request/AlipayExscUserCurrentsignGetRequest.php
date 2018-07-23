@@ -13,11 +13,11 @@ class AlipayExscUserCurrentsignGetRequest extends AbstractAlipayRequest
      * 支付宝 cif的accountNo 格式：支付宝userId+0156
      **/
     private $alipayId;
-    private $apiParas = array();
+    
     public function setAlipayId($alipayId)
     {
         $this->alipayId = $alipayId;
-        $this->apiParas["alipay_id"] = $alipayId;
+        $this->apiParams["alipay_id"] = $alipayId;
     }
     public function getAlipayId()
     {

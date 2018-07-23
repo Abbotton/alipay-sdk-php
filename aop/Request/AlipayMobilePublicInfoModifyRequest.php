@@ -41,11 +41,11 @@ class AlipayMobilePublicInfoModifyRequest extends AbstractAlipayRequest
      * 第三张门店照片地址
      **/
     private $shopPic3;
-    private $apiParas = array();
+    
     public function setAppName($appName)
     {
         $this->appName = $appName;
-        $this->apiParas["app_name"] = $appName;
+        $this->apiParams["app_name"] = $appName;
     }
     public function getAppName()
     {
@@ -54,7 +54,7 @@ class AlipayMobilePublicInfoModifyRequest extends AbstractAlipayRequest
     public function setAuthPic($authPic)
     {
         $this->authPic = $authPic;
-        $this->apiParas["auth_pic"] = $authPic;
+        $this->apiParams["auth_pic"] = $authPic;
     }
     public function getAuthPic()
     {
@@ -63,7 +63,7 @@ class AlipayMobilePublicInfoModifyRequest extends AbstractAlipayRequest
     public function setLicenseUrl($licenseUrl)
     {
         $this->licenseUrl = $licenseUrl;
-        $this->apiParas["license_url"] = $licenseUrl;
+        $this->apiParams["license_url"] = $licenseUrl;
     }
     public function getLicenseUrl()
     {
@@ -72,7 +72,7 @@ class AlipayMobilePublicInfoModifyRequest extends AbstractAlipayRequest
     public function setLogoUrl($logoUrl)
     {
         $this->logoUrl = $logoUrl;
-        $this->apiParas["logo_url"] = $logoUrl;
+        $this->apiParams["logo_url"] = $logoUrl;
     }
     public function getLogoUrl()
     {
@@ -81,7 +81,7 @@ class AlipayMobilePublicInfoModifyRequest extends AbstractAlipayRequest
     public function setPublicGreeting($publicGreeting)
     {
         $this->publicGreeting = $publicGreeting;
-        $this->apiParas["public_greeting"] = $publicGreeting;
+        $this->apiParams["public_greeting"] = $publicGreeting;
     }
     public function getPublicGreeting()
     {
@@ -90,7 +90,7 @@ class AlipayMobilePublicInfoModifyRequest extends AbstractAlipayRequest
     public function setShopPic1($shopPic1)
     {
         $this->shopPic1 = $shopPic1;
-        $this->apiParas["shop_pic1"] = $shopPic1;
+        $this->apiParams["shop_pic1"] = $shopPic1;
     }
     public function getShopPic1()
     {
@@ -99,7 +99,7 @@ class AlipayMobilePublicInfoModifyRequest extends AbstractAlipayRequest
     public function setShopPic2($shopPic2)
     {
         $this->shopPic2 = $shopPic2;
-        $this->apiParas["shop_pic2"] = $shopPic2;
+        $this->apiParams["shop_pic2"] = $shopPic2;
     }
     public function getShopPic2()
     {
@@ -108,7 +108,7 @@ class AlipayMobilePublicInfoModifyRequest extends AbstractAlipayRequest
     public function setShopPic3($shopPic3)
     {
         $this->shopPic3 = $shopPic3;
-        $this->apiParas["shop_pic3"] = $shopPic3;
+        $this->apiParams["shop_pic3"] = $shopPic3;
     }
     public function getShopPic3()
     {

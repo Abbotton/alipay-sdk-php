@@ -23,11 +23,11 @@ class AlipayAcquireCloseRequest extends AbstractAlipayRequest
 如果同时传了out_trade_no和trade_no，则以trade_no为准
      **/
     private $tradeNo;
-    private $apiParas = array();
+    
     public function setOperatorId($operatorId)
     {
         $this->operatorId = $operatorId;
-        $this->apiParas["operator_id"] = $operatorId;
+        $this->apiParams["operator_id"] = $operatorId;
     }
     public function getOperatorId()
     {
@@ -36,7 +36,7 @@ class AlipayAcquireCloseRequest extends AbstractAlipayRequest
     public function setOutTradeNo($outTradeNo)
     {
         $this->outTradeNo = $outTradeNo;
-        $this->apiParas["out_trade_no"] = $outTradeNo;
+        $this->apiParams["out_trade_no"] = $outTradeNo;
     }
     public function getOutTradeNo()
     {
@@ -45,7 +45,7 @@ class AlipayAcquireCloseRequest extends AbstractAlipayRequest
     public function setTradeNo($tradeNo)
     {
         $this->tradeNo = $tradeNo;
-        $this->apiParas["trade_no"] = $tradeNo;
+        $this->apiParams["trade_no"] = $tradeNo;
     }
     public function getTradeNo()
     {

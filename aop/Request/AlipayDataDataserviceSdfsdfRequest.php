@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class AlipayDataDataserviceSdfsdfRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

@@ -20,11 +20,11 @@ qr_code：二维码
 bar_code：条码
      **/
     private $dynamicIdType;
-    private $apiParas = array();
+    
     public function setDynamicId($dynamicId)
     {
         $this->dynamicId = $dynamicId;
-        $this->apiParas["dynamic_id"] = $dynamicId;
+        $this->apiParams["dynamic_id"] = $dynamicId;
     }
     public function getDynamicId()
     {
@@ -33,7 +33,7 @@ bar_code：条码
     public function setDynamicIdType($dynamicIdType)
     {
         $this->dynamicIdType = $dynamicIdType;
-        $this->apiParas["dynamic_id_type"] = $dynamicIdType;
+        $this->apiParams["dynamic_id_type"] = $dynamicIdType;
     }
     public function getDynamicIdType()
     {

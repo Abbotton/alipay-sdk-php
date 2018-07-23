@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class AlipayCommerceLotteryTypelistQueryRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

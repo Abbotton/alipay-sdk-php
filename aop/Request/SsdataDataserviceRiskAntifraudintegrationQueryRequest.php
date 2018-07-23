@@ -13,11 +13,11 @@ class SsdataDataserviceRiskAntifraudintegrationQueryRequest extends AbstractAlip
      * 蚁盾欺诈评分综合版
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

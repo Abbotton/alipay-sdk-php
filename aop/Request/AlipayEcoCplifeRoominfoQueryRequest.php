@@ -13,11 +13,11 @@ class AlipayEcoCplifeRoominfoQueryRequest extends AbstractAlipayRequest
      * 商户根据需要调用该接口查询小区房屋信息列表。
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

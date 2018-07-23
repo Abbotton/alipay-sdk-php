@@ -13,11 +13,11 @@ class AlipayCommerceTransportOfflinepayRecordVerifyRequest extends AbstractAlipa
      * 支付宝脱机操作信息验证
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

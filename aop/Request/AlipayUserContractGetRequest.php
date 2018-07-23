@@ -13,11 +13,11 @@ class AlipayUserContractGetRequest extends AbstractAlipayRequest
      * 订购者支付宝ID。session与subscriber_user_id二选一即可。
      **/
     private $subscriberUserId;
-    private $apiParas = array();
+    
     public function setSubscriberUserId($subscriberUserId)
     {
         $this->subscriberUserId = $subscriberUserId;
-        $this->apiParas["subscriber_user_id"] = $subscriberUserId;
+        $this->apiParams["subscriber_user_id"] = $subscriberUserId;
     }
     public function getSubscriberUserId()
     {

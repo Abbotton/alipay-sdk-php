@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class AlipayCommerceCityfacilitatorCityQueryRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

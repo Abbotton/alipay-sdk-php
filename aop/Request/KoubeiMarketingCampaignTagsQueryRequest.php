@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class KoubeiMarketingCampaignTagsQueryRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

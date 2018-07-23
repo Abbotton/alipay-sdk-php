@@ -17,11 +17,11 @@ class AlipayTrustUserReportGetRequest extends AbstractAlipayRequest
      * FN_S（金融简版）
      **/
     private $type;
-    private $apiParas = array();
+    
     public function setScene($scene)
     {
         $this->scene = $scene;
-        $this->apiParas["scene"] = $scene;
+        $this->apiParams["scene"] = $scene;
     }
     public function getScene()
     {
@@ -30,7 +30,7 @@ class AlipayTrustUserReportGetRequest extends AbstractAlipayRequest
     public function setType($type)
     {
         $this->type = $type;
-        $this->apiParas["type"] = $type;
+        $this->apiParams["type"] = $type;
     }
     public function getType()
     {

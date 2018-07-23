@@ -37,11 +37,11 @@ class AlipayOperatorMobileBindRequest extends AbstractAlipayRequest
      * 支付宝处理完请求后，如验证成功，当前页面自动跳转到商户网站里指定页面的http路径。
      **/
     private $sReturnUrl;
-    private $apiParas = array();
+    
     public function setCheckSigncard($checkSigncard)
     {
         $this->checkSigncard = $checkSigncard;
-        $this->apiParas["check_signcard"] = $checkSigncard;
+        $this->apiParams["check_signcard"] = $checkSigncard;
     }
     public function getCheckSigncard()
     {
@@ -50,7 +50,7 @@ class AlipayOperatorMobileBindRequest extends AbstractAlipayRequest
     public function setfReturnUrl($fReturnUrl)
     {
         $this->fReturnUrl = $fReturnUrl;
-        $this->apiParas["f_return_url"] = $fReturnUrl;
+        $this->apiParams["f_return_url"] = $fReturnUrl;
     }
     public function getfReturnUrl()
     {
@@ -59,7 +59,7 @@ class AlipayOperatorMobileBindRequest extends AbstractAlipayRequest
     public function setHasSpi($hasSpi)
     {
         $this->hasSpi = $hasSpi;
-        $this->apiParas["has_spi"] = $hasSpi;
+        $this->apiParams["has_spi"] = $hasSpi;
     }
     public function getHasSpi()
     {
@@ -68,7 +68,7 @@ class AlipayOperatorMobileBindRequest extends AbstractAlipayRequest
     public function setOperatorName($operatorName)
     {
         $this->operatorName = $operatorName;
-        $this->apiParas["operator_name"] = $operatorName;
+        $this->apiParams["operator_name"] = $operatorName;
     }
     public function getOperatorName()
     {
@@ -77,7 +77,7 @@ class AlipayOperatorMobileBindRequest extends AbstractAlipayRequest
     public function setProvinceName($provinceName)
     {
         $this->provinceName = $provinceName;
-        $this->apiParas["province_name"] = $provinceName;
+        $this->apiParams["province_name"] = $provinceName;
     }
     public function getProvinceName()
     {
@@ -86,7 +86,7 @@ class AlipayOperatorMobileBindRequest extends AbstractAlipayRequest
     public function setsReturnUrl($sReturnUrl)
     {
         $this->sReturnUrl = $sReturnUrl;
-        $this->apiParas["s_return_url"] = $sReturnUrl;
+        $this->apiParams["s_return_url"] = $sReturnUrl;
     }
     public function getsReturnUrl()
     {

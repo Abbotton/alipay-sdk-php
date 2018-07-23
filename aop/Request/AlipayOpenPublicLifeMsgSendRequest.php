@@ -76,11 +76,11 @@ deadline（int）：文章的失效时间，单位秒
      * 生活号视频类消息视频id或url（视频类消息必填，根据来源区分）
      **/
     private $videoUrl;
-    private $apiParas = array();
+    
     public function setCategory($category)
     {
         $this->category = $category;
-        $this->apiParas["category"] = $category;
+        $this->apiParams["category"] = $category;
     }
     public function getCategory()
     {
@@ -89,7 +89,7 @@ deadline（int）：文章的失效时间，单位秒
     public function setContent($content)
     {
         $this->content = $content;
-        $this->apiParas["content"] = $content;
+        $this->apiParams["content"] = $content;
     }
     public function getContent()
     {
@@ -98,7 +98,7 @@ deadline（int）：文章的失效时间，单位秒
     public function setCover($cover)
     {
         $this->cover = $cover;
-        $this->apiParas["cover"] = $cover;
+        $this->apiParams["cover"] = $cover;
     }
     public function getCover()
     {
@@ -107,7 +107,7 @@ deadline（int）：文章的失效时间，单位秒
     public function setDesc($desc)
     {
         $this->desc = $desc;
-        $this->apiParas["desc"] = $desc;
+        $this->apiParams["desc"] = $desc;
     }
     public function getDesc()
     {
@@ -116,7 +116,7 @@ deadline（int）：文章的失效时间，单位秒
     public function setMsgType($msgType)
     {
         $this->msgType = $msgType;
-        $this->apiParas["msg_type"] = $msgType;
+        $this->apiParams["msg_type"] = $msgType;
     }
     public function getMsgType()
     {
@@ -125,7 +125,7 @@ deadline（int）：文章的失效时间，单位秒
     public function setSourceExtInfo($sourceExtInfo)
     {
         $this->sourceExtInfo = $sourceExtInfo;
-        $this->apiParas["source_ext_info"] = $sourceExtInfo;
+        $this->apiParams["source_ext_info"] = $sourceExtInfo;
     }
     public function getSourceExtInfo()
     {
@@ -134,7 +134,7 @@ deadline（int）：文章的失效时间，单位秒
     public function setTitle($title)
     {
         $this->title = $title;
-        $this->apiParas["title"] = $title;
+        $this->apiParams["title"] = $title;
     }
     public function getTitle()
     {
@@ -143,7 +143,7 @@ deadline（int）：文章的失效时间，单位秒
     public function setUniqueMsgId($uniqueMsgId)
     {
         $this->uniqueMsgId = $uniqueMsgId;
-        $this->apiParas["unique_msg_id"] = $uniqueMsgId;
+        $this->apiParams["unique_msg_id"] = $uniqueMsgId;
     }
     public function getUniqueMsgId()
     {
@@ -152,7 +152,7 @@ deadline（int）：文章的失效时间，单位秒
     public function setVideoLength($videoLength)
     {
         $this->videoLength = $videoLength;
-        $this->apiParas["video_length"] = $videoLength;
+        $this->apiParams["video_length"] = $videoLength;
     }
     public function getVideoLength()
     {
@@ -161,7 +161,7 @@ deadline（int）：文章的失效时间，单位秒
     public function setVideoSamples($videoSamples)
     {
         $this->videoSamples = $videoSamples;
-        $this->apiParas["video_samples"] = $videoSamples;
+        $this->apiParams["video_samples"] = $videoSamples;
     }
     public function getVideoSamples()
     {
@@ -170,7 +170,7 @@ deadline（int）：文章的失效时间，单位秒
     public function setVideoSize($videoSize)
     {
         $this->videoSize = $videoSize;
-        $this->apiParas["video_size"] = $videoSize;
+        $this->apiParams["video_size"] = $videoSize;
     }
     public function getVideoSize()
     {
@@ -179,7 +179,7 @@ deadline（int）：文章的失效时间，单位秒
     public function setVideoSource($videoSource)
     {
         $this->videoSource = $videoSource;
-        $this->apiParas["video_source"] = $videoSource;
+        $this->apiParams["video_source"] = $videoSource;
     }
     public function getVideoSource()
     {
@@ -188,7 +188,7 @@ deadline（int）：文章的失效时间，单位秒
     public function setVideoTemporaryUrl($videoTemporaryUrl)
     {
         $this->videoTemporaryUrl = $videoTemporaryUrl;
-        $this->apiParas["video_temporary_url"] = $videoTemporaryUrl;
+        $this->apiParams["video_temporary_url"] = $videoTemporaryUrl;
     }
     public function getVideoTemporaryUrl()
     {
@@ -197,7 +197,7 @@ deadline（int）：文章的失效时间，单位秒
     public function setVideoUrl($videoUrl)
     {
         $this->videoUrl = $videoUrl;
-        $this->apiParas["video_url"] = $videoUrl;
+        $this->apiParams["video_url"] = $videoUrl;
     }
     public function getVideoUrl()
     {

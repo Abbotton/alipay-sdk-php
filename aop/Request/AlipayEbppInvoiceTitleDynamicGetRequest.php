@@ -13,11 +13,11 @@ class AlipayEbppInvoiceTitleDynamicGetRequest extends AbstractAlipayRequest
      * 根据条形码获取抬头
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

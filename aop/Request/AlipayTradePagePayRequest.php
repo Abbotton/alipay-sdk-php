@@ -13,11 +13,11 @@ class AlipayTradePagePayRequest extends AbstractAlipayRequest
      * 统一收单下单并支付页面接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

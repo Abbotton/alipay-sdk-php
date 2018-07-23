@@ -9,5 +9,5 @@ namespace Alipay\Request;
 
 class AlipayOpenPublicMultimediaDownloadProxyRequest extends AbstractAlipayRequest
 {
-    private $apiParas = array();
+    
 }

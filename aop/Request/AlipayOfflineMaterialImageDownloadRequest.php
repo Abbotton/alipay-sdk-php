@@ -13,11 +13,11 @@ class AlipayOfflineMaterialImageDownloadRequest extends AbstractAlipayRequest
      * 图片id列表
      **/
     private $imageIds;
-    private $apiParas = array();
+    
     public function setImageIds($imageIds)
     {
         $this->imageIds = $imageIds;
-        $this->apiParas["image_ids"] = $imageIds;
+        $this->apiParams["image_ids"] = $imageIds;
     }
     public function getImageIds()
     {

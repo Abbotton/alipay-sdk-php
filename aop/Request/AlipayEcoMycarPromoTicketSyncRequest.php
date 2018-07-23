@@ -13,11 +13,11 @@ class AlipayEcoMycarPromoTicketSyncRequest extends AbstractAlipayRequest
      * ISV有新的卡券信息同步到车主服务平台
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

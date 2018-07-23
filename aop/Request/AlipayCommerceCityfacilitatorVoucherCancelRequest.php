@@ -13,11 +13,11 @@ class AlipayCommerceCityfacilitatorVoucherCancelRequest extends AbstractAlipayRe
      * 钱包中地铁票购票，获得核销码，线下渠道商凭核销码撤销该笔交易
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {

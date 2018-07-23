@@ -13,11 +13,11 @@ class AlipayMarketingCdpAdvertiseQueryRequest extends AbstractAlipayRequest
      * 提供给ISV和开发者查询广告的接口
      **/
     private $bizContent;
-    private $apiParas = array();
+    
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParas["biz_content"] = $bizContent;
+        $this->apiParams["biz_content"] = $bizContent;
     }
     public function getBizContent()
     {
