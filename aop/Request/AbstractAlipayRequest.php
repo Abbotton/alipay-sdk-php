@@ -27,17 +27,67 @@ abstract class AbstractAlipayRequest
         return '1.0';
     }
 
-    abstract public function getNotifyUrl();
-
     abstract public function getApiParams();
 
-    abstract public function getTerminalType();
+    protected $notifyUrl;
 
-    abstract public function getTerminalInfo();
+    protected $returnUrl;
 
-    abstract public function getProdCode();
+    protected $terminalType;
+
+    protected $terminalInfo;
+
+    protected $prodCode;
+
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
+    }
     
-    abstract public function getReturnUrl();
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
+
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
+
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+    }
+
+    public function getTerminalType()
+    {
+        return $this->terminalType;
+    }
+
+    public function setTerminalType($terminalType)
+    {
+        $this->terminalType = $terminalType;
+    }
+
+    public function getTerminalInfo()
+    {
+        return $this->terminalInfo;
+    }
+
+    public function setTerminalInfo($terminalInfo)
+    {
+        $this->terminalInfo = $terminalInfo;
+    }
+
+    public function getProdCode()
+    {
+        return $this->prodCode;
+    }
+
+    public function setProdCode($prodCode)
+    {
+        $this->prodCode = $prodCode;
+    }
 
     public function __construct($config = [])
     {
