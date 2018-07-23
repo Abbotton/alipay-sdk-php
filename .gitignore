@@ -4,3 +4,5 @@
 /vendor/
 /composer.lock
 *.pem
+_coverage/
+.DS_Store
