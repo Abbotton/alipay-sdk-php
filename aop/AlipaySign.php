@@ -30,6 +30,8 @@ class AlipaySign
      */
     protected $appPrivateKey;
 
+    protected $appPrivateKeyResource;
+
     /**
      * 支付宝公钥
      * 支持文件路径或公钥字符串，用于验证签名
@@ -37,6 +39,8 @@ class AlipaySign
      * @var string
      */
     protected $alipayPublicKey;
+
+    protected $alipayPublicKeyResource;
 
     /**
      * 创建 AlipaySign 实例
@@ -55,19 +59,48 @@ class AlipaySign
             throw new \InvalidArgumentException('Unknown sign type: ' . $signType);
         }
         $instance->type = $signType;
-        $instance->appPrivateKey = $instance->getKey($appPrivateKey, true);
-        $instance->alipayPublicKey = $instance->getKey($alipayPublicKey, false);
+        $instance->appPrivateKey = $appPrivateKey;
+        $instance->alipayPublicKey = $alipayPublicKey;
+        $instance->loadKeys();
         return $instance;
     }
 
+    /**
+     * 构造函数
+     */
     protected function __construct()
     {
     }
 
+    /**
+     * 析构函数
+     */
     public function __destruct()
     {
         @openssl_free_key($this->appPrivateKey);
         @openssl_free_key($this->alipayPublicKey);
+    }
+
+    /**
+     * 深拷贝需要重新加载密钥，以防密钥被释放
+     *
+     * @return void
+     */
+    public function __clone()
+    {
+        $this->loadKeys();
+    }
+
+    /**
+     * 加载公钥和私钥
+     *
+     * @return void
+     * @see self::getKey()
+     */
+    protected function loadKeys()
+    {
+        $this->appPrivateKeyResource = $this->getKey($this->appPrivateKey, true);
+        $this->alipayPublicKeyResource = $this->getKey($this->alipayPublicKey, false);
     }
 
     /**
@@ -81,7 +114,7 @@ class AlipaySign
      */
     public function generate($data)
     {
-        $result = openssl_sign($data, $sign, $this->appPrivateKey, $this->getSignAlgo());
+        $result = openssl_sign($data, $sign, $this->appPrivateKeyResource, $this->getSignAlgo());
         if($result === false) {
             throw new AlipayOpenSslException(openssl_error_string());
         }
@@ -123,7 +156,7 @@ class AlipaySign
         if($decodedSign === false) {
             throw new AlipayBase64Exception($sign, false);
         }
-        $result = openssl_verify($data, $decodedSign, $this->alipayPublicKey, $this->getSignAlgo());
+        $result = openssl_verify($data, $decodedSign, $this->alipayPublicKeyResource, $this->getSignAlgo());
         switch($result)
         {
             case 1:
