@@ -6,32 +6,12 @@ use Alipay\Exception\AlipayInvalidPropertyException;
 
 abstract class AbstractAlipayRequest
 {
-    public static function className()
-    {
-        return __CLASS__;
-    }
-
-    public function getApiMethodName()
-    {
-        $name = (new \ReflectionClass($this))->getShortName();
-        $name = preg_replace('/Request$/', '', $name);
-        $name = preg_replace('/([A-Z])/s', '.$1', $name);
-        $name = trim($name, '.');
-        $name = strtolower($name);
-        return $name;
-    }
-
-    public function getApiVersion()
-    {
-        return '1.0';
-    }
-
+    /**
+     * API 请求参数（非系统参数）
+     *
+     * @var array
+     */
     protected $apiParams = array();
-
-    public function getApiParams()
-    {
-        return $this->apiParams;
-    }
 
     protected $notifyUrl;
 
@@ -43,10 +23,51 @@ abstract class AbstractAlipayRequest
 
     protected $prodCode;
 
+    /**
+     * 获取带命名空间的完整类名
+     *
+     * @return string
+     */
+    public static function className()
+    {
+        return __CLASS__;
+    }
+
+    /**
+     * 根据类名获取 API 方法名
+     *
+     * @return string
+     */
+    public function getApiMethodName()
+    {
+        $name = (new \ReflectionClass($this))->getShortName();
+        $name = preg_replace('/Request$/', '', $name);
+        $name = preg_replace('/([A-Z])/s', '.$1', $name);
+        $name = trim($name, '.');
+        $name = strtolower($name);
+        return $name;
+    }
+
+    /**
+     * 获取 API 版本（目前固定为 1.0）
+     *
+     * @return string
+     */
+    public function getApiVersion()
+    {
+        return '1.0';
+    }
+
+    public function getApiParams()
+    {
+        return $this->apiParams;
+    }
+
     public function getNotifyUrl()
     {
         return $this->notifyUrl;
     }
+
     public function setNotifyUrl($notifyUrl)
     {
         $this->notifyUrl = $notifyUrl;
