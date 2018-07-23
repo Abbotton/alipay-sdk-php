@@ -45,8 +45,9 @@ class AlipayResponse
         }
         $instance = new static();
         $instance->raw = $raw;
-        if (($instance->data = json_decode($raw, true)) === null) {
-            throw new AlipayInvalidResponseException(null, json_last_error_msg());
+        $instance->data = json_decode($raw, true);
+        if (!is_array($instance->data)) {
+            throw new AlipayInvalidResponseException($raw, json_last_error_msg());
         }
         return $instance;
     }

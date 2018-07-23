@@ -11,6 +11,7 @@ namespace Alipay;
 use Alipay\Exception\AlipayInvalidSignException;
 use Alipay\Exception\AlipayBase64Exception;
 use Alipay\Exception\AlipayOpenSslException;
+use Alipay\Exception\AlipayInvalidKeyException;
 
 class AlipaySign
 {
@@ -76,8 +77,7 @@ class AlipaySign
      */
     public function __destruct()
     {
-        @openssl_free_key($this->appPrivateKey);
-        @openssl_free_key($this->alipayPublicKey);
+        $this->freeKeys();
     }
 
     /**
@@ -100,6 +100,22 @@ class AlipaySign
     {
         $this->appPrivateKeyResource = $this->getKey($this->appPrivateKey, true);
         $this->alipayPublicKeyResource = $this->getKey($this->alipayPublicKey, false);
+    }
+
+    /**
+     * 释放公钥和私钥资源
+     *
+     * @return void
+     */
+    protected function freeKeys()
+    {
+        $freeKey = function ($k) {
+            if(is_resource($k)) {
+                openssl_free_key($k);
+            }
+        };
+        $freeKey($this->appPrivateKeyResource);
+        $freeKey($this->alipayPublicKeyResource);
     }
 
     /**

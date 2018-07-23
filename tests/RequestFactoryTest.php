@@ -12,14 +12,14 @@ class RequestFactoryTest extends TestCase
     {
         $className = 'AlipaySystemOauthTokenRequest';
         $ins = AlipayRequestFactory::create($className);
-        $this->assertInstanceOf(AlipaySystemOauthTokenRequest::className(), $ins);
+        $this->assertInstanceOf(AlipaySystemOauthTokenRequest::class, $ins);
     }
 
     public function testCreateByApi()
     {
         $apiName = 'alipay.system.oauth.token';
         $ins = AlipayRequestFactory::createByApi($apiName);
-        $this->assertInstanceOf(AlipaySystemOauthTokenRequest::className(), $ins);
+        $this->assertInstanceOf(AlipaySystemOauthTokenRequest::class, $ins);
     }
 
     public function testCreateNotExistedClass()
@@ -29,7 +29,7 @@ class RequestFactoryTest extends TestCase
         $ins = AlipayRequestFactory::create($className);
     }
 
-    public function testCreateNotRequestSubclass()
+    public function testCreateInvalidClass()
     {
         $this->expectException(AlipayInvalidRequestException::class);
         $className = 'AbstractAlipayRequest';

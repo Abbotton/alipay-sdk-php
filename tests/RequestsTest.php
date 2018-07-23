@@ -1,52 +1,26 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+use Alipay\Exception\AlipayInvalidPropertyException;
 use Alipay\Request\AbstractAlipayRequest;
+use Alipay\Request\AlipaySystemOauthTokenRequest;
+use PHPUnit\Framework\TestCase;
 
 class RequestsTest extends TestCase
 {
     public function testRequests()
     {
         $list = require __DIR__ . '/../vendor/composer/autoload_classmap.php';
-        foreach($list as $k => $v)
-        {
+        foreach ($list as $k => $v) {
             $class = new ReflectionClass($k);
-            if($class->isSubclassOf(AbstractAlipayRequest::className()) === false)
-            {
+            if ($class->isSubclassOf(AbstractAlipayRequest::className()) === false) {
                 continue;
             }
-            if($class->isAbstract())
-            {
+            if ($class->isAbstract()) {
                 continue;
             }
-
-            // ------------------------------------------------------------
 
             /** @var AbstractAlipayRequest $ins */
-            $ins = new $k([
-                'notifyUrl' => 'notify_url'
-            ]);
-            $this->assertEquals('notify_url', $ins->notifyUrl);
-            $this->assertTrue(isset($ins->notifyUrl));
-            unset($ins->notifyUrl);
-            $this->assertFalse(isset($ins->notifyUrl));
-
-            // ------------------------------------------------------------
-
             $ins = new $k();
-            $ins->notifyUrl = 'notify_url';
-            $ins->returnUrl = 'return_url';
-            $ins->terminalType = 'terminal_type';
-            $ins->terminalInfo = 'terminal_info';
-            $ins->prodCode = 'prod_code';
-            $this->assertEquals('notify_url', $ins->notifyUrl);
-            $this->assertEquals('return_url', $ins->returnUrl);
-            $this->assertEquals('terminal_type', $ins->terminalType);
-            $this->assertEquals('terminal_info', $ins->terminalInfo);
-            $this->assertEquals('prod_code', $ins->prodCode);
-
-            // ------------------------------------------------------------
-
             $this->assertNotEmpty($ins->getApiMethodName());
             $this->assertEquals($ins->getApiVersion(), '1.0');
             $this->assertTrue(is_array($ins->getApiParams()));
@@ -54,23 +28,46 @@ class RequestsTest extends TestCase
             // ------------------------------------------------------------
 
             $methods = $class->getMethods(ReflectionMethod::IS_PUBLIC);
-            foreach($methods as $method)
-            {
+            foreach ($methods as $method) {
                 /** @var ReflectionMethod $method */
                 $funcName = $method->getName();
                 $propName = substr($funcName, 3);
                 $funPrefix = substr($funcName, 0, 3);
 
-                if($funPrefix !== 'set') {
+                if ($funPrefix !== 'set') {
                     continue;
                 }
 
                 $value = uniqid();
-                $method->invoke($ins, $value);
-
-                $getter = $class->getMethod('get' . $propName);
-                $this->assertEquals($value, $getter->invoke($ins));
+                $ins->$propName = $value;
+                $this->assertEquals($value, $ins->$propName);
             }
         }
+    }
+
+    public function testGetterSetter()
+    {
+        $ins = new AlipaySystemOauthTokenRequest([
+            'notifyUrl' => 'notify_url',
+        ]);
+        $this->assertTrue(isset($ins->notifyUrl));
+        $this->assertEquals('notify_url', $ins->notifyUrl);
+        unset($ins->notifyUrl);
+        $this->assertFalse(isset($ins->notifyUrl));
+        $this->assertFalse(isset($ins->foo));
+    }
+
+    public function testSetUnknownProperty()
+    {
+        $this->expectException(AlipayInvalidPropertyException::class);
+        $req = new AlipaySystemOauthTokenRequest();
+        $req->foo = 'this property does not exist';
+    }
+
+    public function testGetUnknownProperty()
+    {
+        $this->expectException(AlipayInvalidPropertyException::class);
+        $req = new AlipaySystemOauthTokenRequest();
+        $value = $req->foo;
     }
 }
