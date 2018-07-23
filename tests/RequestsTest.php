@@ -3,7 +3,7 @@
 use PHPUnit\Framework\TestCase;
 use Alipay\Request\AbstractAlipayRequest;
 
-class RequestTest extends TestCase
+class RequestsTest extends TestCase
 {
     public function testRequests()
     {
