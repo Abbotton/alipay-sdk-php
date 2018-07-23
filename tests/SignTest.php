@@ -77,6 +77,26 @@ class SignTest extends TestCase
 
     /**
      * @depends testCreate
+     * @expectedException Alipay\Exception\AlipayBase64Exception
+     */
+    public function testInvalidBase64Data(AlipaySign $helper)
+    {
+        $helper->verify('this is an undecodable data ...', self::TEST_DATA);
+    }
+
+    /**
+     * @depends testCreate
+     * @depends testGenerate
+     * @expectedException Alipay\Exception\AlipayInvalidSignException
+     */
+    public function testInvalidSign(AlipaySign $helper, $sign)
+    {
+        $helper->verify($sign, 'this is a string has been tampered with');
+        $this->assertTrue(true);
+    }
+
+    /**
+     * @depends testCreate
      */
     public function testSignParams(AlipaySign $helper)
     {
@@ -90,5 +110,4 @@ class SignTest extends TestCase
         $helper->verifyByAsyncCallback($params);
         $this->assertTrue(true);
     }
-    
 }
