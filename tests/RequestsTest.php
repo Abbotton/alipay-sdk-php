@@ -5,7 +5,7 @@ use Alipay\Request\AbstractAlipayRequest;
 
 class RequestTest extends TestCase
 {
-    public function testApiName()
+    public function testRequests()
     {
         $list = require __DIR__ . '/../vendor/composer/autoload_classmap.php';
         foreach($list as $k => $v)
