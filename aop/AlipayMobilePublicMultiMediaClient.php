@@ -9,8 +9,6 @@
 
 namespace Alipay;
 
-require "AlipayMobilePublicMultiMediaExecute.php";
-
 class AlipayMobilePublicMultiMediaClient
 {
 
