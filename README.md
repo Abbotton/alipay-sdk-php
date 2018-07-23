@@ -15,13 +15,9 @@
 - [x] 移除编码转换特性，统一使用 `UTF-8`。
 - [ ] 其它优化，持续进行中……
 
-## 快速开始
-
-待补充。
-
 ## 如何使用
 
-除非你已经通读支付宝开放平台入门文档，否则请先阅读 [快速开始](#快速开始) 部分。
+除非你已经通读支付宝开放平台入门文档，否则请先阅读 [快速开始](QUICKSTART.md) 部分。
 
 1. Composer 安装。
 
@@ -50,7 +46,10 @@
 4. 创建 `AlipayRequest` 实例。
 
     ```php
-    $request = \Alipay\AlipayRequestFactory::createByApi('API Name');
+    $request = \Alipay\AlipayRequestFactory::createByApi('API Name', [
+        'Request param key' => 'Request param value',
+        'Foo' => 'Bar',
+    ]);
     ```
 
 5. 发送请求。
