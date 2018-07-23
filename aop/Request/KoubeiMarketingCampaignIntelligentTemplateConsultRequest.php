@@ -59,7 +59,7 @@ class KoubeiMarketingCampaignIntelligentTemplateConsultRequest extends AbstractA
         return $this->returnUrl;
     }
 
-    public function getApiParas()
+    public function getApiParams()
     {
         return $this->apiParas;
     }

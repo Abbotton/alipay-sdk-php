@@ -122,7 +122,7 @@ class AopClient
             $params['notify_url'] = $notify_url;
         }
 
-        $dict = $request->getApiParas();
+        $dict = $request->getApiParams();
         $params['biz_content'] = $dict['biz_content'];
         $params['sign'] = $this->signHelper->generateByParams($params);
 
@@ -155,7 +155,7 @@ class AopClient
         $sysParams["charset"] = $this->charset;
 
         //获取业务参数
-        $apiParams = $request->getApiParas();
+        $apiParams = $request->getApiParams();
 
         //签名
         $totalParams = array_merge($apiParams, $sysParams);
@@ -220,7 +220,7 @@ class AopClient
         $sysParams["app_auth_token"] = $appInfoAuthtoken;
 
         //获取业务参数
-        $apiParams = $request->getApiParas();
+        $apiParams = $request->getApiParams();
 
         //签名
         $totalParams = array_merge($apiParams, $sysParams);

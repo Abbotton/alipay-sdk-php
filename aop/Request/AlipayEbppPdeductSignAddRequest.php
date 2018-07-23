@@ -357,7 +357,7 @@ HEALTH：健康险
         return $this->returnUrl;
     }
 
-    public function getApiParas()
+    public function getApiParams()
     {
         return $this->apiParas;
     }

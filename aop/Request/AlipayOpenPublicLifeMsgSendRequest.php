@@ -278,7 +278,7 @@ deadline（int）：文章的失效时间，单位秒
         return $this->returnUrl;
     }
 
-    public function getApiParas()
+    public function getApiParams()
     {
         return $this->apiParas;
     }

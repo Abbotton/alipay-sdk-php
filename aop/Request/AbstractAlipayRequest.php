@@ -29,7 +29,7 @@ abstract class AbstractAlipayRequest
 
     abstract public function getNotifyUrl();
 
-    abstract public function getApiParas();
+    abstract public function getApiParams();
 
     abstract public function getTerminalType();
 

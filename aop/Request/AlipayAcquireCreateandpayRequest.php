@@ -491,7 +491,7 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
         return $this->returnUrl;
     }
 
-    public function getApiParas()
+    public function getApiParams()
     {
         return $this->apiParas;
     }

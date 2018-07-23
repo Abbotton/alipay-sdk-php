@@ -78,7 +78,7 @@ bar_code：条码
         return $this->returnUrl;
     }
 
-    public function getApiParas()
+    public function getApiParams()
     {
         return $this->apiParas;
     }

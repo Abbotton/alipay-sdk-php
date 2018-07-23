@@ -59,7 +59,7 @@ class AlipayZdataassetsFcdatalabZdatamergetaskRequest extends AbstractAlipayRequ
         return $this->returnUrl;
     }
 
-    public function getApiParas()
+    public function getApiParams()
     {
         return $this->apiParas;
     }

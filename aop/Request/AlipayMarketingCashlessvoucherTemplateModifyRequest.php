@@ -59,7 +59,7 @@ class AlipayMarketingCashlessvoucherTemplateModifyRequest extends AbstractAlipay
         return $this->returnUrl;
     }
 
-    public function getApiParas()
+    public function getApiParams()
     {
         return $this->apiParas;
     }

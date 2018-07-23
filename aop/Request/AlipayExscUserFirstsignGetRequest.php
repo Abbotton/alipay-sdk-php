@@ -59,7 +59,7 @@ class AlipayExscUserFirstsignGetRequest extends AbstractAlipayRequest
         return $this->returnUrl;
     }
 
-    public function getApiParas()
+    public function getApiParams()
     {
         return $this->apiParas;
     }
