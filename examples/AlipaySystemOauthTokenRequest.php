@@ -17,9 +17,10 @@ $signHelper = AlipaySign::create(
 
 $aop = new AopClient('2018071660720249', $signHelper);
 
-$request = AlipayRequestFactory::createByApi('alipay.system.oauth.token');
-$request->setGrantType('authorization_code');
-$request->setCode($_GET['authcode']);
+$request = AlipayRequestFactory::createByApi('alipay.system.oauth.token', [
+    'grant_type' => 'authorization_code',
+    'code' => $_GET['authcode']
+]);
 
 try {
     $result = $aop->execute($request)->getData();
