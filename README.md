@@ -2,6 +2,9 @@
 
 支付宝非官方 PHP SDK（基于官方 3.3.0 版本），开发中，敬请关注。
 
+[![Build Status](https://travis-ci.org/wi1dcard/alipay-sdk-php.svg?branch=master)](https://travis-ci.org/wi1dcard/alipay-sdk-php)
+
+
 ## 主要目的
 
 - [x] 集成 Composer。
