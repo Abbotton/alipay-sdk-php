@@ -1,6 +1,5 @@
 <?php
 
-use Alipay\Exception\AlipayInvalidPropertyException;
 use Alipay\Request\AbstractAlipayRequest;
 use Alipay\Request\AlipaySystemOauthTokenRequest;
 use PHPUnit\Framework\TestCase;
@@ -57,16 +56,20 @@ class RequestsTest extends TestCase
         $this->assertFalse(isset($ins->foo));
     }
 
+    /**
+     * @expectedException Alipay\Exception\AlipayInvalidPropertyException
+     */
     public function testSetUnknownProperty()
     {
-        $this->expectException(AlipayInvalidPropertyException::class);
         $req = new AlipaySystemOauthTokenRequest();
         $req->foo = 'this property does not exist';
     }
 
+    /**
+     * @expectedException Alipay\Exception\AlipayInvalidPropertyException
+     */
     public function testGetUnknownProperty()
     {
-        $this->expectException(AlipayInvalidPropertyException::class);
         $req = new AlipaySystemOauthTokenRequest();
         $value = $req->foo;
     }

@@ -18,7 +18,7 @@ class ResponseTest extends TestCase
             }
         }';
         $ins = AlipayResponse::parse($response);
-        $this->assertInstanceOf(AlipayResponse::class, $ins);
+        $this->assertInstanceOf('Alipay\AlipayResponse', $ins);
         $this->assertFalse($ins->isSuccess());
         return $ins;
     }
@@ -36,7 +36,7 @@ class ResponseTest extends TestCase
             "sign": "' . self::SIGN . '"
         }';
         $ins = AlipayResponse::parse($response);
-        $this->assertInstanceOf(AlipayResponse::class, $ins);
+        $this->assertInstanceOf('Alipay\AlipayResponse', $ins);
         $this->assertEquals($response, $ins->getRaw());
         $this->assertTrue($ins->isSuccess());
         return $ins;

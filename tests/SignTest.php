@@ -17,14 +17,14 @@ class SignTest extends TestCase
     {
         $helper = AlipaySign::create(self::PRIV_KEY, self::PUB_KEY, self::SIGN_TYPE);
         $this->assertEquals(self::SIGN_TYPE, $helper->getSignType());
-        $this->assertInstanceOf(AlipaySign::class, $helper);
+        $this->assertInstanceOf('Alipay\AlipaySign', $helper);
         return $helper;
     }
 
     public function testCreateWithStringKeys()
     {
         $helper = AlipaySign::create(file_get_contents(self::PRIV_KEY), file_get_contents(self::PUB_KEY));
-        $this->assertInstanceOf(AlipaySign::class, $helper);
+        $this->assertInstanceOf('Alipay\AlipaySign', $helper);
         return $helper;
     }
 

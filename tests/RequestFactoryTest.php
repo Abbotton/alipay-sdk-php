@@ -4,7 +4,6 @@ use PHPUnit\Framework\TestCase;
 use Alipay\Request\AbstractAlipayRequest;
 use Alipay\AlipayRequestFactory;
 use Alipay\Request\AlipaySystemOauthTokenRequest;
-use Alipay\Exception\AlipayInvalidRequestException;
 
 class RequestFactoryTest extends TestCase
 {
@@ -12,33 +11,39 @@ class RequestFactoryTest extends TestCase
     {
         $className = 'AlipaySystemOauthTokenRequest';
         $ins = AlipayRequestFactory::create($className);
-        $this->assertInstanceOf(AlipaySystemOauthTokenRequest::class, $ins);
+        $this->assertInstanceOf(AlipaySystemOauthTokenRequest::className(), $ins);
     }
 
     public function testCreateByApi()
     {
         $apiName = 'alipay.system.oauth.token';
         $ins = AlipayRequestFactory::createByApi($apiName);
-        $this->assertInstanceOf(AlipaySystemOauthTokenRequest::class, $ins);
+        $this->assertInstanceOf(AlipaySystemOauthTokenRequest::className(), $ins);
     }
 
+    /**
+     * @expectedException Alipay\Exception\AlipayInvalidRequestException
+     */
     public function testCreateNotExistedClass()
     {
-        $this->expectException(AlipayInvalidRequestException::class);
         $className = 'NotExistedClass';
         $ins = AlipayRequestFactory::create($className);
     }
 
+    /**
+     * @expectedException Alipay\Exception\AlipayInvalidRequestException
+     */
     public function testCreateInvalidClass()
     {
-        $this->expectException(AlipayInvalidRequestException::class);
         $className = 'AbstractAlipayRequest';
         $ins = AlipayRequestFactory::create($className);
     }
 
+    /**
+     * @expectedException Alipay\Exception\AlipayInvalidRequestException
+     */
     public function testInvalidConfig()
     {
-        $this->expectException(AlipayInvalidRequestException::class);
         $className = 'AlipaySystemOauthTokenRequest';
         $ins = AlipayRequestFactory::create($className, [
             'foo' => 'this config does not exist.'
