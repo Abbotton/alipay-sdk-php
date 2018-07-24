@@ -1,6 +1,7 @@
-# Alipay SDK for PHP
+<img src="https://i.loli.net/2018/07/24/5b56e980b155e.png" width="40px" height="40px"> Alipay SDK for PHP
+==========
 
-支付宝（又称：蚂蚁金服）开放平台 **第三方** PHP SDK，基于官方 3.3.0 版本。
+支付宝开放平台（又称：蚂蚁金服开放平台）**第三方** PHP SDK，基于官方 3.3.0 版本。
 
 [![Build Status](https://travis-ci.org/wi1dcard/alipay-sdk-php.svg?branch=master)](https://travis-ci.org/wi1dcard/alipay-sdk-php)
 [![Coverage Status](https://coveralls.io/repos/github/wi1dcard/alipay-sdk-php/badge.svg?branch=master)](https://coveralls.io/github/wi1dcard/alipay-sdk-php?branch=master)
