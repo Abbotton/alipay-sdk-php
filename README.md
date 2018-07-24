@@ -1,6 +1,6 @@
 # Alipay SDK for PHP
 
-支付宝非官方 PHP SDK（基于官方 3.3.0 版本）。
+支付宝（又称：蚂蚁金服）开放平台 **第三方** PHP SDK，基于官方 3.3.0 版本。
 
 [![Build Status](https://travis-ci.org/wi1dcard/alipay-sdk-php.svg?branch=master)](https://travis-ci.org/wi1dcard/alipay-sdk-php)
 [![Coverage Status](https://coveralls.io/repos/github/wi1dcard/alipay-sdk-php/badge.svg?branch=master)](https://coveralls.io/github/wi1dcard/alipay-sdk-php?branch=master)
@@ -20,7 +20,7 @@
 
 ## 如何使用
 
-除非你已经通读支付宝开放平台入门文档，否则请先阅读 [快速开始](QUICKSTART.md) 部分。
+除非你已经通读官方入门文档，否则请先阅读 [快速开始](QUICKSTART.md) 部分。
 
 1. Composer 安装。
 
@@ -87,7 +87,7 @@
 
 ## 感谢
 
-- [支付宝官方 SDK](https://docs.open.alipay.com/54/103419/)
+- [支付宝开放平台 SDK](https://docs.open.alipay.com/54/103419/)
 
 ## 感想
 
