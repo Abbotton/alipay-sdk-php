@@ -5,9 +5,9 @@ use Alipay\AlipaySign;
 
 class SignTest extends TestCase
 {
-    private static $PUB_KEY = __DIR__ . '/app_public_key.pem';
+    const PUB_KEY = '/app_public_key.pem';
     
-    private static $PRIV_KEY = __DIR__ . '/app_private_key.pem';
+    const PRIV_KEY = '/app_private_key.pem';
 
     const TEST_DATA = 'foo-bar';
 
@@ -15,7 +15,7 @@ class SignTest extends TestCase
 
     public function testCreate()
     {
-        $helper = AlipaySign::create(self::$PRIV_KEY, self::$PUB_KEY, self::SIGN_TYPE);
+        $helper = AlipaySign::create(__DIR__ . self::PRIV_KEY, __DIR__ . self::PUB_KEY, self::SIGN_TYPE);
         $this->assertEquals(self::SIGN_TYPE, $helper->getSignType());
         $this->assertInstanceOf('Alipay\AlipaySign', $helper);
         return $helper;
@@ -23,7 +23,7 @@ class SignTest extends TestCase
 
     public function testCreateWithStringKeys()
     {
-        $helper = AlipaySign::create(file_get_contents(self::$PRIV_KEY), file_get_contents(self::$PUB_KEY));
+        $helper = AlipaySign::create(file_get_contents(__DIR__ . self::PRIV_KEY), file_get_contents(__DIR__ . self::PUB_KEY));
         $this->assertInstanceOf('Alipay\AlipaySign', $helper);
         return $helper;
     }
@@ -33,7 +33,7 @@ class SignTest extends TestCase
      */
     public function testUnknownSignType()
     {
-        AlipaySign::create(self::$PRIV_KEY, self::$PUB_KEY, 'this is an unknown sign type');
+        AlipaySign::create(__DIR__ . self::PRIV_KEY, __DIR__ . self::PUB_KEY, 'this is an unknown sign type');
     }
 
     /**
@@ -41,7 +41,7 @@ class SignTest extends TestCase
      */
     public function testInvalidKey()
     {
-        AlipaySign::create(self::$PUB_KEY, self::$PRIV_KEY);
+        AlipaySign::create(__DIR__ . self::PUB_KEY, __DIR__ . self::PRIV_KEY);
     }
 
     /**
