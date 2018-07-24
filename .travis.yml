@@ -12,6 +12,7 @@ install:
   - composer update --prefer-dist $COMPOSER_FLAGS
 
 script:
+  - composer dumpautoload -o
   - vendor/bin/phpunit $PHPUNIT_FLAGS --coverage-text
 
 notifications:
