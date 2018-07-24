@@ -97,4 +97,6 @@
 
 做开放平台，对待第三方开发者是这样的态度，怎能做到与微信比肩？
 
-欢迎关注我们的产品：[![](https://i.loli.net/2018/07/24/5b56dc7627a65.png)](http://www.zjhejiang.com/)
+欢迎关注我们的产品：
+
+[<img src="https://i.loli.net/2018/07/24/5b56dda76b2ba.png" width="50%" height="50%">](http://www.zjhejiang.com/)
