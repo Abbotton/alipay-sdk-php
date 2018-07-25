@@ -150,7 +150,8 @@ class AopClient
      */
     protected function buildRequestForm($params)
     {
-        $sHtml = "<form id='alipaysubmit' name='alipaysubmit' action='{$this->gatewayUrl}?charset={$this->charset}' method='POST'>";
+        $charset = urlencode($this->charset);
+        $sHtml = "<form id='alipaysubmit' name='alipaysubmit' action='{$this->gatewayUrl}?charset={$charset}' method='POST'>";
         foreach ($params as $key => $val) {
             if (false === AlipayHelper::isEmpty($val)) {
                 $val = htmlentities($val, ENT_QUOTES | ENT_HTML5);
@@ -196,13 +197,13 @@ class AopClient
 
         // 签名
         $totalParams = array_merge($apiParams, $sysParams);
-        $sysParams['sign'] = $this->signHelper->generateByParams($totalParams);
+        $totalParams['sign'] = $this->signHelper->generateByParams($totalParams);
 
-        // 系统参数放入GET请求串
-        $requestUrl = $this->gatewayUrl . '?' . http_build_query($sysParams);
+        // 拼接请求地址
+        $requestUrl = $this->gatewayUrl . '?charset=' . urlencode($this->charset);
 
-        // 发起HTTP请求
-        $resp = AlipayHelper::curl($requestUrl, $apiParams);
+        // 发起请求
+        $resp = AlipayHelper::curl($requestUrl, $totalParams);
 
         $alipayResp = AlipayResponse::parse($resp, $this->format);
 
