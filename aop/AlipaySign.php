@@ -232,7 +232,7 @@ class AlipaySign
      * 将数组转换为待签名数据
      *
      * @param array $params
-     * @return void
+     * @return string
      */
     protected function convertSignData($params)
     {
