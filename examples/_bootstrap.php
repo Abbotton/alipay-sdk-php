@@ -5,7 +5,7 @@ require '../vendor/autoload.php';
 use Alipay\AlipaySign;
 use Alipay\AopClient;
 
-ini_set('html_errors', false);
+ini_set('html_errors', '0');
 
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
