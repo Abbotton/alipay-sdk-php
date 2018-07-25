@@ -88,7 +88,7 @@ class AopClient
         $response = curl_exec($ch);
 
         if (curl_errno($ch)) {
-            throw new AlipayCurlException(curl_error($ch), curl_error($ch));
+            throw new AlipayCurlException(curl_error($ch), curl_errno($ch));
         } else {
             $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             if (200 !== $httpStatusCode) {
