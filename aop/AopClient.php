@@ -12,7 +12,12 @@ class AopClient
     /**
      * SDK 版本
      */
-    const SDK_VERSION = "alipay-sdk-php-20180705";
+    const SDK_VERSION = 'alipay-sdk-php-20180705';
+
+    /**
+     * API 版本
+     */
+    const API_VERSION = '1.0';
 
     /**
      * 应用 ID
@@ -62,45 +67,6 @@ class AopClient
     }
 
     /**
-     * 使用 CURL 提交请求
-     *
-     * @param  string $url
-     * @param  array  $postFields
-     * @return mixed
-     */
-    protected function curl($url, $postFields)
-    {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_FAILONERROR, false);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-
-        foreach ($postFields as $key => &$value) {
-            if (is_string($value) && strpos($value, '@') === 0 && is_file(substr($value, 1))) {
-                if (class_exists('CURLFile')) {
-                    $value = new \CURLFile(substr($value, 1));
-                }
-            }
-        }
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
-
-        $response = curl_exec($ch);
-
-        if (curl_errno($ch)) {
-            throw new AlipayCurlException(curl_error($ch), curl_errno($ch));
-        } else {
-            $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            if (200 !== $httpStatusCode) {
-                throw new AlipayHttpException($response, $httpStatusCode);
-            }
-        }
-
-        curl_close($ch);
-        return $response;
-    }
-
-    /**
      * 生成用于调用收银台 SDK 的字符串
      *
      * @param  AbstractAlipayRequest $request
@@ -117,7 +83,7 @@ class AopClient
         $params['timestamp'] = AlipayHelper::getTimestamp();
         $params['alipay_sdk'] = static::SDK_VERSION;
         $params['charset'] = $this->charset;
-        $params['version'] = $request->getApiVersion();
+        $params['version'] = static::API_VERSION;
         $params['notify_url'] = $request->getNotifyUrl();
 
         $apiParams = $request->getApiParams();
@@ -139,19 +105,19 @@ class AopClient
     {
         // 组装系统参数
         $sysParams = [];
-        $sysParams["app_id"] = $this->appId;
-        $sysParams["version"] = $request->getApiVersion();
-        $sysParams["charset"] = $this->charset;
-        $sysParams["format"] = $this->format;
-        $sysParams["sign_type"] = $this->signHelper->getSignType();
-        $sysParams["method"] = $request->getApiMethodName();
-        $sysParams["timestamp"] = AlipayHelper::getTimestamp();
-        $sysParams["alipay_sdk"] = static::SDK_VERSION;
-        $sysParams["terminal_type"] = $request->getTerminalType();
-        $sysParams["terminal_info"] = $request->getTerminalInfo();
-        $sysParams["prod_code"] = $request->getProdCode();
-        $sysParams["notify_url"] = $request->getNotifyUrl();
-        $sysParams["return_url"] = $request->getReturnUrl();
+        $sysParams['app_id'] = $this->appId;
+        $sysParams['version'] = static::API_VERSION;
+        $sysParams['charset'] = $this->charset;
+        $sysParams['format'] = $this->format;
+        $sysParams['sign_type'] = $this->signHelper->getSignType();
+        $sysParams['method'] = $request->getApiMethodName();
+        $sysParams['timestamp'] = AlipayHelper::getTimestamp();
+        $sysParams['alipay_sdk'] = static::SDK_VERSION;
+        $sysParams['terminal_type'] = $request->getTerminalType();
+        $sysParams['terminal_info'] = $request->getTerminalInfo();
+        $sysParams['prod_code'] = $request->getProdCode();
+        $sysParams['notify_url'] = $request->getNotifyUrl();
+        $sysParams['return_url'] = $request->getReturnUrl();
 
         // 获取业务参数
         $apiParams = $request->getApiParams();
@@ -207,33 +173,33 @@ class AopClient
     {
         // 组装系统参数
         $sysParams = [];
-        $sysParams["app_id"] = $this->appId;
-        $sysParams["version"] = $request->getApiVersion();
-        $sysParams["charset"] = $this->charset;
-        $sysParams["format"] = $this->format;
-        $sysParams["sign_type"] = $this->signHelper->getSignType();
-        $sysParams["method"] = $request->getApiMethodName();
-        $sysParams["timestamp"] = AlipayHelper::getTimestamp();
-        $sysParams["alipay_sdk"] = static::SDK_VERSION;
-        $sysParams["terminal_type"] = $request->getTerminalType();
-        $sysParams["terminal_info"] = $request->getTerminalInfo();
-        $sysParams["prod_code"] = $request->getProdCode();
-        $sysParams["notify_url"] = $request->getNotifyUrl();
-        $sysParams["auth_token"] = $authToken;
-        $sysParams["app_auth_token"] = $appInfoAuthtoken;
+        $sysParams['app_id'] = $this->appId;
+        $sysParams['version'] = static::API_VERSION;
+        $sysParams['charset'] = $this->charset;
+        $sysParams['format'] = $this->format;
+        $sysParams['sign_type'] = $this->signHelper->getSignType();
+        $sysParams['method'] = $request->getApiMethodName();
+        $sysParams['timestamp'] = AlipayHelper::getTimestamp();
+        $sysParams['alipay_sdk'] = static::SDK_VERSION;
+        $sysParams['terminal_type'] = $request->getTerminalType();
+        $sysParams['terminal_info'] = $request->getTerminalInfo();
+        $sysParams['prod_code'] = $request->getProdCode();
+        $sysParams['notify_url'] = $request->getNotifyUrl();
+        $sysParams['auth_token'] = $authToken;
+        $sysParams['app_auth_token'] = $appInfoAuthtoken;
 
         // 获取业务参数
         $apiParams = $request->getApiParams();
 
         // 签名
         $totalParams = array_merge($apiParams, $sysParams);
-        $sysParams["sign"] = $this->signHelper->generateByParams($totalParams);
+        $sysParams['sign'] = $this->signHelper->generateByParams($totalParams);
 
         // 系统参数放入GET请求串
         $requestUrl = $this->gatewayUrl . '?' . http_build_query($sysParams);
 
         // 发起HTTP请求
-        $resp = $this->curl($requestUrl, $apiParams);
+        $resp = AlipayHelper::curl($requestUrl, $apiParams);
 
         $alipayResp = AlipayResponse::parse($resp, $this->format);
 
