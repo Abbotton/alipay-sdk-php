@@ -21,7 +21,6 @@ class RequestsTest extends TestCase
             /** @var AbstractAlipayRequest $ins */
             $ins = new $k();
             $this->assertNotEmpty($ins->getApiMethodName());
-            $this->assertEquals($ins->getApiVersion(), '1.0');
             $this->assertTrue(is_array($ins->getApiParams()));
 
             // ------------------------------------------------------------
