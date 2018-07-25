@@ -26,7 +26,7 @@
 1. Composer 安装。
 
     ```bash
-    composer require wi1dcard/alipay-sdk dev-master
+    composer require wi1dcard/alipay-sdk ^0.1
     ```
 
 2. 创建 `AlipaySign` 实例。
