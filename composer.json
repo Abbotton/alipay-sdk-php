@@ -27,7 +27,7 @@
         }
     },
     "scripts": {
-        "check-cs": "vendor/bin/phpcs aop -p --colors --standard='PSR1,PSR2,PSR12'",
+        "check-cs": "vendor/bin/phpcs aop -p --colors --standard='PSR1,PSR2,PSR12' -n",
         "fix-cs": "vendor/bin/phpcbf aop -p --colors --standard='PSR1,PSR2,PSR12,Zend'",
         "phpunit": "vendor/bin/phpunit --coverage-html=build/coverage && open bulid/coverage/index.html"
     }
