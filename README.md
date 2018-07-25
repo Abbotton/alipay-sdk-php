@@ -77,10 +77,15 @@
 
 ## 其它资源
 
-- [支付宝开放平台 API 文档](https://docs.open.alipay.com/api/)
-- [支付宝小程序文档](https://docs.alipay.com/mini/introduce)
-- [支付宝小程序开发者社区](https://openclub.alipay.com/index.php?c=thread&a=subforum&fid=66)
-- [支付宝小程序内利用 wxParse 解析](https://openclub.alipay.com/read.php?tid=3830&fid=66)
+官方：
+
+- [支付宝开放平台 - API 文档](https://docs.open.alipay.com/api/)
+- [支付宝开放平台 - 开发者社区](https://openclub.alipay.com/index.php?c=thread&a=subforum&fid=66)
+- [支付宝小程序 - 开发文档](https://docs.alipay.com/mini/introduce)
+
+非官方：
+
+- [支付宝小程序调用 wxParse 解析](https://openclub.alipay.com/read.php?tid=3830&fid=66)
 - 微信小程序转支付宝小程序开源工具（未测试）：
     - <https://github.com/foxitdog/wx2ali>
     - <https://github.com/aOrz/wxmp2antmp>
