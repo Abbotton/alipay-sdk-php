@@ -8,18 +8,16 @@ class RequestsTest extends TestCase
 {
     public function testRequests()
     {
-        $list = require __DIR__ . '/../vendor/composer/autoload_classmap.php';
-        foreach ($list as $k => $v) {
-            $class = new ReflectionClass($k);
-            if ($class->isSubclassOf(AbstractAlipayRequest::className()) === false) {
-                continue;
-            }
+        $list = glob(__DIR__ . '/../aop/Request/*Request.php');
+        foreach ($list as $v) {
+            $className = 'Alipay\\Request\\' . basename($v, '.php');
+            $class = new ReflectionClass($className);
             if ($class->isAbstract()) {
                 continue;
             }
 
             /** @var AbstractAlipayRequest $ins */
-            $ins = new $k();
+            $ins = new $className();
             $this->assertNotEmpty($ins->getApiMethodName());
             $this->assertTrue(is_array($ins->getApiParams()));
 

@@ -13,11 +13,9 @@ matrix:
       env: PHPUNIT_FLAGS="--coverage-clover build/logs/clover.xml"
 
 install:
-  - composer update --prefer-dist $COMPOSER_FLAGS
+  - composer update --prefer-dist
 
 script:
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.6" ]]; then composer require symfony/console; fi
-  - composer dumpautoload -o
   - if [[ $CODING_STANDARD == "" ]]; then vendor/bin/phpunit $PHPUNIT_FLAGS; else composer check-cs; fi
 
 after_success:
