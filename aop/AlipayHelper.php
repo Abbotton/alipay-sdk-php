@@ -60,7 +60,7 @@ class AlipayHelper
      * @param  array  $postFields
      * @return mixed
      */
-    public function curl($url, $postFields)
+    public static function curl($url, $postFields)
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
