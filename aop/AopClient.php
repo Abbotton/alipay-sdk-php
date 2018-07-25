@@ -101,9 +101,9 @@ class AopClient
     }
 
     /**
-     * 生成用于调用收银台SDK的字符串
+     * 生成用于调用收银台 SDK 的字符串
      *
-     * @param  AbstractAlipayRequest $request SDK接口的请求参数对象
+     * @param  AbstractAlipayRequest $request
      * @return string
      * @author guofa.tgf
      */
@@ -113,17 +113,14 @@ class AopClient
         $params['method'] = $request->getApiMethodName();
         $params['format'] = $this->format;
         $params['sign_type'] = $this->signHelper->getSignType();
-        $params['timestamp'] = date("Y-m-d H:i:s");
+        $params['timestamp'] = AlipayHelper::getTimestamp();
         $params['alipay_sdk'] = static::SDK_VERSION;
         $params['charset'] = $this->charset;
         $params['version'] = $request->getApiVersion();
+        $params['notify_url'] = $request->getNotifyUrl();
 
-        if ($notify_url = $request->getNotifyUrl()) {
-            $params['notify_url'] = $notify_url;
-        }
-
-        $dict = $request->getApiParams();
-        $params['biz_content'] = $dict['biz_content'];
+        $apiParams = $request->getApiParams();
+        $params['biz_content'] = $apiParams['biz_content'];
         $params['sign'] = $this->signHelper->generateByParams($params);
 
         return http_build_query($params);
@@ -132,64 +129,68 @@ class AopClient
     /**
      * 页面提交执行方法
      *
-     * @param  AbstractAlipayRequest $request    跳转类接口的request
-     * @param  string                $httpMethod 提交方式。两个值可选：post、get
-     * @return string 构建好的、签名后的最终跳转URL（GET）或String形式的form（POST）
+     * @param  AbstractAlipayRequest $request
+     * @param  string                $httpMethod 提交方式。两个值可选：POST、GET
+     * @return string 构建好的、签名后的最终跳转 URL（GET）或字符串形式的表单（POST）
      * @author 笙默
      */
-    public function pageExecute(AbstractAlipayRequest $request, $httpMethod = "POST")
+    public function pageExecute(AbstractAlipayRequest $request, $httpMethod = 'POST')
     {
-        //组装系统参数
+        // 组装系统参数
         $sysParams["app_id"] = $this->appId;
         $sysParams["version"] = $request->getApiVersion();
+        $sysParams["charset"] = $this->charset;
         $sysParams["format"] = $this->format;
         $sysParams["sign_type"] = $this->signHelper->getSignType();
         $sysParams["method"] = $request->getApiMethodName();
-        $sysParams["timestamp"] = date("Y-m-d H:i:s");
+        $sysParams["timestamp"] = AlipayHelper::getTimestamp();
         $sysParams["alipay_sdk"] = static::SDK_VERSION;
         $sysParams["terminal_type"] = $request->getTerminalType();
         $sysParams["terminal_info"] = $request->getTerminalInfo();
         $sysParams["prod_code"] = $request->getProdCode();
         $sysParams["notify_url"] = $request->getNotifyUrl();
         $sysParams["return_url"] = $request->getReturnUrl();
-        $sysParams["charset"] = $this->charset;
 
-        //获取业务参数
+        // 获取业务参数
         $apiParams = $request->getApiParams();
 
-        //签名
+        // 签名
         $totalParams = array_merge($apiParams, $sysParams);
         $totalParams["sign"] = $this->signHelper->generateByParams($totalParams);
 
-        if ("GET" == strtoupper($httpMethod)) {
-            //拼接GET请求串
-            $preString = http_build_query($totalParams);
-            $requestUrl = $this->gatewayUrl . "?" . $preString;
+        $httpMethod = strtoupper($httpMethod);
+        switch($httpMethod)
+        {
+            case 'GET':
+            $queryString = http_build_query($totalParams);
+            $requestUrl = $this->gatewayUrl . "?" . $queryString;
             return $requestUrl;
-        } else {
-            //拼接表单字符串
+
+            case 'POST':
             return $this->buildRequestForm($totalParams);
+
+            default:
+            throw new \InvalidArgumentException('Unsupported HTTP Method: ' . $httpMethod);
         }
     }
 
     /**
-     * 建立请求，以表单HTML形式构造（默认）
+     * 建立请求，以表单 HTML 形式构造
      *
      * @param  array $params 请求参数数组
-     * @return string 提交表单HTML文本
+     * @return string 提交表单 HTML 文本
      */
     protected function buildRequestForm($params)
     {
-        $sHtml = "<form id='alipaysubmit' name='alipaysubmit' action='" . $this->gatewayUrl . "?charset=" . $this->charset . "' method='POST'>";
-        while (list($key, $val) = each($params)) {
+        $sHtml = "<form id='alipaysubmit' name='alipaysubmit' action='{$this->gatewayUrl}?charset={$this->charset}' method='POST'>";
+        foreach($params as $key => $val) {
             if (false === AlipayHelper::isEmpty($val)) {
-                $val = str_replace("'", "&apos;", $val);
-                $sHtml .= "<input type='hidden' name='" . $key . "' value='" . $val . "'/>";
+                $val = htmlentities($val, ENT_QUOTES | ENT_HTML5);
+                $sHtml .= "<input type='hidden' name='{$key}' value='{$val}'/>";
             }
         }
-        //submit按钮控件请不要含有name属性
-        $sHtml = $sHtml . "<input type='submit' value='ok' style='display:none;''></form>";
-        $sHtml = $sHtml . "<script>document.forms['alipaysubmit'].submit();</script>";
+        $sHtml .= "<input type='submit' value='ok' style='display:none;''></form>";
+        $sHtml .= "<script>document.forms['alipaysubmit'].submit();</script>";
         return $sHtml;
     }
 
@@ -203,33 +204,33 @@ class AopClient
      */
     public function execute(AbstractAlipayRequest $request, $authToken = '', $appInfoAuthtoken = '')
     {
-        //组装系统参数
+        // 组装系统参数
         $sysParams["app_id"] = $this->appId;
         $sysParams["version"] = $request->getApiVersion();
+        $sysParams["charset"] = $this->charset;
         $sysParams["format"] = $this->format;
         $sysParams["sign_type"] = $this->signHelper->getSignType();
         $sysParams["method"] = $request->getApiMethodName();
-        $sysParams["timestamp"] = date("Y-m-d H:i:s");
-        $sysParams["auth_token"] = $authToken;
+        $sysParams["timestamp"] = AlipayHelper::getTimestamp();
         $sysParams["alipay_sdk"] = static::SDK_VERSION;
         $sysParams["terminal_type"] = $request->getTerminalType();
         $sysParams["terminal_info"] = $request->getTerminalInfo();
         $sysParams["prod_code"] = $request->getProdCode();
         $sysParams["notify_url"] = $request->getNotifyUrl();
-        $sysParams["charset"] = $this->charset;
+        $sysParams["auth_token"] = $authToken;
         $sysParams["app_auth_token"] = $appInfoAuthtoken;
 
-        //获取业务参数
+        // 获取业务参数
         $apiParams = $request->getApiParams();
 
-        //签名
+        // 签名
         $totalParams = array_merge($apiParams, $sysParams);
         $sysParams["sign"] = $this->signHelper->generateByParams($totalParams);
 
-        //系统参数放入GET请求串
+        // 系统参数放入GET请求串
         $requestUrl = $this->gatewayUrl . '?' . http_build_query($sysParams);
 
-        //发起HTTP请求
+        // 发起HTTP请求
         $resp = $this->curl($requestUrl, $apiParams);
 
         $alipayResp = AlipayResponse::parse($resp, $this->format);

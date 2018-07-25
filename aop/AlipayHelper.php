@@ -42,4 +42,14 @@ class AlipayHelper
         $str = str_replace($delimiters, '', $str);
         return $str;
     }
+
+    /**
+     * 获取用于发起请求的“时间戳”
+     *
+     * @return string
+     */
+    public static function getTimestamp()
+    {
+        return date("Y-m-d H:i:s");
+    }
 }
