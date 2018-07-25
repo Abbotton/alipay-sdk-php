@@ -48,16 +48,6 @@ abstract class AbstractAlipayRequest
         return $name;
     }
 
-    /**
-     * 获取 API 版本（目前固定为 1.0）
-     *
-     * @return string
-     */
-    public function getApiVersion()
-    {
-        return '1.0';
-    }
-
     public function getApiParams()
     {
         return $this->apiParams;
