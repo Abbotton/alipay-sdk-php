@@ -109,6 +109,7 @@ class AopClient
      */
     public function sdkExecute(AbstractAlipayRequest $request)
     {
+        $params = [];
         $params['app_id'] = $this->appId;
         $params['method'] = $request->getApiMethodName();
         $params['format'] = $this->format;
@@ -137,6 +138,7 @@ class AopClient
     public function pageExecute(AbstractAlipayRequest $request, $httpMethod = 'POST')
     {
         // 组装系统参数
+        $sysParams = [];
         $sysParams["app_id"] = $this->appId;
         $sysParams["version"] = $request->getApiVersion();
         $sysParams["charset"] = $this->charset;
@@ -204,6 +206,7 @@ class AopClient
     public function execute(AbstractAlipayRequest $request, $authToken = '', $appInfoAuthtoken = '')
     {
         // 组装系统参数
+        $sysParams = [];
         $sysParams["app_id"] = $this->appId;
         $sysParams["version"] = $request->getApiVersion();
         $sysParams["charset"] = $this->charset;
