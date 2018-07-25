@@ -3,18 +3,22 @@ language: php
 matrix:
   include:
     - php: 5.4
+    - php: 5.5
     - php: 5.6
+    - php: 7.0
+    - php: 7.1
+      env: CODING_STANDARD=1
+    - php: 7.2
     - php: 7.1
       env: PHPUNIT_FLAGS="--coverage-clover build/logs/clover.xml"
-    - php: 7.2
 
 install:
   - composer update --prefer-dist $COMPOSER_FLAGS
 
 script:
-  - composer dumpautoload -o
   - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.6" ]]; then composer require symfony/console; fi
-  - vendor/bin/phpunit $PHPUNIT_FLAGS
+  - composer dumpautoload -o
+  - if [[ $CODING_STANDARD == "" ]]; then vendor/bin/phpunit $PHPUNIT_FLAGS; else composer check-cs; fi
 
 after_success:
   - |
