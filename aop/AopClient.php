@@ -66,7 +66,7 @@ class AopClient
      *
      * @param  string $url
      * @param  array  $postFields
-     * @return void
+     * @return mixed
      */
     protected function curl($url, $postFields)
     {
