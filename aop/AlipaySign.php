@@ -110,7 +110,7 @@ class AlipaySign
     protected function freeKeys()
     {
         $freeKey = function ($k) {
-            if(is_resource($k)) {
+            if (is_resource($k)) {
                 openssl_free_key($k);
             }
         };

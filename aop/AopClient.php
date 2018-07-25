@@ -159,18 +159,17 @@ class AopClient
         $totalParams["sign"] = $this->signHelper->generateByParams($totalParams);
 
         $httpMethod = strtoupper($httpMethod);
-        switch($httpMethod)
-        {
+        switch ($httpMethod) {
             case 'GET':
-            $queryString = http_build_query($totalParams);
-            $requestUrl = $this->gatewayUrl . "?" . $queryString;
-            return $requestUrl;
+                $queryString = http_build_query($totalParams);
+                $requestUrl = $this->gatewayUrl . "?" . $queryString;
+                return $requestUrl;
 
             case 'POST':
-            return $this->buildRequestForm($totalParams);
+                return $this->buildRequestForm($totalParams);
 
             default:
-            throw new \InvalidArgumentException('Unsupported HTTP Method: ' . $httpMethod);
+                throw new \InvalidArgumentException('Unsupported HTTP Method: ' . $httpMethod);
         }
     }
 
@@ -183,7 +182,7 @@ class AopClient
     protected function buildRequestForm($params)
     {
         $sHtml = "<form id='alipaysubmit' name='alipaysubmit' action='{$this->gatewayUrl}?charset={$this->charset}' method='POST'>";
-        foreach($params as $key => $val) {
+        foreach ($params as $key => $val) {
             if (false === AlipayHelper::isEmpty($val)) {
                 $val = htmlentities($val, ENT_QUOTES | ENT_HTML5);
                 $sHtml .= "<input type='hidden' name='{$key}' value='{$val}'/>";

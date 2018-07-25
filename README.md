@@ -99,10 +99,10 @@
 
 最后，一点感想。
 
-作为一个名不见经传的小白，不敢妄言阿里的工程师技术欠佳，但可以确定的是，官方提供的 PHP SDK 绝对不是用心之作。
+作为一个名不见经传的小白，不敢妄言阿里的工程师技术欠佳；但可以确定的是，官方提供的 PHP SDK 绝对不是用心之作。
 
 做开放平台，对待第三方开发者是这样的态度，怎能做到与微信比肩？
 
-欢迎关注我们的产品：
+硬广，欢迎关注我们的产品：
 
-[<img src="https://i.loli.net/2018/07/24/5b56dda76b2ba.png" width="50%" height="50%">](http://www.zjhejiang.com/)
+[<img src="https://i.loli.net/2018/07/24/5b56dda76b2ba.png" width="30%" height="30%">](http://www.zjhejiang.com/)
