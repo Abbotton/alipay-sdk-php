@@ -1,6 +1,6 @@
 # 支付宝小程序 - 快速开始
 
-阅读本文，你将开始学习如何调通 `支付宝小程序` - `PHP SDK`。
+阅读本文，你将开始学习如何调通 `支付宝小程序` - `PHP SDK`，并实现 [获取会员信息](https://docs.alipay.com/mini/introduce/auth)。
 
 注：本文所有相对路径，均相对于本仓库根目录。
 
@@ -12,7 +12,7 @@
 - 拿到小程序的 `APP ID`。
 - 克隆本仓库。
 
-小程序开发者工具下载地址：<https://docs.alipay.com/mini/ide/download>
+小程序开发者工具下载地址：<https://docs.alipay.com/mini/ide/download>。
 
 在等待下载的过程中，你可以：
 
@@ -35,7 +35,7 @@
 
 进入主界面后，点击下方 `调试器`，即可打开开发者工具；点击左侧边栏下方的 `☁️` 按钮，输入 APP ID。
 
-更多说明，请查看官方文档：<https://docs.alipay.com/mini/ide/overview>。
+更多说明，请查看 [官方文档](https://docs.alipay.com/mini/ide/overview)。
 
 ## 0x02 密钥
 
@@ -53,11 +53,13 @@
 bin/genrsa
 ```
 
-执行此命令，即可生成 `app_private_key.pem` 和 `app_public_key.pem`，如同 `test` 目录下的一样。同时会生成一段 `base64` 编码后的签名字符串，我们留作备用。
+首先执行此命令，生成 `app_private_key.pem` 和 `app_public_key.pem`，如同 `test` 目录下的一样。同时会输出一段 base64 编码后的签名字符串，我们留作备用。
 
-打开 <https://open.alipay.com/platform/mini.htm#/app/你的APP_ID/setting>（小程序详情页 - 设置），点击 `设置应用公钥`。
+访问 <https://open.alipay.com/platform/mini.htm#/app/你的APP_ID/setting>（小程序详情页 - 设置），点击 `设置应用公钥`。
 
-使用文本编辑器复制 `app_public_key.pem` 文件内容，掐头去尾粘贴至文本框内。点击 `验证公钥正确性`，输入此前的「签名字符串」，应当验证成功。
+使用文本编辑器复制 `app_public_key.pem` 文件内容，掐头去尾（不包含 `-----BEGIN RSA PRIVATE KEY-----` 和 `-----END RSA PRIVATE KEY-----`）粘贴至文本框内。
+
+点击 `验证公钥正确性`，输入此前的「签名字符串」，应当验证成功。
 
 点击 `查看支付宝公钥`，复制这段公钥，执行：
 
@@ -77,7 +79,7 @@ echo '-----BEGIN PUBLIC KEY-----\n'$PUB_KEY'\n-----END PUBLIC KEY-----' > alipay
 - 配置示例环境变量。
 - 执行示例。
 
-编辑 `examples/.env` 文件，配置你的环境变量。
+编辑 [`examples/.env`](./examples/.env) 文件，配置你的环境变量。
 
 打开 `小程序开发者工具`，修改 `app.js` 的主要代码：
 
@@ -103,11 +105,9 @@ my.getAuthCode({
 });
 ```
 
-本文采用常用的 [`alipay.system.oauth.token`](https://docs.alipay.com/mini/introduce/auth) 接口进行演示。
-
 打开 `小程序开发者工具` - `调试器` - `Network`，点击右上角的 `刷新` 图标。
 
-在请求列表内找到 `alipay.system.oauth.token.php`，响应类似 [文档内的格式](https://docs.open.alipay.com/api_9/alipay.system.oauth.token#s5) 即说明你已经正常调通接口。例如：
+在请求列表内找到 `alipay.system.oauth.token.php`，若响应类似 [文档内的格式](https://docs.open.alipay.com/api_9/alipay.system.oauth.token#s5) 说明你已经正常调通接口。例如：
 
 ```php
 Array
