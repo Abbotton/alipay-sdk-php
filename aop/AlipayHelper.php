@@ -121,7 +121,7 @@ class AlipayHelper
      *
      * @param  string $url
      * @param  array $queryParams
-     * @return void
+     * @return string
      */
     public static function buildRequestUrl($url, $queryParams)
     {
