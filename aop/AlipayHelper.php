@@ -2,6 +2,8 @@
 
 namespace Alipay;
 
+use Alipay\Exception\AlipayCurlException;
+
 class AlipayHelper
 {
     /**
