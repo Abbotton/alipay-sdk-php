@@ -3,6 +3,7 @@
 namespace Alipay;
 
 use Alipay\Exception\AlipayCurlException;
+use Alipay\Request\AbstractAlipayRequest;
 
 class AlipayHelper
 {
@@ -43,16 +44,6 @@ class AlipayHelper
         $str = ucwords($str, $delimiters);
         $str = str_replace($delimiters, '', $str);
         return $str;
-    }
-
-    /**
-     * 获取用于发起请求的“时间戳”
-     *
-     * @return string
-     */
-    public static function getTimestamp()
-    {
-        return date("Y-m-d H:i:s");
     }
 
     /**
@@ -128,5 +119,60 @@ class AlipayHelper
         $queryString = http_build_query($queryParams);
         $fullUrl = $url . '?' . $queryString;
         return $fullUrl;
+    }
+
+    /**
+     * 执行请求
+     *
+     * @param  AbstractAlipayRequest $request
+     * @return AlipayResponse
+     */
+    public static function execute(AbstractAlipayRequest $request, AopClient $client)
+    {
+        $params = $client->build($request);
+        
+        $raw = static::curl($client->getGateway(), $params);
+
+        $response = $client->response($raw);
+
+        return $response->getData();
+    }
+
+    /**
+     * 生成用于调用收银台 SDK 的字符串
+     *
+     * @param  AbstractAlipayRequest $request
+     * @return string
+     * @author guofa.tgf
+     */
+    public static function sdkExecute(AbstractAlipayRequest $request, AopClient $client)
+    {
+        $params = $client->build($request);
+
+        return http_build_query($params);
+    }
+
+    /**
+     * 页面提交请求，生成已签名的跳转 URL
+     *
+     * @param  AbstractAlipayRequest $request
+     * @return string
+     */
+    public static function pageExecuteUrl(AbstractAlipayRequest $request, AopClient $client)
+    {
+        $params = $client->build($request);
+        return static::buildRequestUrl($params);
+    }
+
+    /**
+     * 页面提交请求，生成已签名的表单 HTML
+     *
+     * @param  AbstractAlipayRequest $request
+     * @return string
+     */
+    public static function pageExecutePost(AbstractAlipayRequest $request, AopClient $client)
+    {
+        $params = $client->build($request);
+        return static::buildRequestForm($params);
     }
 }

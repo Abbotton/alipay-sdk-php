@@ -3,6 +3,7 @@
 require './_bootstrap.php';
 
 use Alipay\AlipayRequestFactory;
+use Alipay\AlipayHelper;
 
 /**
  * 根据文件名剥离请求名
@@ -21,8 +22,9 @@ $request = AlipayRequestFactory::createByApi($apiName, [
  * 发起请求并调试输出结果
  */
 try {
-    $data = $aop->execute($request)->getData();
+    $data = AlipayHelper::execute($request, $aop);
     print_r($data);
 } catch (\Exception $ex) {
     print_r($ex);
+    http_response_code(500);
 }

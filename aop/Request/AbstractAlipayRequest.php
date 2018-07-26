@@ -1,11 +1,12 @@
 <?php
 namespace Alipay\Request;
 
-use Alipay\Exception\AlipayException;
-use Alipay\Exception\AlipayInvalidPropertyException;
+use Alipay\AlipayAccessorTrait;
 
 abstract class AbstractAlipayRequest
 {
+    use AlipayAccessorTrait;
+
     /**
      * API 请求参数（非系统参数）
      *
@@ -17,11 +18,26 @@ abstract class AbstractAlipayRequest
 
     protected $returnUrl;
 
-    protected $terminalType;
+    // protected $terminalType;
 
-    protected $terminalInfo;
+    // protected $terminalInfo;
 
-    protected $prodCode;
+    // protected $prodCode;
+
+    protected $authToken;
+
+    protected $appAuthToken;
+
+    public function __construct($config = [])
+    {
+        foreach ($config as $key => $value) {
+            $this->$key = $value;
+        }
+    }
+
+    public function __destruct()
+    {
+    }
 
     /**
      * 获取带命名空间的完整类名
@@ -46,6 +62,16 @@ abstract class AbstractAlipayRequest
         $name = trim($name, '.');
         $name = strtolower($name);
         return $name;
+    }
+
+    /**
+     * 获取用于发起请求的“时间戳”
+     *
+     * @return string
+     */
+    public static function getTimestamp()
+    {
+        return date("Y-m-d H:i:s");
     }
 
     public function getApiParams()
@@ -73,86 +99,53 @@ abstract class AbstractAlipayRequest
         $this->returnUrl = $returnUrl;
     }
 
-    public function getTerminalType()
+    // public function getTerminalType()
+    // {
+    //     return $this->terminalType;
+    // }
+
+    // public function setTerminalType($terminalType)
+    // {
+    //     $this->terminalType = $terminalType;
+    // }
+
+    // public function getTerminalInfo()
+    // {
+    //     return $this->terminalInfo;
+    // }
+
+    // public function setTerminalInfo($terminalInfo)
+    // {
+    //     $this->terminalInfo = $terminalInfo;
+    // }
+
+    // public function getProdCode()
+    // {
+    //     return $this->prodCode;
+    // }
+
+    // public function setProdCode($prodCode)
+    // {
+    //     $this->prodCode = $prodCode;
+    // }
+
+    public function getAuthToken()
     {
-        return $this->terminalType;
+        return $this->authToken;
     }
 
-    public function setTerminalType($terminalType)
+    public function setAuthToken($authToken)
     {
-        $this->terminalType = $terminalType;
+        $this->authToken = $authToken;
     }
 
-    public function getTerminalInfo()
+    public function getAppAuthToken()
     {
-        return $this->terminalInfo;
+        return $this->appAuthToken;
     }
 
-    public function setTerminalInfo($terminalInfo)
+    public function setAppAuthToken($appAuthToken)
     {
-        $this->terminalInfo = $terminalInfo;
-    }
-
-    public function getProdCode()
-    {
-        return $this->prodCode;
-    }
-
-    public function setProdCode($prodCode)
-    {
-        $this->prodCode = $prodCode;
-    }
-
-    public function __construct($config = [])
-    {
-        foreach ($config as $key => $value) {
-            $this->$key = $value;
-        }
-    }
-
-    public function __destruct()
-    {
-    }
-
-    public function __get($name)
-    {
-        $getter = 'get' . $name;
-        if (method_exists($this, $getter)) {
-            return $this->$getter();
-        } elseif (method_exists($this, 'set' . $name)) {
-            throw new AlipayInvalidPropertyException('Getting write-only property', $name);
-        }
-        throw new AlipayInvalidPropertyException('Getting unknown property', $name);
-    }
-
-    public function __set($name, $value)
-    {
-        $setter = 'set' . $name;
-        if (method_exists($this, $setter)) {
-            $this->$setter($value);
-        } elseif (method_exists($this, 'get' . $name)) {
-            throw new AlipayInvalidPropertyException('Setting read-only property', $name);
-        } else {
-            throw new AlipayInvalidPropertyException('Setting unknown property', $name);
-        }
-    }
-
-    public function __isset($name)
-    {
-        $getter = 'get' . $name;
-        if (method_exists($this, $getter)) {
-            return $this->$getter() !== null;
-        }
-        return false;
-    }
-
-    public function __unset($name)
-    {
-        $setter = 'set' . $name;
-        if (method_exists($this, $setter)) {
-            $this->$setter(null);
-        } elseif (method_exists($this, 'get' . $name)) {
-            throw new AlipayInvalidPropertyException('Unsetting read-only property', $name);
-        }
+        $this->appAuthToken = $appAuthToken;
     }
 }

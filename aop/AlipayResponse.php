@@ -38,11 +38,8 @@ class AlipayResponse
      * @param  string $format
      * @return static
      */
-    public static function parse($raw, $format = 'JSON')
+    public static function parse($raw)
     {
-        if ($format !== 'JSON') {
-            throw new AlipayInvalidResponseException($raw, "Unsupported response `{$format}` format");
-        }
         $instance = new static();
         $instance->raw = $raw;
         $instance->data = json_decode($raw, true);
