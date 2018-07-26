@@ -39,9 +39,20 @@ class HelperTest extends TestCase
         $this->assertEquals('FooBar', $res);
     }
 
-    public function testTimestamp()
+    public function testCurl()
     {
-        $ts = AlipayHelper::getTimestamp();
-        $this->assertRegExp('/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/', $ts);
+        $url = 'https://httpbin.org/anything?bar=foo';
+        $data = ['foo' => 'bar'];
+        $response = AlipayHelper::curl($url, $data);
+        $response = json_decode($response);
+        
+        $this->assertEquals('POST', $response->method);
+        $this->assertEquals('foo', $response->args->bar);
+        $this->assertEquals('bar', $response->form->foo);
+    }
+
+    public function testExecute()
+    {
+        
     }
 }

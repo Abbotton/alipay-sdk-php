@@ -70,4 +70,11 @@ class RequestsTest extends TestCase
         $req = new AlipaySystemOauthTokenRequest();
         $value = $req->foo;
     }
+
+    public function testTimestamp()
+    {
+        $req = new AlipaySystemOauthTokenRequest();
+        $ts = $req->getTimestamp();
+        $this->assertRegExp('/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/', $ts);
+    }
 }
