@@ -38,4 +38,10 @@ class HelperTest extends TestCase
         $res = AlipayHelper::studlyCase($str, '.');
         $this->assertEquals('FooBar', $res);
     }
+
+    public function testTimestamp()
+    {
+        $ts = AlipayHelper::getTimestamp();
+        $this->assertRegExp('/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/', $ts);
+    }
 }
