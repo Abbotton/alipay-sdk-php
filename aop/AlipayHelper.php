@@ -93,4 +93,40 @@ class AlipayHelper
         curl_close($ch);
         return $response;
     }
+
+    /**
+     * 构造用于提交 POST 请求的表单 HTML 代码
+     *
+     * @param  string $url 请求地址
+     * @param  array $fields 表单参数数组
+     * @return string
+     */
+    public static function buildRequestForm($url, $fields)
+    {
+        $sHtml = "<form id='alipaysubmit' name='alipaysubmit' action='{$url}' method='POST'>";
+        foreach ($fields as $key => $val) {
+            if (AlipayHelper::isEmpty($val)) {
+                continue;
+            }
+            $val = htmlentities($val, ENT_QUOTES | ENT_HTML5);
+            $sHtml .= "<input type='hidden' name='{$key}' value='{$val}'/>";
+        }
+        $sHtml .= "<input type='submit' value='ok' style='display:none;'></form>";
+        $sHtml .= "<script>document.forms['alipaysubmit'].submit();</script>";
+        return $sHtml;
+    }
+
+    /**
+     * 构造用于提交 GET 请求的 URL 地址
+     *
+     * @param  string $url
+     * @param  array $queryParams
+     * @return void
+     */
+    public static function buildRequestUrl($url, $queryParams)
+    {
+        $queryString = http_build_query($queryParams);
+        $fullUrl = $url . '?' . $queryString;
+        return $fullUrl;
+    }
 }
