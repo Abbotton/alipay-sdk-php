@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.pass.sync.update request
  *
  * @author auto create
+ *
  * @since  1.0, 2017-12-07 20:19:03
  */
+
 namespace Alipay\Request;
 
 class AlipayPassSyncUpdateRequest extends AbstractAlipayRequest
@@ -37,66 +39,79 @@ class AlipayPassSyncUpdateRequest extends AbstractAlipayRequest
      * 核销方式，目前支持：wave（声波方式）、qrcode（二维码方式）、barcode（条码方式）、input（文本方式，即手工输入方式）。pass和verify_type不能同时为空
      **/
     private $verifyType;
-    
+
     public function setChannelId($channelId)
     {
         $this->channelId = $channelId;
-        $this->apiParams["channel_id"] = $channelId;
+        $this->apiParams['channel_id'] = $channelId;
     }
+
     public function getChannelId()
     {
         return $this->channelId;
     }
+
     public function setExtInfo($extInfo)
     {
         $this->extInfo = $extInfo;
-        $this->apiParams["ext_info"] = $extInfo;
+        $this->apiParams['ext_info'] = $extInfo;
     }
+
     public function getExtInfo()
     {
         return $this->extInfo;
     }
+
     public function setPass($pass)
     {
         $this->pass = $pass;
-        $this->apiParams["pass"] = $pass;
+        $this->apiParams['pass'] = $pass;
     }
+
     public function getPass()
     {
         return $this->pass;
     }
+
     public function setSerialNumber($serialNumber)
     {
         $this->serialNumber = $serialNumber;
-        $this->apiParams["serial_number"] = $serialNumber;
+        $this->apiParams['serial_number'] = $serialNumber;
     }
+
     public function getSerialNumber()
     {
         return $this->serialNumber;
     }
+
     public function setStatus($status)
     {
         $this->status = $status;
-        $this->apiParams["status"] = $status;
+        $this->apiParams['status'] = $status;
     }
+
     public function getStatus()
     {
         return $this->status;
     }
+
     public function setVerifyCode($verifyCode)
     {
         $this->verifyCode = $verifyCode;
-        $this->apiParams["verify_code"] = $verifyCode;
+        $this->apiParams['verify_code'] = $verifyCode;
     }
+
     public function getVerifyCode()
     {
         return $this->verifyCode;
     }
+
     public function setVerifyType($verifyType)
     {
         $this->verifyType = $verifyType;
-        $this->apiParams["verify_type"] = $verifyType;
+        $this->apiParams['verify_type'] = $verifyType;
     }
+
     public function getVerifyType()
     {
         return $this->verifyType;

@@ -1,4 +1,5 @@
 <?php
+
 namespace Alipay\Request;
 
 use Alipay\AlipayAccessorTrait;
@@ -12,7 +13,7 @@ abstract class AbstractAlipayRequest
      *
      * @var array
      */
-    protected $apiParams = array();
+    protected $apiParams = [];
 
     protected $notifyUrl;
 
@@ -61,6 +62,7 @@ abstract class AbstractAlipayRequest
         $name = preg_replace('/([A-Z])/s', '.$1', $name);
         $name = trim($name, '.');
         $name = strtolower($name);
+
         return $name;
     }
 
@@ -71,7 +73,7 @@ abstract class AbstractAlipayRequest
      */
     public static function getTimestamp()
     {
-        return date("Y-m-d H:i:s");
+        return date('Y-m-d H:i:s');
     }
 
     public function getApiParams()

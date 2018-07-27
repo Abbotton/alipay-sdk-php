@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.open.public.life.modify request
  *
  * @author auto create
+ *
  * @since  1.0, 2017-12-18 14:58:00
  */
+
 namespace Alipay\Request;
 
 class AlipayOpenPublicLifeModifyRequest extends AbstractAlipayRequest
@@ -49,93 +51,112 @@ class AlipayOpenPublicLifeModifyRequest extends AbstractAlipayRequest
      * 用户ID
      **/
     private $userId;
-    
+
     public function setBackground($background)
     {
         $this->background = $background;
-        $this->apiParams["background"] = $background;
+        $this->apiParams['background'] = $background;
     }
+
     public function getBackground()
     {
         return $this->background;
     }
+
     public function setContactEmail($contactEmail)
     {
         $this->contactEmail = $contactEmail;
-        $this->apiParams["contact_email"] = $contactEmail;
+        $this->apiParams['contact_email'] = $contactEmail;
     }
+
     public function getContactEmail()
     {
         return $this->contactEmail;
     }
+
     public function setContactName($contactName)
     {
         $this->contactName = $contactName;
-        $this->apiParams["contact_name"] = $contactName;
+        $this->apiParams['contact_name'] = $contactName;
     }
+
     public function getContactName()
     {
         return $this->contactName;
     }
+
     public function setContactTel($contactTel)
     {
         $this->contactTel = $contactTel;
-        $this->apiParams["contact_tel"] = $contactTel;
+        $this->apiParams['contact_tel'] = $contactTel;
     }
+
     public function getContactTel()
     {
         return $this->contactTel;
     }
+
     public function setCustomerTel($customerTel)
     {
         $this->customerTel = $customerTel;
-        $this->apiParams["customer_tel"] = $customerTel;
+        $this->apiParams['customer_tel'] = $customerTel;
     }
+
     public function getCustomerTel()
     {
         return $this->customerTel;
     }
+
     public function setDescription($description)
     {
         $this->description = $description;
-        $this->apiParams["description"] = $description;
+        $this->apiParams['description'] = $description;
     }
+
     public function getDescription()
     {
         return $this->description;
     }
+
     public function setExtendData($extendData)
     {
         $this->extendData = $extendData;
-        $this->apiParams["extend_data"] = $extendData;
+        $this->apiParams['extend_data'] = $extendData;
     }
+
     public function getExtendData()
     {
         return $this->extendData;
     }
+
     public function setLifeName($lifeName)
     {
         $this->lifeName = $lifeName;
-        $this->apiParams["life_name"] = $lifeName;
+        $this->apiParams['life_name'] = $lifeName;
     }
+
     public function getLifeName()
     {
         return $this->lifeName;
     }
+
     public function setLogo($logo)
     {
         $this->logo = $logo;
-        $this->apiParams["logo"] = $logo;
+        $this->apiParams['logo'] = $logo;
     }
+
     public function getLogo()
     {
         return $this->logo;
     }
+
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParams["user_id"] = $userId;
+        $this->apiParams['user_id'] = $userId;
     }
+
     public function getUserId()
     {
         return $this->userId;

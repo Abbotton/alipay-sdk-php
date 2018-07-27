@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.micropay.order.confirmpayurl.get request
  *
  * @author auto create
+ *
  * @since  1.0, 2016-06-06 17:53:18
  */
+
 namespace Alipay\Request;
 
 class AlipayMicropayOrderConfirmpayurlGetRequest extends AbstractAlipayRequest
@@ -29,48 +31,57 @@ class AlipayMicropayOrderConfirmpayurlGetRequest extends AbstractAlipayRequest
      * 本次转账的外部单据号（只能由字母和数字组成,maxlength=32）
      **/
     private $transferOutOrderNo;
-    
+
     public function setAlipayOrderNo($alipayOrderNo)
     {
         $this->alipayOrderNo = $alipayOrderNo;
-        $this->apiParams["alipay_order_no"] = $alipayOrderNo;
+        $this->apiParams['alipay_order_no'] = $alipayOrderNo;
     }
+
     public function getAlipayOrderNo()
     {
         return $this->alipayOrderNo;
     }
+
     public function setAmount($amount)
     {
         $this->amount = $amount;
-        $this->apiParams["amount"] = $amount;
+        $this->apiParams['amount'] = $amount;
     }
+
     public function getAmount()
     {
         return $this->amount;
     }
+
     public function setMemo($memo)
     {
         $this->memo = $memo;
-        $this->apiParams["memo"] = $memo;
+        $this->apiParams['memo'] = $memo;
     }
+
     public function getMemo()
     {
         return $this->memo;
     }
+
     public function setReceiveUserId($receiveUserId)
     {
         $this->receiveUserId = $receiveUserId;
-        $this->apiParams["receive_user_id"] = $receiveUserId;
+        $this->apiParams['receive_user_id'] = $receiveUserId;
     }
+
     public function getReceiveUserId()
     {
         return $this->receiveUserId;
     }
+
     public function setTransferOutOrderNo($transferOutOrderNo)
     {
         $this->transferOutOrderNo = $transferOutOrderNo;
-        $this->apiParams["transfer_out_order_no"] = $transferOutOrderNo;
+        $this->apiParams['transfer_out_order_no'] = $transferOutOrderNo;
     }
+
     public function getTransferOutOrderNo()
     {
         return $this->transferOutOrderNo;

@@ -2,14 +2,13 @@
 
 namespace Alipay;
 
-use Alipay\Request\AbstractAlipayRequest;
-
 class AlipayHelper
 {
     /**
      * 校验 $value 是否非空
      *
-     * @param  string|null $value
+     * @param string|null $value
+     *
      * @return bool
      */
     public static function isEmpty($value)
@@ -22,12 +21,14 @@ class AlipayHelper
      *
      * @param string $str
      * @param string $delimiters
+     *
      * @return string
      */
     public static function camelCase($str, $delimiters = ' ')
     {
         $str = static::studlyCase($str, $delimiters);
         $str = lcfirst($str);
+
         return $str;
     }
 
@@ -36,12 +37,14 @@ class AlipayHelper
      *
      * @param string $str
      * @param string $delimiters
+     *
      * @return string
      */
     public static function studlyCase($str, $delimiters = ' ')
     {
         $str = ucwords($str, $delimiters);
         $str = str_replace($delimiters, '', $str);
+
         return $str;
     }
 }

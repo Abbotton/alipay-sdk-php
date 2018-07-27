@@ -3,8 +3,10 @@
  * ALIPAY API: koubei.marketing.data.bizadviser.memberprofile.query request
  *
  * @author auto create
+ *
  * @since  1.0, 2017-10-02 18:21:01
  */
+
 namespace Alipay\Request;
 
 class KoubeiMarketingDataBizadviserMemberprofileQueryRequest extends AbstractAlipayRequest
@@ -13,12 +15,13 @@ class KoubeiMarketingDataBizadviserMemberprofileQueryRequest extends AbstractAli
      * 经营参谋会员人物画像查询
      **/
     private $bizContent;
-    
+
     public function setBizContent($bizContent)
     {
         $this->bizContent = $bizContent;
-        $this->apiParams["biz_content"] = $bizContent;
+        $this->apiParams['biz_content'] = $bizContent;
     }
+
     public function getBizContent()
     {
         return $this->bizContent;

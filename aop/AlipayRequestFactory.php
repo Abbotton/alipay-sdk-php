@@ -2,8 +2,8 @@
 
 namespace Alipay;
 
-use Alipay\Exception\AlipayInvalidRequestException;
 use Alipay\Exception\AlipayInvalidPropertyException;
+use Alipay\Exception\AlipayInvalidRequestException;
 use Alipay\Request\AbstractAlipayRequest;
 
 class AlipayRequestFactory
@@ -11,27 +11,30 @@ class AlipayRequestFactory
     /**
      * 通过 API 名称创建请求类实例
      *
-     * @param  string $apiName
-     * @param  array  $config
+     * @param string $apiName
+     * @param array  $config
+     *
      * @return AbstractAlipayRequest
      */
     public static function createByApi($apiName, $config = [])
     {
         $className = AlipayHelper::studlyCase($apiName, '.') . 'Request';
+
         return static::create($className, $config);
     }
 
     /**
      * 创建请求类实例
      *
-     * @param  string $className
-     * @param  array  $config
+     * @param string $className
+     * @param array  $config
+     *
      * @return AbstractAlipayRequest
      */
     public static function create($className, $config = [])
     {
         $className = 'Alipay\Request' . '\\' . $className;
-        
+
         if (!class_exists($className)) {
             throw new AlipayInvalidRequestException("Request class `{$className}` doesn't exist");
         }

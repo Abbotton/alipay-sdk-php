@@ -41,6 +41,7 @@ class AlipayResponse
      * 获取原始响应的被签名数据，用于验证签名
      *
      * @return string
+     *
      * @see    AlipaySigner::verify()
      */
     public function stripData()
@@ -56,6 +57,7 @@ class AlipayResponse
         if ($indexLen < 0) {
             throw new AlipayInvalidResponseException($this->raw, 'Response data not found');
         }
+
         return substr($this->raw, $signDataStartIndex, $indexLen);
     }
 
@@ -69,13 +71,15 @@ class AlipayResponse
         if (isset($this->data[static::SIGN_NODE])) {
             return $this->data[static::SIGN_NODE];
         }
+
         throw new AlipayInvalidResponseException($this->data, 'Response sign not found');
     }
 
     /**
      * 获取响应内的数据
      *
-     * @param  boolean $assoc
+     * @param bool $assoc
+     *
      * @return mixed
      */
     public function getData($assoc = true)
@@ -87,6 +91,7 @@ class AlipayResponse
         if ($assoc == false) {
             $result = (object) ($result);
         }
+
         return $result;
     }
 
@@ -103,11 +108,11 @@ class AlipayResponse
     /**
      * 根据是否存在错误字段，判断响应是否成功
      *
-     * @return boolean
+     * @return bool
      */
     public function isSuccess()
     {
-        return ! isset($this->data[static::ERROR_NODE]);
+        return !isset($this->data[static::ERROR_NODE]);
     }
 
     /**
@@ -124,6 +129,7 @@ class AlipayResponse
         if ($assoc == false) {
             $result = (object) ($result);
         }
+
         return $result;
     }
 }

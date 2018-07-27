@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.acquire.createandpay request
  *
  * @author auto create
+ *
  * @since  1.0, 2018-06-15 16:56:59
  */
+
 namespace Alipay\Request;
 
 class AlipayAcquireCreateandpayRequest extends AbstractAlipayRequest
@@ -23,7 +25,7 @@ class AlipayAcquireCreateandpayRequest extends AbstractAlipayRequest
     private $buyerEmail;
     /**
      * 买家支付宝账号对应的支付宝唯一用户号。
-以2088开头的纯16位数字。
+     * 以2088开头的纯16位数字。
      **/
     private $buyerId;
     /**
@@ -32,8 +34,8 @@ class AlipayAcquireCreateandpayRequest extends AbstractAlipayRequest
     private $channelParameters;
     /**
      * 订单金额币种。
-目前只支持传入156（人民币）。
-如果为空，则默认设置为156。
+     * 目前只支持传入156（人民币）。
+     * 如果为空，则默认设置为156。
      **/
     private $currency;
     /**
@@ -42,24 +44,24 @@ class AlipayAcquireCreateandpayRequest extends AbstractAlipayRequest
     private $dynamicId;
     /**
      * 动态ID类型：
-&#1048698;
-soundwave：声波
-&#1048698;
-qrcode：二维码
-&#1048698;
-barcode：条码
-&#1048698;
-wave_code：声波，等同soundwave
-&#1048698;
-qr_code：二维码，等同qrcode
-&#1048698;
-bar_code：条码，等同barcode
-建议取值wave_code、qr_code、bar_code。
+     * &#1048698;
+     * soundwave：声波
+     * &#1048698;
+     * qrcode：二维码
+     * &#1048698;
+     * barcode：条码
+     * &#1048698;
+     * wave_code：声波，等同soundwave
+     * &#1048698;
+     * qr_code：二维码，等同qrcode
+     * &#1048698;
+     * bar_code：条码，等同barcode
+     * 建议取值wave_code、qr_code、bar_code。
      **/
     private $dynamicIdType;
     /**
      * 用于商户的特定业务信息的传递，只有商户与支付宝约定了传递此参数且约定了参数含义，此参数才有效。
-比如可传递声波支付场景下的门店ID等信息，以json格式传输，具体请参见“4.7 业务扩展参数说明”。
+     * 比如可传递声波支付场景下的门店ID等信息，以json格式传输，具体请参见“4.7 业务扩展参数说明”。
      **/
     private $extendParams;
     /**
@@ -72,10 +74,10 @@ bar_code：条码，等同barcode
     private $goodsDetail;
     /**
      * 设置未付款交易的超时时间，一旦超时，该笔交易就会自动被关闭。
-取值范围：1m～15d。
-m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点关闭）。
-该参数数值不接受小数点，如1.5h，可转换为90m。
-该功能需要联系支付宝配置关闭时间。
+     * 取值范围：1m～15d。
+     * m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点关闭）。
+     * 该参数数值不接受小数点，如1.5h，可转换为90m。
+     * 该功能需要联系支付宝配置关闭时间。
      **/
     private $itBPay;
     /**
@@ -88,11 +90,11 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     private $operatorId;
     /**
      * 操作员的类型：
-&#1048698;
-0：支付宝操作员
-&#1048698;
-1：商户的操作员
-如果传入其它值或者为空，则默认设置为1。
+     * &#1048698;
+     * 0：支付宝操作员
+     * &#1048698;
+     * 1：商户的操作员
+     * 如果传入其它值或者为空，则默认设置为1。
      **/
     private $operatorType;
     /**
@@ -101,12 +103,12 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     private $outTradeNo;
     /**
      * 订单中商品的单价。
-如果请求时传入本参数，则必须满足total_fee=price×quantity的条件。
+     * 如果请求时传入本参数，则必须满足total_fee=price×quantity的条件。
      **/
     private $price;
     /**
      * 订单中商品的数量。
-如果请求时传入本参数，则必须满足total_fee=price×quantity的条件。
+     * 如果请求时传入本参数，则必须满足total_fee=price×quantity的条件。
      **/
     private $quantity;
     /**
@@ -123,13 +125,13 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     private $royaltyType;
     /**
      * 卖家支付宝账号，可以为email或者手机号。
-如果seller_id不为空，则以seller_id的值作为卖家账号，忽略本参数。
+     * 如果seller_id不为空，则以seller_id的值作为卖家账号，忽略本参数。
      **/
     private $sellerEmail;
     /**
      * 卖家支付宝账号对应的支付宝唯一用户号。
-以2088开头的纯16位数字。
-如果和seller_email同时为空，则本参数默认填充partner的值。
+     * 以2088开头的纯16位数字。
+     * 如果和seller_email同时为空，则本参数默认填充partner的值。
      **/
     private $sellerId;
     /**
@@ -138,244 +140,295 @@ m-分钟，h-小时，d-天，1c-当天（无论交易何时创建，都在0点�
     private $showUrl;
     /**
      * 商品的标题/交易标题/订单标题/订单关键字等。
-该参数最长为128个汉字。
+     * 该参数最长为128个汉字。
      **/
     private $subject;
     /**
      * 该笔订单的资金总额，取值范围[0.01,100000000]，精确到小数点后2位。
      **/
     private $totalFee;
-    
+
     public function setAlipayCaRequest($alipayCaRequest)
     {
         $this->alipayCaRequest = $alipayCaRequest;
-        $this->apiParams["alipay_ca_request"] = $alipayCaRequest;
+        $this->apiParams['alipay_ca_request'] = $alipayCaRequest;
     }
+
     public function getAlipayCaRequest()
     {
         return $this->alipayCaRequest;
     }
+
     public function setBody($body)
     {
         $this->body = $body;
-        $this->apiParams["body"] = $body;
+        $this->apiParams['body'] = $body;
     }
+
     public function getBody()
     {
         return $this->body;
     }
+
     public function setBuyerEmail($buyerEmail)
     {
         $this->buyerEmail = $buyerEmail;
-        $this->apiParams["buyer_email"] = $buyerEmail;
+        $this->apiParams['buyer_email'] = $buyerEmail;
     }
+
     public function getBuyerEmail()
     {
         return $this->buyerEmail;
     }
+
     public function setBuyerId($buyerId)
     {
         $this->buyerId = $buyerId;
-        $this->apiParams["buyer_id"] = $buyerId;
+        $this->apiParams['buyer_id'] = $buyerId;
     }
+
     public function getBuyerId()
     {
         return $this->buyerId;
     }
+
     public function setChannelParameters($channelParameters)
     {
         $this->channelParameters = $channelParameters;
-        $this->apiParams["channel_parameters"] = $channelParameters;
+        $this->apiParams['channel_parameters'] = $channelParameters;
     }
+
     public function getChannelParameters()
     {
         return $this->channelParameters;
     }
+
     public function setCurrency($currency)
     {
         $this->currency = $currency;
-        $this->apiParams["currency"] = $currency;
+        $this->apiParams['currency'] = $currency;
     }
+
     public function getCurrency()
     {
         return $this->currency;
     }
+
     public function setDynamicId($dynamicId)
     {
         $this->dynamicId = $dynamicId;
-        $this->apiParams["dynamic_id"] = $dynamicId;
+        $this->apiParams['dynamic_id'] = $dynamicId;
     }
+
     public function getDynamicId()
     {
         return $this->dynamicId;
     }
+
     public function setDynamicIdType($dynamicIdType)
     {
         $this->dynamicIdType = $dynamicIdType;
-        $this->apiParams["dynamic_id_type"] = $dynamicIdType;
+        $this->apiParams['dynamic_id_type'] = $dynamicIdType;
     }
+
     public function getDynamicIdType()
     {
         return $this->dynamicIdType;
     }
+
     public function setExtendParams($extendParams)
     {
         $this->extendParams = $extendParams;
-        $this->apiParams["extend_params"] = $extendParams;
+        $this->apiParams['extend_params'] = $extendParams;
     }
+
     public function getExtendParams()
     {
         return $this->extendParams;
     }
+
     public function setFormatType($formatType)
     {
         $this->formatType = $formatType;
-        $this->apiParams["format_type"] = $formatType;
+        $this->apiParams['format_type'] = $formatType;
     }
+
     public function getFormatType()
     {
         return $this->formatType;
     }
+
     public function setGoodsDetail($goodsDetail)
     {
         $this->goodsDetail = $goodsDetail;
-        $this->apiParams["goods_detail"] = $goodsDetail;
+        $this->apiParams['goods_detail'] = $goodsDetail;
     }
+
     public function getGoodsDetail()
     {
         return $this->goodsDetail;
     }
+
     public function setItBPay($itBPay)
     {
         $this->itBPay = $itBPay;
-        $this->apiParams["it_b_pay"] = $itBPay;
+        $this->apiParams['it_b_pay'] = $itBPay;
     }
+
     public function getItBPay()
     {
         return $this->itBPay;
     }
+
     public function setMcardParameters($mcardParameters)
     {
         $this->mcardParameters = $mcardParameters;
-        $this->apiParams["mcard_parameters"] = $mcardParameters;
+        $this->apiParams['mcard_parameters'] = $mcardParameters;
     }
+
     public function getMcardParameters()
     {
         return $this->mcardParameters;
     }
+
     public function setOperatorId($operatorId)
     {
         $this->operatorId = $operatorId;
-        $this->apiParams["operator_id"] = $operatorId;
+        $this->apiParams['operator_id'] = $operatorId;
     }
+
     public function getOperatorId()
     {
         return $this->operatorId;
     }
+
     public function setOperatorType($operatorType)
     {
         $this->operatorType = $operatorType;
-        $this->apiParams["operator_type"] = $operatorType;
+        $this->apiParams['operator_type'] = $operatorType;
     }
+
     public function getOperatorType()
     {
         return $this->operatorType;
     }
+
     public function setOutTradeNo($outTradeNo)
     {
         $this->outTradeNo = $outTradeNo;
-        $this->apiParams["out_trade_no"] = $outTradeNo;
+        $this->apiParams['out_trade_no'] = $outTradeNo;
     }
+
     public function getOutTradeNo()
     {
         return $this->outTradeNo;
     }
+
     public function setPrice($price)
     {
         $this->price = $price;
-        $this->apiParams["price"] = $price;
+        $this->apiParams['price'] = $price;
     }
+
     public function getPrice()
     {
         return $this->price;
     }
+
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
-        $this->apiParams["quantity"] = $quantity;
+        $this->apiParams['quantity'] = $quantity;
     }
+
     public function getQuantity()
     {
         return $this->quantity;
     }
+
     public function setRefIds($refIds)
     {
         $this->refIds = $refIds;
-        $this->apiParams["ref_ids"] = $refIds;
+        $this->apiParams['ref_ids'] = $refIds;
     }
+
     public function getRefIds()
     {
         return $this->refIds;
     }
+
     public function setRoyaltyParameters($royaltyParameters)
     {
         $this->royaltyParameters = $royaltyParameters;
-        $this->apiParams["royalty_parameters"] = $royaltyParameters;
+        $this->apiParams['royalty_parameters'] = $royaltyParameters;
     }
+
     public function getRoyaltyParameters()
     {
         return $this->royaltyParameters;
     }
+
     public function setRoyaltyType($royaltyType)
     {
         $this->royaltyType = $royaltyType;
-        $this->apiParams["royalty_type"] = $royaltyType;
+        $this->apiParams['royalty_type'] = $royaltyType;
     }
+
     public function getRoyaltyType()
     {
         return $this->royaltyType;
     }
+
     public function setSellerEmail($sellerEmail)
     {
         $this->sellerEmail = $sellerEmail;
-        $this->apiParams["seller_email"] = $sellerEmail;
+        $this->apiParams['seller_email'] = $sellerEmail;
     }
+
     public function getSellerEmail()
     {
         return $this->sellerEmail;
     }
+
     public function setSellerId($sellerId)
     {
         $this->sellerId = $sellerId;
-        $this->apiParams["seller_id"] = $sellerId;
+        $this->apiParams['seller_id'] = $sellerId;
     }
+
     public function getSellerId()
     {
         return $this->sellerId;
     }
+
     public function setShowUrl($showUrl)
     {
         $this->showUrl = $showUrl;
-        $this->apiParams["show_url"] = $showUrl;
+        $this->apiParams['show_url'] = $showUrl;
     }
+
     public function getShowUrl()
     {
         return $this->showUrl;
     }
+
     public function setSubject($subject)
     {
         $this->subject = $subject;
-        $this->apiParams["subject"] = $subject;
+        $this->apiParams['subject'] = $subject;
     }
+
     public function getSubject()
     {
         return $this->subject;
     }
+
     public function setTotalFee($totalFee)
     {
         $this->totalFee = $totalFee;
-        $this->apiParams["total_fee"] = $totalFee;
+        $this->apiParams['total_fee'] = $totalFee;
     }
+
     public function getTotalFee()
     {
         return $this->totalFee;

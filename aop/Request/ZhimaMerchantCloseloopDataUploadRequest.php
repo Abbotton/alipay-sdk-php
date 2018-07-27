@@ -3,8 +3,10 @@
  * ALIPAY API: zhima.merchant.closeloop.data.upload request
  *
  * @author auto create
+ *
  * @since  1.0, 2018-01-11 15:47:27
  */
+
 namespace Alipay\Request;
 
 class ZhimaMerchantCloseloopDataUploadRequest extends AbstractAlipayRequest
@@ -39,81 +41,96 @@ class ZhimaMerchantCloseloopDataUploadRequest extends AbstractAlipayRequest
     private $records;
     /**
      * 数据应用的场景编码，场景码和场景名称（数字或字符串为场景码）如下：
-8：数据反馈
-32：骑行
-CAR_RENTING：租车行业解决方案
-每个场景码对应的数据模板不一样，请使用zhima.merchant.data.upload.initialize接口获取场景码对应的数据模板。
+     * 8：数据反馈
+     * 32：骑行
+     * CAR_RENTING：租车行业解决方案
+     * 每个场景码对应的数据模板不一样，请使用zhima.merchant.data.upload.initialize接口获取场景码对应的数据模板。
      **/
     private $sceneCode;
-    
+
     public function setBizExtParams($bizExtParams)
     {
         $this->bizExtParams = $bizExtParams;
-        $this->apiParams["biz_ext_params"] = $bizExtParams;
+        $this->apiParams['biz_ext_params'] = $bizExtParams;
     }
+
     public function getBizExtParams()
     {
         return $this->bizExtParams;
     }
+
     public function setColumns($columns)
     {
         $this->columns = $columns;
-        $this->apiParams["columns"] = $columns;
+        $this->apiParams['columns'] = $columns;
     }
+
     public function getColumns()
     {
         return $this->columns;
     }
+
     public function setFile($file)
     {
         $this->file = $file;
-        $this->apiParams["file"] = $file;
+        $this->apiParams['file'] = $file;
     }
+
     public function getFile()
     {
         return $this->file;
     }
+
     public function setFileCharset($fileCharset)
     {
         $this->fileCharset = $fileCharset;
-        $this->apiParams["file_charset"] = $fileCharset;
+        $this->apiParams['file_charset'] = $fileCharset;
     }
+
     public function getFileCharset()
     {
         return $this->fileCharset;
     }
+
     public function setLinkedMerchantId($linkedMerchantId)
     {
         $this->linkedMerchantId = $linkedMerchantId;
-        $this->apiParams["linked_merchant_id"] = $linkedMerchantId;
+        $this->apiParams['linked_merchant_id'] = $linkedMerchantId;
     }
+
     public function getLinkedMerchantId()
     {
         return $this->linkedMerchantId;
     }
+
     public function setPrimaryKeyColumns($primaryKeyColumns)
     {
         $this->primaryKeyColumns = $primaryKeyColumns;
-        $this->apiParams["primary_key_columns"] = $primaryKeyColumns;
+        $this->apiParams['primary_key_columns'] = $primaryKeyColumns;
     }
+
     public function getPrimaryKeyColumns()
     {
         return $this->primaryKeyColumns;
     }
+
     public function setRecords($records)
     {
         $this->records = $records;
-        $this->apiParams["records"] = $records;
+        $this->apiParams['records'] = $records;
     }
+
     public function getRecords()
     {
         return $this->records;
     }
+
     public function setSceneCode($sceneCode)
     {
         $this->sceneCode = $sceneCode;
-        $this->apiParams["scene_code"] = $sceneCode;
+        $this->apiParams['scene_code'] = $sceneCode;
     }
+
     public function getSceneCode()
     {
         return $this->sceneCode;

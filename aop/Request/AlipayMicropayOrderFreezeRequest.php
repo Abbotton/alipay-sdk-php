@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.micropay.order.freeze request
  *
  * @author auto create
+ *
  * @since  1.0, 2016-06-06 17:49:00
  */
+
 namespace Alipay\Request;
 
 class AlipayMicropayOrderFreezeRequest extends AbstractAlipayRequest
@@ -29,48 +31,57 @@ class AlipayMicropayOrderFreezeRequest extends AbstractAlipayRequest
      * 在解冻转账的时候的支付方式: NO_CONFIRM：不需要付款确认，调用接口直接扣款 PAY_PASSWORD: 在转账需要付款方用支付密码确认，才可以转账成功
      **/
     private $payConfirm;
-    
+
     public function setAmount($amount)
     {
         $this->amount = $amount;
-        $this->apiParams["amount"] = $amount;
+        $this->apiParams['amount'] = $amount;
     }
+
     public function getAmount()
     {
         return $this->amount;
     }
+
     public function setExpireTime($expireTime)
     {
         $this->expireTime = $expireTime;
-        $this->apiParams["expire_time"] = $expireTime;
+        $this->apiParams['expire_time'] = $expireTime;
     }
+
     public function getExpireTime()
     {
         return $this->expireTime;
     }
+
     public function setMemo($memo)
     {
         $this->memo = $memo;
-        $this->apiParams["memo"] = $memo;
+        $this->apiParams['memo'] = $memo;
     }
+
     public function getMemo()
     {
         return $this->memo;
     }
+
     public function setMerchantOrderNo($merchantOrderNo)
     {
         $this->merchantOrderNo = $merchantOrderNo;
-        $this->apiParams["merchant_order_no"] = $merchantOrderNo;
+        $this->apiParams['merchant_order_no'] = $merchantOrderNo;
     }
+
     public function getMerchantOrderNo()
     {
         return $this->merchantOrderNo;
     }
+
     public function setPayConfirm($payConfirm)
     {
         $this->payConfirm = $payConfirm;
-        $this->apiParams["pay_confirm"] = $payConfirm;
+        $this->apiParams['pay_confirm'] = $payConfirm;
     }
+
     public function getPayConfirm()
     {
         return $this->payConfirm;

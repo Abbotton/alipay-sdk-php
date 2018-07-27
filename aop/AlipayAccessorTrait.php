@@ -14,6 +14,7 @@ trait AlipayAccessorTrait
         } elseif (method_exists($this, 'set' . $name)) {
             throw new AlipayInvalidPropertyException('Getting write-only property', $name);
         }
+
         throw new AlipayInvalidPropertyException('Getting unknown property', $name);
     }
 
@@ -35,6 +36,7 @@ trait AlipayAccessorTrait
         if (method_exists($this, $getter)) {
             return $this->$getter() !== null;
         }
+
         return false;
     }
 

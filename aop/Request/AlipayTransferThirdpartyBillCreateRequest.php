@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.transfer.thirdparty.bill.create request
  *
  * @author auto create
+ *
  * @since  1.0, 2014-06-25 17:00:56
  */
+
 namespace Alipay\Request;
 
 class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
@@ -35,7 +37,7 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     private $payeeAccount;
     /**
      * （同payer_type所列举的）
-目前限制payer_type和payee_type必须一致
+     * 目前限制payer_type和payee_type必须一致
      **/
     private $payeeType;
     /**
@@ -44,10 +46,10 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     private $payerAccount;
     /**
      * 1-支付宝帐户
-2-淘宝帐户
-10001-新浪微博帐户
-10002-阿里云帐户
-（1、2目前对外不可见、不可用）
+     * 2-淘宝帐户
+     * 10001-新浪微博帐户
+     * 10002-阿里云帐户
+     * （1、2目前对外不可见、不可用）
      **/
     private $payerType;
     /**
@@ -56,119 +58,142 @@ class AlipayTransferThirdpartyBillCreateRequest extends AbstractAlipayRequest
     private $paymentId;
     /**
      * 支付来源
-10001-新浪微博
-10002-阿里云
+     * 10001-新浪微博
+     * 10002-阿里云
      **/
     private $paymentSource;
     /**
      * 支付款项的标题
      **/
     private $title;
-    
+
     public function setAmount($amount)
     {
         $this->amount = $amount;
-        $this->apiParams["amount"] = $amount;
+        $this->apiParams['amount'] = $amount;
     }
+
     public function getAmount()
     {
         return $this->amount;
     }
+
     public function setCurrency($currency)
     {
         $this->currency = $currency;
-        $this->apiParams["currency"] = $currency;
+        $this->apiParams['currency'] = $currency;
     }
+
     public function getCurrency()
     {
         return $this->currency;
     }
+
     public function setExtParam($extParam)
     {
         $this->extParam = $extParam;
-        $this->apiParams["ext_param"] = $extParam;
+        $this->apiParams['ext_param'] = $extParam;
     }
+
     public function getExtParam()
     {
         return $this->extParam;
     }
+
     public function setMemo($memo)
     {
         $this->memo = $memo;
-        $this->apiParams["memo"] = $memo;
+        $this->apiParams['memo'] = $memo;
     }
+
     public function getMemo()
     {
         return $this->memo;
     }
+
     public function setPartnerId($partnerId)
     {
         $this->partnerId = $partnerId;
-        $this->apiParams["partner_id"] = $partnerId;
+        $this->apiParams['partner_id'] = $partnerId;
     }
+
     public function getPartnerId()
     {
         return $this->partnerId;
     }
+
     public function setPayeeAccount($payeeAccount)
     {
         $this->payeeAccount = $payeeAccount;
-        $this->apiParams["payee_account"] = $payeeAccount;
+        $this->apiParams['payee_account'] = $payeeAccount;
     }
+
     public function getPayeeAccount()
     {
         return $this->payeeAccount;
     }
+
     public function setPayeeType($payeeType)
     {
         $this->payeeType = $payeeType;
-        $this->apiParams["payee_type"] = $payeeType;
+        $this->apiParams['payee_type'] = $payeeType;
     }
+
     public function getPayeeType()
     {
         return $this->payeeType;
     }
+
     public function setPayerAccount($payerAccount)
     {
         $this->payerAccount = $payerAccount;
-        $this->apiParams["payer_account"] = $payerAccount;
+        $this->apiParams['payer_account'] = $payerAccount;
     }
+
     public function getPayerAccount()
     {
         return $this->payerAccount;
     }
+
     public function setPayerType($payerType)
     {
         $this->payerType = $payerType;
-        $this->apiParams["payer_type"] = $payerType;
+        $this->apiParams['payer_type'] = $payerType;
     }
+
     public function getPayerType()
     {
         return $this->payerType;
     }
+
     public function setPaymentId($paymentId)
     {
         $this->paymentId = $paymentId;
-        $this->apiParams["payment_id"] = $paymentId;
+        $this->apiParams['payment_id'] = $paymentId;
     }
+
     public function getPaymentId()
     {
         return $this->paymentId;
     }
+
     public function setPaymentSource($paymentSource)
     {
         $this->paymentSource = $paymentSource;
-        $this->apiParams["payment_source"] = $paymentSource;
+        $this->apiParams['payment_source'] = $paymentSource;
     }
+
     public function getPaymentSource()
     {
         return $this->paymentSource;
     }
+
     public function setTitle($title)
     {
         $this->title = $title;
-        $this->apiParams["title"] = $title;
+        $this->apiParams['title'] = $title;
     }
+
     public function getTitle()
     {
         return $this->title;

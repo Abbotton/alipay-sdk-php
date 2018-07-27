@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.mobile.recommend.get request
  *
  * @author auto create
+ *
  * @since  1.0, 2015-03-11 15:19:54
  */
+
 namespace Alipay\Request;
 
 class AlipayMobileRecommendGetRequest extends AbstractAlipayRequest
@@ -29,48 +31,57 @@ class AlipayMobileRecommendGetRequest extends AbstractAlipayRequest
      * 用户openid
      **/
     private $userId;
-    
+
     public function setExtInfo($extInfo)
     {
         $this->extInfo = $extInfo;
-        $this->apiParams["ext_info"] = $extInfo;
+        $this->apiParams['ext_info'] = $extInfo;
     }
+
     public function getExtInfo()
     {
         return $this->extInfo;
     }
+
     public function setLimit($limit)
     {
         $this->limit = $limit;
-        $this->apiParams["limit"] = $limit;
+        $this->apiParams['limit'] = $limit;
     }
+
     public function getLimit()
     {
         return $this->limit;
     }
+
     public function setSceneId($sceneId)
     {
         $this->sceneId = $sceneId;
-        $this->apiParams["scene_id"] = $sceneId;
+        $this->apiParams['scene_id'] = $sceneId;
     }
+
     public function getSceneId()
     {
         return $this->sceneId;
     }
+
     public function setStartIdx($startIdx)
     {
         $this->startIdx = $startIdx;
-        $this->apiParams["start_idx"] = $startIdx;
+        $this->apiParams['start_idx'] = $startIdx;
     }
+
     public function getStartIdx()
     {
         return $this->startIdx;
     }
+
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParams["user_id"] = $userId;
+        $this->apiParams['user_id'] = $userId;
     }
+
     public function getUserId()
     {
         return $this->userId;

@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.open.public.life.agent.create request
  *
  * @author auto create
+ *
  * @since  1.0, 2017-11-02 20:21:32
  */
+
 namespace Alipay\Request;
 
 class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
@@ -47,7 +49,7 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
     private $logoPic;
     /**
      * 所属MCCCode，详情可参考
-<a href="https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.INIZWb&articleId=105364&docType=1">商家经营类目</a> 中的“经营类目编码”
+     * <a href="https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.INIZWb&articleId=105364&docType=1">商家经营类目</a> 中的“经营类目编码”
      **/
     private $mccCode;
     /**
@@ -78,156 +80,189 @@ class AlipayOpenPublicLifeAgentCreateRequest extends AbstractAlipayRequest
      * 企业特殊资质图片，可参考 <a href="https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.INIZWb&articleId=105364&docType=1">商家经营类目</a> 中的 “需要的特殊资质证书”
      **/
     private $specialLicensePic;
-    
+
     public function setAccount($account)
     {
         $this->account = $account;
-        $this->apiParams["account"] = $account;
+        $this->apiParams['account'] = $account;
     }
+
     public function getAccount()
     {
         return $this->account;
     }
+
     public function setBackgroundPic($backgroundPic)
     {
         $this->backgroundPic = $backgroundPic;
-        $this->apiParams["background_pic"] = $backgroundPic;
+        $this->apiParams['background_pic'] = $backgroundPic;
     }
+
     public function getBackgroundPic()
     {
         return $this->backgroundPic;
     }
+
     public function setBusinessLicenseAuthPic($businessLicenseAuthPic)
     {
         $this->businessLicenseAuthPic = $businessLicenseAuthPic;
-        $this->apiParams["business_license_auth_pic"] = $businessLicenseAuthPic;
+        $this->apiParams['business_license_auth_pic'] = $businessLicenseAuthPic;
     }
+
     public function getBusinessLicenseAuthPic()
     {
         return $this->businessLicenseAuthPic;
     }
+
     public function setBusinessLicenseNo($businessLicenseNo)
     {
         $this->businessLicenseNo = $businessLicenseNo;
-        $this->apiParams["business_license_no"] = $businessLicenseNo;
+        $this->apiParams['business_license_no'] = $businessLicenseNo;
     }
+
     public function getBusinessLicenseNo()
     {
         return $this->businessLicenseNo;
     }
+
     public function setBusinessLicensePic($businessLicensePic)
     {
         $this->businessLicensePic = $businessLicensePic;
-        $this->apiParams["business_license_pic"] = $businessLicensePic;
+        $this->apiParams['business_license_pic'] = $businessLicensePic;
     }
+
     public function getBusinessLicensePic()
     {
         return $this->businessLicensePic;
     }
+
     public function setContactEmail($contactEmail)
     {
         $this->contactEmail = $contactEmail;
-        $this->apiParams["contact_email"] = $contactEmail;
+        $this->apiParams['contact_email'] = $contactEmail;
     }
+
     public function getContactEmail()
     {
         return $this->contactEmail;
     }
+
     public function setContactMobile($contactMobile)
     {
         $this->contactMobile = $contactMobile;
-        $this->apiParams["contact_mobile"] = $contactMobile;
+        $this->apiParams['contact_mobile'] = $contactMobile;
     }
+
     public function getContactMobile()
     {
         return $this->contactMobile;
     }
+
     public function setContactName($contactName)
     {
         $this->contactName = $contactName;
-        $this->apiParams["contact_name"] = $contactName;
+        $this->apiParams['contact_name'] = $contactName;
     }
+
     public function getContactName()
     {
         return $this->contactName;
     }
+
     public function setLogoPic($logoPic)
     {
         $this->logoPic = $logoPic;
-        $this->apiParams["logo_pic"] = $logoPic;
+        $this->apiParams['logo_pic'] = $logoPic;
     }
+
     public function getLogoPic()
     {
         return $this->logoPic;
     }
+
     public function setMccCode($mccCode)
     {
         $this->mccCode = $mccCode;
-        $this->apiParams["mcc_code"] = $mccCode;
+        $this->apiParams['mcc_code'] = $mccCode;
     }
+
     public function getMccCode()
     {
         return $this->mccCode;
     }
+
     public function setOutBizNo($outBizNo)
     {
         $this->outBizNo = $outBizNo;
-        $this->apiParams["out_biz_no"] = $outBizNo;
+        $this->apiParams['out_biz_no'] = $outBizNo;
     }
+
     public function getOutBizNo()
     {
         return $this->outBizNo;
     }
+
     public function setOwnIntellectualPic($ownIntellectualPic)
     {
         $this->ownIntellectualPic = $ownIntellectualPic;
-        $this->apiParams["own_intellectual_pic"] = $ownIntellectualPic;
+        $this->apiParams['own_intellectual_pic'] = $ownIntellectualPic;
     }
+
     public function getOwnIntellectualPic()
     {
         return $this->ownIntellectualPic;
     }
+
     public function setPublicDesc($publicDesc)
     {
         $this->publicDesc = $publicDesc;
-        $this->apiParams["public_desc"] = $publicDesc;
+        $this->apiParams['public_desc'] = $publicDesc;
     }
+
     public function getPublicDesc()
     {
         return $this->publicDesc;
     }
+
     public function setPublicName($publicName)
     {
         $this->publicName = $publicName;
-        $this->apiParams["public_name"] = $publicName;
+        $this->apiParams['public_name'] = $publicName;
     }
+
     public function getPublicName()
     {
         return $this->publicName;
     }
+
     public function setShopScenePic($shopScenePic)
     {
         $this->shopScenePic = $shopScenePic;
-        $this->apiParams["shop_scene_pic"] = $shopScenePic;
+        $this->apiParams['shop_scene_pic'] = $shopScenePic;
     }
+
     public function getShopScenePic()
     {
         return $this->shopScenePic;
     }
+
     public function setShopSignBoardPic($shopSignBoardPic)
     {
         $this->shopSignBoardPic = $shopSignBoardPic;
-        $this->apiParams["shop_sign_board_pic"] = $shopSignBoardPic;
+        $this->apiParams['shop_sign_board_pic'] = $shopSignBoardPic;
     }
+
     public function getShopSignBoardPic()
     {
         return $this->shopSignBoardPic;
     }
+
     public function setSpecialLicensePic($specialLicensePic)
     {
         $this->specialLicensePic = $specialLicensePic;
-        $this->apiParams["special_license_pic"] = $specialLicensePic;
+        $this->apiParams['special_license_pic'] = $specialLicensePic;
     }
+
     public function getSpecialLicensePic()
     {
         return $this->specialLicensePic;

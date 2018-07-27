@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.ebpp.bill.add request
  *
  * @author auto create
+ *
  * @since  1.0, 2018-01-22 21:21:47
  */
+
 namespace Alipay\Request;
 
 class AlipayEbppBillAddRequest extends AbstractAlipayRequest
@@ -65,129 +67,156 @@ class AlipayEbppBillAddRequest extends AbstractAlipayRequest
      * 违章行为，sub_order_type=TRAFFIC时填写。
      **/
     private $trafficRegulations;
-    
+
     public function setBankBillNo($bankBillNo)
     {
         $this->bankBillNo = $bankBillNo;
-        $this->apiParams["bank_bill_no"] = $bankBillNo;
+        $this->apiParams['bank_bill_no'] = $bankBillNo;
     }
+
     public function getBankBillNo()
     {
         return $this->bankBillNo;
     }
+
     public function setBillDate($billDate)
     {
         $this->billDate = $billDate;
-        $this->apiParams["bill_date"] = $billDate;
+        $this->apiParams['bill_date'] = $billDate;
     }
+
     public function getBillDate()
     {
         return $this->billDate;
     }
+
     public function setBillKey($billKey)
     {
         $this->billKey = $billKey;
-        $this->apiParams["bill_key"] = $billKey;
+        $this->apiParams['bill_key'] = $billKey;
     }
+
     public function getBillKey()
     {
         return $this->billKey;
     }
+
     public function setChargeInst($chargeInst)
     {
         $this->chargeInst = $chargeInst;
-        $this->apiParams["charge_inst"] = $chargeInst;
+        $this->apiParams['charge_inst'] = $chargeInst;
     }
+
     public function getChargeInst()
     {
         return $this->chargeInst;
     }
+
     public function setExtendField($extendField)
     {
         $this->extendField = $extendField;
-        $this->apiParams["extend_field"] = $extendField;
+        $this->apiParams['extend_field'] = $extendField;
     }
+
     public function getExtendField()
     {
         return $this->extendField;
     }
+
     public function setMerchantOrderNo($merchantOrderNo)
     {
         $this->merchantOrderNo = $merchantOrderNo;
-        $this->apiParams["merchant_order_no"] = $merchantOrderNo;
+        $this->apiParams['merchant_order_no'] = $merchantOrderNo;
     }
+
     public function getMerchantOrderNo()
     {
         return $this->merchantOrderNo;
     }
+
     public function setMobile($mobile)
     {
         $this->mobile = $mobile;
-        $this->apiParams["mobile"] = $mobile;
+        $this->apiParams['mobile'] = $mobile;
     }
+
     public function getMobile()
     {
         return $this->mobile;
     }
+
     public function setOrderType($orderType)
     {
         $this->orderType = $orderType;
-        $this->apiParams["order_type"] = $orderType;
+        $this->apiParams['order_type'] = $orderType;
     }
+
     public function getOrderType()
     {
         return $this->orderType;
     }
+
     public function setOwnerName($ownerName)
     {
         $this->ownerName = $ownerName;
-        $this->apiParams["owner_name"] = $ownerName;
+        $this->apiParams['owner_name'] = $ownerName;
     }
+
     public function getOwnerName()
     {
         return $this->ownerName;
     }
+
     public function setPayAmount($payAmount)
     {
         $this->payAmount = $payAmount;
-        $this->apiParams["pay_amount"] = $payAmount;
+        $this->apiParams['pay_amount'] = $payAmount;
     }
+
     public function getPayAmount()
     {
         return $this->payAmount;
     }
+
     public function setServiceAmount($serviceAmount)
     {
         $this->serviceAmount = $serviceAmount;
-        $this->apiParams["service_amount"] = $serviceAmount;
+        $this->apiParams['service_amount'] = $serviceAmount;
     }
+
     public function getServiceAmount()
     {
         return $this->serviceAmount;
     }
+
     public function setSubOrderType($subOrderType)
     {
         $this->subOrderType = $subOrderType;
-        $this->apiParams["sub_order_type"] = $subOrderType;
+        $this->apiParams['sub_order_type'] = $subOrderType;
     }
+
     public function getSubOrderType()
     {
         return $this->subOrderType;
     }
+
     public function setTrafficLocation($trafficLocation)
     {
         $this->trafficLocation = $trafficLocation;
-        $this->apiParams["traffic_location"] = $trafficLocation;
+        $this->apiParams['traffic_location'] = $trafficLocation;
     }
+
     public function getTrafficLocation()
     {
         return $this->trafficLocation;
     }
+
     public function setTrafficRegulations($trafficRegulations)
     {
         $this->trafficRegulations = $trafficRegulations;
-        $this->apiParams["traffic_regulations"] = $trafficRegulations;
+        $this->apiParams['traffic_regulations'] = $trafficRegulations;
     }
+
     public function getTrafficRegulations()
     {
         return $this->trafficRegulations;

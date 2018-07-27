@@ -47,10 +47,10 @@ class AopClient
     /**
      * 创建 AopClient 实例
      *
-     * @param string                $appId      应用 ID，请在开放平台管理页面获取
-     * @param AlipaySigner          $signer     签名器，用于生成 / 验证签名
-     * @param AlipayRequester       $requester  请求器，形如 `function (string $url, array $params);`
-     * @param AlipayResponseFactory $parser     响应解析器，用于解析服务器原始响应
+     * @param string                $appId     应用 ID，请在开放平台管理页面获取
+     * @param AlipaySigner          $signer    签名器，用于生成 / 验证签名
+     * @param AlipayRequester       $requester 请求器，形如 `function (string $url, array $params);`
+     * @param AlipayResponseFactory $parser    响应解析器，用于解析服务器原始响应
      */
     public function __construct($appId, AlipaySigner $signer, AlipayRequester $requester = null, AlipayResponseFactory $parser = null)
     {
@@ -63,7 +63,8 @@ class AopClient
     /**
      * 拼接请求参数并签名
      *
-     * @param  AbstractAlipayRequest $request
+     * @param AbstractAlipayRequest $request
+     *
      * @return array
      */
     public function build(AbstractAlipayRequest $request)
@@ -86,7 +87,7 @@ class AopClient
         // $sysParams['terminal_type'] = $request->getTerminalType();
         // $sysParams['terminal_info'] = $request->getTerminalInfo();
         // $sysParams['prod_code'] = $request->getProdCode();
-        
+
         $sysParams['auth_token'] = $request->getAuthToken();
         $sysParams['app_auth_token'] = $request->getAppAuthToken();
 
@@ -96,6 +97,7 @@ class AopClient
         // 签名
         $totalParams = array_merge($apiParams, $sysParams);
         $totalParams['sign'] = $this->signer->generateByParams($totalParams);
+
         return $totalParams;
     }
 
@@ -103,6 +105,7 @@ class AopClient
      * 发起请求、解析响应、验证签名
      *
      * @param array $params
+     *
      * @return AlipayResponse
      */
     public function request($params)
@@ -123,6 +126,7 @@ class AopClient
      * 执行请求
      *
      * @param AbstractAlipayRequest $request
+     *
      * @return AlipayResponse
      */
     public function execute(AbstractAlipayRequest $request)
@@ -137,8 +141,10 @@ class AopClient
     /**
      * 生成用于调用收银台 SDK 的字符串
      *
-     * @param  AbstractAlipayRequest $request
+     * @param AbstractAlipayRequest $request
+     *
      * @return string
+     *
      * @author guofa.tgf
      */
     public function sdkExecute(AbstractAlipayRequest $request)
@@ -151,7 +157,8 @@ class AopClient
     /**
      * 页面提交请求，生成已签名的跳转 URL
      *
-     * @param  AbstractAlipayRequest $request
+     * @param AbstractAlipayRequest $request
+     *
      * @return string
      */
     public function pageExecuteUrl(AbstractAlipayRequest $request)
@@ -165,13 +172,14 @@ class AopClient
     /**
      * 页面提交请求，生成已签名的表单 HTML
      *
-     * @param  AbstractAlipayRequest $request
+     * @param AbstractAlipayRequest $request
+     *
      * @return string
      */
     public function pageExecutePost(AbstractAlipayRequest $request)
     {
         $fields = $this->build($request);
-        
+
         $html = "<form id='alipaysubmit' name='alipaysubmit' action='{$this->requester->getUrl()}' method='POST'>";
         foreach ($fields as $key => $value) {
             if (AlipayHelper::isEmpty($value)) {
