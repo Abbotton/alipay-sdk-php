@@ -28,7 +28,7 @@
 1. Composer 安装。
 
     ```bash
-    composer require "wi1dcard/alipay-sdk:^0.1" --prefer-dist
+    composer require "wi1dcard/alipay-sdk:^0.2" --prefer-dist
     ```
 
 2. 创建 `AlipaySigner` 实例。
@@ -51,9 +51,8 @@
 4. 创建 `AlipayRequest` 实例。
 
     ```php
-    $request = \Alipay\AlipayRequestFactory::createByApi('sample.api.name', [
-        'request-param-key' => 'request-param-value',
-        'foo' => 'bar',
+    $request = \Alipay\AlipayRequestFactory::createByApi('点号连接的API名称', [
+        '请求参数名' => '对应参数值',
         // ...
     ]);
     ```
