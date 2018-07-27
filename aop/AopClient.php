@@ -141,7 +141,7 @@ class AopClient
      * @return string
      * @author guofa.tgf
      */
-    public static function sdkExecute(AbstractAlipayRequest $request)
+    public function sdkExecute(AbstractAlipayRequest $request)
     {
         $params = $this->build($request);
 

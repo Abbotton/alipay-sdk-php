@@ -3,6 +3,7 @@
 namespace Alipay;
 
 use Alipay\Exception\AlipayCurlException;
+use Alipay\Exception\AlipayHttpException;
 
 class AlipayRequester
 {
