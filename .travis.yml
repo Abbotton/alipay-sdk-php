@@ -9,20 +9,12 @@ matrix:
     - php: 7.1
     - php: 7.2
 
-    - php: 7.1
-      env: CODING_STANDARD=1
-
 install:
   - composer update --prefer-dist
   - bin/genrsa tests
 
 script:
-  - |
-    if [[ $CODING_STANDARD == "" ]]; then 
-      composer phpunit;
-    else 
-      composer check-cs; 
-    fi
+  - vendor/bin/phpunit
 
 after_success:
   - |
