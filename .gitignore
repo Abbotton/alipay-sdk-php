@@ -1,8 +1,9 @@
 .idea/
 .vscode/
 
-.DS_Store
-/composer.lock
-
 /vendor/
 /build/
+
+.DS_Store
+*.pem
+/composer.lock
