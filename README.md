@@ -6,6 +6,8 @@
 [![Build Status](https://travis-ci.org/wi1dcard/alipay-sdk-php.svg?branch=master)](https://travis-ci.org/wi1dcard/alipay-sdk-php)
 [![Coverage Status](https://coveralls.io/repos/github/wi1dcard/alipay-sdk-php/badge.svg?branch=master)](https://coveralls.io/github/wi1dcard/alipay-sdk-php?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/wi1dcard/alipay-sdk-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/wi1dcard/alipay-sdk-php/?branch=master)
+[![StyleCI](https://github.styleci.io/repos/141678964/shield?branch=master)](https://github.styleci.io/repos/141678964)
+
 
 ## 主要目的
 
