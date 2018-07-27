@@ -38,21 +38,4 @@ class HelperTest extends TestCase
         $res = AlipayHelper::studlyCase($str, '.');
         $this->assertEquals('FooBar', $res);
     }
-
-    public function testCurl()
-    {
-        $url = 'https://httpbin.org/anything?bar=foo';
-        $data = ['foo' => 'bar'];
-        $response = AlipayHelper::curl($url, $data);
-        $response = json_decode($response);
-        
-        $this->assertEquals('POST', $response->method);
-        $this->assertEquals('foo', $response->args->bar);
-        $this->assertEquals('bar', $response->form->foo);
-    }
-
-    public function testExecute()
-    {
-        
-    }
 }

@@ -2,7 +2,7 @@
 
 namespace Alipay\Exception;
 
-class AlipayException extends \Exception
+abstract class AlipayException extends \Exception
 {
     
 }

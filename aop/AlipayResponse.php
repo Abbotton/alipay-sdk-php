@@ -31,34 +31,17 @@ class AlipayResponse
      */
     protected $data;
 
-    /**
-     * 解析原始响应数据
-     *
-     * @param  string $raw
-     * @param  string $format
-     * @return static
-     */
-    public static function parse($raw)
+    public function __construct($raw, $data)
     {
-        $instance = new static();
-        $instance->raw = $raw;
-        $instance->data = json_decode($raw, true);
-        if (!is_array($instance->data)) {
-            $error = function_exists('json_last_error_msg') ? json_last_error_msg() : json_last_error();
-            throw new AlipayInvalidResponseException($raw, $error);
-        }
-        return $instance;
-    }
-
-    protected function __construct()
-    {
+        $this->raw = $raw;
+        $this->data = $data;
     }
 
     /**
      * 获取原始响应的被签名数据，用于验证签名
      *
      * @return string
-     * @see    AlipaySign::verify()
+     * @see    AlipaySigner::verify()
      */
     public function stripData()
     {

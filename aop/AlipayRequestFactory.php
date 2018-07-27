@@ -2,7 +2,6 @@
 
 namespace Alipay;
 
-use Alipay\Exception\AlipayException;
 use Alipay\Exception\AlipayInvalidRequestException;
 use Alipay\Exception\AlipayInvalidPropertyException;
 use Alipay\Request\AbstractAlipayRequest;

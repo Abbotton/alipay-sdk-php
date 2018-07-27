@@ -12,9 +12,7 @@ class AlipayInvalidResponseException extends AlipayException
     {
         $this->response = $response;
         
-        if (is_string($response)) {
-            $response = json_decode($response);
-        } elseif (is_array($response)) {
+        if (is_array($response)) {
             $response = (object) $response;
         }
 

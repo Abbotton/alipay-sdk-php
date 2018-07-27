@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="phpunit.xsd"
     bootstrap="vendor/autoload.php"
     colors="true"
     verbose="true"
 >
-    <testsuite name="">
-         <directory suffix="Test.php">tests</directory>
-    </testsuite>
+    <testsuites>
+        <testsuite name="default">
+            <directory suffix="Test.php">tests/default</directory>
+        </testsuite>
+
+        <testsuite name="client">
+            <directory suffix="Test.php">tests/client</directory>
+        </testsuite>
+    </testsuites>
 
     <filter>
         <whitelist>
             <directory suffix=".php">aop</directory>
         </whitelist>
     </filter>
+
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
 </phpunit>

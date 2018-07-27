@@ -13,7 +13,7 @@ use Alipay\Exception\AlipayBase64Exception;
 use Alipay\Exception\AlipayOpenSslException;
 use Alipay\Exception\AlipayInvalidKeyException;
 
-class AlipaySign
+class AlipaySigner
 {
     /**
      * 签名类型
@@ -43,7 +43,7 @@ class AlipaySign
     protected $alipayPublicKeyResource;
 
     /**
-     * 创建 AlipaySign 实例
+     * 创建 AlipaySigner 实例
      *
      * @param  string $signType
      * @param  string $appPrivateKey
@@ -240,7 +240,7 @@ class AlipaySign
         $stringToBeSigned = "";
         foreach ($params as $k => $v) {
             $v = @(string)$v;
-            if(AlipayHelper::isEmpty($v) || $v[0] === '@') {
+            if (AlipayHelper::isEmpty($v) || $v[0] === '@') {
                 continue;
             }
             $stringToBeSigned .= "&{$k}={$v}";

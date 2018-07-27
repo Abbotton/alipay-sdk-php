@@ -2,12 +2,23 @@
 
 use PHPUnit\Framework\TestCase;
 use Alipay\AlipayResponse;
+use Alipay\AlipayResponseFactory;
 
 class ResponseTest extends TestCase
 {
     const SIGN = 'AN_EXAMPLE_SIGN';
 
-    public function testParseError()
+    public function testFactory()
+    {
+        $parser = new AlipayResponseFactory();
+        $this->assertEquals('JSON', $parser->getFormat());
+        return $parser;
+    }
+
+    /**
+     * @depends testFactory
+     */
+    public function testParseError(AlipayResponseFactory $parser)
     {
         $response = '{
             "error_response": {
@@ -17,13 +28,16 @@ class ResponseTest extends TestCase
                 "sub_msg": "系统繁忙"
             }
         }';
-        $ins = AlipayResponse::parse($response);
+        $ins = $parser->parse($response);
         $this->assertInstanceOf('Alipay\AlipayResponse', $ins);
         $this->assertFalse($ins->isSuccess());
         return $ins;
     }
 
-    public function testParseSuccess()
+    /**
+     * @depends testFactory
+     */
+    public function testParseSuccess(AlipayResponseFactory $parser)
     {
         $response = '{
             "alipay_system_oauth_token_response": {
@@ -35,7 +49,7 @@ class ResponseTest extends TestCase
             },
             "sign": "' . self::SIGN . '"
         }';
-        $ins = AlipayResponse::parse($response);
+        $ins = $parser->parse($response);
         $this->assertInstanceOf('Alipay\AlipayResponse', $ins);
         $this->assertEquals($response, $ins->getRaw());
         $this->assertTrue($ins->isSuccess());
@@ -43,20 +57,13 @@ class ResponseTest extends TestCase
     }
 
     /**
+     * @depends testFactory
      * @expectedException Alipay\Exception\AlipayInvalidResponseException
      */
-    public function testParseInvalidResponse()
+    public function testParseInvalidResponse(AlipayResponseFactory $parser)
     {
         $response = 'this is an invalid response';
-        AlipayResponse::parse($response);
-    }
-
-    /**
-     * @expectedException Alipay\Exception\AlipayInvalidResponseException
-     */
-    public function testParseUnsupportedFormat()
-    {
-        AlipayResponse::parse(null, 'this is an unknown format');
+        $parser->parse($response);
     }
 
     /**

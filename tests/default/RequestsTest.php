@@ -8,7 +8,7 @@ class RequestsTest extends TestCase
 {
     public function testRequests()
     {
-        $list = glob(__DIR__ . '/../aop/Request/*Request.php');
+        $list = glob('aop/Request/*Request.php');
         foreach ($list as $v) {
             $className = 'Alipay\\Request\\' . basename($v, '.php');
             $class = new ReflectionClass($className);

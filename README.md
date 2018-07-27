@@ -13,7 +13,7 @@
 - [x] 降低 PHP 依赖至 5.4。
 - [x] 移除官方 SDK 内 [`lotusphp`](https://github.com/qinjx/lotusphp) 依赖。
 - [x] 整理代码风格使其符合 `PSR-1`、`PSR-2`。
-- [ ] 增加单元测试。
+- [x] 增加单元测试。
 - [x] 兼容 PHP 7.2，<del>替换 MCrypt 为 OpenSSL</del>。
 - [x] 移除官方 API 文档内 `已弃用` 特性。
 - [x] 移除难以拓展的调试、日志等特性，以便于集成第三方框架和扩展包。
@@ -30,30 +30,30 @@
     composer require "wi1dcard/alipay-sdk:^0.1" --prefer-dist
     ```
 
-2. 创建 `AlipaySign` 实例。
+2. 创建 `AlipaySigner` 实例。
 
     ```php
-    $signHelper = \Alipay\AlipaySign::create(
-        'App Private Key',
-        'Alipay Public Key',
-        'Sign Type'
+    $signer = \Alipay\AlipaySigner::create(
+        '应用私钥',
+        '支付宝公钥',
     );
     ```
-
-    此签名对象通常情况下需要贯穿整条业务，除非你需要在同一套代码内处理多个商户号/小程序，否则只需要在初始化阶段创建一次即可。
 
 3. 创建 `AopClient` 实例。
 
     ```php
-    $aop = new AopClient('App ID', $signHelper);
+    $aop = new AopClient('APP_ID', $signer);
     ```
+
+    此对象通常情况下需要贯穿整条业务，除非你需要在同一套代码内处理多个商户号/小程序，否则只需要在初始化阶段创建一次即可。
 
 4. 创建 `AlipayRequest` 实例。
 
     ```php
-    $request = \Alipay\AlipayRequestFactory::createByApi('API Name', [
-        'Request param key' => 'Request param value',
-        'Foo' => 'Bar',
+    $request = \Alipay\AlipayRequestFactory::createByApi('sample.api.name', [
+        'request-param-key' => 'request-param-value',
+        'foo' => 'bar',
+        // ...
     ]);
     ```
 

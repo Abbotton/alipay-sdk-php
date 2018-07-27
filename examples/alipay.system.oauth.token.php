@@ -1,6 +1,6 @@
 <?php
 
-require './_bootstrap.php';
+$aop = require __DIR__ . '/_bootstrap.php';
 
 use Alipay\AlipayRequestFactory;
 use Alipay\AlipayHelper;
@@ -22,9 +22,9 @@ $request = AlipayRequestFactory::createByApi($apiName, [
  * 发起请求并调试输出结果
  */
 try {
-    $data = AlipayHelper::execute($request, $aop);
+    $data = $aop->execute($request)->getData();
     print_r($data);
 } catch (\Exception $ex) {
-    print_r($ex);
     http_response_code(500);
+    print_r($ex);
 }

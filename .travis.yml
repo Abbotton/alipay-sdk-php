@@ -7,20 +7,26 @@ matrix:
     - php: 5.6
     - php: 7.0
     - php: 7.1
-      env: CODING_STANDARD=1
     - php: 7.2
+
     - php: 7.1
-      env: PHPUNIT_FLAGS="--coverage-clover build/logs/clover.xml"
+      env: CODING_STANDARD=1
 
 install:
   - composer update --prefer-dist
+  - bin/genrsa tests
 
 script:
-  - if [[ $CODING_STANDARD == "" ]]; then vendor/bin/phpunit $PHPUNIT_FLAGS; else composer check-cs; fi
+  - |
+    if [[ $CODING_STANDARD == "" ]]; then 
+      composer phpunit;
+    else 
+      composer check-cs; 
+    fi
 
 after_success:
   - |
-    if [[ $PHPUNIT_FLAGS != "" ]]; then
+    if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.1" ]]; then
       wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.1.0/php-coveralls.phar;
       php php-coveralls.phar -v;
     fi
