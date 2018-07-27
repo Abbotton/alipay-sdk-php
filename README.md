@@ -8,7 +8,6 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/wi1dcard/alipay-sdk-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/wi1dcard/alipay-sdk-php/?branch=master)
 [![StyleCI](https://github.styleci.io/repos/141678964/shield?branch=master)](https://github.styleci.io/repos/141678964)
 
-
 ## 主要目的
 
 - [x] 集成 Composer。
