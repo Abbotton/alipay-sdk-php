@@ -61,9 +61,11 @@
 
 5. 发送请求。
 
-    ```php
-    $result = $aop->execute($request)->getData(); // 所有错误都会被转换为异常，请注意使用 try...catch... 语句段捕捉
+    ```php    
+    $result = $aop->execute($request)->getData();
     ```
+
+    所有错误（包括但不限于网络通信异常、数据格式异常、支付宝服务器返回的错误）都会被转换为异常，请注意捕捉。
 
 6. 查看实例，请移步 [`examples`](examples/) 目录。
 
