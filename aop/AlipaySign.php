@@ -243,8 +243,8 @@ class AlipaySign
             if(AlipayHelper::isEmpty($v) || $v[0] === '@') {
                 continue;
             }
-                $stringToBeSigned .= "&{$k}={$v}";
-            }
+            $stringToBeSigned .= "&{$k}={$v}";
+        }
         $stringToBeSigned = substr($stringToBeSigned, 1);
         return $stringToBeSigned;
     }
