@@ -3,8 +3,10 @@
  * ALIPAY API: zhima.data.batch.feedback request
  *
  * @author auto create
+ *
  * @since  1.0, 2017-05-02 14:40:53
  */
+
 namespace Alipay\Request;
 
 class ZhimaDataBatchFeedbackRequest extends AbstractAlipayRequest
@@ -41,75 +43,90 @@ class ZhimaDataBatchFeedbackRequest extends AbstractAlipayRequest
      * 文件数据记录条数
      **/
     private $records;
-    
+
     public function setBizExtParams($bizExtParams)
     {
         $this->bizExtParams = $bizExtParams;
-        $this->apiParams["biz_ext_params"] = $bizExtParams;
+        $this->apiParams['biz_ext_params'] = $bizExtParams;
     }
+
     public function getBizExtParams()
     {
         return $this->bizExtParams;
     }
+
     public function setColumns($columns)
     {
         $this->columns = $columns;
-        $this->apiParams["columns"] = $columns;
+        $this->apiParams['columns'] = $columns;
     }
+
     public function getColumns()
     {
         return $this->columns;
     }
+
     public function setFile($file)
     {
         $this->file = $file;
-        $this->apiParams["file"] = $file;
+        $this->apiParams['file'] = $file;
     }
+
     public function getFile()
     {
         return $this->file;
     }
+
     public function setFileCharset($fileCharset)
     {
         $this->fileCharset = $fileCharset;
-        $this->apiParams["file_charset"] = $fileCharset;
+        $this->apiParams['file_charset'] = $fileCharset;
     }
+
     public function getFileCharset()
     {
         return $this->fileCharset;
     }
+
     public function setFileDescription($fileDescription)
     {
         $this->fileDescription = $fileDescription;
-        $this->apiParams["file_description"] = $fileDescription;
+        $this->apiParams['file_description'] = $fileDescription;
     }
+
     public function getFileDescription()
     {
         return $this->fileDescription;
     }
+
     public function setFileType($fileType)
     {
         $this->fileType = $fileType;
-        $this->apiParams["file_type"] = $fileType;
+        $this->apiParams['file_type'] = $fileType;
     }
+
     public function getFileType()
     {
         return $this->fileType;
     }
+
     public function setPrimaryKeyColumns($primaryKeyColumns)
     {
         $this->primaryKeyColumns = $primaryKeyColumns;
-        $this->apiParams["primary_key_columns"] = $primaryKeyColumns;
+        $this->apiParams['primary_key_columns'] = $primaryKeyColumns;
     }
+
     public function getPrimaryKeyColumns()
     {
         return $this->primaryKeyColumns;
     }
+
     public function setRecords($records)
     {
         $this->records = $records;
-        $this->apiParams["records"] = $records;
+        $this->apiParams['records'] = $records;
     }
+
     public function getRecords()
     {
         return $this->records;

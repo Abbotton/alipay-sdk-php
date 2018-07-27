@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.open.agent.zhimabrief.sign request
  *
  * @author auto create
+ *
  * @since  1.0, 2018-01-31 21:21:06
  */
+
 namespace Alipay\Request;
 
 class AlipayOpenAgentZhimabriefSignRequest extends AbstractAlipayRequest
@@ -63,8 +65,8 @@ class AlipayOpenAgentZhimabriefSignRequest extends AbstractAlipayRequest
     private $longTerm;
     /**
      * 所属MCCCode，详情可参考
-<a href="https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7629140.0.0.59bgD2&treeId=222&articleId=105364&docType=1#s1
-">商家经营类目</a> 中的“经营类目编码”
+     * <a href="https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7629140.0.0.59bgD2&treeId=222&articleId=105364&docType=1#s1
+     * ">商家经营类目</a> 中的“经营类目编码”
      **/
     private $mccCode;
     /**
@@ -77,8 +79,8 @@ class AlipayOpenAgentZhimabriefSignRequest extends AbstractAlipayRequest
     private $prContact;
     /**
      * 企业特殊资质图片，可参考
-<a href="https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7629140.0.0.59bgD2&treeId=222&articleId=105364&docType=1#s1
-">商家经营类目</a> 中的“需要的特殊资质证书”，最小50KB，图片格式必须为：png、bmp、gif、jpg、jpeg
+     * <a href="https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7629140.0.0.59bgD2&treeId=222&articleId=105364&docType=1#s1
+     * ">商家经营类目</a> 中的“需要的特殊资质证书”，最小50KB，图片格式必须为：png、bmp、gif、jpg、jpeg
      **/
     private $specialLicensePic;
     /**
@@ -93,183 +95,222 @@ class AlipayOpenAgentZhimabriefSignRequest extends AbstractAlipayRequest
      * 微信公众号名称（1 app_name、app_demo；2 web_sites；3 alipay_life_name；4 wechat_official_account_name。1、2、3、4至少选择一个填写）
      **/
     private $wechatOfficialAccountName;
-    
+
     public function setAlipayLifeName($alipayLifeName)
     {
         $this->alipayLifeName = $alipayLifeName;
-        $this->apiParams["alipay_life_name"] = $alipayLifeName;
+        $this->apiParams['alipay_life_name'] = $alipayLifeName;
     }
+
     public function getAlipayLifeName()
     {
         return $this->alipayLifeName;
     }
+
     public function setAppDemo($appDemo)
     {
         $this->appDemo = $appDemo;
-        $this->apiParams["app_demo"] = $appDemo;
+        $this->apiParams['app_demo'] = $appDemo;
     }
+
     public function getAppDemo()
     {
         return $this->appDemo;
     }
+
     public function setAppName($appName)
     {
         $this->appName = $appName;
-        $this->apiParams["app_name"] = $appName;
+        $this->apiParams['app_name'] = $appName;
     }
+
     public function getAppName()
     {
         return $this->appName;
     }
+
     public function setBatchNo($batchNo)
     {
         $this->batchNo = $batchNo;
-        $this->apiParams["batch_no"] = $batchNo;
+        $this->apiParams['batch_no'] = $batchNo;
     }
+
     public function getBatchNo()
     {
         return $this->batchNo;
     }
+
     public function setBusinessLicenseAuthPic($businessLicenseAuthPic)
     {
         $this->businessLicenseAuthPic = $businessLicenseAuthPic;
-        $this->apiParams["business_license_auth_pic"] = $businessLicenseAuthPic;
+        $this->apiParams['business_license_auth_pic'] = $businessLicenseAuthPic;
     }
+
     public function getBusinessLicenseAuthPic()
     {
         return $this->businessLicenseAuthPic;
     }
+
     public function setBusinessLicenseNo($businessLicenseNo)
     {
         $this->businessLicenseNo = $businessLicenseNo;
-        $this->apiParams["business_license_no"] = $businessLicenseNo;
+        $this->apiParams['business_license_no'] = $businessLicenseNo;
     }
+
     public function getBusinessLicenseNo()
     {
         return $this->businessLicenseNo;
     }
+
     public function setBusinessLicensePic($businessLicensePic)
     {
         $this->businessLicensePic = $businessLicensePic;
-        $this->apiParams["business_license_pic"] = $businessLicensePic;
+        $this->apiParams['business_license_pic'] = $businessLicensePic;
     }
+
     public function getBusinessLicensePic()
     {
         return $this->businessLicensePic;
     }
+
     public function setCustomUsageScene($customUsageScene)
     {
         $this->customUsageScene = $customUsageScene;
-        $this->apiParams["custom_usage_scene"] = $customUsageScene;
+        $this->apiParams['custom_usage_scene'] = $customUsageScene;
     }
+
     public function getCustomUsageScene()
     {
         return $this->customUsageScene;
     }
+
     public function setDateLimitation($dateLimitation)
     {
         $this->dateLimitation = $dateLimitation;
-        $this->apiParams["date_limitation"] = $dateLimitation;
+        $this->apiParams['date_limitation'] = $dateLimitation;
     }
+
     public function getDateLimitation()
     {
         return $this->dateLimitation;
     }
+
     public function setDrContact($drContact)
     {
         $this->drContact = $drContact;
-        $this->apiParams["dr_contact"] = $drContact;
+        $this->apiParams['dr_contact'] = $drContact;
     }
+
     public function getDrContact()
     {
         return $this->drContact;
     }
+
     public function setEnterpriseAlias($enterpriseAlias)
     {
         $this->enterpriseAlias = $enterpriseAlias;
-        $this->apiParams["enterprise_alias"] = $enterpriseAlias;
+        $this->apiParams['enterprise_alias'] = $enterpriseAlias;
     }
+
     public function getEnterpriseAlias()
     {
         return $this->enterpriseAlias;
     }
+
     public function setEnterpriseLogo($enterpriseLogo)
     {
         $this->enterpriseLogo = $enterpriseLogo;
-        $this->apiParams["enterprise_logo"] = $enterpriseLogo;
+        $this->apiParams['enterprise_logo'] = $enterpriseLogo;
     }
+
     public function getEnterpriseLogo()
     {
         return $this->enterpriseLogo;
     }
+
     public function setLongTerm($longTerm)
     {
         $this->longTerm = $longTerm;
-        $this->apiParams["long_term"] = $longTerm;
+        $this->apiParams['long_term'] = $longTerm;
     }
+
     public function getLongTerm()
     {
         return $this->longTerm;
     }
+
     public function setMccCode($mccCode)
     {
         $this->mccCode = $mccCode;
-        $this->apiParams["mcc_code"] = $mccCode;
+        $this->apiParams['mcc_code'] = $mccCode;
     }
+
     public function getMccCode()
     {
         return $this->mccCode;
     }
+
     public function setOhContact($ohContact)
     {
         $this->ohContact = $ohContact;
-        $this->apiParams["oh_contact"] = $ohContact;
+        $this->apiParams['oh_contact'] = $ohContact;
     }
+
     public function getOhContact()
     {
         return $this->ohContact;
     }
+
     public function setPrContact($prContact)
     {
         $this->prContact = $prContact;
-        $this->apiParams["pr_contact"] = $prContact;
+        $this->apiParams['pr_contact'] = $prContact;
     }
+
     public function getPrContact()
     {
         return $this->prContact;
     }
+
     public function setSpecialLicensePic($specialLicensePic)
     {
         $this->specialLicensePic = $specialLicensePic;
-        $this->apiParams["special_license_pic"] = $specialLicensePic;
+        $this->apiParams['special_license_pic'] = $specialLicensePic;
     }
+
     public function getSpecialLicensePic()
     {
         return $this->specialLicensePic;
     }
+
     public function setUsageScene($usageScene)
     {
         $this->usageScene = $usageScene;
-        $this->apiParams["usage_scene"] = $usageScene;
+        $this->apiParams['usage_scene'] = $usageScene;
     }
+
     public function getUsageScene()
     {
         return $this->usageScene;
     }
+
     public function setWebSites($webSites)
     {
         $this->webSites = $webSites;
-        $this->apiParams["web_sites"] = $webSites;
+        $this->apiParams['web_sites'] = $webSites;
     }
+
     public function getWebSites()
     {
         return $this->webSites;
     }
+
     public function setWechatOfficialAccountName($wechatOfficialAccountName)
     {
         $this->wechatOfficialAccountName = $wechatOfficialAccountName;
-        $this->apiParams["wechat_official_account_name"] = $wechatOfficialAccountName;
+        $this->apiParams['wechat_official_account_name'] = $wechatOfficialAccountName;
     }
+
     public function getWechatOfficialAccountName()
     {
         return $this->wechatOfficialAccountName;

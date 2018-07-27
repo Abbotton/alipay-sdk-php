@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.point.order.add request
  *
  * @author auto create
+ *
  * @since  1.0, 2017-07-11 11:00:47
  */
+
 namespace Alipay\Request;
 
 class AlipayPointOrderAddRequest extends AbstractAlipayRequest
@@ -33,57 +35,68 @@ class AlipayPointOrderAddRequest extends AbstractAlipayRequest
      * 用户标识符类型，现在支持ALIPAY_USER_ID:表示支付宝用户ID,ALIPAY_LOGON_ID:表示支付宝登陆号
      **/
     private $userSymbolType;
-    
+
     public function setMemo($memo)
     {
         $this->memo = $memo;
-        $this->apiParams["memo"] = $memo;
+        $this->apiParams['memo'] = $memo;
     }
+
     public function getMemo()
     {
         return $this->memo;
     }
+
     public function setMerchantOrderNo($merchantOrderNo)
     {
         $this->merchantOrderNo = $merchantOrderNo;
-        $this->apiParams["merchant_order_no"] = $merchantOrderNo;
+        $this->apiParams['merchant_order_no'] = $merchantOrderNo;
     }
+
     public function getMerchantOrderNo()
     {
         return $this->merchantOrderNo;
     }
+
     public function setOrderTime($orderTime)
     {
         $this->orderTime = $orderTime;
-        $this->apiParams["order_time"] = $orderTime;
+        $this->apiParams['order_time'] = $orderTime;
     }
+
     public function getOrderTime()
     {
         return $this->orderTime;
     }
+
     public function setPointCount($pointCount)
     {
         $this->pointCount = $pointCount;
-        $this->apiParams["point_count"] = $pointCount;
+        $this->apiParams['point_count'] = $pointCount;
     }
+
     public function getPointCount()
     {
         return $this->pointCount;
     }
+
     public function setUserSymbol($userSymbol)
     {
         $this->userSymbol = $userSymbol;
-        $this->apiParams["user_symbol"] = $userSymbol;
+        $this->apiParams['user_symbol'] = $userSymbol;
     }
+
     public function getUserSymbol()
     {
         return $this->userSymbol;
     }
+
     public function setUserSymbolType($userSymbolType)
     {
         $this->userSymbolType = $userSymbolType;
-        $this->apiParams["user_symbol_type"] = $userSymbolType;
+        $this->apiParams['user_symbol_type'] = $userSymbolType;
     }
+
     public function getUserSymbolType()
     {
         return $this->userSymbolType;

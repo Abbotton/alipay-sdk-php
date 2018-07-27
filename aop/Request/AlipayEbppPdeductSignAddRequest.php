@@ -3,15 +3,17 @@
  * ALIPAY API: alipay.ebpp.pdeduct.sign.add request
  *
  * @author auto create
+ *
  * @since  1.0, 2018-05-16 11:50:00
  */
+
 namespace Alipay\Request;
 
 class AlipayEbppPdeductSignAddRequest extends AbstractAlipayRequest
 {
     /**
      * 机构签约代扣来源渠道
-PUBLICPLATFORM：服务窗
+     * PUBLICPLATFORM：服务窗
      **/
     private $agentChannel;
     /**
@@ -24,11 +26,11 @@ PUBLICPLATFORM：服务窗
     private $billKey;
     /**
      * 业务类型。
-JF：缴水、电、燃气、固话宽带、有线电视、交通罚款费用
-WUYE：缴物业费
-HK：信用卡还款
-TX：手机充值
-IND: 保险
+     * JF：缴水、电、燃气、固话宽带、有线电视、交通罚款费用
+     * WUYE：缴物业费
+     * HK：信用卡还款
+     * TX：手机充值
+     * IND: 保险
      **/
     private $bizType;
     /**
@@ -45,13 +47,13 @@ IND: 保险
     private $deductType;
     /**
      * 外部用户实名认证相关信息, 用于做签约时的实名校验。
-注：
-name: 姓名
-cert_type: 身份证：IDENTITY_CARD、护照：PASSPORT、军官证：OFFICER_CARD、士兵证：SOLDIER_CARD、户口本：HOKOU等
-cert_no: 证件号码
-need_check_info取值 T/F，只有为T时才做强制校验。
-mobile:手机号，目前暂不使用此字段做校验
-min_age: 允许的最小买家年龄,min_age为整数，必须大于等于0.
+     * 注：
+     * name: 姓名
+     * cert_type: 身份证：IDENTITY_CARD、护照：PASSPORT、军官证：OFFICER_CARD、士兵证：SOLDIER_CARD、户口本：HOKOU等
+     * cert_no: 证件号码
+     * need_check_info取值 T/F，只有为T时才做强制校验。
+     * mobile:手机号，目前暂不使用此字段做校验
+     * min_age: 允许的最小买家年龄,min_age为整数，必须大于等于0.
      **/
     private $extUserInfo;
     /**
@@ -88,183 +90,218 @@ min_age: 允许的最小买家年龄,min_age为整数，必须大于等于0.
     private $signExpireDate;
     /**
      * 业务子类型。
-WATER：缴水费
-ELECTRIC：缴电费
-GAS：缴燃气费
-COMMUN：缴固话宽带
-CATV：缴有线电视费
-TRAFFIC：缴交通罚款
-WUYE：缴物业费
-HK：信用卡还款
-CZ：手机充值
-CAR：车险
-LIFE：寿险
-HEALTH：健康险
+     * WATER：缴水费
+     * ELECTRIC：缴电费
+     * GAS：缴燃气费
+     * COMMUN：缴固话宽带
+     * CATV：缴有线电视费
+     * TRAFFIC：缴交通罚款
+     * WUYE：缴物业费
+     * HK：信用卡还款
+     * CZ：手机充值
+     * CAR：车险
+     * LIFE：寿险
+     * HEALTH：健康险
      **/
     private $subBizType;
     /**
      * 用户ID
      **/
     private $userId;
-    
+
     public function setAgentChannel($agentChannel)
     {
         $this->agentChannel = $agentChannel;
-        $this->apiParams["agent_channel"] = $agentChannel;
+        $this->apiParams['agent_channel'] = $agentChannel;
     }
+
     public function getAgentChannel()
     {
         return $this->agentChannel;
     }
+
     public function setAgentCode($agentCode)
     {
         $this->agentCode = $agentCode;
-        $this->apiParams["agent_code"] = $agentCode;
+        $this->apiParams['agent_code'] = $agentCode;
     }
+
     public function getAgentCode()
     {
         return $this->agentCode;
     }
+
     public function setBillKey($billKey)
     {
         $this->billKey = $billKey;
-        $this->apiParams["bill_key"] = $billKey;
+        $this->apiParams['bill_key'] = $billKey;
     }
+
     public function getBillKey()
     {
         return $this->billKey;
     }
+
     public function setBizType($bizType)
     {
         $this->bizType = $bizType;
-        $this->apiParams["biz_type"] = $bizType;
+        $this->apiParams['biz_type'] = $bizType;
     }
+
     public function getBizType()
     {
         return $this->bizType;
     }
+
     public function setChargeInst($chargeInst)
     {
         $this->chargeInst = $chargeInst;
-        $this->apiParams["charge_inst"] = $chargeInst;
+        $this->apiParams['charge_inst'] = $chargeInst;
     }
+
     public function getChargeInst()
     {
         return $this->chargeInst;
     }
+
     public function setDeductProdCode($deductProdCode)
     {
         $this->deductProdCode = $deductProdCode;
-        $this->apiParams["deduct_prod_code"] = $deductProdCode;
+        $this->apiParams['deduct_prod_code'] = $deductProdCode;
     }
+
     public function getDeductProdCode()
     {
         return $this->deductProdCode;
     }
+
     public function setDeductType($deductType)
     {
         $this->deductType = $deductType;
-        $this->apiParams["deduct_type"] = $deductType;
+        $this->apiParams['deduct_type'] = $deductType;
     }
+
     public function getDeductType()
     {
         return $this->deductType;
     }
+
     public function setExtUserInfo($extUserInfo)
     {
         $this->extUserInfo = $extUserInfo;
-        $this->apiParams["ext_user_info"] = $extUserInfo;
+        $this->apiParams['ext_user_info'] = $extUserInfo;
     }
+
     public function getExtUserInfo()
     {
         return $this->extUserInfo;
     }
+
     public function setExtendField($extendField)
     {
         $this->extendField = $extendField;
-        $this->apiParams["extend_field"] = $extendField;
+        $this->apiParams['extend_field'] = $extendField;
     }
+
     public function getExtendField()
     {
         return $this->extendField;
     }
+
     public function setNotifyConfig($notifyConfig)
     {
         $this->notifyConfig = $notifyConfig;
-        $this->apiParams["notify_config"] = $notifyConfig;
+        $this->apiParams['notify_config'] = $notifyConfig;
     }
+
     public function getNotifyConfig()
     {
         return $this->notifyConfig;
     }
+
     public function setOutAgreementId($outAgreementId)
     {
         $this->outAgreementId = $outAgreementId;
-        $this->apiParams["out_agreement_id"] = $outAgreementId;
+        $this->apiParams['out_agreement_id'] = $outAgreementId;
     }
+
     public function getOutAgreementId()
     {
         return $this->outAgreementId;
     }
+
     public function setOwnerName($ownerName)
     {
         $this->ownerName = $ownerName;
-        $this->apiParams["owner_name"] = $ownerName;
+        $this->apiParams['owner_name'] = $ownerName;
     }
+
     public function getOwnerName()
     {
         return $this->ownerName;
     }
+
     public function setPayConfig($payConfig)
     {
         $this->payConfig = $payConfig;
-        $this->apiParams["pay_config"] = $payConfig;
+        $this->apiParams['pay_config'] = $payConfig;
     }
+
     public function getPayConfig()
     {
         return $this->payConfig;
     }
+
     public function setPayPasswordToken($payPasswordToken)
     {
         $this->payPasswordToken = $payPasswordToken;
-        $this->apiParams["pay_password_token"] = $payPasswordToken;
+        $this->apiParams['pay_password_token'] = $payPasswordToken;
     }
+
     public function getPayPasswordToken()
     {
         return $this->payPasswordToken;
     }
+
     public function setPid($pid)
     {
         $this->pid = $pid;
-        $this->apiParams["pid"] = $pid;
+        $this->apiParams['pid'] = $pid;
     }
+
     public function getPid()
     {
         return $this->pid;
     }
+
     public function setSignExpireDate($signExpireDate)
     {
         $this->signExpireDate = $signExpireDate;
-        $this->apiParams["sign_expire_date"] = $signExpireDate;
+        $this->apiParams['sign_expire_date'] = $signExpireDate;
     }
+
     public function getSignExpireDate()
     {
         return $this->signExpireDate;
     }
+
     public function setSubBizType($subBizType)
     {
         $this->subBizType = $subBizType;
-        $this->apiParams["sub_biz_type"] = $subBizType;
+        $this->apiParams['sub_biz_type'] = $subBizType;
     }
+
     public function getSubBizType()
     {
         return $this->subBizType;
     }
+
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParams["user_id"] = $userId;
+        $this->apiParams['user_id'] = $userId;
     }
+
     public function getUserId()
     {
         return $this->userId;

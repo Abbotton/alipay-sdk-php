@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.open.mini.baseinfo.modify request
  *
  * @author auto create
+ *
  * @since  1.0, 2018-01-25 00:19:21
  */
+
 namespace Alipay\Request;
 
 class AlipayOpenMiniBaseinfoModifyRequest extends AbstractAlipayRequest
@@ -41,75 +43,90 @@ class AlipayOpenMiniBaseinfoModifyRequest extends AbstractAlipayRequest
      * 小程序客服电话
      **/
     private $servicePhone;
-    
+
     public function setAppCategoryIds($appCategoryIds)
     {
         $this->appCategoryIds = $appCategoryIds;
-        $this->apiParams["app_category_ids"] = $appCategoryIds;
+        $this->apiParams['app_category_ids'] = $appCategoryIds;
     }
+
     public function getAppCategoryIds()
     {
         return $this->appCategoryIds;
     }
+
     public function setAppDesc($appDesc)
     {
         $this->appDesc = $appDesc;
-        $this->apiParams["app_desc"] = $appDesc;
+        $this->apiParams['app_desc'] = $appDesc;
     }
+
     public function getAppDesc()
     {
         return $this->appDesc;
     }
+
     public function setAppEnglishName($appEnglishName)
     {
         $this->appEnglishName = $appEnglishName;
-        $this->apiParams["app_english_name"] = $appEnglishName;
+        $this->apiParams['app_english_name'] = $appEnglishName;
     }
+
     public function getAppEnglishName()
     {
         return $this->appEnglishName;
     }
+
     public function setAppLogo($appLogo)
     {
         $this->appLogo = $appLogo;
-        $this->apiParams["app_logo"] = $appLogo;
+        $this->apiParams['app_logo'] = $appLogo;
     }
+
     public function getAppLogo()
     {
         return $this->appLogo;
     }
+
     public function setAppName($appName)
     {
         $this->appName = $appName;
-        $this->apiParams["app_name"] = $appName;
+        $this->apiParams['app_name'] = $appName;
     }
+
     public function getAppName()
     {
         return $this->appName;
     }
+
     public function setAppSlogan($appSlogan)
     {
         $this->appSlogan = $appSlogan;
-        $this->apiParams["app_slogan"] = $appSlogan;
+        $this->apiParams['app_slogan'] = $appSlogan;
     }
+
     public function getAppSlogan()
     {
         return $this->appSlogan;
     }
+
     public function setServiceEmail($serviceEmail)
     {
         $this->serviceEmail = $serviceEmail;
-        $this->apiParams["service_email"] = $serviceEmail;
+        $this->apiParams['service_email'] = $serviceEmail;
     }
+
     public function getServiceEmail()
     {
         return $this->serviceEmail;
     }
+
     public function setServicePhone($servicePhone)
     {
         $this->servicePhone = $servicePhone;
-        $this->apiParams["service_phone"] = $servicePhone;
+        $this->apiParams['service_phone'] = $servicePhone;
     }
+
     public function getServicePhone()
     {
         return $this->servicePhone;

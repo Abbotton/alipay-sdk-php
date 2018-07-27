@@ -3,15 +3,17 @@
  * ALIPAY API: alipay.open.agent.mini.create request
  *
  * @author auto create
+ *
  * @since  1.0, 2018-01-31 17:53:02
  */
+
 namespace Alipay\Request;
 
 class AlipayOpenAgentMiniCreateRequest extends AbstractAlipayRequest
 {
     /**
      * 小程序应用类目，参数格式：一级类目_二级类目。
-应用类目参考文档：https://docs.alipay.com/isv/10325
+     * 应用类目参考文档：https://docs.alipay.com/isv/10325
      **/
     private $appCategoryIds;
     /**
@@ -40,92 +42,109 @@ class AlipayOpenAgentMiniCreateRequest extends AbstractAlipayRequest
     private $batchNo;
     /**
      * 商户小程序客服邮箱
-商户小程序客服电话和邮箱，可以二选一填写，但不能同时为空
+     * 商户小程序客服电话和邮箱，可以二选一填写，但不能同时为空
      **/
     private $serviceEmail;
     /**
      * 商户小程序的客服电话，推荐填写
-商户小程序客服电话和邮箱，可以二选一填写，但不能同时为空
+     * 商户小程序客服电话和邮箱，可以二选一填写，但不能同时为空
      **/
     private $servicePhone;
-    
+
     public function setAppCategoryIds($appCategoryIds)
     {
         $this->appCategoryIds = $appCategoryIds;
-        $this->apiParams["app_category_ids"] = $appCategoryIds;
+        $this->apiParams['app_category_ids'] = $appCategoryIds;
     }
+
     public function getAppCategoryIds()
     {
         return $this->appCategoryIds;
     }
+
     public function setAppDesc($appDesc)
     {
         $this->appDesc = $appDesc;
-        $this->apiParams["app_desc"] = $appDesc;
+        $this->apiParams['app_desc'] = $appDesc;
     }
+
     public function getAppDesc()
     {
         return $this->appDesc;
     }
+
     public function setAppEnglishName($appEnglishName)
     {
         $this->appEnglishName = $appEnglishName;
-        $this->apiParams["app_english_name"] = $appEnglishName;
+        $this->apiParams['app_english_name'] = $appEnglishName;
     }
+
     public function getAppEnglishName()
     {
         return $this->appEnglishName;
     }
+
     public function setAppLogo($appLogo)
     {
         $this->appLogo = $appLogo;
-        $this->apiParams["app_logo"] = $appLogo;
+        $this->apiParams['app_logo'] = $appLogo;
     }
+
     public function getAppLogo()
     {
         return $this->appLogo;
     }
+
     public function setAppName($appName)
     {
         $this->appName = $appName;
-        $this->apiParams["app_name"] = $appName;
+        $this->apiParams['app_name'] = $appName;
     }
+
     public function getAppName()
     {
         return $this->appName;
     }
+
     public function setAppSlogan($appSlogan)
     {
         $this->appSlogan = $appSlogan;
-        $this->apiParams["app_slogan"] = $appSlogan;
+        $this->apiParams['app_slogan'] = $appSlogan;
     }
+
     public function getAppSlogan()
     {
         return $this->appSlogan;
     }
+
     public function setBatchNo($batchNo)
     {
         $this->batchNo = $batchNo;
-        $this->apiParams["batch_no"] = $batchNo;
+        $this->apiParams['batch_no'] = $batchNo;
     }
+
     public function getBatchNo()
     {
         return $this->batchNo;
     }
+
     public function setServiceEmail($serviceEmail)
     {
         $this->serviceEmail = $serviceEmail;
-        $this->apiParams["service_email"] = $serviceEmail;
+        $this->apiParams['service_email'] = $serviceEmail;
     }
+
     public function getServiceEmail()
     {
         return $this->serviceEmail;
     }
+
     public function setServicePhone($servicePhone)
     {
         $this->servicePhone = $servicePhone;
-        $this->apiParams["service_phone"] = $servicePhone;
+        $this->apiParams['service_phone'] = $servicePhone;
     }
+
     public function getServicePhone()
     {
         return $this->servicePhone;

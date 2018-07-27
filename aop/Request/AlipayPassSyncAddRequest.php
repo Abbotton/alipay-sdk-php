@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.pass.sync.add request
  *
  * @author auto create
+ *
  * @since  1.0, 2016-12-16 16:35:12
  */
+
 namespace Alipay\Request;
 
 class AlipayPassSyncAddRequest extends AbstractAlipayRequest
@@ -25,39 +27,46 @@ class AlipayPassSyncAddRequest extends AbstractAlipayRequest
      * 支付宝用户ID，即买家用户ID
      **/
     private $userId;
-    
+
     public function setFileContent($fileContent)
     {
         $this->fileContent = $fileContent;
-        $this->apiParams["file_content"] = $fileContent;
+        $this->apiParams['file_content'] = $fileContent;
     }
+
     public function getFileContent()
     {
         return $this->fileContent;
     }
+
     public function setOutTradeNo($outTradeNo)
     {
         $this->outTradeNo = $outTradeNo;
-        $this->apiParams["out_trade_no"] = $outTradeNo;
+        $this->apiParams['out_trade_no'] = $outTradeNo;
     }
+
     public function getOutTradeNo()
     {
         return $this->outTradeNo;
     }
+
     public function setPartnerId($partnerId)
     {
         $this->partnerId = $partnerId;
-        $this->apiParams["partner_id"] = $partnerId;
+        $this->apiParams['partner_id'] = $partnerId;
     }
+
     public function getPartnerId()
     {
         return $this->partnerId;
     }
+
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParams["user_id"] = $userId;
+        $this->apiParams['user_id'] = $userId;
     }
+
     public function getUserId()
     {
         return $this->userId;

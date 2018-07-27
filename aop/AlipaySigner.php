@@ -8,10 +8,10 @@
 
 namespace Alipay;
 
-use Alipay\Exception\AlipayInvalidSignException;
 use Alipay\Exception\AlipayBase64Exception;
-use Alipay\Exception\AlipayOpenSslException;
 use Alipay\Exception\AlipayInvalidKeyException;
+use Alipay\Exception\AlipayInvalidSignException;
+use Alipay\Exception\AlipayOpenSslException;
 
 class AlipaySigner
 {
@@ -45,11 +45,13 @@ class AlipaySigner
     /**
      * 创建 AlipaySigner 实例
      *
-     * @param  string $signType
-     * @param  string $appPrivateKey
-     * @param  string $alipayPublicKey
-     * @return static
+     * @param string $signType
+     * @param string $appPrivateKey
+     * @param string $alipayPublicKey
+     *
      * @throws \InvalidArgumentException
+     *
+     * @return static
      */
     public static function create($appPrivateKey, $alipayPublicKey, $signType = 'RSA2')
     {
@@ -62,6 +64,7 @@ class AlipaySigner
         $instance->appPrivateKey = $appPrivateKey;
         $instance->alipayPublicKey = $alipayPublicKey;
         $instance->loadKeys();
+
         return $instance;
     }
 
@@ -94,6 +97,7 @@ class AlipaySigner
      * 加载公钥和私钥
      *
      * @return void
+     *
      * @see self::getKey()
      */
     protected function loadKeys()
@@ -122,9 +126,12 @@ class AlipaySigner
      * 签名（计算 Sign 值）
      *
      * @param string $data
-     * @return string
+     *
      * @throws AlipayOpenSslException
      * @throws AlipayBase64Exception
+     *
+     * @return string
+     *
      * @see https://docs.open.alipay.com/291/106118
      */
     public function generate($data)
@@ -137,6 +144,7 @@ class AlipaySigner
         if ($encodedSign === false) {
             throw new AlipayBase64Exception($sign, true);
         }
+
         return $encodedSign;
     }
 
@@ -144,12 +152,15 @@ class AlipaySigner
      * 将参数数组签名（计算 Sign 值）
      *
      * @param array $params
+     *
      * @return string
+     *
      * @see self::generate
      */
     public function generateByParams($params)
     {
         $data = $this->convertSignData($params);
+
         return $this->generate($data);
     }
 
@@ -158,10 +169,13 @@ class AlipaySigner
      *
      * @param string $sign
      * @param string $data
-     * @return void
+     *
      * @throws AlipayBase64Exception
      * @throws AlipayInvalidSignException
      * @throws AlipayOpenSslException
+     *
+     * @return void
+     *
      * @see https://docs.open.alipay.com/200/106120
      */
     public function verify($sign, $data)
@@ -185,7 +199,9 @@ class AlipaySigner
      * 异步通知验签（验证 Sign 值）
      *
      * @param array $params
+     *
      * @return void
+     *
      * @see self::verify
      * @see https://docs.open.alipay.com/200/106120#s1
      */
@@ -205,10 +221,12 @@ class AlipaySigner
     /**
      * 使用密钥字符串或路径加载密钥
      *
-     * @param  string  $keyOrFilePath
-     * @param  boolean $isPrivate
-     * @return resource
+     * @param string $keyOrFilePath
+     * @param bool   $isPrivate
+     *
      * @throws AlipayInvalidKeyException
+     *
+     * @return resource
      */
     protected function getKey($keyOrFilePath, $isPrivate = true)
     {
@@ -225,6 +243,7 @@ class AlipaySigner
         if ($keyResource === false) {
             throw new AlipayInvalidKeyException('Invalid key: ' . $keyOrFilePath);
         }
+
         return $keyResource;
     }
 
@@ -232,20 +251,22 @@ class AlipaySigner
      * 将数组转换为待签名数据
      *
      * @param array $params
+     *
      * @return string
      */
     protected function convertSignData($params)
     {
         ksort($params);
-        $stringToBeSigned = "";
+        $stringToBeSigned = '';
         foreach ($params as $k => $v) {
-            $v = @(string)$v;
+            $v = @(string) $v;
             if (AlipayHelper::isEmpty($v) || $v[0] === '@') {
                 continue;
             }
             $stringToBeSigned .= "&{$k}={$v}";
         }
         $stringToBeSigned = substr($stringToBeSigned, 1);
+
         return $stringToBeSigned;
     }
 
@@ -257,7 +278,7 @@ class AlipaySigner
     protected function typeAlgoMap()
     {
         return [
-            'RSA' => OPENSSL_ALGO_SHA1,
+            'RSA'  => OPENSSL_ALGO_SHA1,
             'RSA2' => OPENSSL_ALGO_SHA256,
         ];
     }

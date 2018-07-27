@@ -11,7 +11,7 @@ class AlipayInvalidResponseException extends AlipayException
     public function __construct($response, $externalMessage = '')
     {
         $this->response = $response;
-        
+
         if (is_array($response)) {
             $response = (object) $response;
         }
@@ -34,7 +34,7 @@ class AlipayInvalidResponseException extends AlipayException
             $message .= $errorResponse;
             $code = 0;
         }
-        
+
         parent::__construct($message, $code);
     }
 

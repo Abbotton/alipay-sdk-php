@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.mobile.code.create request
  *
  * @author auto create
+ *
  * @since  1.0, 2018-06-14 11:34:41
  */
+
 namespace Alipay\Request;
 
 class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
@@ -23,7 +25,7 @@ class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
     private $contextStr;
     /**
      * 如果是true，则扫一扫下发跳转地址直接取自bizLinkedId
-否则，从路由信息里取跳转地址
+     * 否则，从路由信息里取跳转地址
      **/
     private $isDirect;
     /**
@@ -46,84 +48,101 @@ class AlipayMobileCodeCreateRequest extends AbstractAlipayRequest
      * 支付宝用户id
      **/
     private $userId;
-    
+
     public function setBizLinkedId($bizLinkedId)
     {
         $this->bizLinkedId = $bizLinkedId;
-        $this->apiParams["biz_linked_id"] = $bizLinkedId;
+        $this->apiParams['biz_linked_id'] = $bizLinkedId;
     }
+
     public function getBizLinkedId()
     {
         return $this->bizLinkedId;
     }
+
     public function setBizType($bizType)
     {
         $this->bizType = $bizType;
-        $this->apiParams["biz_type"] = $bizType;
+        $this->apiParams['biz_type'] = $bizType;
     }
+
     public function getBizType()
     {
         return $this->bizType;
     }
+
     public function setContextStr($contextStr)
     {
         $this->contextStr = $contextStr;
-        $this->apiParams["context_str"] = $contextStr;
+        $this->apiParams['context_str'] = $contextStr;
     }
+
     public function getContextStr()
     {
         return $this->contextStr;
     }
+
     public function setIsDirect($isDirect)
     {
         $this->isDirect = $isDirect;
-        $this->apiParams["is_direct"] = $isDirect;
+        $this->apiParams['is_direct'] = $isDirect;
     }
+
     public function getIsDirect()
     {
         return $this->isDirect;
     }
+
     public function setMemo($memo)
     {
         $this->memo = $memo;
-        $this->apiParams["memo"] = $memo;
+        $this->apiParams['memo'] = $memo;
     }
+
     public function getMemo()
     {
         return $this->memo;
     }
+
     public function setSourceId($sourceId)
     {
         $this->sourceId = $sourceId;
-        $this->apiParams["source_id"] = $sourceId;
+        $this->apiParams['source_id'] = $sourceId;
     }
+
     public function getSourceId()
     {
         return $this->sourceId;
     }
+
     public function setStartDate($startDate)
     {
         $this->startDate = $startDate;
-        $this->apiParams["start_date"] = $startDate;
+        $this->apiParams['start_date'] = $startDate;
     }
+
     public function getStartDate()
     {
         return $this->startDate;
     }
+
     public function setTimeout($timeout)
     {
         $this->timeout = $timeout;
-        $this->apiParams["timeout"] = $timeout;
+        $this->apiParams['timeout'] = $timeout;
     }
+
     public function getTimeout()
     {
         return $this->timeout;
     }
+
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParams["user_id"] = $userId;
+        $this->apiParams['user_id'] = $userId;
     }
+
     public function getUserId()
     {
         return $this->userId;

@@ -35,7 +35,8 @@ class AlipayRequester
     /**
      * 提交请求
      *
-     * @param  array  $params
+     * @param array $params
+     *
      * @return mixed
      */
     public function execute($params)
@@ -68,6 +69,7 @@ class AlipayRequester
         }
 
         curl_close($ch);
+
         return $response;
     }
 }

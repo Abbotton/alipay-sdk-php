@@ -3,8 +3,10 @@
  * ALIPAY API: alipay.ebpp.pdeduct.sign.cancel request
  *
  * @author auto create
+ *
  * @since  1.0, 2017-08-04 11:19:20
  */
+
 namespace Alipay\Request;
 
 class AlipayEbppPdeductSignCancelRequest extends AbstractAlipayRequest
@@ -29,48 +31,57 @@ class AlipayEbppPdeductSignCancelRequest extends AbstractAlipayRequest
      * 用户ID
      **/
     private $userId;
-    
+
     public function setAgentChannel($agentChannel)
     {
         $this->agentChannel = $agentChannel;
-        $this->apiParams["agent_channel"] = $agentChannel;
+        $this->apiParams['agent_channel'] = $agentChannel;
     }
+
     public function getAgentChannel()
     {
         return $this->agentChannel;
     }
+
     public function setAgentCode($agentCode)
     {
         $this->agentCode = $agentCode;
-        $this->apiParams["agent_code"] = $agentCode;
+        $this->apiParams['agent_code'] = $agentCode;
     }
+
     public function getAgentCode()
     {
         return $this->agentCode;
     }
+
     public function setAgreementId($agreementId)
     {
         $this->agreementId = $agreementId;
-        $this->apiParams["agreement_id"] = $agreementId;
+        $this->apiParams['agreement_id'] = $agreementId;
     }
+
     public function getAgreementId()
     {
         return $this->agreementId;
     }
+
     public function setPayPasswordToken($payPasswordToken)
     {
         $this->payPasswordToken = $payPasswordToken;
-        $this->apiParams["pay_password_token"] = $payPasswordToken;
+        $this->apiParams['pay_password_token'] = $payPasswordToken;
     }
+
     public function getPayPasswordToken()
     {
         return $this->payPasswordToken;
     }
+
     public function setUserId($userId)
     {
         $this->userId = $userId;
-        $this->apiParams["user_id"] = $userId;
+        $this->apiParams['user_id'] = $userId;
     }
+
     public function getUserId()
     {
         return $this->userId;
