@@ -176,7 +176,7 @@ class AopClient
      *
      * @return string
      */
-    public function pageExecutePost(AbstractAlipayRequest $request)
+    public function pageExecuteForm(AbstractAlipayRequest $request)
     {
         $fields = $this->build($request);
 
