@@ -1,8 +1,8 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
 use Alipay\AlipayResponse;
 use Alipay\AlipayResponseFactory;
+use PHPUnit\Framework\TestCase;
 
 class ResponseTest extends TestCase
 {
@@ -90,7 +90,13 @@ class ResponseTest extends TestCase
      */
     public function testSignNotFound(AlipayResponse $ins)
     {
-        $ins->getSign();
+        try
+        {
+            $ins->getSign();
+        } catch (Alipay\Exception\AlipayInvalidResponseException $ex) {
+            $this->assertNotEmpty($ex->getResponse());
+            throw $ex;
+        }
     }
 
     /**

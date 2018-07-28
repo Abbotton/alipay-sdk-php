@@ -9,9 +9,9 @@ class RequestFactoryTest extends TestCase
 {
     public function testCreate()
     {
-        $className = 'AlipaySystemOauthTokenRequest';
-        $ins = AlipayRequestFactory::create($className);
-        $this->assertInstanceOf(AlipaySystemOauthTokenRequest::className(), $ins);
+        $className = AlipaySystemOauthTokenRequest::className(true);
+        $ins = AlipayRequestFactory::create($className, ['code' => 'foo']);
+        $this->assertEquals('foo', $ins->getCode());
         return $ins;
     }
 
