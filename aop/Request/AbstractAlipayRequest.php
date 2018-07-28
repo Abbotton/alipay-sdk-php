@@ -51,7 +51,7 @@ abstract class AbstractAlipayRequest
         $class = get_called_class();
         if ($shorten) {
             $class = (new \ReflectionClass($class))->getShortName();
-    }
+        }
         return $class;
     }
 
@@ -60,15 +60,15 @@ abstract class AbstractAlipayRequest
      *
      * @return string
      */
-    public function getApiMethodName()
+    public static function getApiMethodName()
     {
-        $name = (new \ReflectionClass($this))->getShortName();
-        $name = preg_replace('/Request$/', '', $name);
-        $name = preg_replace('/([A-Z])/s', '.$1', $name);
-        $name = trim($name, '.');
-        $name = strtolower($name);
+        $api = static::className(true);
+        $api = preg_replace('/Request$/', '', $api);
+        $api = preg_replace('/([A-Z])/s', '.$1', $api);
+        $api = trim($api, '.');
+        $api = strtolower($api);
 
-        return $name;
+        return $api;
     }
 
     /**
