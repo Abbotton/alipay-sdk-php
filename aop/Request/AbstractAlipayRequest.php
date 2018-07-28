@@ -43,7 +43,7 @@ abstract class AbstractAlipayRequest
     /**
      * 获取自身类名
      *
-     * @param bool 是否不带命名空间
+     * @param bool $shorten 是否不带命名空间
      *
      * @return string
      */
