@@ -47,7 +47,7 @@ class AlipayRequester
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
-        foreach ($params as $key => &$value) {
+        foreach ($params as &$value) {
             if (is_string($value) && $value[0] === '@' && class_exists('CURLFile')) {
                 $file = substr($value, 1);
                 if (is_file($file)) {
