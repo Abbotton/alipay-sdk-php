@@ -58,14 +58,14 @@ class AlipayRequester
         curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
 
         $response = curl_exec($ch);
-
+        
         if (curl_errno($ch)) {
             throw new AlipayCurlException(curl_error($ch), curl_errno($ch));
-        } else {
-            $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            if (200 !== $httpStatusCode) {
-                throw new AlipayHttpException($response, $httpStatusCode);
-            }
+        }
+        
+        $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        if (200 !== $httpStatusCode) {
+            throw new AlipayHttpException($response, $httpStatusCode);
         }
 
         curl_close($ch);
