@@ -5,7 +5,7 @@ namespace Alipay;
 use Alipay\Exception\AlipayCurlException;
 use Alipay\Exception\AlipayHttpException;
 
-class AlipayRequester
+class AlipayCurlRequester
 {
     protected $gateway;
 
