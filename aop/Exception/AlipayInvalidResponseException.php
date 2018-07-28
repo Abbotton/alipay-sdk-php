@@ -2,8 +2,6 @@
 
 namespace Alipay\Exception;
 
-use Alipay\AlipayResponse;
-
 class AlipayInvalidResponseException extends AlipayException
 {
     protected $response;

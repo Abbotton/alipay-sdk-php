@@ -9,9 +9,9 @@ class AlipayErrorResponseException extends AlipayException
      */
     public function __construct($error)
     {
-        $message  = isset($error['msg'])     ?        $error['msg']     : '';
+        $message = isset($error['msg']) ? $error['msg'] : '';
         $message .= isset($error['sub_msg']) ? ': ' . $error['sub_msg'] : '';
-        $code =     isset($error['code'])    ?        $error['code']    : 0;
+        $code = isset($error['code']) ? $error['code'] : 0;
         parent::__construct($message, $code);
     }
 }

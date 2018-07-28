@@ -2,8 +2,8 @@
 
 namespace Alipay;
 
-use Alipay\Exception\AlipayInvalidResponseException;
 use Alipay\Exception\AlipayErrorResponseException;
+use Alipay\Exception\AlipayInvalidResponseException;
 
 class AlipayResponse
 {
