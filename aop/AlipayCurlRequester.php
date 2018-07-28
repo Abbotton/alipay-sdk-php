@@ -5,44 +5,17 @@ namespace Alipay;
 use Alipay\Exception\AlipayCurlException;
 use Alipay\Exception\AlipayHttpException;
 
-class AlipayCurlRequester
+class AlipayCurlRequester extends AlipayRequester
 {
-    protected $gateway;
-
-    protected $charset;
-
-    public function __construct($gateway = 'https://openapi.alipay.com/gateway.do', $charset = 'UTF-8')
+    public function __construct()
     {
-        $this->gateway = $gateway;
-        $this->charset = $charset;
+        parent::__construct([$this, 'post']);
     }
 
-    public function getGateway()
-    {
-        return $this->gateway;
-    }
-
-    public function getCharset()
-    {
-        return $this->charset;
-    }
-
-    public function getUrl()
-    {
-        return $this->getGateway() . '?charset=' . urlencode($this->getCharset());
-    }
-
-    /**
-     * 提交请求
-     *
-     * @param array $params
-     *
-     * @return mixed
-     */
-    public function execute($params)
+    public function post($url, $params)
     {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $this->getUrl());
+        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_FAILONERROR, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);

@@ -56,7 +56,7 @@ class AopClient
     {
         $this->appId = $appId;
         $this->signer = $signer;
-        $this->requester = $requester === null ? new AlipayRequester() : $requester;
+        $this->requester = $requester === null ? new AlipayCurlRequester() : $requester;
         $this->parser = $parser === null ? new AlipayResponseFactory() : $parser;
     }
 
