@@ -44,6 +44,6 @@ class AlipayRequester
      */
     public function execute($params)
     {
-        return ($this->callback)($this->getUrl(), $params);
+        return call_user_func($this->callback, $this->getUrl(), $params);
     }
 }
