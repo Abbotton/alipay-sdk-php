@@ -3,7 +3,7 @@
 namespace Alipay;
 
 use Alipay\Exception\AlipayInvalidResponseException;
-use Alipay\Exception\AlipayResponseException;
+use Alipay\Exception\AlipayErrorResponseException;
 
 class AlipayResponse
 {
@@ -72,7 +72,7 @@ class AlipayResponse
             return $this->data[static::SIGN_NODE];
         }
 
-        throw new AlipayInvalidResponseException($this->data, 'Response sign not found');
+        throw new AlipayInvalidResponseException($this->raw, 'Response sign not found');
     }
 
     /**
@@ -85,7 +85,7 @@ class AlipayResponse
     public function getData($assoc = true)
     {
         if ($this->isSuccess() === false) {
-            throw new AlipayResponseException($this->data);
+            throw new AlipayErrorResponseException($this->getError());
         }
         $result = reset($this->data);
         if ($assoc == false) {
