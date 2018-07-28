@@ -41,13 +41,18 @@ abstract class AbstractAlipayRequest
     }
 
     /**
-     * 获取带命名空间的完整类名
+     * 获取自身类名
      *
+     * @param bool 是否不带命名空间
      * @return string
      */
-    public static function className()
+    public static function className($shorten = false)
     {
-        return __CLASS__;
+        $class = get_called_class();
+        if ($shorten) {
+            $class = (new \ReflectionClass($class))->getShortName();
+    }
+        return $class;
     }
 
     /**
