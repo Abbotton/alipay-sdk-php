@@ -57,6 +57,15 @@
     ]);
     ```
 
+    另外，你也可以不使用请求类工厂，就像官方文档那样，手动创建请求类。
+
+    例如：
+
+    ```php
+    $request = new AlipaySystemOauthTokenRequest();
+    $request->setCode('authcode');
+    ```
+
 5. 发送请求。
 
     ```php    
@@ -67,10 +76,13 @@
 
 6. 查看实例，请移步 [`examples`](examples/) 目录。
 
+    最后，官方 SDK 内 `AopClient::pageExecute()` 被分离为 `pageExecuteUrl` 和 `pageExecuteForm`。
+    `AopClient::sdkExecute()` 和 `AopClient::execute()` 方法名保持不变，参数和返回值有所改动。
+
 ## 注意
 
-- 请不要依赖任何在官方 SDK 内被标注为 `private` 的属性，它们可能会在迭代中被修改或废弃。
-- 请不要依赖任何在官方 API 文档内被标注为 `已废弃` 的特性，它们将会在迭代中被废弃或移除。
+- 请不要依赖任何在官方 SDK 内被标注为 `private` 的属性，它们可能已在迭代中被修改或废弃。
+- 请不要依赖任何在官方 API 文档内被标注为 `已废弃` 的特性，它们可能已在迭代中被废弃或移除。
 - 本 SDK 只适用于目前正在开发或即将开始开发的项目；由于将会采取相对激进的态度开发，所以请勿尝试将原有代码迁移至本 SDK。
 - 本 SDK 已移除所有编码转换特性；请确保执行上传文件请求时，文件编码为 `UTF-8` 而非 `GBK`。
 
