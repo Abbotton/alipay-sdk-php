@@ -51,7 +51,7 @@
 4. 创建 `AlipayRequest` 实例。
 
     ```php
-    $request = \Alipay\AlipayRequestFactory::createByApi('点号连接的API名称', [
+    $request = \Alipay\AlipayRequestFactory::create('点号连接的API名称', [
         '请求参数名' => '对应参数值',
         // ...
     ]);

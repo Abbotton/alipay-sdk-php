@@ -18,7 +18,7 @@ class RequestFactoryTest extends TestCase
     public function testCreateByApi()
     {
         $apiName = 'alipay.system.oauth.token';
-        $ins = AlipayRequestFactory::createByApi($apiName);
+        $ins = AlipayRequestFactory::create($apiName);
         $this->assertInstanceOf(AlipaySystemOauthTokenRequest::className(), $ins);
         return $ins;
     }
@@ -37,7 +37,7 @@ class RequestFactoryTest extends TestCase
      */
     public function testCreateInvalidClass()
     {
-        $className = 'AbstractAlipayRequest';
+        $className = AbstractAlipayRequest::className(true);
         $ins = AlipayRequestFactory::create($className);
     }
 
@@ -46,7 +46,7 @@ class RequestFactoryTest extends TestCase
      */
     public function testInvalidConfig()
     {
-        $className = 'AlipaySystemOauthTokenRequest';
+        $className = AlipaySystemOauthTokenRequest::className(true);
         $ins = AlipayRequestFactory::create($className, [
             'foo' => 'this config does not exist'
         ]);
@@ -57,7 +57,7 @@ class RequestFactoryTest extends TestCase
      */
     public function testUnwritableConfig()
     {
-        $className = 'AlipaySystemOauthTokenRequest';
+        $className = AlipaySystemOauthTokenRequest::className(true);
         $ins = AlipayRequestFactory::create($className, [
             'apiParams' => 'this config could not be written'
         ]);
