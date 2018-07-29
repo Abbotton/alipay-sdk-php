@@ -25,6 +25,7 @@ class RequestFactoryTest extends TestCase
 
     /**
      * @expectedException Alipay\Exception\AlipayInvalidRequestException
+     * @expectedExceptionMessage exist
      */
     public function testCreateNotExistedClass()
     {
@@ -34,6 +35,7 @@ class RequestFactoryTest extends TestCase
 
     /**
      * @expectedException Alipay\Exception\AlipayInvalidRequestException
+     * @expectedExceptionMessage extend
      */
     public function testCreateInvalidClass()
     {

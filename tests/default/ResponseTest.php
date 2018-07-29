@@ -87,7 +87,7 @@ class ResponseTest extends TestCase
     /**
      * @depends testParseError
      * @expectedException Alipay\Exception\AlipayInvalidResponseException
-     * @expectedExceptionMessage Sign
+     * @expectedExceptionMessage sign
      */
     public function testSignNotFound(AlipayResponse $ins)
     {

@@ -67,8 +67,7 @@ class RequestsTest extends TestCase
      */
     public function testGetUnknownProperty()
     {
-        try
-        {
+        try {
             $req = new AlipaySystemOauthTokenRequest();
             $req->foo;
         } catch (Alipay\Exception\AlipayInvalidPropertyException $ex) {
