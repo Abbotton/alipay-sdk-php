@@ -55,6 +55,7 @@ class AlipayRequestFactory
      * 验证某类可否被创建
      *
      * @param string $className
+     *
      * @return void
      */
     protected static function validate($className)
@@ -73,15 +74,14 @@ class AlipayRequestFactory
      *
      * @param string $classOrApi
      * @param array  $config
-     * 
+     *
      * @return AbstractAlipayRequest
      */
     public static function create($classOrApi, $config = [])
     {
-        if(strpos($classOrApi, '.')) {
+        if (strpos($classOrApi, '.')) {
             return static::createByApi($classOrApi, $config);
-        }
-        else {
+        } else {
             return static::createByClass($classOrApi, $config);
         }
     }
