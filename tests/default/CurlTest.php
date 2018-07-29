@@ -17,4 +17,12 @@ class CurlTest extends TestCase
         $this->assertEquals('POST', $response->method);
         $this->assertEquals('bar', $response->form->foo);
     }
+
+    public function testExecute()
+    {
+        $requester = new AlipayRequester(function ($url, $params){return [$url, $params];});
+        $response = $requester->execute(['foo' => 'bar']);
+        $this->assertEquals($requester->getUrl(), $response[0]);
+        $this->assertEquals('bar', $response[1]['foo']);
+    }
 }

@@ -72,7 +72,7 @@ class ResponseTest extends TestCase
     public function testStripData(AlipayResponse $ins)
     {
         $data = $ins->stripData();
-        $this->assertGreaterThan(0, strlen($data));
+        $this->assertNotEmpty($data);
     }
 
     /**
@@ -87,11 +87,11 @@ class ResponseTest extends TestCase
     /**
      * @depends testParseError
      * @expectedException Alipay\Exception\AlipayInvalidResponseException
+     * @expectedExceptionMessage Sign
      */
     public function testSignNotFound(AlipayResponse $ins)
     {
-        try
-        {
+        try {
             $ins->getSign();
         } catch (Alipay\Exception\AlipayInvalidResponseException $ex) {
             $this->assertNotEmpty($ex->getResponse());
