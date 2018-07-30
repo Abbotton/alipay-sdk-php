@@ -3,19 +3,19 @@
 use PHPUnit\Framework\TestCase;
 use Alipay\Request\AlipaySystemOauthTokenRequest;
 use Alipay\AopClient;
-use Alipay\AlipaySigner;
 use Alipay\Request\AbstractAlipayRequest;
 use Alipay\AlipayRequester;
+use Alipay\AlipayKeyPair;
 
 class ClientTest extends TestCase
 {
     const APPID = '123456';
     /**
-     * @depends SignTest::testCreate
+     * @depends SignTest::testKeyPair
      */
-    public function testCreate(AlipaySigner $signer)
+    public function testCreate(AlipayKeyPair $keyPair)
     {
-        $aop = new AopClient(static::APPID, $signer);
+        $aop = new AopClient(static::APPID, $keyPair);
         $this->assertTrue(true);
         return $aop;
     }

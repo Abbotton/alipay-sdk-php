@@ -1,39 +1,30 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Alipay\AlipaySigner;
+use Alipay\Signer\AlipaySigner;
+use Alipay\Signer\AlipayRSA2Signer;
+use Alipay\AlipayKeyPair;
 
 class SignTest extends TestCase
 {
+    const TEST_DATA = 'foo-bar';
+
     const PUB_KEY = 'tests/app_public_key.pem';
     
     const PRIV_KEY = 'tests/app_private_key.pem';
 
-    const TEST_DATA = 'foo-bar';
-
-    const SIGN_TYPE = 'RSA2';
-
-    public function testCreate()
+    public function testKeyPair()
     {
-        $signer = AlipaySigner::create(self::PRIV_KEY, self::PUB_KEY, self::SIGN_TYPE);
-        $this->assertEquals(self::SIGN_TYPE, $signer->getSignType());
-        $this->assertInstanceOf('Alipay\AlipaySigner', $signer);
-        return $signer;
+        $kp = AlipayKeyPair::create(self::PRIV_KEY, self::PUB_KEY);
+        $this->assertTrue(true);
+        return $kp;
     }
 
-    public function testCreateWithStringKeys()
+    public function testGenerateKeyPair()
     {
-        $signer = AlipaySigner::create(file_get_contents(self::PRIV_KEY), file_get_contents(self::PUB_KEY));
-        $this->assertInstanceOf('Alipay\AlipaySigner', $signer);
-        return $signer;
-    }
-
-    /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testUnknownSignType()
-    {
-        AlipaySigner::create(self::PRIV_KEY, self::PUB_KEY, 'this is an unknown sign type');
+        $kp = AlipayKeyPair::generate();
+        $this->assertTrue(true);
+        return $kp;
     }
 
     /**
@@ -41,73 +32,89 @@ class SignTest extends TestCase
      */
     public function testInvalidKey()
     {
-        AlipaySigner::create(self::PUB_KEY, self::PRIV_KEY);
+        AlipayKeyPair::create(self::PUB_KEY, self::PRIV_KEY);
     }
 
     /**
-     * @depends testCreate
+     * @depends testKeyPair
      */
-    public function testClone(AlipaySigner $signer)
+    public function testClone(AlipayKeyPair $kp)
     {
-        $anotherHelper = clone $signer;
-        $this->assertInstanceOf(get_class($signer), $anotherHelper);
-        unset($anotherHelper);
+        $kpCopy = clone $kp;
+        $this->assertInstanceOf(get_class($kp), $kpCopy);
+        unset($kpCopy);
+        $this->assertTrue(is_resource($kp->getPublicKey()));
+        $this->assertTrue(is_resource($kp->getPrivateKey()));
+        return $kp;
+    }
+
+    // =================================
+
+    public function testCreate()
+    {
+        $signer = new AlipayRSA2Signer();
+        $this->assertEquals('RSA2', $signer->getSignType());
+        $this->assertInstanceOf('Alipay\Signer\AlipaySigner', $signer);
         return $signer;
     }
 
     /**
-     * @depends testClone
+     * @depends testCreate
+     * @depends testKeyPair
      */
-    public function testGenerate(AlipaySigner $signer)
+    public function testGenerate(AlipaySigner $signer, AlipayKeyPair $keyPair)
     {
-        $sign = $signer->generate(self::TEST_DATA);
+        $sign = $signer->generate(self::TEST_DATA, $keyPair->getPrivateKey());
         $this->assertNotFalse(base64_decode($sign));
         return $sign;
     }
 
     /**
      * @depends testCreate
+     * @depends testKeyPair
      * @depends testGenerate
      */
-    public function testVerify(AlipaySigner $signer, $sign)
+    public function testVerify(AlipaySigner $signer, AlipayKeyPair $keyPair, $sign)
     {
-        $signer->verify($sign, self::TEST_DATA);
+        $signer->verify($sign, self::TEST_DATA, $keyPair->getPublicKey());
         $this->assertTrue(true);
     }
 
     /**
      * @depends testCreate
+     * @depends testKeyPair
      * @expectedException Alipay\Exception\AlipayBase64Exception
      */
-    public function testInvalidBase64Data(AlipaySigner $signer)
+    public function testInvalidBase64Data(AlipaySigner $signer, AlipayKeyPair $keyPair)
     {
-        $signer->verify('this is an undecodable data ...', self::TEST_DATA);
+        $signer->verify('this is an undecodable sign ...', self::TEST_DATA, $keyPair->getPublicKey());
     }
 
     /**
      * @depends testCreate
+     * @depends testKeyPair
      * @depends testGenerate
      * @expectedException Alipay\Exception\AlipayInvalidSignException
      */
-    public function testInvalidSign(AlipaySigner $signer, $sign)
+    public function testInvalidSign(AlipaySigner $signer, AlipayKeyPair $keyPair, $sign)
     {
-        $signer->verify($sign, 'this is a string has been tampered with');
-        $this->assertTrue(true);
+        $signer->verify($sign, 'this is a string has been tampered with', $keyPair->getPublicKey());
     }
 
     /**
      * @depends testCreate
+     * @depends testKeyPair
      */
-    public function testSignParams(AlipaySigner $signer)
+    public function testSignParams(AlipaySigner $signer, AlipayKeyPair $keyPair)
     {
         $data = ['foo' => 'bar', 'bar' => 'foo', 'empty' => ''];
-        $sign = $signer->generateByParams($data);
+        $sign = $signer->generateByParams($data, $keyPair->getPrivateKey());
         $params = [
             'sign' => $sign,
-            'sign_type' => $signer->getSignType()
+            'sign_type' => 'RSA2'
         ];
         $params = array_merge($params, $data);
-        $signer->verifyByAsyncCallback($params);
+        $signer->verifyByParams($params, $keyPair->getPublicKey());
         $this->assertTrue(true);
     }
 }

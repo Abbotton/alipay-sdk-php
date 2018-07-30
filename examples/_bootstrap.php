@@ -2,6 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Alipay\AlipayKeyPair;
 use Alipay\AlipaySigner;
 use Alipay\AopClient;
 
@@ -11,8 +12,7 @@ ini_set('html_errors', '0');
 
 return new AopClient(
     getenv('APP_ID'),
-    AlipaySigner::create(
-        getenv('APP_PRIV_KEY'),
-        getenv('ALIPAY_PUB_KEY')
+    new AlipaySigner(
+        AlipayKeyPair::create(getenv('APP_PRIV_KEY'), getenv('ALIPAY_PUB_KEY'))
     )
 );

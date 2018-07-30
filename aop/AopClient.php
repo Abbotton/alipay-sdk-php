@@ -3,6 +3,8 @@
 namespace Alipay;
 
 use Alipay\Request\AbstractAlipayRequest;
+use Alipay\Signer\AlipaySigner;
+use Alipay\Signer\AlipayRSA2Signer;
 
 class AopClient
 {
@@ -45,17 +47,26 @@ class AopClient
     protected $parser;
 
     /**
+     * 密钥对
+     *
+     * @var AlipayKeyPair
+     */
+    protected $keyPair;
+
+    /**
      * 创建 AopClient 实例
      *
      * @param string                $appId     应用 ID，请在开放平台管理页面获取
+     * @param AlipayKeyPair         $keyPair   密钥对
      * @param AlipaySigner          $signer    签名器，用于生成 / 验证签名
-     * @param AlipayRequester       $requester 请求器，形如 `function (string $url, array $params);`
+     * @param AlipayRequester       $requester 请求器，用于发送 HTTP 请求
      * @param AlipayResponseFactory $parser    响应解析器，用于解析服务器原始响应
      */
-    public function __construct($appId, AlipaySigner $signer, AlipayRequester $requester = null, AlipayResponseFactory $parser = null)
+    public function __construct($appId, AlipayKeyPair $keyPair, AlipaySigner $signer = null, AlipayRequester $requester = null, AlipayResponseFactory $parser = null)
     {
         $this->appId = $appId;
-        $this->signer = $signer;
+        $this->keyPair = $keyPair;
+        $this->signer = $signer === null ? new AlipayRSA2Signer() : $signer;
         $this->requester = $requester === null ? new AlipayCurlRequester() : $requester;
         $this->parser = $parser === null ? new AlipayResponseFactory() : $parser;
     }
@@ -96,7 +107,10 @@ class AopClient
 
         // 签名
         $totalParams = array_merge($apiParams, $sysParams);
-        $totalParams['sign'] = $this->signer->generateByParams($totalParams);
+        $totalParams['sign'] = $this->signer->generateByParams(
+            $totalParams, 
+            $this->keyPair->getPrivateKey()
+        );
 
         return $totalParams;
     }
@@ -116,7 +130,8 @@ class AopClient
 
         $this->signer->verify(
             $response->getSign(),
-            $response->stripData()
+            $response->stripData(),
+            $this->keyPair->getPublicKey()
         );
 
         return $response;
