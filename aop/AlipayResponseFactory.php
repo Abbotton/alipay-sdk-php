@@ -22,7 +22,6 @@ class AlipayResponseFactory
      * 解析原始响应数据
      *
      * @param string $raw
-     * @param string $format
      *
      * @return AlipayResponse
      */

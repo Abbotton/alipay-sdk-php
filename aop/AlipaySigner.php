@@ -230,18 +230,19 @@ class AlipaySigner
      */
     protected function getKey($keyOrFilePath, $isPrivate = true)
     {
-        if (file_exists($keyOrFilePath) && is_file($keyOrFilePath)) {
-            $key = file_get_contents($keyOrFilePath);
-        } else {
-            $key = $keyOrFilePath;
+        if (is_file($keyOrFilePath)) {
+            $keyOrFilePath = 'file://' . $keyOrFilePath;
         }
+
         if ($isPrivate) {
-            $keyResource = openssl_pkey_get_private($key);
+            $keyResource = openssl_pkey_get_private($keyOrFilePath);
         } else {
-            $keyResource = openssl_pkey_get_public($key);
+            $keyResource = openssl_pkey_get_public($keyOrFilePath);
         }
+
         if ($keyResource === false) {
-            throw new AlipayInvalidKeyException('Invalid key: ' . $keyOrFilePath);
+            echo openssl_error_string() . " ($keyOrFilePath)";
+            throw new AlipayInvalidKeyException(openssl_error_string() . " ($keyOrFilePath)");
         }
 
         return $keyResource;

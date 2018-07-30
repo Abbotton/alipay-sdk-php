@@ -2,6 +2,6 @@
 
 namespace Alipay\Exception;
 
-class AlipayInvalidKeyException extends AlipayException
+class AlipayInvalidKeyException extends AlipayOpenSslException
 {
 }

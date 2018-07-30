@@ -15,6 +15,10 @@ class AlipayCurlRequester extends AlipayRequester
     public function post($url, $params)
     {
         $ch = curl_init();
+        if ($ch === false) {
+            throw new AlipayCurlException('CURL initialization error');
+        }
+
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_FAILONERROR, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -32,7 +36,7 @@ class AlipayCurlRequester extends AlipayRequester
 
         $response = curl_exec($ch);
 
-        if (curl_errno($ch)) {
+        if ($response === false) {
             throw new AlipayCurlException(curl_error($ch), curl_errno($ch));
         }
 
