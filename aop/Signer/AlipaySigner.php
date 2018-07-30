@@ -2,17 +2,17 @@
 
 namespace Alipay\Signer;
 
+use Alipay\AlipayHelper;
 use Alipay\Exception\AlipayBase64Exception;
 use Alipay\Exception\AlipayInvalidSignException;
 use Alipay\Exception\AlipayOpenSslException;
-use Alipay\AlipayHelper;
 
 abstract class AlipaySigner
 {
     /**
      * 签名（计算 Sign 值）
      *
-     * @param string $data
+     * @param string   $data
      * @param resource $privateKey
      *
      * @throws AlipayOpenSslException
@@ -39,9 +39,9 @@ abstract class AlipaySigner
     /**
      * 将参数数组签名（计算 Sign 值）
      *
-     * @param array $params
+     * @param array    $params
      * @param resource $privateKey
-     * 
+     *
      * @return string
      *
      * @see self::generate
@@ -56,8 +56,8 @@ abstract class AlipaySigner
     /**
      * 验签（验证 Sign 值）
      *
-     * @param string $sign
-     * @param string $data
+     * @param string   $sign
+     * @param string   $data
      * @param resource $publicKey
      *
      * @throws AlipayBase64Exception
@@ -88,7 +88,7 @@ abstract class AlipaySigner
     /**
      * 异步通知验签（验证 Sign 值）
      *
-     * @param array $params
+     * @param array    $params
      * @param resource $publicKey
      *
      * @return void
