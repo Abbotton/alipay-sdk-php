@@ -241,7 +241,6 @@ class AlipaySigner
         }
 
         if ($keyResource === false) {
-            echo openssl_error_string() . " ($keyOrFilePath)";
             throw new AlipayInvalidKeyException(openssl_error_string() . " ($keyOrFilePath)");
         }
 
