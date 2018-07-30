@@ -33,10 +33,10 @@
     composer require "wi1dcard/alipay-sdk:^0.2" --prefer-dist
     ```
 
-2. 创建 `AlipaySigner` 实例。
+2. 创建 `AlipayKeyPair` 实例。
 
     ```php
-    $signer = \Alipay\AlipaySigner::create(
+    $keyPair = \Alipay\AlipayKeyPair::create(
         '应用私钥',
         '支付宝公钥',
     );
@@ -45,7 +45,7 @@
 3. 创建 `AopClient` 实例。
 
     ```php
-    $aop = new AopClient('APP_ID', $signer);
+    $aop = new AopClient('APP_ID', $keyPair);
     ```
 
     此对象通常情况下需要贯穿整条业务，除非你需要在同一套代码内处理多个商户号/小程序，否则只需要在初始化阶段创建一次即可。
