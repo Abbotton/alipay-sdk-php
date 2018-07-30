@@ -28,6 +28,7 @@ class AlipayKeyPair
         $instance = new static();
         $instance->privateKey = static::loadKey($privateKey, true);
         $instance->publicKey = static::loadKey($publicKey, false);
+
         return $instance;
     }
 
@@ -52,6 +53,7 @@ class AlipayKeyPair
      * 生成密钥对
      *
      * @param array $configargs
+     *
      * @return static
      */
     public static function generate($configargs = [])
@@ -119,6 +121,7 @@ class AlipayKeyPair
      * 释放密钥资源
      *
      * @param resource $resource
+     *
      * @return void
      */
     protected static function freeKey($resource)
@@ -140,6 +143,7 @@ class AlipayKeyPair
                 return $detail['key'];
             }
         }
+
         throw new AlipayOpenSslException(openssl_error_string());
     }
 }

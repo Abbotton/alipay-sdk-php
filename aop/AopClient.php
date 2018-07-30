@@ -3,8 +3,8 @@
 namespace Alipay;
 
 use Alipay\Request\AbstractAlipayRequest;
-use Alipay\Signer\AlipaySigner;
 use Alipay\Signer\AlipayRSA2Signer;
+use Alipay\Signer\AlipaySigner;
 
 class AopClient
 {
@@ -108,7 +108,7 @@ class AopClient
         // 签名
         $totalParams = array_merge($apiParams, $sysParams);
         $totalParams['sign'] = $this->signer->generateByParams(
-            $totalParams, 
+            $totalParams,
             $this->keyPair->getPrivateKey()
         );
 
