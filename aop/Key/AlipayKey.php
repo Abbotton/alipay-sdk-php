@@ -13,12 +13,14 @@ abstract class AlipayKey implements \Serializable
      * 创建密钥
      *
      * @param mixed $key
+     *
      * @return static
      */
     public static function create($key)
     {
         $instance = new static();
         $instance->load($key);
+
         return $instance;
     }
 

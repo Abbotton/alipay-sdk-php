@@ -7,6 +7,7 @@ class AlipayPublicKey extends AlipayKey
     public static function toString($resource)
     {
         $detail = openssl_pkey_get_details($resource);
+
         return $detail !== false && isset($detail['key']) ? $detail['key'] : parent::toString();
     }
 
