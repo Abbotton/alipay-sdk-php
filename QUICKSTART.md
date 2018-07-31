@@ -45,7 +45,7 @@
 - 上传应用公钥。
 - 获得支付宝公钥。
 
-如果你习惯用 GUI，移步：<https://docs.alipay.com/mini/introduce/rsa2>。
+如果你习惯用 GUI，请移步：<https://docs.alipay.com/mini/introduce/rsa2>。
 
 如果你习惯用 Shell，请继续往下看。
 
@@ -55,13 +55,13 @@ bin/genrsa
 
 首先执行此命令，生成 `app_private_key.pem` 和 `app_public_key.pem`，如同 `test` 目录下的一样。同时会输出一段 base64 编码后的签名字符串，我们留作备用。
 
-访问 <https://open.alipay.com/platform/mini.htm#/app/你的APP_ID/setting>（小程序详情页 - 设置），点击 `设置应用公钥`。
+打开 `小程序详情页 - 设置`，点击 `设置应用公钥`。
 
 使用文本编辑器复制 `app_public_key.pem` 文件内容，掐头去尾（不包含 `-----BEGIN RSA PRIVATE KEY-----` 和 `-----END RSA PRIVATE KEY-----`）粘贴至文本框内。
 
 点击 `验证公钥正确性`，输入此前的「签名字符串」，应当验证成功。
 
-点击 `查看支付宝公钥`，复制这段公钥，执行：
+点击 `查看支付宝公钥`，复制公钥字符串，执行：
 
 ```bash
 PUB_KEY='你的支付宝公钥'
@@ -78,6 +78,7 @@ echo '-----BEGIN PUBLIC KEY-----\n'$PUB_KEY'\n-----END PUBLIC KEY-----' > alipay
 
 - 配置示例环境变量。
 - 执行示例。
+- 获取用户信息。
 
 编辑 [`examples/.env`](./examples/.env) 文件，配置你的环境变量。
 
@@ -89,16 +90,11 @@ my.getAuthCode({
   success: (res) => {
     if (res.authCode) {
       my.httpRequest({
-        url: 'http://localhost/examples/alipay.system.oauth.token.php', // 此处需要根据本地 Web 服务器的配置修改，假设 http://localhost/ 映射到本仓库根目录则无需改动
+        // 此处需要根据本地 Web 服务器的配置修改，假设 http://localhost/ 映射到本仓库根目录则无需改动
+        url: 'http://localhost/examples/alipay.system.oauth.token.php',
         data: {
           authcode: res.authCode,
-        },
-        success: () => {
-          console.log('success');
-        },
-        fail: () => {
-          console.log('failed');
-        },
+        }
       });
     }
   },
@@ -109,7 +105,7 @@ my.getAuthCode({
 
 在请求列表内找到 `alipay.system.oauth.token.php`，若响应类似 [文档内的格式](https://docs.open.alipay.com/api_9/alipay.system.oauth.token#s5) 说明你已经正常调通接口。例如：
 
-```php
+```
 Array
 (
     [access_token] => authusrB01c97b02******d8baed95df89af4X25
@@ -120,6 +116,35 @@ Array
     [user_id] => 2088112****92254
 )
 ```
+
+最后，你可以执行：
+
+```bash
+cd examples
+php alipay.user.info.share.php authusrB01c97b02******d8baed95df89af4X25
+```
+
+将会得到如下所示的用户详细信息：
+
+```
+Array
+(
+    [code] => 10000
+    [msg] => Success
+    [avatar] => https://tfs.alipayobjects.com/images/partner/*****
+    [city] => 青岛市
+    [gender] => m
+    [is_certified] => T
+    [is_student_certified] => F
+    [nick_name] => ****
+    [province] => 山东省
+    [user_id] => 2088112****92254
+    [user_status] => T
+    [user_type] => 2
+)
+```
+
+至此，用户授权流程完毕。
 
 ## 0x04 接下来...
 

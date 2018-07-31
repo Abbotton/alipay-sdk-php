@@ -13,8 +13,7 @@ $apiName = basename(__FILE__, '.php');
  * 构建请求类
  */
 $request = AlipayRequestFactory::create($apiName, [
-    'grant_type' => 'authorization_code',
-    'code' => $_GET['authcode']
+    'auth_token' => $argv[1]
 ]);
 
 /**
