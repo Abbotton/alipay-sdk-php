@@ -1,5 +1,23 @@
-## 生成私钥/公钥
+## 🔑 生成私钥/公钥
 
 由于支付宝官方提供的 [生成工具](https://docs.open.alipay.com/291/105971) 只支持 GUI，并且没有 Linux 版本；使用 OpenSSL 生成密钥简单快捷，两行命令即可搞定。
 
 使用方法：`bin/genrsa`，即在当前目录生成密钥文件。
+
+## 📦 打包 Requests
+
+由于支付宝官方给出的 Requests 实在太多（700+），而部分平台（微擎等）发布时必须带上完整 `vendor` 文件夹，零散文件太多可能导致更新超时，所以出此下策 —— 把所有 Requests 打包成一个 PHAR 文件。
+
+使用方法：`bin/phar-requests`，即在当前目录生成 `requests.phar` 文件。
+
+删除 `aop/Requests` 目录后，修改 `composer.json` 的 `autoload` 部分，新增 `files` 小节：
+
+```json
+"autoload": {
+    "files": [
+        "requests.phar"
+    ]
+}
+```
+
+随后执行 `composer dumpautoload` 重新生成自动加载文件即可。

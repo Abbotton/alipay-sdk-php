@@ -1,0 +1,7 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+PHPAB="$DIR/../build/phpab.phar"
+
+wget -nc -q -O $PHPAB "https://github.com/theseer/Autoload/releases/download/1.25.0/phpab-1.25.0.phar"
+php $PHPAB -o requests.phar --phar --all "$DIR/../aop/Request"
