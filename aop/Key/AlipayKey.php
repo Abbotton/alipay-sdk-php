@@ -54,13 +54,7 @@ abstract class AlipayKey implements \Serializable
             $certificate = 'file://' . $certificate;
         }
 
-        $resource = static::getKey($certificate);
-
-        if ($resource === false) {
-            throw new AlipayInvalidKeyException(openssl_error_string() . " ($certificate)");
-        }
-
-        $this->resource = $resource;
+        $this->resource = static::getKey($certificate);
     }
 
     /**
@@ -85,7 +79,10 @@ abstract class AlipayKey implements \Serializable
         throw new AlipayOpenSslException(openssl_error_string());
     }
 
-    abstract public static function getKey($certificate);
+    public static function getKey($certificate)
+    {
+        throw new AlipayInvalidKeyException(openssl_error_string() . " ($certificate)");
+    }
 
     public function serialize()
     {
