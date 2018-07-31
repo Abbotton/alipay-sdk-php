@@ -77,7 +77,7 @@ abstract class AlipayKey implements \Serializable
      * 转换密钥为字符串
      *
      * @param resource $resource
-     * 
+     *
      * @return string
      */
     public static function toString($resource)
