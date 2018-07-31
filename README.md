@@ -3,7 +3,9 @@
 
 支付宝开放平台（又称：蚂蚁金服开放平台）**第三方** PHP SDK，基于官方 3.3.0 版本。
 
-本项目 [GitHub](https://github.com/wi1dcard/alipay-sdk-php) / [Gitee(码云)](https://gitee.com/wi1dcard/alipay-sdk-php)。
+❤️ 本项目 [GitHub](https://github.com/wi1dcard/alipay-sdk-php) / [Gitee(码云)](https://gitee.com/wi1dcard/alipay-sdk-php)。
+
+⚠️ 本项目将在我司产品正式、稳定使用后（九月左右），发布 `v1.0.0` 版本。
 
 [![Build Status](https://travis-ci.org/wi1dcard/alipay-sdk-php.svg?branch=master)](https://travis-ci.org/wi1dcard/alipay-sdk-php)
 [![Coverage Status](https://coveralls.io/repos/github/wi1dcard/alipay-sdk-php/badge.svg?branch=master)](https://coveralls.io/github/wi1dcard/alipay-sdk-php?branch=master)
@@ -20,11 +22,11 @@
 - [x] 移除官方 API 文档内 `已弃用` 特性。
 - [x] 移除难以拓展的调试、日志等特性，以便于集成第三方框架和扩展包。
 - [x] 移除编码转换特性，统一使用 `UTF-8`。
-- [ ] 其它优化，持续进行中……
+- [ ] 其它优化，持续进行中 ...
 
 ## 如何使用
 
-除非你已经通读官方入门文档，否则请先阅读 [快速开始](QUICKSTART.md) 部分。
+除非你已经通读官方入门文档，否则请先阅读 [快速开始](examples/README.md)。
 
 1. Composer 安装。
 
@@ -41,15 +43,17 @@
     );
     ```
 
+    `AlipayKeyPair` 用于存储应用私钥、支付宝公钥；两份密钥将分别用于与支付宝服务器通信时，生成请求签名、验证响应签名等。
+
 3. 创建 `AopClient` 实例。
 
     ```php
-    $aop = new AopClient('APP_ID', $keyPair);
+    $aop = new \Alipay\AopClient('APP_ID', $keyPair);
     ```
 
-    此对象通常情况下需要贯穿整条业务，除非你需要在同一套代码内处理多个商户号/小程序，否则只需要在初始化阶段创建一次即可。
+    `AopClient` 通常情况需要贯穿整条业务，除非你需要在同一套代码内处理多个商户号/小程序，否则只需要在初始化阶段创建一次即可。
 
-4. 创建 `AlipayRequest` 实例。
+4. 根据业务需要，创建 `AlipayRequest` 实例。
 
     ```php
     $request = \Alipay\AlipayRequestFactory::create('点号连接的API名称', [
@@ -63,13 +67,13 @@
     例如：
 
     ```php
-    $request = new AlipaySystemOauthTokenRequest();
+    $request = new \Alipay\Request\AlipaySystemOauthTokenRequest();
     $request->setCode('authcode');
     ```
 
-5. 发送请求。
+5. 发送请求，获得响应数据。
 
-    ```php    
+    ```php
     $result = $aop->execute($request)->getData();
     ```
 

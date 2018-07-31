@@ -2,7 +2,7 @@
 
 阅读本文，你将开始学习如何调通 `支付宝小程序` - `PHP SDK`，并实现 [获取会员信息](https://docs.alipay.com/mini/introduce/auth)。
 
-注：本文所有相对路径，均相对于本仓库根目录。
+注：本文所有相对路径，均相对于 `examples` 目录。
 
 ## 0x00 准备
 
@@ -50,7 +50,7 @@
 如果你习惯用 Shell，请继续往下看。
 
 ```bash
-bin/genrsa
+../bin/genrsa
 ```
 
 首先执行此命令，生成 `app_private_key.pem` 和 `app_public_key.pem`，如同 `test` 目录下的一样。同时会输出一段 base64 编码后的签名字符串，我们留作备用。
@@ -80,7 +80,7 @@ echo '-----BEGIN PUBLIC KEY-----\n'$PUB_KEY'\n-----END PUBLIC KEY-----' > alipay
 - 执行示例。
 - 获取用户信息。
 
-编辑 [`examples/.env`](./examples/.env) 文件，配置你的环境变量。
+编辑 [`.env`](.env) 文件，配置你的环境变量。
 
 打开 `小程序开发者工具`，修改 `app.js` 的主要代码：
 
@@ -120,7 +120,6 @@ Array
 最后，你可以执行：
 
 ```bash
-cd examples
 php alipay.user.info.share.php authusrB01c97b02******d8baed95df89af4X25
 ```
 
@@ -150,5 +149,5 @@ Array
 
 你可以：
 
-- [在你的项目中安装本扩展包](./README.md#如何使用)
-- [阅读本例代码](./examples/alipay.system.oauth.token.php)
+- [在你的项目中安装本扩展包](README.md#如何使用)
+- [阅读本例代码](alipay.system.oauth.token.php)
