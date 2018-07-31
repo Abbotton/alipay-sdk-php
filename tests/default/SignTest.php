@@ -3,7 +3,7 @@
 use PHPUnit\Framework\TestCase;
 use Alipay\Signer\AlipaySigner;
 use Alipay\Signer\AlipayRSA2Signer;
-use Alipay\AlipayKeyPair;
+use Alipay\Key\AlipayKeyPair;
 
 class SignTest extends TestCase
 {
@@ -43,6 +43,19 @@ class SignTest extends TestCase
         $kpCopy = clone $kp;
         $this->assertInstanceOf(get_class($kp), $kpCopy);
         unset($kpCopy);
+        $this->assertTrue(is_resource($kp->getPublicKey()));
+        $this->assertTrue(is_resource($kp->getPrivateKey()));
+        return $kp;
+    }
+
+    /**
+     * @depends testKeyPair
+     */
+    public function testSerialize(AlipayKeyPair $kp)
+    {
+        $ser = serialize($kp);
+        unset($kp);
+        $kp = unserialize($ser);
         $this->assertTrue(is_resource($kp->getPublicKey()));
         $this->assertTrue(is_resource($kp->getPrivateKey()));
         return $kp;

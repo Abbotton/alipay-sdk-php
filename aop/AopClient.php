@@ -5,6 +5,7 @@ namespace Alipay;
 use Alipay\Request\AbstractAlipayRequest;
 use Alipay\Signer\AlipayRSA2Signer;
 use Alipay\Signer\AlipaySigner;
+use Alipay\Key\AlipayKeyPair;
 
 class AopClient
 {

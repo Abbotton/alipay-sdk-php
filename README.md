@@ -36,7 +36,7 @@
 2. 创建 `AlipayKeyPair` 实例。
 
     ```php
-    $keyPair = \Alipay\AlipayKeyPair::create(
+    $keyPair = \Alipay\Key\AlipayKeyPair::create(
         '应用私钥',
         '支付宝公钥',
     );

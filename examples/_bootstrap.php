@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Alipay\AlipayKeyPair;
+use Alipay\Key\AlipayKeyPair;
 use Alipay\AopClient;
 
 ini_set('html_errors', '0');

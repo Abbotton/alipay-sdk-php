@@ -5,7 +5,7 @@ use Alipay\Request\AlipaySystemOauthTokenRequest;
 use Alipay\AopClient;
 use Alipay\Request\AbstractAlipayRequest;
 use Alipay\AlipayRequester;
-use Alipay\AlipayKeyPair;
+use Alipay\Key\AlipayKeyPair;
 
 class ClientTest extends TestCase
 {
