@@ -25,6 +25,7 @@ class AlipayKeyPair
      *
      * @param string $privateKey
      * @param string $publicKey
+     *
      * @return static
      */
     public static function create($privateKey, $publicKey)
