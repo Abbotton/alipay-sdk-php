@@ -6,6 +6,7 @@ use Alipay\Key\AlipayKeyPair;
 use Alipay\AopClient;
 
 ini_set('html_errors', '0');
+ini_set('error_log', 'logs/php-error.log');
 
 (new Dotenv\Dotenv(__DIR__))->load();
 
