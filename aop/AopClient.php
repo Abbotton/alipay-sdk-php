@@ -214,4 +214,54 @@ class AopClient
 
         return $html;
     }
+
+    /**
+     * 获取 AppId
+     *
+     * @return string
+     */
+    public function getAppId()
+    {
+        return $this->appId;
+    }
+
+    /**
+     * 获取与本客户端关联的密钥对
+     *
+     * @return AlipayKeyPair
+     */
+    public function getKeyPair()
+    {
+        return $this->keyPair;
+    }
+
+    /**
+     * 获取与本客户端关联的响应解析器
+     *
+     * @return AlipayResponseFactory
+     */
+    public function getParser()
+    {
+        return $this->parser;
+    }
+
+    /**
+     * 获取与本客户端关联的请求发送器
+     *
+     * @return AlipayRequester
+     */
+    public function getRequester()
+    {
+        return $this->requester;
+    }
+
+    /**
+     * 获取与本客户端关联的签名器
+     *
+     * @return AlipaySigner
+     */
+    public function getSigner()
+    {
+        return $this->signer;
+    }
 }
