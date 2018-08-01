@@ -48,7 +48,7 @@
 1. Composer 安装。
 
     ```bash
-    composer require "wi1dcard/alipay-sdk:^0.2" --prefer-dist
+    composer require "wi1dcard/alipay-sdk:^0.3" --prefer-dist
     ```
 
 2. 创建 `AlipayKeyPair` 实例。
