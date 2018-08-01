@@ -81,7 +81,7 @@ class AopClient
      * 拼接请求参数并签名
      *
      * @param AbstractAlipayRequest $request
-     * @param bool $arrayAsJson
+     * @param bool                  $arrayAsJson
      *
      * @return array
      */
