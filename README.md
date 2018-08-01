@@ -19,8 +19,8 @@
 | 奇葩测试文件残留                                         | 已移除                                                    | [讨论帖](https://openclub.alipay.com/read.php?tid=8168&fid=72)                                                     |
 | 几乎零 PHPDoc                                            | 持续补充中                                                | [对比图](https://i.loli.net/2018/08/01/5b611dc917bea.png)                                                          |
 | 请求类居然没有抽象基类或接口                             | 抽象基类，公共方法统一化                                  | [AbstractAlipayRequest](aop/Request/AbstractAlipayRequest.php)                                                                      |
-| 异常和错误处理不统一                                     | 所有错误都将以异常的形式抛出，确保返回数据可靠            | [所有异常](aop/Exception)                                                                                          |
-| 需手动根据接口名拼接请求类名                             | 请求类工厂，根据 API 名直接创建请求类                     |                                                                                                                    |
+| 异常和错误处理不统一                                     | 所有错误都将以异常的形式抛出，确保返回数据可靠            | [Exceptions](aop/Exception)                                                                                          |
+| 需手动根据接口名拼接请求类名                             | 请求类工厂，根据 API 名直接创建请求类                     | [AlipayRequestFactory](aop/AlipayRequestFactory.php)                                                                                                             |
 | 耦合度高，难以升级或替换                                 | 几乎完全解耦，任意替换签名 / 密钥 / 响应 甚至 HTTP 客户端 | [AopClient](aop/AopClient.php)                                                                                          |
 
 [Packagist]: https://packagist.org/packages/wi1dcard/alipay-sdk
