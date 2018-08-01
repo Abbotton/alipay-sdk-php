@@ -63,8 +63,13 @@ class AopClient
      * @param AlipayRequester       $requester 请求器，用于发送 HTTP 请求
      * @param AlipayResponseFactory $parser    响应解析器，用于解析服务器原始响应
      */
-    public function __construct($appId, AlipayKeyPair $keyPair, AlipaySigner $signer = null, AlipayRequester $requester = null, AlipayResponseFactory $parser = null)
-    {
+    public function __construct(
+        $appId,
+        AlipayKeyPair $keyPair,
+        AlipaySigner $signer = null,
+        AlipayRequester $requester = null,
+        AlipayResponseFactory $parser = null
+    ) {
         $this->appId = $appId;
         $this->keyPair = $keyPair;
         $this->signer = $signer === null ? new AlipayRSA2Signer() : $signer;
