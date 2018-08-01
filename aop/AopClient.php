@@ -34,7 +34,7 @@ class AopClient
     protected $signer;
 
     /**
-     * 请求回调
+     * 请求发送器
      *
      * @var AlipayRequester
      */
@@ -55,12 +55,12 @@ class AopClient
     protected $keyPair;
 
     /**
-     * 创建 AopClient 实例
+     * 创建客户端
      *
      * @param string                $appId     应用 ID，请在开放平台管理页面获取
-     * @param AlipayKeyPair         $keyPair   密钥对
-     * @param AlipaySigner          $signer    签名器，用于生成 / 验证签名
-     * @param AlipayRequester       $requester 请求器，用于发送 HTTP 请求
+     * @param AlipayKeyPair         $keyPair   密钥对，用于存储支付宝公钥和应用私钥
+     * @param AlipaySigner          $signer    签名器，用于生成和验证签名
+     * @param AlipayRequester       $requester 请求发送器，用于发送 HTTP 请求
      * @param AlipayResponseFactory $parser    响应解析器，用于解析服务器原始响应
      */
     public function __construct(
