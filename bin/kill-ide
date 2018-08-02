@@ -1,0 +1,8 @@
+#!/bin/bash
+
+PID=$(ps aux | grep '[a]nt-devtools-frontend/server/server.js' | awk '{print $2}')
+if [[ $PID != '' ]]; then
+  kill $PID && echo '已杀死进程残留'
+else
+  echo '未找到进程残留'
+fi;
