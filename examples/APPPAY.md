@@ -136,10 +136,10 @@ Array
 
 ```json
 {
-	"callbackUrl": "",
-	"memo": "{}",
-	"result": "{\"alipay_trade_app_pay_response\":{\"code\":\"10000\",\"msg\":\"Success\",\"app_id\":\"2018071660720249\",\"auth_app_id\":\"2018071660720249\",\"charset\":\"UTF-8\",\"timestamp\":\"2018-08-02 11:24:14\",\"total_amount\":\"0.01\",\"trade_no\":\"2018080221001004250509421023\",\"seller_id\":\"2088131988040170\",\"out_trade_no\":\"144944615dc55547be87acc404b69c739fe1fe9a\"},\"sign\":\"RKPH8RW+1ZL3kF6h4opzfd1q9RIj/1rRbYAOG/kr2HxjhtDxHDZloJ6ZPsvWHLtZC9CylZ4c7f/z+2l/EhKVhLDQ3YkTdS5fPeaXB7zvV5c40lJ0ou8a5dNKEWFgxEFGnJyjApQ63Uc7+mHgafIc9xmXmn45Ou+3L2hM3qjy7ajBzBqT1cQVG/+NEcPdUNWFNB96XPDTK7xn5CcGQHO4bMpXiuIYTECFIJP1UAqNL/lBIZsEF921CdwUaUZUElgaSN2lYjRemFeofVXWyIRUDPXrRDjb8V+D7EbEV8v3oNRBP8hQSSt5rMqzYClUHxoxJXpeRnvEE1wjDJxIAvmw0A==\",\"sign_type\":\"RSA2\"}",
-	"resultCode": "9000"
+  "callbackUrl": "",
+  "memo": "{}",
+  "result": "{\"alipay_trade_app_pay_response\":{\"code\":\"10000\",\"msg\":\"Success\",\"app_id\":\"2018071660720249\",\"auth_app_id\":\"2018071660720249\",\"charset\":\"UTF-8\",\"timestamp\":\"2018-08-02 11:24:14\",\"total_amount\":\"0.01\",\"trade_no\":\"2018080221001004250509421023\",\"seller_id\":\"2088131988040170\",\"out_trade_no\":\"144944615dc55547be87acc404b69c739fe1fe9a\"},\"sign\":\"RKPH8RW+1ZL3kF6h4opzfd1q9RIj/1rRbYAOG/kr2HxjhtDxHDZloJ6ZPsvWHLtZC9CylZ4c7f/z+2l/EhKVhLDQ3YkTdS5fPeaXB7zvV5c40lJ0ou8a5dNKEWFgxEFGnJyjApQ63Uc7+mHgafIc9xmXmn45Ou+3L2hM3qjy7ajBzBqT1cQVG/+NEcPdUNWFNB96XPDTK7xn5CcGQHO4bMpXiuIYTECFIJP1UAqNL/lBIZsEF921CdwUaUZUElgaSN2lYjRemFeofVXWyIRUDPXrRDjb8V+D7EbEV8v3oNRBP8hQSSt5rMqzYClUHxoxJXpeRnvEE1wjDJxIAvmw0A==\",\"sign_type\":\"RSA2\"}",
+  "resultCode": "9000"
 }
 ```
 
@@ -147,20 +147,20 @@ Array
 
 ```json
 {
-	"alipay_trade_app_pay_response": {
-		"code": "10000",
-		"msg": "Success",
-		"app_id": "2018071660720249",
-		"auth_app_id": "2018071660720249",
-		"charset": "UTF-8",
-		"timestamp": "2018-08-02 11:24:14",
-		"total_amount": "0.01",
-		"trade_no": "2018080221001004250509421023",
-		"seller_id": "2088131988040170",
-		"out_trade_no": "144944615dc55547be87acc404b69c739fe1fe9a"
-	},
-	"sign": "RKPH8RW+1ZL3kF6h4opzfd1q9RIj/1rRbYAOG/kr2HxjhtDxHDZloJ6ZPsvWHLtZC9CylZ4c7f/z+2l/EhKVhLDQ3YkTdS5fPeaXB7zvV5c40lJ0ou8a5dNKEWFgxEFGnJyjApQ63Uc7+mHgafIc9xmXmn45Ou+3L2hM3qjy7ajBzBqT1cQVG/+NEcPdUNWFNB96XPDTK7xn5CcGQHO4bMpXiuIYTECFIJP1UAqNL/lBIZsEF921CdwUaUZUElgaSN2lYjRemFeofVXWyIRUDPXrRDjb8V+D7EbEV8v3oNRBP8hQSSt5rMqzYClUHxoxJXpeRnvEE1wjDJxIAvmw0A==",
-	"sign_type": "RSA2"
+  "alipay_trade_app_pay_response": {
+    "code": "10000",
+    "msg": "Success",
+    "app_id": "2018071660720249",
+    "auth_app_id": "2018071660720249",
+    "charset": "UTF-8",
+    "timestamp": "2018-08-02 11:24:14",
+    "total_amount": "0.01",
+    "trade_no": "2018080221001004250509421023",
+    "seller_id": "2088131988040170",
+    "out_trade_no": "144944615dc55547be87acc404b69c739fe1fe9a"
+  },
+  "sign": "RKPH8RW+1ZL3kF6h4opzfd1q9RIj/1rRbYAOG/kr2HxjhtDxHDZloJ6ZPsvWHLtZC9CylZ4c7f/z+2l/EhKVhLDQ3YkTdS5fPeaXB7zvV5c40lJ0ou8a5dNKEWFgxEFGnJyjApQ63Uc7+mHgafIc9xmXmn45Ou+3L2hM3qjy7ajBzBqT1cQVG/+NEcPdUNWFNB96XPDTK7xn5CcGQHO4bMpXiuIYTECFIJP1UAqNL/lBIZsEF921CdwUaUZUElgaSN2lYjRemFeofVXWyIRUDPXrRDjb8V+D7EbEV8v3oNRBP8hQSSt5rMqzYClUHxoxJXpeRnvEE1wjDJxIAvmw0A==",
+  "sign_type": "RSA2"
 }
 ```
 
