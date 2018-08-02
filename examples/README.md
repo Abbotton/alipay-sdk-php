@@ -120,10 +120,10 @@ Array
 最后，你可以执行：
 
 ```bash
-php alipay.user.info.share.php authusrB01c97b02******d8baed95df89af4X25
+php alipay.user.info.share.php <access_token>
 ```
 
-将会得到如下所示的用户详细信息：
+将会得到如下所示用户详细信息：
 
 ```
 Array
