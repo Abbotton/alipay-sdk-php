@@ -41,9 +41,12 @@
 - [x] 移除编码转换特性，统一使用 `UTF-8`。
 - [ ] 其它优化，持续进行中 ...
 
-## 如何使用
+## 小试牛刀
 
-除非你已经通读官方入门文档，否则请先阅读 [快速开始](examples/README.md)。
+- [支付宝小程序 - 获取用户信息](examples/README.md)
+- [支付宝小程序 - 接入支付](examples/APPPAY.md)
+
+## 如何使用
 
 1. Composer 安装。
 
@@ -96,7 +99,7 @@
 
     所有错误（包括但不限于网络通信异常、数据格式异常、支付宝服务器返回的错误）都会被转换为异常，请注意捕捉。
 
-6. 查看实例，请移步 [`examples`](examples/) 目录。
+6. 更多实例，请移步 [`examples`](examples/) 目录。
 
     最后，官方 SDK 内 `AopClient::pageExecute()` 被分离为 `pageExecuteUrl` 和 `pageExecuteForm`。
     `AopClient::sdkExecute()` 和 `AopClient::execute()` 方法名保持不变，参数和返回值有所改动。
