@@ -149,5 +149,6 @@ Array
 
 你可以：
 
-- [在你的项目中安装本扩展包](README.md#如何使用)
+- [在你的项目中安装本扩展包](../README.md#如何使用)
 - [阅读本例代码](alipay.system.oauth.token.php)
+- [学习如何接入支付](APPPAY.md)
