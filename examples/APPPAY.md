@@ -14,10 +14,10 @@
 
 | 序号       | 内容                                   | 备注                                      | 链接                                                             |
 |:-----------|:---------------------------------------|:------------------------------------------|:-----------------------------------------------------------------|
-| [1](#STEP-1) | 小程序端请求我方服务端                 |                                           | [my.httpRequest](https://docs.alipay.com/mini/api/network)       |
-| [2](#STEP-2) | 我方服务端调用 SDK 生成订单字符串      | 此处可以验证用户登录态 / 是否有权限下单等 | [alipay.trade.app.pay](https://docs.open.alipay.com/204/105465/) |
-| [3](#STEP-3) | 小程序端携带订单字符串唤起支付         |                                           | [my.tradePay](https://docs.alipay.com/mini/api/openapi-pay)      |
-| [4](#STEP-4) | 支付宝服务端请求我方服务端通知支付结果 | 我方服务端应当返回 `success`              | [异步通知参数说明](https://docs.open.alipay.com/204/105301/)     |
+| [1](#step-1) | 小程序端请求我方服务端                 |                                           | [my.httpRequest](https://docs.alipay.com/mini/api/network)       |
+| [2](#step-2) | 我方服务端调用 SDK 生成订单字符串      | 此处可以验证用户登录态 / 是否有权限下单等 | [alipay.trade.app.pay](https://docs.open.alipay.com/204/105465/) |
+| [3](#step-3) | 小程序端携带订单字符串唤起支付         |                                           | [my.tradePay](https://docs.alipay.com/mini/api/openapi-pay)      |
+| [4](#step-4) | 支付宝服务端请求我方服务端通知支付结果 | 我方服务端应当返回 `success`              | [异步通知参数说明](https://docs.open.alipay.com/204/105301/)     |
 
 下面，我们分步骤进行演示。
 
