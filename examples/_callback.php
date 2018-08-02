@@ -5,18 +5,11 @@
  */
 $aop = require __DIR__ . '/_bootstrap.php';
 
-$file = fopen('logs/callback.log', 'a'); // 追加模式打开日志文件
-fwrite($file, date('Y-m-d H:i:s') . PHP_EOL); // 写入当前时间
-
-// 拦截输出缓冲区，以便于把输出记录到文件
-ob_start(function ($buffer, $phase) use ($file) {
-    fwrite($file, $buffer);
-    return $buffer;
-});
+ob_start(); // 启动输出缓冲区
 
 // 判断是否为控制台环境运行此脚本
 if (php_sapi_name() === 'cli') {
-    parse_str($argv[1], $params); // 使用输入参数解析为数组后，作为参数
+    parse_str($argv[1], $params); // 使用输入参数解析为数组作为参数
 } else {
     $params = $_POST; // 直接使用 $_POST 作为参数
 }
@@ -35,9 +28,11 @@ try {
 }
 // ---业务代码结束---
 
-// 刷新缓冲区（此处会触发前面设置的回调函数）
-ob_flush();
-// 文件追加换行
-fwrite($file, PHP_EOL);
-// 关闭文件
-fclose($file);
+$file = fopen('logs/callback.log', 'a'); // 追加模式打开日志文件
+fwrite($file, date('Y-m-d H:i:s') . PHP_EOL); // 写入当前时间
+
+$content = ob_get_clean(); // 获取缓冲区数据，并丢弃
+fwrite($file, $content . PHP_EOL); // 写入缓冲区数据
+fclose($file); // 关闭文件
+
+echo 'success'; // 输出 `success`，否则支付宝服务器将会重复通知
