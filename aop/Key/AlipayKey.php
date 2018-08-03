@@ -35,10 +35,16 @@ abstract class AlipayKey implements \Serializable
         }
     }
 
+    /**
+     * 深拷贝需要重新加载密钥
+     *
+     * @return void
+     */
     public function __clone()
     {
-        // 深拷贝需要重新加载密钥，以防密钥被释放
-        $this->resource = $this->load($this->toString());
+        $key = $this->toString();
+        $this->resource = null;
+        $this->load($key);
     }
 
     /**
