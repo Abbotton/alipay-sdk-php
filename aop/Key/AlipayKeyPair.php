@@ -69,12 +69,12 @@ class AlipayKeyPair
         return $this->publicKey->asResource();
     }
 
-    protected function setPrivateKey($key)
+    public function setPrivateKey($key)
     {
         $this->privateKey = AlipayPrivateKey::create($key);
     }
 
-    protected function setPublicKey($key)
+    public function setPublicKey($key)
     {
         $this->publicKey = AlipayPublicKey::create($key);
     }
