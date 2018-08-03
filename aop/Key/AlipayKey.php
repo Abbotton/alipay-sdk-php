@@ -51,9 +51,9 @@ abstract class AlipayKey implements \Serializable
     }
 
     /**
-     * 使用密钥字符串或路径加载密钥
+     * 加载密钥
      *
-     * @param string $certificate
+     * @param string $certificate 密钥字符串或密钥路径
      *
      * @throws AlipayInvalidKeyException
      *
@@ -83,8 +83,20 @@ abstract class AlipayKey implements \Serializable
     }
 
     /**
-     * 从密钥资源初始化本对象
+     * 获取密钥字符串
      *
+     * @return string
+     */
+    public function asString()
+    {
+        return static::toString($this->resource);
+    }
+
+    /**
+     * 使用密钥资源直接初始化本对象
+     *
+     * @param resource $resource
+     * 
      * @return static
      */
     public static function fromResource($resource)
@@ -95,7 +107,7 @@ abstract class AlipayKey implements \Serializable
     }
 
     /**
-     * 转换密钥为字符串
+     * 将密钥资源转为字符串
      *
      * @param resource $resource
      *
@@ -106,6 +118,12 @@ abstract class AlipayKey implements \Serializable
         throw new AlipayOpenSslException(openssl_error_string());
     }
 
+    /**
+     * 加载密钥资源
+     *
+     * @param string $certificate
+     * @return resource
+     */
     public static function getKey($certificate)
     {
         throw new AlipayInvalidKeyException(openssl_error_string() . " ($certificate)");
@@ -119,10 +137,5 @@ abstract class AlipayKey implements \Serializable
     public function unserialize($data)
     {
         $this->load($data);
-    }
-
-    public function __toString()
-    {
-        return static::toString($this->resource);
     }
 }
