@@ -128,7 +128,7 @@ class AopClient
         // 签名
         $totalParams['sign'] = $this->signer->generateByParams(
             $totalParams,
-            $this->keyPair->getPrivateKey()
+            $this->keyPair->getPrivateKey()->asResource()
         );
 
         return $totalParams;
@@ -150,7 +150,7 @@ class AopClient
         $this->signer->verify(
             $response->getSign(),
             $response->stripData(),
-            $this->keyPair->getPublicKey()
+            $this->keyPair->getPublicKey()->asResource()
         );
 
         return $response;
