@@ -16,10 +16,11 @@ if (php_sapi_name() === 'cli') {
 
 // ---业务代码开始---
 try {
-    // 获取签名器，使用 `verifyByParams` 验证签名
-    $aop->getSigner()->verifyByParams(
+    $signer = $aop->getSigner(); // 获取签名器，使用 `verifyByParams` 验证签名
+    $key = $aop->getKeyPair()->getPublicKey(); // 获取支付宝公钥，用于验证签名
+    $signer->verifyByParams( 
         $params, // 支付宝服务器发来的参数数组
-        $aop->getKeyPair()->getPublicKey() // 获取支付宝公钥，用于验证签名
+        $key->asResource()
     );
     print_r($params); // 验证签名成功，数据未被篡改且可靠，打印参数
 } catch (\Exception $ex) {
