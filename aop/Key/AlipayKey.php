@@ -28,6 +28,9 @@ abstract class AlipayKey implements \Serializable
     {
     }
 
+    /**
+     * 释放密钥
+     */
     public function __destruct()
     {
         if (is_resource($this->resource)) {
