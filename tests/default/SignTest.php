@@ -23,7 +23,12 @@ class SignTest extends TestCase
     public function testGenerateKeyPair()
     {
         $kp = AlipayKeyPair::generate();
-        $this->assertTrue(true);
+        $this->assertTrue(
+            $kp->getPrivateKey()->isLoaded()
+        );
+        $this->assertTrue(
+            $kp->getPublicKey()->isLoaded()
+        );
         return $kp;
     }
 
@@ -40,12 +45,12 @@ class SignTest extends TestCase
      */
     public function testClone(AlipayKeyPair $kp)
     {
-        $kpCopy = clone $kp;
-        $this->assertInstanceOf(get_class($kp), $kpCopy);
-        unset($kpCopy);
-        $this->assertTrue(is_resource($kp->getPublicKey()));
-        $this->assertTrue(is_resource($kp->getPrivateKey()));
-        return $kp;
+        $key = $kp->getPrivateKey();
+        $keyCopy = clone $kp->getPrivateKey();
+
+        $this->assertInstanceOf(get_class($key), $keyCopy);
+        unset($keyCopy);
+        $this->assertTrue($key->isLoaded());
     }
 
     /**
@@ -56,12 +61,12 @@ class SignTest extends TestCase
         $ser = serialize($kp);
         unset($kp);
         $kp = unserialize($ser);
-        $this->assertTrue(is_resource($kp->getPublicKey()));
-        $this->assertTrue(is_resource($kp->getPrivateKey()));
+        $this->assertTrue($kp->getPublicKey()->isLoaded());
+        $this->assertTrue($kp->getPrivateKey()->isLoaded());
         return $kp;
     }
 
-    // =================================
+    // ==================================================================
 
     public function testCreate()
     {
@@ -77,7 +82,7 @@ class SignTest extends TestCase
      */
     public function testGenerate(AlipaySigner $signer, AlipayKeyPair $keyPair)
     {
-        $sign = $signer->generate(self::TEST_DATA, $keyPair->getPrivateKey());
+        $sign = $signer->generate(self::TEST_DATA, $keyPair->getPrivateKey()->asResource());
         $this->assertNotFalse(base64_decode($sign));
         return $sign;
     }
@@ -89,7 +94,7 @@ class SignTest extends TestCase
      */
     public function testVerify(AlipaySigner $signer, AlipayKeyPair $keyPair, $sign)
     {
-        $signer->verify($sign, self::TEST_DATA, $keyPair->getPublicKey());
+        $signer->verify($sign, self::TEST_DATA, $keyPair->getPublicKey()->asResource());
         $this->assertTrue(true);
     }
 
@@ -100,7 +105,7 @@ class SignTest extends TestCase
      */
     public function testInvalidBase64Data(AlipaySigner $signer, AlipayKeyPair $keyPair)
     {
-        $signer->verify('this is an undecodable sign ...', self::TEST_DATA, $keyPair->getPublicKey());
+        $signer->verify('this is an undecodable sign ...', self::TEST_DATA, $keyPair->getPublicKey()->asResource());
     }
 
     /**
@@ -111,7 +116,7 @@ class SignTest extends TestCase
      */
     public function testInvalidSign(AlipaySigner $signer, AlipayKeyPair $keyPair, $sign)
     {
-        $signer->verify($sign, 'this is a string has been tampered with', $keyPair->getPublicKey());
+        $signer->verify($sign, 'this is a string has been tampered with', $keyPair->getPublicKey()->asResource());
     }
 
     /**
@@ -121,13 +126,13 @@ class SignTest extends TestCase
     public function testSignParams(AlipaySigner $signer, AlipayKeyPair $keyPair)
     {
         $data = ['foo' => 'bar', 'bar' => 'foo', 'empty' => ''];
-        $sign = $signer->generateByParams($data, $keyPair->getPrivateKey());
+        $sign = $signer->generateByParams($data, $keyPair->getPrivateKey()->asResource());
         $params = [
             'sign' => $sign,
             'sign_type' => 'RSA2'
         ];
         $params = array_merge($params, $data);
-        $signer->verifyByParams($params, $keyPair->getPublicKey());
+        $signer->verifyByParams($params, $keyPair->getPublicKey()->asResource());
         $this->assertTrue(true);
     }
 }
