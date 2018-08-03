@@ -45,7 +45,7 @@ abstract class AlipayKey implements \Serializable
      */
     public function __clone()
     {
-        $key = $this->toString();
+        $key = $this->asString();
         $this->resource = null;
         $this->load($key);
     }
@@ -131,7 +131,7 @@ abstract class AlipayKey implements \Serializable
 
     public function serialize()
     {
-        return (string) $this;
+        return $this->asString();
     }
 
     public function unserialize($data)
