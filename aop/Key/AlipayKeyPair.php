@@ -52,11 +52,14 @@ class AlipayKeyPair
         ], $configargs);
 
         $resource = openssl_pkey_new($configargs);
-        $privateKey = AlipayPrivateKey::toString($resource);
-        $publicKey = AlipayPublicKey::toString($resource);
-        openssl_pkey_free($resource);
 
-        return static::create($privateKey, $publicKey);
+        $instance = new static();
+        $instance->privateKey = AlipayPrivateKey::fromResource($resource);
+        $instance->publicKey = AlipayPublicKey::create(
+            AlipayPublicKey::toString($resource)
+        );
+
+        return $instance;
     }
 
     public function getPrivateKey()
