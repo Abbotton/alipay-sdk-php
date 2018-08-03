@@ -79,7 +79,7 @@ abstract class AlipayKey implements \Serializable
 
     /**
      * 释放密钥资源
-     * 
+     *
      * @return void
      */
     protected function release()
@@ -114,7 +114,7 @@ abstract class AlipayKey implements \Serializable
      * 使用密钥资源直接初始化本对象
      *
      * @param resource $resource
-     * 
+     *
      * @return static
      */
     public static function fromResource($resource)
