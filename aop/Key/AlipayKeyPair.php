@@ -62,23 +62,47 @@ class AlipayKeyPair
         return $instance;
     }
 
+    /**
+     * 获取私钥对象
+     *
+     * @return AlipayPrivateKey
+     */
     public function getPrivateKey()
     {
-        return $this->privateKey->asResource();
+        return $this->privateKey;
     }
 
+    /**
+     * 获取公钥对象
+     *
+     * @return AlipayPublicKey
+     */
     public function getPublicKey()
     {
-        return $this->publicKey->asResource();
+        return $this->publicKey;
     }
 
+    /**
+     * 设置公钥
+     *
+     * @param string $key
+     * @return static
+     */
     public function setPrivateKey($key)
     {
         $this->privateKey = AlipayPrivateKey::create($key);
+        return $this;
     }
 
+    /**
+     * 设置私钥
+     *
+     * @param string $key
+     * @return static
+     */
     public function setPublicKey($key)
     {
         $this->publicKey = AlipayPublicKey::create($key);
+        return $this;
     }
 }
