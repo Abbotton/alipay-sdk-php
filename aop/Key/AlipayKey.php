@@ -28,14 +28,9 @@ abstract class AlipayKey implements \Serializable
     {
     }
 
-    /**
-     * 释放密钥
-     */
     public function __destruct()
     {
-        if (is_resource($this->resource)) {
-            @openssl_free_key($this->resource);
-        }
+        $this->release();
     }
 
     /**
@@ -61,7 +56,7 @@ abstract class AlipayKey implements \Serializable
      */
     protected function load($certificate)
     {
-        if ($this->resource !== null) {
+        if ($this->isLoaded()) {
             throw new AlipayInvalidKeyException('Resource of key has already been initialized');
         }
         
@@ -70,6 +65,29 @@ abstract class AlipayKey implements \Serializable
         }
 
         $this->resource = static::getKey($certificate);
+    }
+
+    /**
+     * 检查此密钥是否可用
+     *
+     * @return bool
+     */
+    public function isLoaded()
+    {
+        return $this->resource !== null && is_resource($this->resource);
+    }
+
+    /**
+     * 释放密钥资源
+     * 
+     * @return void
+     */
+    protected function release()
+    {
+        if ($this->isLoaded()) {
+            @openssl_free_key($this->resource);
+        }
+        $this->resource = null;
     }
 
     /**
