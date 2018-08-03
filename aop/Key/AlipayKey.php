@@ -74,6 +74,18 @@ abstract class AlipayKey implements \Serializable
     }
 
     /**
+     * 从密钥资源初始化本对象
+     *
+     * @return static
+     */
+    public static function fromResource($resource)
+    {
+        $instance = new static();
+        $instance->resource = $resource;
+        return $instance;
+    }
+
+    /**
      * 转换密钥为字符串
      *
      * @param resource $resource
