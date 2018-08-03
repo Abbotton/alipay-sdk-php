@@ -12,7 +12,7 @@ abstract class AlipayKey implements \Serializable
     /**
      * 创建密钥
      *
-     * @param mixed $key
+     * @param string $key
      *
      * @return static
      */
