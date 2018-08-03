@@ -53,7 +53,7 @@ abstract class AlipayKey implements \Serializable
     /**
      * 使用密钥字符串或路径加载密钥
      *
-     * @param string $keyOrFilePath
+     * @param string $certificate
      *
      * @throws AlipayInvalidKeyException
      *
