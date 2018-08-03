@@ -52,6 +52,10 @@ abstract class AlipayKey implements \Serializable
      */
     protected function load($certificate)
     {
+        if ($this->resource !== null) {
+            throw new AlipayInvalidKeyException('Resource of key has already been initialized');
+        }
+        
         if (is_file($certificate)) {
             $certificate = 'file://' . $certificate;
         }
