@@ -86,11 +86,13 @@ class AlipayKeyPair
      * 设置公钥
      *
      * @param string $key
+     *
      * @return static
      */
     public function setPrivateKey($key)
     {
         $this->privateKey = AlipayPrivateKey::create($key);
+
         return $this;
     }
 
@@ -98,11 +100,13 @@ class AlipayKeyPair
      * 设置私钥
      *
      * @param string $key
+     *
      * @return static
      */
     public function setPublicKey($key)
     {
         $this->publicKey = AlipayPublicKey::create($key);
+
         return $this;
     }
 }

@@ -59,7 +59,7 @@ abstract class AlipayKey implements \Serializable
         if ($this->isLoaded()) {
             throw new AlipayInvalidKeyException('Resource of key has already been initialized');
         }
-        
+
         if (is_file($certificate)) {
             $certificate = 'file://' . $certificate;
         }
@@ -121,6 +121,7 @@ abstract class AlipayKey implements \Serializable
     {
         $instance = new static();
         $instance->resource = $resource;
+
         return $instance;
     }
 
@@ -140,6 +141,7 @@ abstract class AlipayKey implements \Serializable
      * 加载密钥资源
      *
      * @param string $certificate
+     *
      * @return resource
      */
     public static function getKey($certificate)
