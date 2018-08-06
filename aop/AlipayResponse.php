@@ -87,7 +87,7 @@ class AlipayResponse
         if ($this->isSuccess() === false) {
             throw new AlipayErrorResponseException($this->getError());
         }
-        $result = reset($this->data);
+        $result = $this->getFirstElement();
         if ($assoc == false) {
             $result = (object) ($result);
         }
@@ -106,13 +106,28 @@ class AlipayResponse
     }
 
     /**
-     * 根据是否存在错误字段，判断响应是否成功
+     * 获取响应数据内的首元素
+     *
+     * @return mixed
+     */
+    protected function getFirstElement()
+    {
+        $data = array_reverse($this->data);
+        return array_pop($data);
+    }
+
+    /**
+     * 判断响应是否成功
      *
      * @return bool
      */
     public function isSuccess()
     {
-        return !isset($this->data[static::ERROR_NODE]);
+        if (isset($this->data[static::ERROR_NODE])) {
+            return false;
+        }
+        $data = $this->getFirstElement();
+        return !isset($data['code']) || empty($data['code']);
     }
 
     /**
@@ -125,7 +140,11 @@ class AlipayResponse
         if ($this->isSuccess()) {
             return null;
         }
-        $result = $this->data[static::ERROR_NODE];
+        if (isset($this->data[static::ERROR_NODE])) {
+            $result = $this->data[static::ERROR_NODE];
+        } else {
+            $result = $this->getFirstElement();
+        }
         if ($assoc == false) {
             $result = (object) ($result);
         }
