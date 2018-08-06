@@ -37,6 +37,18 @@ class ResponseTest extends TestCase
     /**
      * @depends testFactory
      */
+    public function testParseInvisibleError(AlipayResponseFactory $parser)
+    {
+        $response = '{"alipay_user_info_share_response":{"code":"20001","msg":"Insufficient Token Permissions","sub_code":"aop.auth-token-time-out","sub_msg":"访问令牌已过期"}}';
+        $ins = $parser->parse($response);
+        $this->assertInstanceOf('Alipay\AlipayResponse', $ins);
+        $this->assertFalse($ins->isSuccess());
+        return $ins;
+    }
+
+    /**
+     * @depends testFactory
+     */
     public function testParseSuccess(AlipayResponseFactory $parser)
     {
         $response = '{
@@ -65,6 +77,8 @@ class ResponseTest extends TestCase
         $response = 'this is an invalid response';
         $parser->parse($response);
     }
+
+    // =========================================================
 
     /**
      * @depends testParseSuccess
@@ -121,6 +135,14 @@ class ResponseTest extends TestCase
 
         $data = $ins->getError(false);
         $this->assertTrue(is_object($data));
+    }
+
+    /**
+     * @depends testParseInvisibleError
+     */
+    public function testGetInvisibleError(AlipayResponse $ins)
+    {
+        return $this->testGetError($ins);
     }
 
     /**
