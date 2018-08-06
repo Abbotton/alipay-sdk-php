@@ -113,6 +113,7 @@ class AlipayResponse
     protected function getFirstElement()
     {
         $data = array_reverse($this->data);
+
         return array_pop($data);
     }
 
@@ -127,6 +128,7 @@ class AlipayResponse
             return false;
         }
         $data = $this->getFirstElement();
+
         return !isset($data['code']) || empty($data['code']);
     }
 
