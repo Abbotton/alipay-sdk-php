@@ -4,10 +4,24 @@ namespace Alipay\Exception;
 
 class AlipayInvalidSignException extends AlipayException
 {
-    public function __construct($sign, $data, $externalMessage = '')
+    protected $sign;
+
+    protected $data;
+
+    public function __construct($sign, $data)
     {
-        $message = $externalMessage == '' ? '' : $externalMessage . ': ';
-        $message .= "Sign = {$sign}, Data = {$data}";
-        parent::__construct($message);
+        $this->sign = $sign;
+        $this->data = $data;
+        parent::__construct('Signature did not match.');
+    }
+
+    public function getSign()
+    {
+        return $this->sign;
+    }
+
+    public function getData()
+    {
+        return $this->data;
     }
 }
