@@ -8,19 +8,23 @@ $aop = require __DIR__ . '/_bootstrap.php';
 ob_start(); // 启动输出缓冲区
 
 // ---业务代码开始---
-try {
-    // 判断是否为控制台环境运行此脚本
-    if (php_sapi_name() === 'cli') {
-        parse_str($argv[1], $params); // 使用输入参数解析为数组作为参数
-        $aop->verify($params);
-    } else {
-        $aop->verify(); // 直接使用 $_POST 作为参数
-    }
-    print_r($params); // 验证签名成功，数据未被篡改且可靠，打印参数
-} catch (\Exception $ex) {
-    // 验证签名失败或发生错误，打印异常信息
-    printf('%s | %s' . PHP_EOL, get_class($ex), $ex->getMessage());
+
+if (php_sapi_name() === 'cli') {
+    // 若为控制台环境运行此脚本，则使用输入参数解析为数组作为参数
+    parse_str($argv[1], $_POST);
 }
+
+try {
+    $passed = $aop->verify(); // 验证支付宝服务器发来的参数数据签名
+} catch (\Exception $ex) {
+    $passed = null;
+    printf('%s | %s' . PHP_EOL, get_class($ex), $ex->getMessage()); // 验证过程发生错误，打印异常信息
+}
+
+if ($passed) {
+    print_r($params); // 签名验证通过，数据未被篡改且可靠，打印参数
+}
+
 // ---业务代码结束---
 
 $file = fopen('logs/callback.log', 'a'); // 追加模式打开日志文件
