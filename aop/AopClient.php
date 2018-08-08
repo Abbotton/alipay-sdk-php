@@ -2,11 +2,11 @@
 
 namespace Alipay;
 
+use Alipay\Exception\AlipayInvalidSignException;
 use Alipay\Key\AlipayKeyPair;
 use Alipay\Request\AbstractAlipayRequest;
 use Alipay\Signer\AlipayRSA2Signer;
 use Alipay\Signer\AlipaySigner;
-use Alipay\Exception\AlipayInvalidSignException;
 
 class AopClient
 {
@@ -241,6 +241,7 @@ class AopClient
         if ($params === null) {
             $params = $_POST;
         }
+
         try {
             $this->signer->verifyByParams(
                 $params,
