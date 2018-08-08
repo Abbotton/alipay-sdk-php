@@ -1,15 +1,15 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
-use Alipay\Request\AlipaySystemOauthTokenRequest;
 use Alipay\AopClient;
-use Alipay\Request\AbstractAlipayRequest;
-use Alipay\AlipayRequester;
 use Alipay\Key\AlipayKeyPair;
+use Alipay\Request\AbstractAlipayRequest;
+use Alipay\Signer\AlipayRSA2Signer;
+use PHPUnit\Framework\TestCase;
 
 class ClientTest extends TestCase
 {
     const APPID = '123456';
+
     /**
      * @depends SignTest::testKeyPair
      */
@@ -46,6 +46,17 @@ class ClientTest extends TestCase
         $res = $client->pageExecuteForm($request);
         $this->assertNotEmpty($res);
     }
-    
 
+    /**
+     * @depends testCreate
+     * @depends SignTest::testGenerate
+     */
+    public function testVerify(AopClient $client, $sign)
+    {
+        parse_str(SignTest::TEST_DATA, $params);
+        $params['sign'] = $sign;
+        $params['sign_type'] = (new AlipayRSA2Signer)->getSignType();
+        $result = $client->verify($params);
+        $this->assertTrue($result);
+    }
 }
