@@ -128,7 +128,7 @@ class AlipayResponse
             return false;
         }
         $data = $this->getFirstElement();
-        
+
         return !isset($data['code']) || empty($data['code']) || $data['code'] == '10000';
     }
 
