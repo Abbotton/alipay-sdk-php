@@ -6,6 +6,7 @@ use Alipay\Key\AlipayKeyPair;
 use Alipay\Request\AbstractAlipayRequest;
 use Alipay\Signer\AlipayRSA2Signer;
 use Alipay\Signer\AlipaySigner;
+use Alipay\Exception\AlipayInvalidSignException;
 
 class AopClient
 {
@@ -226,6 +227,30 @@ class AopClient
         $html .= "<script>document.forms['alipaysubmit'].submit();</script>";
 
         return $html;
+    }
+
+    /**
+     * 验证由支付宝服务器发起的回调通知请求，签名数据是否未被篡改
+     *
+     * @param array|null $params 请求参数（默认使用 $_POST）
+     * 
+     * @return bool
+     */
+    public function verify($params = null)
+    {
+        if ($params === null) {
+            $params = $_POST;
+        }
+        try {
+            $this->signer->verifyByParams(
+                $params,
+                $this->keyPair->getPublicKey()->asResource()
+            );
+        } catch (AlipayInvalidSignException $ex) {
+            return false;
+        }
+
+        return true;
     }
 
     /**
