@@ -7,7 +7,7 @@ use Alipay\Key\AlipayKeyPair;
 
 class SignTest extends TestCase
 {
-    const TEST_DATA = 'foo-bar';
+    const TEST_DATA = 'foo=abc&bar=100&empty=&not_empty=0';
 
     const PUB_KEY = 'tests/app_public_key.pem';
     
@@ -82,7 +82,8 @@ class SignTest extends TestCase
      */
     public function testGenerate(AlipaySigner $signer, AlipayKeyPair $keyPair)
     {
-        $sign = $signer->generate(self::TEST_DATA, $keyPair->getPrivateKey()->asResource());
+        parse_str(self::TEST_DATA, $params);
+        $sign = $signer->generateByParams($params, $keyPair->getPrivateKey()->asResource());
         $this->assertNotFalse(base64_decode($sign));
         return $sign;
     }
@@ -94,7 +95,10 @@ class SignTest extends TestCase
      */
     public function testVerify(AlipaySigner $signer, AlipayKeyPair $keyPair, $sign)
     {
-        $signer->verify($sign, self::TEST_DATA, $keyPair->getPublicKey()->asResource());
+        parse_str(self::TEST_DATA, $params);
+        $params['sign'] = $sign;
+        $params['sign_type'] = (new AlipayRSA2Signer)->getSignType();
+        $signer->verifyByParams($params, $keyPair->getPublicKey()->asResource());
         $this->assertTrue(true);
     }
 
@@ -117,22 +121,5 @@ class SignTest extends TestCase
     public function testInvalidSign(AlipaySigner $signer, AlipayKeyPair $keyPair, $sign)
     {
         $signer->verify($sign, 'this is a string has been tampered with', $keyPair->getPublicKey()->asResource());
-    }
-
-    /**
-     * @depends testCreate
-     * @depends testKeyPair
-     */
-    public function testSignParams(AlipaySigner $signer, AlipayKeyPair $keyPair)
-    {
-        $data = ['foo' => 'bar', 'bar' => 'foo', 'empty' => ''];
-        $sign = $signer->generateByParams($data, $keyPair->getPrivateKey()->asResource());
-        $params = [
-            'sign' => $sign,
-            'sign_type' => 'RSA2'
-        ];
-        $params = array_merge($params, $data);
-        $signer->verifyByParams($params, $keyPair->getPublicKey()->asResource());
-        $this->assertTrue(true);
     }
 }
