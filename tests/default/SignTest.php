@@ -4,6 +4,7 @@ use PHPUnit\Framework\TestCase;
 use Alipay\Signer\AlipaySigner;
 use Alipay\Signer\AlipayRSA2Signer;
 use Alipay\Key\AlipayKeyPair;
+use Alipay\Exception\AlipayInvalidSignException;
 
 class SignTest extends TestCase
 {
@@ -120,6 +121,13 @@ class SignTest extends TestCase
      */
     public function testInvalidSign(AlipaySigner $signer, AlipayKeyPair $keyPair, $sign)
     {
-        $signer->verify($sign, 'this is a string has been tampered with', $keyPair->getPublicKey()->asResource());
+        try {
+            $data = 'this is a string has been tampered with';
+            $signer->verify($sign, $data, $keyPair->getPublicKey()->asResource());
+        } catch (\Alipay\Exception\AlipayInvalidSignException $ex) {
+            $this->assertEquals($data, $ex->getData());
+            $this->assertEquals($sign, $ex->getSign());
+            throw $ex;
+        }
     }
 }

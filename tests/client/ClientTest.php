@@ -58,5 +58,21 @@ class ClientTest extends TestCase
         $params['sign_type'] = (new AlipayRSA2Signer)->getSignType();
         $result = $client->verify($params);
         $this->assertTrue($result);
+
+        $params['sign'] = '123';
+        $result = $client->verify($params);
+        $this->assertFalse($result);
+    }
+
+    /**
+     * @depends testCreate
+     */
+    public function testGetters(AopClient $client)
+    {
+        $this->assertInstanceOf('Alipay\Signer\AlipaySigner', $client->getSigner());
+        $this->assertInstanceOf('Alipay\Key\AlipayKeyPair', $client->getKeyPair());
+        $this->assertInstanceOf('Alipay\AlipayResponseFactory', $client->getParser());
+        $this->assertInstanceOf('Alipay\AlipayRequester', $client->getRequester());
+        $this->assertEquals(static::APPID, $client->getAppId());
     }
 }
