@@ -233,7 +233,7 @@ class AopClient
      * 验证由支付宝服务器发起的回调通知请求，签名数据是否未被篡改
      *
      * @param array|null $params 请求参数（默认使用 $_POST）
-     * 
+     *
      * @return bool
      */
     public function verify($params = null)
