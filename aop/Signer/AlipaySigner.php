@@ -101,8 +101,9 @@ abstract class AlipaySigner
     public function verifyByParams($params, $publicKey)
     {
         $sign = $params['sign'];
-        if ($params['sign_type'] !== $this->getSignType()) {
-            throw new \InvalidArgumentException("Sign type didn't match, expect {$this->getSignType()}, {$params['sign_type']} given");
+        $signType = $params['sign_type'];
+        if ($signType !== $this->getSignType()) {
+            throw new \InvalidArgumentException("Sign type didn't match, expect {$this->getSignType()}, {$signType} given");
         }
         unset($params['sign'], $params['sign_type']);
 
