@@ -25,9 +25,9 @@ trait AlipayAccessorTrait
             $this->$setter($value);
         } elseif (method_exists($this, 'get' . $name)) {
             throw new AlipayInvalidPropertyException('Setting read-only property', $name);
+        } else {
+            throw new AlipayInvalidPropertyException('Setting unknown property', $name);
         }
-
-        throw new AlipayInvalidPropertyException('Setting unknown property', $name);
     }
 
     public function __isset($name)
