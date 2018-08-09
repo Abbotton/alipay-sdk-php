@@ -81,6 +81,8 @@ abstract class AlipaySigner
             case 0:
                 throw new AlipayInvalidSignException($sign, $data);
             case -1:
+                // no break
+            default:
                 throw new AlipayOpenSslException(openssl_error_string());
         }
     }
