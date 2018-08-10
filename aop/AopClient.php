@@ -82,11 +82,10 @@ class AopClient
      * 拼接请求参数并签名
      *
      * @param AbstractAlipayRequest $request
-     * @param bool                  $arrayAsJson
      *
      * @return array
      */
-    public function build(AbstractAlipayRequest $request, $arrayAsJson = true)
+    public function build(AbstractAlipayRequest $request)
     {
         // 组装系统参数
         $sysParams = [];
@@ -117,7 +116,7 @@ class AopClient
         $totalParams = array_merge($apiParams, $sysParams);
 
         // 转换可能是数组的参数
-        if ($arrayAsJson) {
+        if ($request->arrayAsJson) {
             foreach ($totalParams as &$param) {
                 if (is_array($param) || is_object($param)) {
                     $param = json_encode($param, JSON_UNESCAPED_UNICODE);
