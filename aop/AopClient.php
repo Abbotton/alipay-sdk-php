@@ -162,7 +162,7 @@ class AopClient
      * @param AbstractAlipayRequest $request
      *
      * @return AlipayResponse
-     * 
+     *
      * @see self::build
      * @see self::request
      */

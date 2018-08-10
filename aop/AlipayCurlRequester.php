@@ -16,7 +16,8 @@ class AlipayCurlRequester extends AlipayRequester
      * 发起 POST 请求
      *
      * @param string $url
-     * @param array $params
+     * @param array  $params
+     *
      * @return mixed
      */
     public function post($url, $params)
