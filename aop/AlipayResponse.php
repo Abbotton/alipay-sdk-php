@@ -29,12 +29,12 @@ class AlipayResponse
      *
      * @var mixed
      */
-    protected $data;
+    protected $parsed;
 
     public function __construct($raw, $data)
     {
         $this->raw = $raw;
-        $this->data = $data;
+        $this->parsed = $data;
     }
 
     /**
@@ -46,7 +46,7 @@ class AlipayResponse
      */
     public function stripData()
     {
-        $nodeName = current(array_keys($this->data));
+        $nodeName = current(array_keys($this->parsed));
         $nodeIndex = strpos($this->raw, $nodeName);
 
         $signDataStartIndex = $nodeIndex + strlen($nodeName) + 2;
@@ -68,8 +68,8 @@ class AlipayResponse
      */
     public function getSign()
     {
-        if (isset($this->data[static::SIGN_NODE])) {
-            return $this->data[static::SIGN_NODE];
+        if (isset($this->parsed[static::SIGN_NODE])) {
+            return $this->parsed[static::SIGN_NODE];
         }
 
         throw new AlipayInvalidResponseException($this->raw, 'Response sign not found');
@@ -112,7 +112,7 @@ class AlipayResponse
      */
     protected function getFirstElement()
     {
-        $data = array_reverse($this->data);
+        $data = array_reverse($this->parsed);
 
         return array_pop($data);
     }
@@ -124,7 +124,7 @@ class AlipayResponse
      */
     public function isSuccess()
     {
-        if (isset($this->data[static::ERROR_NODE])) {
+        if (isset($this->parsed[static::ERROR_NODE])) {
             return false;
         }
         $data = $this->getFirstElement();
@@ -142,8 +142,8 @@ class AlipayResponse
         if ($this->isSuccess()) {
             return null;
         }
-        if (isset($this->data[static::ERROR_NODE])) {
-            $result = $this->data[static::ERROR_NODE];
+        if (isset($this->parsed[static::ERROR_NODE])) {
+            $result = $this->parsed[static::ERROR_NODE];
         } else {
             $result = $this->getFirstElement();
         }
