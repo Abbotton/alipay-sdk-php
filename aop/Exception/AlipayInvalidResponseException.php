@@ -2,6 +2,10 @@
 
 namespace Alipay\Exception;
 
+/**
+ * 当响应无法被解析器解析时抛出。
+ * 包括但不限于：响应格式错误、响应被篡改等。
+ */
 class AlipayInvalidResponseException extends AlipayException
 {
     protected $response;

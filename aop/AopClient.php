@@ -157,11 +157,14 @@ class AopClient
     }
 
     /**
-     * 执行请求
+     * 一键执行请求
      *
      * @param AbstractAlipayRequest $request
      *
      * @return AlipayResponse
+     * 
+     * @see self::build
+     * @see self::request
      */
     public function execute(AbstractAlipayRequest $request)
     {
@@ -173,13 +176,11 @@ class AopClient
     }
 
     /**
-     * 生成用于调用收银台 SDK 的字符串
+     * 仅拼接请求参数并签名，但不发起请求
      *
      * @param AbstractAlipayRequest $request
      *
      * @return string
-     *
-     * @author guofa.tgf
      */
     public function sdkExecute(AbstractAlipayRequest $request)
     {
@@ -189,7 +190,7 @@ class AopClient
     }
 
     /**
-     * 页面提交请求，生成已签名的跳转 URL
+     * 仅拼接请求参数并签名，生成跳转 URL
      *
      * @param AbstractAlipayRequest $request
      *
@@ -204,7 +205,7 @@ class AopClient
     }
 
     /**
-     * 页面提交请求，生成已签名的表单 HTML
+     * 仅拼接请求参数并签名，生成表单 HTML
      *
      * @param AbstractAlipayRequest $request
      *
@@ -229,7 +230,7 @@ class AopClient
     }
 
     /**
-     * 验证由支付宝服务器发起的回调通知请求，签名数据是否未被篡改
+     * 验证由支付宝服务器发来的回调通知请求，签名数据是否未被篡改
      *
      * @param array|null $params 请求参数（默认使用 $_POST）
      *
@@ -254,7 +255,7 @@ class AopClient
     }
 
     /**
-     * 获取 AppId
+     * 获取应用 ID
      *
      * @return string
      */

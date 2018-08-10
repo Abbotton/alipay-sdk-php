@@ -2,6 +2,9 @@
 
 namespace Alipay\Exception;
 
+/**
+ * 验证签名时，若签名不匹配则抛出。
+ */
 class AlipayInvalidSignException extends AlipayException
 {
     protected $sign;

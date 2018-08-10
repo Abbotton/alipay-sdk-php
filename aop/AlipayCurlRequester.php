@@ -12,6 +12,13 @@ class AlipayCurlRequester extends AlipayRequester
         parent::__construct([$this, 'post']);
     }
 
+    /**
+     * 发起 POST 请求
+     *
+     * @param string $url
+     * @param array $params
+     * @return mixed
+     */
     public function post($url, $params)
     {
         $ch = curl_init();

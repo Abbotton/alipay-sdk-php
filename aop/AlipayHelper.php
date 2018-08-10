@@ -5,7 +5,7 @@ namespace Alipay;
 class AlipayHelper
 {
     /**
-     * 校验 $value 是否非空
+     * 校验某字符串或可被转换为字符串的数据，是否为 NULL 或均为空白字符
      *
      * @param string|null $value
      *
@@ -17,7 +17,7 @@ class AlipayHelper
     }
 
     /**
-     * 转换字符串为驼峰命名（fooBar）
+     * 转换字符串为驼峰命名（例如：fooBar）
      *
      * @param string $str
      * @param string $delimiters
@@ -33,7 +33,7 @@ class AlipayHelper
     }
 
     /**
-     * 转换字符串为变种驼峰命名（FooBar）
+     * 转换字符串为变种驼峰命名（例如：FooBar）
      *
      * @param string $str
      * @param string $delimiters
