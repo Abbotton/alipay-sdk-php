@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "-----BEGIN PUBLIC KEY-----"
+echo $1 | fold -w 64
+echo "-----END PUBLIC KEY-----"
