@@ -7,6 +7,11 @@ require __DIR__ . '/../../vendor/autoload.php';
 
 use Alipay\Key\AlipayKeyPair;
 
-$keyPair = AlipayKeyPair::generate();
-echo $keyPair->getPrivateKey()->asString();
+$configargs = [
+    // 若报错请尝试取消下列注释并根据实际情况配置
+    // 'config' => __DIR__ . '/openssl.cnf',
+];
+
+$keyPair = AlipayKeyPair::generate($configargs);
+echo $keyPair->getPrivateKey()->asString($configargs);
 echo $keyPair->getPublicKey()->asString();

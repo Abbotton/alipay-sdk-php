@@ -106,7 +106,7 @@
     最后，官方 SDK 内 `AopClient::pageExecute()` 被分离为 `pageExecuteUrl` 和 `pageExecuteForm`。
     `AopClient::sdkExecute()` 和 `AopClient::execute()` 方法名保持不变，参数和返回值有所改动。
 
-## 注意
+## 注意事项
 
 - 请不要依赖任何在官方 SDK 内被标注为 `private` 的属性，它们可能已在迭代中被修改或废弃。
 - 请不要依赖任何在官方 API 文档内被标注为 `已废弃` 的特性，它们可能已在迭代中被废弃或移除。
@@ -119,19 +119,20 @@
 
 ## 其它资源
 
-官方：
-
 - [支付宝开放平台 - API 文档](https://docs.open.alipay.com/api/)
 - [支付宝开放平台 - 开发者社区](https://openclub.alipay.com/index.php?c=thread&a=subforum&fid=66)
 - [支付宝小程序 - 开发文档](https://docs.alipay.com/mini/introduce)
 
-非官方：
+## 已知 Issue
 
-- [支付宝小程序调用 wxParse 解析](https://openclub.alipay.com/read.php?tid=3830&fid=66)
-- 微信小程序转支付宝小程序开源工具（未测试）：
-    - <https://github.com/foxitdog/wx2ali>
-    - <https://github.com/aOrz/wxmp2antmp>
-    - <https://github.com/douzi8/wxToAlipay>
+OpenSSL 在 Win32 平台需要配置 `openssl.cnf` 路径，参见 [OpenSSL 安装 - PHP 手册](http://php.net/manual/zh/openssl.installation.php)。
+
+在本 SDK 内，也可通过自定义 `$configargs` 参数来自定义此文件路径，而不需要配置环境变量；参见 [examples/keys/generate.php]()。
+
+目前已知以下方法依赖于此配置文件：
+
+- 生成密钥对：`AlipayKeyPair::generate()`
+- 将私钥资源转换为字符串：`AlipayPrivateKey::toString()`
 
 ## 感谢
 
