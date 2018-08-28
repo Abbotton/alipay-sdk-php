@@ -139,7 +139,7 @@
 
 OpenSSL 在 Win32 平台需要配置 `openssl.cnf` 路径，参见 [OpenSSL 安装 - PHP 手册](http://php.net/manual/zh/openssl.installation.php)。
 
-在本 SDK 内，也可通过自定义 `$configargs` 参数来自定义此文件路径，而不需要配置环境变量；参见 [examples/keys/generate.php]()。
+在本 SDK 内，也可通过自定义 `$configargs` 参数来自定义此文件路径，而不需要配置环境变量；参见 [examples/keys/generate.php](examples/keys/generate.php)。
 
 目前已知以下方法依赖于此配置文件：
 
