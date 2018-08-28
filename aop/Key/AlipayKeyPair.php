@@ -2,6 +2,8 @@
 
 namespace Alipay\Key;
 
+use Alipay\Exception\AlipayOpenSslException;
+
 class AlipayKeyPair
 {
     /**
@@ -52,6 +54,10 @@ class AlipayKeyPair
         ], $configargs);
 
         $resource = openssl_pkey_new($configargs);
+
+        if ($resource === false) {
+            throw new AlipayOpenSslException();
+        }
 
         $instance = new static();
         $instance->privateKey = AlipayPrivateKey::fromResource($resource);
