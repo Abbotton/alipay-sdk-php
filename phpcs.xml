@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset>
+    <file>aop</file>
+
+    <arg name="basepath" value="."/>
+
+    <arg name="colors" />
+    <arg value="np"/>
+
+    <rule ref="PSR1"/>
+    <rule ref="PSR2"/>
+    <rule ref="PSR12"/>
+</ruleset>

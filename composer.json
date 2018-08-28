@@ -26,8 +26,6 @@
         }
     },
     "scripts": {
-        "check-cs": "phpcs aop --standard='PSR1,PSR2,PSR12' -n",
-        "fix-cs": "phpcbf aop --standard='PSR1,PSR2,PSR12'",
         "phpstan": "phpstan analyze aop --level max"
     }
 }
