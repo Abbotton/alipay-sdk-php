@@ -26,7 +26,7 @@ abstract class AlipaySigner
     {
         $result = openssl_sign($data, $sign, $privateKey, $this->getSignAlgo());
         if ($result === false) {
-            throw new AlipayOpenSslException(openssl_error_string());
+            throw new AlipayOpenSslException();
         }
         $encodedSign = base64_encode($sign);
         if ($encodedSign === false) {
@@ -83,7 +83,7 @@ abstract class AlipaySigner
             case -1:
                 // no break
             default:
-                throw new AlipayOpenSslException(openssl_error_string());
+                throw new AlipayOpenSslException();
         }
     }
 

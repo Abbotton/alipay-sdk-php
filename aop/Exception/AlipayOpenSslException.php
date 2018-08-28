@@ -7,4 +7,11 @@ namespace Alipay\Exception;
  */
 class AlipayOpenSslException extends AlipayException
 {
+    public function __construct($message = '', $code = 0, $previous = null)
+    {
+        if ($message == '') {
+            $message = openssl_error_string();
+        }
+        parent::__construct($message, $code, $previous);
+    }
 }

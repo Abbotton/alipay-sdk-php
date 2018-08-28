@@ -134,7 +134,7 @@ abstract class AlipayKey implements \Serializable
      */
     public static function toString($resource)
     {
-        throw new AlipayOpenSslException(openssl_error_string());
+        throw new AlipayOpenSslException();
     }
 
     /**
