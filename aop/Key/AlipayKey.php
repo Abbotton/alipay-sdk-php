@@ -105,9 +105,9 @@ abstract class AlipayKey implements \Serializable
      *
      * @return string
      */
-    public function asString()
+    public function asString($configargs = [])
     {
-        return static::toString($this->resource);
+        return static::toString($this->resource, $configargs);
     }
 
     /**
