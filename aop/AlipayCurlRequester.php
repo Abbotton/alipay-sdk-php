@@ -13,12 +13,12 @@ class AlipayCurlRequester extends AlipayRequester
      * @param array $options
      */
     public $options = [];
-    
+
     public function __construct($options = [])
     {
         $this->options = array_merge([
-            CURLOPT_FAILONERROR => false,
-            CURLOPT_SSL_VERIFYPEER => false
+            CURLOPT_FAILONERROR    => false,
+            CURLOPT_SSL_VERIFYPEER => false,
         ], $options);
         parent::__construct([$this, 'post']);
     }
