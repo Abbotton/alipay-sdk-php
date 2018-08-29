@@ -22,7 +22,7 @@
 ## 为什么不用官方
 
 | 官方 SDK                                                 | 本 SDK                                                    | 链接                                                                                                               |
-|:---------------------------------------------------------|:----------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------|
+| :------------------------------------------------------- | :-------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
 | 无 Composer 集成，自动加载依赖第三方 PHP 框架 `lotusphp` | 集成                                                      | [![Packagist](https://img.shields.io/packagist/v/wi1dcard/alipay-sdk.svg)][Packagist]                              |
 | 代码不严谨，各种 Warning                                 | 持续构建，Notice 也不放过                                 | [![Build Status](https://travis-ci.org/wi1dcard/alipay-sdk-php.svg?branch=master)][TravisCI]                       |
 | 零单元测试                                               | 99% 测试覆盖率                                            | [![Coverage Status](https://coveralls.io/repos/github/wi1dcard/alipay-sdk-php/badge.svg?branch=master)][Coveralls] |
@@ -30,10 +30,10 @@
 | 弃用特性残留                                             | 已根据官方文档移除                                        |                                                                                                                    |
 | 奇葩测试文件残留                                         | 已移除                                                    | [讨论帖](https://openclub.alipay.com/read.php?tid=8168&fid=72)                                                     |
 | 几乎零 PHPDoc                                            | 持续补充中                                                | [对比图](https://i.loli.net/2018/08/01/5b611dc917bea.png)                                                          |
-| 请求类居然没有抽象基类或接口                             | 抽象基类，公共方法统一化                                  | [AbstractAlipayRequest](aop/Request/AbstractAlipayRequest.php)                                                                      |
-| 异常和错误处理不统一                                     | 所有错误都将以异常的形式抛出，确保返回数据可靠            | [Exceptions](aop/Exception)                                                                                          |
-| 需手动根据接口名拼接请求类名                             | 请求类工厂，根据 API 名直接创建请求类                     | [AlipayRequestFactory](aop/AlipayRequestFactory.php)                                                                                                             |
-| 耦合度高，难以升级或替换                                 | 几乎完全解耦，任意替换签名 / 密钥 / 响应 甚至 HTTP 客户端 | [AopClient](aop/AopClient.php)                                                                                          |
+| 请求类居然没有抽象基类或接口                             | 抽象基类，公共方法统一化                                  | [AbstractAlipayRequest](aop/Request/AbstractAlipayRequest.php)                                                     |
+| 异常和错误处理不统一                                     | 所有错误都将以异常的形式抛出，确保返回数据可靠            | [Exceptions](aop/Exception)                                                                                        |
+| 需手动根据接口名拼接请求类名                             | 请求类工厂，根据 API 名直接创建请求类                     | [AlipayRequestFactory](aop/AlipayRequestFactory.php)                                                               |
+| 耦合度高，难以升级或替换                                 | 几乎完全解耦，任意替换签名 / 密钥 / 响应 甚至 HTTP 客户端 | [AopClient](aop/AopClient.php)                                                                                     |
 
 [Packagist]: https://packagist.org/packages/wi1dcard/alipay-sdk
 [StyleCI]: https://github.styleci.io/repos/141678964
