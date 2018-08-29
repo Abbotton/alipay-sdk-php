@@ -16,10 +16,10 @@ class AlipayCurlRequester extends AlipayRequester
 
     public function __construct($options = [])
     {
-        $this->options = array_merge([
+        $this->options = $options + [
             CURLOPT_FAILONERROR    => false,
             CURLOPT_SSL_VERIFYPEER => false,
-        ], $options);
+        ];
         parent::__construct([$this, 'post']);
     }
 
