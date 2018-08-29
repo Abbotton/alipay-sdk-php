@@ -7,8 +7,19 @@ use Alipay\Exception\AlipayHttpException;
 
 class AlipayCurlRequester extends AlipayRequester
 {
-    public function __construct()
+    /**
+     * Curl 选项
+     *
+     * @param array $options
+     */
+    public $options = [];
+    
+    public function __construct($options = [])
     {
+        $this->options = array_merge([
+            CURLOPT_FAILONERROR => false,
+            CURLOPT_SSL_VERIFYPEER => false
+        ], $options);
         parent::__construct([$this, 'post']);
     }
 
@@ -27,10 +38,10 @@ class AlipayCurlRequester extends AlipayRequester
             throw new AlipayCurlException('CURL initialization failed.');
         }
 
+        curl_setopt_array($ch, $this->options);
+
         curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_FAILONERROR, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
         foreach ($params as &$value) {
             if (is_string($value) && $value[0] === '@' && class_exists('CURLFile')) {
