@@ -3,9 +3,7 @@
 
 支付宝开放平台（又称：蚂蚁金服开放平台）**第三方** PHP SDK，基于[官方](https://docs.open.alipay.com/54/103419/) 3.3.0 版本。
 
-❤️ 本项目 [GitHub](https://github.com/wi1dcard/alipay-sdk-php) / [Gitee(码云)](https://gitee.com/wi1dcard/alipay-sdk-php)。
-
-⚠️ 本项目将在我司产品正式、稳定使用后（九月左右），发布 `v1.0.0` 版本。
+❤️ 本项目 [GitHub](https://github.com/wi1dcard/alipay-sdk-php) / [Gitee(码云)](https://gitee.com/wi1dcard/alipay-sdk-php)，目前已在公司产品应用，运行在数百台客户服务器内。
 
 * **目录**
   * [为什么不用官方](#为什么不用官方)
