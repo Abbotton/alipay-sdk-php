@@ -63,8 +63,10 @@
 1. Composer 安装。
 
     ```bash
-    composer require "wi1dcard/alipay-sdk:^0.3" --prefer-dist
+    composer require wi1dcard/alipay-sdk
     ```
+
+    > Composer 中国镜像近期处于维护状态；若无法安装，建议使用原版 Packagist 或使用 [Laravel-China 镜像](https://wi1dcard.cn/documents/packagist-mirror-in-china/)。
 
 2. 创建 `AlipayKeyPair` 实例。
 
