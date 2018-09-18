@@ -1,4 +1,4 @@
-# 支付宝小程序 - 快速开始
+# 获取小程序用户信息
 
 阅读本文，你将开始学习如何调通 `支付宝小程序` - `PHP SDK`，并实现 [获取会员信息](https://docs.alipay.com/mini/introduce/auth)。
 
@@ -150,4 +150,3 @@ Array
 
 - [在你的项目中安装本扩展包](../README.md#如何使用)
 - [阅读本例代码](alipay.system.oauth.token.php)
-- [学习如何接入支付](APPPAY.md)
