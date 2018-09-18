@@ -1,7 +1,7 @@
 <img src="https://i.loli.net/2018/07/24/5b56e980b155e.png" width="40px" height="40px"> Alipay SDK for PHP
 ==========
 
-支付宝开放平台（又称：蚂蚁金服开放平台）**第三方** PHP SDK，基于[官方](https://docs.open.alipay.com/54/103419/) 3.3.0 版本。
+支付宝开放平台（又称：蚂蚁金服开放平台）**第三方** PHP SDK，基于[官方](OfficialSDK) 3.3.0 版本。
 
 ❤️ 本项目 [GitHub](https://github.com/wi1dcard/alipay-sdk-php) / [Gitee(码云)](https://gitee.com/wi1dcard/alipay-sdk-php)，目前已在公司产品应用，运行在数百台客户服务器内。
 
@@ -55,8 +55,7 @@
 
 ## 小试牛刀
 
-- [支付宝小程序 - 获取用户信息](examples/README.md)
-- [支付宝小程序 - 接入支付](examples/APPPAY.md)
+- [获取小程序用户信息](examples/alipay.system.oauth.token.md)
 
 ## 如何使用
 
@@ -132,7 +131,7 @@
 ## 其它资源
 
 - [支付宝开放平台 - API 文档](https://docs.open.alipay.com/api/)
-- [支付宝开放平台 - 开发者社区](https://openclub.alipay.com/index.php?c=thread&a=subforum&fid=66)
+- [支付宝开放平台 - 开发者社区](https://openclub.alipay.com/index.php)
 - [支付宝小程序 - 开发文档](https://docs.alipay.com/mini/introduce)
 
 ## 已知 Issue
@@ -148,7 +147,7 @@ OpenSSL 在 Win32 平台需要配置 `openssl.cnf` 路径，参见 [OpenSSL 安�
 
 ## 感谢
 
-- [支付宝开放平台 SDK](https://docs.open.alipay.com/54/103419/)
+- [支付宝开放平台 SDK][OfficialSDK]
 
 ## 感想
 
@@ -161,3 +160,5 @@ OpenSSL 在 Win32 平台需要配置 `openssl.cnf` 路径，参见 [OpenSSL 安�
 硬广，欢迎关注我们的产品：
 
 [<img src="https://i.loli.net/2018/07/24/5b56dda76b2ba.png" width="30%" height="30%">](http://www.zjhejiang.com/)
+
+[OfficialSDK]: https://docs.open.alipay.com/54/103419/
