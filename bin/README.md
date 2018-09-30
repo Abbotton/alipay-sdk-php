@@ -28,9 +28,11 @@
 
 随后执行 `composer dumpautoload` 重新生成自动加载文件即可。
 
-## ⚔️ 杀进程残留
+## ⚔️ <del>杀进程残留</del>
 
-支付宝小程序开发者工具 0.20.1 版本，在 mac 平台有进程残留，占用 8999+ 端口。
+更新：`0.24.1-beta.1` 版本已修复，参见 [更新日志](https://docs.alipay.com/mini/ide/changelog#0241-beta1-20180916)。
+
+支付宝小程序开发者工具 `0.20.1` 版本，在 macOS 平台有进程残留，占用 8999+ 端口。
 
 目前已经反馈官方，[讨论帖](https://openclub.alipay.com/read.php?tid=8250&fid=65)，客服答复新版会修复。
 
