@@ -28,6 +28,7 @@ abstract class AlipaySigner
         if ($result === false) {
             throw new AlipayOpenSslException();
         }
+
         return base64_encode($sign);
     }
 
