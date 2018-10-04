@@ -5,7 +5,7 @@
 
 ❤️ 本项目 [GitHub](https://github.com/wi1dcard/alipay-sdk-php) / [Gitee(码云)](https://gitee.com/wi1dcard/alipay-sdk-php)，目前已在公司产品应用，运行在数百台客户服务器内。
 
-🎉 百度小程序第三方 SDK 正在开发中。
+🎉 [百度小程序第三方 PHP SDK](https://github.com/wi1dcard/baidu-mini-program-sdk-php)。
 
 * **目录**
   * [为什么不用官方](#为什么不用官方)
