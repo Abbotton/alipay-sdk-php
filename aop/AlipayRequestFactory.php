@@ -39,13 +39,14 @@ class AlipayRequestFactory
 
         $instance = new $className();
 
-        try {
-            foreach ($config as $key => $value) {
-                $property = AlipayHelper::studlyCase($key, '_');
+        foreach ($config as $key => $value) {
+            $property = AlipayHelper::studlyCase($key, '_');
+
+            try {
                 $instance->$property = $value;
+            } catch (AlipayInvalidPropertyException $ex) {
+                throw new AlipayInvalidRequestException($ex->getMessage() . ': ' . $key);
             }
-        } catch (AlipayInvalidPropertyException $ex) {
-            throw new AlipayInvalidRequestException($ex->getMessage() . ': ' . $key);
         }
 
         return $instance;
