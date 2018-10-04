@@ -15,7 +15,7 @@ class AlipayInvalidSignException extends AlipayException
     {
         $this->sign = $sign;
         $this->data = $data;
-        parent::__construct('Signature did not match.');
+        parent::__construct('Signature did not match');
     }
 
     public function getSign()
