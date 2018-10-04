@@ -28,12 +28,7 @@ abstract class AlipaySigner
         if ($result === false) {
             throw new AlipayOpenSslException();
         }
-        $encodedSign = base64_encode($sign);
-        if ($encodedSign === false) {
-            throw new AlipayBase64Exception($sign, true);
-        }
-
-        return $encodedSign;
+        return base64_encode($sign);
     }
 
     /**
