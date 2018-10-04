@@ -7,6 +7,7 @@ matrix:
     - php: 5.6
     - php: 7.0
     - php: 7.1
+      env: MORE=true
     - php: 7.2
 
 install:
@@ -15,10 +16,15 @@ install:
 
 script:
   - vendor/bin/phpunit
-
-after_success:
   - |
-    if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.1" ]]; then
+    if [[ $MORE != "" ]]; then
+      wget https://github.com/phpstan/phpstan/releases/download/0.10.3/phpstan.phar;
+      php phpstan.phar analyze aop --level=4
+    fi
+
+after_script:
+  - |
+    if [[ $MORE != "" ]]; then
       wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.1.0/php-coveralls.phar;
       php php-coveralls.phar -v;
     fi
