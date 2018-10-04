@@ -68,7 +68,7 @@ abstract class AlipaySigner
     {
         $decodedSign = base64_decode($sign, true);
         if ($decodedSign === false) {
-            throw new AlipayBase64Exception($sign, false);
+            throw new AlipayBase64Exception($sign);
         }
         $result = openssl_verify($data, $decodedSign, $publicKey, $this->getSignAlgo());
         switch ($result) {
