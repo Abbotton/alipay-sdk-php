@@ -34,10 +34,6 @@ class AlipayCurlRequester extends AlipayRequester
     public function post($url, $params)
     {
         $ch = curl_init();
-        if ($ch === false) {
-            throw new AlipayCurlException('CURL initialization failed');
-        }
-
         curl_setopt_array($ch, $this->options);
 
         curl_setopt($ch, CURLOPT_URL, $url);
