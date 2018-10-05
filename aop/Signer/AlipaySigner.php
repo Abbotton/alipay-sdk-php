@@ -109,7 +109,7 @@ abstract class AlipaySigner
         if (!isset($params[static::SIGN_PARAM]) || !isset($params[static::SIGN_TYPE_PARAM])) {
             throw new \InvalidArgumentException('Missing signature arguments');
         }
-        
+
         $sign = $params[static::SIGN_PARAM];
         $signType = $params[static::SIGN_TYPE_PARAM];
         unset($params[static::SIGN_PARAM], $params[static::SIGN_TYPE_PARAM]);
