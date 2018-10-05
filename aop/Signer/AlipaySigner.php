@@ -10,6 +10,16 @@ use Alipay\Exception\AlipayOpenSslException;
 abstract class AlipaySigner
 {
     /**
+     * 支付宝服务器发起回调通知时，使用的「签名」参数名
+     */
+    const SIGN_PARAM = 'sign';
+
+    /**
+     * 支付宝服务器发起回调通知时，使用的「签名类型」参数名
+     */
+    const SIGN_TYPE_PARAM = 'sign_type';
+
+    /**
      * 签名（计算 Sign 值）
      *
      * @param string   $data
@@ -96,12 +106,17 @@ abstract class AlipaySigner
      */
     public function verifyByParams($params, $publicKey)
     {
-        $sign = $params['sign'];
-        $signType = $params['sign_type'];
+        if (!isset($params[static::SIGN_PARAM]) || !isset($params[static::SIGN_TYPE_PARAM])) {
+            throw new \InvalidArgumentException('Missing signature arguments');
+        }
+        
+        $sign = $params[static::SIGN_PARAM];
+        $signType = $params[static::SIGN_TYPE_PARAM];
+        unset($params[static::SIGN_PARAM], $params[static::SIGN_TYPE_PARAM]);
+
         if ($signType !== $this->getSignType()) {
             throw new \InvalidArgumentException("Sign type didn't match, expect {$this->getSignType()}, {$signType} given");
         }
-        unset($params['sign'], $params['sign_type']);
 
         $data = $this->convertSignData($params);
         $this->verify($sign, $data, $publicKey);
