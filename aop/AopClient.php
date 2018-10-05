@@ -249,6 +249,8 @@ class AopClient
             );
         } catch (AlipayInvalidSignException $ex) {
             return false;
+        } catch (\InvalidArgumentException $ex) {
+            return false;
         }
 
         return true;
