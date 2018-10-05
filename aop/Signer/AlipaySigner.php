@@ -99,7 +99,7 @@ abstract class AlipaySigner
      * @param array    $params
      * @param resource $publicKey
      *
-     * @return void
+     * @return array
      *
      * @see self::verify()
      * @see https://docs.open.alipay.com/200/106120#s1
@@ -120,6 +120,8 @@ abstract class AlipaySigner
 
         $data = $this->convertSignData($params);
         $this->verify($sign, $data, $publicKey);
+
+        return $params;
     }
 
     /**
