@@ -40,7 +40,7 @@ abstract class AlipaySigner
      *
      * @return string
      *
-     * @see self::generate
+     * @see self::generate()
      */
     public function generateByParams($params, $privateKey)
     {
@@ -91,7 +91,7 @@ abstract class AlipaySigner
      *
      * @return void
      *
-     * @see self::verify
+     * @see self::verify()
      * @see https://docs.open.alipay.com/200/106120#s1
      */
     public function verifyByParams($params, $publicKey)

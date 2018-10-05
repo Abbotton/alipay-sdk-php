@@ -163,8 +163,8 @@ class AopClient
      *
      * @return AlipayResponse
      *
-     * @see self::build
-     * @see self::request
+     * @see self::build()
+     * @see self::request()
      */
     public function execute(AbstractAlipayRequest $request)
     {
