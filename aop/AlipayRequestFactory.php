@@ -90,24 +90,14 @@ class AlipayRequestFactory
      *
      * @return AbstractAlipayRequest
      */
-    public function create($classOrApi, $config = [])
+    public static function create($classOrApi, $config = [])
     {
-        if (strpos($classOrApi, '.')) {
-            return $this->createByApi($classOrApi, $config);
-        } else {
-            return $this->createByClass($classOrApi, $config);
-        }
-    }
+        $factory = isset($this) ? $this : new self();
 
-    /**
-     * 静态调用代理
-     *
-     * @param string $method
-     * @param array $parameters
-     * @return mixed
-     */
-    public static function __callStatic($method, $parameters)
-    {
-        return call_user_func_array([new self(), $method], $parameters);
+        if (strpos($classOrApi, '.')) {
+            return $factory->createByApi($classOrApi, $config);
+        } else {
+            return $factory->createByClass($classOrApi, $config);
+        }
     }
 }

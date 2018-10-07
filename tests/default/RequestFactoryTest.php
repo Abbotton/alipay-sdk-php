@@ -7,12 +7,25 @@ use Alipay\Request\AlipaySystemOauthTokenRequest;
 
 class RequestFactoryTest extends TestCase
 {
+    protected function provideRequestClassName()
+    {
+        return AlipaySystemOauthTokenRequest::className(true);
+    }
+
     public function testCreate()
     {
-        $className = AlipaySystemOauthTokenRequest::className(true);
-        $ins = AlipayRequestFactory::create($className, ['code' => 'foo']);
+        $className = $this->provideRequestClassName();
+        $ins = (new AlipayRequestFactory)->create($className, ['code' => 'foo']);
         $this->assertEquals('foo', $ins->getCode());
         return $ins;
+    }
+
+    public function testStaticCreate()
+    {
+        $className = $this->provideRequestClassName();
+        $this->assertNotNull(
+            AlipayRequestFactory::create($className)
+        );
     }
 
     public function testCreateByApi()
