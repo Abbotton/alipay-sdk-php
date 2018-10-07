@@ -103,7 +103,8 @@ class AlipayRequestFactory
      * 静态调用代理
      *
      * @param string $method
-     * @param array $parameters
+     * @param array  $parameters
+     *
      * @return mixed
      */
     public static function __callStatic($method, $parameters)
