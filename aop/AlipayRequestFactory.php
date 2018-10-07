@@ -32,7 +32,7 @@ class AlipayRequestFactory
     {
         $className = AlipayHelper::studlyCase($apiName, '.') . 'Request';
 
-        return $this->create($className, $config);
+        return $this->createByClass($className, $config);
     }
 
     /**
