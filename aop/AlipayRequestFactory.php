@@ -8,6 +8,18 @@ use Alipay\Request\AbstractAlipayRequest;
 
 class AlipayRequestFactory
 {
+    public $namespace = '';
+
+    /**
+     * 创建请求类工厂
+     *
+     * @param string $namespace
+     */
+    public function __construct($namespace = 'Alipay\Request\\')
+    {
+        $this->namespace = $namespace;
+    }
+
     /**
      * 通过 `API 名称` 创建请求类实例
      *
@@ -33,7 +45,7 @@ class AlipayRequestFactory
      */
     public static function createByClass($className, $config = [])
     {
-        $className = 'Alipay\Request' . '\\' . $className;
+        $className = $this->namespace . $className;
 
         static::validate($className);
 
@@ -62,7 +74,7 @@ class AlipayRequestFactory
     protected static function validate($className)
     {
         if (!class_exists($className)) {
-            throw new AlipayInvalidRequestException("Class `{$className}` doesn't exist");
+            throw new AlipayInvalidRequestException("Class {$className} doesn't exist");
         }
         $abstractClass = AbstractAlipayRequest::className();
         if (!is_subclass_of($className, $abstractClass)) {
