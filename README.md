@@ -91,7 +91,7 @@
 4. 根据业务需要，创建 `AlipayRequest` 实例。
 
     ```php
-    $request = \Alipay\AlipayRequestFactory::create('点号连接的API名称', [
+    $request = (new \Alipay\AlipayRequestFactory)->create('点号连接的API名称', [
         '请求参数名' => '对应参数值',
         // ...
     ]);

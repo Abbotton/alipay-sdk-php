@@ -28,11 +28,11 @@ class AlipayRequestFactory
      *
      * @return AbstractAlipayRequest
      */
-    public static function createByApi($apiName, $config = [])
+    public function createByApi($apiName, $config = [])
     {
         $className = AlipayHelper::studlyCase($apiName, '.') . 'Request';
 
-        return static::create($className, $config);
+        return $this->create($className, $config);
     }
 
     /**
@@ -43,11 +43,11 @@ class AlipayRequestFactory
      *
      * @return AbstractAlipayRequest
      */
-    public static function createByClass($className, $config = [])
+    public function createByClass($className, $config = [])
     {
         $className = $this->namespace . $className;
 
-        static::validate($className);
+        $this->validate($className);
 
         $instance = new $className();
 
@@ -71,7 +71,7 @@ class AlipayRequestFactory
      *
      * @return void
      */
-    protected static function validate($className)
+    protected function validate($className)
     {
         if (!class_exists($className)) {
             throw new AlipayInvalidRequestException("Class {$className} doesn't exist");
@@ -90,12 +90,24 @@ class AlipayRequestFactory
      *
      * @return AbstractAlipayRequest
      */
-    public static function create($classOrApi, $config = [])
+    public function create($classOrApi, $config = [])
     {
         if (strpos($classOrApi, '.')) {
-            return static::createByApi($classOrApi, $config);
+            return $this->createByApi($classOrApi, $config);
         } else {
-            return static::createByClass($classOrApi, $config);
+            return $this->createByClass($classOrApi, $config);
         }
+    }
+
+    /**
+     * 静态调用代理
+     *
+     * @param string $method
+     * @param array $parameters
+     * @return mixed
+     */
+    public static function __callStatic($method, $parameters)
+    {
+        return call_user_func_array([new self(), $method], $parameters);
     }
 }
