@@ -1,7 +1,7 @@
 <img src="https://i.loli.net/2018/07/24/5b56e980b155e.png" width="40px" height="40px"> Alipay SDK for PHP
 ==========
 
-🐜 支付宝开放平台（又称：蚂蚁金服开放平台）**第三方** PHP SDK，基于[官方](OfficialSDK) 3.3.0 版本。
+🐜 支付宝开放平台（又称：蚂蚁金服开放平台）**第三方** PHP SDK，基于[官方][OfficialSDK] 3.3.0 版本。
 
 ❤️ 本项目 [GitHub](https://github.com/wi1dcard/alipay-sdk-php) / [Gitee(码云)](https://gitee.com/wi1dcard/alipay-sdk-php)，目前已在公司产品应用，运行在数百台客户服务器内。
 
