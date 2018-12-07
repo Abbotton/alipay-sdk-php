@@ -53,12 +53,14 @@ class AlipayCurlRequester extends AlipayRequester
 
         if ($response === false) {
             curl_close($ch);
+
             throw new AlipayCurlException(curl_error($ch), curl_errno($ch));
         }
 
         $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         if (200 !== $httpStatusCode) {
             curl_close($ch);
+
             throw new AlipayHttpException($response, $httpStatusCode);
         }
 
