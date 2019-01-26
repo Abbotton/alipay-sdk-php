@@ -89,7 +89,7 @@ class AlipayKeyPair
     }
 
     /**
-     * 设置公钥
+     * 设置应用私钥
      *
      * @param string $key
      *
@@ -103,7 +103,7 @@ class AlipayKeyPair
     }
 
     /**
-     * 设置私钥
+     * 设置支付宝公钥
      *
      * @param string $key
      *
