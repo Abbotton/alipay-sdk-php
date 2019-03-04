@@ -67,6 +67,33 @@ class ClientTest extends TestCase
     /**
      * @depends testCreate
      */
+    public function testDecrypt(AopClient $client)
+    {
+        $result = $client->decrypt(
+            'h6qnRCccN8vR/IPtKYuTMIZUoDE9ZKp6pB2rrh4BMu8C7rS51ZZFn3aTlPl4i/RxvdS7SkJ+i49uDYfV+u5CKA==',
+            'ZXdCNW9ta1FsRGlVbzQ0TVdXbzJKN001dA=='
+        );
+
+        $this->assertEquals('{"code":"1000","msg":"success","mobile":"12777207727"}', $result);
+    }
+
+    /**
+     * @depends testCreate
+     */
+    public function testDecryptException(AopClient $client)
+    {
+        $this->expectException('Alipay\Exception\AlipayOpenSslException');
+        
+        $client->decrypt(
+            'h6qnRCccN8vR/IPtKYuTMIZUoDE9ZKp6pB2rrh4BMu8C7rS51ZZFn3aTlPl4i/RxvdS7SkJ+i49uDYfV+u5CKA==',
+            'ZXdCNW9ta1FsRGlVbzQ0TVdXbzJKN001dA==',
+            'non-existed-cipher'
+        );
+    }
+
+    /**
+     * @depends testCreate
+     */
     public function testGetters(AopClient $client)
     {
         $this->assertInstanceOf('Alipay\Signer\AlipaySigner', $client->getSigner());
