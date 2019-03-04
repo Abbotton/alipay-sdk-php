@@ -13,7 +13,5 @@ finder:
     - "tests"
   name:
     - "*.php"
-  not-name:
-    - "*Stub.php"
   path:
     - "aop"
