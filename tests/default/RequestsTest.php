@@ -53,22 +53,20 @@ class RequestsTest extends TestCase
         $this->assertFalse(isset($ins->foo));
     }
 
-    /**
-     * @expectedException Alipay\Exception\AlipayInvalidPropertyException
-     */
     public function testSetUnknownProperty()
     {
+        $this->expectException('Alipay\Exception\AlipayInvalidPropertyException');
+
         $req = new AlipaySystemOauthTokenRequest();
         $req->foo = 'this property does not exist';
     }
 
-    /**
-     * @expectedException Alipay\Exception\AlipayInvalidPropertyException
-     */
     public function testGetUnknownProperty()
     {
+        $this->expectException('Alipay\Exception\AlipayInvalidPropertyException');
+        $req = new AlipaySystemOauthTokenRequest();
+
         try {
-            $req = new AlipaySystemOauthTokenRequest();
             $req->foo;
         } catch (Alipay\Exception\AlipayInvalidPropertyException $ex) {
             $this->assertEquals('foo', $ex->getProperty());

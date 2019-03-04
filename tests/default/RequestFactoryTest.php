@@ -36,42 +36,38 @@ class RequestFactoryTest extends TestCase
         return $ins;
     }
 
-    /**
-     * @expectedException Alipay\Exception\AlipayInvalidRequestException
-     * @expectedExceptionMessage exist
-     */
     public function testCreateNotExistedClass()
     {
+        $this->expectException('Alipay\Exception\AlipayInvalidRequestException');
+        $this->expectExceptionMessage('exist');
+
         $className = 'NotExistedClass';
         $ins = AlipayRequestFactory::create($className);
     }
 
-    /**
-     * @expectedException Alipay\Exception\AlipayInvalidRequestException
-     * @expectedExceptionMessage extend
-     */
     public function testCreateInvalidClass()
     {
+        $this->expectException('Alipay\Exception\AlipayInvalidRequestException');
+        $this->expectExceptionMessage('extend');
+
         $className = AbstractAlipayRequest::className(true);
         $ins = AlipayRequestFactory::create($className);
     }
 
-    /**
-     * @expectedException Alipay\Exception\AlipayInvalidRequestException
-     */
     public function testInvalidConfig()
     {
+        $this->expectException('Alipay\Exception\AlipayInvalidRequestException');
+
         $className = AlipaySystemOauthTokenRequest::className(true);
         $ins = AlipayRequestFactory::create($className, [
             'foo' => 'this config does not exist'
         ]);
     }
 
-    /**
-     * @expectedException Alipay\Exception\AlipayInvalidRequestException
-     */
     public function testUnwritableConfig()
     {
+        $this->expectException('Alipay\Exception\AlipayInvalidRequestException');
+
         $className = AlipaySystemOauthTokenRequest::className(true);
         $ins = AlipayRequestFactory::create($className, [
             'apiParams' => 'this config could not be written'

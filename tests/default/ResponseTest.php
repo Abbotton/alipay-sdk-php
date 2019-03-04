@@ -70,10 +70,11 @@ class ResponseTest extends TestCase
 
     /**
      * @depends testFactory
-     * @expectedException Alipay\Exception\AlipayInvalidResponseException
      */
     public function testParseInvalidResponse(AlipayResponseFactory $parser)
     {
+        $this->expectException('Alipay\Exception\AlipayInvalidResponseException');
+
         $response = 'this is an invalid response';
         $parser->parse($response);
     }
@@ -100,11 +101,12 @@ class ResponseTest extends TestCase
 
     /**
      * @depends testParseError
-     * @expectedException Alipay\Exception\AlipayInvalidResponseException
-     * @expectedExceptionMessage sign
      */
     public function testSignNotFound(AlipayResponse $ins)
     {
+        $this->expectException('Alipay\Exception\AlipayInvalidResponseException');
+        $this->expectExceptionMessage('sign');
+
         try {
             $ins->getSign();
         } catch (Alipay\Exception\AlipayInvalidResponseException $ex) {
@@ -147,10 +149,11 @@ class ResponseTest extends TestCase
 
     /**
      * @depends testParseError
-     * @expectedException Alipay\Exception\AlipayErrorResponseException
      */
     public function testGetDataFromError(AlipayResponse $ins)
     {
+        $this->expectException('Alipay\Exception\AlipayErrorResponseException');
+
         $ins->getData();
     }
 

@@ -11,7 +11,7 @@ class SignTest extends TestCase
     const TEST_DATA = 'foo=abc&bar=100&empty=&not_empty=0';
 
     const PUB_KEY = 'tests/app_public_key.pem';
-    
+
     const PRIV_KEY = 'tests/app_private_key.pem';
 
     public function testKeyPair()
@@ -33,11 +33,10 @@ class SignTest extends TestCase
         return $kp;
     }
 
-    /**
-     * @expectedException Alipay\Exception\AlipayInvalidKeyException
-     */
     public function testInvalidKey()
     {
+        $this->expectException('Alipay\Exception\AlipayInvalidKeyException');
+
         AlipayKeyPair::create(self::PUB_KEY, self::PRIV_KEY);
     }
 
@@ -106,10 +105,11 @@ class SignTest extends TestCase
     /**
      * @depends testCreate
      * @depends testKeyPair
-     * @expectedException Alipay\Exception\AlipayBase64Exception
      */
     public function testInvalidBase64Data(AlipaySigner $signer, AlipayKeyPair $keyPair)
     {
+        $this->expectException('Alipay\Exception\AlipayBase64Exception');
+
         $signer->verify('this is an undecodable sign ...', self::TEST_DATA, $keyPair->getPublicKey()->asResource());
     }
 
@@ -117,10 +117,11 @@ class SignTest extends TestCase
      * @depends testCreate
      * @depends testKeyPair
      * @depends testGenerate
-     * @expectedException Alipay\Exception\AlipayInvalidSignException
      */
     public function testInvalidSign(AlipaySigner $signer, AlipayKeyPair $keyPair, $sign)
     {
+        $this->expectException('Alipay\Exception\AlipayInvalidSignException');
+
         try {
             $data = 'this is a string has been tampered with';
             $signer->verify($sign, $data, $keyPair->getPublicKey()->asResource());
