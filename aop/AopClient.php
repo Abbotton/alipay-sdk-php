@@ -3,6 +3,7 @@
 namespace Alipay;
 
 use Alipay\Exception\AlipayInvalidSignException;
+use Alipay\Exception\AlipayOpenSslException;
 use Alipay\Key\AlipayKeyPair;
 use Alipay\Request\AbstractAlipayRequest;
 use Alipay\Signer\AlipayRSA2Signer;
@@ -254,6 +255,39 @@ class AopClient
         }
 
         return true;
+    }
+
+    /**
+     * 解密被支付宝加密的敏感数据
+     *
+     * @param  string $encryptedData Base64 格式的已加密的数据，如手机号
+     * @param  string $encodedKey    Base64 编码后的密钥
+     * @param  string $cipher        解密算法，保持默认值即可
+     *
+     * @throws AlipayOpenSslException
+     *
+     * @return string
+     *
+     * @see https://docs.alipay.com/mini/introduce/aes
+     * @see https://docs.alipay.com/mini/introduce/getphonenumber
+     */
+    public static function decrypt($encryptedData, $encodedKey, $cipher = 'aes-128-cbc')
+    {
+        $key = base64_decode($encodedKey);
+        if ($key === false) {
+            throw new AlipayBase64Exception($encodedKey);
+        }
+
+        if (!in_array($cipher, openssl_get_cipher_methods(), true)) {
+            throw new AlipayOpenSslException("Cipher algorithm {$cipher} not available");
+        }
+
+        $result = openssl_decrypt($encryptedData, $cipher, $key);
+        if ($result === false) {
+            throw new AlipayOpenSslException();
+        }
+
+        return $result;
     }
 
     /**
