@@ -2,6 +2,7 @@
 
 namespace Alipay;
 
+use Alipay\Exception\AlipayBase64Exception;
 use Alipay\Exception\AlipayInvalidSignException;
 use Alipay\Exception\AlipayOpenSslException;
 use Alipay\Key\AlipayKeyPair;
