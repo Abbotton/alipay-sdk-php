@@ -12,7 +12,7 @@ namespace Alipay\Request;
 class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
 {
     /**
-     * 小程序类目，格式为 第一个一级类目_第一个二级类目;第二个一级类目_第二个二级类目，详细类目可以参考https://docs.alipay.com/isv/10325，如果不填默认采用当前小程序应用类目
+     * 小程序类目，格式为 第一个一级类目_第一个二级类目;第二个一级类目_第二个二级类目，详细类目可以参考https://docs.alipay.com/isv/10325，如果不填默认采用当前小程序应用类目。使用默认应用类目后不需要再次上传营业执照号、营业执照名、营业执照截图、营业执照有效期。
      **/
     private $appCategoryIds;
     /**
@@ -20,7 +20,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
      **/
     private $appDesc;
     /**
-     * 小程序应用英文名称，如果不填默认采用当前小程序应用英文名称
+     * 小程序应用英文名称，如果不填默认采用当前小程序应用英文名称，3～30个字符
      **/
     private $appEnglishName;
     /**
@@ -32,7 +32,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
      **/
     private $appName;
     /**
-     * 小程序应用简介，一句话描述小程序功能，如果不填默认采用当前小程序应用简介
+     * 小程序应用简介，一句话描述小程序功能，如果不填默认采用当前小程序应用简介，10~32个字符
      **/
     private $appSlogan;
     /**
@@ -40,7 +40,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
      **/
     private $appVersion;
     /**
-     * 第五张营业执照照片，不能超过4MB，图片格式只支持jpg，png，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息
+     * 第五张营业执照照片，不能超过4MB，图片格式只支持jpg，png，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息，如果不填默认采用当前小程序第五张营业执照照片
      **/
     private $fifthLicensePic;
     /**
@@ -48,7 +48,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
      **/
     private $fifthScreenShot;
     /**
-     * 第一张营业执照照片，不能超过4MB，图片格式只支持jpg，png，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息
+     * 第一张营业执照照片，不能超过4MB，图片格式只支持jpg，png，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息，如果不填默认采用当前小程序第一张营业执照照片
      **/
     private $firstLicensePic;
     /**
@@ -56,7 +56,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
      **/
     private $firstScreenShot;
     /**
-     * 第四张营业执照照片，不能超过4MB，图片格式只支持jpg，png，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息
+     * 第四张营业执照照片，不能超过4MB，图片格式只支持jpg，png，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息，如果不填默认采用当前小程序第四张营业执照照片
      **/
     private $fourthLicensePic;
     /**
@@ -64,15 +64,15 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
      **/
     private $fourthScreenShot;
     /**
-     * 营业执照名称，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息
+     * 营业执照名称，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息，如果不填类目采用当前小程序应用营业执照名称。
      **/
     private $licenseName;
     /**
-     * 营业执照号，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息
+     * 营业执照号，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息，如果不填默认采用当前小程序应用营业执照号。
      **/
     private $licenseNo;
     /**
-     * 营业执照有效期，格式为yyyy-MM-dd，9999-12-31表示长期，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息
+     * 营业执照有效期，格式为yyyy-MM-dd，9999-12-31表示长期，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息，如果不填默认采用当前小程序营业执照有效期
      **/
     private $licenseValidDate;
     /**
@@ -80,7 +80,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
      **/
     private $memo;
     /**
-     * 门头照图片，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息
+     * 门头照图片，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息，如果不填默认采用当前小程序门头照图片
      **/
     private $outDoorPic;
     /**
@@ -88,7 +88,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
      **/
     private $regionType;
     /**
-     * 第二张营业执照照片，不能超过4MB，图片格式只支持jpg，png，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息
+     * 第二张营业执照照片，不能超过4MB，图片格式只支持jpg，png，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息，如果不填默认采用当前小程序第二张营业执照照片
      **/
     private $secondLicensePic;
     /**
@@ -108,7 +108,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
      **/
     private $serviceRegionInfo;
     /**
-     * 第三张营业执照照片，不能超过4MB，图片格式只支持jpg，png，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息
+     * 第三张营业执照照片，不能超过4MB，图片格式只支持jpg，png，部分小程序类目需要提交，参照https://docs.alipay.com/isv/10325中是否需要营业执照信息，如果不填默认采用当前小程序第三张营业执照照片
      **/
     private $thirdLicensePic;
     /**
@@ -116,7 +116,7 @@ class AlipayOpenMiniVersionAuditApplyRequest extends AbstractAlipayRequest
      **/
     private $thirdScreenShot;
     /**
-     * 小程序版本描述
+     * 小程序版本描述，30-500个字符
      **/
     private $versionDesc;
 
