@@ -1,9 +1,7 @@
 <img src="https://i.loli.net/2018/07/24/5b56e980b155e.png" width="40px" height="40px"> Alipay SDK for PHP
 ==========
 
-🐜 支付宝开放平台（又称：蚂蚁金服开放平台）**第三方** PHP SDK，基于[官方][OfficialSDK] 3.3.2 版本。
-
-❤️ 本项目 [GitHub](https://github.com/wi1dcard/alipay-sdk-php) / [Gitee(码云)](https://gitee.com/wi1dcard/alipay-sdk-php)，目前已在公司产品应用，运行在数百台客户服务器内。
+🐜 支付宝开放平台（又称：蚂蚁金服开放平台）**第三方** PHP SDK，基于[官方][OfficialSDK] 3.3.2 版本；已在公司产品应用，运行在数百台客户服务器内。
 
 🎉 [百度小程序第三方 PHP SDK](https://github.com/wi1dcard/baidu-mini-program-sdk)。
 
@@ -121,7 +119,6 @@
 
 - 请不要依赖任何在官方 SDK 内被标注为 `private` 的属性，它们可能已在迭代中被修改或废弃。
 - 请不要依赖任何在官方 API 文档内被标注为 `已废弃` 的特性，它们可能已在迭代中被废弃或移除。
-- 本 SDK 只适用于目前正在开发或即将开始开发的项目；由于将会采取相对激进的态度开发，所以请勿尝试将原有代码迁移至本 SDK。
 - 本 SDK 已移除所有编码转换特性；请确保执行上传文件请求时，文件编码为 `UTF-8` 而非 `GBK`。
 
 ## 实用工具
