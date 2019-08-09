@@ -6,6 +6,7 @@ use Alipay\AlipayHelper;
 use Alipay\Exception\AlipayBase64Exception;
 use Alipay\Exception\AlipayInvalidSignException;
 use Alipay\Exception\AlipayOpenSslException;
+use InvalidArgumentException;
 
 abstract class AlipaySigner
 {
@@ -26,7 +27,6 @@ abstract class AlipaySigner
      * @param resource $privateKey
      *
      * @throws AlipayOpenSslException
-     * @throws AlipayBase64Exception
      *
      * @return string
      *
@@ -45,11 +45,12 @@ abstract class AlipaySigner
     /**
      * 将参数数组签名（计算 Sign 值）
      *
-     * @param array    $params
+     * @param array $params
      * @param resource $privateKey
      *
      * @return string
      *
+     * @throws AlipayOpenSslException
      * @see self::generate()
      */
     public function generateByParams($params, $privateKey)
@@ -96,18 +97,21 @@ abstract class AlipaySigner
     /**
      * 异步通知验签（验证 Sign 值）
      *
-     * @param array    $params
+     * @param array $params
      * @param resource $publicKey
      *
      * @return array
      *
+     * @throws AlipayBase64Exception
+     * @throws AlipayInvalidSignException
+     * @throws AlipayOpenSslException
      * @see self::verify()
      * @see https://docs.open.alipay.com/200/106120#s1
      */
     public function verifyByParams($params, $publicKey)
     {
         if (!isset($params[static::SIGN_PARAM]) || !isset($params[static::SIGN_TYPE_PARAM])) {
-            throw new \InvalidArgumentException('Missing signature arguments');
+            throw new InvalidArgumentException('Missing signature arguments');
         }
 
         $sign = $params[static::SIGN_PARAM];
@@ -115,7 +119,7 @@ abstract class AlipaySigner
         unset($params[static::SIGN_PARAM], $params[static::SIGN_TYPE_PARAM]);
 
         if ($signType !== $this->getSignType()) {
-            throw new \InvalidArgumentException("Sign type didn't match, expect {$this->getSignType()}, {$signType} given");
+            throw new InvalidArgumentException("Sign type didn't match, expect {$this->getSignType()}, {$signType} given");
         }
 
         $data = $this->convertSignData($params);

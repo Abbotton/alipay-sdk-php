@@ -42,6 +42,7 @@ class AlipayResponse
      *
      * @return string
      *
+     * @throws AlipayInvalidResponseException
      * @see    AlipaySigner::verify()
      */
     public function stripData()
@@ -65,6 +66,7 @@ class AlipayResponse
      * 获取响应内的签名
      *
      * @return string
+     * @throws AlipayInvalidResponseException
      */
     public function getSign()
     {
@@ -81,6 +83,7 @@ class AlipayResponse
      * @param bool $assoc
      *
      * @return mixed
+     * @throws AlipayErrorResponseException
      */
     public function getData($assoc = true)
     {
@@ -135,6 +138,7 @@ class AlipayResponse
     /**
      * 获取响应内的错误
      *
+     * @param bool $assoc
      * @return mixed|null
      */
     public function getError($assoc = true)

@@ -37,6 +37,8 @@ abstract class AlipayKey implements \Serializable
      * 深拷贝需要重新加载密钥
      *
      * @return void
+     * @throws AlipayInvalidKeyException
+     * @throws AlipayOpenSslException
      */
     public function __clone()
     {
@@ -50,9 +52,9 @@ abstract class AlipayKey implements \Serializable
      *
      * @param string $certificate 密钥字符串或密钥路径
      *
+     * @return void
      * @throws AlipayInvalidKeyException
      *
-     * @return void
      */
     protected function load($certificate)
     {
@@ -104,6 +106,7 @@ abstract class AlipayKey implements \Serializable
      * 获取密钥字符串
      *
      * @return string
+     * @throws AlipayOpenSslException
      */
     public function asString()
     {
@@ -131,6 +134,7 @@ abstract class AlipayKey implements \Serializable
      * @param resource $resource
      *
      * @return string
+     * @throws AlipayOpenSslException
      */
     public static function toString($resource)
     {
@@ -142,18 +146,27 @@ abstract class AlipayKey implements \Serializable
      *
      * @param string $certificate
      *
-     * @return resource
+     * @return void
+     * @throws AlipayInvalidKeyException
      */
     public static function getKey($certificate)
     {
         throw new AlipayInvalidKeyException(openssl_error_string() . " ($certificate)");
     }
 
+    /**
+     * @return string
+     * @throws AlipayOpenSslException
+     */
     public function serialize()
     {
         return $this->asString();
     }
 
+    /**
+     * @param string $data
+     * @throws AlipayInvalidKeyException
+     */
     public function unserialize($data)
     {
         $this->load($data);

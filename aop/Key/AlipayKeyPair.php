@@ -45,6 +45,7 @@ class AlipayKeyPair
      * @param array $configargs
      *
      * @return static
+     * @throws AlipayOpenSslException
      */
     public static function generate($configargs = [])
     {

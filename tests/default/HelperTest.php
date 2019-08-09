@@ -25,12 +25,6 @@ class HelperTest extends TestCase
         $this->assertFalse($res);
     }
 
-    public function testCamelCase()
-    {
-        $str = 'foo.bar';
-        $res = AlipayHelper::camelCase($str, '.');
-        $this->assertEquals('fooBar', $res);
-    }
 
     public function testStudlyCase()
     {
