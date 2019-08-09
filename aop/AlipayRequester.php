@@ -4,6 +4,8 @@ namespace Alipay;
 
 class AlipayRequester
 {
+    const ALIPAY_OPEN_API_GATEWAY_PROD = "https://openapi.alipay.com/gateway.do";
+    const ALIPAY_OPEN_API_GATEWAY_SANDBOX = "https://openapi.alipaydev.com/gateway.do";
     protected $gateway;
 
     protected $charset;
@@ -12,7 +14,7 @@ class AlipayRequester
 
     public function __construct(
         callable $callback,
-        $gateway = 'https://openapi.alipay.com/gateway.do',
+        $gateway = self::ALIPAY_OPEN_API_GATEWAY_PROD,
         $charset = 'UTF-8'
     )
     {
