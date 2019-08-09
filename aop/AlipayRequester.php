@@ -14,7 +14,8 @@ class AlipayRequester
         callable $callback,
         $gateway = 'https://openapi.alipay.com/gateway.do',
         $charset = 'UTF-8'
-    ) {
+    )
+    {
         $this->callback = $callback;
         $this->gateway = $gateway;
         $this->charset = $charset;

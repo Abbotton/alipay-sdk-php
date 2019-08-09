@@ -2,6 +2,6 @@
 /build
 /vendor
 /composer.lock
-
+/.idea
 .DS_Store
 *.pem

@@ -4,6 +4,7 @@ namespace Alipay;
 
 use Alipay\Exception\AlipayCurlException;
 use Alipay\Exception\AlipayHttpException;
+use CURLFile;
 
 class AlipayCurlRequester extends AlipayRequester
 {
@@ -27,9 +28,11 @@ class AlipayCurlRequester extends AlipayRequester
      * 发起 POST 请求
      *
      * @param string $url
-     * @param array  $params
+     * @param array $params
      *
      * @return mixed
+     * @throws AlipayCurlException
+     * @throws AlipayHttpException
      */
     public function post($url, $params)
     {
@@ -43,7 +46,7 @@ class AlipayCurlRequester extends AlipayRequester
             if (is_string($value) && strlen($value) > 0 && $value[0] === '@' && class_exists('CURLFile')) {
                 $file = substr($value, 1);
                 if (is_file($file)) {
-                    $value = new \CURLFile($file);
+                    $value = new CURLFile($file);
                 }
             }
         }

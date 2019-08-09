@@ -2,13 +2,14 @@
 
 namespace Alipay;
 
-use Alipay\Exception\AlipayInvalidPropertyException;
 use Alipay\Exception\AlipayInvalidRequestException;
 use Alipay\Request\AbstractAlipayRequest;
 
 class AlipayRequestFactory
 {
     public $namespace = '';
+
+    public static $factory;
 
     /**
      * 创建请求类工厂
@@ -24,9 +25,11 @@ class AlipayRequestFactory
      * 通过 `API 名称` 创建请求类实例
      *
      * @param string $apiName
-     * @param array  $config
+     * @param array $config
      *
      * @return AbstractAlipayRequest
+     * @throws AlipayInvalidRequestException
+     * @throws \ReflectionException
      */
     public function createByApi($apiName, $config = [])
     {
@@ -39,9 +42,11 @@ class AlipayRequestFactory
      * 通过 `请求类名` 创建请求类实例
      *
      * @param string $className
-     * @param array  $config
+     * @param array $config
      *
      * @return AbstractAlipayRequest
+     * @throws AlipayInvalidRequestException
+     * @throws \ReflectionException
      */
     public function createByClass($className, $config = [])
     {
@@ -54,11 +59,7 @@ class AlipayRequestFactory
         foreach ($config as $key => $value) {
             $property = AlipayHelper::studlyCase($key, '_');
 
-            try {
-                $instance->$property = $value;
-            } catch (AlipayInvalidPropertyException $ex) {
-                throw new AlipayInvalidRequestException($ex->getMessage() . ': ' . $key);
-            }
+            $instance->$property = $value;
         }
 
         return $instance;
@@ -70,6 +71,8 @@ class AlipayRequestFactory
      * @param string $className
      *
      * @return void
+     * @throws AlipayInvalidRequestException
+     * @throws \ReflectionException
      */
     protected function validate($className)
     {
@@ -86,13 +89,13 @@ class AlipayRequestFactory
      * 创建请求类实例
      *
      * @param string $classOrApi
-     * @param array  $config
+     * @param array $config
      *
      * @return AbstractAlipayRequest
      */
     public static function create($classOrApi, $config = [])
     {
-        $factory = isset($this) ? $this : new self();
+        $factory = isset(self::$factory) ? self::$factory : new static();
 
         if (strpos($classOrApi, '.')) {
             return $factory->createByApi($classOrApi, $config);

@@ -16,21 +16,6 @@ class AlipayHelper
         return $value === null || trim($value) === '';
     }
 
-    /**
-     * 转换字符串为驼峰命名（例如：fooBar）
-     *
-     * @param string $str
-     * @param string $delimiters
-     *
-     * @return string
-     */
-    public static function camelCase($str, $delimiters = ' ')
-    {
-        $str = static::studlyCase($str, $delimiters);
-        $str = lcfirst($str);
-
-        return $str;
-    }
 
     /**
      * 转换字符串为变种驼峰命名（例如：FooBar）
@@ -42,9 +27,13 @@ class AlipayHelper
      */
     public static function studlyCase($str, $delimiters = ' ')
     {
-        $str = ucwords($str, $delimiters);
-        $str = str_replace($delimiters, '', $str);
 
-        return $str;
+        $arr = explode($str,$delimiters);
+        return implode(array_map("ucwords",$arr));
+
+//        $str = ucwords($str);
+//        $str = str_replace($delimiters, '', $str);
+
+//        return $str;
     }
 }

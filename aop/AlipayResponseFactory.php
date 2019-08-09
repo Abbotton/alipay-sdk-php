@@ -29,6 +29,7 @@ class AlipayResponseFactory
      * @param string $raw 原始响应字符串
      *
      * @return AlipayResponse
+     * @throws AlipayInvalidResponseException
      */
     public function parse($raw)
     {

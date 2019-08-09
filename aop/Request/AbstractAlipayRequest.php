@@ -53,6 +53,7 @@ abstract class AbstractAlipayRequest
      * @param bool $shorten 是否不带命名空间
      *
      * @return string
+     * @throws \ReflectionException
      */
     public static function className($shorten = false)
     {
@@ -68,6 +69,7 @@ abstract class AbstractAlipayRequest
      * 根据类名获取 API 方法名
      *
      * @return string
+     * @throws \ReflectionException
      */
     public static function getApiMethodName()
     {

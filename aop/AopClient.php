@@ -9,6 +9,7 @@ use Alipay\Key\AlipayKeyPair;
 use Alipay\Request\AbstractAlipayRequest;
 use Alipay\Signer\AlipayRSA2Signer;
 use Alipay\Signer\AlipaySigner;
+use InvalidArgumentException;
 
 class AopClient
 {
@@ -142,6 +143,10 @@ class AopClient
      * @param array $params
      *
      * @return AlipayResponse
+     * @throws AlipayBase64Exception
+     * @throws AlipayInvalidSignException
+     * @throws AlipayOpenSslException
+     * @throws Exception\AlipayInvalidResponseException
      */
     public function request($params)
     {
@@ -165,6 +170,10 @@ class AopClient
      *
      * @return AlipayResponse
      *
+     * @throws AlipayBase64Exception
+     * @throws AlipayInvalidSignException
+     * @throws AlipayOpenSslException
+     * @throws Exception\AlipayInvalidResponseException
      * @see self::build()
      * @see self::request()
      */
@@ -249,9 +258,7 @@ class AopClient
                 $params,
                 $this->keyPair->getPublicKey()->asResource()
             );
-        } catch (AlipayInvalidSignException $ex) {
-            return false;
-        } catch (\InvalidArgumentException $ex) {
+        } catch (InvalidArgumentException $ex) {
             return false;
         }
 
@@ -262,14 +269,14 @@ class AopClient
      * 解密被支付宝加密的敏感数据
      *
      * @param string $encryptedData Base64 格式的已加密的数据，如手机号
-     * @param string $encodedKey    Base64 编码后的密钥
-     * @param string $cipher        解密算法，保持默认值即可
-     *
-     * @throws AlipayOpenSslException
+     * @param string $encodedKey Base64 编码后的密钥
+     * @param string $cipher 解密算法，保持默认值即可
      *
      * @return string
      *
-     * @see https://docs.alipay.com/mini/introduce/aes
+     * @throws AlipayBase64Exception
+     *
+     * @throws AlipayOpenSslException*@see https://docs.alipay.com/mini/introduce/aes
      * @see https://docs.alipay.com/mini/introduce/getphonenumber
      */
     public static function decrypt($encryptedData, $encodedKey, $cipher = 'aes-128-cbc')

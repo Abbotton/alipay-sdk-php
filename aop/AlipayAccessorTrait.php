@@ -6,6 +6,11 @@ use Alipay\Exception\AlipayInvalidPropertyException;
 
 trait AlipayAccessorTrait
 {
+    /**
+     * @param $name
+     * @return mixed
+     * @throws AlipayInvalidPropertyException
+     */
     public function __get($name)
     {
         $getter = 'get' . $name;
@@ -18,6 +23,11 @@ trait AlipayAccessorTrait
         throw new AlipayInvalidPropertyException('Getting unknown property', $name);
     }
 
+    /**
+     * @param $name
+     * @param $value
+     * @throws AlipayInvalidPropertyException
+     */
     public function __set($name, $value)
     {
         $setter = 'set' . $name;
@@ -40,6 +50,10 @@ trait AlipayAccessorTrait
         return false;
     }
 
+    /**
+     * @param $name
+     * @throws AlipayInvalidPropertyException
+     */
     public function __unset($name)
     {
         $setter = 'set' . $name;
