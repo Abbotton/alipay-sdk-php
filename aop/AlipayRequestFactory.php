@@ -92,7 +92,7 @@ class AlipayRequestFactory
      */
     public static function create($classOrApi, $config = [])
     {
-        $factory = isset($this) ? $this : new self();
+        $factory = isset($this) ? $this : new static();
 
         if (strpos($classOrApi, '.')) {
             return $factory->createByApi($classOrApi, $config);
