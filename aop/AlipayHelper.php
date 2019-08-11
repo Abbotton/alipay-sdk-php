@@ -28,12 +28,8 @@ class AlipayHelper
     public static function studlyCase($str, $delimiters = ' ')
     {
 
-        $arr = explode($str,$delimiters);
-        return implode(array_map("ucwords",$arr));
+        $arr = explode($delimiters, $str);
+        return implode(array_map("ucwords", $arr));
 
-//        $str = ucwords($str);
-//        $str = str_replace($delimiters, '', $str);
-
-//        return $str;
     }
 }

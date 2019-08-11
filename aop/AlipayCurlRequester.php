@@ -4,6 +4,7 @@ namespace Alipay;
 
 use Alipay\Exception\AlipayCurlException;
 use Alipay\Exception\AlipayHttpException;
+use CURLFile;
 
 class AlipayCurlRequester extends AlipayRequester
 {
@@ -25,9 +26,6 @@ class AlipayCurlRequester extends AlipayRequester
         $this->options = $options + [
                 CURLOPT_FAILONERROR => false,
                 CURLOPT_SSL_VERIFYPEER => false,
-                CURLOPT_HTTPHEADER => array(
-                    "Content-Type: application/x-www-form-urlencoded",
-                ),
             ];
         if ($isProd) {
             parent::__construct([$this, 'post']);
@@ -54,22 +52,36 @@ class AlipayCurlRequester extends AlipayRequester
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-//        foreach ($params as &$value) {
-//            if (is_string($value) && strlen($value) > 0 && $value[0] === '@' && class_exists('CURLFile')) {
-//                $file = substr($value, 1);
-//                if (is_file($file)) {
-//                    $value = new CURLFile($file);
-//                }
-//            }
-//        }
-//        curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+        $isPostingFile = false;
+        foreach ($params as &$value) {
+            if (is_string($value) && strlen($value) > 0 && $value[0] === '@' && class_exists('CURLFile')) {
+                $file = substr($value, 1);
+                if (is_file($file)) {
+                    $isPostingFile = true;
+                    $value = new CURLFile($file);
+                }
+            }
+        }
+        if ($isPostingFile) {
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+            curl_setopt($ch,
+                CURLOPT_HTTPHEADER,
+                array("Content-Type: application/x-www-form-urlencoded")
+            );
 
-        $queryStr = http_build_query($params);
+        } else {
+            $queryStr = http_build_query($params);
 
-        curl_setopt($ch,
-            CURLOPT_POSTFIELDS,
-            $queryStr
-        );
+            curl_setopt($ch,
+                CURLOPT_POSTFIELDS,
+                $queryStr
+            );
+            curl_setopt($ch,
+                CURLOPT_HTTPHEADER,
+                array("Content-Type: application/x-www-form-urlencoded")
+            );
+        }
+
 
         $response = curl_exec($ch);
 
