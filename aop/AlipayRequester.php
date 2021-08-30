@@ -20,6 +20,23 @@ class AlipayRequester
         $this->charset = $charset;
     }
 
+    /**
+     * 提交请求.
+     *
+     * @param  array  $params
+     *
+     * @return mixed
+     */
+    public function execute($params)
+    {
+        return call_user_func($this->callback, $this->getUrl(), $params);
+    }
+
+    public function getUrl()
+    {
+        return $this->getGateway().'?charset='.urlencode($this->getCharset());
+    }
+
     public function getGateway()
     {
         return $this->gateway;
@@ -28,22 +45,5 @@ class AlipayRequester
     public function getCharset()
     {
         return $this->charset;
-    }
-
-    public function getUrl()
-    {
-        return $this->getGateway() . '?charset=' . urlencode($this->getCharset());
-    }
-
-    /**
-     * 提交请求
-     *
-     * @param array $params
-     *
-     * @return mixed
-     */
-    public function execute($params)
-    {
-        return call_user_func($this->callback, $this->getUrl(), $params);
     }
 }

@@ -1,5 +1,23 @@
 #!/bin/bash
 
-echo "-----BEGIN PUBLIC KEY-----"
-echo $1 | fold -w 64
-echo "-----END PUBLIC KEY-----"
+# shellcheck disable=SC2166
+if [ "public" != "$1" -a "private" != "$1" ]; then
+  echo "请输入合法的密钥类型, 仅限private或者public"
+  exit
+fi
+
+if [[ -z $2 ]]; then
+  echo "请输入密钥"
+  exit
+fi
+
+[ "public" != "$1" ] && header_string="-----BEGIN RSA PRIVATE KEY-----" || header_string="-----BEGIN PUBLIC KEY-----"
+[ "public" != "$1" ] && footer_string="-----END RSA PRIVATE KEY-----" || footer_string="-----END PUBLIC KEY-----"
+
+echo "以下为格式化之后的密钥:"
+
+echo "$header_string"
+echo "$2" | fold -w 64
+echo "$footer_string"
+
+echo "以上为格式化之后的密钥:"

@@ -1,73 +1,37 @@
 <?php
 
-use Alipay\Request\AbstractAlipayRequest;
-use Alipay\Request\AlipaySystemOauthTokenRequest;
+use Alipay\AlipayRequestFactory;
 use PHPUnit\Framework\TestCase;
 
 class RequestsTest extends TestCase
 {
-    public function testRequests()
-    {
-        $list = glob('aop/Request/*Request.php');
-        foreach ($list as $v) {
-            $className = 'Alipay\\Request\\' . basename($v, '.php');
-            $class = new ReflectionClass($className);
-            if ($class->isAbstract()) {
-                continue;
-            }
-
-            /** @var AbstractAlipayRequest $ins */
-            $ins = new $className();
-            $this->assertNotEmpty($ins->getApiMethodName());
-            $this->assertTrue(is_array($ins->getApiParams()));
-
-            // ------------------------------------------------------------
-
-            $methods = $class->getMethods(ReflectionMethod::IS_PUBLIC);
-            foreach ($methods as $method) {
-                /** @var ReflectionMethod $method */
-                $funcName = $method->getName();
-                $propName = substr($funcName, 3);
-                $funPrefix = substr($funcName, 0, 3);
-
-                if ($funPrefix !== 'set') {
-                    continue;
-                }
-
-                $value = uniqid();
-                $ins->$propName = $value;
-                $this->assertEquals($value, $ins->$propName);
-            }
-        }
-    }
+    private $apiName = 'alipay.data.bill.balance.query';
 
     public function testGetterSetter()
     {
-        $ins = new AlipaySystemOauthTokenRequest([
-            'notifyUrl' => 'notify_url',
-        ]);
-        $this->assertTrue(isset($ins->notifyUrl));
-        $this->assertEquals('notify_url', $ins->notifyUrl);
-        unset($ins->notifyUrl);
-        $this->assertFalse(isset($ins->notifyUrl));
-        $this->assertFalse(isset($ins->foo));
+        $ins = AlipayRequestFactory::create($this->apiName);
+        $this->assertTrue(property_exists($ins, 'notifyUrl'));
+        $this->assertNull($ins->getNotifyUrl());
+        $url = 'https://foo.bar';
+        $ins->setNotifyUrl($url);
+        $this->assertEquals($url, $ins->getNotifyUrl());
     }
 
     public function testSetUnknownProperty()
     {
         $this->expectException('Alipay\Exception\AlipayInvalidPropertyException');
 
-        $req = new AlipaySystemOauthTokenRequest();
-        $req->foo = 'this property does not exist';
+        $ins = AlipayRequestFactory::create($this->apiName);
+        $ins->foo;
     }
 
     public function testGetUnknownProperty()
     {
         $this->expectException('Alipay\Exception\AlipayInvalidPropertyException');
-        $req = new AlipaySystemOauthTokenRequest();
+        $ins = AlipayRequestFactory::create($this->apiName);
 
         try {
-            $req->foo;
+            $ins->foo;
         } catch (Alipay\Exception\AlipayInvalidPropertyException $ex) {
             $this->assertEquals('foo', $ex->getProperty());
             throw $ex;
@@ -76,8 +40,8 @@ class RequestsTest extends TestCase
 
     public function testTimestamp()
     {
-        $req = new AlipaySystemOauthTokenRequest();
-        $ts = $req->getTimestamp();
+        $ins = AlipayRequestFactory::create($this->apiName);
+        $ts = $ins->getTimestamp();
         $this->assertRegExp('/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/', $ts);
     }
 }

@@ -64,7 +64,7 @@
 点击 `查看支付宝公钥`，复制公钥字符串，执行：
 
 ```bash
-../bin/wrap-key '你的支付宝公钥' > alipay_public_key.pem
+../bin/wrap-key public '你的支付宝公钥' > alipay_public_key.pem
 ```
 
 即可生成 `alipay_public_key.pem` 文件。

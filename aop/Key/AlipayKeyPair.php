@@ -2,6 +2,7 @@
 
 namespace Alipay\Key;
 
+use Alipay\Exception\AlipayInvalidKeyException;
 use Alipay\Exception\AlipayOpenSslException;
 
 class AlipayKeyPair
@@ -23,12 +24,12 @@ class AlipayKeyPair
     protected $privateKey;
 
     /**
-     * 创建密钥对
+     * 创建密钥对.
      *
-     * @param string $privateKey
-     * @param string $publicKey
-     *
+     * @param $privateKey
+     * @param $publicKey
      * @return static
+     * @throws AlipayInvalidKeyException
      */
     public static function create($privateKey, $publicKey)
     {
@@ -40,11 +41,12 @@ class AlipayKeyPair
     }
 
     /**
-     * 生成密钥对
+     * 生成密钥对.
      *
-     * @param array $configargs
-     *
+     * @param  array  $configargs
      * @return static
+     * @throws AlipayOpenSslException
+     * @throws AlipayInvalidKeyException
      */
     public static function generate($configargs = [])
     {
@@ -69,7 +71,7 @@ class AlipayKeyPair
     }
 
     /**
-     * 获取私钥对象
+     * 获取私钥对象.
      *
      * @return AlipayPrivateKey
      */
@@ -79,21 +81,11 @@ class AlipayKeyPair
     }
 
     /**
-     * 获取公钥对象
+     * 设置应用私钥.
      *
-     * @return AlipayPublicKey
-     */
-    public function getPublicKey()
-    {
-        return $this->publicKey;
-    }
-
-    /**
-     * 设置应用私钥
-     *
-     * @param string $key
-     *
-     * @return static
+     * @param $key
+     * @return $this
+     * @throws AlipayInvalidKeyException
      */
     public function setPrivateKey($key)
     {
@@ -103,11 +95,21 @@ class AlipayKeyPair
     }
 
     /**
-     * 设置支付宝公钥
+     * 获取公钥对象.
      *
-     * @param string $key
+     * @return AlipayPublicKey
+     */
+    public function getPublicKey()
+    {
+        return $this->publicKey;
+    }
+
+    /**
+     * 设置支付宝公钥.
      *
-     * @return static
+     * @param $key
+     * @return $this
+     * @throws AlipayInvalidKeyException
      */
     public function setPublicKey($key)
     {

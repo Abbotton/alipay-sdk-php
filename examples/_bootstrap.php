@@ -1,9 +1,9 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
-use Alipay\Key\AlipayKeyPair;
 use Alipay\AopClient;
+use Alipay\Key\AlipayKeyPair;
 
 ini_set('html_errors', '0');
 ini_set('error_log', 'logs/php-error.log');

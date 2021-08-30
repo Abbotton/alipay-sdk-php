@@ -2,7 +2,7 @@
 
 use Alipay\AlipayRequestFactory;
 
-$aop = require __DIR__ . '/_bootstrap.php';
+$aop = require __DIR__.'/_bootstrap.php';
 
 /**
  * 根据文件名剥离请求名

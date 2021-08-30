@@ -1,10 +1,9 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
-use Alipay\Signer\AlipaySigner;
-use Alipay\Signer\AlipayRSA2Signer;
 use Alipay\Key\AlipayKeyPair;
-use Alipay\Exception\AlipayInvalidSignException;
+use Alipay\Signer\AlipayRSA2Signer;
+use Alipay\Signer\AlipaySigner;
+use PHPUnit\Framework\TestCase;
 
 class SignTest extends TestCase
 {
@@ -18,6 +17,7 @@ class SignTest extends TestCase
     {
         $kp = AlipayKeyPair::create(self::PRIV_KEY, self::PUB_KEY);
         $this->assertTrue(true);
+
         return $kp;
     }
 

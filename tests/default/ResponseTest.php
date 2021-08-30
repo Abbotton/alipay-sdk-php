@@ -79,8 +79,6 @@ class ResponseTest extends TestCase
         $parser->parse($response);
     }
 
-    // =========================================================
-
     /**
      * @depends testParseSuccess
      */

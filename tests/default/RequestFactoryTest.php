@@ -1,65 +1,31 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
-use Alipay\Request\AbstractAlipayRequest;
 use Alipay\AlipayRequestFactory;
-use Alipay\Request\AlipaySystemOauthTokenRequest;
+use Alipay\Request\AlipayRequest;
+use PHPUnit\Framework\TestCase;
 
 class RequestFactoryTest extends TestCase
 {
-    protected function provideRequestClassName()
-    {
-        return AlipaySystemOauthTokenRequest::className(true);
-    }
-
-    public function testCreate()
-    {
-        $className = $this->provideRequestClassName();
-        $ins = (new AlipayRequestFactory)->create($className, ['code' => 'foo']);
-        $this->assertEquals('foo', $ins->getCode());
-        return $ins;
-    }
+    private $apiName = 'alipay.data.bill.balance.query';
 
     public function testStaticCreate()
     {
-        $className = $this->provideRequestClassName();
         $this->assertNotNull(
-            AlipayRequestFactory::create($className)
+            AlipayRequestFactory::create($this->apiName)
         );
     }
 
     public function testCreateByApi()
     {
-        $apiName = 'alipay.system.oauth.token';
-        $ins = AlipayRequestFactory::create($apiName);
-        $this->assertInstanceOf(AlipaySystemOauthTokenRequest::className(), $ins);
-        return $ins;
-    }
-
-    public function testCreateNotExistedClass()
-    {
-        $this->expectException('Alipay\Exception\AlipayInvalidRequestException');
-        $this->expectExceptionMessage('exist');
-
-        $className = 'NotExistedClass';
-        $ins = AlipayRequestFactory::create($className);
-    }
-
-    public function testCreateInvalidClass()
-    {
-        $this->expectException('Alipay\Exception\AlipayInvalidRequestException');
-        $this->expectExceptionMessage('extend');
-
-        $className = AbstractAlipayRequest::className(true);
-        $ins = AlipayRequestFactory::create($className);
+        $ins = AlipayRequestFactory::create($this->apiName);
+        $this->assertInstanceOf(AlipayRequest::className(), $ins);
     }
 
     public function testInvalidConfig()
     {
         $this->expectException('Alipay\Exception\AlipayInvalidRequestException');
 
-        $className = AlipaySystemOauthTokenRequest::className(true);
-        $ins = AlipayRequestFactory::create($className, [
+        AlipayRequestFactory::create('foo.bar', [
             'foo' => 'this config does not exist'
         ]);
     }
@@ -68,9 +34,8 @@ class RequestFactoryTest extends TestCase
     {
         $this->expectException('Alipay\Exception\AlipayInvalidRequestException');
 
-        $className = AlipaySystemOauthTokenRequest::className(true);
-        $ins = AlipayRequestFactory::create($className, [
-            'apiParams' => 'this config could not be written'
+        AlipayRequestFactory::create($this->apiName, [
+            'foo' => 'bar'
         ]);
     }
 }

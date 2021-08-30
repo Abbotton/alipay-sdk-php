@@ -6,6 +6,7 @@ use Alipay\AlipayHelper;
 use Alipay\Exception\AlipayBase64Exception;
 use Alipay\Exception\AlipayInvalidSignException;
 use Alipay\Exception\AlipayOpenSslException;
+use InvalidArgumentException;
 
 abstract class AlipaySigner
 {
@@ -20,15 +21,52 @@ abstract class AlipaySigner
     const SIGN_TYPE_PARAM = 'sign_type';
 
     /**
-     * 签名（计算 Sign 值）
+     * 将参数数组签名（计算 Sign 值）.
      *
-     * @param string   $data
-     * @param resource $privateKey
-     *
-     * @throws AlipayOpenSslException
+     * @param $params
+     * @param $privateKey
+     * @return string
      * @throws AlipayBase64Exception
+     * @throws AlipayOpenSslException
+     * @see self::generate()
+     */
+    public function generateByParams($params, $privateKey)
+    {
+        $data = $this->convertSignData($params);
+
+        return $this->generate($data, $privateKey);
+    }
+
+    /**
+     * 将数组转换为待签名数据.
+     *
+     * @param  array  $params
      *
      * @return string
+     */
+    protected function convertSignData($params)
+    {
+        ksort($params);
+        $stringToBeSigned = '';
+        foreach ($params as $k => $v) {
+            $v = @(string)$v;
+            if (AlipayHelper::isEmpty($v) || $v[0] === '@') {
+                continue;
+            }
+            $stringToBeSigned .= "&{$k}={$v}";
+        }
+        $stringToBeSigned = substr($stringToBeSigned, 1);
+
+        return $stringToBeSigned;
+    }
+
+    /**
+     * 签名（计算 Sign 值）.
+     *
+     * @param $data
+     * @param $privateKey
+     * @return string
+     * @throws AlipayOpenSslException
      *
      * @see https://docs.open.alipay.com/291/106118
      */
@@ -42,35 +80,55 @@ abstract class AlipaySigner
         return base64_encode($sign);
     }
 
-    /**
-     * 将参数数组签名（计算 Sign 值）
-     *
-     * @param array    $params
-     * @param resource $privateKey
-     *
-     * @return string
-     *
-     * @see self::generate()
-     */
-    public function generateByParams($params, $privateKey)
-    {
-        $data = $this->convertSignData($params);
-
-        return $this->generate($data, $privateKey);
-    }
+    abstract public function getSignAlgo();
 
     /**
-     * 验签（验证 Sign 值）
+     * 异步通知验签（验证 Sign 值）.
      *
-     * @param string   $sign
-     * @param string   $data
-     * @param resource $publicKey
-     *
+     * @param $params
+     * @param $publicKey
+     * @return mixed
      * @throws AlipayBase64Exception
      * @throws AlipayInvalidSignException
      * @throws AlipayOpenSslException
      *
+     * @see self::verify()
+     * @see https://docs.open.alipay.com/200/106120#s1
+     */
+    public function verifyByParams($params, $publicKey)
+    {
+        if (!isset($params[static::SIGN_PARAM]) || !isset($params[static::SIGN_TYPE_PARAM])) {
+            throw new InvalidArgumentException('Missing signature arguments');
+        }
+
+        $sign = $params[static::SIGN_PARAM];
+        $signType = $params[static::SIGN_TYPE_PARAM];
+        unset($params[static::SIGN_PARAM], $params[static::SIGN_TYPE_PARAM]);
+
+        if ($signType !== $this->getSignType()) {
+            throw new InvalidArgumentException("Sign type didn't match, expect {$this->getSignType()}, {$signType} given");
+        }
+
+        $data = $this->convertSignData($params);
+        $this->verify($sign, $data, $publicKey);
+
+        return $params;
+    }
+
+    abstract public function getSignType();
+
+    /**
+     * 验签（验证 Sign 值）
+     *
+     * @param  string  $sign
+     * @param  string  $data
+     * @param  resource  $publicKey
+     *
      * @return void
+     *
+     * @throws AlipayInvalidSignException
+     * @throws AlipayOpenSslException
+     * @throws AlipayBase64Exception
      *
      * @see https://docs.open.alipay.com/200/106120
      */
@@ -92,62 +150,4 @@ abstract class AlipaySigner
                 throw new AlipayOpenSslException();
         }
     }
-
-    /**
-     * 异步通知验签（验证 Sign 值）
-     *
-     * @param array    $params
-     * @param resource $publicKey
-     *
-     * @return array
-     *
-     * @see self::verify()
-     * @see https://docs.open.alipay.com/200/106120#s1
-     */
-    public function verifyByParams($params, $publicKey)
-    {
-        if (!isset($params[static::SIGN_PARAM]) || !isset($params[static::SIGN_TYPE_PARAM])) {
-            throw new \InvalidArgumentException('Missing signature arguments');
-        }
-
-        $sign = $params[static::SIGN_PARAM];
-        $signType = $params[static::SIGN_TYPE_PARAM];
-        unset($params[static::SIGN_PARAM], $params[static::SIGN_TYPE_PARAM]);
-
-        if ($signType !== $this->getSignType()) {
-            throw new \InvalidArgumentException("Sign type didn't match, expect {$this->getSignType()}, {$signType} given");
-        }
-
-        $data = $this->convertSignData($params);
-        $this->verify($sign, $data, $publicKey);
-
-        return $params;
-    }
-
-    /**
-     * 将数组转换为待签名数据
-     *
-     * @param array $params
-     *
-     * @return string
-     */
-    protected function convertSignData($params)
-    {
-        ksort($params);
-        $stringToBeSigned = '';
-        foreach ($params as $k => $v) {
-            $v = @(string) $v;
-            if (AlipayHelper::isEmpty($v) || $v[0] === '@') {
-                continue;
-            }
-            $stringToBeSigned .= "&{$k}={$v}";
-        }
-        $stringToBeSigned = substr($stringToBeSigned, 1);
-
-        return $stringToBeSigned;
-    }
-
-    abstract public function getSignType();
-
-    abstract public function getSignAlgo();
 }

@@ -8,28 +8,30 @@ use Alipay\Exception\AlipayHttpException;
 class AlipayCurlRequester extends AlipayRequester
 {
     /**
-     * Curl 选项
+     * Curl 选项.
      *
-     * @param array $options
+     * @param  array  $options
      */
     public $options = [];
 
     public function __construct($options = [])
     {
-        $this->options = $options + [
-            CURLOPT_FAILONERROR    => false,
+        $this->options = array_merge($options, [
+            CURLOPT_FAILONERROR => false,
             CURLOPT_SSL_VERIFYPEER => false,
-        ];
+        ]);
+
         parent::__construct([$this, 'post']);
     }
 
     /**
-     * 发起 POST 请求
+     * 发起 POST 请求.
      *
-     * @param string $url
-     * @param array  $params
-     *
-     * @return mixed
+     * @param $url
+     * @param $params
+     * @return bool|string
+     * @throws AlipayCurlException
+     * @throws AlipayHttpException
      */
     public function post($url, $params)
     {

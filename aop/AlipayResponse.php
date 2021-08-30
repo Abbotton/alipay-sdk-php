@@ -38,11 +38,12 @@ class AlipayResponse
     }
 
     /**
-     * 获取原始响应的被签名数据，用于验证签名
+     * 获取原始响应的被签名数据，用于验证签名.
      *
-     * @return string
+     * @return false|string
+     * @throws AlipayInvalidResponseException
      *
-     * @see    AlipaySigner::verify()
+     * @see AlipaySigner::verify()
      */
     public function stripData()
     {
@@ -50,7 +51,7 @@ class AlipayResponse
         $nodeIndex = strpos($this->raw, $nodeName);
 
         $signDataStartIndex = $nodeIndex + strlen($nodeName) + 2;
-        $signIndex = strrpos($this->raw, '"' . static::SIGN_NODE . '"');
+        $signIndex = strrpos($this->raw, '"'.static::SIGN_NODE.'"');
 
         $signDataEndIndex = $signIndex - 1;
         $indexLen = $signDataEndIndex - $signDataStartIndex;
@@ -62,9 +63,10 @@ class AlipayResponse
     }
 
     /**
-     * 获取响应内的签名
+     * 获取响应内的签名.
      *
-     * @return string
+     * @return mixed
+     * @throws AlipayInvalidResponseException
      */
     public function getSign()
     {
@@ -76,11 +78,11 @@ class AlipayResponse
     }
 
     /**
-     * 获取响应内的数据
+     * 获取响应内的数据.
      *
-     * @param bool $assoc
-     *
-     * @return mixed
+     * @param  bool  $assoc
+     * @return mixed|object
+     * @throws AlipayErrorResponseException
      */
     public function getData($assoc = true)
     {
@@ -89,36 +91,14 @@ class AlipayResponse
         }
         $result = $this->getFirstElement();
         if ($assoc == false) {
-            $result = (object) ($result);
+            $result = (object)($result);
         }
 
         return $result;
     }
 
     /**
-     * 获取原始响应
-     *
-     * @return string
-     */
-    public function getRaw()
-    {
-        return $this->raw;
-    }
-
-    /**
-     * 获取响应数据内的首元素
-     *
-     * @return mixed
-     */
-    protected function getFirstElement()
-    {
-        $data = array_reverse($this->parsed);
-
-        return array_pop($data);
-    }
-
-    /**
-     * 判断响应是否成功
+     * 判断响应是否成功.
      *
      * @return bool
      */
@@ -133,7 +113,19 @@ class AlipayResponse
     }
 
     /**
-     * 获取响应内的错误
+     * 获取响应数据内的首元素.
+     *
+     * @return mixed
+     */
+    protected function getFirstElement()
+    {
+        $data = array_reverse($this->parsed);
+
+        return array_pop($data);
+    }
+
+    /**
+     * 获取响应内的错误.
      *
      * @return mixed|null
      */
@@ -148,9 +140,19 @@ class AlipayResponse
             $result = $this->getFirstElement();
         }
         if ($assoc == false) {
-            $result = (object) ($result);
+            $result = (object)($result);
         }
 
         return $result;
+    }
+
+    /**
+     * 获取原始响应.
+     *
+     * @return string
+     */
+    public function getRaw()
+    {
+        return $this->raw;
     }
 }
