@@ -18,8 +18,10 @@ abstract class AlipayKey implements Serializable
      * 创建密钥.
      *
      * @param $key
-     * @return static
+     *
      * @throws AlipayInvalidKeyException
+     *
+     * @return static
      */
     public static function create($key)
     {
@@ -32,11 +34,11 @@ abstract class AlipayKey implements Serializable
     /**
      * 加载密钥
      *
-     * @param  string  $certificate  密钥字符串或密钥路径
+     * @param string $certificate 密钥字符串或密钥路径
      *
-     * @return void
      * @throws AlipayInvalidKeyException
      *
+     * @return void
      */
     protected function load($certificate)
     {
@@ -65,6 +67,7 @@ abstract class AlipayKey implements Serializable
      * 加载密钥资源.
      *
      * @param $certificate
+     *
      * @throws AlipayInvalidKeyException
      */
     public static function getKey($certificate)
@@ -75,7 +78,7 @@ abstract class AlipayKey implements Serializable
     /**
      * 使用密钥资源直接初始化本对象.
      *
-     * @param  resource  $resource
+     * @param resource $resource
      *
      * @return static
      */
@@ -131,6 +134,7 @@ abstract class AlipayKey implements Serializable
      * 将密钥资源转为字符串.
      *
      * @param $resource
+     *
      * @throws AlipayOpenSslException
      */
     public static function toString($resource)

@@ -7,7 +7,7 @@ class AlipayHelper
     /**
      * 校验某字符串或可被转换为字符串的数据，是否为 NULL 或均为空白字符.
      *
-     * @param  string|null  $value
+     * @param string|null $value
      *
      * @return bool
      */
@@ -20,7 +20,8 @@ class AlipayHelper
      * 转换字符串为变种驼峰命名（例如：FooBar）.
      *
      * @param $str
-     * @param  string  $delimiters
+     * @param string $delimiters
+     *
      * @return array|string|string[]
      */
     public static function studlyCase($str, $delimiters = ' ')

@@ -23,7 +23,7 @@ class AlipayRequester
     /**
      * 提交请求.
      *
-     * @param  array  $params
+     * @param array $params
      *
      * @return mixed
      */

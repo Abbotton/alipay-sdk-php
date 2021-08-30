@@ -12,7 +12,8 @@ class AlipayRequestFactory
      * 创建请求类实例
      *
      * @param $apiName
-     * @param  array  $config
+     * @param array $config
+     *
      * @return AlipayRequest
      */
     public static function create($apiName, $config = [])
@@ -24,14 +25,17 @@ class AlipayRequestFactory
      * 通过 `API 名称` 创建请求类实例.
      *
      * @param $apiName
-     * @param  array  $config
-     * @return AlipayRequest
+     * @param array $config
+     *
      * @throws AlipayInvalidRequestException
+     *
+     * @return AlipayRequest
      */
     private function createByApi($apiName, $config = [])
     {
         $config = array_merge($config, ['api_method_name' => $apiName]);
         $request = new AlipayRequest();
+
         try {
             foreach ($config as $key => $value) {
                 $property = AlipayHelper::studlyCase($key, '_');

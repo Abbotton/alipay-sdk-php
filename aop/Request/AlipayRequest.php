@@ -55,9 +55,11 @@ class AlipayRequest
     /**
      * 获取自身类名.
      *
-     * @param  false  $shorten
-     * @return string
+     * @param false $shorten
+     *
      * @throws ReflectionException
+     *
+     * @return string
      */
     public static function className($shorten = false)
     {

@@ -28,8 +28,10 @@ class AlipayKeyPair
      *
      * @param $privateKey
      * @param $publicKey
-     * @return static
+     *
      * @throws AlipayInvalidKeyException
+     *
+     * @return static
      */
     public static function create($privateKey, $publicKey)
     {
@@ -43,10 +45,12 @@ class AlipayKeyPair
     /**
      * 生成密钥对.
      *
-     * @param  array  $configargs
-     * @return static
+     * @param array $configargs
+     *
      * @throws AlipayOpenSslException
      * @throws AlipayInvalidKeyException
+     *
+     * @return static
      */
     public static function generate($configargs = [])
     {
@@ -84,8 +88,10 @@ class AlipayKeyPair
      * 设置应用私钥.
      *
      * @param $key
-     * @return $this
+     *
      * @throws AlipayInvalidKeyException
+     *
+     * @return $this
      */
     public function setPrivateKey($key)
     {
@@ -108,8 +114,10 @@ class AlipayKeyPair
      * 设置支付宝公钥.
      *
      * @param $key
-     * @return $this
+     *
      * @throws AlipayInvalidKeyException
+     *
+     * @return $this
      */
     public function setPublicKey($key)
     {

@@ -10,14 +10,14 @@ class AlipayCurlRequester extends AlipayRequester
     /**
      * Curl 选项.
      *
-     * @param  array  $options
+     * @param array $options
      */
     public $options = [];
 
     public function __construct($options = [])
     {
         $this->options = array_merge($options, [
-            CURLOPT_FAILONERROR => false,
+            CURLOPT_FAILONERROR    => false,
             CURLOPT_SSL_VERIFYPEER => false,
         ]);
 
@@ -29,9 +29,11 @@ class AlipayCurlRequester extends AlipayRequester
      *
      * @param $url
      * @param $params
-     * @return bool|string
+     *
      * @throws AlipayCurlException
      * @throws AlipayHttpException
+     *
+     * @return bool|string
      */
     public function post($url, $params)
     {

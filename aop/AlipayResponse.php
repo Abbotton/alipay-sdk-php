@@ -40,8 +40,9 @@ class AlipayResponse
     /**
      * 获取原始响应的被签名数据，用于验证签名.
      *
-     * @return false|string
      * @throws AlipayInvalidResponseException
+     *
+     * @return false|string
      *
      * @see AlipaySigner::verify()
      */
@@ -65,8 +66,9 @@ class AlipayResponse
     /**
      * 获取响应内的签名.
      *
-     * @return mixed
      * @throws AlipayInvalidResponseException
+     *
+     * @return mixed
      */
     public function getSign()
     {
@@ -80,9 +82,11 @@ class AlipayResponse
     /**
      * 获取响应内的数据.
      *
-     * @param  bool  $assoc
-     * @return mixed|object
+     * @param bool $assoc
+     *
      * @throws AlipayErrorResponseException
+     *
+     * @return mixed|object
      */
     public function getData($assoc = true)
     {
@@ -91,7 +95,7 @@ class AlipayResponse
         }
         $result = $this->getFirstElement();
         if ($assoc == false) {
-            $result = (object)($result);
+            $result = (object) ($result);
         }
 
         return $result;
@@ -140,7 +144,7 @@ class AlipayResponse
             $result = $this->getFirstElement();
         }
         if ($assoc == false) {
-            $result = (object)($result);
+            $result = (object) ($result);
         }
 
         return $result;

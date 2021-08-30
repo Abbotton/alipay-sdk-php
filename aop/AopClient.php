@@ -60,11 +60,11 @@ class AopClient
     /**
      * 创建客户端
      *
-     * @param  string  $appId  应用 ID，请在开放平台管理页面获取
-     * @param  AlipayKeyPair  $keyPair  密钥对，用于存储支付宝公钥和应用私钥
-     * @param  AlipaySigner  $signer  签名器，用于生成和验证签名
-     * @param  AlipayRequester  $requester  请求发送器，用于发送 HTTP 请求
-     * @param  AlipayResponseFactory  $parser  响应解析器，用于解析服务器原始响应
+     * @param string                $appId     应用 ID，请在开放平台管理页面获取
+     * @param AlipayKeyPair         $keyPair   密钥对，用于存储支付宝公钥和应用私钥
+     * @param AlipaySigner          $signer    签名器，用于生成和验证签名
+     * @param AlipayRequester       $requester 请求发送器，用于发送 HTTP 请求
+     * @param AlipayResponseFactory $parser    响应解析器，用于解析服务器原始响应
      */
     public function __construct(
         $appId,
@@ -83,13 +83,13 @@ class AopClient
     /**
      * 解密被支付宝加密的敏感数据
      *
-     * @param  string  $encryptedData  Base64 格式的已加密的数据，如手机号
-     * @param  string  $encodedKey  Base64 编码后的密钥
-     * @param  string  $cipher  解密算法，保持默认值即可
-     *
-     * @return string
+     * @param string $encryptedData Base64 格式的已加密的数据，如手机号
+     * @param string $encodedKey    Base64 编码后的密钥
+     * @param string $cipher        解密算法，保持默认值即可
      *
      * @throws AlipayOpenSslException
+     *
+     * @return string
      *
      * @see https://docs.alipay.com/mini/introduce/aes
      * @see https://docs.alipay.com/mini/introduce/getphonenumber
@@ -116,7 +116,7 @@ class AopClient
     /**
      * 一键执行请求
      *
-     * @param  AlipayRequest  $request
+     * @param AlipayRequest $request
      *
      * @return AlipayResponse
      *
@@ -135,7 +135,7 @@ class AopClient
     /**
      * 拼接请求参数并签名
      *
-     * @param  AlipayRequest  $request
+     * @param AlipayRequest $request
      *
      * @return array
      */
@@ -185,7 +185,7 @@ class AopClient
     /**
      * 发起请求、解析响应、验证签名
      *
-     * @param  array  $params
+     * @param array $params
      *
      * @return AlipayResponse
      */
@@ -207,7 +207,7 @@ class AopClient
     /**
      * 仅拼接请求参数并签名，但不发起请求
      *
-     * @param  AlipayRequest  $request
+     * @param AlipayRequest $request
      *
      * @return string
      */
@@ -221,7 +221,7 @@ class AopClient
     /**
      * 仅拼接请求参数并签名，生成跳转 URL
      *
-     * @param  AlipayRequest  $request
+     * @param AlipayRequest $request
      *
      * @return string
      */
@@ -236,7 +236,7 @@ class AopClient
     /**
      * 仅拼接请求参数并签名，生成表单 HTML
      *
-     * @param  AlipayRequest  $request
+     * @param AlipayRequest $request
      *
      * @return string
      */
@@ -261,7 +261,7 @@ class AopClient
     /**
      * 验证由支付宝服务器发来的回调通知请求，其签名数据是否未被篡改
      *
-     * @param  array|null  $params  请求参数（默认使用 $_POST）
+     * @param array|null $params 请求参数（默认使用 $_POST）
      *
      * @return bool
      */

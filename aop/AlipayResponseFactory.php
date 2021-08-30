@@ -11,7 +11,7 @@ class AlipayResponseFactory
     /**
      * 创建响应解析器.
      *
-     * @param  string  $format  预期数据格式
+     * @param string $format 预期数据格式
      */
     public function __construct($format = 'JSON')
     {
@@ -26,9 +26,11 @@ class AlipayResponseFactory
     /**
      * 将 HTTP API 响应体字符串解析为结构化的对象.
      *
-     * @param  string  $raw  原始响应字符串
-     * @return AlipayResponse
+     * @param string $raw 原始响应字符串
+     *
      * @throws AlipayInvalidResponseException
+     *
+     * @return AlipayResponse
      */
     public function parse($raw)
     {

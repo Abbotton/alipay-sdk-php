@@ -25,9 +25,12 @@ abstract class AlipaySigner
      *
      * @param $params
      * @param $privateKey
-     * @return string
+     *
      * @throws AlipayBase64Exception
      * @throws AlipayOpenSslException
+     *
+     * @return string
+     *
      * @see self::generate()
      */
     public function generateByParams($params, $privateKey)
@@ -40,7 +43,7 @@ abstract class AlipaySigner
     /**
      * 将数组转换为待签名数据.
      *
-     * @param  array  $params
+     * @param array $params
      *
      * @return string
      */
@@ -49,7 +52,7 @@ abstract class AlipaySigner
         ksort($params);
         $stringToBeSigned = '';
         foreach ($params as $k => $v) {
-            $v = @(string)$v;
+            $v = @(string) $v;
             if (AlipayHelper::isEmpty($v) || $v[0] === '@') {
                 continue;
             }
@@ -65,8 +68,10 @@ abstract class AlipaySigner
      *
      * @param $data
      * @param $privateKey
-     * @return string
+     *
      * @throws AlipayOpenSslException
+     *
+     * @return string
      *
      * @see https://docs.open.alipay.com/291/106118
      */
@@ -87,10 +92,12 @@ abstract class AlipaySigner
      *
      * @param $params
      * @param $publicKey
-     * @return mixed
+     *
      * @throws AlipayBase64Exception
      * @throws AlipayInvalidSignException
      * @throws AlipayOpenSslException
+     *
+     * @return mixed
      *
      * @see self::verify()
      * @see https://docs.open.alipay.com/200/106120#s1
@@ -120,15 +127,15 @@ abstract class AlipaySigner
     /**
      * 验签（验证 Sign 值）
      *
-     * @param  string  $sign
-     * @param  string  $data
-     * @param  resource  $publicKey
-     *
-     * @return void
+     * @param string   $sign
+     * @param string   $data
+     * @param resource $publicKey
      *
      * @throws AlipayInvalidSignException
      * @throws AlipayOpenSslException
      * @throws AlipayBase64Exception
+     *
+     * @return void
      *
      * @see https://docs.open.alipay.com/200/106120
      */
