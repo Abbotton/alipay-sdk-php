@@ -1,4 +1,0 @@
-parameters:
-	ignoreErrors:
-		- '#Using \$this in static method Alipay\\AlipayRequestFactory::create()#'
-		- '#Variable \$this in isset\(\) always exists and is not nullable#'

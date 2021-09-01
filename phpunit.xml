@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="phpunit.xsd"
-    bootstrap="vendor/autoload.php"
-    colors="true"
-    verbose="true"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+        backupGlobals="false"
+        backupStaticAttributes="false"
+        bootstrap="vendor/autoload.php"
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        processIsolation="false"
+        stopOnFailure="false"
+        beStrictAboutOutputDuringTests="true"
+        verbose="true"
 >
     <testsuites>
-        <testsuite name="default">
-            <directory suffix="Test.php">tests/default</directory>
+        <testsuite name="client test">
+            <directory>tests/client</directory>
         </testsuite>
-
-        <testsuite name="client">
-            <directory suffix="Test.php">tests/client</directory>
+        <testsuite name="default test">
+            <directory>tests/default</directory>
         </testsuite>
     </testsuites>
 
