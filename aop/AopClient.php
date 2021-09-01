@@ -15,12 +15,12 @@ class AopClient
     /**
      * SDK 版本.
      */
-    const SDK_VERSION = 'alipay-sdk-PHP-4.11.14.ALL';
+    public const SDK_VERSION = 'alipay-sdk-PHP-4.11.14.ALL';
 
     /**
      * API 版本.
      */
-    const API_VERSION = '1.0';
+    public const API_VERSION = '1.0';
 
     /**
      * 应用 ID.
@@ -101,7 +101,7 @@ class AopClient
             throw new AlipayBase64Exception($encodedKey);
         }
 
-        if (!in_array($cipher, openssl_get_cipher_methods(), true)) {
+        if (! in_array($cipher, openssl_get_cipher_methods(), true)) {
             throw new AlipayOpenSslException("Cipher algorithm {$cipher} not available");
         }
 

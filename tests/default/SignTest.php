@@ -7,11 +7,11 @@ use PHPUnit\Framework\TestCase;
 
 class SignTest extends TestCase
 {
-    const TEST_DATA = 'foo=abc&bar=100&empty=&not_empty=0';
+    public const TEST_DATA = 'foo=abc&bar=100&empty=&not_empty=0';
 
-    const PUB_KEY = 'tests/app_public_key.pem';
+    public const PUB_KEY = 'tests/app_public_key.pem';
 
-    const PRIV_KEY = 'tests/app_private_key.pem';
+    public const PRIV_KEY = 'tests/app_private_key.pem';
 
     public function testKeyPair()
     {
