@@ -13,25 +13,21 @@
   * [其它资源](#其它资源)
   * [已知 Issue](#已知-issue)
   * [感谢](#感谢)
-  * [感想](#感想)
 
 ## 为什么不用官方
 
 | 官方 SDK                                                 | 本 SDK                                                    | 链接                                                                                                               |
 | :------------------------------------------------------- | :-------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
 | 无 Composer 集成，自动加载依赖第三方 PHP 框架 `lotusphp` | 集成                                                      | [![Packagist](https://img.shields.io/packagist/v/abbotton/alipay-sdk.svg)][Packagist]                              |
-| 代码不严谨，各种 Warning                                 | 持续构建，Notice 也不放过                                 | [![Build Status](https://travis-ci.org/abbotton/alipay-sdk-php.svg?branch=master)][TravisCI]                       |
-| 零单元测试                                               | 99% 测试覆盖率                                            | [![Coverage Status](https://coveralls.io/repos/github/abbotton/alipay-sdk-php/badge.svg?branch=master)][Coveralls] |
-| 代码风格、命名风格鱼龙混杂                               | PSR1 + PSR2                                               | [![StyleCI](https://github.styleci.io/repos/141678964/shield?branch=master)][StyleCI]                              |
+| 代码不严谨，各种 Warning                                 | 持续构建，Notice 也不放过                                 |  |
+| 零单元测试                                               | 99% 测试覆盖率                                            |  |
+| 代码风格、命名风格鱼龙混杂                               | PSR1 + PSR2                                               |  |
 | 几乎零 PHPDoc                                            | 持续补充中                                                | [对比图](https://i.loli.net/2018/08/01/5b611dc917bea.png)                                                          |
 | 异常和错误处理不统一                                     | 所有错误都将以异常的形式抛出，确保返回数据可靠            | [Exceptions](aop/Exception)                                                                                        |
 | 需手动根据接口名拼接请求类名                             | 请求类工厂，根据 API 名直接创建请求类                     | [AlipayRequestFactory](aop/AlipayRequestFactory.php)                                                               |
 | 耦合度高，难以升级或替换                                 | 几乎完全解耦，任意替换签名 / 密钥 / 响应 甚至 HTTP 客户端 | [AopClient](aop/AopClient.php)                                                                                     |
 
 [Packagist]: https://packagist.org/packages/abbotton/alipay-sdk
-[StyleCI]: https://github.styleci.io/repos/141678964
-[TravisCI]: https://travis-ci.org/abbotton/alipay-sdk-php
-[Coveralls]: https://coveralls.io/github/abbotton/alipay-sdk-php?branch=master
 
 ## 主要目的
 
