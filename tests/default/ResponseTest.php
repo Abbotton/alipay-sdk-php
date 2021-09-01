@@ -77,7 +77,7 @@ class ResponseTest extends TestCase
      */
     public function testParseInvalidResponse(AlipayResponseFactory $parser)
     {
-        $this->expectException('Alipay\Exception\AlipayInvalidResponseException');
+        $this->setExpectedException('Alipay\Exception\AlipayInvalidResponseException');
 
         $response = 'this is an invalid response';
         $parser->parse($response);

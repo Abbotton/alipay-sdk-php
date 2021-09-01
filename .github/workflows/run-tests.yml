@@ -38,5 +38,8 @@ jobs:
         run: |
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress --dev
 
+      - name: Genearate RSA PEM
+        run: bin/genrsa tests
+
       - name: Execute tests
         run: vendor/bin/phpunit
