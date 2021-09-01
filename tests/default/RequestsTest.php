@@ -19,7 +19,7 @@ class RequestsTest extends TestCase
 
     public function testSetUnknownProperty()
     {
-        $this->expectException('Alipay\Exception\AlipayInvalidPropertyException');
+        $this->setExpectedException('Alipay\Exception\AlipayInvalidPropertyException');
 
         $ins = AlipayRequestFactory::create($this->apiName);
         $ins->foo;
@@ -27,7 +27,7 @@ class RequestsTest extends TestCase
 
     public function testGetUnknownProperty()
     {
-        $this->expectException('Alipay\Exception\AlipayInvalidPropertyException');
+        $this->setExpectedException('Alipay\Exception\AlipayInvalidPropertyException');
         $ins = AlipayRequestFactory::create($this->apiName);
 
         try {

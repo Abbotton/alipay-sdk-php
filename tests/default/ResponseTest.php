@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class ResponseTest extends TestCase
 {
-    public const SIGN = 'AN_EXAMPLE_SIGN';
+    const SIGN = 'AN_EXAMPLE_SIGN';
 
     public function testFactory()
     {
@@ -106,8 +106,7 @@ class ResponseTest extends TestCase
      */
     public function testSignNotFound(AlipayResponse $ins)
     {
-        $this->expectException('Alipay\Exception\AlipayInvalidResponseException');
-        $this->expectExceptionMessage('sign');
+        $this->setExpectedException('Alipay\Exception\AlipayInvalidResponseException', 'sign');
 
         try {
             $ins->getSign();
@@ -155,7 +154,7 @@ class ResponseTest extends TestCase
      */
     public function testGetDataFromError(AlipayResponse $ins)
     {
-        $this->expectException('Alipay\Exception\AlipayErrorResponseException');
+        $this->setExpectedException('Alipay\Exception\AlipayErrorResponseException');
 
         $ins->getData();
     }
