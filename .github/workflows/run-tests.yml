@@ -34,6 +34,15 @@ jobs:
           echo "::add-matcher::${{ runner.tool_cache }}/php.json"
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
+      - name : Cache Composer packages
+        id : composer-cache
+        uses : actions/cache@v2
+        with :
+          path : vendor
+          key : ${{ matrix.os }}-${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
+          restore-keys : |
+            ${{ matrix.os }}-php-
+
       - name: Install dependencies
         run: |
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress --dev
