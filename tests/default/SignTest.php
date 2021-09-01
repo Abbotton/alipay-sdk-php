@@ -30,6 +30,7 @@ class SignTest extends TestCase
         $this->assertTrue(
             $kp->getPublicKey()->isLoaded()
         );
+
         return $kp;
     }
 
@@ -63,6 +64,7 @@ class SignTest extends TestCase
         $kp = unserialize($ser);
         $this->assertTrue($kp->getPublicKey()->isLoaded());
         $this->assertTrue($kp->getPrivateKey()->isLoaded());
+
         return $kp;
     }
 
@@ -73,6 +75,7 @@ class SignTest extends TestCase
         $signer = new AlipayRSA2Signer();
         $this->assertEquals('RSA2', $signer->getSignType());
         $this->assertInstanceOf('Alipay\Signer\AlipaySigner', $signer);
+
         return $signer;
     }
 
@@ -85,6 +88,7 @@ class SignTest extends TestCase
         parse_str(self::TEST_DATA, $params);
         $sign = $signer->generateByParams($params, $keyPair->getPrivateKey()->asResource());
         $this->assertNotFalse(base64_decode($sign));
+
         return $sign;
     }
 
@@ -97,7 +101,7 @@ class SignTest extends TestCase
     {
         parse_str(self::TEST_DATA, $params);
         $params['sign'] = $sign;
-        $params['sign_type'] = (new AlipayRSA2Signer)->getSignType();
+        $params['sign_type'] = (new AlipayRSA2Signer())->getSignType();
         $signer->verifyByParams($params, $keyPair->getPublicKey()->asResource());
         $this->assertTrue(true);
     }
@@ -128,6 +132,7 @@ class SignTest extends TestCase
         } catch (\Alipay\Exception\AlipayInvalidSignException $ex) {
             $this->assertEquals($data, $ex->getData());
             $this->assertEquals($sign, $ex->getSign());
+
             throw $ex;
         }
     }

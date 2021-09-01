@@ -14,7 +14,7 @@ class AlipayInvalidResponseException extends AlipayException
     {
         $this->response = $response;
 
-        $message = $message == '' ? '' : $message . ': ';
+        $message = $message == '' ? '' : $message.': ';
         $message .= $response;
 
         parent::__construct($message);

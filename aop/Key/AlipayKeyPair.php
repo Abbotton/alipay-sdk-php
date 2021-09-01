@@ -9,7 +9,7 @@ class AlipayKeyPair
 {
     /**
      * 支付宝公钥
-     * 支持文件路径或公钥字符串，用于验证签名
+     * 支持文件路径或公钥字符串，用于验证签名.
      *
      * @var AlipayPublicKey
      */
@@ -17,7 +17,7 @@ class AlipayKeyPair
 
     /**
      * 商户私钥（又称：小程序私钥，App私钥等）
-     * 支持文件路径或私钥字符串，用于生成签名
+     * 支持文件路径或私钥字符串，用于生成签名.
      *
      * @var AlipayPrivateKey
      */

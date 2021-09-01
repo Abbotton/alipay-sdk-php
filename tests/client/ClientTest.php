@@ -17,6 +17,7 @@ class ClientTest extends TestCase
     {
         $aop = new AopClient(static::APPID, $keyPair);
         $this->assertTrue(true);
+
         return $aop;
     }
 
@@ -55,7 +56,7 @@ class ClientTest extends TestCase
     {
         parse_str(SignTest::TEST_DATA, $params);
         $params['sign'] = $sign;
-        $params['sign_type'] = (new AlipayRSA2Signer)->getSignType();
+        $params['sign_type'] = (new AlipayRSA2Signer())->getSignType();
         $result = $client->verify($params);
         $this->assertTrue($result);
 

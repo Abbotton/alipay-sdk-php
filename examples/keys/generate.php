@@ -1,8 +1,7 @@
 <?php
 /**
- * 本例展示如何使用 PHP 生成密钥对
+ * 本例展示如何使用 PHP 生成密钥对.
  */
-
 require __DIR__.'/../../vendor/autoload.php';
 
 use Alipay\Key\AlipayKeyPair;

@@ -11,7 +11,7 @@ class AlipayRequest
     use AlipayAccessorTrait;
 
     /**
-     * 构建请求字符串时，是否将参数内的数组编码为 JSON
+     * 构建请求字符串时，是否将参数内的数组编码为 JSON.
      *
      * @var bool
      */
@@ -43,7 +43,7 @@ class AlipayRequest
     }
 
     /**
-     * 获取用于发起请求的“时间戳”
+     * 获取用于发起请求的“时间戳”.
      *
      * @return string
      */
@@ -72,7 +72,7 @@ class AlipayRequest
     }
 
     /**
-     * 根据类名获取 API 方法名
+     * 根据类名获取 API 方法名.
      *
      * @return string
      */

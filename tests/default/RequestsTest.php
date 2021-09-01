@@ -34,6 +34,7 @@ class RequestsTest extends TestCase
             $ins->foo;
         } catch (Alipay\Exception\AlipayInvalidPropertyException $ex) {
             $this->assertEquals('foo', $ex->getProperty());
+
             throw $ex;
         }
     }

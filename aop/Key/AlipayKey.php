@@ -32,7 +32,7 @@ abstract class AlipayKey implements Serializable
     }
 
     /**
-     * 加载密钥
+     * 加载密钥.
      *
      * @param string $certificate 密钥字符串或密钥路径
      *
