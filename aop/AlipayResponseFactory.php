@@ -35,7 +35,7 @@ class AlipayResponseFactory
     public function parse($raw)
     {
         $data = json_decode($raw, true);
-        if (! is_array($data)) {
+        if (!is_array($data)) {
             $error = function_exists('json_last_error_msg') ? json_last_error_msg() : json_last_error();
 
             throw new AlipayInvalidResponseException($raw, $error);
