@@ -46,10 +46,6 @@ abstract class AlipayKey implements Serializable
             throw new AlipayInvalidKeyException('Resource of key has already been initialized');
         }
 
-        if (is_file($certificate)) {
-            $certificate = 'file://' . $certificate;
-        }
-
         $this->resource = static::getKey($certificate);
     }
 

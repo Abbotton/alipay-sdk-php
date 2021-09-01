@@ -26,6 +26,8 @@ class AlipayHelper
      */
     public static function studlyCase($str, $delimiters = ' ')
     {
-        return str_replace($delimiters, '', ucwords($str, $delimiters));
+        return version_compare(PHP_VERSION, '5.6', '<')
+            ? str_replace(' ', '', ucwords(str_replace($delimiters, ' ', $str)))
+            : str_replace($delimiters, '', ucwords($str, $delimiters));
     }
 }

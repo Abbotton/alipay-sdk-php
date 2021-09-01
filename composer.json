@@ -1,28 +1,37 @@
 {
-    "name": "abbotton/alipay-sdk",
-    "description": "支付宝（蚂蚁金服）开放平台第三方 PHP SDK，基于官方最新版本。",
-    "type": "library",
-    "require": {
-        "php": ">=5.4"
-    },
-    "require-dev": {
-        "phpunit/phpunit": ">=4.8",
-        "vlucas/phpdotenv": "^2.5"
-    },
-    "authors": [
-        {
-            "name": "Abbotton",
-            "email": "uctoo@foxmail.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Alipay\\": "aop/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Alipay\\Test\\": "tests"
-        }
-    }
+	"name": "abbotton/alipay-sdk",
+	"description": "支付宝（蚂蚁金服）开放平台第三方 PHP SDK，基于官方最新版本。",
+	"type": "library",
+	"license": "MIT",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"require": {
+		"php": ">=5.4"
+	},
+	"config": {
+		"sort-packages": true
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^4.8",
+		"vlucas/phpdotenv": "^2.5"
+	},
+	"authors": [
+		{
+			"name": "Abbotton",
+			"email": "uctoo@foxmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Alipay\\": "aop/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Alipay\\Test\\": "tests"
+		}
+	},
+	"scripts": {
+		"test": "vendor/bin/phpunit"
+	}
 }
