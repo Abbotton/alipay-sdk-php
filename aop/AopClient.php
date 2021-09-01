@@ -101,7 +101,7 @@ class AopClient
             throw new AlipayBase64Exception($encodedKey);
         }
 
-        if (!in_array($cipher, openssl_get_cipher_methods(), true)) {
+        if (! in_array($cipher, openssl_get_cipher_methods(), true)) {
             throw new AlipayOpenSslException("Cipher algorithm {$cipher} not available");
         }
 

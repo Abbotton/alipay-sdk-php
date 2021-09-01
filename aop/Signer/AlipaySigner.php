@@ -104,7 +104,7 @@ abstract class AlipaySigner
      */
     public function verifyByParams($params, $publicKey)
     {
-        if (!isset($params[static::SIGN_PARAM]) || !isset($params[static::SIGN_TYPE_PARAM])) {
+        if (! isset($params[static::SIGN_PARAM]) || ! isset($params[static::SIGN_TYPE_PARAM])) {
             throw new InvalidArgumentException('Missing signature arguments');
         }
 
