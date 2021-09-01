@@ -12,6 +12,7 @@ class ResponseTest extends TestCase
     {
         $parser = new AlipayResponseFactory();
         $this->assertEquals('JSON', $parser->getFormat());
+
         return $parser;
     }
 
@@ -31,6 +32,7 @@ class ResponseTest extends TestCase
         $ins = $parser->parse($response);
         $this->assertInstanceOf('Alipay\AlipayResponse', $ins);
         $this->assertFalse($ins->isSuccess());
+
         return $ins;
     }
 
@@ -43,6 +45,7 @@ class ResponseTest extends TestCase
         $ins = $parser->parse($response);
         $this->assertInstanceOf('Alipay\AlipayResponse', $ins);
         $this->assertFalse($ins->isSuccess());
+
         return $ins;
     }
 
@@ -59,12 +62,13 @@ class ResponseTest extends TestCase
                 "refresh_token": "20120823ac6ffdsdf2d84e7384bf983531473993",
                 "re_expires_in": "3600"
             },
-            "sign": "' . self::SIGN . '"
+            "sign": "'.self::SIGN.'"
         }';
         $ins = $parser->parse($response);
         $this->assertInstanceOf('Alipay\AlipayResponse', $ins);
         $this->assertEquals($response, $ins->getRaw());
         $this->assertTrue($ins->isSuccess());
+
         return $ins;
     }
 
@@ -109,6 +113,7 @@ class ResponseTest extends TestCase
             $ins->getSign();
         } catch (Alipay\Exception\AlipayInvalidResponseException $ex) {
             $this->assertNotEmpty($ex->getResponse());
+
             throw $ex;
         }
     }

@@ -8,24 +8,24 @@ use Alipay\Exception\AlipayInvalidResponseException;
 class AlipayResponse
 {
     /**
-     * 响应签名节点名
+     * 响应签名节点名.
      */
     const SIGN_NODE = 'sign';
 
     /**
-     * 响应错误节点名
+     * 响应错误节点名.
      */
     const ERROR_NODE = 'error_response';
 
     /**
-     * 原始响应
+     * 原始响应.
      *
      * @var string
      */
     protected $raw;
 
     /**
-     * 已解析的响应
+     * 已解析的响应.
      *
      * @var mixed
      */

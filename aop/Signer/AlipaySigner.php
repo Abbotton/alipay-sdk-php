@@ -11,12 +11,12 @@ use InvalidArgumentException;
 abstract class AlipaySigner
 {
     /**
-     * 支付宝服务器发起回调通知时，使用的「签名」参数名
+     * 支付宝服务器发起回调通知时，使用的「签名」参数名.
      */
     const SIGN_PARAM = 'sign';
 
     /**
-     * 支付宝服务器发起回调通知时，使用的「签名类型」参数名
+     * 支付宝服务器发起回调通知时，使用的「签名类型」参数名.
      */
     const SIGN_TYPE_PARAM = 'sign_type';
 
@@ -125,7 +125,7 @@ abstract class AlipaySigner
     abstract public function getSignType();
 
     /**
-     * 验签（验证 Sign 值）
+     * 验签（验证 Sign 值）.
      *
      * @param string   $sign
      * @param string   $data

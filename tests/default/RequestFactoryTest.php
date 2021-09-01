@@ -26,7 +26,7 @@ class RequestFactoryTest extends TestCase
         $this->expectException('Alipay\Exception\AlipayInvalidRequestException');
 
         AlipayRequestFactory::create('foo.bar', [
-            'foo' => 'this config does not exist'
+            'foo' => 'this config does not exist',
         ]);
     }
 
@@ -35,7 +35,7 @@ class RequestFactoryTest extends TestCase
         $this->expectException('Alipay\Exception\AlipayInvalidRequestException');
 
         AlipayRequestFactory::create($this->apiName, [
-            'foo' => 'bar'
+            'foo' => 'bar',
         ]);
     }
 }

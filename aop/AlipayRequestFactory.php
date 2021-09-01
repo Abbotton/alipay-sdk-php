@@ -9,7 +9,7 @@ use Alipay\Request\AlipayRequest;
 class AlipayRequestFactory
 {
     /**
-     * 创建请求类实例
+     * 创建请求类实例.
      *
      * @param $apiName
      * @param array $config

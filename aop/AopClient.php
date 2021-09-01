@@ -13,52 +13,52 @@ use Alipay\Signer\AlipaySigner;
 class AopClient
 {
     /**
-     * SDK 版本
+     * SDK 版本.
      */
     const SDK_VERSION = 'alipay-sdk-PHP-4.11.14.ALL';
 
     /**
-     * API 版本
+     * API 版本.
      */
     const API_VERSION = '1.0';
 
     /**
-     * 应用 ID
+     * 应用 ID.
      *
      * @var string
      */
     protected $appId;
 
     /**
-     * 签名器
+     * 签名器.
      *
      * @var AlipaySigner
      */
     protected $signer;
 
     /**
-     * 请求发送器
+     * 请求发送器.
      *
      * @var AlipayRequester
      */
     protected $requester;
 
     /**
-     * 响应解析器
+     * 响应解析器.
      *
      * @var AlipayResponseFactory
      */
     protected $parser;
 
     /**
-     * 密钥对
+     * 密钥对.
      *
      * @var AlipayKeyPair
      */
     protected $keyPair;
 
     /**
-     * 创建客户端
+     * 创建客户端.
      *
      * @param string                $appId     应用 ID，请在开放平台管理页面获取
      * @param AlipayKeyPair         $keyPair   密钥对，用于存储支付宝公钥和应用私钥
@@ -81,7 +81,7 @@ class AopClient
     }
 
     /**
-     * 解密被支付宝加密的敏感数据
+     * 解密被支付宝加密的敏感数据.
      *
      * @param string $encryptedData Base64 格式的已加密的数据，如手机号
      * @param string $encodedKey    Base64 编码后的密钥
@@ -133,7 +133,7 @@ class AopClient
     }
 
     /**
-     * 拼接请求参数并签名
+     * 拼接请求参数并签名.
      *
      * @param AlipayRequest $request
      *
@@ -183,7 +183,7 @@ class AopClient
     }
 
     /**
-     * 发起请求、解析响应、验证签名
+     * 发起请求、解析响应、验证签名.
      *
      * @param array $params
      *
@@ -219,7 +219,7 @@ class AopClient
     }
 
     /**
-     * 仅拼接请求参数并签名，生成跳转 URL
+     * 仅拼接请求参数并签名，生成跳转 URL.
      *
      * @param AlipayRequest $request
      *
@@ -234,7 +234,7 @@ class AopClient
     }
 
     /**
-     * 仅拼接请求参数并签名，生成表单 HTML
+     * 仅拼接请求参数并签名，生成表单 HTML.
      *
      * @param AlipayRequest $request
      *
@@ -259,7 +259,7 @@ class AopClient
     }
 
     /**
-     * 验证由支付宝服务器发来的回调通知请求，其签名数据是否未被篡改
+     * 验证由支付宝服务器发来的回调通知请求，其签名数据是否未被篡改.
      *
      * @param array|null $params 请求参数（默认使用 $_POST）
      *
@@ -286,7 +286,7 @@ class AopClient
     }
 
     /**
-     * 获取应用 ID
+     * 获取应用 ID.
      *
      * @return string
      */
@@ -296,7 +296,7 @@ class AopClient
     }
 
     /**
-     * 获取与本客户端关联的密钥对
+     * 获取与本客户端关联的密钥对.
      *
      * @return AlipayKeyPair
      */
@@ -306,7 +306,7 @@ class AopClient
     }
 
     /**
-     * 获取与本客户端关联的响应解析器
+     * 获取与本客户端关联的响应解析器.
      *
      * @return AlipayResponseFactory
      */
@@ -316,7 +316,7 @@ class AopClient
     }
 
     /**
-     * 获取与本客户端关联的请求发送器
+     * 获取与本客户端关联的请求发送器.
      *
      * @return AlipayRequester
      */
@@ -326,7 +326,7 @@ class AopClient
     }
 
     /**
-     * 获取与本客户端关联的签名器
+     * 获取与本客户端关联的签名器.
      *
      * @return AlipaySigner
      */

@@ -20,7 +20,7 @@ class RequesterTest extends TestCase
 
     public function testExecute()
     {
-        $requester = new AlipayRequester(function ($url, $params) {return [$url, $params];});
+        $requester = new AlipayRequester(function ($url, $params) {return [$url, $params]; });
 
         $data = ['foo' => 'bar'];
         list($url, $params) = $requester->execute($data);
