@@ -15,12 +15,12 @@ class AopClient
     /**
      * SDK 版本.
      */
-    public const SDK_VERSION = 'alipay-sdk-PHP-4.11.14.ALL';
+    const SDK_VERSION = 'alipay-sdk-PHP-4.11.14.ALL';
 
     /**
      * API 版本.
      */
-    public const API_VERSION = '1.0';
+    const API_VERSION = '1.0';
 
     /**
      * 应用 ID.

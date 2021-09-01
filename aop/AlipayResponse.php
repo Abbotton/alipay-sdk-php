@@ -10,12 +10,12 @@ class AlipayResponse
     /**
      * 响应签名节点名.
      */
-    public const SIGN_NODE = 'sign';
+    const SIGN_NODE = 'sign';
 
     /**
      * 响应错误节点名.
      */
-    public const ERROR_NODE = 'error_response';
+    const ERROR_NODE = 'error_response';
 
     /**
      * 原始响应.
