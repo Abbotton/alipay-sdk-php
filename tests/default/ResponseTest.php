@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class ResponseTest extends TestCase
 {
-    const SIGN = 'AN_EXAMPLE_SIGN';
+    public const SIGN = 'AN_EXAMPLE_SIGN';
 
     public function testFactory()
     {
