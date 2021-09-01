@@ -13,12 +13,12 @@ abstract class AlipaySigner
     /**
      * 支付宝服务器发起回调通知时，使用的「签名」参数名.
      */
-    const SIGN_PARAM = 'sign';
+    public const SIGN_PARAM = 'sign';
 
     /**
      * 支付宝服务器发起回调通知时，使用的「签名类型」参数名.
      */
-    const SIGN_TYPE_PARAM = 'sign_type';
+    public const SIGN_TYPE_PARAM = 'sign_type';
 
     /**
      * 将参数数组签名（计算 Sign 值）.
@@ -152,7 +152,6 @@ abstract class AlipaySigner
             case 0:
                 throw new AlipayInvalidSignException($sign, $data);
             case -1:
-                // no break
             default:
                 throw new AlipayOpenSslException();
         }

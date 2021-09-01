@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class ClientTest extends TestCase
 {
-    const APPID = '123456';
+    public const APPID = '123456';
 
     /**
      * @depends SignTest::testKeyPair
