@@ -20,22 +20,4 @@ class RequestFactoryTest extends TestCase
         $ins = AlipayRequestFactory::create($this->apiName);
         $this->assertInstanceOf(AlipayRequest::className(), $ins);
     }
-
-    public function testInvalidConfig()
-    {
-        $this->setExpectedException('Alipay\Exception\AlipayInvalidRequestException');
-
-        AlipayRequestFactory::create('foo.bar', [
-            'foo' => 'this config does not exist',
-        ]);
-    }
-
-    public function testUnwritableConfig()
-    {
-        $this->setExpectedException('Alipay\Exception\AlipayInvalidRequestException');
-
-        AlipayRequestFactory::create($this->apiName, [
-            'foo' => 'bar',
-        ]);
-    }
 }

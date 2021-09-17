@@ -2,8 +2,6 @@
 
 namespace Alipay;
 
-use Alipay\Exception\AlipayInvalidPropertyException;
-use Alipay\Exception\AlipayInvalidRequestException;
 use Alipay\Request\AlipayRequest;
 
 class AlipayRequestFactory
@@ -25,10 +23,7 @@ class AlipayRequestFactory
      * 通过 `API 名称` 创建请求类实例.
      *
      * @param $apiName
-     * @param array $config
-     *
-     * @throws AlipayInvalidRequestException
-     *
+     * @param  array  $config
      * @return AlipayRequest
      */
     private function createByApi($apiName, $config = [])
@@ -36,13 +31,9 @@ class AlipayRequestFactory
         $config = array_merge($config, ['api_method_name' => $apiName]);
         $request = new AlipayRequest();
 
-        try {
-            foreach ($config as $key => $value) {
-                $property = AlipayHelper::studlyCase($key, '_');
-                $request->$property = $value;
-            }
-        } catch (AlipayInvalidPropertyException $ex) {
-            throw new AlipayInvalidRequestException($ex->getMessage().': '.$key);
+        foreach ($config as $key => $value) {
+            $property = AlipayHelper::studlyCase($key, '_');
+            $request->$property = $value;
         }
 
         return $request;

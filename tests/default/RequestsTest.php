@@ -17,28 +17,6 @@ class RequestsTest extends TestCase
         $this->assertEquals($url, $ins->getNotifyUrl());
     }
 
-    public function testSetUnknownProperty()
-    {
-        $this->setExpectedException('Alipay\Exception\AlipayInvalidPropertyException');
-
-        $ins = AlipayRequestFactory::create($this->apiName);
-        $ins->foo;
-    }
-
-    public function testGetUnknownProperty()
-    {
-        $this->setExpectedException('Alipay\Exception\AlipayInvalidPropertyException');
-        $ins = AlipayRequestFactory::create($this->apiName);
-
-        try {
-            $ins->foo;
-        } catch (Alipay\Exception\AlipayInvalidPropertyException $ex) {
-            $this->assertEquals('foo', $ex->getProperty());
-
-            throw $ex;
-        }
-    }
-
     public function testTimestamp()
     {
         $ins = AlipayRequestFactory::create($this->apiName);

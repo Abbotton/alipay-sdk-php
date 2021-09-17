@@ -138,11 +138,7 @@ class AlipayResponse
         if ($this->isSuccess()) {
             return null;
         }
-        if (isset($this->parsed[static::ERROR_NODE])) {
-            $result = $this->parsed[static::ERROR_NODE];
-        } else {
-            $result = $this->getFirstElement();
-        }
+        $result = $this->parsed[static::ERROR_NODE] ?? $this->getFirstElement();
         if ($assoc == false) {
             $result = (object) ($result);
         }
