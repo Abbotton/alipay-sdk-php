@@ -2,14 +2,14 @@ name: run-tests
 
 on :
   push :
-    branches : [ main ]
+    branches : [ v2.0 ]
     tags-ignore :
       - '*.*'
     paths-ignore :
       - README.md
       - LICENSE
   pull_request :
-    branches : [ main ]
+    branches : [ v2.0 ]
     paths-ignore :
       - README.md
       - LICENSE
