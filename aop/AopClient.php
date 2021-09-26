@@ -135,9 +135,10 @@ class AopClient
     /**
      * 拼接请求参数并签名.
      *
-     * @param AlipayRequest $request
-     *
+     * @param  AlipayRequest  $request
      * @return array
+     * @throws AlipayBase64Exception
+     * @throws AlipayOpenSslException
      */
     public function build(AlipayRequest $request)
     {
@@ -162,7 +163,7 @@ class AopClient
 
         $sysParams['auth_token'] = $request->getAuthToken();
         $sysParams['app_auth_token'] = $request->getAppAuthToken();
-
+        $sysParams['biz_content'] = $request->getBizContent();
         // 转换可能是数组的参数
         if ($request->arrayAsJson) {
             foreach ($sysParams as &$param) {
