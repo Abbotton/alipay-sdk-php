@@ -15,19 +15,4 @@ class AlipayHelper
     {
         return $value === null || trim($value) === '';
     }
-
-    /**
-     * 转换字符串为变种驼峰命名（例如：FooBar）.
-     *
-     * @param $str
-     * @param string $delimiters
-     *
-     * @return array|string|string[]
-     */
-    public static function studlyCase($str, $delimiters = ' ')
-    {
-        return version_compare(PHP_VERSION, '5.6', '<')
-            ? str_replace(' ', '', ucwords(str_replace($delimiters, ' ', $str)))
-            : str_replace($delimiters, '', ucwords($str, $delimiters));
-    }
 }

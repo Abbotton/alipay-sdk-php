@@ -28,14 +28,8 @@ class AlipayRequestFactory
      */
     private function createByApi($apiName, $config = [])
     {
-        $config = array_merge($config, ['api_method_name' => $apiName]);
-        $request = new AlipayRequest();
+        $config = array_merge($config, ['method' => $apiName]);
 
-        foreach ($config as $key => $value) {
-            $property = AlipayHelper::studlyCase($key, '_');
-            $request->$property = $value;
-        }
-
-        return $request;
+        return new AlipayRequest($config);
     }
 }

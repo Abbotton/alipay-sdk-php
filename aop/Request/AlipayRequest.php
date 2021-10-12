@@ -2,21 +2,11 @@
 
 namespace Alipay\Request;
 
-use Alipay\AlipayAccessorTrait;
 use ReflectionClass;
 use ReflectionException;
 
 class AlipayRequest
 {
-    use AlipayAccessorTrait;
-
-    /**
-     * 构建请求字符串时，是否将参数内的数组编码为 JSON.
-     *
-     * @var bool
-     */
-    public $arrayAsJson = true;
-
     protected $notifyUrl;
 
     protected $returnUrl;
@@ -38,7 +28,7 @@ class AlipayRequest
     public function __construct($config = [])
     {
         foreach ($config as $key => $value) {
-            $this->$key = $value;
+            $this->{$key} = $value;
         }
     }
 

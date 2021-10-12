@@ -23,11 +23,4 @@ class HelperTest extends TestCase
         $res = AlipayHelper::isEmpty($str);
         $this->assertFalse($res);
     }
-
-    public function testStudlyCase()
-    {
-        $str = 'foo.bar';
-        $res = AlipayHelper::studlyCase($str, '.');
-        $this->assertEquals('FooBar', $res);
-    }
 }
