@@ -235,7 +235,7 @@ class AopClient
     public function pageExecuteUrl(AlipayRequest $request)
     {
         $queryParams = $this->build($request);
-        $url = $this->requester->getGateway().'?'.http_build_query($queryParams);
+        $url = $this->requester->getGateway().'?'.http_build_query($queryParams, '', '&amp;');
 
         return $url;
     }
